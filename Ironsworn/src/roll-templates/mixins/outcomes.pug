@@ -3,51 +3,51 @@ include ./body
 mixin opportunity
   .sheet-result-row.sheet-roll-outcome
     .sheet-opportunity
-    .sheet-subfooter OPPORTUNITY
+    .sheet-subfooter(data-i18n='roll-template-outcome-opportunity') OPPORTUNITY
 
 mixin strongHit
   .sheet-result-row.sheet-roll-outcome
     .sheet-strong-hit
-    .sheet-subfooter STRONG HIT
+    .sheet-subfooter(data-i18n='roll-template-outcome-strong-hit') STRONG HIT
+
+mixin weakHit
+  .sheet-result-row.sheet-roll-outcome
+    .sheet-weak-hit
+    .sheet-subfooter(data-i18n='roll-template-outcome-weak-hit') WEAK HIT
+
+mixin miss
+  .sheet-result-row.sheet-roll-outcome
+    .sheet-miss
+    .sheet-subfooter(data-i18n='roll-template-outcome-miss') MISS
+
+mixin complication
+  .sheet-result-row.sheet-roll-outcome
+    .sheet-complication
+    .sheet-subfooter(data-i18n='roll-template-outcome-complication') COMPLICATION
 
 mixin momentumStrongHit
   +momentumBody
   .sheet-result-row.sheet-roll-outcome
     .sheet-strong-hit
-    .sheet-subfooter Burn Momentum: Strong Hit
-
-mixin weakHit
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-weak-hit
-    .sheet-subfooter WEAK HIT
+    .sheet-subfooter(data-i18n='roll-template-outcome-momentum-strong-hit') Burn Momentum: Strong Hit
 
 mixin momentumWeakHit
   +momentumBody
   .sheet-result-row.sheet-roll-outcome
     .sheet-weak-hit
-    .sheet-subfooter Burn Momentum: Weak Hit
-
-mixin miss
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-miss
-    .sheet-subfooter MISS
-
-mixin complication
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-complication
-    .sheet-subfooter COMPLICATION
+    .sheet-subfooter(data-i18n='roll-template-outcome-momentum-weak-hit') Burn Momentum: Weak Hit
 
 mixin rarityDramatic
   .sheet-result-row.sheet-roll-outcome
     .sheet-rarity-die
-    .sheet-subfooter The power of the rarity manifests in a dramatic and obvious way
+    .sheet-subfooter(data-i18n='roll-template-outcome-rarity-obvious') The power of the rarity manifests in a dramatic and obvious way
 
 mixin raritySubtle
   .sheet-result-row.sheet-roll-outcome
     .sheet-rarity-die
-    .sheet-subfooter The power of the rarity manifests in a subtle way
+    .sheet-subfooter(data-i18n='roll-template-outcome-rarity-subtle') The power of the rarity manifests in a subtle way
 
 mixin rarityFail
   .sheet-result-row.sheet-roll-outcome
     .sheet-rarity-die
-    .sheet-subfooter The rarity’s power fails or works against you
+    .sheet-subfooter(data-i18n='roll-template-outcome-rarity-fail') The rarity’s power fails or works against you

@@ -3,19 +3,17 @@ include ./body
 
 mixin actionDieNegated(opts)
   div.sheet-result-body.sheet-result-row
-    div Previous Action Score:
+    div(data-i18n='roll-template-negate-old-score') Previous Action Score:
     div {{#{opts.type}}}
   div.sheet-result-body.sheet-result-row
-    div.sheet-subfooter.sheet-alert Action die cancelled for matching negative momentum.
+    div.sheet-subfooter.sheet-alert(data-i18n='roll-template-negate-cancelled') Action die cancelled for matching negative momentum.
   div.sheet-result-body.sheet-result-row
-    div Stat + Add:
+    div(data-i18n='roll-template-negate-stats') Stat + Add:
     div {{stat}} + {{add}}
   div.sheet-result-body.sheet-result-row
-    div New Action Score:
+    div(data-i18n='roll-template-negate-new-score') New Action Score:
     div {{modifiers}}
-  div.sheet-result-body.sheet-result-row
-    div Challenge Dice:
-    div {{challenge1}} {{challenge2}}
+  +challengeDice
   +standardAction('modifiers')
 
 mixin negationRoll(opts, type)

@@ -771,5 +771,22 @@
   "move-content-write-your-epilogue-2":"When <strong>you retire from your life as Ironsworn,</strong> envision two things: What you hope for, and what you fear. Then, roll the challenge dice and compare to your bonds. Momentum is ignored on this roll.",
   "move-content-write-your-epilogue-3":"On a <strong>strong hit,</strong> things come to pass as you hoped.",
   "move-content-write-your-epilogue-4":"On a <strong>weak hit,</strong> your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it (<em>Ask the Oracle</em> if unsure).",
-  "move-content-write-your-epilogue-5":"On a <strong>miss,</strong> your fears are realized."
+  "move-content-write-your-epilogue-5":"On a <strong>miss,</strong> your fears are realized.",
+  "roll-template-negate-old-score":"Previous Action Score:",
+  "roll-template-negate-cancelled":"Action die cancelled for matching negative momentum.",
+  "roll-template-negate-stats":"Stat + Add:",
+  "roll-template-negate-new-score":"New Action Score:",
+  "roll-template-challenge-dice":"Challenge Dice:",
+  "roll-template-action-score":"Action Score: ",
+  "roll-template-momentum":"Momentum:",
+  "roll-template-outcome-opportunity":"OPPORTUNITY",
+  "roll-template-outcome-strong-hit":"STRONG HIT",
+  "roll-template-outcome-weak-hit":"WEAK HIT",
+  "roll-template-outcome-miss":"MISS",
+  "roll-template-outcome-complication":"COMPLICATION",
+  "roll-template-outcome-momentum-strong-hit":"Burn Momentum: Strong Hit",
+  "roll-template-outcome-momentum-weak-hit":"Burn Momentum: Weak Hit",
+  "roll-template-outcome-rarity-obvious":"The power of the rarity manifests in a dramatic and obvious way",
+  "roll-template-outcome-rarity-subtle":"The power of the rarity manifests in a subtle way",
+  "roll-template-outcome-rarity-fail":"The rarity’s power fails or works against you"
 }

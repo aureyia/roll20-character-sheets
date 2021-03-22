@@ -1,11 +1,11 @@
 mixin challengeDice
   .sheet-result-body.sheet-result-row
-    div Challenge Dice: 
+    div(data-i18n='roll-template-challenge-dice') Challenge Dice: 
     div.sheet-challenge-dice {{challenge1}} {{challenge2}}
 
 mixin actionBody(type)
   .sheet-result-body.sheet-result-row
-    div Action Score: 
+    div(data-i18n='roll-template-action-score') Action Score: 
     div.sheet-action-score {{#{type}}}
   +challengeDice
 
@@ -17,5 +17,5 @@ mixin progressBody
 
 mixin momentumBody
   .sheet-result-body.sheet-result-row
-    div.sheet-momentum-title Momentum:
+    div.sheet-momentum-title(data-i18n='roll-template-momentum') Momentum:
     div {{momentum}}
