@@ -1,4 +1,20 @@
 //-
+  Requires 
+  {
+    pages: ['DETAILS, LINKS'],
+    buttonAttr: 'relationship'
+  }
+
+mixin nav(opts)
+  .nav-bar
+    .nav-row
+      each page, index in opts.pages
+        .nav-child
+          label.page-label
+            input(type='radio' name=buttonAttr class='hide page-button' value=`${index}`)
+            .page-button-back=page
+
+//-
   Generates a repeating fieldset for bonds.
   Expands when clicking the DETAILS label.
 
@@ -9,21 +25,56 @@
 
 mixin bonds()
   .bond-component
-    fieldset.repeating_bonds
-      .bond-container
-        p.bond-title NAME:
-        input.border-bottom.bond-name(type='text' name='attr_bond-name' placeholder='Name')
-        label.btn.details-btn
-          input.hide.btn-input(type='checkbox' name='attr_details_button')
-          .btn-content DETAILS
+    .bond-container
+      +nav({buttonAttr: 'attr_bonds_button', pages: ['RELATIONSHIPS, COMMUNITIES']})
+      
+      input(type='radio' class=`relationships hide` name='attr_bonds' value='0' checked)
+      div(class=`relationships showhide`)
+        fieldset.repeating_bonds
+          p.bond-title NAME:
+          input.border-bottom.bond-name(type='text' name='attr_bond-name' placeholder='Name')
+          +nav({buttonAttr: 'attr_relationship_button', pages: ['DETAILS, LINKS']})
+          
+          input(type='radio' class=`show-bond-info hide` name='attr_relationship' value='0' checked)
+          .show-bond-info.showhide
+            .full-width
+              p.bond-title LOCATION:
+              input.bond-location.border-bottom(type='text' name='attr_bond-location' placeholder='Location')
+            .full-width
+              p.bond-title DESCRIPTORS:
+              input.bond-descriptors.border-bottom(type='text' name='attr_bond-descriptors' placeholder='Descriptors')
+            .full-width
+              textarea.bond-notes(name='attr_bond-notes')
+            
+          input(type='radio' class=`.show-links-info hide` name='attr_relationship' value='1')
+          .show-links-info.showhide
+            .full-width
+              //- Link 1
+            .full-width
+              //- Link 2
+            .full-width
+              //- Link 3
         
-        input.hide.show-bond-info(type='checkbox' name='attr_details')
-        .show-bond-info.showhide
-          .full-width
-            p.bond-title LOCATION:
-            input.bond-location.border-bottom(type='text' name='attr_bond-location' placeholder='Location')
-          .full-width
-            p.bond-title DESCRIPTORS:
-            input.bond-descriptors.border-bottom(type='text' name='attr_bond-descriptors' placeholder='Descriptors')
-          .full-width
-            textarea.bond-notes(name='attr_bond-notes')
+      input(type='radio' class=`communities hide` name='attr_bonds' value='1')
+      div(class=`communities showhide`)
+        fieldset.repeating_community
+          p.bond-title NAME:
+          input.border-bottom.bond-name(type='text' name='attr_community-name' placeholder='Name')
+          +nav({buttonAttr: 'attr_community_button', pages: ['DETAILS, LINKS']})
+
+          input(type='radio' class=`show-community-info hide` name='attr_community' value='0' checked)
+          .show-bond-info.showhide
+            .full-width
+              p.bond-title DESCRIPTORS:
+              input.bond-descriptors.border-bottom(type='text' name='attr_community-descriptors' placeholder='Descriptors')
+            .full-width
+              textarea.bond-notes(name='attr_community-notes')
+            
+          input(type='radio' class=`.show-duties-info hide` name='attr_community' value='1')
+          .show-links-info.showhide
+            .full-width
+              //- Link 1
+            .full-width
+              //- Link 2
+            .full-width
+              //- Link 3

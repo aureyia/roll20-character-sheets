@@ -64,7 +64,8 @@ p
 .sheet-bond-descriptors::placeholder
   color #8a8a8a
 
-input[type="checkbox"].sheet-show-bond-info
+input[type="radio"].sheet-show-bond-info,
+input[type="radio"].sheet-show-links-info
   width 4.5em
   height 18px
   top 0
@@ -73,12 +74,14 @@ input[type="checkbox"].sheet-show-bond-info
   padding 2px 4px
   &:checked
     & ~ div
-      &.sheet-show-bond-info
+      &.sheet-show-bond-info,
+      &.sheet-show-links-info
         display flex
         flex-flow row wrap
         show-hide()
     & ~ span
-      &.sheet-show-bond-info
+      &.sheet-show-bond-info,
+      &.sheet-show-links-info
         border-radius 0
         padding 2px 4px
         border 1px solid
@@ -86,7 +89,8 @@ input[type="checkbox"].sheet-show-bond-info
         color #fff
   &:hover
     & ~ span
-      &.sheet-show-bond-info
+      &.sheet-show-bond-info,
+      &.sheet-show-links-info
         border-radius 0
         padding 2px 4px
         background-color #ccc
@@ -94,7 +98,8 @@ input[type="checkbox"].sheet-show-bond-info
         transition 0.5s ease
 
 span
-  &.sheet-show-bond-info
+  &.sheet-show-bond-info,
+  &.sheet-show-links-info
     margin-left -4.9em
     border-radius 0
     padding 2px 4px
