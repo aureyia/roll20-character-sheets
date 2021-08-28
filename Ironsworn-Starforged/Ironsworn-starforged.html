@@ -2,18 +2,18 @@
 <input class="modes-show hide-element" type="checkbox" name="attr_modes_choice" checked="checked"/>
 <div class="modes-show hide-element">
   <div class="mode-title">
-    <h2 class="mode-title" data-i18n="page-select">SELECT THE SHEET TYPE</h2>
+    <h2 class="mode-title" data-i18n="page-select">Select the sheet type</h2>
   </div>
   <div class="modes">
     <label class="mode"> 
-      <h4 data-i18n="page-name-character">CHARACTER</h4>
+      <h4 data-i18n="page-name-character">Character</h4>
       <div class="mode">
         <input class="hide-element" type="radio" name="attr_mode_button" value="0"/>
         <div class="mode-image"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/character-sheet.png"/></div>
       </div>
     </label>
     <label class="mode"> 
-      <h4 data-i18n="page-name-shared">SHARED</h4>
+      <h4 data-i18n="page-name-shared">Shared</h4>
       <div class="mode">
         <input class="hide-element" type="radio" name="attr_mode_button" value="1"/>
         <div class="mode-image"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/shared-sheet.png"/></div>
@@ -27,13 +27,13 @@
         <div class="resources">
           <div class="row1">
             <div class="resource character-name">
-              <h2 class="resource-title" data-i18n="character-name">NAME</h2>
+              <h2 class="resource-title" data-i18n="character-name">Name</h2>
               <div class="resource-value-box">
                 <input class="resource-value" type="text" name="attr_character_name" placeholder="Character Name"/>
               </div>
             </div>
             <div class="resource character-callsign">
-              <h2 class="resource-title" data-i18n="character-callsign">CALLSIGN</h2>
+              <h2 class="resource-title" data-i18n="character-callsign">Callsign</h2>
               <div class="resource-value-box">
                 <input class="resource-value" type="text" name="attr_character_callsign" placeholder="Callsign"/>
               </div>
@@ -41,7 +41,7 @@
           </div>
           <div class="row2">
             <div class="resource character-pronouns">
-              <h2 class="resource-title" data-i18n="character-pronouns">PRONOUNS</h2>
+              <h2 class="resource-title" data-i18n="character-pronouns">Pronouns</h2>
               <div class="resource-value-box">
                 <input class="resource-value" type="text" name="attr_character_pronouns" placeholder="Pronouns"/>
               </div>
@@ -49,7 +49,7 @@
               <div class="resource">
                 <label class="roll-resource-label">
                   <button class="hide-element" type="roll" title="@{rollhealth}" name="rollhealth" value="&{template:starforged_moves} {{name=roll +health}} {{action=[[{d6+@{health}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{health}+(?{Modifier|0})]]}} {{negate2=[[2+@{health}+(?{Modifier|0})]]}} {{negate3=[[3+@{health}+(?{Modifier|0})]]}} {{negate4=[[4+@{health}+(?{Modifier|0})]]}} {{negate5=[[5+@{health}+(?{Modifier|0})]]}} {{negate6=[[6+@{health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{health}]]}}"></button>
-                  <div data-i18n="resource-health">HEALTH</div>
+                  <div data-i18n="resource-health">Health</div>
                 </label>
                 <select class="resource-value" name="attr_health">
                     <option value="5">+5</option>
@@ -63,7 +63,7 @@
               <div class="resource">
                 <label class="roll-resource-label">
                   <button class="hide-element" type="roll" title="@{rollspirit}" name="rollspirit" value="&{template:starforged_moves} {{name=roll +spirit}} {{action=[[{d6+@{spirit}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{spirit}+(?{Modifier|0})]]}} {{negate2=[[2+@{spirit}+(?{Modifier|0})]]}} {{negate3=[[3+@{spirit}+(?{Modifier|0})]]}} {{negate4=[[4+@{spirit}+(?{Modifier|0})]]}} {{negate5=[[5+@{spirit}+(?{Modifier|0})]]}} {{negate6=[[6+@{spirit}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{spirit}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{spirit}]]}}"></button>
-                  <div data-i18n="resource-spirit">SPIRIT</div>
+                  <div data-i18n="resource-spirit">Spirit</div>
                 </label>
                 <select class="resource-value" name="attr_spirit">
                     <option value="5">+5</option>
@@ -77,7 +77,7 @@
               <div class="resource">
                 <label class="roll-resource-label">
                   <button class="hide-element" type="roll" title="@{rollsupply}" name="rollsupply" value="&{template:starforged_moves} {{name=roll +supply}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
-                  <div data-i18n="resource-supply">SUPPLY</div>
+                  <div data-i18n="resource-supply">Supply</div>
                 </label>
                 <select class="resource-value" name="attr_supply">
                     <option value="5">+5</option>
@@ -89,11 +89,11 @@
                 </select>
               </div>
             <div class="resource">
-              <h2 class="resource-title" data-i18n="character-experience">EXPERIENCE</h2>
+              <h2 class="resource-title" data-i18n="character-experience">Experience</h2>
               <div class="health-status-box">
                 <input class="resource-value" type="text" name="attr_xp" value="0"/>
               </div>
-              <h2 class="resource-title" data-i18n="character-experience-spent">SPENT</h2>
+              <h2 class="resource-title" data-i18n="character-experience-spent">Spent</h2>
               <div class="health-status-box">
                 <input class="resource-value" type="text" name="attr_total_xp" value="0"/>
               </div>
@@ -103,7 +103,7 @@
     <div class="sub-header-static">
       <div class="momentum momentum-header">
         <div class="momentum momentum-dark">
-          <h3 class="momentum-title">Momentum</h3>
+          <h3 class="momentum-title" data-i18n="momentum"></h3>
         </div>
       </div>
       <div class="momentum">
@@ -211,15 +211,15 @@
         </label>
         <label class="momentum-burn">
           <input class="momentum-burn hide-element" type="checkbox" title="Burn Momentum" name="attr_momentumBurn"/>
-          <div class="momentum-burn-back">BURN</div>
+          <div class="momentum-burn-back" data-i18n="momentum-burn">Burn</div>
         </label>
         <div class="momentum-status-box">
-          <h3 class="momentum-max">MAX</h3>
+          <h3 class="momentum-max" data-i18n="momentum-maximum">Max</h3>
           <h3 class="momentum-status-value"><span class="momentum-status-attr" name="attr_momentum_max"></span></h3>
           <input class="hide-element" type="text" name="attr_momentum_max" value="10"/>
         </div>
         <div class="momentum-status-box">
-          <h3 class="momentum-reset">RESET</h3>
+          <h3 class="momentum-reset" data-i18n="momentum-reset">Reset</h3>
           <h3 class="momentum-status-value"><span class="momentum-status-attr" name="attr_momentum_reset"></span></h3>
           <input class="hide-element" type="text" name="attr_momentum_reset" value="2"/>
         </div>
@@ -293,29 +293,34 @@
             <input class="hide-element stat-edit" type="radio" name="attr_stat_mode" value="1"/>
             <div class="stat-edit showhide">
               <div class="stat-toggle set-toggle">
-                <label class="stat-toggle set-toggle">APPLY
+                <label class="stat-toggle set-toggle" data-i18n="stat-toggle-apply">Apply
                   <input class="hide-element" type="radio" name="attr_stat_mode_button" value="2"/>
                 </label>
               </div>
                 <div class="stat">
                   <h3 class="stats-title">EDGE</h3>
                   <input class="stats-input" type="text" name="attr_edge" value="0"/>
+                  <!-- TODO: remove toUpperCase methods, manage via CSS instead-->
                 </div>
                 <div class="stat">
                   <h3 class="stats-title">HEART</h3>
                   <input class="stats-input" type="text" name="attr_heart" value="0"/>
+                  <!-- TODO: remove toUpperCase methods, manage via CSS instead-->
                 </div>
                 <div class="stat">
                   <h3 class="stats-title">IRON</h3>
                   <input class="stats-input" type="text" name="attr_iron" value="0"/>
+                  <!-- TODO: remove toUpperCase methods, manage via CSS instead-->
                 </div>
                 <div class="stat">
                   <h3 class="stats-title">SHADOW</h3>
                   <input class="stats-input" type="text" name="attr_shadow" value="0"/>
+                  <!-- TODO: remove toUpperCase methods, manage via CSS instead-->
                 </div>
                 <div class="stat">
                   <h3 class="stats-title">WITS</h3>
                   <input class="stats-input" type="text" name="attr_wits" value="0"/>
+                  <!-- TODO: remove toUpperCase methods, manage via CSS instead-->
                 </div>
             </div>
             <input class="hide-element stat-set" type="radio" name="attr_stat_mode" value="2" checked="checked"/>
@@ -351,13 +356,13 @@
                   </label>
                 </div>
               <div class="stat-toggle edit-toggle">
-                <label class="stat-toggle edit-toggle">EDIT
+                <label class="stat-toggle edit-toggle" data-i18n="edit">Edit
                   <input class="hide-element" type="radio" name="attr_stat_mode_button" value="1"/>
                 </label>
               </div>
             </div>
           </div>
-        <h3 class="divide" data-i18n="page-summary-impacts">IMPACTS</h3>
+        <h3 class="divide" data-i18n="page-summary-impacts">Impacts</h3>
           <div class="impact-component">
             <div class="impact-group">
               <div class="impact-group-title">misfortunes</div>
@@ -421,19 +426,19 @@
             </div>
             <input class="hide-element" type="text" name="attr_impact_total" value="0"/>
             <div class="custom-impacts">
-              <h4 class="other-impacts-title">Other Impacts</h4>
+              <h4 class="other-impacts-title" data-i18n="impact-others"></h4>
                 <div class="impact">
                   <input type="checkbox" name="attr_impactOther1"/>
-                  <input type="text" name="attr_impactOther1_name" placeholder="Impact"/>
+                  <input type="text" name="attr_impactOther1_name" data-i18n-placeholder="impact" placeholder="Impact"/>
                 </div>
                 <div class="impact">
                   <input type="checkbox" name="attr_impactOther2"/>
-                  <input type="text" name="attr_impactOther2_name" placeholder="Impact"/>
+                  <input type="text" name="attr_impactOther2_name" data-i18n-placeholder="impact" placeholder="Impact"/>
                 </div>
             </div>
           </div>
         <div>
-          <h3 class="divide" style="margin-top: 0em;">NOTES</h3><br/>
+          <h3 class="divide" style="margin-top: 0em;">Notes</h3><br/>
           <textarea class="note-area" name="attr_sheet-notes"></textarea>
         </div>
       </div>
@@ -444,20 +449,24 @@
           <div class="connection-component">
             <fieldset class="repeating_connection">
               <div class="connection-container">
-                <p class="connection-title">NAME:</p>
+                <p class="connection-title" data-i18n="character-name"></p>
+                <!-- i18n = 'character-name'-->
                 <input class="border-bottom connection-name" type="text" name="attr_connection-name" placeholder="Name"/>
                 <label class="btn details-btn">
                   <input class="hide-element btn-input" type="checkbox" name="attr_details_button"/>
-                  <div class="btn-content">DETAILS</div>
+                  <div class="btn-content" data-i18n="details"></div>
                 </label>
+                <!-- i18n = 'details'-->
                 <input class="hide-element show-connection-info" type="checkbox" name="attr_details"/>
                 <div class="show-connection-info showhide">
                   <div class="full-width">
-                    <p class="connection-title">LOCATION:</p>
+                    <p class="connection-title" data-i18n="location"></p>
                     <input class="connection-location border-bottom" type="text" name="attr_connection-location" placeholder="Location"/>
+                    <!-- i18n = 'location'-->
                   </div>
                   <div class="full-width">
-                    <p class="connection-title">DESCRIPTORS:</p>
+                    <p class="connection-title" data-i18n="descriptors"></p>
+                    <!-- i18n = 'descriptors'-->
                     <input class="connection-descriptors border-bottom" type="text" name="attr_connection-descriptors" placeholder="Descriptors"/>
                   </div>
                   <div class="full-width">
@@ -486,10 +495,11 @@
                       <div class="progress-container">
                         <div class="progress-row">
                           <div>
-                            <label class="btn">MARK
+                            <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
+                            <label class="btn" data-i18n="progress-mark">Mark
                               <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                             </label>
-                            <label class="btn">CLEAR
+                            <label class="btn" data-i18n="progress-clear">Clear
                               <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                             </label>
                           </div>
@@ -624,8 +634,8 @@
                                 <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                           <div>
-                            <label class="btn">CONCLUDE 
-                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}">   </button>
+                            <label class="btn" data-i18n="progress-conclude">Conclude
+                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                             </label>
                           </div>
                           <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -673,11 +683,11 @@
                 <div>
                   <label class="btn">
                     <input class="mark-vow hide" type="checkbox" name="attr_mark_progress"/>
-                    <div class="btn-div" data-i18n="vow-mark">MARK</div>
+                    <div class="btn-div" data-i18n="vow-mark"></div>
                   </label>
                   <label class="btn">
                     <input class="clear-vow hide" type="checkbox" name="attr_clear_progress"/>
-                    <div class="btn-div" data-i18n="clear-btn">CLEAR</div>
+                    <div class="btn-div" data-i18n="clear-btn">Clear</div>
                   </label>
                 </div>
                   <div class="progress-input-holder">
@@ -813,7 +823,7 @@
                 <div>
                   <label class="btn">
                     <button class="hide" type="roll" name="rollVow" value="&amp;{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
-                    <div class="btn-div" data-i18n="vow-fulfill">FULFILL</div>
+                    <div class="btn-div" data-i18n="vow-fulfill">Fulfill</div>
                   </label>
                 </div>
                 <input class="hide-element" type="text" name="attr_vow-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="disabled"/>
@@ -3442,7 +3452,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
-                  <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue A Legacy</div>
+                  <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue a Legacy</div>
                 </label>
               </div>
             </div>
@@ -3512,7 +3522,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Companion Takes a Hit"/>
-                  <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes A Hit</div>
+                  <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes a Hit</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3572,7 +3582,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Make a Connection"/>
-                  <div class="move-name" data-i18n="move-title-make-a-connection">Make A Connection</div>
+                  <div class="move-name" data-i18n="move-title-make-a-connection">Make a Connection</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3694,7 +3704,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Undertake an Expedition"/>
-                  <div class="move-name" data-i18n="move-title-undertake-an-expedition">Undertake An Expedition</div>
+                  <div class="move-name" data-i18n="move-title-undertake-an-expedition">Undertake an Expedition</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3703,7 +3713,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Explore a Waypoint"/>
-                  <div class="move-name" data-i18n="move-title-explore-a-waypoint">Explore A Waypoint</div>
+                  <div class="move-name" data-i18n="move-title-explore-a-waypoint">Explore a Waypoint</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3712,7 +3722,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Finish an Expedition"/>
-                  <div class="move-name" data-i18n="move-title-finish-an-expedition">Finish An Expedition</div>
+                  <div class="move-name" data-i18n="move-title-finish-an-expedition">Finish an Expedition</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3721,7 +3731,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Set a Course"/>
-                  <div class="move-name" data-i18n="move-title-set-a-course">Set A Course</div>
+                  <div class="move-name" data-i18n="move-title-set-a-course">Set a Course</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3729,7 +3739,7 @@
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Make a Discovery"/>
-                  <div class="move-name" data-i18n="move-title-make-a-discovery">Make A Discovery</div>
+                  <div class="move-name" data-i18n="move-title-make-a-discovery">Make a Discovery</div>
                 </label>
               </div>
               <div class="move-list">
@@ -3868,7 +3878,7 @@
         <div class="move-preview showhide">
           <div class="preview-bar">
             <div class="close-bar">
-              <label class="close-preview">CLOSE PREVIEW
+              <label class="close-preview" data-i18n="close-preview">Close Preview
                 <input class="hide-element" type="checkbox" name="attr_close_move_preview"/>
               </label>
             </div>
@@ -3935,7 +3945,7 @@
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
-                    <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue A Legacy</div>
+                    <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue a Legacy</div>
                   </label>
                 </div>
               </div>
@@ -3987,7 +3997,7 @@
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Companion Takes a Hit"/>
-                    <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes A Hit</div>
+                    <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes a Hit</div>
                   </label>
                 </div>
                 <div class="move-list">
@@ -4033,7 +4043,7 @@
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Make a Connection"/>
-                    <div class="move-name" data-i18n="move-title-make-a-connection">Make A Connection</div>
+                    <div class="move-name" data-i18n="move-title-make-a-connection">Make a Connection</div>
                   </label>
                 </div>
                 <div class="move-list">
@@ -4120,31 +4130,31 @@
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Undertake an Expedition"/>
-                    <div class="move-name" data-i18n="move-title-undertake-an-expedition">Undertake An Expedition</div>
+                    <div class="move-name" data-i18n="move-title-undertake-an-expedition">Undertake an Expedition</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Explore a Waypoint"/>
-                    <div class="move-name" data-i18n="move-title-explore-a-waypoint">Explore A Waypoint</div>
+                    <div class="move-name" data-i18n="move-title-explore-a-waypoint">Explore a Waypoint</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Finish an Expedition"/>
-                    <div class="move-name" data-i18n="move-title-finish-an-expedition">Finish An Expedition</div>
+                    <div class="move-name" data-i18n="move-title-finish-an-expedition">Finish an Expedition</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Set a Course"/>
-                    <div class="move-name" data-i18n="move-title-set-a-course">Set A Course</div>
+                    <div class="move-name" data-i18n="move-title-set-a-course">Set a Course</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Make a Discovery"/>
-                    <div class="move-name" data-i18n="move-title-make-a-discovery">Make A Discovery</div>
+                    <div class="move-name" data-i18n="move-title-make-a-discovery">Make a Discovery</div>
                   </label>
                 </div>
                 <div class="move-list">
@@ -4316,7 +4326,7 @@
                           <input class="face-danger hide-element" type="radio" name="attr_move_preview" value="Face Danger"/>
                           <div class="face-danger showhide">
                                   <div class="move-title move-preview">Face Danger</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Face Danger Move" name="roll_face-danger" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Danger}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4327,7 +4337,7 @@
                           <input class="secure-an-advantage hide-element" type="radio" name="attr_move_preview" value="Secure an Advantage"/>
                           <div class="secure-an-advantage showhide">
                                   <div class="move-title move-preview">Secure an Advantage</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Secure an Advantage Move" name="roll_secure-an-advantage" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Secure an Advantage}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4338,7 +4348,7 @@
                           <input class="gather-information hide-element" type="radio" name="attr_move_preview" value="Gather Information"/>
                           <div class="gather-information showhide">
                                   <div class="move-title move-preview">Gather Information</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Gather Information Move" name="roll_gather-information" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Gather Information}} {{action=[[{d6+@{wits}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{wits}+(?{Modifier|0})]]}} {{negate2=[[2+@{wits}+(?{Modifier|0})]]}} {{negate3=[[3+@{wits}+(?{Modifier|0})]]}} {{negate4=[[4+@{wits}+(?{Modifier|0})]]}} {{negate5=[[5+@{wits}+(?{Modifier|0})]]}} {{negate6=[[6+@{wits}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{wits}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{wits}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4349,7 +4359,7 @@
                           <input class="compel hide-element" type="radio" name="attr_move_preview" value="Compel"/>
                           <div class="compel showhide">
                                   <div class="move-title move-preview">Compel</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Compel Move" name="roll_compel" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Compel}} {{action=[[{d6+?{Stat|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4368,7 +4378,7 @@
                           <input class="check-your-gear hide-element" type="radio" name="attr_move_preview" value="Check Your Gear"/>
                           <div class="check-your-gear showhide">
                                   <div class="move-title move-preview">Check Your Gear</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Check Your Gear Move" name="roll_check-your-gear" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Check Your Gear}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4379,7 +4389,7 @@
                           <input class="swear-an-iron-vow hide-element" type="radio" name="attr_move_preview" value="Swear an Iron Vow"/>
                           <div class="swear-an-iron-vow showhide">
                                   <div class="move-title move-preview">Swear an Iron Vow</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Swear an Iron Vow Move" name="roll_swear-an-iron-vow" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Swear an Iron Vow}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4406,7 +4416,7 @@
                           <input class="fulfill-your-vow hide-element" type="radio" name="attr_move_preview" value="Fulfill Your Vow"/>
                           <div class="fulfill-your-vow showhide">
                                   <div class="move-title move-preview">Fulfill Your Vow</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Fulfill Your Vow" name="roll_fulfill-your-vow" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Fulfill Your Vow}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4433,7 +4443,7 @@
                           <input class="forge-a-bond hide-element" type="radio" name="attr_move_preview" value="Forge a Bond"/>
                           <div class="forge-a-bond showhide">
                                   <div class="move-title move-preview">Forge a Bond</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Forge a Bond" name="roll_forge-a-bond" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Forge a Bond}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4444,7 +4454,7 @@
                           <input class="test-your-relationship hide-element" type="radio" name="attr_move_preview" value="Test Your Relationship"/>
                           <div class="test-your-relationship showhide">
                                   <div class="move-title move-preview">Test Your Relationship</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Test Your Relationship Move" name="roll_test-your-relationship" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Test Your Relationship}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4455,7 +4465,7 @@
                           <input class="undertake-an-expedition hide-element" type="radio" name="attr_move_preview" value="Undertake an Expedition"/>
                           <div class="undertake-an-expedition showhide">
                                   <div class="move-title move-preview">Undertake an Expedition</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Undertake an Expedition Move" name="roll_undertake-an-expedition" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Undertake an Expedition}} {{action=[[{d6+?{Stat|Edge,@{edge}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4466,7 +4476,7 @@
                           <input class="explore-a-waypoint hide-element" type="radio" name="attr_move_preview" value="Explore a Waypoint"/>
                           <div class="explore-a-waypoint showhide">
                                   <div class="move-title move-preview">Explore a Waypoint</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Explore a Waypoint Move" name="roll_explore-a-waypoint" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Explore a Waypoint}} {{action=[[{d6+@{wits}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{wits}+(?{Modifier|0})]]}} {{negate2=[[2+@{wits}+(?{Modifier|0})]]}} {{negate3=[[3+@{wits}+(?{Modifier|0})]]}} {{negate4=[[4+@{wits}+(?{Modifier|0})]]}} {{negate5=[[5+@{wits}+(?{Modifier|0})]]}} {{negate6=[[6+@{wits}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{wits}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{wits}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4477,7 +4487,7 @@
                           <input class="finish-an-expedition hide-element" type="radio" name="attr_move_preview" value="Finish an Expedition"/>
                           <div class="finish-an-expedition showhide">
                                   <div class="move-title move-preview">Finish an Expedition</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Finish an Expedition" name="roll_finish-an-expedition" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Finish an Expedition}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4488,7 +4498,7 @@
                           <input class="set-a-course hide-element" type="radio" name="attr_move_preview" value="Set a Course"/>
                           <div class="set-a-course showhide">
                                   <div class="move-title move-preview">Set a Course</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Set a Course Move" name="roll_set-a-course" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Set a Course}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4625,7 +4635,7 @@
                           <input class="enter-the-fray hide-element" type="radio" name="attr_move_preview" value="Enter the Fray"/>
                           <div class="enter-the-fray showhide">
                                   <div class="move-title move-preview">Enter the Fray</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Enter the Fray Move" name="roll_enter-the-fray" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Enter the Fray}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4636,7 +4646,7 @@
                           <input class="gain-ground hide-element" type="radio" name="attr_move_preview" value="Gain Ground"/>
                           <div class="gain-ground showhide">
                                   <div class="move-title move-preview">Gain Ground</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Gain Ground Move" name="roll_gain-ground" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Gain Ground}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4647,7 +4657,7 @@
                           <input class="react-under-fire hide-element" type="radio" name="attr_move_preview" value="React Under Fire"/>
                           <div class="react-under-fire showhide">
                                   <div class="move-title move-preview">React Under Fire</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="React Under Fire Move" name="roll_react-under-fire" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=React Under Fire}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4658,7 +4668,7 @@
                           <input class="strike hide-element" type="radio" name="attr_move_preview" value="Strike"/>
                           <div class="strike showhide">
                                   <div class="move-title move-preview">Strike</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Strike Move" name="roll_strike" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Strike}} {{action=[[{d6+?{Stat|Iron,@{iron}|Edge,@{edge}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4669,7 +4679,7 @@
                           <input class="clash hide-element" type="radio" name="attr_move_preview" value="Clash"/>
                           <div class="clash showhide">
                                   <div class="move-title move-preview">Clash</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Clash Move" name="roll_clash" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Clash}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4688,7 +4698,7 @@
                           <input class="take-decisive-action hide-element" type="radio" name="attr_move_preview" value="Take Decisive Action"/>
                           <div class="take-decisive-action showhide">
                                   <div class="move-title move-preview">Take Decisive Action</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Take Decisive Action" name="roll_take-decisive-action" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Take Decisive Action}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4720,7 +4730,7 @@
                           <input class="battle hide-element" type="radio" name="attr_move_preview" value="Battle"/>
                           <div class="battle showhide">
                                   <div class="move-title move-preview">Battle</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Battle Move" name="roll_battle" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Battle}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4739,7 +4749,7 @@
                           <input class="endure-harm hide-element" type="radio" name="attr_move_preview" value="Endure Harm"/>
                           <div class="endure-harm showhide">
                                   <div class="move-title move-preview">Endure Harm</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Endure Harm Move" name="roll_endure-harm" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Harm}} {{action=[[{d6+?{Stat|Health,@{health}|Iron,@{iron}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4769,7 +4779,7 @@
                           <input class="endure-stress hide-element" type="radio" name="attr_move_preview" value="Endure Stress"/>
                           <div class="endure-stress showhide">
                                   <div class="move-title move-preview">Endure Stress</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Endure Stress Move" name="roll_endure-stress" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Stress}} {{action=[[{d6+?{Stat|Spirit,@{spirit}|Heart,@{heart}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4797,7 +4807,7 @@
                           <input class="withstand-damage hide-element" type="radio" name="attr_move_preview" value="Withstand Damage"/>
                           <div class="withstand-damage showhide">
                                   <div class="move-title move-preview">Withstand Damage</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Withstand Damage Move" name="roll_withstand-damage" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Withstand Damage}} {{action=[[{d6+?{Integrity|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Integrity}+(?{Modifier|0})]]}} {{negate2=[[2+?{Integrity}+(?{Modifier|0})]]}} {{negate3=[[3+?{Integrity}+(?{Modifier|0})]]}} {{negate4=[[4+?{Integrity}+(?{Modifier|0})]]}} {{negate5=[[5+?{Integrity}+(?{Modifier|0})]]}} {{negate6=[[6+?{Integrity}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Integrity}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Integrity}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4833,7 +4843,7 @@
                           <input class="companion-takes-a-hit hide-element" type="radio" name="attr_move_preview" value="Companion Takes a Hit"/>
                           <div class="companion-takes-a-hit showhide">
                                   <div class="move-title move-preview">Companion Takes a Hit</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Companion Takes a Hit Move" name="roll_companion-takes-a-hit" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Companion Takes a Hit}} {{action=[[{d6+?{Companion's Health|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Companion's Health}+(?{Modifier|0})]]}} {{negate2=[[2+?{Companion's Health}+(?{Modifier|0})]]}} {{negate3=[[3+?{Companion's Health}+(?{Modifier|0})]]}} {{negate4=[[4+?{Companion's Health}+(?{Modifier|0})]]}} {{negate5=[[5+?{Companion's Health}+(?{Modifier|0})]]}} {{negate6=[[6+?{Companion's Health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Companion's Health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Companion's Health}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4852,7 +4862,7 @@
                           <input class="face-death hide-element" type="radio" name="attr_move_preview" value="Face Death"/>
                           <div class="face-death showhide">
                                   <div class="move-title move-preview">Face Death</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Face Death Move" name="roll_face-death" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Death}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4863,7 +4873,7 @@
                           <input class="face-desolation hide-element" type="radio" name="attr_move_preview" value="Face Desolation"/>
                           <div class="face-desolation showhide">
                                   <div class="move-title move-preview">Face Desolation</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Face Desolation Move" name="roll_face-desolation" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Desolation}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4874,7 +4884,7 @@
                           <input class="overcome-destruction hide-element" type="radio" name="attr_move_preview" value="Overcome Destruction"/>
                           <div class="overcome-destruction showhide">
                                   <div class="move-title move-preview">Overcome Destruction</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4885,7 +4895,7 @@
                           <input class="sojourn hide-element" type="radio" name="attr_move_preview" value="Sojourn"/>
                           <div class="sojourn showhide">
                                   <div class="move-title move-preview">Sojourn</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Sojourn Move" name="roll_sojourn" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Sojourn}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4896,7 +4906,7 @@
                           <input class="heal hide-element" type="radio" name="attr_move_preview" value="Heal"/>
                           <div class="heal showhide">
                                   <div class="move-title move-preview">Heal</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Heal Move" name="roll_heal" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Heal}} {{action=[[{d6+?{Stat|Iron,@{iron}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4907,7 +4917,7 @@
                           <input class="hearten hide-element" type="radio" name="attr_move_preview" value="Hearten"/>
                           <div class="hearten showhide">
                                   <div class="move-title move-preview">Hearten</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Hearten Move" name="roll_hearten" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Hearten}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4918,7 +4928,7 @@
                           <input class="repair hide-element" type="radio" name="attr_move_preview" value="Repair"/>
                           <div class="repair showhide">
                                   <div class="move-title move-preview">Repair</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Repair Move" name="roll_repair" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Repair}} {{action=[[{d6+?{Stat|Supply,@{supply}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4929,7 +4939,7 @@
                           <input class="resupply hide-element" type="radio" name="attr_move_preview" value="Resupply"/>
                           <div class="resupply showhide">
                                   <div class="move-title move-preview">Resupply</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Resupply Move" name="roll_resupply" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Resupply}} {{action=[[{d6+?{Stat|Heart,@{heart}|Iron,@{iron}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4956,7 +4966,7 @@
                           <input class="continue-a-legacy hide-element" type="radio" name="attr_move_preview" value="Continue a Legacy"/>
                           <div class="continue-a-legacy showhide">
                                   <div class="move-title move-preview">Continue a Legacy</div>
-                                        <label class="roll-label">Roll
+                                        <label class="roll-label" data-i18n="roll">Roll
                                                 <button class="hide-element" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -5100,7 +5110,7 @@
               <input class="progress-name" type="text" name="attr_name"/>
               <label class="challenge-show">
                 <input class="hide-element challenge-show-button" type="checkbox" name="attr_challenge-show-button"/>
-                <div class="challenge-show-back" data-i18n="progress-challenge">CHALLENGE</div>
+                <div class="challenge-show-back" data-i18n="progress-challenge">Challenge</div>
               </label>
             </div>
             <div class="progress-header">
@@ -5128,10 +5138,11 @@
                   <div class="progress-container">
                     <div class="progress-row">
                       <div>
-                        <label class="btn">MARK
+                        <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
+                        <label class="btn" data-i18n="progress-mark">Mark
                           <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                         </label>
-                        <label class="btn">CLEAR
+                        <label class="btn" data-i18n="progress-clear">Clear
                           <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                         </label>
                       </div>
@@ -5266,8 +5277,8 @@
                                     <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                       <div>
-                        <label class="btn">CONCLUDE 
-                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}">   </button>
+                        <label class="btn" data-i18n="progress-conclude">Conclude
+                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                         </label>
                       </div>
                       <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -5276,7 +5287,7 @@
             <div class="progress-container">
               <input class="hide-element challenge-show" type="checkbox" name="attr_challenge-show"/>
               <div class="challenge-row showhide">
-                <label class="challenge-label">COUNTDOWN</label>
+                <label class="challenge-label" data-i18n="scene-challenge-countdown"></label>
                 <label class="challenge-box">
                   <input class="challenge hide-element hide-element" type="checkbox" name="attr_countdown-one"/>
                   <div class="challenge-fill"></div>
@@ -5971,7 +5982,7 @@
         <div class="oracle-container showhide oracle-preview">
           <div class="preview-bar">
             <div class="close-bar">
-              <label class="close-preview">CLOSE PREVIEW
+              <label class="close-preview" data-i18n="close-preview">Close Preview
                 <input class="hide-element" type="checkbox" name="attr_close_oracle_preview"/>
               </label>
             </div>
@@ -11338,7 +11349,7 @@
             <div class="resource">
               <label class="roll-resource-label">
                 <button class="hide-element" type="roll" title="@{rollsupply}" name="rollsupply" value="&{template:starforged_moves} {{name=roll +supply}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
-                <div data-i18n="resource-supply">SUPPLY</div>
+                <div data-i18n="resource-supply">Supply</div>
               </label>
               <select class="resource-value" name="attr_supply">
                   <option value="5">+5</option>
@@ -11411,11 +11422,11 @@
                 <div>
                   <label class="btn">
                     <input class="mark-vow hide" type="checkbox" name="attr_mark_progress"/>
-                    <div class="btn-div" data-i18n="vow-mark">MARK</div>
+                    <div class="btn-div" data-i18n="vow-mark"></div>
                   </label>
                   <label class="btn">
                     <input class="clear-vow hide" type="checkbox" name="attr_clear_progress"/>
-                    <div class="btn-div" data-i18n="clear-btn">CLEAR</div>
+                    <div class="btn-div" data-i18n="clear-btn">Clear</div>
                   </label>
                 </div>
                   <div class="progress-input-holder">
@@ -11551,7 +11562,7 @@
                 <div>
                   <label class="btn">
                     <button class="hide" type="roll" name="rollVow" value="&amp;{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
-                    <div class="btn-div" data-i18n="vow-fulfill">FULFILL</div>
+                    <div class="btn-div" data-i18n="vow-fulfill">Fulfill</div>
                   </label>
                 </div>
                 <input class="hide-element" type="text" name="attr_vow-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="disabled"/>
@@ -11566,20 +11577,24 @@
           <div class="connection-component">
             <fieldset class="repeating_connection">
               <div class="connection-container">
-                <p class="connection-title">NAME:</p>
+                <p class="connection-title" data-i18n="character-name"></p>
+                <!-- i18n = 'character-name'-->
                 <input class="border-bottom connection-name" type="text" name="attr_connection-name" placeholder="Name"/>
                 <label class="btn details-btn">
                   <input class="hide-element btn-input" type="checkbox" name="attr_details_button"/>
-                  <div class="btn-content">DETAILS</div>
+                  <div class="btn-content" data-i18n="details"></div>
                 </label>
+                <!-- i18n = 'details'-->
                 <input class="hide-element show-connection-info" type="checkbox" name="attr_details"/>
                 <div class="show-connection-info showhide">
                   <div class="full-width">
-                    <p class="connection-title">LOCATION:</p>
+                    <p class="connection-title" data-i18n="location"></p>
                     <input class="connection-location border-bottom" type="text" name="attr_connection-location" placeholder="Location"/>
+                    <!-- i18n = 'location'-->
                   </div>
                   <div class="full-width">
-                    <p class="connection-title">DESCRIPTORS:</p>
+                    <p class="connection-title" data-i18n="descriptors"></p>
+                    <!-- i18n = 'descriptors'-->
                     <input class="connection-descriptors border-bottom" type="text" name="attr_connection-descriptors" placeholder="Descriptors"/>
                   </div>
                   <div class="full-width">
@@ -11608,10 +11623,11 @@
                       <div class="progress-container">
                         <div class="progress-row">
                           <div>
-                            <label class="btn">MARK
+                            <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
+                            <label class="btn" data-i18n="progress-mark">Mark
                               <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                             </label>
-                            <label class="btn">CLEAR
+                            <label class="btn" data-i18n="progress-clear">Clear
                               <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                             </label>
                           </div>
@@ -11746,8 +11762,8 @@
                                 <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                           <div>
-                            <label class="btn">CONCLUDE 
-                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}">   </button>
+                            <label class="btn" data-i18n="progress-conclude">Conclude
+                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                             </label>
                           </div>
                           <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -11772,7 +11788,7 @@
               <input class="progress-name" type="text" name="attr_name"/>
               <label class="challenge-show">
                 <input class="hide-element challenge-show-button" type="checkbox" name="attr_challenge-show-button"/>
-                <div class="challenge-show-back" data-i18n="progress-challenge">CHALLENGE</div>
+                <div class="challenge-show-back" data-i18n="progress-challenge">Challenge</div>
               </label>
             </div>
             <div class="progress-header">
@@ -11800,10 +11816,11 @@
                   <div class="progress-container">
                     <div class="progress-row">
                       <div>
-                        <label class="btn">MARK
+                        <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
+                        <label class="btn" data-i18n="progress-mark">Mark
                           <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                         </label>
-                        <label class="btn">CLEAR
+                        <label class="btn" data-i18n="progress-clear">Clear
                           <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                         </label>
                       </div>
@@ -11938,8 +11955,8 @@
                                     <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                       <div>
-                        <label class="btn">CONCLUDE 
-                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}">   </button>
+                        <label class="btn" data-i18n="progress-conclude">Conclude
+                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                         </label>
                       </div>
                       <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -11948,7 +11965,7 @@
             <div class="progress-container">
               <input class="hide-element challenge-show" type="checkbox" name="attr_challenge-show"/>
               <div class="challenge-row showhide">
-                <label class="challenge-label">COUNTDOWN</label>
+                <label class="challenge-label" data-i18n="scene-challenge-countdown"></label>
                 <label class="challenge-box">
                   <input class="challenge hide-element hide-element" type="checkbox" name="attr_countdown-one"/>
                   <div class="challenge-fill"></div>
@@ -21428,44 +21445,46 @@
     {{/starship-mission}}
   </div>
 </rolltemplate>
+<!-- TODO: additional mixin for burning momentum for a strong hit with a match?-->
+<!-- TODO: additional mixin for burning momentum for a strong hit with a match?-->
 <rolltemplate class="sheet-rolltemplate-starforged_moves"> 
   <div class="sheet-roll-container">{{#action}}
     <div class="sheet-subheader">{{name}}</div>{{#rollLess() momentum 0}}{{#rollTotal() momentum -1}}
     {{#rollTotal() action negate1}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Previous Action Score:</div>
+      <div data-i18n="previous-action-score">Previous Action Score:</div>
       <div>{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-subfooter sheet-alert">Action die cancelled for matching negative momentum.</div>
+      <div class="sheet-subfooter sheet-alert" data-i18n="momentum-cancel">Action die cancelled for matching negative momentum.</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Stat + Add:</div>
+      <div data-i18n="stat-plus-add">Stat + Add:</div>
       <div>{{stat}} + {{add}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>New Action Score:</div>
+      <div data-i18n="new-action-score">New Action Score:</div>
       <div>{{modifiers}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice:</div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div>{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() modifiers challenge1}}
@@ -21473,45 +21492,45 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate1}}
     {{#^rollTotal() action negate1}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() action challenge1}}
@@ -21519,57 +21538,57 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate1}}
     {{/rollTotal() momentum -1}}{{#rollTotal() momentum -2}}
     {{#rollTotal() action negate2}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Previous Action Score:</div>
+      <div data-i18n="previous-action-score">Previous Action Score:</div>
       <div>{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-subfooter sheet-alert">Action die cancelled for matching negative momentum.</div>
+      <div class="sheet-subfooter sheet-alert" data-i18n="momentum-cancel">Action die cancelled for matching negative momentum.</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Stat + Add:</div>
+      <div data-i18n="stat-plus-add">Stat + Add:</div>
       <div>{{stat}} + {{add}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>New Action Score:</div>
+      <div data-i18n="new-action-score">New Action Score:</div>
       <div>{{modifiers}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice:</div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div>{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() modifiers challenge1}}
@@ -21577,45 +21596,45 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate2}}
     {{#^rollTotal() action negate2}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() action challenge1}}
@@ -21623,57 +21642,57 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate2}}
     {{/rollTotal() momentum -2}}{{#rollTotal() momentum -3}}
     {{#rollTotal() action negate3}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Previous Action Score:</div>
+      <div data-i18n="previous-action-score">Previous Action Score:</div>
       <div>{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-subfooter sheet-alert">Action die cancelled for matching negative momentum.</div>
+      <div class="sheet-subfooter sheet-alert" data-i18n="momentum-cancel">Action die cancelled for matching negative momentum.</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Stat + Add:</div>
+      <div data-i18n="stat-plus-add">Stat + Add:</div>
       <div>{{stat}} + {{add}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>New Action Score:</div>
+      <div data-i18n="new-action-score">New Action Score:</div>
       <div>{{modifiers}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice:</div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div>{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() modifiers challenge1}}
@@ -21681,45 +21700,45 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate3}}
     {{#^rollTotal() action negate3}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() action challenge1}}
@@ -21727,57 +21746,57 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate3}}
     {{/rollTotal() momentum -3}}{{#rollTotal() momentum -4}}
     {{#rollTotal() action negate4}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Previous Action Score:</div>
+      <div data-i18n="previous-action-score">Previous Action Score:</div>
       <div>{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-subfooter sheet-alert">Action die cancelled for matching negative momentum.</div>
+      <div class="sheet-subfooter sheet-alert" data-i18n="momentum-cancel">Action die cancelled for matching negative momentum.</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Stat + Add:</div>
+      <div data-i18n="stat-plus-add">Stat + Add:</div>
       <div>{{stat}} + {{add}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>New Action Score:</div>
+      <div data-i18n="new-action-score">New Action Score:</div>
       <div>{{modifiers}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice:</div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div>{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() modifiers challenge1}}
@@ -21785,45 +21804,45 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate4}}
     {{#^rollTotal() action negate4}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() action challenge1}}
@@ -21831,57 +21850,57 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate4}}
     {{/rollTotal() momentum -4}}{{#rollTotal() momentum -5}}
     {{#rollTotal() action negate5}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Previous Action Score:</div>
+      <div data-i18n="previous-action-score">Previous Action Score:</div>
       <div>{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-subfooter sheet-alert">Action die cancelled for matching negative momentum.</div>
+      <div class="sheet-subfooter sheet-alert" data-i18n="momentum-cancel">Action die cancelled for matching negative momentum.</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Stat + Add:</div>
+      <div data-i18n="stat-plus-add">Stat + Add:</div>
       <div>{{stat}} + {{add}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>New Action Score:</div>
+      <div data-i18n="new-action-score">New Action Score:</div>
       <div>{{modifiers}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice:</div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div>{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() modifiers challenge1}}
@@ -21889,45 +21908,45 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate5}}
     {{#^rollTotal() action negate5}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() action challenge1}}
@@ -21935,57 +21954,57 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate5}}
     {{/rollTotal() momentum -5}}{{#rollTotal() momentum -6}}
     {{#rollTotal() action negate6}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Previous Action Score:</div>
+      <div data-i18n="previous-action-score">Previous Action Score:</div>
       <div>{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-subfooter sheet-alert">Action die cancelled for matching negative momentum.</div>
+      <div class="sheet-subfooter sheet-alert" data-i18n="momentum-cancel">Action die cancelled for matching negative momentum.</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Stat + Add:</div>
+      <div data-i18n="stat-plus-add">Stat + Add:</div>
       <div>{{stat}} + {{add}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>New Action Score:</div>
+      <div data-i18n="new-action-score">New Action Score:</div>
       <div>{{modifiers}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice:</div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div>{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() modifiers challenge1}}
@@ -21993,45 +22012,45 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() modifiers challenge2}}
     {{#^rollGreater() modifiers challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate6}}
     {{#^rollTotal() action negate6}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() action challenge1}}
@@ -22039,54 +22058,54 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate6}}
     {{/rollTotal() momentum -6}}{{/rollLess() momentum 0}}
     {{#^rollLess() momentum 0}}
     <div class="sheet-result-body sheet-result-row">
-      <div>Action Score: </div>
+      <div data-i18n="action-score">Action Score:</div>
       <div class="sheet-action-score">{{action}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
     </div>{{#rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{#rollGreater() momentum challenge2}}
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-momentum-title">Momentum:</div>
+      <div class="sheet-momentum-title" data-i18n="momentum">Momentum</div>
       <div>{{momentum}}</div>
     </div>
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">Burn Momentum: Strong Hit</div>
+      <div class="sheet-subfooter" data-i18n="momentum-burn-strong-hit">Burn Momentum: Strong Hit</div>
     </div>{{/rollGreater() momentum challenge2}}
     {{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
@@ -22095,65 +22114,65 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{#rollGreater() momentum challenge1}}
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-momentum-title">Momentum:</div>
+      <div class="sheet-momentum-title" data-i18n="momentum">Momentum</div>
       <div>{{momentum}}</div>
     </div>
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">Burn Momentum: Strong Hit</div>
+      <div class="sheet-subfooter" data-i18n="momentum-burn-strong-hit">Burn Momentum: Strong Hit</div>
     </div>{{/rollGreater() momentum challenge1}}
     {{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{#rollGreater() momentum challenge1}}
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-momentum-title">Momentum:</div>
+      <div class="sheet-momentum-title" data-i18n="momentum">Momentum</div>
       <div>{{momentum}}</div>
     </div>
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">Burn Momentum: Strong Hit</div>
+      <div class="sheet-subfooter" data-i18n="momentum-burn-strong-hit">Burn Momentum: Strong Hit</div>
     </div>{{/rollGreater() momentum challenge1}}
     {{/rollGreater() action challenge2}}
     {{#^rollGreater() action challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{#rollGreater() momentum challenge1}}
     {{#rollGreater() momentum challenge2}}
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-momentum-title">Momentum:</div>
+      <div class="sheet-momentum-title" data-i18n="momentum">Momentum</div>
       <div>{{momentum}}</div>
     </div>
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">Burn Momentum: Strong Hit</div>
+      <div class="sheet-subfooter" data-i18n="momentum-burn-strong-hit">Burn Momentum: Strong Hit</div>
     </div>{{/rollGreater() momentum challenge2}}
     {{#^rollGreater() momentum challenge2}}
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-momentum-title">Momentum:</div>
+      <div class="sheet-momentum-title" data-i18n="momentum">Momentum</div>
       <div>{{momentum}}</div>
     </div>
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">Burn Momentum: Weak Hit</div>
+      <div class="sheet-subfooter" data-i18n="momentum-burn-weak-hit">Burn Momentum: Weak Hit</div>
     </div>{{/^rollGreater() momentum challenge2}}
     {{/rollGreater() momentum challenge1}}
     {{#^rollGreater() momentum challenge1}}
     {{#rollGreater() momentum challenge2}}
     <div class="sheet-result-body sheet-result-row">
-      <div class="sheet-momentum-title">Momentum:</div>
+      <div class="sheet-momentum-title" data-i18n="momentum">Momentum</div>
       <div>{{momentum}}</div>
     </div>
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">Burn Momentum: Weak Hit</div>
+      <div class="sheet-subfooter" data-i18n="momentum-burn-weak-hit">Burn Momentum: Weak Hit</div>
     </div>{{/rollGreater() momentum challenge2}}
     {{/^rollGreater() momentum challenge1}}
     {{/^rollGreater() action challenge2}}
@@ -22175,32 +22194,34 @@
     {{/custom}}
   </div>
 </rolltemplate>
+<!-- TODO: additional mixin for burning momentum for a strong hit with a match?-->
 <rolltemplate class="sheet-rolltemplate-starforged_progress">
   <div class="sheet-roll-container">{{#progress}}
     <div class="sheet-subheader">{{progress_name}} </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>{{progress_type}} Progress: </div>
+      <div>{{progress_type}} Progress:</div>
       <div>{{progress}}</div>
     </div>
     <div class="sheet-result-body sheet-result-row">
-      <div>Challenge Dice: </div>
+      <div data-i18n="challenge-dice">Challenge Dice:</div>
       <div class="sheet-challenge-dice">{{challenge1}} {{challenge2}}</div>
-    </div>{{#rollGreater() progress challenge1}}
+    </div>
+    <!-- TODO: figure out the most sensible way to handle translation strings here-->{{#rollGreater() progress challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-opportunity"></div>
-      <div class="sheet-subfooter">OPPORTUNITY</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit-match">Strong Hit with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() progress challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-strong-hit"></div>
-      <div class="sheet-subfooter">STRONG HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-strong-hit">Strong Hit</div>
     </div>{{/rollGreater() progress challenge2}}
     {{#^rollGreater() progress challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/^rollGreater() progress challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/rollGreater() progress challenge1}}
@@ -22208,18 +22229,18 @@
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-complication"></div>
-      <div class="sheet-subfooter">COMPLICATION</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
     {{#rollGreater() progress challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-weak-hit"></div>
-      <div class="sheet-subfooter">WEAK HIT</div>
+      <div class="sheet-subfooter" data-i18n="roll-weak-hit">Weak Hit</div>
     </div>{{/rollGreater() progress challenge2}}
     {{#^rollGreater() progress challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
       <div class="sheet-miss"></div>
-      <div class="sheet-subfooter">MISS</div>
+      <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() progress challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
     {{/^rollGreater() progress challenge1}}

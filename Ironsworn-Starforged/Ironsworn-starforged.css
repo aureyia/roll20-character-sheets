@@ -724,6 +724,7 @@
   padding: 0.5em 0.5em 0.5em 0.5em;
   border-right: 1px solid;
   border-left: 1px solid;
+  text-transform: uppercase;
 }
 .charsheet input[type=text].resource-value {
   width: 22px;
