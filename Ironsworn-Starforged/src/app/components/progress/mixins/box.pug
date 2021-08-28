@@ -9,7 +9,6 @@ mixin progressTrack(track, name)
   .progress-container
     div.progress-row
       div
-        // TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set
         label.btn(data-i18n="progress-mark")=translation["progress-mark"]
           input(class="mark-vow hide-element" type="checkbox" name="attr_mark_progress")
         label.btn(data-i18n="progress-clear")=translation["progress-clear"]

@@ -490,7 +490,6 @@
                       <div class="progress-container">
                         <div class="progress-row">
                           <div>
-                            <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
                             <label class="btn" data-i18n="progress-mark">Mark
                               <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                             </label>
@@ -678,7 +677,7 @@
                 <div>
                   <label class="btn">
                     <input class="mark-vow hide" type="checkbox" name="attr_mark_progress"/>
-                    <div class="btn-div" data-i18n="vow-mark"></div>
+                    <div class="btn-div" data-i18n="progress-mark">Mark</div>
                   </label>
                   <label class="btn">
                     <input class="clear-vow hide" type="checkbox" name="attr_clear_progress"/>
@@ -5133,7 +5132,6 @@
                   <div class="progress-container">
                     <div class="progress-row">
                       <div>
-                        <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
                         <label class="btn" data-i18n="progress-mark">Mark
                           <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                         </label>
@@ -11813,7 +11811,7 @@
                       </label>
                       <label class="static-btn">
                         <input class="btn-input hide-element" type="checkbox" name="attr_mark_legacy_quests_button"/>
-                        <div class="btn-content" data-i18n="vow-mark">MARK</div>
+                        <div class="btn-content" data-i18n="progress-mark">MARK</div>
                       </label>
                   </div>
                   <div class="progress-box">
@@ -12071,7 +12069,7 @@
                         <input class="btn-input hide-element" type="checkbox" name="attr_legacy_quests_plus_ten_button"/>
                         <div class="btn-content">+10</div>
                       </label>
-                    <label class="btn legacy-roll">Roll 
+                    <label class="btn legacy-roll">Roll
                       <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=Legacy quests Progress}} {{progress=[[@{legacy_progress_quests-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     </label>
                     <input class="hide-element" type="text" name="attr_legacy_progress_quests-filled" value="floor((@{legacy_progress_quests_1}+@{legacy_progress_quests_2}+@{legacy_progress_quests_3}+@{legacy_progress_quests_4}+@{legacy_progress_quests_5}+@{legacy_progress_quests_6}+@{legacy_progress_quests_7}+@{legacy_progress_quests_8}+@{legacy_progress_quests_9}+@{legacy_progress_quests_10})/4)" disabled="true"/>
@@ -12092,7 +12090,7 @@
                       </label>
                       <label class="static-btn">
                         <input class="btn-input hide-element" type="checkbox" name="attr_mark_legacy_bonds_button"/>
-                        <div class="btn-content" data-i18n="vow-mark">MARK</div>
+                        <div class="btn-content" data-i18n="progress-mark">MARK</div>
                       </label>
                   </div>
                   <div class="progress-box">
@@ -12350,7 +12348,7 @@
                         <input class="btn-input hide-element" type="checkbox" name="attr_legacy_bonds_plus_ten_button"/>
                         <div class="btn-content">+10</div>
                       </label>
-                    <label class="btn legacy-roll">Roll 
+                    <label class="btn legacy-roll">Roll
                       <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=Legacy bonds Progress}} {{progress=[[@{legacy_progress_bonds-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     </label>
                     <input class="hide-element" type="text" name="attr_legacy_progress_bonds-filled" value="floor((@{legacy_progress_bonds_1}+@{legacy_progress_bonds_2}+@{legacy_progress_bonds_3}+@{legacy_progress_bonds_4}+@{legacy_progress_bonds_5}+@{legacy_progress_bonds_6}+@{legacy_progress_bonds_7}+@{legacy_progress_bonds_8}+@{legacy_progress_bonds_9}+@{legacy_progress_bonds_10})/4)" disabled="true"/>
@@ -12371,7 +12369,7 @@
                       </label>
                       <label class="static-btn">
                         <input class="btn-input hide-element" type="checkbox" name="attr_mark_legacy_discoveries_button"/>
-                        <div class="btn-content" data-i18n="vow-mark">MARK</div>
+                        <div class="btn-content" data-i18n="progress-mark">MARK</div>
                       </label>
                   </div>
                   <div class="progress-box">
@@ -12629,7 +12627,7 @@
                         <input class="btn-input hide-element" type="checkbox" name="attr_legacy_discoveries_plus_ten_button"/>
                         <div class="btn-content">+10</div>
                       </label>
-                    <label class="btn legacy-roll">Roll 
+                    <label class="btn legacy-roll">Roll
                       <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=Legacy discoveries Progress}} {{progress=[[@{legacy_progress_discoveries-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     </label>
                     <input class="hide-element" type="text" name="attr_legacy_progress_discoveries-filled" value="floor((@{legacy_progress_discoveries_1}+@{legacy_progress_discoveries_2}+@{legacy_progress_discoveries_3}+@{legacy_progress_discoveries_4}+@{legacy_progress_discoveries_5}+@{legacy_progress_discoveries_6}+@{legacy_progress_discoveries_7}+@{legacy_progress_discoveries_8}+@{legacy_progress_discoveries_9}+@{legacy_progress_discoveries_10})/4)" disabled="true"/>
@@ -13771,7 +13769,7 @@
                 <div>
                   <label class="btn">
                     <input class="mark-vow hide" type="checkbox" name="attr_mark_progress"/>
-                    <div class="btn-div" data-i18n="vow-mark"></div>
+                    <div class="btn-div" data-i18n="progress-mark">Mark</div>
                   </label>
                   <label class="btn">
                     <input class="clear-vow hide" type="checkbox" name="attr_clear_progress"/>
@@ -13972,7 +13970,6 @@
                       <div class="progress-container">
                         <div class="progress-row">
                           <div>
-                            <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
                             <label class="btn" data-i18n="progress-mark">Mark
                               <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                             </label>
@@ -14165,7 +14162,6 @@
                   <div class="progress-container">
                     <div class="progress-row">
                       <div>
-                        <!-- TODO: make stuff like`=translation["progress-mark"]` happen automatically whereever `(data-i18n="progress-mark")` is set-->
                         <label class="btn" data-i18n="progress-mark">Mark
                           <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                         </label>
