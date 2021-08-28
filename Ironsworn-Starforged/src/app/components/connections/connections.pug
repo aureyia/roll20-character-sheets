@@ -15,12 +15,10 @@ mixin connections()
         .show-connection-info.showhide
           .full-width
             p.connection-title(data-i18n='location')
-            input.connection-location.border-bottom(type='text' name='attr_connection-location' placeholder='Location')
-            // i18n = 'location'
+            input.connection-location.border-bottom(type='text' name='attr_connection-location' placeholder=translation["location"])
           .full-width
             p.connection-title(data-i18n='descriptors')
-            // i18n = 'descriptors'
-            input.connection-descriptors.border-bottom(type='text' name='attr_connection-descriptors' placeholder='Descriptors')
+            input.connection-descriptors.border-bottom(type='text' name='attr_connection-descriptors' placeholder=translation['descriptors'])
           .full-width
             .progress-header
               each difficulty, index in difficulties

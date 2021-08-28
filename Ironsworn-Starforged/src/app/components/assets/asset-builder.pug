@@ -70,7 +70,7 @@ mixin assetTemplate(asset, options)
 
 mixin genericBuilder(assetsArray, listId)
   //- Asset Datalist
-  input.asset-options-header(type='text' list=listId name='attr_asset' placeholder='Type Asset Name')
+  input.asset-options-header(type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
   datalist(id=listId)
     each asset in assetsArray
       - var name = asset.Name.toLowerCase().replace(/\s/g, '-')

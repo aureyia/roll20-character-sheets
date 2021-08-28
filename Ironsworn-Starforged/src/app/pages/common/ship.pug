@@ -59,7 +59,7 @@ mixin shipPage(sheetType)
               input(
                 type='text'
                 name=`attr_passengers-member`
-                placeholder='Passengers '
+                placeholder=translation['passengers']
               )
           h3(data-i18n='cargo')=translation['cargo']
           .info
@@ -67,7 +67,7 @@ mixin shipPage(sheetType)
               input(
                 type='text'
                 name=`attr_cargo`
-                placeholder='Cargo'
+                placeholder=translation['cargo']
               )
 
         .ship-category-modules
