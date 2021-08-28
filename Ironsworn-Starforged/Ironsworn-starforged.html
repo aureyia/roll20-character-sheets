@@ -3364,6 +3364,51 @@
             <input class="hide-element" type="radio" name="attr_selected_move"/>
             <div class="move-group">
               <div class="move-group-title">
+                <h3 data-i18n="move-group-title-session">Session Moves</h3>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Begin a Session"/>
+                  <div class="move-name" data-i18n="move-title-begin-a-session">Begin a Session</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Set a Flag"/>
+                  <div class="move-name" data-i18n="move-title-set-a-flag">Set a Flag</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Change Your Fate"/>
+                  <div class="move-name" data-i18n="move-title-change-your-fate">Change Your Fate</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Take a Break"/>
+                  <div class="move-name" data-i18n="move-title-take-a-break">Take a Break</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="End a Session"/>
+                  <div class="move-name" data-i18n="move-title-end-a-session">End a Session</div>
+                </label>
+              </div>
+            </div>
+            <div class="move-group">
+              <div class="move-group-title">
                 <h3 data-i18n="move-group-title-adventure">Adventure Moves</h3>
               </div>
               <div class="move-list">
@@ -3417,114 +3462,6 @@
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Check Your Gear"/>
                   <div class="move-name" data-i18n="move-title-check-your-gear">Check Your Gear</div>
-                </label>
-              </div>
-            </div>
-            <div class="move-group">
-              <div class="move-group-title">
-                <h3 data-i18n="move-group-title-legacy">Legacy Moves</h3>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Earn Experience"/>
-                  <div class="move-name" data-i18n="move-title-earn-experience">Earn Experience</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Advance"/>
-                  <div class="move-name" data-i18n="move-title-advance">Advance</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
-                  <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue a Legacy</div>
-                </label>
-              </div>
-            </div>
-            <div class="move-group">
-              <div class="move-group-title">
-                <h3 data-i18n="move-group-title-fate">Fate Moves</h3>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Pay the Price"/>
-                  <div class="move-name" data-i18n="move-title-pay-the-price">Pay the Price</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Ask the Oracle"/>
-                  <div class="move-name" data-i18n="move-title-ask-the-oracle">Ask the Oracle</div>
-                </label>
-              </div>
-            </div>
-            <div class="move-group">
-              <div class="move-group-title">
-                <h3 data-i18n="move-group-title-suffer">Suffer Moves</h3>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Lose Momentum"/>
-                  <div class="move-name" data-i18n="move-title-lose-momentum">Lose Momentum</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Endure Harm Move" name="roll_endure-harm" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Harm}} {{action=[[{d6+?{Stat|Health,@{health}|Iron,@{iron}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Endure Harm"/>
-                  <div class="move-name" data-i18n="move-title-endure-harm">Endure Harm</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Endure Stress Move" name="roll_endure-stress" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Stress}} {{action=[[{d6+?{Stat|Spirit,@{spirit}|Heart,@{heart}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Endure Stress"/>
-                  <div class="move-name" data-i18n="move-title-endure-stress">Endure Stress</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Withstand Damage Move" name="roll_withstand-damage" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Withstand Damage}} {{action=[[{d6+?{Integrity|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Integrity}+(?{Modifier|0})]]}} {{negate2=[[2+?{Integrity}+(?{Modifier|0})]]}} {{negate3=[[3+?{Integrity}+(?{Modifier|0})]]}} {{negate4=[[4+?{Integrity}+(?{Modifier|0})]]}} {{negate5=[[5+?{Integrity}+(?{Modifier|0})]]}} {{negate6=[[6+?{Integrity}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Integrity}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Integrity}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Withstand Damage"/>
-                  <div class="move-name" data-i18n="move-title-withstand-damage">Withstand Damage</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Companion Takes a Hit Move" name="roll_companion-takes-a-hit" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Companion Takes a Hit}} {{action=[[{d6+?{Companion's Health|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Companion's Health}+(?{Modifier|0})]]}} {{negate2=[[2+?{Companion's Health}+(?{Modifier|0})]]}} {{negate3=[[3+?{Companion's Health}+(?{Modifier|0})]]}} {{negate4=[[4+?{Companion's Health}+(?{Modifier|0})]]}} {{negate5=[[5+?{Companion's Health}+(?{Modifier|0})]]}} {{negate6=[[6+?{Companion's Health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Companion's Health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Companion's Health}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Companion Takes a Hit"/>
-                  <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes a Hit</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Sacrifice Resources"/>
-                  <div class="move-name" data-i18n="move-title-sacrifice-resources">Sacrifice Resources</div>
                 </label>
               </div>
             </div>
@@ -3603,88 +3540,6 @@
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Test Your Relationship"/>
                   <div class="move-name" data-i18n="move-title-test-your-relationship">Test Your Relationship</div>
-                </label>
-              </div>
-            </div>
-            <div class="move-group">
-              <div class="move-group-title">
-                <h3 data-i18n="move-group-title-threshold">Threshold Moves</h3>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Face Death Move" name="roll_face-death" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Death}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Face Death"/>
-                  <div class="move-name" data-i18n="move-title-face-death">Face Death</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Face Desolation Move" name="roll_face-desolation" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Desolation}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Face Desolation"/>
-                  <div class="move-name" data-i18n="move-title-face-desolation">Face Desolation</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Overcome Destruction"/>
-                  <div class="move-name" data-i18n="move-title-overcome-destruction">Overcome Destruction</div>
-                </label>
-              </div>
-            </div>
-            <div class="move-group">
-              <div class="move-group-title">
-                <h3 data-i18n="move-group-title-recover">Recover Moves</h3>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Sojourn Move" name="roll_sojourn" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Sojourn}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Sojourn"/>
-                  <div class="move-name" data-i18n="move-title-sojourn">Sojourn</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Heal Move" name="roll_heal" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Heal}} {{action=[[{d6+?{Stat|Iron,@{iron}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Heal"/>
-                  <div class="move-name" data-i18n="move-title-heal">Heal</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Hearten Move" name="roll_hearten" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Hearten}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Hearten"/>
-                  <div class="move-name" data-i18n="move-title-hearten">Hearten</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Repair Move" name="roll_repair" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Repair}} {{action=[[{d6+?{Stat|Supply,@{supply}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Repair"/>
-                  <div class="move-name" data-i18n="move-title-repair">Repair</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                              <button class="roll-show" type="roll" title="Resupply Move" name="roll_resupply" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Resupply}} {{action=[[{d6+?{Stat|Heart,@{heart}|Iron,@{iron}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Resupply"/>
-                  <div class="move-name" data-i18n="move-title-resupply">Resupply</div>
                 </label>
               </div>
             </div>
@@ -3823,46 +3678,191 @@
             </div>
             <div class="move-group">
               <div class="move-group-title">
-                <h3 data-i18n="move-group-title-session">Session Moves</h3>
+                <h3 data-i18n="move-group-title-suffer">Suffer Moves</h3>
               </div>
               <div class="move-list">
                       <div class="button-container">
                       </div>
                 <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Begin a Session"/>
-                  <div class="move-name" data-i18n="move-title-begin-a-session">Begin a Session</div>
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Lose Momentum"/>
+                  <div class="move-name" data-i18n="move-title-lose-momentum">Lose Momentum</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Endure Harm Move" name="roll_endure-harm" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Harm}} {{action=[[{d6+?{Stat|Health,@{health}|Iron,@{iron}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Endure Harm"/>
+                  <div class="move-name" data-i18n="move-title-endure-harm">Endure Harm</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Endure Stress Move" name="roll_endure-stress" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Stress}} {{action=[[{d6+?{Stat|Spirit,@{spirit}|Heart,@{heart}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Endure Stress"/>
+                  <div class="move-name" data-i18n="move-title-endure-stress">Endure Stress</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Withstand Damage Move" name="roll_withstand-damage" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Withstand Damage}} {{action=[[{d6+?{Integrity|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Integrity}+(?{Modifier|0})]]}} {{negate2=[[2+?{Integrity}+(?{Modifier|0})]]}} {{negate3=[[3+?{Integrity}+(?{Modifier|0})]]}} {{negate4=[[4+?{Integrity}+(?{Modifier|0})]]}} {{negate5=[[5+?{Integrity}+(?{Modifier|0})]]}} {{negate6=[[6+?{Integrity}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Integrity}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Integrity}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Withstand Damage"/>
+                  <div class="move-name" data-i18n="move-title-withstand-damage">Withstand Damage</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Companion Takes a Hit Move" name="roll_companion-takes-a-hit" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Companion Takes a Hit}} {{action=[[{d6+?{Companion's Health|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Companion's Health}+(?{Modifier|0})]]}} {{negate2=[[2+?{Companion's Health}+(?{Modifier|0})]]}} {{negate3=[[3+?{Companion's Health}+(?{Modifier|0})]]}} {{negate4=[[4+?{Companion's Health}+(?{Modifier|0})]]}} {{negate5=[[5+?{Companion's Health}+(?{Modifier|0})]]}} {{negate6=[[6+?{Companion's Health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Companion's Health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Companion's Health}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Companion Takes a Hit"/>
+                  <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes a Hit</div>
                 </label>
               </div>
               <div class="move-list">
                       <div class="button-container">
                       </div>
                 <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Set a Flag"/>
-                  <div class="move-name" data-i18n="move-title-set-a-flag">Set a Flag</div>
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Sacrifice Resources"/>
+                  <div class="move-name" data-i18n="move-title-sacrifice-resources">Sacrifice Resources</div>
+                </label>
+              </div>
+            </div>
+            <div class="move-group">
+              <div class="move-group-title">
+                <h3 data-i18n="move-group-title-threshold">Threshold Moves</h3>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Face Death Move" name="roll_face-death" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Death}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Face Death"/>
+                  <div class="move-name" data-i18n="move-title-face-death">Face Death</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Face Desolation Move" name="roll_face-desolation" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Desolation}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Face Desolation"/>
+                  <div class="move-name" data-i18n="move-title-face-desolation">Face Desolation</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Overcome Destruction"/>
+                  <div class="move-name" data-i18n="move-title-overcome-destruction">Overcome Destruction</div>
+                </label>
+              </div>
+            </div>
+            <div class="move-group">
+              <div class="move-group-title">
+                <h3 data-i18n="move-group-title-recover">Recover Moves</h3>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Sojourn Move" name="roll_sojourn" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Sojourn}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Sojourn"/>
+                  <div class="move-name" data-i18n="move-title-sojourn">Sojourn</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Heal Move" name="roll_heal" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Heal}} {{action=[[{d6+?{Stat|Iron,@{iron}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Heal"/>
+                  <div class="move-name" data-i18n="move-title-heal">Heal</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Hearten Move" name="roll_hearten" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Hearten}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Hearten"/>
+                  <div class="move-name" data-i18n="move-title-hearten">Hearten</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Repair Move" name="roll_repair" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Repair}} {{action=[[{d6+?{Stat|Supply,@{supply}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Repair"/>
+                  <div class="move-name" data-i18n="move-title-repair">Repair</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Resupply Move" name="roll_resupply" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Resupply}} {{action=[[{d6+?{Stat|Heart,@{heart}|Iron,@{iron}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Resupply"/>
+                  <div class="move-name" data-i18n="move-title-resupply">Resupply</div>
+                </label>
+              </div>
+            </div>
+            <div class="move-group">
+              <div class="move-group-title">
+                <h3 data-i18n="move-group-title-legacy">Legacy Moves</h3>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Earn Experience"/>
+                  <div class="move-name" data-i18n="move-title-earn-experience">Earn Experience</div>
                 </label>
               </div>
               <div class="move-list">
                       <div class="button-container">
                       </div>
                 <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Change Your Fate"/>
-                  <div class="move-name" data-i18n="move-title-change-your-fate">Change Your Fate</div>
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Advance"/>
+                  <div class="move-name" data-i18n="move-title-advance">Advance</div>
+                </label>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                              <button class="roll-show" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
+                  <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue a Legacy</div>
+                </label>
+              </div>
+            </div>
+            <div class="move-group">
+              <div class="move-group-title">
+                <h3 data-i18n="move-group-title-fate">Fate Moves</h3>
+              </div>
+              <div class="move-list">
+                      <div class="button-container">
+                      </div>
+                <label class="move">
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Pay the Price"/>
+                  <div class="move-name" data-i18n="move-title-pay-the-price">Pay the Price</div>
                 </label>
               </div>
               <div class="move-list">
                       <div class="button-container">
                       </div>
                 <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Take a Break"/>
-                  <div class="move-name" data-i18n="move-title-take-a-break">Take a Break</div>
-                </label>
-              </div>
-              <div class="move-list">
-                      <div class="button-container">
-                      </div>
-                <label class="move">
-                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="End a Session"/>
-                  <div class="move-name" data-i18n="move-title-end-a-session">End a Session</div>
+                  <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Ask the Oracle"/>
+                  <div class="move-name" data-i18n="move-title-ask-the-oracle">Ask the Oracle</div>
                 </label>
               </div>
             </div>
@@ -3879,6 +3879,41 @@
           </div>
           <div class="preview-container">
             <div class="move-scroll-list">
+              <div class="move-group-scroll">
+                <div class="move-group-title">
+                  <h3 data-i18n="move-group-title-session">Session Moves</h3>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Begin a Session"/>
+                    <div class="move-name" data-i18n="move-title-begin-a-session">Begin a Session</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Set a Flag"/>
+                    <div class="move-name" data-i18n="move-title-set-a-flag">Set a Flag</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Change Your Fate"/>
+                    <div class="move-name" data-i18n="move-title-change-your-fate">Change Your Fate</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Take a Break"/>
+                    <div class="move-name" data-i18n="move-title-take-a-break">Take a Break</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="End a Session"/>
+                    <div class="move-name" data-i18n="move-title-end-a-session">End a Session</div>
+                  </label>
+                </div>
+              </div>
               <div class="move-group-scroll">
                 <div class="move-group-title">
                   <h3 data-i18n="move-group-title-adventure">Adventure Moves</h3>
@@ -3917,87 +3952,6 @@
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Check Your Gear"/>
                     <div class="move-name" data-i18n="move-title-check-your-gear">Check Your Gear</div>
-                  </label>
-                </div>
-              </div>
-              <div class="move-group-scroll">
-                <div class="move-group-title">
-                  <h3 data-i18n="move-group-title-legacy">Legacy Moves</h3>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Earn Experience"/>
-                    <div class="move-name" data-i18n="move-title-earn-experience">Earn Experience</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Advance"/>
-                    <div class="move-name" data-i18n="move-title-advance">Advance</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
-                    <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue a Legacy</div>
-                  </label>
-                </div>
-              </div>
-              <div class="move-group-scroll">
-                <div class="move-group-title">
-                  <h3 data-i18n="move-group-title-fate">Fate Moves</h3>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Pay the Price"/>
-                    <div class="move-name" data-i18n="move-title-pay-the-price">Pay the Price</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Ask the Oracle"/>
-                    <div class="move-name" data-i18n="move-title-ask-the-oracle">Ask the Oracle</div>
-                  </label>
-                </div>
-              </div>
-              <div class="move-group-scroll">
-                <div class="move-group-title">
-                  <h3 data-i18n="move-group-title-suffer">Suffer Moves</h3>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Lose Momentum"/>
-                    <div class="move-name" data-i18n="move-title-lose-momentum">Lose Momentum</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Endure Harm"/>
-                    <div class="move-name" data-i18n="move-title-endure-harm">Endure Harm</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Endure Stress"/>
-                    <div class="move-name" data-i18n="move-title-endure-stress">Endure Stress</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Withstand Damage"/>
-                    <div class="move-name" data-i18n="move-title-withstand-damage">Withstand Damage</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Companion Takes a Hit"/>
-                    <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes a Hit</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Sacrifice Resources"/>
-                    <div class="move-name" data-i18n="move-title-sacrifice-resources">Sacrifice Resources</div>
                   </label>
                 </div>
               </div>
@@ -4056,64 +4010,6 @@
                   <label class="move">
                     <input class="hide-element" type="radio" name="attr_selected_move" value="Test Your Relationship"/>
                     <div class="move-name" data-i18n="move-title-test-your-relationship">Test Your Relationship</div>
-                  </label>
-                </div>
-              </div>
-              <div class="move-group-scroll">
-                <div class="move-group-title">
-                  <h3 data-i18n="move-group-title-threshold">Threshold Moves</h3>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Face Death"/>
-                    <div class="move-name" data-i18n="move-title-face-death">Face Death</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Face Desolation"/>
-                    <div class="move-name" data-i18n="move-title-face-desolation">Face Desolation</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Overcome Destruction"/>
-                    <div class="move-name" data-i18n="move-title-overcome-destruction">Overcome Destruction</div>
-                  </label>
-                </div>
-              </div>
-              <div class="move-group-scroll">
-                <div class="move-group-title">
-                  <h3 data-i18n="move-group-title-recover">Recover Moves</h3>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Sojourn"/>
-                    <div class="move-name" data-i18n="move-title-sojourn">Sojourn</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Heal"/>
-                    <div class="move-name" data-i18n="move-title-heal">Heal</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Hearten"/>
-                    <div class="move-name" data-i18n="move-title-hearten">Hearten</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Repair"/>
-                    <div class="move-name" data-i18n="move-title-repair">Repair</div>
-                  </label>
-                </div>
-                <div class="move-list">
-                  <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Resupply"/>
-                    <div class="move-name" data-i18n="move-title-resupply">Resupply</div>
                   </label>
                 </div>
               </div>
@@ -4213,36 +4109,140 @@
               </div>
               <div class="move-group-scroll">
                 <div class="move-group-title">
-                  <h3 data-i18n="move-group-title-session">Session Moves</h3>
+                  <h3 data-i18n="move-group-title-suffer">Suffer Moves</h3>
                 </div>
                 <div class="move-list">
                   <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Begin a Session"/>
-                    <div class="move-name" data-i18n="move-title-begin-a-session">Begin a Session</div>
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Lose Momentum"/>
+                    <div class="move-name" data-i18n="move-title-lose-momentum">Lose Momentum</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Set a Flag"/>
-                    <div class="move-name" data-i18n="move-title-set-a-flag">Set a Flag</div>
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Endure Harm"/>
+                    <div class="move-name" data-i18n="move-title-endure-harm">Endure Harm</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Change Your Fate"/>
-                    <div class="move-name" data-i18n="move-title-change-your-fate">Change Your Fate</div>
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Endure Stress"/>
+                    <div class="move-name" data-i18n="move-title-endure-stress">Endure Stress</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="Take a Break"/>
-                    <div class="move-name" data-i18n="move-title-take-a-break">Take a Break</div>
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Withstand Damage"/>
+                    <div class="move-name" data-i18n="move-title-withstand-damage">Withstand Damage</div>
                   </label>
                 </div>
                 <div class="move-list">
                   <label class="move">
-                    <input class="hide-element" type="radio" name="attr_selected_move" value="End a Session"/>
-                    <div class="move-name" data-i18n="move-title-end-a-session">End a Session</div>
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Companion Takes a Hit"/>
+                    <div class="move-name" data-i18n="move-title-companion-takes-a-hit">Companion Takes a Hit</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Sacrifice Resources"/>
+                    <div class="move-name" data-i18n="move-title-sacrifice-resources">Sacrifice Resources</div>
+                  </label>
+                </div>
+              </div>
+              <div class="move-group-scroll">
+                <div class="move-group-title">
+                  <h3 data-i18n="move-group-title-threshold">Threshold Moves</h3>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Face Death"/>
+                    <div class="move-name" data-i18n="move-title-face-death">Face Death</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Face Desolation"/>
+                    <div class="move-name" data-i18n="move-title-face-desolation">Face Desolation</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Overcome Destruction"/>
+                    <div class="move-name" data-i18n="move-title-overcome-destruction">Overcome Destruction</div>
+                  </label>
+                </div>
+              </div>
+              <div class="move-group-scroll">
+                <div class="move-group-title">
+                  <h3 data-i18n="move-group-title-recover">Recover Moves</h3>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Sojourn"/>
+                    <div class="move-name" data-i18n="move-title-sojourn">Sojourn</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Heal"/>
+                    <div class="move-name" data-i18n="move-title-heal">Heal</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Hearten"/>
+                    <div class="move-name" data-i18n="move-title-hearten">Hearten</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Repair"/>
+                    <div class="move-name" data-i18n="move-title-repair">Repair</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Resupply"/>
+                    <div class="move-name" data-i18n="move-title-resupply">Resupply</div>
+                  </label>
+                </div>
+              </div>
+              <div class="move-group-scroll">
+                <div class="move-group-title">
+                  <h3 data-i18n="move-group-title-legacy">Legacy Moves</h3>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Earn Experience"/>
+                    <div class="move-name" data-i18n="move-title-earn-experience">Earn Experience</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Advance"/>
+                    <div class="move-name" data-i18n="move-title-advance">Advance</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
+                    <div class="move-name" data-i18n="move-title-continue-a-legacy">Continue a Legacy</div>
+                  </label>
+                </div>
+              </div>
+              <div class="move-group-scroll">
+                <div class="move-group-title">
+                  <h3 data-i18n="move-group-title-fate">Fate Moves</h3>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Pay the Price"/>
+                    <div class="move-name" data-i18n="move-title-pay-the-price">Pay the Price</div>
+                  </label>
+                </div>
+                <div class="move-list">
+                  <label class="move">
+                    <input class="hide-element" type="radio" name="attr_selected_move" value="Ask the Oracle"/>
+                    <div class="move-name" data-i18n="move-title-ask-the-oracle">Ask the Oracle</div>
                   </label>
                 </div>
               </div>
