@@ -59,7 +59,7 @@
   "stat-plus-add": "Stat + Add",
   "action-score": "Action Score",
   "previous-action-score": "Previous Action Score",
-  "action-score-limit-alert": "Action die has been limited to 10 when calculating the outcome. See page 8.",
+  "action-score-limit-alert": "The action score is never greater than 10—anything over that is ignored (see p. 26).",
   "new-action-score": "New Action Score",
   "challenge-dice": "Challenge Dice",
   "momentum": "Momentum",
