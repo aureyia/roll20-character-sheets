@@ -293,7 +293,7 @@
             <input class="hide-element stat-edit" type="radio" name="attr_stat_mode" value="1"/>
             <div class="stat-edit showhide">
               <div class="stat-toggle set-toggle">
-                <label class="stat-toggle set-toggle" data-i18n="stat-toggle-apply">Apply
+                <label class="stat-toggle set-toggle"><span data-i18n="stat-toggle-apply">Apply</span>
                   <input class="hide-element" type="radio" name="attr_stat_mode_button" value="2"/>
                 </label>
               </div>
@@ -351,7 +351,7 @@
                   </label>
                 </div>
               <div class="stat-toggle edit-toggle">
-                <label class="stat-toggle edit-toggle" data-i18n="edit">Edit
+                <label class="stat-toggle edit-toggle"><span data-i18n="edit">Edit</span>
                   <input class="hide-element" type="radio" name="attr_stat_mode_button" value="1"/>
                 </label>
               </div>
@@ -490,10 +490,10 @@
                       <div class="progress-container">
                         <div class="progress-row">
                           <div>
-                            <label class="btn" data-i18n="progress-mark">Mark
+                            <label class="btn"><span data-i18n="progress-mark">Mark</span>
                               <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                             </label>
-                            <label class="btn" data-i18n="progress-clear">Clear
+                            <label class="btn"><span data-i18n="progress-clear">Clear</span>
                               <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                             </label>
                           </div>
@@ -628,7 +628,7 @@
                                 <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                           <div>
-                            <label class="btn" data-i18n="progress-conclude">Conclude
+                            <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
                               <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                             </label>
                           </div>
@@ -4320,7 +4320,7 @@
                           <input class="face-danger hide-element" type="radio" name="attr_move_preview" value="Face Danger"/>
                           <div class="face-danger showhide">
                                   <div class="move-title move-preview">Face Danger</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Face Danger Move" name="roll_face-danger" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Danger}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4331,7 +4331,7 @@
                           <input class="secure-an-advantage hide-element" type="radio" name="attr_move_preview" value="Secure an Advantage"/>
                           <div class="secure-an-advantage showhide">
                                   <div class="move-title move-preview">Secure an Advantage</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Secure an Advantage Move" name="roll_secure-an-advantage" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Secure an Advantage}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4342,7 +4342,7 @@
                           <input class="gather-information hide-element" type="radio" name="attr_move_preview" value="Gather Information"/>
                           <div class="gather-information showhide">
                                   <div class="move-title move-preview">Gather Information</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Gather Information Move" name="roll_gather-information" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Gather Information}} {{action=[[{d6+@{wits}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{wits}+(?{Modifier|0})]]}} {{negate2=[[2+@{wits}+(?{Modifier|0})]]}} {{negate3=[[3+@{wits}+(?{Modifier|0})]]}} {{negate4=[[4+@{wits}+(?{Modifier|0})]]}} {{negate5=[[5+@{wits}+(?{Modifier|0})]]}} {{negate6=[[6+@{wits}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{wits}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{wits}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4353,7 +4353,7 @@
                           <input class="compel hide-element" type="radio" name="attr_move_preview" value="Compel"/>
                           <div class="compel showhide">
                                   <div class="move-title move-preview">Compel</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Compel Move" name="roll_compel" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Compel}} {{action=[[{d6+?{Stat|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4372,7 +4372,7 @@
                           <input class="check-your-gear hide-element" type="radio" name="attr_move_preview" value="Check Your Gear"/>
                           <div class="check-your-gear showhide">
                                   <div class="move-title move-preview">Check Your Gear</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Check Your Gear Move" name="roll_check-your-gear" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Check Your Gear}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4383,7 +4383,7 @@
                           <input class="swear-an-iron-vow hide-element" type="radio" name="attr_move_preview" value="Swear an Iron Vow"/>
                           <div class="swear-an-iron-vow showhide">
                                   <div class="move-title move-preview">Swear an Iron Vow</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Swear an Iron Vow Move" name="roll_swear-an-iron-vow" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Swear an Iron Vow}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4410,7 +4410,7 @@
                           <input class="fulfill-your-vow hide-element" type="radio" name="attr_move_preview" value="Fulfill Your Vow"/>
                           <div class="fulfill-your-vow showhide">
                                   <div class="move-title move-preview">Fulfill Your Vow</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Fulfill Your Vow" name="roll_fulfill-your-vow" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Fulfill Your Vow}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4437,7 +4437,7 @@
                           <input class="forge-a-bond hide-element" type="radio" name="attr_move_preview" value="Forge a Bond"/>
                           <div class="forge-a-bond showhide">
                                   <div class="move-title move-preview">Forge a Bond</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Forge a Bond" name="roll_forge-a-bond" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Forge a Bond}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4448,7 +4448,7 @@
                           <input class="test-your-relationship hide-element" type="radio" name="attr_move_preview" value="Test Your Relationship"/>
                           <div class="test-your-relationship showhide">
                                   <div class="move-title move-preview">Test Your Relationship</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Test Your Relationship Move" name="roll_test-your-relationship" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Test Your Relationship}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4459,7 +4459,7 @@
                           <input class="undertake-an-expedition hide-element" type="radio" name="attr_move_preview" value="Undertake an Expedition"/>
                           <div class="undertake-an-expedition showhide">
                                   <div class="move-title move-preview">Undertake an Expedition</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Undertake an Expedition Move" name="roll_undertake-an-expedition" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Undertake an Expedition}} {{action=[[{d6+?{Stat|Edge,@{edge}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4470,7 +4470,7 @@
                           <input class="explore-a-waypoint hide-element" type="radio" name="attr_move_preview" value="Explore a Waypoint"/>
                           <div class="explore-a-waypoint showhide">
                                   <div class="move-title move-preview">Explore a Waypoint</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Explore a Waypoint Move" name="roll_explore-a-waypoint" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Explore a Waypoint}} {{action=[[{d6+@{wits}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{wits}+(?{Modifier|0})]]}} {{negate2=[[2+@{wits}+(?{Modifier|0})]]}} {{negate3=[[3+@{wits}+(?{Modifier|0})]]}} {{negate4=[[4+@{wits}+(?{Modifier|0})]]}} {{negate5=[[5+@{wits}+(?{Modifier|0})]]}} {{negate6=[[6+@{wits}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{wits}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{wits}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4481,7 +4481,7 @@
                           <input class="finish-an-expedition hide-element" type="radio" name="attr_move_preview" value="Finish an Expedition"/>
                           <div class="finish-an-expedition showhide">
                                   <div class="move-title move-preview">Finish an Expedition</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Finish an Expedition" name="roll_finish-an-expedition" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Finish an Expedition}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4492,7 +4492,7 @@
                           <input class="set-a-course hide-element" type="radio" name="attr_move_preview" value="Set a Course"/>
                           <div class="set-a-course showhide">
                                   <div class="move-title move-preview">Set a Course</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Set a Course Move" name="roll_set-a-course" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Set a Course}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4629,7 +4629,7 @@
                           <input class="enter-the-fray hide-element" type="radio" name="attr_move_preview" value="Enter the Fray"/>
                           <div class="enter-the-fray showhide">
                                   <div class="move-title move-preview">Enter the Fray</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Enter the Fray Move" name="roll_enter-the-fray" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Enter the Fray}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4640,7 +4640,7 @@
                           <input class="gain-ground hide-element" type="radio" name="attr_move_preview" value="Gain Ground"/>
                           <div class="gain-ground showhide">
                                   <div class="move-title move-preview">Gain Ground</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Gain Ground Move" name="roll_gain-ground" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Gain Ground}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4651,7 +4651,7 @@
                           <input class="react-under-fire hide-element" type="radio" name="attr_move_preview" value="React Under Fire"/>
                           <div class="react-under-fire showhide">
                                   <div class="move-title move-preview">React Under Fire</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="React Under Fire Move" name="roll_react-under-fire" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=React Under Fire}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4662,7 +4662,7 @@
                           <input class="strike hide-element" type="radio" name="attr_move_preview" value="Strike"/>
                           <div class="strike showhide">
                                   <div class="move-title move-preview">Strike</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Strike Move" name="roll_strike" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Strike}} {{action=[[{d6+?{Stat|Iron,@{iron}|Edge,@{edge}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4673,7 +4673,7 @@
                           <input class="clash hide-element" type="radio" name="attr_move_preview" value="Clash"/>
                           <div class="clash showhide">
                                   <div class="move-title move-preview">Clash</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Clash Move" name="roll_clash" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Clash}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4692,7 +4692,7 @@
                           <input class="take-decisive-action hide-element" type="radio" name="attr_move_preview" value="Take Decisive Action"/>
                           <div class="take-decisive-action showhide">
                                   <div class="move-title move-preview">Take Decisive Action</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Take Decisive Action" name="roll_take-decisive-action" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Take Decisive Action}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4724,7 +4724,7 @@
                           <input class="battle hide-element" type="radio" name="attr_move_preview" value="Battle"/>
                           <div class="battle showhide">
                                   <div class="move-title move-preview">Battle</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Battle Move" name="roll_battle" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Battle}} {{action=[[{d6+?{Stat|Edge,@{edge}|Iron,@{iron}|Heart,@{heart}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4743,7 +4743,7 @@
                           <input class="endure-harm hide-element" type="radio" name="attr_move_preview" value="Endure Harm"/>
                           <div class="endure-harm showhide">
                                   <div class="move-title move-preview">Endure Harm</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Endure Harm Move" name="roll_endure-harm" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Harm}} {{action=[[{d6+?{Stat|Health,@{health}|Iron,@{iron}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4773,7 +4773,7 @@
                           <input class="endure-stress hide-element" type="radio" name="attr_move_preview" value="Endure Stress"/>
                           <div class="endure-stress showhide">
                                   <div class="move-title move-preview">Endure Stress</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Endure Stress Move" name="roll_endure-stress" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Endure Stress}} {{action=[[{d6+?{Stat|Spirit,@{spirit}|Heart,@{heart}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4801,7 +4801,7 @@
                           <input class="withstand-damage hide-element" type="radio" name="attr_move_preview" value="Withstand Damage"/>
                           <div class="withstand-damage showhide">
                                   <div class="move-title move-preview">Withstand Damage</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Withstand Damage Move" name="roll_withstand-damage" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Withstand Damage}} {{action=[[{d6+?{Integrity|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Integrity}+(?{Modifier|0})]]}} {{negate2=[[2+?{Integrity}+(?{Modifier|0})]]}} {{negate3=[[3+?{Integrity}+(?{Modifier|0})]]}} {{negate4=[[4+?{Integrity}+(?{Modifier|0})]]}} {{negate5=[[5+?{Integrity}+(?{Modifier|0})]]}} {{negate6=[[6+?{Integrity}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Integrity}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Integrity}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4837,7 +4837,7 @@
                           <input class="companion-takes-a-hit hide-element" type="radio" name="attr_move_preview" value="Companion Takes a Hit"/>
                           <div class="companion-takes-a-hit showhide">
                                   <div class="move-title move-preview">Companion Takes a Hit</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Companion Takes a Hit Move" name="roll_companion-takes-a-hit" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Companion Takes a Hit}} {{action=[[{d6+?{Companion's Health|0}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Companion's Health}+(?{Modifier|0})]]}} {{negate2=[[2+?{Companion's Health}+(?{Modifier|0})]]}} {{negate3=[[3+?{Companion's Health}+(?{Modifier|0})]]}} {{negate4=[[4+?{Companion's Health}+(?{Modifier|0})]]}} {{negate5=[[5+?{Companion's Health}+(?{Modifier|0})]]}} {{negate6=[[6+?{Companion's Health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Companion's Health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Companion's Health}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4856,7 +4856,7 @@
                           <input class="face-death hide-element" type="radio" name="attr_move_preview" value="Face Death"/>
                           <div class="face-death showhide">
                                   <div class="move-title move-preview">Face Death</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Face Death Move" name="roll_face-death" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Death}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4867,7 +4867,7 @@
                           <input class="face-desolation hide-element" type="radio" name="attr_move_preview" value="Face Desolation"/>
                           <div class="face-desolation showhide">
                                   <div class="move-title move-preview">Face Desolation</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Face Desolation Move" name="roll_face-desolation" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Face Desolation}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4878,7 +4878,7 @@
                           <input class="overcome-destruction hide-element" type="radio" name="attr_move_preview" value="Overcome Destruction"/>
                           <div class="overcome-destruction showhide">
                                   <div class="move-title move-preview">Overcome Destruction</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4889,7 +4889,7 @@
                           <input class="sojourn hide-element" type="radio" name="attr_move_preview" value="Sojourn"/>
                           <div class="sojourn showhide">
                                   <div class="move-title move-preview">Sojourn</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Sojourn Move" name="roll_sojourn" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Sojourn}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4900,7 +4900,7 @@
                           <input class="heal hide-element" type="radio" name="attr_move_preview" value="Heal"/>
                           <div class="heal showhide">
                                   <div class="move-title move-preview">Heal</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Heal Move" name="roll_heal" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Heal}} {{action=[[{d6+?{Stat|Iron,@{iron}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4911,7 +4911,7 @@
                           <input class="hearten hide-element" type="radio" name="attr_move_preview" value="Hearten"/>
                           <div class="hearten showhide">
                                   <div class="move-title move-preview">Hearten</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Hearten Move" name="roll_hearten" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Hearten}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4922,7 +4922,7 @@
                           <input class="repair hide-element" type="radio" name="attr_move_preview" value="Repair"/>
                           <div class="repair showhide">
                                   <div class="move-title move-preview">Repair</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Repair Move" name="roll_repair" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Repair}} {{action=[[{d6+?{Stat|Supply,@{supply}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4933,7 +4933,7 @@
                           <input class="resupply hide-element" type="radio" name="attr_move_preview" value="Resupply"/>
                           <div class="resupply showhide">
                                   <div class="move-title move-preview">Resupply</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Resupply Move" name="roll_resupply" value="&{template:starforged_moves} {{header=@{character_name}}} {{name=Resupply}} {{action=[[{d6+?{Stat|Heart,@{heart}|Iron,@{iron}|Shadow,@{shadow}|Wits,@{wits}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+?{Stat}+(?{Modifier|0})]]}} {{negate2=[[2+?{Stat}+(?{Modifier|0})]]}} {{negate3=[[3+?{Stat}+(?{Modifier|0})]]}} {{negate4=[[4+?{Stat}+(?{Modifier|0})]]}} {{negate5=[[5+?{Stat}+(?{Modifier|0})]]}} {{negate6=[[6+?{Stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[?{Stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[?{Stat}]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -4960,7 +4960,7 @@
                           <input class="continue-a-legacy hide-element" type="radio" name="attr_move_preview" value="Continue a Legacy"/>
                           <div class="continue-a-legacy showhide">
                                   <div class="move-title move-preview">Continue a Legacy</div>
-                                        <label class="roll-label" data-i18n="roll">Roll
+                                        <label class="roll-label"><span data-i18n="roll">Roll</span>
                                                 <button class="hide-element" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
@@ -5132,10 +5132,10 @@
                   <div class="progress-container">
                     <div class="progress-row">
                       <div>
-                        <label class="btn" data-i18n="progress-mark">Mark
+                        <label class="btn"><span data-i18n="progress-mark">Mark</span>
                           <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                         </label>
-                        <label class="btn" data-i18n="progress-clear">Clear
+                        <label class="btn"><span data-i18n="progress-clear">Clear</span>
                           <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                         </label>
                       </div>
@@ -5270,7 +5270,7 @@
                                     <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                       <div>
-                        <label class="btn" data-i18n="progress-conclude">Conclude
+                        <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
                           <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                         </label>
                       </div>
@@ -5280,7 +5280,7 @@
             <div class="progress-container">
               <input class="hide-element challenge-show" type="checkbox" name="attr_challenge-show"/>
               <div class="challenge-row showhide">
-                <label class="challenge-label" data-i18n="scene-challenge-countdown"></label>
+                <label class="challenge-label"><span data-i18n="scene-challenge-countdown"></span></label>
                 <label class="challenge-box">
                   <input class="challenge hide-element hide-element" type="checkbox" name="attr_countdown-one"/>
                   <div class="challenge-fill"></div>
@@ -13970,10 +13970,10 @@
                       <div class="progress-container">
                         <div class="progress-row">
                           <div>
-                            <label class="btn" data-i18n="progress-mark">Mark
+                            <label class="btn"><span data-i18n="progress-mark">Mark</span>
                               <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                             </label>
-                            <label class="btn" data-i18n="progress-clear">Clear
+                            <label class="btn"><span data-i18n="progress-clear">Clear</span>
                               <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                             </label>
                           </div>
@@ -14108,7 +14108,7 @@
                                 <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                           <div>
-                            <label class="btn" data-i18n="progress-conclude">Conclude
+                            <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
                               <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                             </label>
                           </div>
@@ -14162,10 +14162,10 @@
                   <div class="progress-container">
                     <div class="progress-row">
                       <div>
-                        <label class="btn" data-i18n="progress-mark">Mark
+                        <label class="btn"><span data-i18n="progress-mark">Mark</span>
                           <input class="mark-vow hide-element" type="checkbox" name="attr_mark_progress"/>
                         </label>
-                        <label class="btn" data-i18n="progress-clear">Clear
+                        <label class="btn"><span data-i18n="progress-clear">Clear</span>
                           <input class="clear-vow hide-element" type="checkbox" name="attr_clear_progress"/>
                         </label>
                       </div>
@@ -14300,7 +14300,7 @@
                                     <input class="hide" type="number" name="attr_progress_10" min="4" required="required"/><span></span>
                             </div>
                       <div>
-                        <label class="btn" data-i18n="progress-conclude">Conclude
+                        <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
                           <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                         </label>
                       </div>
@@ -14310,7 +14310,7 @@
             <div class="progress-container">
               <input class="hide-element challenge-show" type="checkbox" name="attr_challenge-show"/>
               <div class="challenge-row showhide">
-                <label class="challenge-label" data-i18n="scene-challenge-countdown"></label>
+                <label class="challenge-label"><span data-i18n="scene-challenge-countdown"></span></label>
                 <label class="challenge-box">
                   <input class="challenge hide-element hide-element" type="checkbox" name="attr_countdown-one"/>
                   <div class="challenge-fill"></div>
