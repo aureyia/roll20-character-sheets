@@ -1,23 +1,20 @@
 mixin statEditor()
   each stat in stats
-    - const upper = stat.toUpperCase()
     div.stat
-      h3.stats-title=upper
+      h3.stats-title(data-i18n=`stat-${stat}`)=translation[`stat-${stat}`]
       input(
         type='text'
         class='stats-input'
         name=`attr_${stat}`
         value='0'
       )
-      // TODO: remove toUpperCase methods, manage via CSS instead
 
 mixin statStatic()
   each stat in stats
-    - const upper = stat.toUpperCase()
-    - const capitalised = stat.charAt(0).toUpperCase() + stat.slice(1)
     div.stat
       label.roll-label
-        h3.stats-title=upper
+        //- h3.stats-title=stat
+        h3.stats-title(data-i18n=`stat-${stat}`)=translation[`stat-${stat}`]
         span(class='stats-input' name=`attr_${stat}`)
         button(
         type='roll'
