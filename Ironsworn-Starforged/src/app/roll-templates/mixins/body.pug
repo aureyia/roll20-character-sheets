@@ -3,13 +3,13 @@ mixin challengeDice
     div(data-i18n='challenge-dice')=translation['challenge-dice']
     div.sheet-challenge-dice {{challenge1}} {{challenge2}}
 
-mixin actionBody(type)
+mixin actionRollBody(type)
   .sheet-result-body.sheet-result-row
     div(data-i18n='action-score')=translation['action-score']
     div.sheet-action-score {{#{type}}}
   +challengeDice
 
-mixin progressBody
+mixin progressRollBody
   .sheet-result-body.sheet-result-row
     div {{progress_type}} Progress:
     div {{progress}}

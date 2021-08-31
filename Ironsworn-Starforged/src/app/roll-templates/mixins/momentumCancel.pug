@@ -24,7 +24,7 @@ mixin momentumCancelActionDie(opts, type)
   +actionDieCancelled({momentum: true, type: type})
   | {{/rollTotal() #{type} cancel#{opts.die}}}
   | {{#^rollTotal() #{type} cancel#{opts.die}}}
-  +actionBody(type)
+  +actionRollBody(type)
   +actionRollResult(type)
   | {{/^rollTotal() #{type} cancel#{opts.die}}}
   | {{/rollTotal() momentum #{opts.momentum}}}

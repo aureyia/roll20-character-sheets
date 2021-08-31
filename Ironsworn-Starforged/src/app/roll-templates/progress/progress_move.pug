@@ -5,8 +5,8 @@ include ../mixins/outcomes
 rolltemplate.sheet-rolltemplate-progress_move
   div.sheet-roll-container
     | {{#progress}}
-    +progressHeader
-    +progressBody
+    +progressRollHeader
+    +progressRollBody
     | {{#rollGreater() progress challenge1}}
     | {{#rollTotal() challenge1 challenge2}}
     +strongHitMatch

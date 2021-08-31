@@ -16,13 +16,13 @@ include ../mixins/actions
 rolltemplate.sheet-rolltemplate-starforged_moves
   .sheet-roll-container
     | {{#action}}
-    +actionHeader
+    +actionRollHeader
     | {{#rollLess() momentum 0}}
     each momentum in momentumNeg
       +momentumCancelActionDie(momentum, 'action')
     | {{/rollLess() momentum 0}}
     | {{#^rollLess() momentum 0}}
-    +actionBody('action')
+    +actionRollBody('action')
     +actionRollResultWithMomentum('action')
     | {{/^rollLess() momentum 0}}
     | {{/action}}
