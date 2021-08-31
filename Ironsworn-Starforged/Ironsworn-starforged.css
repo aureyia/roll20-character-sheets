@@ -2815,8 +2815,8 @@
   width: auto;
   padding: 0.5em;
 }
-.sheet-rolltemplate-starforged_moves .sheet-opportunity,
-.sheet-rolltemplate-starforged_progress .sheet-opportunity {
+.sheet-rolltemplate-starforged_moves .sheet-strong-hit-match,
+.sheet-rolltemplate-starforged_progress .sheet-strong-hit-match {
   width: 1em;
   margin: 0.3em 0.5em 0.3em 0.3em;
   border-radius: 1em;
