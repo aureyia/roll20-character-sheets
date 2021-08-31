@@ -17,7 +17,7 @@ mixin oracleRoll(opts, visibility)
     value=`&{template:starforged_oracles} {{header=${translation[opts.title]}}} {{${opts.name}=[[d100]]}}`
   )
 
-mixin movesRoll(opts, visibility)
+mixin actionRoll(opts, visibility)
   - var formattedName = opts.Name.replace(/\s/g, '-').toLowerCase()
   - var roll20MoveData = rolls[opts.Name]
   button(
