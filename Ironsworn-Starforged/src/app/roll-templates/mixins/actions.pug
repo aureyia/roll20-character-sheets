@@ -18,7 +18,7 @@ mixin standardAction(type)
   | {{/rollGreater() #{type} challenge1}}
   | {{#^rollGreater() #{type} challenge1}}
   | {{#rollTotal() challenge1 challenge2}}
-  +complication
+  +missMatch
   | {{/rollTotal() challenge1 challenge2}}
   | {{#^rollTotal() challenge1 challenge2}}
   | {{#rollGreater() #{type} challenge2}}
@@ -49,7 +49,7 @@ mixin standardActionWithMomentum(type)
   | {{/rollGreater() #{type} challenge1}}
   | {{#^rollGreater() #{type} challenge1}}
   | {{#rollTotal() challenge1 challenge2}}
-  +complication
+  +missMatch
   | {{#rollGreater() momentum challenge1}}
   +momentumStrongHit
   | {{/rollGreater() momentum challenge1}}
