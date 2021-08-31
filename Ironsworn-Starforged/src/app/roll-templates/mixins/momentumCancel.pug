@@ -16,7 +16,7 @@ mixin actionDieCancelled(opts)
   div.sheet-result-body.sheet-result-row
     div(data-i18n='challenge-dice')=translation['challenge-dice']
     div {{challenge1}} {{challenge2}}
-  +standardAction('modifiers')
+  +actionRollResult('modifiers')
 
 mixin momentumCancelActionDie(opts, type)
   | {{#rollTotal() momentum #{opts.momentum}}}
@@ -25,6 +25,6 @@ mixin momentumCancelActionDie(opts, type)
   | {{/rollTotal() #{type} cancel#{opts.die}}}
   | {{#^rollTotal() #{type} cancel#{opts.die}}}
   +actionBody(type)
-  +standardAction(type)
+  +actionRollResult(type)
   | {{/^rollTotal() #{type} cancel#{opts.die}}}
   | {{/rollTotal() momentum #{opts.momentum}}}

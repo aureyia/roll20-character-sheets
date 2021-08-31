@@ -23,7 +23,7 @@ rolltemplate.sheet-rolltemplate-starforged_moves
     | {{/rollLess() momentum 0}}
     | {{#^rollLess() momentum 0}}
     +actionBody('action')
-    +standardActionWithMomentum('action')
+    +actionRollResultWithMomentum('action')
     | {{/^rollLess() momentum 0}}
     | {{/action}}
 

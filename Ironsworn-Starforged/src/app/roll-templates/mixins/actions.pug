@@ -2,7 +2,7 @@ include ./outcomes
 include ./body
 include ../../components/moves/mixins/container
 
-mixin standardAction(type)
+mixin actionRollResult(type)
   | {{#rollGreater() #{type} challenge1}}
   | {{#rollTotal() challenge1 challenge2}}
   +strongHitMatch
@@ -30,7 +30,7 @@ mixin standardAction(type)
   | {{/^rollTotal() challenge1 challenge2}}
   | {{/^rollGreater() #{type} challenge1}}
 
-mixin standardActionWithMomentum(type)
+mixin actionRollResultWithMomentum(type)
   | {{#rollGreater() #{type} challenge1}}
   | {{#rollTotal() challenge1 challenge2}}
   +strongHitMatch
