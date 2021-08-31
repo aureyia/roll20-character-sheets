@@ -5,7 +5,7 @@ mixin progressRoll(opts, visibility)
     title=opts.Name
     name=`roll_${formattedName}`
     class=visibility
-    value=`&{template:starforged_progress} {{header=@{character_name}}} {{progress_name=${opts.Name}}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
+    value=`&{template:progress_move} {{header=@{character_name}}} {{progress_name=${opts.Name}}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
   )
 
 mixin oracleRoll(opts, visibility)

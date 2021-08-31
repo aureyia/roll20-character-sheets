@@ -39,7 +39,7 @@ mixin legacies()
                   type="roll"
                   class='hide-element'
                   name="rollProgress"
-                  value=`&{template:starforged_progress} {{progress_name=Legacy ${legacy} Progress}} {{progress=[[@{legacy_progress_${legacy}-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
+                  value=`&{template:progress_move} {{progress_name=Legacy ${legacy} Progress}} {{progress=[[@{legacy_progress_${legacy}-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
                 )
               input.hide-element(type='text' name=`attr_legacy_progress_${legacy}-filled` value=`floor((@{legacy_progress_${legacy}_1}+@{legacy_progress_${legacy}_2}+@{legacy_progress_${legacy}_3}+@{legacy_progress_${legacy}_4}+@{legacy_progress_${legacy}_5}+@{legacy_progress_${legacy}_6}+@{legacy_progress_${legacy}_7}+@{legacy_progress_${legacy}_8}+@{legacy_progress_${legacy}_9}+@{legacy_progress_${legacy}_10})/4)` disabled='true')
 

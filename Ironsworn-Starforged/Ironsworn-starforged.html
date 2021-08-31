@@ -627,7 +627,7 @@
                             </div>
                           <div>
                             <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
-                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                             </label>
                           </div>
                           <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -814,7 +814,7 @@
                   </div>
                 <div>
                   <label class="btn">
-                    <button class="hide" type="roll" name="rollVow" value="&amp;{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                    <button class="hide" type="roll" name="rollVow" value="&amp;{template:progress_move} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     <div class="btn-div" data-i18n="vow-fulfill">Fulfill</div>
                   </label>
                 </div>
@@ -3311,7 +3311,7 @@
               </div>
               <div class="move-list">
                       <div class="button-container">
-                              <button class="roll-show" type="roll" title="Fulfill Your Vow" name="roll_fulfill-your-vow" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Fulfill Your Vow}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="roll-show" type="roll" title="Fulfill Your Vow" name="roll_fulfill-your-vow" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Fulfill Your Vow}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Fulfill Your Vow"/>
@@ -3341,7 +3341,7 @@
               </div>
               <div class="move-list">
                       <div class="button-container">
-                              <button class="roll-show" type="roll" title="Forge a Bond" name="roll_forge-a-bond" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Forge a Bond}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="roll-show" type="roll" title="Forge a Bond" name="roll_forge-a-bond" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Forge a Bond}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Forge a Bond"/>
@@ -3379,7 +3379,7 @@
               </div>
               <div class="move-list">
                       <div class="button-container">
-                              <button class="roll-show" type="roll" title="Finish an Expedition" name="roll_finish-an-expedition" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Finish an Expedition}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="roll-show" type="roll" title="Finish an Expedition" name="roll_finish-an-expedition" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Finish an Expedition}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Finish an Expedition"/>
@@ -3465,7 +3465,7 @@
               </div>
               <div class="move-list">
                       <div class="button-container">
-                              <button class="roll-show" type="roll" title="Take Decisive Action" name="roll_take-decisive-action" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Take Decisive Action}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="roll-show" type="roll" title="Take Decisive Action" name="roll_take-decisive-action" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Take Decisive Action}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Take Decisive Action"/>
@@ -3556,7 +3556,7 @@
               </div>
               <div class="move-list">
                       <div class="button-container">
-                              <button class="roll-show" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="roll-show" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Overcome Destruction"/>
@@ -3631,7 +3631,7 @@
               </div>
               <div class="move-list">
                       <div class="button-container">
-                              <button class="roll-show" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="roll-show" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                       </div>
                 <label class="move">
                   <input class="hide-element selected-move" type="radio" name="attr_selected_move" value="Continue a Legacy"/>
@@ -4187,7 +4187,7 @@
                           <div class="fulfill-your-vow showhide">
                                   <div class="move-title move-preview">Fulfill Your Vow</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Fulfill Your Vow" name="roll_fulfill-your-vow" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Fulfill Your Vow}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Fulfill Your Vow" name="roll_fulfill-your-vow" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Fulfill Your Vow}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p><strong>When you reach the end of your quest</strong>, roll the challenge dice and compare to your progress.</p><p>On a <strong>strong hit</strong>, your vow is fulfilled. Mark a reward on your quests legacy track per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this vow also mark the reward.</p><p>On a <strong>weak hit</strong>, as above, but there is more to be done or you realize the truth of your quest. If you <u>Swear an Iron Vow</u> to set things right, take your full legacy reward. Otherwise, make the reward one rank lower.</p><p>On a <strong>miss</strong>, your vow is undone through an unexpected complication or realization. Envision what happens and choose one.</p><ul><li>Give up on the quest: <u>Forsake Your Vow</u>.</li><li>Recommit to the quest: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow's rank by one (if not already epic).</li></ul></p>
@@ -4214,7 +4214,7 @@
                           <div class="forge-a-bond showhide">
                                   <div class="move-title move-preview">Forge a Bond</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Forge a Bond" name="roll_forge-a-bond" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Forge a Bond}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Forge a Bond" name="roll_forge-a-bond" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Forge a Bond}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p><strong>When your relationship with a connection is ready to evolve</strong>, roll the challenge dice and compare to your progress.</p><p>On a <strong>strong hit</strong>, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.</p><ul><li>Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.</li><li>Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.</li></ul><p>On a <strong>weak hit</strong>, as above, but they ask something more of you first. To gain the bond and the legacy reward, envision the nature of the request, and do it (or <u>Swear an Iron Vow</u> to see it done).</p><p>On a <strong>miss</strong>, they reveal a motivation or background which puts you at odds. If you recommit to this relationship, roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the connection's rank by one (if not already epic).</p></p>
@@ -4249,7 +4249,7 @@
                           <div class="finish-an-expedition showhide">
                                   <div class="move-title move-preview">Finish an Expedition</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Finish an Expedition" name="roll_finish-an-expedition" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Finish an Expedition}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Finish an Expedition" name="roll_finish-an-expedition" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Finish an Expedition}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p><strong>When your expedition comes to an end</strong>, roll the challenge dice and compare to your progress.</p><p>On a <strong>strong hit</strong>, you reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.</p><p>On a <strong>weak hit</strong>, as above, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower, and envision what you encounter.</p><p>On a <strong>miss</strong>, your destination is lost to you, or you come to understand the true nature or cost of the expedition. Envision what happens and choose one.</p><ul><li>Abandon the expedition: Envision the cost of this setback and <u>Pay the Price</u>.</li><li>Return to the expedition: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the expedition's rank by one (if not already epic).</li></ul></p>
@@ -4442,7 +4442,7 @@
                           <div class="take-decisive-action showhide">
                                   <div class="move-title move-preview">Take Decisive Action</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Take Decisive Action" name="roll_take-decisive-action" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Take Decisive Action}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Take Decisive Action" name="roll_take-decisive-action" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Take Decisive Action}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p><strong>When you seize an objective in a fight</strong>, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.</p><p>If you are in control, check the result as normal. If you are in a bad spot, count a strong hit as a weak hit, and a weak hit as a miss.</p><p>On a <strong>strong hit</strong>, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.</p><p>On a <strong>weak hit</strong>, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.</p><p>On a <strong>miss</strong>, you are defeated or your objective is lost. <u>Pay the Price</u>.</p></p>
@@ -4607,7 +4607,7 @@
                           <div class="overcome-destruction showhide">
                                   <div class="move-title move-preview">Overcome Destruction</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Overcome Destruction" name="roll_overcome-destruction" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Overcome Destruction}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p><strong>When your command vehicle is destroyed or irrevocably lost</strong>, you must discard the asset, along with any modules and docked support vehicles.</p><p>If you survive, you may use your connections to replace some of what was lost. To learn the cost, roll the challenge dice and compare to the progress on your bonds legacy track.</p><p>On a <strong>strong hit</strong>, you may call in a favor. This comes without conditions.</p><p>On a <strong>weak hit</strong>, you owe someone. You must mark <strong>indebted</strong> and <u>Swear an Iron Vow</u> to complete an extreme quest in their service. When you complete the duty-bound quest, clear the impact.</p><p>On a <strong>miss</strong>, as with the weak hit result, but this quest is against your nature, forces you to <u>Forsake Your Vow</u> on another quest, or is in the service of an enemy.</p><p>If you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.</p></p>
@@ -4674,7 +4674,7 @@
                           <div class="continue-a-legacy showhide">
                                   <div class="move-title move-preview">Continue a Legacy</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Continue a Legacy" name="roll_continue-a-legacy" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Continue a Legacy}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p><strong>When you retire from your life as Ironsworn, or succumb to death or desolation</strong>, you may create a new character in your established setting. If you do, roll the challenge dice and compare to each of the former character's legacy tracks: Quests, bonds, and discoveries (one roll per track).</p><p>For each <strong>strong hit</strong>, choose one from below, or one from the weak hit or miss options.</p><ul><li>Follow their path: Take one path or companion asset from the former character (at no cost), including any marked abilities.</li><li>Share a connection: Take one connection from the former character, including any accrued progress or bond benefits.</li><li>Accept an inheritance: Take the former character's command vehicle and one module or support vehicle (at no cost), including any marked abilities.</li></ul><p>For each <strong>weak hit</strong>, choose one from below, or one from the miss options.</p><ul><li>See it through: Choose one of the former character's unfinished quests, and <u>Swear an Iron Vow</u> (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.</li><li>Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you <u>Make a Connection</u> with them, take an automatic strong hit and mark two ticks on your bonds legacy track.</li><li>Explore familiar ground: Name a location which was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.</li></ul><p>For each <strong>miss</strong>, choose one.</p><ul><li>Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.</li><li>Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.</li><li>Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.</li></ul></p>
@@ -4871,7 +4871,7 @@
                           <div class="seek-safe-haven showhide">
                                   <div class="move-title move-preview">Seek Safe Haven</div>
                                         <label class="roll-label"><span data-i18n="roll">Roll</span>
-                                                <button class="hide-element" type="roll" title="Seek Safe Haven" name="roll_seek-safe-haven" value="&amp;{template:starforged_progress} {{header=@{character_name}}} {{progress_name=Seek Safe Haven}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                                                <button class="hide-element" type="roll" title="Seek Safe Haven" name="roll_seek-safe-haven" value="&amp;{template:progress_move} {{header=@{character_name}}} {{progress_name=Seek Safe Haven}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                                         </label>
                                   <div class="move-description">
                                     <p><p>When you seek safe haven in a remote environment, make a progress roll against your discoveries legacy track. On a strong hit, you find or establish a safe location and may add +2 whenever you make a recovery move there. If you roll a miss when making a recovery move, the place is no longer safe. On a weak hit, as above, but add +1 when you make a recovery move. On a miss, you are drawn into a bad situation and must <u>Pay the Price</u>.</p></p>
@@ -5059,7 +5059,7 @@
                             </div>
                       <div>
                         <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
-                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                         </label>
                       </div>
                       <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -11858,7 +11858,7 @@
                         <div class="btn-content">+10</div>
                       </label>
                     <label class="btn legacy-roll">Roll
-                      <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=Legacy quests Progress}} {{progress=[[@{legacy_progress_quests-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                      <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=Legacy quests Progress}} {{progress=[[@{legacy_progress_quests-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     </label>
                     <input class="hide-element" type="text" name="attr_legacy_progress_quests-filled" value="floor((@{legacy_progress_quests_1}+@{legacy_progress_quests_2}+@{legacy_progress_quests_3}+@{legacy_progress_quests_4}+@{legacy_progress_quests_5}+@{legacy_progress_quests_6}+@{legacy_progress_quests_7}+@{legacy_progress_quests_8}+@{legacy_progress_quests_9}+@{legacy_progress_quests_10})/4)" disabled="true"/>
                   </div>
@@ -12137,7 +12137,7 @@
                         <div class="btn-content">+10</div>
                       </label>
                     <label class="btn legacy-roll">Roll
-                      <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=Legacy bonds Progress}} {{progress=[[@{legacy_progress_bonds-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                      <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=Legacy bonds Progress}} {{progress=[[@{legacy_progress_bonds-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     </label>
                     <input class="hide-element" type="text" name="attr_legacy_progress_bonds-filled" value="floor((@{legacy_progress_bonds_1}+@{legacy_progress_bonds_2}+@{legacy_progress_bonds_3}+@{legacy_progress_bonds_4}+@{legacy_progress_bonds_5}+@{legacy_progress_bonds_6}+@{legacy_progress_bonds_7}+@{legacy_progress_bonds_8}+@{legacy_progress_bonds_9}+@{legacy_progress_bonds_10})/4)" disabled="true"/>
                   </div>
@@ -12416,7 +12416,7 @@
                         <div class="btn-content">+10</div>
                       </label>
                     <label class="btn legacy-roll">Roll
-                      <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=Legacy discoveries Progress}} {{progress=[[@{legacy_progress_discoveries-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                      <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=Legacy discoveries Progress}} {{progress=[[@{legacy_progress_discoveries-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     </label>
                     <input class="hide-element" type="text" name="attr_legacy_progress_discoveries-filled" value="floor((@{legacy_progress_discoveries_1}+@{legacy_progress_discoveries_2}+@{legacy_progress_discoveries_3}+@{legacy_progress_discoveries_4}+@{legacy_progress_discoveries_5}+@{legacy_progress_discoveries_6}+@{legacy_progress_discoveries_7}+@{legacy_progress_discoveries_8}+@{legacy_progress_discoveries_9}+@{legacy_progress_discoveries_10})/4)" disabled="true"/>
                   </div>
@@ -13627,7 +13627,7 @@
                   </div>
                 <div>
                   <label class="btn">
-                    <button class="hide" type="roll" name="rollVow" value="&amp;{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                    <button class="hide" type="roll" name="rollVow" value="&amp;{template:progress_move} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                     <div class="btn-div" data-i18n="vow-fulfill">Fulfill</div>
                   </label>
                 </div>
@@ -13826,7 +13826,7 @@
                             </div>
                           <div>
                             <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
-                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                              <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=@{connection-name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                             </label>
                           </div>
                           <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -14018,7 +14018,7 @@
                             </div>
                       <div>
                         <label class="btn"><span data-i18n="progress-conclude">Conclude</span>
-                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:starforged_progress} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
+                          <button class="hide-element" type="roll" name="rollProgress" value="&amp;{template:progress_move} {{progress_name=@{name}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"></button>
                         </label>
                       </div>
                       <input class="hide-element" type="text" name="attr_progress-filled" value="floor((@{progress_1}+@{progress_2}+@{progress_3}+@{progress_4}+@{progress_5}+@{progress_6}+@{progress_7}+@{progress_8}+@{progress_9}+@{progress_10})/4)" disabled="true"/>
@@ -24188,7 +24188,7 @@
   </div>
 </rolltemplate>
 <!-- TODO: additional mixin for burning momentum for a strong hit with a match?-->
-<rolltemplate class="sheet-rolltemplate-starforged_progress">
+<rolltemplate class="sheet-rolltemplate-progress_move">
   <div class="sheet-roll-container">{{#progress}}
     <div class="sheet-subheader">{{progress_name}} </div>
     <div class="sheet-result-body sheet-result-row">

@@ -2742,7 +2742,7 @@
   padding: 0.4em 1em 0.4em 1em;
 }
 .sheet-rolltemplate-starforged_moves .sheet-roll-container,
-.sheet-rolltemplate-starforged_progress .sheet-roll-container {
+.sheet-rolltemplate-progress_move .sheet-roll-container {
   background: #33323c;
   color: #fff;
   font-size: 1em;
@@ -2750,12 +2750,12 @@
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_moves .sheet-result-row,
-.sheet-rolltemplate-starforged_progress .sheet-result-row {
+.sheet-rolltemplate-progress_move .sheet-result-row {
   display: flex;
   justify-content: space-between;
 }
 .sheet-rolltemplate-starforged_moves .inlinerollresult,
-.sheet-rolltemplate-starforged_progress .inlinerollresult {
+.sheet-rolltemplate-progress_move .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
   text-align: center;
@@ -2763,29 +2763,29 @@
   background: transparent;
   border-radius: 1em;
 }
-.sheet-rolltemplate-starforged_progress .sheet-action-score .fullfail,
+.sheet-rolltemplate-progress_move .sheet-action-score .fullfail,
 .sheet-rolltemplate-starforged_moves .sheet-action-score .fullfail {
   border: 2px solid #d22e53;
 }
-.sheet-rolltemplate-starforged_progress .sheet-action-score .fullcrit,
+.sheet-rolltemplate-progress_move .sheet-action-score .fullcrit,
 .sheet-rolltemplate-starforged_moves .sheet-action-score .fullcrit {
   border: 2px solid #42829e;
 }
-.sheet-rolltemplate-starforged_progress .sheet-challenge-dice .fullcrit,
+.sheet-rolltemplate-progress_move .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-starforged_moves .sheet-challenge-dice .fullcrit {
   border: 2px solid #d22e53;
 }
-.sheet-rolltemplate-starforged_progress .sheet-challenge-dice .fullfail,
+.sheet-rolltemplate-progress_move .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-starforged_moves .sheet-challenge-dice .fullfail {
   border: 2px solid #42829e;
 }
-.sheet-rolltemplate-starforged_progress .sheet-roll-outcome,
+.sheet-rolltemplate-progress_move .sheet-roll-outcome,
 .sheet-rolltemplate-starforged_moves .sheet-roll-outcome {
   background: #403f4b;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_moves .sheet-subheader,
-.sheet-rolltemplate-starforged_progress .sheet-subheader {
+.sheet-rolltemplate-progress_move .sheet-subheader {
   line-height: 1.5em;
   font-weight: 900;
   text-align: left;
@@ -2795,7 +2795,7 @@
   font-style: normal;
 }
 .sheet-rolltemplate-starforged_moves .sheet-subfooter,
-.sheet-rolltemplate-starforged_progress .sheet-subfooter {
+.sheet-rolltemplate-progress_move .sheet-subfooter {
   line-height: 1.5em;
   font-weight: 900;
   text-align: left;
@@ -2805,53 +2805,53 @@
   font-style: italic;
 }
 .sheet-rolltemplate-starforged_moves .sheet-result-body,
-.sheet-rolltemplate-starforged_progress .sheet-result-body {
+.sheet-rolltemplate-progress_move .sheet-result-body {
   padding: 0.4em 1em 0.4em 1em;
 }
 .sheet-rolltemplate-starforged_moves .sheet-alert,
-.sheet-rolltemplate-starforged_progress .sheet-alert {
+.sheet-rolltemplate-progress_move .sheet-alert {
   margin: 0.2em 0.3em 0.2em 0.3em;
   border-radius: 1em;
   width: auto;
   padding: 0.5em;
 }
 .sheet-rolltemplate-starforged_moves .sheet-strong-hit-match,
-.sheet-rolltemplate-starforged_progress .sheet-strong-hit-match {
+.sheet-rolltemplate-progress_move .sheet-strong-hit-match {
   width: 1em;
   margin: 0.3em 0.5em 0.3em 0.3em;
   border-radius: 1em;
   background-color: #40819f;
 }
 .sheet-rolltemplate-starforged_moves .sheet-strong-hit,
-.sheet-rolltemplate-starforged_progress .sheet-strong-hit {
+.sheet-rolltemplate-progress_move .sheet-strong-hit {
   width: 1em;
   margin: 0.3em 0.5em 0.3em 0.3em;
   border-radius: 1em;
   background-color: #63a9ca;
 }
 .sheet-rolltemplate-starforged_moves .sheet-weak-hit,
-.sheet-rolltemplate-starforged_progress .sheet-weak-hit {
+.sheet-rolltemplate-progress_move .sheet-weak-hit {
   width: 1em;
   margin: 0.3em 0.5em 0.3em 0.3em;
   border-radius: 1em;
   background-color: #83dbff;
 }
 .sheet-rolltemplate-starforged_moves .sheet-miss,
-.sheet-rolltemplate-starforged_progress .sheet-miss {
+.sheet-rolltemplate-progress_move .sheet-miss {
   width: 1em;
   margin: 0.3em 0.5em 0.3em 0.3em;
   border-radius: 1em;
   background-color: #d8566f;
 }
 .sheet-rolltemplate-starforged_moves .sheet-miss-match,
-.sheet-rolltemplate-starforged_progress .sheet-miss-match {
+.sheet-rolltemplate-progress_move .sheet-miss-match {
   width: 1em;
   margin: 0.3em 0.5em 0.3em 0.3em;
   border-radius: 1em;
   background-color: #d22e53;
 }
 .sheet-rolltemplate-starforged_moves .userscript-tcat,
-.sheet-rolltemplate-starforged_progress .userscript-tcat {
+.sheet-rolltemplate-progress_move .userscript-tcat {
   font-weight: 900;
 }
 .sheet-rolltemplate-starforged_moves .sheet-momentum-title {

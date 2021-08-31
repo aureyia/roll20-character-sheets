@@ -39,7 +39,7 @@ mixin repeatingVow()
             type="roll"
             class='hide'
             name="rollVow"
-            value="&{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"
+            value="&{template:progress_move} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"
           )
           div.btn-div(data-i18n='vow-fulfill')=translation['vow-fulfill']
       input(
