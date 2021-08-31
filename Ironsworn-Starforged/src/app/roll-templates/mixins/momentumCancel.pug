@@ -1,7 +1,7 @@
 include ./actions
 include ./body
 
-mixin actionDieNegated(opts)
+mixin actionDieCancelled(opts)
   div.sheet-result-body.sheet-result-row
     div(data-i18n='previous-action-score')=translation['previous-action-score']
     div {{#{opts.type}}}
@@ -18,13 +18,13 @@ mixin actionDieNegated(opts)
     div {{challenge1}} {{challenge2}}
   +standardAction('modifiers')
 
-mixin negationRoll(opts, type)
+mixin momentumCancelActionDie(opts, type)
   | {{#rollTotal() momentum #{opts.momentum}}}
-  | {{#rollTotal() #{type} negate#{opts.die}}}
-  +actionDieNegated({momentum: true, type: type})
-  | {{/rollTotal() #{type} negate#{opts.die}}}
-  | {{#^rollTotal() #{type} negate#{opts.die}}}
+  | {{#rollTotal() #{type} cancel#{opts.die}}}
+  +actionDieCancelled({momentum: true, type: type})
+  | {{/rollTotal() #{type} cancel#{opts.die}}}
+  | {{#^rollTotal() #{type} cancel#{opts.die}}}
   +actionBody(type)
   +standardAction(type)
-  | {{/^rollTotal() #{type} negate#{opts.die}}}
+  | {{/^rollTotal() #{type} cancel#{opts.die}}}
   | {{/rollTotal() momentum #{opts.momentum}}}

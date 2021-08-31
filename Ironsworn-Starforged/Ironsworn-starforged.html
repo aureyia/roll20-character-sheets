@@ -48,7 +48,7 @@
             </div>
               <div class="resource">
                 <label class="roll-resource-label">
-                  <button class="hide-element" type="roll" title="@{rollhealth}" name="rollhealth" value="&{template:starforged_moves} {{name=roll +health}} {{action=[[{d6+@{health}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{health}+(?{Modifier|0})]]}} {{negate2=[[2+@{health}+(?{Modifier|0})]]}} {{negate3=[[3+@{health}+(?{Modifier|0})]]}} {{negate4=[[4+@{health}+(?{Modifier|0})]]}} {{negate5=[[5+@{health}+(?{Modifier|0})]]}} {{negate6=[[6+@{health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{health}]]}}"></button>
+                  <button class="hide-element" type="roll" title="@{rollhealth}" name="rollhealth" value="&{template:starforged_moves} {{name=roll +health}} {{action=[[{d6+@{health}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{health}+(?{Modifier|0})]]}} {{cancel2=[[2+@{health}+(?{Modifier|0})]]}} {{cancel3=[[3+@{health}+(?{Modifier|0})]]}} {{cancel4=[[4+@{health}+(?{Modifier|0})]]}} {{cancel5=[[5+@{health}+(?{Modifier|0})]]}} {{cancel6=[[6+@{health}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{health}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{health}]]}}"></button>
                   <div data-i18n="resource-health">Health</div>
                 </label>
                 <select class="resource-value" name="attr_health">
@@ -62,7 +62,7 @@
               </div>
               <div class="resource">
                 <label class="roll-resource-label">
-                  <button class="hide-element" type="roll" title="@{rollspirit}" name="rollspirit" value="&{template:starforged_moves} {{name=roll +spirit}} {{action=[[{d6+@{spirit}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{spirit}+(?{Modifier|0})]]}} {{negate2=[[2+@{spirit}+(?{Modifier|0})]]}} {{negate3=[[3+@{spirit}+(?{Modifier|0})]]}} {{negate4=[[4+@{spirit}+(?{Modifier|0})]]}} {{negate5=[[5+@{spirit}+(?{Modifier|0})]]}} {{negate6=[[6+@{spirit}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{spirit}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{spirit}]]}}"></button>
+                  <button class="hide-element" type="roll" title="@{rollspirit}" name="rollspirit" value="&{template:starforged_moves} {{name=roll +spirit}} {{action=[[{d6+@{spirit}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{spirit}+(?{Modifier|0})]]}} {{cancel2=[[2+@{spirit}+(?{Modifier|0})]]}} {{cancel3=[[3+@{spirit}+(?{Modifier|0})]]}} {{cancel4=[[4+@{spirit}+(?{Modifier|0})]]}} {{cancel5=[[5+@{spirit}+(?{Modifier|0})]]}} {{cancel6=[[6+@{spirit}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{spirit}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{spirit}]]}}"></button>
                   <div data-i18n="resource-spirit">Spirit</div>
                 </label>
                 <select class="resource-value" name="attr_spirit">
@@ -76,7 +76,7 @@
               </div>
               <div class="resource">
                 <label class="roll-resource-label">
-                  <button class="hide-element" type="roll" title="@{rollsupply}" name="rollsupply" value="&{template:starforged_moves} {{name=roll +supply}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
+                  <button class="hide-element" type="roll" title="@{rollsupply}" name="rollsupply" value="&{template:starforged_moves} {{name=roll +supply}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{supply}+(?{Modifier|0})]]}} {{cancel2=[[2+@{supply}+(?{Modifier|0})]]}} {{cancel3=[[3+@{supply}+(?{Modifier|0})]]}} {{cancel4=[[4+@{supply}+(?{Modifier|0})]]}} {{cancel5=[[5+@{supply}+(?{Modifier|0})]]}} {{cancel6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
                   <div data-i18n="resource-supply">Supply</div>
                 </label>
                 <select class="resource-value" name="attr_supply">
@@ -323,31 +323,31 @@
                 <div class="stat">
                   <label class="roll-label">
                     <h3 class="stats-title" data-i18n="stat-edge">Edge</h3><span class="stats-input" name="attr_edge"></span>
-                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +edge}} {{action=[[{d6+@{edge}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{edge}+(?{Modifier|0})]]}} {{negate2=[[2+@{edge}+(?{Modifier|0})]]}} {{negate3=[[3+@{edge}+(?{Modifier|0})]]}} {{negate4=[[4+@{edge}+(?{Modifier|0})]]}} {{negate5=[[5+@{edge}+(?{Modifier|0})]]}} {{negate6=[[6+@{edge}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{edge}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{edge}]]}}"></button>
+                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +edge}} {{action=[[{d6+@{edge}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{edge}+(?{Modifier|0})]]}} {{cancel2=[[2+@{edge}+(?{Modifier|0})]]}} {{cancel3=[[3+@{edge}+(?{Modifier|0})]]}} {{cancel4=[[4+@{edge}+(?{Modifier|0})]]}} {{cancel5=[[5+@{edge}+(?{Modifier|0})]]}} {{cancel6=[[6+@{edge}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{edge}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{edge}]]}}"></button>
                   </label>
                 </div>
                 <div class="stat">
                   <label class="roll-label">
                     <h3 class="stats-title" data-i18n="stat-heart">Heart</h3><span class="stats-input" name="attr_heart"></span>
-                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +heart}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{heart}+(?{Modifier|0})]]}} {{negate2=[[2+@{heart}+(?{Modifier|0})]]}} {{negate3=[[3+@{heart}+(?{Modifier|0})]]}} {{negate4=[[4+@{heart}+(?{Modifier|0})]]}} {{negate5=[[5+@{heart}+(?{Modifier|0})]]}} {{negate6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
+                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +heart}} {{action=[[{d6+@{heart}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{heart}+(?{Modifier|0})]]}} {{cancel2=[[2+@{heart}+(?{Modifier|0})]]}} {{cancel3=[[3+@{heart}+(?{Modifier|0})]]}} {{cancel4=[[4+@{heart}+(?{Modifier|0})]]}} {{cancel5=[[5+@{heart}+(?{Modifier|0})]]}} {{cancel6=[[6+@{heart}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{heart}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{heart}]]}}"></button>
                   </label>
                 </div>
                 <div class="stat">
                   <label class="roll-label">
                     <h3 class="stats-title" data-i18n="stat-iron">Iron</h3><span class="stats-input" name="attr_iron"></span>
-                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +iron}} {{action=[[{d6+@{iron}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{iron}+(?{Modifier|0})]]}} {{negate2=[[2+@{iron}+(?{Modifier|0})]]}} {{negate3=[[3+@{iron}+(?{Modifier|0})]]}} {{negate4=[[4+@{iron}+(?{Modifier|0})]]}} {{negate5=[[5+@{iron}+(?{Modifier|0})]]}} {{negate6=[[6+@{iron}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{iron}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{iron}]]}}"></button>
+                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +iron}} {{action=[[{d6+@{iron}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{iron}+(?{Modifier|0})]]}} {{cancel2=[[2+@{iron}+(?{Modifier|0})]]}} {{cancel3=[[3+@{iron}+(?{Modifier|0})]]}} {{cancel4=[[4+@{iron}+(?{Modifier|0})]]}} {{cancel5=[[5+@{iron}+(?{Modifier|0})]]}} {{cancel6=[[6+@{iron}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{iron}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{iron}]]}}"></button>
                   </label>
                 </div>
                 <div class="stat">
                   <label class="roll-label">
                     <h3 class="stats-title" data-i18n="stat-shadow">Shadow</h3><span class="stats-input" name="attr_shadow"></span>
-                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +shadow}} {{action=[[{d6+@{shadow}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{shadow}+(?{Modifier|0})]]}} {{negate2=[[2+@{shadow}+(?{Modifier|0})]]}} {{negate3=[[3+@{shadow}+(?{Modifier|0})]]}} {{negate4=[[4+@{shadow}+(?{Modifier|0})]]}} {{negate5=[[5+@{shadow}+(?{Modifier|0})]]}} {{negate6=[[6+@{shadow}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{shadow}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{shadow}]]}}"></button>
+                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +shadow}} {{action=[[{d6+@{shadow}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{shadow}+(?{Modifier|0})]]}} {{cancel2=[[2+@{shadow}+(?{Modifier|0})]]}} {{cancel3=[[3+@{shadow}+(?{Modifier|0})]]}} {{cancel4=[[4+@{shadow}+(?{Modifier|0})]]}} {{cancel5=[[5+@{shadow}+(?{Modifier|0})]]}} {{cancel6=[[6+@{shadow}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{shadow}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{shadow}]]}}"></button>
                   </label>
                 </div>
                 <div class="stat">
                   <label class="roll-label">
                     <h3 class="stats-title" data-i18n="stat-wits">Wits</h3><span class="stats-input" name="attr_wits"></span>
-                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +wits}} {{action=[[{d6+@{wits}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{wits}+(?{Modifier|0})]]}} {{negate2=[[2+@{wits}+(?{Modifier|0})]]}} {{negate3=[[3+@{wits}+(?{Modifier|0})]]}} {{negate4=[[4+@{wits}+(?{Modifier|0})]]}} {{negate5=[[5+@{wits}+(?{Modifier|0})]]}} {{negate6=[[6+@{wits}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{wits}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{wits}]]}}"></button>
+                    <button class="hide-element" type="roll" title="Roll +undefined" name="rollundefined" value="&amp;{template:starforged_moves} {{name=Roll +wits}} {{action=[[{d6+@{wits}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{wits}+(?{Modifier|0})]]}} {{cancel2=[[2+@{wits}+(?{Modifier|0})]]}} {{cancel3=[[3+@{wits}+(?{Modifier|0})]]}} {{cancel4=[[4+@{wits}+(?{Modifier|0})]]}} {{cancel5=[[5+@{wits}+(?{Modifier|0})]]}} {{cancel6=[[6+@{wits}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{wits}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{wits}]]}}"></button>
                   </label>
                 </div>
               <div class="stat-toggle edit-toggle">
@@ -13414,7 +13414,7 @@
         <div class="resources">
             <div class="resource">
               <label class="roll-resource-label">
-                <button class="hide-element" type="roll" title="@{rollsupply}" name="rollsupply" value="&{template:starforged_moves} {{name=roll +supply}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{supply}+(?{Modifier|0})]]}} {{negate2=[[2+@{supply}+(?{Modifier|0})]]}} {{negate3=[[3+@{supply}+(?{Modifier|0})]]}} {{negate4=[[4+@{supply}+(?{Modifier|0})]]}} {{negate5=[[5+@{supply}+(?{Modifier|0})]]}} {{negate6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
+                <button class="hide-element" type="roll" title="@{rollsupply}" name="rollsupply" value="&{template:starforged_moves} {{name=roll +supply}} {{action=[[{d6+@{supply}+(?{Modifier|0}),{10}}kl1]]}} {{cancel1=[[1+@{supply}+(?{Modifier|0})]]}} {{cancel2=[[2+@{supply}+(?{Modifier|0})]]}} {{cancel3=[[3+@{supply}+(?{Modifier|0})]]}} {{cancel4=[[4+@{supply}+(?{Modifier|0})]]}} {{cancel5=[[5+@{supply}+(?{Modifier|0})]]}} {{cancel6=[[6+@{supply}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{supply}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{supply}]]}}"></button>
                 <div data-i18n="resource-supply">Supply</div>
               </label>
               <select class="resource-value" name="attr_supply">
@@ -23440,10 +23440,10 @@
 </rolltemplate>
 <!-- TODO: additional mixin for burning momentum for a strong hit with a match?-->
 <!-- TODO: additional mixin for burning momentum for a strong hit with a match?-->
-<rolltemplate class="sheet-rolltemplate-starforged_moves"> 
+<rolltemplate class="sheet-rolltemplate-starforged_moves">
   <div class="sheet-roll-container">{{#action}}
     <div class="sheet-subheader">{{name}}</div>{{#rollLess() momentum 0}}{{#rollTotal() momentum -1}}
-    {{#rollTotal() action negate1}}
+    {{#rollTotal() action cancel1}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="previous-action-score">Previous Action Score</div>
       <div>{{action}}</div>
@@ -23484,7 +23484,7 @@
     {{#^rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23499,8 +23499,8 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate1}}
-    {{#^rollTotal() action negate1}}
+    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action cancel1}}
+    {{#^rollTotal() action cancel1}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="action-score">Action Score</div>
       <div class="sheet-action-score">{{action}}</div>
@@ -23530,7 +23530,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23545,9 +23545,9 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate1}}
+    {{/^rollGreater() action challenge1}}{{/^rollTotal() action cancel1}}
     {{/rollTotal() momentum -1}}{{#rollTotal() momentum -2}}
-    {{#rollTotal() action negate2}}
+    {{#rollTotal() action cancel2}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="previous-action-score">Previous Action Score</div>
       <div>{{action}}</div>
@@ -23588,7 +23588,7 @@
     {{#^rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23603,8 +23603,8 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate2}}
-    {{#^rollTotal() action negate2}}
+    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action cancel2}}
+    {{#^rollTotal() action cancel2}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="action-score">Action Score</div>
       <div class="sheet-action-score">{{action}}</div>
@@ -23634,7 +23634,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23649,9 +23649,9 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate2}}
+    {{/^rollGreater() action challenge1}}{{/^rollTotal() action cancel2}}
     {{/rollTotal() momentum -2}}{{#rollTotal() momentum -3}}
-    {{#rollTotal() action negate3}}
+    {{#rollTotal() action cancel3}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="previous-action-score">Previous Action Score</div>
       <div>{{action}}</div>
@@ -23692,7 +23692,7 @@
     {{#^rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23707,8 +23707,8 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate3}}
-    {{#^rollTotal() action negate3}}
+    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action cancel3}}
+    {{#^rollTotal() action cancel3}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="action-score">Action Score</div>
       <div class="sheet-action-score">{{action}}</div>
@@ -23738,7 +23738,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23753,9 +23753,9 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate3}}
+    {{/^rollGreater() action challenge1}}{{/^rollTotal() action cancel3}}
     {{/rollTotal() momentum -3}}{{#rollTotal() momentum -4}}
-    {{#rollTotal() action negate4}}
+    {{#rollTotal() action cancel4}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="previous-action-score">Previous Action Score</div>
       <div>{{action}}</div>
@@ -23796,7 +23796,7 @@
     {{#^rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23811,8 +23811,8 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate4}}
-    {{#^rollTotal() action negate4}}
+    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action cancel4}}
+    {{#^rollTotal() action cancel4}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="action-score">Action Score</div>
       <div class="sheet-action-score">{{action}}</div>
@@ -23842,7 +23842,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23857,9 +23857,9 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate4}}
+    {{/^rollGreater() action challenge1}}{{/^rollTotal() action cancel4}}
     {{/rollTotal() momentum -4}}{{#rollTotal() momentum -5}}
-    {{#rollTotal() action negate5}}
+    {{#rollTotal() action cancel5}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="previous-action-score">Previous Action Score</div>
       <div>{{action}}</div>
@@ -23900,7 +23900,7 @@
     {{#^rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23915,8 +23915,8 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate5}}
-    {{#^rollTotal() action negate5}}
+    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action cancel5}}
+    {{#^rollTotal() action cancel5}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="action-score">Action Score</div>
       <div class="sheet-action-score">{{action}}</div>
@@ -23946,7 +23946,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -23961,9 +23961,9 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate5}}
+    {{/^rollGreater() action challenge1}}{{/^rollTotal() action cancel5}}
     {{/rollTotal() momentum -5}}{{#rollTotal() momentum -6}}
-    {{#rollTotal() action negate6}}
+    {{#rollTotal() action cancel6}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="previous-action-score">Previous Action Score</div>
       <div>{{action}}</div>
@@ -24004,7 +24004,7 @@
     {{#^rollGreater() modifiers challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -24019,8 +24019,8 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() modifiers challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action negate6}}
-    {{#^rollTotal() action negate6}}
+    {{/^rollGreater() modifiers challenge1}}{{/rollTotal() action cancel6}}
+    {{#^rollTotal() action cancel6}}
     <div class="sheet-result-body sheet-result-row">
       <div data-i18n="action-score">Action Score</div>
       <div class="sheet-action-score">{{action}}</div>
@@ -24050,7 +24050,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
@@ -24065,7 +24065,7 @@
       <div class="sheet-subfooter" data-i18n="roll-miss">Miss</div>
     </div>{{/^rollGreater() action challenge2}}
     {{/^rollTotal() challenge1 challenge2}}
-    {{/^rollGreater() action challenge1}}{{/^rollTotal() action negate6}}
+    {{/^rollGreater() action challenge1}}{{/^rollTotal() action cancel6}}
     {{/rollTotal() momentum -6}}{{/rollLess() momentum 0}}
     {{#^rollLess() momentum 0}}
     <div class="sheet-result-body sheet-result-row">
@@ -24106,7 +24106,7 @@
     {{#^rollGreater() action challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{#rollGreater() momentum challenge1}}
     <div class="sheet-result-body sheet-result-row">
@@ -24178,7 +24178,7 @@
       <div class="sheet-subheader">{{header}}</div>
     </div>{{/header}}
     <div class="sheet-result-body sheet-result-row">
-      <div>{{name}}  </div>
+      <div>{{name}}</div>
     </div>{{#allprops() custom name header}}
     <div class="sheet-result-body sheet-result-row">
       <div>{{key}}</div>
@@ -24221,7 +24221,7 @@
     {{#^rollGreater() progress challenge1}}
     {{#rollTotal() challenge1 challenge2}}
     <div class="sheet-result-row sheet-roll-outcome">
-      <div class="sheet-complication"></div>
+      <div class="sheet-miss-match"></div>
       <div class="sheet-subfooter" data-i18n="roll-miss-match">Miss with a Match</div>
     </div>{{/rollTotal() challenge1 challenge2}}
     {{#^rollTotal() challenge1 challenge2}}
