@@ -33,17 +33,17 @@ mixin field(field, assetName)
     )=translation[`asset-${assetName}-textinput-${field.toLowerCase()}`]
     input.border-bottom.no-border(type='text' name=`attr_field-${field}` value='')
 
-mixin track(track, assetName)
-  .asset-track-wrapper
-    - var currentTrack = 0
-    while currentTrack <= track.Value
-      .asset-track-box
-        if currentTrack == 0
-          .asset-track-box-display=0
+mixin meter(meter, assetName)
+  .asset-meter-wrapper
+    - var currentMeter = 0
+    while currentMeter <= meter.Value
+      .asset-meter-box
+        if currentMeter == 0
+          .asset-meter-box-display=0
         else
-          .asset-track-box-display=`+ ${currentTrack}`
-        input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentTrack}`)
-        - currentTrack++
+          .asset-meter-box-display=`+ ${currentMeter}`
+        input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
+        - currentMeter++
 
 mixin assetTemplate(asset, options)
   - var name = asset.Name.toLowerCase().replace(/\s/g, '-')
@@ -66,7 +66,7 @@ mixin assetTemplate(asset, options)
         - var abilityNumber = index + 1
         +ability(asset, ability, abilityNumber, name)
     if asset['Condition Meter'] && options.standalone === false
-      +track(asset['Condition Meter'], name)
+      +meter(asset['Condition Meter'], name)
 
 mixin genericBuilder(assetsArray, listId)
   //- Asset Datalist

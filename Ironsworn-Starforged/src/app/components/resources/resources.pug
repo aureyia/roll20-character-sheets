@@ -3,8 +3,8 @@
 - var standard = [ 5, 4, 3, 2, 1, 0 ]
 - var inverse = [ 0, 1, 2, 3, 4, 5 ]
 
-mixin options(trackValues)
-  each val in trackValues
+mixin options(meterValues)
+  each val in meterValues
     option(value=val)=`+${val}`
 
 mixin dropdowns(resource)
@@ -20,10 +20,10 @@ mixin dropdowns(resource)
       div(data-i18n=`resource-${resource}`)=translation[`resource-${resource}`]
     select(class="resource-value" name=`attr_${resource}`)
       if resource == 'wealth'
-        - var trackValues = inverse
+        - var meterValues = inverse
         +options(inverse)
       else
-        - var trackValues = standard
+        - var meterValues = standard
         +options(standard)
 
 mixin character(resources)

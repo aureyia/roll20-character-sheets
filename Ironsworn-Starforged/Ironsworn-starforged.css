@@ -1951,12 +1951,12 @@
 .charsheet input[type="checkbox"].builder-ability-2-text-input:checked ~ div.builder-ability-2-text-input,
 .charsheet input[type="checkbox"].builder-ability-3-text:checked ~ div.builder-ability-3-text,
 .charsheet input[type="checkbox"].builder-ability-3-text-input:checked ~ div.builder-ability-3-text-input,
-.charsheet input[type="checkbox"].track-dropdown-1:checked ~ div.track-dropdown-1,
-.charsheet input[type="checkbox"].track-dropdown-2:checked ~ div.track-dropdown-2,
-.charsheet input[type="checkbox"].track-dropdown-3:checked ~ div.track-dropdown-3,
-.charsheet input[type="checkbox"].track-dropdown-4:checked ~ div.track-dropdown-4,
-.charsheet input[type="checkbox"].track-dropdown-5:checked ~ div.track-dropdown-5,
-.charsheet input[type="checkbox"].track-dropdown-6:checked ~ div.track-dropdown-6 {
+.charsheet input[type="checkbox"].meter-dropdown-1:checked ~ div.meter-dropdown-1,
+.charsheet input[type="checkbox"].meter-dropdown-2:checked ~ div.meter-dropdown-2,
+.charsheet input[type="checkbox"].meter-dropdown-3:checked ~ div.meter-dropdown-3,
+.charsheet input[type="checkbox"].meter-dropdown-4:checked ~ div.meter-dropdown-4,
+.charsheet input[type="checkbox"].meter-dropdown-5:checked ~ div.meter-dropdown-5,
+.charsheet input[type="checkbox"].meter-dropdown-6:checked ~ div.meter-dropdown-6 {
   display: flex;
   visibility: visible;
   height: auto;
@@ -1987,7 +1987,7 @@
   opacity: 1;
   margin: 0px 5px 0 5px;
 }
-.charsheet .custom-track {
+.charsheet .custom-meter {
   width: 20.5em;
   margin: 0 !important;
 }
@@ -2104,11 +2104,11 @@
   font-weight: bold;
   text-transform: uppercase;
 }
-.charsheet .asset-track-wrapper {
+.charsheet .asset-meter-wrapper {
   margin: 10px;
   display: flex;
 }
-.charsheet .asset-track-box {
+.charsheet .asset-meter-box {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2120,13 +2120,13 @@
   padding: 5px;
   margin-bottom: 2px;
 }
-.charsheet .asset-track-wrapper-wordy {
+.charsheet .asset-meter-wrapper-wordy {
   text-transform: uppercase;
 }
-.charsheet .asset-track-wrapper-wordy .asset-track-box {
+.charsheet .asset-meter-wrapper-wordy .asset-meter-box {
   flex-direction: row;
 }
-.charsheet .asset-track-box-display {
+.charsheet .asset-meter-box-display {
   font-size: 17px;
   font-weight: bold;
 }

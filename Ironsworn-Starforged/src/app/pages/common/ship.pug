@@ -48,7 +48,7 @@ mixin shipPage(sheetType)
               })
           h3(data-i18n='resource-vehicle-integrity')=translation['resource-vehicle-integrity']
           .info
-            +track(starship['Condition Meter'], `${sheetType}_ship`)
+            +meter(starship['Condition Meter'], `${sheetType}_ship`)
           h3(data-i18n='impacts')=translation['impacts']
           .info
             - const shipImpacts = [impacts.find(obj => { return obj.title === 'ship' })]

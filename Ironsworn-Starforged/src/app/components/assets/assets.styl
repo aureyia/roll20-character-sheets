@@ -22,12 +22,12 @@ input[type="checkbox"].builder-ability-2-text:checked ~ div.builder-ability-2-te
 input[type="checkbox"].builder-ability-2-text-input:checked ~ div.builder-ability-2-text-input,
 input[type="checkbox"].builder-ability-3-text:checked ~ div.builder-ability-3-text,
 input[type="checkbox"].builder-ability-3-text-input:checked ~ div.builder-ability-3-text-input,
-input[type="checkbox"].track-dropdown-1:checked ~ div.track-dropdown-1,
-input[type="checkbox"].track-dropdown-2:checked ~ div.track-dropdown-2,
-input[type="checkbox"].track-dropdown-3:checked ~ div.track-dropdown-3,
-input[type="checkbox"].track-dropdown-4:checked ~ div.track-dropdown-4,
-input[type="checkbox"].track-dropdown-5:checked ~ div.track-dropdown-5,
-input[type="checkbox"].track-dropdown-6:checked ~ div.track-dropdown-6
+input[type="checkbox"].meter-dropdown-1:checked ~ div.meter-dropdown-1,
+input[type="checkbox"].meter-dropdown-2:checked ~ div.meter-dropdown-2,
+input[type="checkbox"].meter-dropdown-3:checked ~ div.meter-dropdown-3,
+input[type="checkbox"].meter-dropdown-4:checked ~ div.meter-dropdown-4,
+input[type="checkbox"].meter-dropdown-5:checked ~ div.meter-dropdown-5,
+input[type="checkbox"].meter-dropdown-6:checked ~ div.meter-dropdown-6
   display flex
   show-hide()
 
@@ -45,7 +45,7 @@ div.builder-titles-3
   > input[type=radio]
     margin-left: 4px
   div[class|=builder-ability]
-    align-items: flex-start 
+    align-items: flex-start
 
 div.asset-view,
 div.asset-builder
@@ -55,7 +55,7 @@ input[type=checkbox].custom-asset-ability
   opacity 1
   margin 0px 5px 0 5px
 
-.custom-track
+.custom-meter
   width 20.5em
   margin 0 !important
 
@@ -169,11 +169,11 @@ input[type="checkbox"].asset-ability
   font-weight bold
   text-transform uppercase
 
-.asset-track-wrapper
+.asset-meter-wrapper
   margin 10px
   display flex
 
-.asset-track-box
+.asset-meter-box
   width 100%
   display flex
   flex-direction column
@@ -185,12 +185,12 @@ input[type="checkbox"].asset-ability
   padding 5px
   margin-bottom 2px
 
-.asset-track-wrapper-wordy
+.asset-meter-wrapper-wordy
   text-transform uppercase
-  .asset-track-box
+  .asset-meter-box
     flex-direction row
 
-.asset-track-box-display
+.asset-meter-box-display
   font-size 17px
   font-weight bold
 
@@ -346,7 +346,7 @@ span.asset-name
   padding-left 1em
 
 .category
-  std-font('Exo') 
+  std-font('Exo')
   font-size 1.1em
   text-transform uppercase
   font-weight bold
@@ -360,7 +360,7 @@ span.asset-name
   border-radius 0.4em 0.4em 0em 0em
   font-size 1em
   text-transform uppercase
-  std-font('Exo') 
+  std-font('Exo')
   &::placeholder
     color #b9b9b9
 
@@ -390,4 +390,4 @@ for key, category in $categories
   .category-{key}
     .asset-details
       .category
-        color category 
+        color category
