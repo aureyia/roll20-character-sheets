@@ -1,15 +1,16 @@
 on('change:selected_move', function(eventinfo) {
   if (eventinfo.newValue !== 'none') {
     setAttrs({
-      move_view: '2',
-      move_preview: eventinfo.newValue
+      view_mode_move: '2',
+      move_preview: eventinfo.newValue,
     });
   }
+  console.log(`change:selected_move`, eventinfo);
 });
-
-on('change:close_move_preview', function() {
+// TODO: devise a worker to handle all similar preview close functions!
+on('change:preview_close_move', function() {
   setAttrs({
-    move_view: '1',
-    selected_move: 'none'
+    view_mode_move: '1',
+    selected_move: 'none',
   });
 });

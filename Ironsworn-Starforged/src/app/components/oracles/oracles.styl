@@ -35,7 +35,7 @@ input.oracle-delve:checked ~ div.oracle-delve
   color #fff
   p, ol, ul
     padding 0.5em
-    std-font('Montserrat')
+    font-body-text()
 
 // commenting this out for now - true to the text, but too easy to mistake for an accordion in this context!
 // .oracle-subcategory .oracle-btn .oracle-name
@@ -234,13 +234,7 @@ input[type=radio].oracle-table-starship-first-look:checked ~ div.oracle-table-st
 input[type=radio].oracle-table-starship-mission:checked ~ div.oracle-table-starship-mission
   show-hide()
 
-.oracle-container
-  opacity 1
-  std-font()
-  font-size 1em
-  font-weight bold
-  justify-content space-between
-  padding 0.1em
+
 
 .oracle-column
   display flex
@@ -270,7 +264,7 @@ span.oracle-result
   color #fff
   border-bottom 1px solid #4C4D4F
   font-size 1.4em
-  font-weight bold
+  font-weight 700
   padding-left 5px
   padding-right 5px
   text-transform uppercase
@@ -301,6 +295,7 @@ tr.oracle-row
 
 .oracle-table
   border 4px solid #4C4D4F
+  font-weight 500
 
 .flex-table
   display flex
@@ -345,7 +340,7 @@ td.oracle-roll
 .oracle-table-2-column-group
   display flex
 
-.table-list
+.preview-list
   width 33%
   height 44em
   overflow auto
@@ -354,7 +349,7 @@ td.oracle-roll
   margin 0
   margin-right 0.3em
 
-.oracle-column.table-main
+.oracle-column.preview-main
   width 66%
 
 .oracle-footer
@@ -362,9 +357,9 @@ td.oracle-roll
   color: #ffffff
   line-height: 0.9em
   font-size: 0.9em
-  std-font()
+  font-body-text()
   font-variant: small-caps
-  font-weight: bold
+  font-weight 700
   text-align: left
   padding 0.5rem
   border-bottom-right-radius 1em
@@ -394,8 +389,8 @@ input[type=radio].oracle-preview:checked ~ div.oracle-preview
       border-top-left-radius 0.5em
       border-top-right-radius 0.5em
 
-.oracle-preview-container
-  display flex
+// .preview-container
+//   display flex
 
 .oracle-preview
   .oracle-box
@@ -403,3 +398,4 @@ input[type=radio].oracle-preview:checked ~ div.oracle-preview
 
 .column-wrap
   width 50%
+

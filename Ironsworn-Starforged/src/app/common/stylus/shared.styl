@@ -31,8 +31,27 @@ dark()
   background #4C4D4F
   color white
 
-std-font(primary = false)
-  if primary
-    font-family primary, Arial, sans-serif
-  else
-    font-family 'Montserrat', Arial, sans-serif
+font-body-text(weight=500)
+  font-family 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif
+  font-weight weight
+  letter-spacing 0.025rem
+font-compact-text(weight=400)
+  font-family 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif
+  font-weight weight
+  letter-spacing 0.025rem
+font-header-lg(weight=800) // h1, h2
+  // font-family 'Teko', 'Helvetica', 'Arial', sans-serif
+  // use
+  font-family 'Exo', 'Helvetica', 'Arial', sans-serif
+  font-weight weight
+  text-transform uppercase
+  letter-spacing 0.05rem
+font-header-sm(weight=700) // h3-h6
+  font-family 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif
+  font-weight weight
+  text-transform uppercase
+  letter-spacing 0.05rem
+font-btn(weight=700)
+  font-family 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif
+  font-weight weight
+  text-transform uppercase

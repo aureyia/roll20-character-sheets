@@ -7,3 +7,15 @@ mixin listGroup(title_i18n)
 mixin listGroupItem()
   li.list-group-item
     block
+
+mixin listGroupOverview(contentType)
+  input(type='radio' class=`hide-element ${contentType}-overview` name=`attr_view_mode_${contentType}` value='1' checked)
+  div(class=`${contentType}-overview showhide`)
+    //-  list-group-container
+    //- input(type='radio' class='hide-element' name=`attr_selected_${contentType}`)
+    block
+
+mixin listGroupScrolling()
+  .scrollable-list-groups.list-group-container
+    block
+

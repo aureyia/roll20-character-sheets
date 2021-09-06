@@ -12,29 +12,34 @@ mixin movePreviewFactory(move, options)
           - var singleOracle = oracles.find(group => { return group.Name === 'Move' }).Oracles.find(oracle => { return oracle.Name === move.Name })
           +oracleTable(singleOracle)
 
-mixin preview(move, options)
+mixin movePreview(move, options, visibility=false)
+  if visibility==true
+    div(class=`${move.id} move-visible move-preview`)
+      +moveContent(move, options)
+  else
+    div(class=`${move.id} showhide move-preview`)
+      +moveContent(move, options)
+
+mixin moveContent(move, options)
   if options.no_title
     div
   else
-    div.move-title.move-preview=move.Name
+    div.move-title=move.Name
   - const statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
   if move['Progress Move']
     +rollLabel
-      +progressRoll(move, 'hide-element')
+      +moveProgressRollBtn(move, 'hide-element')
   else if statCheck
     +rollLabel
-      +movesRoll(move, 'hide-element')
-  .move-description
-    block
+      +moveActionRollBtn(move, 'hide-element')
+  .move-description=move.Text
   .oracle-footer.move-page-footer=move.page
 
 mixin container(move, options = false)
   if options.visibility
-    div.move-visible
-      +preview(move, options)
-        block
+    +movePreview(move, options, true)
+      block
   else
-    input(type='radio' name='attr_move_preview' class=`${move.id} hide-element` value=move.Name)
-    div(class=`${move.id} showhide`)
-      +preview(move, options)
-        block
+    input(type='radio' name='attr_move_preview' class=`${move.id} hide-element` value=move.id)
+    +movePreview(move, options, false)
+      block

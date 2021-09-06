@@ -1,11 +1,12 @@
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900|Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700|Encode+Sans|Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900|Exo:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,500,600,700,800,900|Encode+Sans+Expanded:400,500,600,700,800,900|Exo:400,500,600,700,800,900|Teko:400,500,600,700&display=swap');
 .charsheet {
   width: 842px !important;
   margin: 0 auto !important;
   padding: 15px;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
 /* Fake radio/checkbox */
 /* Remove dot from all radios _after_ selected one */
 }
@@ -27,43 +28,45 @@
   display: none;
 }
 .charsheet li {
-  font-weight: normal;
   font-size: 14.3px;
 }
 .charsheet p {
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
   font-size: 14.3px;
-  line-height: 1.25;
-  font-weight: normal;
   margin: 0;
 }
 .charsheet h1 {
-  font-weight: bold;
+  font-family: 'Exo', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
   width: 100%;
   font-size: 28px;
   text-align: center;
   margin: 0 0 0px;
   padding: 10;
-  text-transform: uppercase;
 }
 .charsheet h2 {
-  font-weight: bold;
+  font-family: 'Exo', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
   width: 100%;
   font-size: 18px;
   text-align: left;
   margin: 0 0 0px;
   padding: 0;
-  text-transform: uppercase;
 }
 .charsheet h3 {
-  font-weight: bold;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
   width: 100%;
   line-height: 1.4em;
   font-size: 1.2em;
   text-align: center;
   margin: 0 0 0px;
   padding: 0;
-  text-transform: uppercase;
 }
 .charsheet h3.divide::after,
 .charsheet h3.divide::before {
@@ -105,35 +108,39 @@
   margin-top: 1em;
 }
 .charsheet h4 {
-  font-weight: bold;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
   width: 100%;
   font-size: 16px;
   text-align: center;
   margin: 0 0 0px;
   padding: 0;
-  text-transform: uppercase;
 }
 .charsheet h4.tab-title {
   display: inline-block;
 }
 .charsheet h5 {
-  font-weight: bold;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
   font-size: 12px;
   text-align: left;
   margin: 0 0 0px;
   padding: 0;
-  text-transform: uppercase;
 }
 .charsheet h6 {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
   margin-top: 2px;
 }
 .charsheet button[type="roll"] {
   align-items: left;
   color: #4c4d4f;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 20px;
   text-decoration: none;
   background: none;
@@ -158,15 +165,17 @@
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 .charsheet textarea {
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   max-width: 828px;
   border: 2px solid #4c4d4f;
-  font-weight: normal;
+  font-weight: 400;
 }
 .charsheet .btn {
   display: inline;
   width: 100%;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   padding: 0;
   margin: 0.5em;
@@ -221,14 +230,16 @@
   height: auto;
   border: 2px solid #4c4d4f;
   border-radius: 0;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 12px;
   text-shadow: none;
   text-transform: uppercase;
   padding: 0.2em;
   margin: 0.3em;
   color: #4c4d4f;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   background: #dfe0e2;
 }
 .charsheet button.btn.repcontrol_edit:hover,
@@ -262,7 +273,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  font-weight: normal;
+  font-weight: 400;
   padding: 0.5em;
 }
 .charsheet .track-box-input {
@@ -300,7 +311,7 @@
 }
 .charsheet .track-box-value {
   padding: 0px;
-  font-weight: bold;
+  font-weight: 700;
   height: 35px;
   padding-top: 10px;
   font-size: 18px;
@@ -308,7 +319,7 @@
 }
 .charsheet .resources-box-value {
   padding: 0px;
-  font-weight: bold;
+  font-weight: 700;
   height: 35px;
   padding-top: 10px;
   font-size: 18px;
@@ -341,7 +352,7 @@
 }
 .charsheet .pc-name {
   width: 100%;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   border: 2px solid #4c4d4f;
   background: #e6e7e8;
@@ -350,7 +361,7 @@
 }
 .charsheet .debil-desc {
   width: 100%;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
 }
 .charsheet .border {
@@ -424,7 +435,7 @@
   margin-right: 11px;
   border-radius: 4px;
   padding: 2px 4px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
 }
 .charsheet span.showhide:hover {
@@ -565,16 +576,7 @@
 .charsheet .mode-image {
   display: flex;
 }
-.charsheet input[type=radio].connections:checked ~ div.connections,
-.charsheet input[type=radio].summary:checked ~ div.summary,
-.charsheet input[type=radio].vows:checked ~ div.vows,
-.charsheet input[type=radio].assets:checked ~ div.assets,
-.charsheet input[type=radio].moves:checked ~ div.moves,
-.charsheet input[type=radio].progress-page:checked ~ div.progress-page,
-.charsheet input[type=radio].oracles:checked ~ div.oracles,
-.charsheet input[type=radio].settings:checked ~ div.settings,
-.charsheet input[type=radio].legacies:checked ~ div.legacies,
-.charsheet input[type=radio].ship:checked ~ div.ship {
+.charsheet input[type=radio].page-toggle.hide-element:checked ~ div.page-content.showhide {
   display: block;
   visibility: visible;
   height: auto;
@@ -702,7 +704,7 @@
 .charsheet .resource-value {
   font-size: 14px;
   width: 38px;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0;
   padding-left: 4px;
   border-radius: 0;
@@ -815,7 +817,7 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 0.3em;
 }
 .charsheet .custom-impacts {
@@ -834,7 +836,7 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .charsheet .custom-impacts input[type=text] {
   border: 0;
@@ -888,12 +890,14 @@
   width: 40%;
 }
 .charsheet p.connection-title {
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   text-align: left;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0 0 0px;
   padding: 0.1em 0.3em 0.3em 0.5em;
   text-transform: uppercase;
-  font-family: 'Montserrat', Arial, sans-serif;
   display: inline;
   color: #4c4d4f;
   border-radius: 0;
@@ -947,7 +951,7 @@
   border-radius: 0;
   padding: 2px 4px;
   border: 1px solid;
-  font-weight: bold;
+  font-weight: 700;
 }
 .charsheet input.vow-name {
   background: #ccc;
@@ -989,7 +993,7 @@
 }
 .charsheet .vow-name {
   width: 100%;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
 }
 .charsheet .difficulty {
@@ -1022,7 +1026,7 @@
 }
 .charsheet .progress-name {
   width: 100%;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
 }
 .charsheet input.progress-name {
@@ -1035,7 +1039,7 @@
   width: 40px;
   height: 40px;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
   background: transparent;
   text-align: center;
   justify-content: center;
@@ -1163,7 +1167,7 @@
   width: 60px;
   height: 60px;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
   background: transparent;
   text-align: center;
   justify-content: center;
@@ -1260,13 +1264,14 @@
 .charsheet .page-button-back {
   padding: 0.1em 0em 0.1em 0em;
   font-weight: 600;
+  display: inherit;
 }
 .charsheet .page-button:checked ~ span.page-button-back {
   background: #4c4d4f;
   color: #fff;
   transition: 0.5s ease;
 }
-.charsheet .summary {
+.charsheet .page-summary {
   margin-top: 1em;
 }
 .charsheet label.page-label {
@@ -1296,7 +1301,7 @@
   border: 0;
 }
 .charsheet div.momentum-burn-back {
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   line-height: 22px;
   padding: 0em 0.2em;
@@ -1334,12 +1339,12 @@
   padding-left: 1em;
 }
 .charsheet .momentum-box-value {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   color: inherit;
 }
 .charsheet .momentum-input {
-  font-weight: bold;
+  font-weight: 700;
   width: 30px;
   font-size: 13px;
   text-align: center;
@@ -1394,7 +1399,7 @@
   width: 100px;
 }
 .charsheet .stats-input {
-  font-weight: bold;
+  font-weight: 700;
   width: 60px;
   line-height: 40px;
   font-size: 28px;
@@ -1515,14 +1520,6 @@
   color: #fff;
   transition: 0.5s ease;
 }
-.charsheet .preview-container {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1em;
-  flex-flow: row;
-  font-weight: normal;
-  height: auto;
-}
 .charsheet .list-group-container {
   columns: 3;
   column-gap: 1em;
@@ -1546,7 +1543,7 @@
 .charsheet .list-group-container section.list-group h3.list-group-title {
   color: #fff;
   font-size: 1.4em;
-  font-weight: bold;
+  font-weight: 700;
   padding-left: 5px;
   padding-right: 5px;
   text-transform: uppercase;
@@ -1684,7 +1681,7 @@
   color: #fff;
   border-bottom: 1px solid #4c4d4f;
   font-size: 1.4em;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0.2em 0.5em 0.1em 0.7em;
   text-transform: uppercase;
   width: 11.7em;
@@ -1694,27 +1691,15 @@
 .charsheet .move-preview {
   width: auto;
 }
+.charsheet .move-preview .move-description,
+.charsheet .move-preview .move-description * {
+  font-family: 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
+}
 .charsheet .move-page-footer {
   text-align: right !important;
   padding-right: 1em;
-}
-.charsheet .move-preview-container {
-  width: 62%;
-}
-.charsheet .move-preview-container p {
-  font-size: 15px;
-  margin: 0;
-}
-.charsheet .move-preview-container ul {
-  margin: 2px 0px 5px 25px;
-  font-size: 15px;
-}
-.charsheet .move-preview-container li {
-  font-size: 15px;
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
-}
-.charsheet .move-preview-container .roll-label {
-  border-radius: 0;
 }
 .charsheet .move-show {
   display: inline-flex;
@@ -1735,7 +1720,6 @@
   width: auto !important;
 }
 .charsheet .move-description {
-  font-family: 'Encode Sans', Arial, sans-serif;
   padding: 1em;
   border: 2px solid #4c4d4f;
 }
@@ -1780,25 +1764,27 @@
   color: #fff;
   line-height: 0.9em;
   font-size: 0.9em;
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   font-variant: small-caps;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
   padding: 0.5rem;
 }
-.charsheet .close-preview {
+.charsheet .preview-close {
   text-transform: uppercase;
   width: 100%;
   height: auto;
   margin: 0;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   padding: 0.2em 0.2em 0.2em 0.2em;
   border: 2px solid #494a4c;
   cursor: pointer;
   text-align: center;
 }
-.charsheet .close-preview:hover {
+.charsheet .preview-close:hover {
   background-color: #ccc;
   color: #4c4d4f;
   transition: 0.5s ease;
@@ -1808,7 +1794,7 @@
   width: -moz-fit-content;
   height: auto;
   margin: 0;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   padding: 0.2em 0.2em 0.2em 0.2em;
   border: 2px solid #494a4c;
@@ -1827,7 +1813,7 @@
   color: #fff !important;
 }
 .charsheet input.move-preview:checked ~ div.move-preview,
-.charsheet input.full-move-list:checked ~ div.full-move-list {
+.charsheet input.list-group-overview.hide-element:checked ~ div.list-group-overview.hideable-element {
   visibility: visible;
   height: auto;
   opacity: 1;
@@ -1931,7 +1917,7 @@
 .charsheet .move-delve-column-stat-header-2,
 .charsheet .move-delve-column-stat-header-3,
 .charsheet .move-delve-column-header {
-  font-weight: bold;
+  font-weight: 700;
 }
 .charsheet .move-delve-row-header {
   padding: 0px 5px 0px 5px;
@@ -1941,13 +1927,37 @@
 }
 .charsheet .embedded-btn {
   padding-top: 0.2em !important;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
 }
 .charsheet input.optional-move-failures:checked ~ div.optional-move-failures,
 .charsheet input.optional-move-sites:checked ~ div.optional-move-sites,
 .charsheet input.optional-move-threat:checked ~ div.optional-move-threat,
 .charsheet input.optional-move-rarity:checked ~ div.optional-move-rarity {
   display: block;
+}
+.charsheet .preview-container {
+  display: grid;
+  grid-template-areas: "a b" "c d";
+  grid-template-rows: min-height 1fr;
+  grid-template-columns: 1fr 2fr;
+  height: auto;
+  opacity: 1;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
+}
+.charsheet .preview-container .preview-bar {
+  grid-area: a;
+  display: block;
+}
+.charsheet .preview-container .preview-list {
+  width: auto;
+  grid-area: c;
+}
+.charsheet .preview-container .preview-main {
+  grid-area: d;
 }
 .charsheet input[type="checkbox"].showhide:checked ~ div.showhide {
   visibility: visible;
@@ -2021,7 +2031,9 @@
 }
 .charsheet .ability-checkbox,
 .charsheet .build-text {
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
+  font-family: 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
   font-size: 13px;
   resize: none;
   height: 100px;
@@ -2029,7 +2041,9 @@
   margin: 0em 0.5em 0em 0.4em;
 }
 .charsheet .ability-text {
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
+  font-family: 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
   font-size: 14.3px;
   resize: none;
   height: 100px;
@@ -2041,7 +2055,9 @@
 }
 .charsheet .asset-description {
   margin: 0 12px 0px 12px;
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
+  font-family: 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
 }
 .charsheet div.asset-ability {
   width: 100%;
@@ -2060,7 +2076,9 @@
   display: flex;
   flex-flow: row wrap;
   padding: 0.5em;
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
+  font-family: 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
   justify-content: space-evenly;
 }
 .charsheet div.assets .repcontainer .repitem {
@@ -2073,7 +2091,7 @@
   display: flex;
   white-space: nowrap;
   margin-bottom: 4px;
-  font-weight: bold;
+  font-weight: 700;
   margin-right: 1em;
 }
 .charsheet .asset-ability-write-in {
@@ -2090,7 +2108,9 @@
   line-height: 1.25;
   border-radius: 1em;
   box-shadow: 2px 2px 6px 0px;
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
+  font-family: 'Encode Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
 }
 .charsheet .asset input.border-bottom {
   border-bottom-color: #4c4d4f;
@@ -2104,7 +2124,7 @@
   margin-left: 5px;
   margin-top: 2px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .charsheet input[type="checkbox"].asset-ability {
   opacity: 1 !important;
@@ -2120,7 +2140,7 @@
   background: #4c4d4f;
   width: auto;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-appearance: menulist;
   margin: 6px 4px;
@@ -2129,7 +2149,7 @@
   -webkit-appearance: menulist;
   width: auto;
   margin: 7px 4px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
 }
 .charsheet .asset-track-wrapper {
@@ -2156,7 +2176,7 @@
 }
 .charsheet .asset-track-box-display {
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .charsheet .ability-top {
   margin-top: 1em;
@@ -2271,9 +2291,11 @@
   transition: 0.2s ease;
 }
 .charsheet span.asset-name {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-family: 'Exo', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 1.75em;
 }
 .charsheet .asset-content-header {
   display: flex;
@@ -2284,10 +2306,11 @@
   padding-left: 1em;
 }
 .charsheet .category {
-  font-family: 'Exo', Arial, sans-serif;
-  font-size: 1.1em;
+  font-family: 'Exo', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
-  font-weight: bold;
+  letter-spacing: 0.05rem;
+  font-size: 1.25em;
 }
 .charsheet .asset-options-header {
   padding: 0.2em 0.4em;
@@ -2297,8 +2320,10 @@
   border: 0;
   border-radius: 0.4em 0.4em 0em 0em;
   font-size: 1em;
+  font-family: 'Exo', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
-  font-family: 'Exo', Arial, sans-serif;
+  letter-spacing: 0.05rem;
 }
 .charsheet .asset-options-header::placeholder {
   color: #b9b9b9;
@@ -2369,7 +2394,9 @@
 .charsheet .oracle-table-preview .oracle-description ol,
 .charsheet .oracle-table-preview .oracle-description ul {
   padding: 0.5em;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
 }
 .charsheet input[type=radio].oracle-table-character-given-name:checked ~ div.oracle-table-character-given-name,
 .charsheet input[type=radio].oracle-table-character-callsign:checked ~ div.oracle-table-character-callsign,
@@ -2468,14 +2495,6 @@
   opacity: 1;
   transition: 0.2s ease;
 }
-.charsheet .oracle-container {
-  opacity: 1;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  justify-content: space-between;
-  padding: 0.1em;
-}
 .charsheet .oracle-column {
   display: flex;
   flex-direction: column;
@@ -2504,7 +2523,7 @@
   color: #fff;
   border-bottom: 1px solid #4c4d4f;
   font-size: 1.4em;
-  font-weight: bold;
+  font-weight: 700;
   padding-left: 5px;
   padding-right: 5px;
   text-transform: uppercase;
@@ -2535,6 +2554,7 @@
 }
 .charsheet .oracle-table {
   border: 4px solid #4c4d4f;
+  font-weight: 500;
 }
 .charsheet .flex-table {
   display: flex;
@@ -2584,7 +2604,7 @@
 .charsheet .oracle-table-2-column-group {
   display: flex;
 }
-.charsheet .table-list {
+.charsheet .preview-list {
   width: 33%;
   height: 44em;
   overflow: auto;
@@ -2593,7 +2613,7 @@
   margin: 0;
   margin-right: 0.3em;
 }
-.charsheet .oracle-column.table-main {
+.charsheet .oracle-column.preview-main {
   width: 66%;
 }
 .charsheet .oracle-footer {
@@ -2601,9 +2621,11 @@
   color: #fff;
   line-height: 0.9em;
   font-size: 0.9em;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   font-variant: small-caps;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
   padding: 0.5rem;
   border-bottom-right-radius: 1em;
@@ -2641,9 +2663,6 @@
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
 }
-.charsheet .oracle-preview-container {
-  display: flex;
-}
 .charsheet .oracle-preview .oracle-box {
   width: 100%;
 }
@@ -2671,7 +2690,7 @@
 .charsheet .legacies .title {
   grid-column: 1;
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0.3em 0em 0em 0em;
 }
 .charsheet .legacies .ten-marker {
@@ -2766,7 +2785,9 @@
   background: #33323c;
   color: #fff;
   font-size: 1em;
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-result-row {
@@ -2791,14 +2812,14 @@
 }
 .sheet-rolltemplate-starforged_oracles .sheet-subheader {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 1em 0.4em 1em;
   background-color: #23222b;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-subfooter {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 0em 0.4em 0em;
   background-color: #403f4b;
@@ -2813,7 +2834,9 @@
   background: #33323c;
   color: #fff;
   font-size: 1em;
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Encode Sans Expanded', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_moves .sheet-result-row,
@@ -2854,7 +2877,7 @@
 .sheet-rolltemplate-starforged_moves .sheet-subheader,
 .sheet-rolltemplate-starforged_progress .sheet-subheader {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 1em 0.4em 1em;
   background-color: #23222b;
@@ -2864,7 +2887,7 @@
 .sheet-rolltemplate-starforged_moves .sheet-subfooter,
 .sheet-rolltemplate-starforged_progress .sheet-subfooter {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 0em 0.4em 0em;
   background-color: #403f4b;
@@ -2919,7 +2942,7 @@
 }
 .sheet-rolltemplate-starforged_moves .userscript-tcat,
 .sheet-rolltemplate-starforged_progress .userscript-tcat {
-  font-weight: 900;
+  font-weight: 700;
 }
 .sheet-rolltemplate-starforged_moves .sheet-momentum-title {
   line-height: 22px;
@@ -2932,7 +2955,7 @@
   display: inline-block;
   border: none;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   width: 100%;
   text-align: center;
 }

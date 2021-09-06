@@ -1,0 +1,16 @@
+mixin preview(previewType)
+  input(type='radio' class=`hide-element ${previewType}-preview` name=`attr_view_mode_${previewType}` value='2')
+  div(class=`${previewType}-preview hideable-element`).preview-container
+    +previewCloseBtn(previewType)
+    block
+
+mixin previewSelectBtn(itemType, attrValue, i18n_key_label)
+  label(class=`${itemType} toggle-btn`)
+    input(type='radio' class=`hide-element selected-${itemType}` name=`attr_selected_${itemType}` value=attrValue)
+    span(class=`${itemType}-name btn-content i18n-text` data-i18n=i18n_key_label)=translation[i18n_key_label]
+
+mixin previewCloseBtn(targetItem)
+  .preview-bar
+    label.preview-close
+      span.i18n-text(data-i18n='close-preview')=translation['close-preview']
+      input(type='checkbox' class='hide-element' name=`attr_preview_close_${targetItem}`)

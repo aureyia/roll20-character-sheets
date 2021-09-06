@@ -1,7 +1,14 @@
 // Fonts
+
+// the r20 documentation is incorrect: you can't just chance css2 to css and have the weights works properly, cuz the syntax is different for the v1 api!
+// see google's documentation here: https://developers.google.com/fonts/docs/getting_started
+// TODO: update r20 wiki i guess
 @css {
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900|Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700|Encode+Sans|Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900|Exo:wght@400;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,500,600,700,800,900|Encode+Sans+Expanded:400,500,600,700,800,900|Exo:400,500,600,700,800,900|Teko:400,500,600,700&display=swap');
 }
+
+
+
 
 // Common
 @import './common/stylus/shared'
@@ -11,10 +18,9 @@
   width 842px !important
   margin 0 auto !important
   padding 15px
-  std-font()
-  font-weight normal
+  font-body-text()
   input[type=text]
-    font-weight: 600;
+    font-weight 600;
     &:focus
       input-highlight(3px)
   select
@@ -25,39 +31,35 @@
     &::-ms-expand
       display: none
   li
-    font-weight normal
+    // font-weight 400
     font-size 14.3px
   p
-    std-font('Encode Sans Condensed')
     font-size 14.3px
-    line-height 1.25
-    font-weight normal
     margin 0
+    // line-height 1.25
+    // font-weight 400
   h1
-    font-weight: bold
+    font-header-lg()
     width: 100%
     font-size: 28px
     text-align: center
     margin: 0 0 0px
     padding: 10
-    text-transform: uppercase
   h2
-    font-weight: bold
+    font-header-lg()
     width: 100%
     font-size: 18px
     text-align: left
     margin: 0 0 0px
     padding: 0
-    text-transform: uppercase
   h3
-    font-weight: bold
+    font-header-sm()
     width: 100%
     line-height 1.4em
     font-size 1.2em
     text-align: center
     margin: 0 0 0px
     padding: 0
-    text-transform: uppercase
     &.divide
       &::after,
       &::before
@@ -98,31 +100,29 @@
   .divide
     margin-top 1em
   h4
-    font-weight: bold
+    font-header-sm()
     width: 100%
     font-size: 16px
     text-align: center
     margin: 0 0 0px
     padding: 0
-    text-transform: uppercase
     &.tab-title
       display: inline-block
   h5
-    font-weight: bold
+    font-header-sm()
     font-size: 12px
     text-align: left
     margin: 0 0 0px
     padding: 0
-    text-transform: uppercase
   h6
     font-size: 14px
-    font-weight: bold
+    font-weight 700
     text-align: left
     margin-top: 2px
   button[type="roll"]
     align-items: left
     color: #4C4D4F
-    font-weight: normal
+    font-weight 400
     font-size: 20px
     text-decoration: none
     background: none
@@ -146,15 +146,15 @@
     background-image: linear-gradient(to right, #ccc, #333, #ccc)
 
   textarea
-    std-font('Encode Sans')
+    font-body-text()
     max-width 828px
     border: 2px solid #4C4D4F
-    font-weight normal
+    font-weight 400
 
   .btn
     display: inline
     width: 100%
-    font-weight: bold
+    font-weight 700
     font-size: 14px
     padding 0
     margin 0.5em
@@ -196,14 +196,14 @@
     height auto
     border 2px solid #4C4D4F
     border-radius 0
-    font-weight bold
+    font-weight 700
     font-size 12px
     text-shadow none
     text-transform uppercase
     padding 0.2em
     margin 0.3em
     color #4C4D4F
-    std-font()
+    font-body-text()
     background #dfe0e2
     &:hover
       background #bcbec2
@@ -231,7 +231,7 @@
     display flex
     flex-direction column
     margin-bottom 10px
-    font-weight normal
+    font-weight 400
     padding 0.5em
 
   .track-box-input
@@ -269,7 +269,7 @@
 
   .track-box-value
     padding: 0px
-    font-weight: bold
+    font-weight 700
     height: 35px
     padding-top: 10px
     font-size: 18px
@@ -277,7 +277,7 @@
 
   .resources-box-value
     padding: 0px
-    font-weight: bold
+    font-weight 700
     height: 35px
     padding-top: 10px
     font-size: 18px
@@ -310,7 +310,7 @@
 
   .pc-name
     width: 100%
-    font-weight: bold
+    font-weight 700
     font-size: 14px
     border: 2px solid #4C4D4F
     background: #E6E7E8
@@ -319,7 +319,7 @@
 
   .debil-desc
     width: 100%
-    font-weight: bold
+    font-weight 700
     font-size: 14px
 
   .border
@@ -395,7 +395,7 @@
     margin-right: 11px
     border-radius: 4px
     padding: 2px 4px
-    font-weight: bold
+    font-weight 700
     font-size: 14px
 
   span.showhide:hover

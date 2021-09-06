@@ -40,13 +40,14 @@ input
           color #fff
           transition 0.5s ease
 
-.preview-container
-  display flex
-  justify-content space-between
-  font-size 1em
-  flex-flow row
-  font-weight normal
-  height auto
+// .preview-container
+//   // display flex
+//   display block
+//   // justify-content space-between
+//   font-size 1em
+//   // flex-flow row
+//   font-weight 400
+//   height auto
 
 
 
@@ -72,7 +73,7 @@ input
     h3.list-group-title
       color #fff
       font-size 1.4em
-      font-weight bold
+      font-weight 700
       padding-left 5px
       padding-right 5px
       text-transform uppercase
@@ -205,7 +206,7 @@ span
   color #fff
   border-bottom 1px solid #4C4D4F
   font-size 1.4em
-  font-weight bold
+  font-weight 700
   padding 0.2em 0.5em 0.1em 0.7em
   text-transform uppercase
   width 11.7em
@@ -214,24 +215,26 @@ span
 
 .move-preview
   width auto
+  .move-description, .move-description *
+    font-compact-text()
 
 .move-page-footer
   text-align right !important
   padding-right 1em
 
-.move-preview-container
-  width 62%
-  p
-    font-size 15px
-    margin 0
-  ul
-    margin 2px 0px 5px 25px
-    font-size 15px
-  li
-    font-size 15px
-    std-font('Encode Sans Condensed')
-  .roll-label
-    border-radius 0
+// .preview-container
+//   width 62%
+//   p
+//     font-size 15px
+//     margin 0
+//   ul
+//     margin 2px 0px 5px 25px
+//     font-size 15px
+//   li
+//     font-size 15px
+//     font-compact-text()
+//   .roll-label
+//     border-radius 0
 
 .move-show
   display inline-flex
@@ -251,7 +254,7 @@ span
   width auto !important
 
 .move-description
-  std-font('Encode Sans')
+  // font-body-text()
   padding 1em
   borderCommon()
   .move-oracle-container
@@ -294,18 +297,18 @@ span
   color #fff
   line-height 0.9em
   font-size 0.9em
-  std-font('Encode Sans')
+  font-body-text()
   font-variant small-caps
-  font-weight bold
+  font-weight 700
   text-align left
   padding 0.5rem
 
-.close-preview
+.preview-close
   text-transform uppercase
   width 100%
   height auto
   margin 0
-  font-weight bold
+  font-weight 700
   font-size 14px
   padding 0.2em 0.2em 0.2em 0.2em
   border 2px solid #494a4c
@@ -321,7 +324,7 @@ span
   width -moz-fit-content
   height auto
   margin 0
-  font-weight bold
+  font-weight 700
   font-size 14px
   padding 0.2em 0.2em 0.2em 0.2em
   border 2px solid #494a4c
@@ -339,7 +342,7 @@ span
       color #fff !important
 
 input.move-preview:checked ~ div.move-preview,
-input.full-move-list:checked ~ div.full-move-list
+input.list-group-overview.hide-element:checked ~ div.list-group-overview.hideable-element
   show-hide()
 
 input[type=radio].move-begin-a-session:checked ~ div.move-begin-a-session,
@@ -437,7 +440,7 @@ input[type=radio].move-pay-the-price:checked ~ div.move-pay-the-price
 .move-delve-column-stat-header-2,
 .move-delve-column-stat-header-3,
 .move-delve-column-header
-  font-weight bold
+  font-weight 700
 
 .move-delve-row-header
   padding 0px 5px 0px 5px
@@ -447,7 +450,7 @@ input[type=radio].move-pay-the-price:checked ~ div.move-pay-the-price
 
 .embedded-btn
   padding-top 0.2em !important
-  std-font()
+  font-body-text()
 
 input.optional-move-failures:checked ~ div.optional-move-failures,
 input.optional-move-sites:checked ~ div.optional-move-sites,
@@ -455,3 +458,35 @@ input.optional-move-threat:checked ~ div.optional-move-threat,
 input.optional-move-rarity:checked ~ div.optional-move-rarity
   display block
 
+.preview-container
+  display grid
+  grid-template-areas "a b" "c d"
+  grid-template-rows min-height 1fr
+  grid-template-columns 1fr 2fr
+  height auto
+  opacity 1
+  font-body-text()
+  .preview-bar
+    grid-area a
+    display block
+  .preview-list
+    width auto
+    grid-area c
+  .preview-main
+    grid-area d
+  // font-weight 700
+  // justify-content space-between
+  // padding 0.1em
+  // width 62%
+  // .scrollable-list-groups, .oracle-column
+  // p
+  //   font-size 15px
+  //   margin 0
+  // ul
+  //   margin 2px 0px 5px 25px
+  //   font-size 15px
+  // li
+  //   font-size 15px
+  //   font-compact-text()
+  // .roll-label
+  //   border-radius 0

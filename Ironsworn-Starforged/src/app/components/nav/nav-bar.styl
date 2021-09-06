@@ -41,16 +41,16 @@ bottom-radius(dir, value)
 .page-button-back
   padding 0.1em 0em 0.1em 0em
   font-weight 600
+  display inherit
 
 .page-button
   &:checked
-    & ~ span
-      &.page-button-back
-        background #4c4d4f
-        color #fff
-        transition 0.5s ease
+    & ~ span.page-button-back
+      background #4c4d4f
+      color #fff
+      transition 0.5s ease
 
-.summary
+.page-summary
   margin-top 1em
 
 label.page-label

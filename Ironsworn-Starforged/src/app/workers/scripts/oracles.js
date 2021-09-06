@@ -13,15 +13,15 @@ on('change:oracle_page_button', function(eventinfo) {
 on('change:selected_oracle', function(eventinfo) {
   if (eventinfo.newValue !== 'none') {
     setAttrs({
-      oracle_view: '2',
-      oracle_preview: eventinfo.newValue
+      view_mode_oracle: '2',
+      oracle_preview: eventinfo.newValue,
     });
   }
 });
 
-on('change:close_oracle_preview', function() {
+on('change:preview_close_oracle', function() {
   setAttrs({
-    oracle_view: '1',
-    selected_oracle: 'none'
+    view_mode_oracle: '1',
+    selected_oracle: 'none',
   });
 });

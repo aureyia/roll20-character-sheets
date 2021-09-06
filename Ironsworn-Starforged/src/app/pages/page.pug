@@ -1,0 +1,8 @@
+mixin pageContent(pageName, sheetName, indexValue, checked=false)
+  div(class=`page-${pageName} page-container` id=`page-${sheetName}-${pageName}`)
+    if checked === true
+      input(type="radio" name=`attr_${sheetName}_page` class=`page-toggle hide-element` value=indexValue checked)
+    else
+      input(type="radio" name=`attr_${sheetName}_page` class=`page-toggle hide-element` value=indexValue)
+    div(class=`page-content showhide ${pageName}`)
+      block

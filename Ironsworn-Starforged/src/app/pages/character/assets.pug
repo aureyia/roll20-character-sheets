@@ -1,7 +1,6 @@
 include ../../components/assets/assets
+include ../page
 
 mixin assetsPage
-  div.page-container
-    input(type='radio' name='attr_character_page' class='assets hide-element' value='5')
-    div.assets.showhide
-      +assets
+  +pageContent("assets", "character", 5)
+    +assets
