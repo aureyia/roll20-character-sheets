@@ -169,7 +169,7 @@
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 .charsheet textarea {
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   max-width: 828px;
   border: 2px solid #4c4d4f;
   font-weight: normal;
@@ -1750,7 +1750,7 @@
   width: auto !important;
 }
 .charsheet .move-description {
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   padding: 1em;
   border: 2px solid #4c4d4f;
 }
@@ -1794,7 +1794,7 @@
   color: #fff;
   line-height: 0.9em;
   font-size: 0.9em;
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-variant: small-caps;
   font-weight: bold;
   text-align: left;
@@ -2819,7 +2819,7 @@
   background: #33323c;
   color: #fff;
   font-size: 1em;
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-result-row {
@@ -2843,15 +2843,16 @@
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-subheader {
+  text-transform: uppercase;
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 1em 0.4em 1em;
   background-color: #23222b;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-subfooter {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 0em 0.4em 0em;
   background-color: #403f4b;
@@ -2866,7 +2867,7 @@
   background: #33323c;
   color: #fff;
   font-size: 1em;
-  font-family: 'Encode Sans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_moves .sheet-result-row,
@@ -2907,7 +2908,7 @@
 .sheet-rolltemplate-starforged_moves .sheet-subheader,
 .sheet-rolltemplate-starforged_progress .sheet-subheader {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 1em 0.4em 1em;
   background-color: #23222b;
@@ -2917,7 +2918,7 @@
 .sheet-rolltemplate-starforged_moves .sheet-subfooter,
 .sheet-rolltemplate-starforged_progress .sheet-subfooter {
   line-height: 1.5em;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
   padding: 0.4em 0em 0.4em 0em;
   background-color: #403f4b;
@@ -2972,7 +2973,7 @@
 }
 .sheet-rolltemplate-starforged_moves .userscript-tcat,
 .sheet-rolltemplate-starforged_progress .userscript-tcat {
-  font-weight: 900;
+  font-weight: 700;
 }
 .sheet-rolltemplate-starforged_moves .sheet-momentum-title {
   line-height: 22px;
