@@ -29,6 +29,17 @@
 .charsheet li {
   font-weight: normal;
   font-size: 14.3px;
+  list-style-type: none;
+}
+.charsheet li::before {
+  content: '';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/svg-icons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  mask-size: contain;
+  background-color: currentColor;
+  margin-right: 4px;
 }
 .charsheet p {
   font-family: 'Encode Sans Condensed', Arial, sans-serif;
@@ -1577,6 +1588,9 @@
   display: grid;
   grid-template-columns: 1.75em 1fr;
   gap: 4px;
+}
+.charsheet .list-group-container section.list-group ul li.list-group-item::before {
+  all: unset;
 }
 .charsheet .list-group-container section.list-group ul li.list-group-item > * {
   background-color: #fff;
