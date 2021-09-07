@@ -2345,11 +2345,6 @@
   margin-left: 0.85em;
   margin-top: 0.4em;
 }
-.charsheet .background-svg {
-  width: 100px;
-  height: 93px;
-  background-repeat: no-repeat;
-}
 .charsheet .category-path .asset-details .category {
   color: #3b7fa9;
 }
@@ -2367,6 +2362,320 @@
 }
 .charsheet .category-command-vehicle .asset-details .category {
   color: #99a3ad;
+}
+.charsheet .background-svg {
+  width: 100px;
+  height: 93px;
+  background-repeat: no-repeat;
+}
+.charsheet .asset-ace .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-ace.svg");
+}
+.charsheet .asset-agent .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-agent.svg");
+}
+.charsheet .asset-archer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-archer.svg");
+}
+.charsheet .asset-armored .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-armored.svg");
+}
+.charsheet .asset-augmented .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-augmented.svg");
+}
+.charsheet .asset-bannersworn .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-bannersworn.svg");
+}
+.charsheet .asset-banshee .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-banshee.svg");
+}
+.charsheet .asset-blademaster .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-blademaster.svg");
+}
+.charsheet .asset-bonded .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-bonded.svg");
+}
+.charsheet .asset-bounty-hunter .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-bounty-hunter.svg");
+}
+.charsheet .asset-brawler .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-brawler.svg");
+}
+.charsheet .asset-combat-bot .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-combat-bot.svg");
+}
+.charsheet .asset-commander .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-commander.svg");
+}
+.charsheet .asset-courier .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-courier.svg");
+}
+.charsheet .asset-devotant .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-devotant.svg");
+}
+.charsheet .asset-diplomat .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-diplomat.svg");
+}
+.charsheet .asset-empath .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-empath.svg");
+}
+.charsheet .asset-explorer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-explorer.svg");
+}
+.charsheet .asset-fated .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-fated.svg");
+}
+.charsheet .asset-firebrand .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-firebrand.svg");
+}
+.charsheet .asset-fugitive .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-fugitive.svg");
+}
+.charsheet .asset-gearhead .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-gearhead.svg");
+}
+.charsheet .asset-glowcat .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-glowcat.svg");
+}
+.charsheet .asset-gunner .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-gunner.svg");
+}
+.charsheet .asset-gunslinger .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-gunslinger.svg");
+}
+.charsheet .asset-haunted .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-haunted.svg");
+}
+.charsheet .asset-healer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-healer.svg");
+}
+.charsheet .asset-homesteader .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-homesteader.svg");
+}
+.charsheet .asset-kinetic .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-kinetic.svg");
+}
+.charsheet .asset-lore-hunter .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-lore-hunter.svg");
+}
+.charsheet .asset-loyalist .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-loyalist.svg");
+}
+.charsheet .asset-marked .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-marked.svg");
+}
+.charsheet .asset-mercenary .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-mercenary.svg");
+}
+.charsheet .asset-naturalist .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-naturalist.svg");
+}
+.charsheet .asset-navigator .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-navigator.svg");
+}
+.charsheet .asset-oathbreaker .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-oathbreaker.svg");
+}
+.charsheet .asset-outcast .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-outcast.svg");
+}
+.charsheet .asset-protocol-bot .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-protocol-bot.svg");
+}
+.charsheet .asset-revenant .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-revenant.svg");
+}
+.charsheet .asset-rockhorn .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-rockhorn.svg");
+}
+.charsheet .asset-scavenger .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-scavenger.svg");
+}
+.charsheet .asset-scoundrel .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-scoundrel.svg");
+}
+.charsheet .asset-seer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-seer.svg");
+}
+.charsheet .asset-shade .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shade.svg");
+}
+.charsheet .asset-sidekick .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sidekick.svg");
+}
+.charsheet .asset-slayer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-slayer.svg");
+}
+.charsheet .asset-sniper .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sniper.svg");
+}
+.charsheet .asset-sprite .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sprite.svg");
+}
+.charsheet .asset-survey-bot .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-survey-bot.svg");
+}
+.charsheet .asset-symbiote .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-symbiote.svg");
+}
+.charsheet .asset-tech .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-tech.svg");
+}
+.charsheet .asset-trader .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-trader.svg");
+}
+.charsheet .asset-utility-bot .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-utility-bot.svg");
+}
+.charsheet .asset-vanguard .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vanguard.svg");
+}
+.charsheet .asset-vestige .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vestige.svg");
+}
+.charsheet .asset-veteran .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-veteran.svg");
+}
+.charsheet .asset-voidborn .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-voidborn.svg");
+}
+.charsheet .asset-voidglider .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-voidglider.svg");
+}
+.charsheet .asset-weapon-master .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-weapon-master.svg");
+}
+.charsheet .asset-engine-upgrade .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-engine-upgrade.svg");
+}
+.charsheet .asset-expanded-hold .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-expanded-hold.svg");
+}
+.charsheet .asset-grappler .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-grappler.svg");
+}
+.charsheet .asset-heavy-cannons .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-heavy-cannons.svg");
+}
+.charsheet .asset-internal-refit .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-internal-refit.svg");
+}
+.charsheet .asset-medbay .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-medbay.svg");
+}
+.charsheet .asset-missile-array .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-missile-array.svg");
+}
+.charsheet .asset-overseer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-overseer.svg");
+}
+.charsheet .asset-reinforced-hull .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-reinforced-hull.svg");
+}
+.charsheet .asset-research-lab .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-research-lab.svg");
+}
+.charsheet .asset-sensor-array .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sensor-array.svg");
+}
+.charsheet .asset-shields .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shields.svg");
+}
+.charsheet .asset-stealth-tech .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-stealth-tech.svg");
+}
+.charsheet .asset-vehicle-bay .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vehicle-bay.svg");
+}
+.charsheet .asset-workshop .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-workshop.svg");
+}
+.charsheet .asset-exosuit .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-exosuit.svg");
+}
+.charsheet .asset-hoverbike .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-hoverbike.svg");
+}
+.charsheet .asset-rover .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-rover.svg");
+}
+.charsheet .asset-service-pod .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-service-pod.svg");
+}
+.charsheet .asset-shuttle .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shuttle.svg");
+}
+.charsheet .asset-skiff .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-skiff.svg");
+}
+.charsheet .asset-snub-fighter .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-snub-fighter.svg");
+}
+.charsheet .asset-engine-upgrade .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-engine-upgrade.svg");
+}
+.charsheet .asset-expanded-hold .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-expanded-hold.svg");
+}
+.charsheet .asset-grappler .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-grappler.svg");
+}
+.charsheet .asset-heavy-cannons .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-heavy-cannons.svg");
+}
+.charsheet .asset-internal-refit .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-internal-refit.svg");
+}
+.charsheet .asset-medbay .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-medbay.svg");
+}
+.charsheet .asset-missile-array .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-missile-array.svg");
+}
+.charsheet .asset-overseer .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-overseer.svg");
+}
+.charsheet .asset-reinforced-hull .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-reinforced-hull.svg");
+}
+.charsheet .asset-research-lab .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-research-lab.svg");
+}
+.charsheet .asset-sensor-array .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sensor-array.svg");
+}
+.charsheet .asset-shields .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shields.svg");
+}
+.charsheet .asset-stealth-tech .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-stealth-tech.svg");
+}
+.charsheet .asset-vehicle-bay .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vehicle-bay.svg");
+}
+.charsheet .asset-workshop .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-workshop.svg");
+}
+.charsheet .asset-exosuit .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-exosuit.svg");
+}
+.charsheet .asset-hoverbike .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-hoverbike.svg");
+}
+.charsheet .asset-rover .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-rover.svg");
+}
+.charsheet .asset-service-pod .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-service-pod.svg");
+}
+.charsheet .asset-shuttle .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shuttle.svg");
+}
+.charsheet .asset-skiff .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-skiff.svg");
+}
+.charsheet .asset-snub-fighter .background-svg {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-snub-fighter.svg");
 }
 .charsheet input.oracle-ironsworn:checked ~ div.oracle-ironsworn,
 .charsheet input.oracle-delve:checked ~ div.oracle-delve {

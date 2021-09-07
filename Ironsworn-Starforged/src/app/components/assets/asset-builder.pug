@@ -53,7 +53,7 @@ mixin assetTemplate(asset, options)
   - let assetNameClass = name;
   if options.visiblityToggle === true
     input(class=`${options.classes} ${assetNameClass}` type='checkbox' name=`attr_${name}`)
-  div(class=`${options.classes} ${assetNameClass} category-${category}`)
+  div(class=`${options.classes} ${assetNameClass} category-${category} ${asset.id}`)
     .asset-content-header
       .asset-details
         .category=asset.Category
@@ -79,6 +79,7 @@ mixin genericAssetBuilder(assetsArray, listId)
       - let assetNameClass = `${asset.id.replace(/asset-/i, "")}`
       //- generates classes and outputs to stdout
       //- - console.log(`input[type=checkbox].${assetNameClass}:checked ~ div.${assetNameClass},`)
+      //- - console.log(`.${asset.id} .background-svg\n  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg")`)
       option.i18n-text(data-i18n=`${asset.id}-name` value=assetNameClass)=translation[`${asset.id}-name`]
     option.i18n-text(data-i18n=`asset-custom-name` value='custom')=translation[`asset-custom-name`]
 
