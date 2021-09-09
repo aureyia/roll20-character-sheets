@@ -1,30 +1,31 @@
 mixin ability(asset, ability, number, name)
-  - var abilityId = `${name}_${number}`
+  //- consider having the attr name converted to snake case?
+  - var assetBodyPlaceholder=translation[ability.id]
   .flex-container
     if ability.Enabled
       input.asset-ability(
         type='checkbox'
-        name=`attr_ability_checkbox_${abilityId}`
+        name=`attr_${_.snakeCase(ability.id)}`
         checked
       )
+      //- old name=`attr_ability_checkbox_${abilityId}`
     else
       input.asset-ability(
         type='checkbox'
-        name=`attr_assetcheckbox_${abilityId}${number}`
+        name=`attr_${_.snakeCase(ability.id)}`
       )
-    - var translationAbility = `asset-${name}-ability-${number}`
-    - var assetBodyPlaceholder=translation[translationAbility]
+      //- old: name=`attr_assetcheckbox_${abilityId}${number}`
     .asset-ability
-      div.i18n-text(data-i18n=translationAbility)!=assetBodyPlaceholder
+      div.i18n-text(data-i18n=abilityId)!=assetBodyPlaceholder
       if ability.Input
         each field in ability.Input
-          - var translationAbilityField = `asset-${name}-ability-${number}-textinput-${_.kebabCase(field)}`
-          span.i18n-text.asset-ability-write-in(data-i18n=translationAbilityField)=translation[translationAbilityField]
-          input.border-bottom.no-border(type='text' name=`attr_ability_field${field}` value='')
+          - var fieldId = `${ability.id}-textinput-${_.kebabCase(field)}`
+          span.i18n-text.asset-ability-write-in(data-i18n=fieldId)=translation[fieldId]
+          input.border-bottom.no-border(type='text' name=`attr_${_.snakeCase(fieldId)}` value='')
 
-mixin description(asset, key)
+mixin description(asset)
   .asset-description
-    - var translationDesc = `asset-${key}-description`
+    - var translationDesc = `${asset.id}-description`
     .asset-description-text(data-i18n=translationDesc)=translation[translationDesc]
 
 mixin field(field, assetName)
