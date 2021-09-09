@@ -11,3 +11,5 @@ temp/
 
 #osx
 .DS_store
+.prettierignore
+.prettierrc
