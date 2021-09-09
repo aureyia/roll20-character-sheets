@@ -1,76 +1,74 @@
 mixin assetAbility(ability)
   //- consider having the attr name converted to snake case?
-  - var assetBodyPlaceholder=translation[ability.id]
-  .flex-container
+  .asset-ability
+    - var assetBodyPlaceholder=translation[ability.id]
     if ability.Enabled
-      input.asset-ability(
+      input(
         type='checkbox'
         name=`attr_${ability.id}`
         checked
       )
       //- old name=`attr_ability_checkbox_${abilityId}`
     else
-      input.asset-ability(
+      input(
         type='checkbox'
         name=`attr_${ability.id}`
       )
       //- old: name=`attr_assetcheckbox_${abilityId}${number}`
-    .asset-ability
-      div.i18n-text(data-i18n=abilityId)!=assetBodyPlaceholder
-      if ability.Input
-        each input in ability.Input
-          - var inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
-          span.i18n-text.asset-ability-write-in(data-i18n=inputId)=translation[inputId]
-          input.border-bottom.no-border(type='text' name=`attr_${inputId}` value='')
+    div.i18n-text(data-i18n=abilityId)!=assetBodyPlaceholder
+    if ability.Input
+      each input in ability.Input
+        - var inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
+        label.asset-ability-textinput
+          span.i18n-text(data-i18n=inputId)=translation[inputId]
+          input(type='text' name=`attr_${inputId}` value='')
 
 mixin assetDescription(asset)
-  .asset-description
-    - var translationDesc = `${asset.id}-description`
-    .asset-description-text(data-i18n=translationDesc)=translation[translationDesc]
+  - var translationDesc = `${asset.id}-description`
+  .asset-description(data-i18n=translationDesc)=translation[translationDesc]
 
 mixin assetTextInput(textinput, assetId)
   - let id = `${assetId}-textinput-${_.kebabCase(textinput)}`
-  .write-in-container
-    .i18n-text.asset-write-in.asset-name(
-      data-i18n=id
-    )=translation[id]
-    input.border-bottom.no-border(type='text' name=`attr_${id}` value='')
+  label.asset-textinput
+    span.i18n-text( data-i18n=id )=translation[id]
+    input(type='text' name=`attr_${id}` value='')
     //- old `attr_field-${field}`
 
 mixin assetMeter(meter)
   //- old: asset-track-*
   - var currentMeter = 0
-  .asset-meter-wrapper
+  .asset-meter
     while currentMeter <= meter.Max
-      .asset-meter-box
-        if currentMeter == 0
-          .asset-meter-box-display=0
-        else
-          .asset-meter-box-display=`+ ${currentMeter}`
-        input(type='radio' name=`attr_${meter.id}` value=`${currentMeter}`)
+      - let inputId = `${meter.id}-${currentMeter}`
+      label(title=`Set ${meter.Name} to ${currentMeter}.`).asset-meter-box
+        input(type='radio' name=`attr_${meter.id}` value=currentMeter)
+        //- span=currentMeter
+      - currentMeter++
+        //- if currentMeter == 0
+        //-   .asset-meter-box-display=0
+        //- else
+        //-   .asset-meter-box-display=`+ ${currentMeter}`
          //- old: `attr_assettrack_${assetName}`
-        - currentMeter++
+
 
 mixin assetCard(asset, options)
   //- - let name = `${id.replace(/asset-/i, "")}`
+  - let iconWidth = 64
   - let category = _.kebabCase(asset.Category)
   if options.visiblityToggle === true
     input(class=`${options.classes} ${asset.id}` type='checkbox' name=`attr_${asset.id}`)
     //- formerly `attr_${name}`
   div(class=`asset-card ${options.classes} ${asset.id} category-${category}`)
-    .asset-content-header
-      .asset-details
-        .category=asset.Category
-        span.asset-name=asset.Name
-      .background-svg
+    span.asset-category=asset.Category
+    span.asset-name=asset.Name
+    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg`).asset-icon
     if asset.Description
       +assetDescription(asset)
     if asset.Input
       each textinput in asset.Input
         +assetTextInput(textinput, asset.id)
-    .flex-wrapper
-      each ability, index in asset.Abilities
-        - var abilityNumber = index + 1
+    .asset-abilities
+      each ability in asset.Abilities
         +assetAbility(ability)
     if asset['Condition Meter'] && options.standalone === false
       +assetMeter(asset['Condition Meter'])

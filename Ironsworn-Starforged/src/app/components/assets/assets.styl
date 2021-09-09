@@ -59,38 +59,10 @@ input[type=checkbox].custom-asset-ability
   width 20.5em
   margin 0 !important
 
-.ability-checkbox,
-.build-text
-  std-font('Encode Sans Condensed')
-  font-size 13px
-  resize none
-  height 100px
-  width 22em
-  margin 0em 0.5em 0em 0.4em
-
-.ability-text
-  std-font('Encode Sans Condensed')
-  font-size 14.3px
-  resize none
-  height 100px
-  margin-bottom 0em
-  width 18em
-
 .builder-dropdown
   font-size 14px
 
-.asset-description
-  margin 0 12px 0px 12px
-  std-font('Encode Sans Condensed')
-
 div
-  &.asset-ability
-    width 100%
-    height 100%
-    margin 0px 12px 6px 10px
-    ul
-      margin-left 15px
-      margin-bottom 0
   &.assets
     display block !important
     text-align left
@@ -103,49 +75,209 @@ div
       .repitem
         float left !important
 
-.asset-ability-write-in
-  margin-top 4px
 
-.asset-write-in
-  display flex
-  white-space nowrap
-  margin-bottom 4px
-  font-weight bold
-  margin-right 1em
-
-.asset-ability-write-in
-  display inline
-  white-space nowrap
+$asset_width = 320px
+$inch = $asset_width/2.5 // pixels per inch
+$point = $inch/72 // pixels per point
 
 .asset
   display inline-block
-  width 320px
-  max-width 320px
-  border 2px solid #4C4D4F
-  margin-bottom 20px
-  font-size 14.3px
-  line-height 1.25
-  border-radius 1em
-  box-shadow 2px 2px 6px 0px
-  std-font('Encode Sans Condensed')
+  width $asset_width
   input
+    width inherit
     &.border-bottom
       border-bottom-color #4C4D4F
       padding 0
 
-.asset-write-in input,
-.asset-ability-write-in input
-  height 1.4em
-  width 100%
-  padding 0
-  margin-left 5px
-  margin-top 2px
-  font-size 15px
-  font-weight bold
 
-input[type="checkbox"].asset-ability
-  opacity 1 !important
-  margin-top 0.2em
+.asset-card
+  std-font('Encode Sans Condensed')
+  display grid
+  font-size 12px
+  padding 9*$point 9*$point // 9 points
+  // (0.125*$inch)-(1*$point) // offset to account for border width
+  font-weight 400
+  letter-spacing 0.025rem
+  box-sizing border-box
+  width $asset_width // 320px
+  height (3.5*$inch) !important // 448px; TODO: fix the !important cuz it makes me nervous
+  border (1*$point) solid #B7C3CE
+  background-origin border-box
+  background-repeat no-repeat
+  background-position top right
+  background-size (0.950*$inch) auto
+  grid-template-areas "assetcategory icon" "name icon" "input icon" "description icon" "body body" "footer footer"
+  grid-template-columns 1fr (0.5*$inch) // 1/5 of the width
+  grid-template-rows max-content max-content max-content max-content 1fr max-content
+  gap 2*$point
+  .asset-category, .asset-name
+    std-font("Exo")
+    text-transform uppercase
+    // margin-bottom 2*$point
+  .asset-name
+    grid-area name
+    font-weight 800
+    height 9.25*$point // we want height 16px
+    line-height 9.25*$point
+    font-size 1.3125*9.25*$point
+  .asset-category
+    grid-area assetcategory
+    font-weight 600
+    height 5.75*$point
+    line-height 5.75*$point
+    font-size 1.3125*5.75*$point
+  .asset-icon
+    box-sizing border-box
+    grid-area icon
+    width (36*$point)
+    height ((36*$point) / (math(3, sqrt)/2))
+    align-self start
+    justify-self end
+    padding 0
+    margin 0
+    margin-top 0px
+    margin-top -1.25px
+  .asset-textinput
+    display flex
+    grid-area input
+    // height 5.35*$point
+    // line-height 5.35*$point
+    font-size 1.3125*5.35*$point
+    border-bottom 1*$point solid black
+    width stretch
+    width -moz-available
+    span
+      align-self end
+      color #B7C3CE
+      height min-content
+      width max-content
+      std-font("Exo")
+      text-transform uppercase
+      line-height 1
+      // margin-bottom 2*$point
+      font-weight 600
+    input[type=text]
+      std-font("Encode Sans Condensed")
+      width stretch
+      width -moz-available
+      border none
+      margin-bottom: -3%;
+      font-weight 500
+      background: transparent;
+  .asset-abilities
+    grid-area body
+    display flex
+    flex-flow column
+    gap 2*$point
+    .asset-ability
+      display flex
+      gap 3*$point
+      ul, ul li
+        margin 0
+        padding 0
+      ul li
+        margin 2*$point 0
+      input[type="checkbox"]
+        border none
+        flex-shrink: 0
+        flex-grow: 0
+        width 0.110*$inch
+        height (0.110*$inch / (math(3, sqrt)/2))
+        color black
+        align-self start
+        -moz-appearance none
+        appearance none
+        background-color transparent
+        background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg")
+        transition: all ease 0.3s;
+        mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg")
+        background-size 100%
+        mask-size 100%
+        background-position: center
+        mask-position: center
+        &:checked
+          background-color black
+      // label.asset-ability-textinput
+  .asset-meter
+    // height of numbers: 6.5pt
+    // height of small labels: 5.35 (same as input label)
+    grid-area footer
+    display flex
+    flex-direction row-reverse
+    justify-content flex-end
+    label.asset-meter-box
+      width (0.250*$inch)
+      height (0.250*$inch / (math(3, sqrt)/2))
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
+      border none
+      padding 0
+      margin 0
+      margin-right -1.3*$point
+      span
+        color black
+      input[type=radio] // doesn't appear to work as a sibling cuz the id is ambiguous. oof.
+        border none
+        -moz-appearance none
+        appearance none
+        // color black
+        color black
+        background-color transparent
+        background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-meter-box.svg")
+        transition: all ease 0.3s;
+        mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg")
+        background-size 100%
+        mask-size 100%
+        background-position: center
+        mask-position: center
+        height inherit
+        width inherit
+        &::after
+          std-font("Exo")
+          font-weight 700
+          display block
+          text-align center
+          position relative
+          top 0
+          left 0
+          width 100%
+          height 100%
+          pointer-events none
+          font-size 1.5em
+          // line-height 30%
+          // padding-top 50%
+        &:checked
+          background-color black
+          color white
+          // & ~ span
+          //   color white
+
+
+// the sanitizer doesn't like this much. simplest version might be 50% grey numbers in Exo built into the svg
+// or as their own svg?
+
+// for num in (0..6)
+//   .asset-meter-box input[type=radio][value={num}]::after
+//     content '+'+num
+
+// .charsheet .asset-meter-box input[type=radio]
+//   [value=0]::after
+//     content: '+ 0'
+//   [value=1]::after
+//     content: '+ 1'
+//   [value=2]::after
+//     content: '+ 2'
+//   [value=3]::after
+//     content: '+ 3'
+//   [value=4]::after
+//     content: '+ 4'
+//   [value=5]::after
+//     content: '+ 5'
+//   [value=6]::after
+//     content: '+ 6'
+
 
 .asset-type-selection
   background #4C4D4F
@@ -169,21 +301,7 @@ input[type="checkbox"].asset-ability
   font-weight bold
   text-transform uppercase
 
-.asset-meter-wrapper
-  margin 10px
-  display flex
 
-.asset-meter-box
-  width 100%
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  border-radius 0%
-  background transparent
-  border 2px solid #4C4D4F
-  padding 5px
-  margin-bottom 2px
 
 .asset-meter-wrapper-wordy
   text-transform uppercase
@@ -329,14 +447,9 @@ input[type=checkbox].asset-service-pod:checked ~ div.asset-card.asset-service-po
 input[type=checkbox].asset-shuttle:checked ~ div.asset-card.asset-shuttle,
 input[type=checkbox].asset-skiff:checked ~ div.asset-card.asset-skiff,
 input[type=checkbox].asset-snub-fighter:checked ~ div.asset-card.asset-snub-fighter
-  display block
+  display grid
   show-hide()
-
-span.asset-name
-  font-family 'Exo', Helvetica, Arial, sans-serif
-  font-size 1.5em
-  font-weight bold
-  text-transform uppercase
+  height auto !unimportant
 
 .asset-content-header
   display flex
@@ -345,12 +458,6 @@ span.asset-name
 .asset-details
   align-self center
   padding-left 1em
-
-.category
-  std-font('Exo')
-  font-size 1.1em
-  text-transform uppercase
-  font-weight bold
 
 .asset-options-header
   padding 0.2em 0.4em
@@ -368,12 +475,6 @@ span.asset-name
 .custom
   padding 0.5em
 
-.write-in-container
-  display flex
-  margin-left 0.85em
-  margin-top 0.4em
-
-
 $categories = {
   'path':#3B7FA9,
   'companion':#3C8B8A,
@@ -384,220 +485,7 @@ $categories = {
 }
 
 for key, category in $categories
-  .category-{key}
-    .asset-details
-      .category
-        color category
-
-
-.background-svg
-  width 100px
-  height 93px
-  background-repeat no-repeat
-
-.asset-ace .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-ace.svg")
-.asset-agent .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-agent.svg")
-.asset-archer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-archer.svg")
-.asset-armored .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-armored.svg")
-.asset-augmented .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-augmented.svg")
-.asset-bannersworn .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-bannersworn.svg")
-.asset-banshee .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-banshee.svg")
-.asset-blademaster .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-blademaster.svg")
-.asset-bonded .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-bonded.svg")
-.asset-bounty-hunter .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-bounty-hunter.svg")
-.asset-brawler .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-brawler.svg")
-.asset-combat-bot .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-combat-bot.svg")
-.asset-commander .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-commander.svg")
-.asset-courier .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-courier.svg")
-.asset-devotant .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-devotant.svg")
-.asset-diplomat .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-diplomat.svg")
-.asset-empath .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-empath.svg")
-.asset-explorer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-explorer.svg")
-.asset-fated .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-fated.svg")
-.asset-firebrand .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-firebrand.svg")
-.asset-fugitive .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-fugitive.svg")
-.asset-gearhead .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-gearhead.svg")
-.asset-glowcat .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-glowcat.svg")
-.asset-gunner .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-gunner.svg")
-.asset-gunslinger .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-gunslinger.svg")
-.asset-haunted .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-haunted.svg")
-.asset-healer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-healer.svg")
-.asset-homesteader .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-homesteader.svg")
-.asset-kinetic .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-kinetic.svg")
-.asset-lore-hunter .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-lore-hunter.svg")
-.asset-loyalist .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-loyalist.svg")
-.asset-marked .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-marked.svg")
-.asset-mercenary .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-mercenary.svg")
-.asset-naturalist .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-naturalist.svg")
-.asset-navigator .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-navigator.svg")
-.asset-oathbreaker .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-oathbreaker.svg")
-.asset-outcast .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-outcast.svg")
-.asset-protocol-bot .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-protocol-bot.svg")
-.asset-revenant .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-revenant.svg")
-.asset-rockhorn .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-rockhorn.svg")
-.asset-scavenger .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-scavenger.svg")
-.asset-scoundrel .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-scoundrel.svg")
-.asset-seer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-seer.svg")
-.asset-shade .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shade.svg")
-.asset-sidekick .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sidekick.svg")
-.asset-slayer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-slayer.svg")
-.asset-sniper .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sniper.svg")
-.asset-sprite .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sprite.svg")
-.asset-survey-bot .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-survey-bot.svg")
-.asset-symbiote .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-symbiote.svg")
-.asset-tech .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-tech.svg")
-.asset-trader .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-trader.svg")
-.asset-utility-bot .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-utility-bot.svg")
-.asset-vanguard .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vanguard.svg")
-.asset-vestige .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vestige.svg")
-.asset-veteran .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-veteran.svg")
-.asset-voidborn .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-voidborn.svg")
-.asset-voidglider .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-voidglider.svg")
-.asset-weapon-master .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-weapon-master.svg")
-.asset-engine-upgrade .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-engine-upgrade.svg")
-.asset-expanded-hold .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-expanded-hold.svg")
-.asset-grappler .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-grappler.svg")
-.asset-heavy-cannons .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-heavy-cannons.svg")
-.asset-internal-refit .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-internal-refit.svg")
-.asset-medbay .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-medbay.svg")
-.asset-missile-array .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-missile-array.svg")
-.asset-overseer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-overseer.svg")
-.asset-reinforced-hull .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-reinforced-hull.svg")
-.asset-research-lab .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-research-lab.svg")
-.asset-sensor-array .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sensor-array.svg")
-.asset-shields .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shields.svg")
-.asset-stealth-tech .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-stealth-tech.svg")
-.asset-vehicle-bay .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vehicle-bay.svg")
-.asset-workshop .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-workshop.svg")
-.asset-exosuit .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-exosuit.svg")
-.asset-hoverbike .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-hoverbike.svg")
-.asset-rover .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-rover.svg")
-.asset-service-pod .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-service-pod.svg")
-.asset-shuttle .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shuttle.svg")
-.asset-skiff .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-skiff.svg")
-.asset-snub-fighter .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-snub-fighter.svg")
-.asset-engine-upgrade .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-engine-upgrade.svg")
-.asset-expanded-hold .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-expanded-hold.svg")
-.asset-grappler .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-grappler.svg")
-.asset-heavy-cannons .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-heavy-cannons.svg")
-.asset-internal-refit .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-internal-refit.svg")
-.asset-medbay .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-medbay.svg")
-.asset-missile-array .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-missile-array.svg")
-.asset-overseer .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-overseer.svg")
-.asset-reinforced-hull .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-reinforced-hull.svg")
-.asset-research-lab .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-research-lab.svg")
-.asset-sensor-array .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-sensor-array.svg")
-.asset-shields .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shields.svg")
-.asset-stealth-tech .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-stealth-tech.svg")
-.asset-vehicle-bay .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-vehicle-bay.svg")
-.asset-workshop .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-workshop.svg")
-.asset-exosuit .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-exosuit.svg")
-.asset-hoverbike .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-hoverbike.svg")
-.asset-rover .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-rover.svg")
-.asset-service-pod .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-service-pod.svg")
-.asset-shuttle .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-shuttle.svg")
-.asset-skiff .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-skiff.svg")
-.asset-snub-fighter .background-svg
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-icons/Ironsworn-Starforged/src/app/img/icons/asset-snub-fighter.svg")
+  .asset-card.category-{key}
+    .asset-category
+      color category
+    background-image: url('https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-' + key + '.svg');
