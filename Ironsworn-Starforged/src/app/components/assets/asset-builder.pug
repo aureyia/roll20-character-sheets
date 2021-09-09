@@ -1,88 +1,90 @@
-mixin ability(asset, ability, number, name)
+mixin assetAbility(ability)
   //- consider having the attr name converted to snake case?
   - var assetBodyPlaceholder=translation[ability.id]
   .flex-container
     if ability.Enabled
       input.asset-ability(
         type='checkbox'
-        name=`attr_${_.snakeCase(ability.id)}`
+        name=`attr_${ability.id}`
         checked
       )
       //- old name=`attr_ability_checkbox_${abilityId}`
     else
       input.asset-ability(
         type='checkbox'
-        name=`attr_${_.snakeCase(ability.id)}`
+        name=`attr_${ability.id}`
       )
       //- old: name=`attr_assetcheckbox_${abilityId}${number}`
     .asset-ability
       div.i18n-text(data-i18n=abilityId)!=assetBodyPlaceholder
       if ability.Input
-        each field in ability.Input
-          - var fieldId = `${ability.id}-textinput-${_.kebabCase(field)}`
-          span.i18n-text.asset-ability-write-in(data-i18n=fieldId)=translation[fieldId]
-          input.border-bottom.no-border(type='text' name=`attr_${_.snakeCase(fieldId)}` value='')
+        each input in ability.Input
+          - var inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
+          span.i18n-text.asset-ability-write-in(data-i18n=inputId)=translation[inputId]
+          input.border-bottom.no-border(type='text' name=`attr_${inputId}` value='')
 
-mixin description(asset)
+mixin assetDescription(asset)
   .asset-description
     - var translationDesc = `${asset.id}-description`
     .asset-description-text(data-i18n=translationDesc)=translation[translationDesc]
 
-mixin field(field, assetName)
+mixin assetTextInput(textinput, assetId)
+  - let id = `${assetId}-textinput-${_.kebabCase(textinput)}`
   .write-in-container
     .i18n-text.asset-write-in.asset-name(
-      data-i18n=`asset-${assetName}-textinput-${_.kebabCase(field)}`
-    )=translation[`asset-${assetName}-textinput-${_.kebabCase(field)}`]
-    input.border-bottom.no-border(type='text' name=`attr_field-${field}` value='')
+      data-i18n=id
+    )=translation[id]
+    input.border-bottom.no-border(type='text' name=`attr_${id}` value='')
+    //- old `attr_field-${field}`
 
-mixin track(track, assetName)
-  .asset-track-wrapper
-    - var currentTrack = 0
-    while currentTrack <= track.Max
-      .asset-track-box
-        if currentTrack == 0
-          .asset-track-box-display=0
+mixin assetMeter(meter)
+  //- old: asset-track-*
+  - var currentMeter = 0
+  .asset-meter-wrapper
+    while currentMeter <= meter.Max
+      .asset-meter-box
+        if currentMeter == 0
+          .asset-meter-box-display=0
         else
-          .asset-track-box-display=`+ ${currentTrack}`
-        input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentTrack}`)
-        - currentTrack++
+          .asset-meter-box-display=`+ ${currentMeter}`
+        input(type='radio' name=`attr_${meter.id}` value=`${currentMeter}`)
+         //- old: `attr_assettrack_${assetName}`
+        - currentMeter++
 
-mixin assetTemplate(asset, options)
-  - let id = asset.id
-  - let name = `${id.replace(/asset-/i, "")}`
+mixin assetCard(asset, options)
+  //- - let name = `${id.replace(/asset-/i, "")}`
   - let category = _.kebabCase(asset.Category)
-  - let assetNameClass = name;
   if options.visiblityToggle === true
-    input(class=`${options.classes} ${assetNameClass}` type='checkbox' name=`attr_${name}`)
-  div(class=`${options.classes} ${assetNameClass} category-${category}`)
+    input(class=`${options.classes} ${asset.id}` type='checkbox' name=`attr_${asset.id}`)
+    //- formerly `attr_${name}`
+  div(class=`asset-card ${options.classes} ${asset.id} category-${category}`)
     .asset-content-header
       .asset-details
         .category=asset.Category
         span.asset-name=asset.Name
       .background-svg
     if asset.Description
-      +description(asset, name)
+      +assetDescription(asset)
     if asset.Input
-      each field in asset.Input
-        +field(field, name)
+      each textinput in asset.Input
+        +assetTextInput(textinput, asset.id)
     .flex-wrapper
       each ability, index in asset.Abilities
         - var abilityNumber = index + 1
-        +ability(asset, ability, abilityNumber, name)
+        +assetAbility(ability)
     if asset['Condition Meter'] && options.standalone === false
-      +track(asset['Condition Meter'], name)
+      +assetMeter(asset['Condition Meter'])
 
 mixin genericAssetBuilder(assetsArray, listId)
   //- Asset Datalist
   input.asset-options-header(type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
   datalist(id=listId)
     each asset in assetsArray
-      - let assetNameClass = `${asset.id.replace(/asset-/i, "")}`
       //- generates classes and outputs to stdout
-      //- - console.log(`input[type=checkbox].${assetNameClass}:checked ~ div.${assetNameClass},`)
-      option.i18n-text(data-i18n=`${asset.id}-name` value=assetNameClass)=translation[`${asset.id}-name`]
+      //- - console.log(`input[type=checkbox].${asset.id}:checked ~ div.asset-card.${asset.id},`)
+      option.i18n-text(data-i18n=`${asset.id}-name` value=asset.Name)=translation[`${asset.id}-name`]
     option.i18n-text(data-i18n=`asset-custom-name` value='custom')=translation[`asset-custom-name`]
 
   //- Asset Content
   each asset in assetsArray
-    +assetTemplate(asset, { classes: 'hide-element', visiblityToggle: true, standalone: false })
+    +assetCard(asset, { classes: 'hide-element', visiblityToggle: true, standalone: false })
