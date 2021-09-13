@@ -8,6 +8,31 @@
 
 // Sheet Core
 
+.ui-dialog .charsheet button[type="roll"]::before
+  all unset
+.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label)
+  all unset
+.ui-dialog .charsheet button[type="roll"]
+  margin 0
+  padding 0
+.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label)
+  cursor pointer
+  color #4C4D4F
+  background none
+  border none
+  box-shadow none
+  text-shadow none
+  padding 1px
+  margin 0
+  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
+  background-size contain
+  background-repeat no-repeat
+  background-position center
+  background-origin content-box
+  &:hover
+    unset: all
+    transition: .5s ease
+
 .charsheet
   width 842px !important
   margin 0 auto !important
@@ -29,7 +54,7 @@
     font-weight normal
     font-size 14.3px
     list-style-type none
-    &::before
+    &:before
       content '';
       display inline-block;
       height 1rem
@@ -135,22 +160,6 @@
     font-weight: bold
     text-align: left
     margin-top: 2px
-  button[type="roll"]
-    align-items: left
-    color: #4C4D4F
-    font-weight: normal
-    font-size: 20px
-    text-decoration: none
-    background: none
-    background-image: none
-    border: none
-    box-shadow: none
-    text-shadow: none
-    padding: 0px 0px 0px 0px
-    margin: 0px 0px 0px 0px
-    text-align: center
-    &:hover
-      transition: .5s ease
 
   .heading-left
     text-align: left

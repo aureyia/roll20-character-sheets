@@ -1,25 +1,3 @@
-.resources
-  display grid
-  justify-content space-between
-  .row1
-    display grid
-    grid-row 1
-    margin-bottom 0.2em
-    border 1px solid #4b4d4f
-  .row2
-    display flex
-    grid-row 2
-    border 1px solid #4b4d4f
-    margin-bottom 0.1em
-
-.resource
-  display flex
-  borderCommon()
-  border-left 1px solid
-  .resource-value-box
-    display flex
-    width 100%
-
 label
   &.health-reset
     font-size 14px
@@ -59,15 +37,6 @@ h3
   &:focus
     input-highlight(3px)
 
-.resource-title
-  font-size 14px
-  width auto
-  line-height 9px
-  padding 0.5em 0.5em 0.5em 0.5em
-  border-right 1px solid
-  border-left 1px solid
-  text-transform uppercase
-
 input[type=text].resource-value
   width 22px
   border none
@@ -84,7 +53,7 @@ input[type=text].resource-value
   width 27px
 
 .character-name
-  grid-column 1
+  // grid-column 1
   input
     width 100% !important
     border none
@@ -95,20 +64,62 @@ input[type=text].resource-value
     border none
 
 .character-callsign
-  grid-column 2
+  // grid-column 2
   input
     width 100% !important
     border none
 
-.roll-resource-label
-  text-transform uppercase
-  margin 0
-  padding 0.15em 0.4em 0em 0.4em
-  width auto
-  font-size 14px
-  cursor pointer
-  text-align center
-  border-left 1px solid
-  &:hover
-    background #ccc
-    transition 0.5s ease
+.resources
+  display grid
+  justify-content space-between
+  border 1px solid #4b4d4f
+  margin-bottom 0.1em
+  grid-template-rows 1fr 1fr
+  // grid-template-columns 1fr 1fr 1fr 1fr 1fr
+  .resource
+    font-size 14px
+    display flex
+    borderCommon()
+    margin 0
+    padding 0
+    border-left 1px solid
+    grid-row 2
+  .character-name
+    grid-row 1
+    // grid-column-start 1
+    // grid-column-end 3
+  .character-callsign
+    grid-row 1
+    // grid-column-start 3
+    // grid-column-end 5
+  .character-pronouns
+    // grid-row 2
+    // grid-column 5
+  button.btn.roll-resource-label, label
+    width auto
+    height auto
+    vertical-align
+    line-height 9px
+    background none
+    border 0
+    font-size 1em
+    text-transform uppercase
+    // padding 0.5em 0.5em 0.5em 0.5em
+    // border-right 1px solid
+    // border-left 1px solid
+    // padding 0.15em 0.4em 0em 0.4em
+    margin 0
+    cursor pointer
+    text-align center
+    text-shadow none
+    display inline
+    &:hover
+      background #ccc
+      transition 0.5s ease
+    span
+      display block
+      margin auto 0.25em
+  .resource-value-box
+    display flex
+    width 100%
+

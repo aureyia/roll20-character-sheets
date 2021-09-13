@@ -1,5 +1,34 @@
 
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans:400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+.ui-dialog .charsheet button[type="roll"]::before {
+  all: unset;
+}
+.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label) {
+  all: unset;
+}
+.ui-dialog .charsheet button[type="roll"] {
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label) {
+  cursor: pointer;
+  color: #4c4d4f;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 1px;
+  margin: 0;
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+}
+.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label):hover {
+  unset: all;
+  transition: 0.5s ease;
+}
 .charsheet {
   width: 842px !important;
   margin: 0 auto !important;
@@ -31,7 +60,7 @@
   font-size: 14.3px;
   list-style-type: none;
 }
-.charsheet li::before {
+.charsheet li:before {
   content: '';
   display: inline-block;
   height: 1rem;
@@ -144,24 +173,6 @@
   font-weight: bold;
   text-align: left;
   margin-top: 2px;
-}
-.charsheet button[type="roll"] {
-  align-items: left;
-  color: #4c4d4f;
-  font-weight: normal;
-  font-size: 20px;
-  text-decoration: none;
-  background: none;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0px 0px 0px 0px;
-  margin: 0px 0px 0px 0px;
-  text-align: center;
-}
-.charsheet button[type="roll"]:hover {
-  transition: 0.5s ease;
 }
 .charsheet .heading-left {
   text-align: left;
@@ -671,31 +682,6 @@
 .charsheet .ship-btn {
   margin: 0;
 }
-.charsheet .resources {
-  display: grid;
-  justify-content: space-between;
-}
-.charsheet .resources .row1 {
-  display: grid;
-  grid-row: 1;
-  margin-bottom: 0.2em;
-  border: 1px solid #4b4d4f;
-}
-.charsheet .resources .row2 {
-  display: flex;
-  grid-row: 2;
-  border: 1px solid #4b4d4f;
-  margin-bottom: 0.1em;
-}
-.charsheet .resource {
-  display: flex;
-  border: 2px solid #4c4d4f;
-  border-left: 1px solid;
-}
-.charsheet .resource .resource-value-box {
-  display: flex;
-  width: 100%;
-}
 .charsheet label.health-reset {
   font-size: 14px;
   margin: 0;
@@ -738,15 +724,6 @@
   outline-offset: 0;
   box-shadow: inset 0 0 0 3px;
 }
-.charsheet .resource-title {
-  font-size: 14px;
-  width: auto;
-  line-height: 9px;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  border-right: 1px solid;
-  border-left: 1px solid;
-  text-transform: uppercase;
-}
 .charsheet input[type=text].resource-value {
   width: 22px;
   border: none;
@@ -762,9 +739,6 @@
 .charsheet .load-value {
   width: 27px;
 }
-.charsheet .character-name {
-  grid-column: 1;
-}
 .charsheet .character-name input {
   width: 100% !important;
   border: none;
@@ -773,26 +747,61 @@
   width: 100% !important;
   border: none;
 }
-.charsheet .character-callsign {
-  grid-column: 2;
-}
 .charsheet .character-callsign input {
   width: 100% !important;
   border: none;
 }
-.charsheet .roll-resource-label {
+.charsheet .resources {
+  display: grid;
+  justify-content: space-between;
+  border: 1px solid #4b4d4f;
+  margin-bottom: 0.1em;
+  grid-template-rows: 1fr 1fr;
+}
+.charsheet .resources .resource {
+  font-size: 14px;
+  display: flex;
+  border: 2px solid #4c4d4f;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid;
+  grid-row: 2;
+}
+.charsheet .resources .character-name {
+  grid-row: 1;
+}
+.charsheet .resources .character-callsign {
+  grid-row: 1;
+}
+.charsheet .resources button.btn.roll-resource-label,
+.charsheet .resources label {
+  width: auto;
+  height: auto;
+vertical-align
+  line-height: 9px;
+  background: none;
+  border: 0;
+  font-size: 1em;
   text-transform: uppercase;
   margin: 0;
-  padding: 0.15em 0.4em 0em 0.4em;
-  width: auto;
-  font-size: 14px;
   cursor: pointer;
   text-align: center;
-  border-left: 1px solid;
+  text-shadow: none;
+  display: inline;
 }
-.charsheet .roll-resource-label:hover {
+.charsheet .resources button.btn.roll-resource-label:hover,
+.charsheet .resources label:hover {
   background: #ccc;
   transition: 0.5s ease;
+}
+.charsheet .resources button.btn.roll-resource-label span,
+.charsheet .resources label span {
+  display: block;
+  margin: auto 0.25em;
+}
+.charsheet .resources .resource-value-box {
+  display: flex;
+  width: 100%;
 }
 .charsheet .impact-list {
   display: flex;
@@ -1675,9 +1684,6 @@
   box-shadow: inset 0 0 0 2px;
 }
 .charsheet .roll-show {
-  padding: 0 !important;
-  font-size: 20px !important;
-  margin: 0 !important;
   height: auto;
 }
 .charsheet .roll-show:hover {
