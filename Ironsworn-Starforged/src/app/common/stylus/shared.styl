@@ -1,13 +1,40 @@
+$sf-black = #221E1F
+$sf-rich-black = #040506
+$sf-ui-gray-dark = #B8C2CD
+$sf-ui-gray-light = #DDE1E7
+$sf-ui-blue = #47AEDD
+$sf-ui-purple = #842A8C
+$sf-ui-red = #C50933
+$sf-shallows = #4B8D89
+$sf-forest = #4F8A4A
+$sf-sky = #4a82a5
+$sf-ocean = #4D598B
+$sf-oracle = #7B5A8D
+$sf-iron = #9BA3AD
+
+$fg-color = $sf-black // old: #4c4d4f
+$bg-color = #fff
+$bg-color-alt = $sf-ui-gray-light // old: #e4e4e4. for alternating table rows, etc
+$input-color = $sf-ui-gray-dark // old: #ccc. textinput background, when hovering over usable objects
+$accent-color = #fd0 // highlights active fields
+
+
+$header-font-lg = "Exo", sans-serif
+$header-font-sm = "Montserrat", sans-serif
+$body-font = "Montserrat", sans-serif
+$compact-font = "Encode Sans Condensed", sans-serif
+
 btn()
   display flex
   width auto
   font-size 14px
   padding 0
-  border 2px solid #494a4c
+  border 2px solid $fg-color
   cursor pointer
+  background $bg-color
 
 input-highlight(shadow)
-  outline 3px solid #fd0
+  outline 3px solid $accent-color
   outline-offset 0
   box-shadow inset 0 0 0 shadow
 
@@ -16,6 +43,8 @@ hide()
   transition opacity 1s ease-out
   opacity 0
   height 0
+  border none !important
+  box-sizing border-box
   overflow hidden
 
 show-hide(time = 0.2s)
@@ -24,15 +53,40 @@ show-hide(time = 0.2s)
   opacity 1
   transition time ease
 
-borderCommon()
-  border 2px solid #4C4D4F
+borderCommon(width=2px)
+  border width solid $fg-color
 
 dark()
-  background #4C4D4F
-  color white
+  background $fg-color
+  color $bg-color
+
+interactive-hover(bg=$fg-color, fg=$bg-color)
+  transition 0.5s ease
+  cursor pointer
+  &:hover
+    background-color bg !important
+    color fg !important
 
 std-font(primary = false)
   if primary
     font-family primary, Arial, sans-serif
   else
-    font-family , Arial, sans-serif
+    font-family $body-font
+
+icon-button(icon)
+  &::before
+    display block
+    width 100%
+    height 100%
+    background-color currentColor
+    mask-image url(icon)
+    mask-size 90% // contain could also work, but this pads it out a bit
+    mask-repeat no-repeat
+    mask-position center
+    mask-origin content-box
+    top 0
+    left 0
+    position relative
+    margin 0
+    padding 0
+    content ""

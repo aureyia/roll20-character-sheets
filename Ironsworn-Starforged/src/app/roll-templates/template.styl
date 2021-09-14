@@ -2,6 +2,7 @@
 @import './mixins/rolls'
 @import './oracles/oracles'
 
+
 .sheet-rolltemplate-starforged_moves .sheet-roll-container,
 .sheet-rolltemplate-starforged_progress .sheet-roll-container
   roll-container()
@@ -90,7 +91,7 @@
 .sheet-rolltemplate-starforged_moves .sheet-roll-container a[href^="~"]
   background-color transparent
   padding 5px
-  color white
+  color $bg-color
   display inline-block
   border none
   text-transform uppercase
@@ -103,6 +104,4 @@
   background #5e5d6f
   border-radius 0.4em
   margin 0.2em
-  &:hover
-    background #9290ad
-    transition 0.5s
+  interactive-hover(#9290ad)

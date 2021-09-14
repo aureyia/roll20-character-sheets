@@ -1,5 +1,5 @@
 .changelog
-  border 2px solid #4C4D4F
+  border 2px solid $fg-color
   margin-bottom 1em
   padding 1em
 
@@ -7,14 +7,12 @@
   text-align center
 
 .close-changelog
-  border 2px solid #4C4D4F
+  border 2px solid $fg-color
   cursor pointer
   padding 0
   margin 0.5em 0 0 0
   text-align: center
-  &:hover
-    background #ccc
-    transition .5s ease
+  interactive-hover($input-color, $fg-color)
 
 input.changelog:checked ~ div.changelog
   display none
@@ -83,7 +81,7 @@ input[type=radio].ship:checked ~ div.ship
 
 .sub-header
   margin-top 1em
-  border-bottom 3px solid #4C4D4F
+  border-bottom 3px solid $fg-color
 
 .ship-grid
   margin-top 1em
@@ -91,8 +89,8 @@ input[type=radio].ship:checked ~ div.ship
   justify-content space-around
   grid-row-gap 1em
   h3
-    color white
-    background #4c4d4f
+    color $bg-color
+    background $fg-color
     margin-bottom 0.6em
   .asset
     grid-column 1
@@ -102,7 +100,7 @@ input[type=radio].ship:checked ~ div.ship
   .ship-category-info
     grid-column 2
     grid-row 1
-    border 2px solid #4c4d4f
+    border 2px solid $fg-color
     border-radius 1em
     box-shadow 2px 2px 6px 0px
     .ship-onboard
@@ -119,7 +117,7 @@ input[type=radio].ship:checked ~ div.ship
 
     input[type=text]
       border 0
-      border-bottom 2px solid #4c4d4f
+      border-bottom 2px solid $fg-color
       border-radius 0
       padding 0
       padding-left 0.3em

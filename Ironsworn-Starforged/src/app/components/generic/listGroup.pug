@@ -1,6 +1,9 @@
-mixin listGroup(title_i18n)
+mixin listGroup(title, i18n=true)
   section.list-group
-    h3.i18n-text(data-i18n=title_i18n).list-group-title=translation[title_i18n]
+    if (i18n==true)
+      h3.i18n-text(data-i18n=title).list-group-title=translation[title]
+    else
+      h3.list-group-title=title
     ul
       block
 

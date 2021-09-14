@@ -1,4 +1,4 @@
-input[type="checkbox"].showhide:checked ~ div.showhide
+input[type="checkbox"].showhide:checked ~ .showhide
   show-hide()
 
 select
@@ -121,7 +121,7 @@ div
   display inline-block
   width 320px
   max-width 320px
-  border 2px solid #4C4D4F
+  border 2px solid $fg-color
   margin-bottom 20px
   font-size 14.3px
   line-height 1.25
@@ -130,7 +130,7 @@ div
   std-font('Encode Sans Condensed')
   input
     &.border-bottom
-      border-bottom-color #4C4D4F
+      border-bottom-color $fg-color
       padding 0
 
 .asset-write-in input,
@@ -148,13 +148,13 @@ input[type="checkbox"].asset-ability
   margin-top 0.2em
 
 .asset-type-selection
-  background #4C4D4F
-  color #fff
+  background $fg-color
+  color $bg-color
   border 0
 
 .asset-type-dropdown
-  color #fff
-  background #4C4D4F
+  color $bg-color
+  background $fg-color
   width auto
   font-size 15px
   font-weight bold
@@ -181,7 +181,7 @@ input[type="checkbox"].asset-ability
   align-items center
   border-radius 0%
   background transparent
-  border 2px solid #4C4D4F
+  border 2px solid $fg-color
   padding 5px
   margin-bottom 2px
 
@@ -333,7 +333,7 @@ input[type=checkbox].snub-fighter:checked ~ div.snub-fighter
   show-hide()
 
 span.asset-name
-  font-family 'Exo', Helvetica, Arial, sans-serif
+  std-font('Exo')
   font-size 1.5em
   font-weight bold
   text-transform uppercase
@@ -354,8 +354,8 @@ span.asset-name
 
 .asset-options-header
   padding 0.2em 0.4em
-  background #4C4D4F
-  color #fff
+  background $fg-color
+  color $bg-color
   width 100%
   border 0
   border-radius 0.4em 0.4em 0em 0em

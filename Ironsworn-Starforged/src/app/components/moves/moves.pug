@@ -1,5 +1,6 @@
 include ./mixins/move-builder
 include ../generic/listGroup
+include ../generic/preview
 
 mixin moveGroup(moveCategory)
   - var title_i18n = `move-group-title-${moveCategory}`
@@ -28,16 +29,12 @@ input(type='radio' class='hide-element full-move-list' name='attr_move_view' val
 //- Move Details
 input(type='radio' class='hide-element move-preview' name='attr_move_view' value='2')
 .move-preview.showhide
-  .preview-bar
-    .close-bar
-      label.close-preview
-        span.i18n-text(data-i18n='close-preview')=translation['close-preview']
-        input(type='checkbox' class='hide-element' name='attr_close_move_preview')
+  +previewCloseButton("move")
   .preview-container
-    .scrollable-list-groups.list-group-container
+    .preview-sidebar.list-group-container
       each group in movegroups
         +moveGroup(group)
-    //- Move Previews
-    .move-preview-container
+        //- Move Previews
+    .preview-content
       each move in moves.Moves
         +movePreviewFactory(move)

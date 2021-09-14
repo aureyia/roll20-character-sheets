@@ -6,39 +6,59 @@
 // Common
 @import './common/stylus/shared'
 
+
+
 // Sheet Core
+bullet-before(size, iconUrl)
+  margin-left (size * 1.5)
+  &::before
+    content '';
+    display inline-block;
+    height size
+    width size
+    -webkit-mask-image: url(iconUrl);
+    -webkit-mask-size: contain;
+    -webkitmask-repeat: no-repeat
+    mask-image: url(iconUrl);
+    mask-size: contain
+    mask-repeat: no-repeat
+    background-color currentColor
+    margin-right (size / 4)
+    margin-left -(size * 1.25)
 
-.ui-dialog .charsheet button[type="roll"]::before
-  all unset
-.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label)
-  all unset
-.ui-dialog .charsheet button[type="roll"]
-  margin 0
-  padding 0
-.ui-dialog .charsheet button[type="roll"]:not(.roll-resource-label)
-  cursor pointer
-  color #4C4D4F
-  background none
-  border none
-  box-shadow none
-  text-shadow none
-  padding 1px
-  margin 0
-  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
-  background-size contain
-  background-repeat no-repeat
-  background-position center
-  background-origin content-box
-  &:hover
-    unset: all
-    transition: .5s ease
 
-.charsheet
+.ui-dialog .charsheet
   width 842px !important
   margin 0 auto !important
   padding 15px
   std-font('Montserrat')
   font-weight normal
+  button[type="roll"]
+    margin 0
+    padding 0
+    vertical-align middle
+    &:before
+      all unset
+    &.roll-icon-only
+      width 1.75em
+      height 1.75em
+      margin 0
+      &:not(.placeholder-button)
+        color $fg-color
+        icon-button("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
+        interactive-hover()
+    &:not(.roll-resource-label)
+      cursor pointer
+      color $fg-color
+      background none
+      border none
+      box-shadow none
+      text-shadow none
+  .placeholder-button
+    opacity 100% !important
+    background-image none !important
+    pointer-events none !important
+    cursor default !important
   input[type=text]
     font-weight: 600;
     &:focus
@@ -54,22 +74,24 @@
     font-weight normal
     font-size 14.3px
     list-style-type none
-    &:before
-      content '';
-      display inline-block;
-      height 1rem
-      width 1rem
-      -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
-      -webkit-mask-size: contain;
-      -webkitmask-repeat: no-repeat
-      mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
-      mask-size: contain
-      mask-repeat: no-repeat
-      background-color currentColor
-      margin-right 4px
+    bullet-before(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+    // &:before
+    //   content '';
+    //   display inline-block;
+    //   height 1rem
+    //   width 1rem
+    //   -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+    //   -webkit-mask-size: contain;
+    //   -webkitmask-repeat: no-repeat
+    //   mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+    //   mask-size: contain
+    //   mask-repeat: no-repeat
+    //   background-color currentColor
+    //   margin-right 0.25rem
+    //   margin-left -1.25rem
 
   p
-    std-font('Encode Sans Condensed')
+    // std-font('Encode Sans Condensed')
     font-size 14.3px
     line-height 1.25
     font-weight normal
@@ -105,7 +127,7 @@
         display: inline-block
         content: ""
         height: 5px
-        border-top: 2px solid #4C4D4F
+        border-top: 2px solid $fg-color
         top: 0
         width: 220px
     &.site-divide
@@ -114,7 +136,7 @@
         display: inline-block
         content: ""
         height: 5px
-        border-top: 2px solid #4C4D4F
+        border-top: 2px solid $fg-color
         top: 0
         width: 331px
     &.site-denizens-divide
@@ -123,7 +145,7 @@
         display: inline-block
         content: ""
         height: 5px
-        border-top: 2px solid #4C4D4F
+        border-top: 2px solid $fg-color
         top: 0
         width: 336px
     &.site-divide-notes
@@ -132,7 +154,7 @@
         display: inline-block
         content: ""
         height: 5px
-        border-top: 2px solid #4C4D4F
+        border-top: 2px solid $fg-color
         top: 0
         width: 352px
 
@@ -167,14 +189,93 @@
   hr
     border: 0
     height: 1px
-    background #ccc
-    background-image: linear-gradient(to right, #ccc, #333, #ccc)
+    background $input-color
+    background-image: linear-gradient(to right, $input-color, #333, $input-color)
 
   textarea
-    std-font('Montserrat')
+    // std-font('Montserrat')
     max-width 828px
-    border: 2px solid #4C4D4F
+    border: 2px solid $fg-color
     font-weight normal
+
+  .list-group-scroll
+    borderCommon()
+    box-sizing border-box
+    height fit-content
+    height -moz-fit-content
+  .list-group-container
+    columns 3
+    column-gap 1em
+    margin-bottom 3em
+    .list-group
+      borderCommon()
+      border-width 4px
+      background-color $fg-color
+      box-sizing border-box
+      margin 0em
+      margin-bottom 1em
+      height fit-content
+      height -moz-fit-content
+      // border-radius 1.3em
+      -webkit-column-break-inside avoid
+      page-break-inside avoid
+      break-inside avoid
+      border-radius 1em
+      overflow hidden
+      .list-group-title
+        color $bg-color
+        font-size 1.4em
+        font-weight bold
+        padding 0 5px 3px
+        text-transform uppercase
+        text-align center
+        display inline-block
+        vertical-align text-bottom
+        width stretch
+        width -moz-available
+      ul
+        display grid
+        gap 4px
+        padding 0
+        margin 0
+        border 0
+        width auto
+        // border-bottom-left-radius 1em
+        // border-bottom-right-radius 1em
+        overflow hidden
+        *
+          padding 0
+          margin 0
+          border 0
+          border-radius 0
+        li.list-group-item
+          height min-content
+          list-style-type none
+          // margin 4px
+          background none
+          display flex
+          gap 4px
+          &::before
+            all: unset
+          & > *
+            background-color $bg-color
+          &:nth-child(2n) > *
+            background-color $bg-color-alt
+          label.toggle-btn
+            cursor pointer
+            width stretch
+            width -moz-available
+            text-align center
+            // interactive-hover($input-color, $fg-color)
+            span
+              display flex
+              justify-content: center;
+              align-items: center;
+          button
+            height 1.5em
+            width 1.5em
+            flex-grow 0
+            flex-shrink 0
 
   .btn
     display: inline
@@ -185,15 +286,13 @@
     margin 0.5em
     height 40px
     padding 0.2em 0.2em 0.2em 0.2em
-    border: 2px solid #494a4c
+    border: 2px solid $fg-color
     border-radius 0
     cursor: pointer
 
   .toggle-btn
     btn()
-    &:hover
-      background #ccc
-      transition .5s ease
+    interactive-hover($input-color, $fg-color)
     .btn-content
       padding 0.2em 0.2em 0.2em 0.2em
       width 100%
@@ -201,15 +300,12 @@
     .btn-input
       &:checked
         & ~ .btn-content
-          background #4c4d4f
-          color #fff
+          background $fg-color
+          color $bg-color
 
   .static-btn
     btn()
-    border-radius 0.3em
-    &:hover
-      background #ccc
-      transition .5s ease
+    interactive-hover($input-color, $fg-color)
     .btn-content
       padding 0.2em 0.2em 0.2em 0.2em
       width 100%
@@ -219,7 +315,7 @@
   button.btn.repcontrol_add
     width auto
     height auto
-    border 2px solid #4C4D4F
+    border 2px solid $fg-color
     border-radius 0
     font-weight bold
     font-size 12px
@@ -227,11 +323,9 @@
     text-transform uppercase
     padding 0.2em
     margin 0.3em
-    color #4C4D4F
-    std-font('Montserrat')
+    color $fg-color
     background #dfe0e2
-    &:hover
-      background #bcbec2
+    interactive-hover("#bcbec2")
     &:focus
       input-highlight(1px)
 
@@ -240,7 +334,8 @@
 
   button.btn.repcontrol_add
     margin-left 3px
-
+  .roll-show
+    interactive-hover()
   .impacts
     margin-bottom: 0px
 
@@ -283,13 +378,13 @@
 
   .track-box-input:hover ~ .track-box-back,
   .resources-box-input:hover ~ .resources-box-back
-    background: #ccc
+    background: $input-color
     transition: .5s ease;
 
   .track-box-input:checked ~ .track-box-back,
   .resources-box-input:checked ~ .resources-box-back
-    background: #4C4D4F
-    color: white
+    background: $fg-color
+    color: $bg-color
     transition: .5s ease;
 
   .track-box-value
@@ -317,7 +412,7 @@
     align-items: center
     border-radius: 0%
     background: transparent
-    border: 2px solid #4C4D4F
+    border: 2px solid $fg-color
     margin-top: 20px
     margin-bottom: 2px
 
@@ -330,16 +425,16 @@
     align-items: center
     border-radius: 0%
     background: transparent
-    border: 2px solid #4C4D4F
+    border: 2px solid $fg-color
     margin-bottom: 2px
 
   .pc-name
     width: 100%
     font-weight: bold
     font-size: 14px
-    border: 2px solid #4C4D4F
+    border: 2px solid $fg-color
     background: #E6E7E8
-    color: #4C4D4F
+    color: $fg-color
     border-radius: 0
 
   .debil-desc
@@ -348,7 +443,7 @@
     font-size: 14px
 
   .border
-    border: 1px solid #ccc
+    border: 1px solid $input-color
     border-radius: 4px
 
   textarea.full-width
@@ -376,9 +471,9 @@
     text-align: center
     display: inline-block
     vertical-align: middle
-    -moz-box-shadow: 0 0 2px #ccc
-    -webkit-box-shadow: 0 0 2px #ccc
-    box-shadow: 0 0 2px #ccc
+    -moz-box-shadow: 0 0 2px $input-color
+    -webkit-box-shadow: 0 0 2px $input-color
+    box-shadow: 0 0 2px $input-color
     background: #f6f6f6
     background: -moz-radial-gradient(#f6f6f6, #dfdfdf)
     background: -webkit-radial-gradient(#f6f6f6, #dfdfdf)
@@ -410,13 +505,13 @@
     content: ""
 
   span.showhide:checked
-    background-color: #4C4D4F
-    color: white
+    background-color: $fg-color
+    color: $bg-color
     transition: .5s ease;
 
   span.showhide
     display: inline
-    border: 1px solid #ccc
+    border: 1px solid $input-color
     margin-right: 11px
     border-radius: 4px
     padding: 2px 4px
@@ -427,11 +522,11 @@
     cursor: pointer
     border-radius: 4px
     padding: 2px 4px
-    background-color: #ccc
-    color: #4C4D4F
+    background-color: $input-color
+    color: $fg-color
     transition: .5s ease;
 
-  div.showhide
+ .showhide
     hide()
 
   .hide-element
@@ -449,16 +544,12 @@
   div.preview-roll
     padding: 0em
 
-  input.showhide:checked ~ div.showhide
+  input.showhide:checked ~ .showhide
     show-hide()
 
   span.preview-roll
     width: 30%
     margin-left: 1em
-
-  .button-container
-    width: 2.5em
-    border: 2px solid #4C4D4F
 
   .button-container-preview
     width: 2.4em
@@ -471,7 +562,7 @@
     margin-bottom: 5px
 
   input.border-bottom
-    border-bottom: 1px solid #4C4D4F
+    border-bottom: 1px solid $fg-color
     border-radius: 0em
 
   .full-width
@@ -483,7 +574,6 @@
 
   h3, h2, .oracle-title, .move-title
     letter-spacing: 0.05rem;
-
 
   // Pages
   @import './pages/index'
@@ -503,6 +593,7 @@
   @import './components/assets/asset-svgs'
   @import './components/oracles/oracles'
   @import './components/legacies/tracks'
+  @import './components/generic/preview'
 
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol
   .repcontrol_del

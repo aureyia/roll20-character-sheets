@@ -37,14 +37,14 @@ mixin oracleRollBtn(id, buttonLabel, rollQuery="")
     if (!rollQuery.match(/header=/i)) {
       valueString = valueString + " " +  `{{header=${buttonLabel}}}`
     }
-  .button-container
-    button(
-      type='roll'
-      class='roll-show btn ui-draggable'
-      title=`@{roll_${id}}`
-      name=`roll_${id}`
-      value=valueString
-    )
+  //- .button-container
+  button(
+    type='roll'
+    class='roll-show btn ui-draggable roll-icon-only'
+    title=`@{roll_${id}}`
+    name=`roll_${id}`
+    value=valueString
+  )
   label.toggle-btn.oracle-btn
     input.hide-element.btn-input(
       type='radio'
@@ -52,28 +52,26 @@ mixin oracleRollBtn(id, buttonLabel, rollQuery="")
       name=`attr_selected_oracle`
       value=id
     )
-    .btn-content.oracle-name=buttonLabel.replace(/ - /i, ": ")
+    span.btn-content.oracle-name!=buttonLabel.replace(/ - /i, ": ")
 
 mixin oracleMultiBtn(oracle, btnText, indexOffset=0)
   - const labelText = oracle['Display name']||oracle['Name']
   - const options = oracle.Tables.map((table, index) => { return `${table['Display name']||table['Name']},${index+indexOffset}` })
   - const rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}} {{header=${labelText}}}`
   - const id = oracle.id
-  label.roll-label.embedded-btn=btnText||labelText
-    button.hide-element(
-      type='roll'
-      title=`@{roll_${id}}`
-      name=`roll_${id}`
-      value=`&{template:starforged_oracles} ${rollQuery}  {{${id}=[[d100]]}}`
-    )
+  button.roll-label.embedded-btn.button-text(
+    type='roll'
+    title=`@{roll_${id}}`
+    name=`roll_${id}`
+    value=`&{template:starforged_oracles} ${rollQuery}  {{${id}=[[d100]]}}`
+  )!=btnText||labelText
 
 mixin oracleSingleButton(oracle, btnText)
   - const labelText=oracle['Display name']||oracle.Name
   - const id = oracle.id
-  label.roll-label.embedded-btn=btnText||labelText
-    button.hide-element(
-      type='roll'
-      title=`@{roll_${id}}`
-      name=`roll_${id}`
-      value=`&{template:starforged_oracles} {{header=${labelText}}} {{${id}=[[d100]]}}`
-    )
+  button.roll-label.embedded-btn.button-text(
+    type='roll'
+    title=`@{roll_${id}}`
+    name=`roll_${id}`
+    value=`&{template:starforged_oracles} {{header=${labelText}}} {{${id}=[[d100]]}}`
+  )!=btnText||labelText

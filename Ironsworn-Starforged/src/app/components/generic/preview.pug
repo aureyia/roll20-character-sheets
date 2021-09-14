@@ -1,0 +1,4 @@
+mixin previewCloseButton(previewType)
+  label(title=translation['close-preview']).close-preview
+    span.i18n-text(data-i18n='close-preview')=translation['close-preview']
+    input(type='checkbox' class='hide-element' name=`attr_close_${previewType}_preview`)

@@ -5,7 +5,7 @@ mixin movePreviewFactory(move, options)
   +container(move, options)
     .rules-text!=move.Text
     if move.Oracle
-      .move-oracle-container
+      .oracle-embedded
         - let btnText = `Roll the ${move.Name} oracle`
         - var moveOracle = oracles.find(group => { return group.Name === 'Move' }).Oracles.find(oracle => { return oracle.Name === move.Name })
         if moveOracle.Table
@@ -19,27 +19,27 @@ mixin movePreview(move, options)
   if options.no_title
     div
   else
-    div.move-title.move-preview=move.Name
+    h3.move-title=move.Name
       if move['Progress Move']
         span.move-progress-label='Progress Move'
   - const statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
   if move['Progress Move']
-    +rollLabel
-      +progressRoll(move, 'hide-element')
+    //- +rollLabel
+    +progressRollBtn(move, "roll-show button-text", "roll")
   else if statCheck
-    +rollLabel
-      +movesRoll(move, 'hide-element')
-  .move-description
+    //- +rollLabel
+    +movesRollBtn(move, "roll-show button-text", "roll")
+  .move-body
     block
-  .oracle-footer.move-page-footer=move.page
+  footer.oracle-footer.move-page-footer=move.page
 
 mixin container(move, options = false)
   if options.visibility
-    div.move-visible
+    article.move-visible.move-display
       +movePreview(move, options)
         block
   else
     input(type='radio' name='attr_move_preview' class=`${move.id} hide-element` value=move.Name)
-    div(class=`${move.id} showhide`)
+    article(class=`${move.id} showhide move-display`)
       +movePreview(move, options)
         block

@@ -1,24 +1,24 @@
 input
   &.vow-name
-    background #ccc
-    border 2px solid #494a4c
+    background $input-color
+    border 2px solid $fg-color
     border-radius 0
     margin-bottom 0.2em
     margin-top 1em
     background #e6e7e8
-    border 2px solid #494a4c
+    border 2px solid $fg-color
     border-radius 0
     margin-bottom 0.2em
     &:focus
-      outline 3px solid #fd0
+      outline 3px solid $accent-color
       outline-offset 0
       box-shadow inset 0 0 0 2px
 
 .fulfill-vow:hover,
 .mark-vow:hover,
 .vow-clear-label:hover
-  background-color #ccc
-  color #4c4d4f
+  background-color $input-color
+  color $fg-color
   transition 0.5s ease
 
 .vows
@@ -42,7 +42,7 @@ input
   font-size 14px
 
 .difficulty
-  border 2px solid #494a4c
+  border 2px solid $fg-color
   margin 0.2em 0.5em 0.2em 0.5em
   padding 0
   cursor pointer
@@ -51,8 +51,8 @@ input
   input
     &:checked
       & ~ h5
-        background #494a4c
-        color #fff
+        background $fg-color
+        color $bg-color
 
 .btn-div
   display inline
