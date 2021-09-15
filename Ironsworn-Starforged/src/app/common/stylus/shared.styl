@@ -21,8 +21,8 @@ $input-color = $sf-ui-gray-dark // old: #ccc. textinput background, when hoverin
 $accent-color = #fd0 // highlights active fields
 
 $header-font-lg = "Exo", sans-serif
-$header-font-sm = "Montserrat", sans-serif
-$body-font = "Montserrat", sans-serif
+$body-font = "Encode Sans Expanded", sans-serif
+$header-font-sm = $body-font
 $compact-font = "Encode Sans Condensed", sans-serif
 
 
@@ -120,3 +120,21 @@ bulletBefore(size, iconUrl)
     background-color currentColor
     margin-right (size / 4)
     margin-left -(size * 1.25)
+
+headerText(wt = 900)
+  text-transform uppercase
+  font-weight wt
+
+bodyText(fontFamily=$body-font, fontSize=14.3px, listIndent=1rem)
+  li, p
+    font-size fontSize
+    font-weight normal
+    line-height 1.25
+  stdFont()
+  ol, ul
+    margin-left listIndent
+  li
+    list-style-type none
+    bulletBefore(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+  p
+    margin 0

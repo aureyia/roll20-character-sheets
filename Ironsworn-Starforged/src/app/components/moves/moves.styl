@@ -108,7 +108,7 @@ span
 article.move-display
   display flex
   flex-flow column
-  stdFont('Montserrat')
+  stdFont($body-font)
   border-radius 1em
   borderCommon()
   h3.move-title
@@ -140,6 +140,9 @@ article.move-display
     width -moz-available
     height max-content
     padding 4px
+    margin 0
+    display flex
+    justify-content center
     span
       bulletBefore(21px, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
       &:before
@@ -187,7 +190,7 @@ article.move-display
     color $bg-color
     line-height 0.9em
     font-size 0.9em
-    // stdFont('Montserrat')
+    // stdFont($body-font)
     font-variant small-caps
     font-weight bold
     text-align left
@@ -322,7 +325,7 @@ input[type=radio].move-ask-the-oracle:checked + article.move-display.move-ask-th
 
 .embedded-btn
   padding-top 0.2em !important
-  // stdFont('Montserrat')
+  // stdFont($body-font)
 
 input.optional-move-failures:checked ~ div.optional-move-failures,
 input.optional-move-sites:checked ~ div.optional-move-sites,

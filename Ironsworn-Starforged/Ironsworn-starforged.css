@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Encode+Sans:400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
 .ui-dialog .no-touch .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol {
   background-color: unset;
 }
@@ -126,9 +126,9 @@
 .ui-dialog .charsheet .btn.btn-default .charsheet button[type=roll],
 .ui-dialog .charsheet .btn .charsheet button[type=compendium],
 .ui-dialog .charsheet .btn.btn-default .charsheet button[type=compendium] {
-  padding: unset;
+  padding: 0;
+  margin: 0;
   font-size: unset;
-  margin: unset;
 }
 .ui-dialog .charsheet .btn .charsheet button[type=roll]:before,
 .ui-dialog .charsheet .btn.btn-default .charsheet button[type=roll]:before {
@@ -179,8 +179,9 @@
   width: 842px !important;
   margin: 0 auto !important;
   padding: 15px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
   font-weight: normal;
+  font-family: "Encode Sans Expanded", sans-serif;
 /* Fake radio/checkbox */
 /* Remove dot from all radios _after_ selected one */
 }
@@ -189,26 +190,17 @@
 .ui-dialog div.charsheet.charactersheet ::after {
   box-sizing: border-box;
 }
-.ui-dialog div.charsheet.charactersheet input[type=text] {
-  font-weight: 600;
+.ui-dialog div.charsheet.charactersheet li,
+.ui-dialog div.charsheet.charactersheet p {
+  font-size: 14.3px;
+  font-weight: normal;
+  line-height: 1.25;
 }
-.ui-dialog div.charsheet.charactersheet input[type=text]:focus {
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-}
-.ui-dialog div.charsheet.charactersheet select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-}
-.ui-dialog div.charsheet.charactersheet select:-ms-expand {
-  display: none;
+.ui-dialog div.charsheet.charactersheet ol,
+.ui-dialog div.charsheet.charactersheet ul {
+  margin-left: 1rem;
 }
 .ui-dialog div.charsheet.charactersheet li {
-  font-weight: normal;
-  font-size: 14.3px;
   list-style-type: none;
   margin-left: 1.5rem;
 }
@@ -228,10 +220,24 @@
   margin-left: -1.25rem;
 }
 .ui-dialog div.charsheet.charactersheet p {
-  font-size: 14.3px;
-  line-height: 1.25;
-  font-weight: normal;
   margin: 0;
+}
+.ui-dialog div.charsheet.charactersheet input[type=text] {
+  font-weight: 600;
+}
+.ui-dialog div.charsheet.charactersheet input[type=text]:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 3px;
+}
+.ui-dialog div.charsheet.charactersheet select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+.ui-dialog div.charsheet.charactersheet select:-ms-expand {
+  display: none;
 }
 .ui-dialog div.charsheet.charactersheet h1 {
   font-weight: bold;
@@ -990,7 +996,7 @@ h2,
   margin: 0 0 0px;
   padding: 0.1em 0.3em 0.3em 0.5em;
   text-transform: uppercase;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
   display: inline;
   color: #221e1f;
   border-radius: 0;
@@ -1673,7 +1679,7 @@ h2,
 .ui-dialog div.charsheet.charactersheet article.move-display {
   display: flex;
   flex-flow: column;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
   border-radius: 1em;
   border: 2px solid #221e1f;
 }
@@ -1722,6 +1728,9 @@ h2,
   width: -moz-available;
   height: max-content;
   padding: 4px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 .ui-dialog div.charsheet.charactersheet article.move-display button.button-text span {
   margin-left: 31.5px;
@@ -2385,7 +2394,7 @@ h2,
 .ui-dialog div.charsheet.charactersheet .oracle-table-preview caption.oracle-description ul,
 .ui-dialog div.charsheet.charactersheet .oracle-table-preview div.oracle-description ul {
   padding: 0.5em;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
 }
 .ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.showhide.oracle-table-ask-the-oracle-almost-certain,
 .ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.showhide.oracle-table-ask-the-oracle-likely,
@@ -3017,7 +3026,7 @@ h2,
   background: #33323c;
   color: #fff;
   font-size: 1em;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-result-row {
@@ -3065,7 +3074,7 @@ h2,
   background: #33323c;
   color: #fff;
   font-size: 1em;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
   border: 1px solid #000;
 }
 .sheet-rolltemplate-starforged_moves .sheet-result-row,
