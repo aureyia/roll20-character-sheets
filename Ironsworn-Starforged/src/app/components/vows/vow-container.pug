@@ -1,4 +1,6 @@
-include ../progress/mixins/box
+include ../progress/mixins/progressBoxes
+include ../progress/mixins/challengeRankRadio
+
 
 mixin input(id, nameValue)
   input(
@@ -11,17 +13,7 @@ mixin input(id, nameValue)
 
 mixin repeatingVow()
   +input("vow-name", 'attr_vow_name')
-
-  div.vows-header
-    each difficulty, index in difficulties
-      label.difficulty
-        if difficulty.checked
-          input(type="radio" class="hide-element" name="attr_rank" value=index checked)
-        else
-          input(type="radio" class="hide-element" name="attr_rank" value=index)
-        - var translation = `difficulty-${difficulty.text}`
-        h5(data-i18n=translation)=translation[translation]
-
+  +challengeRankRadio()
   div.vow
     .progress-row
       div

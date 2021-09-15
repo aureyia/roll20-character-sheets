@@ -9,6 +9,17 @@
     action: 'static' or 'toggle' (default)
   }
 
+mixin toggleBtn(label, attribute, value, title, classes)
+  label(class=`toggle-btn ${classes||''}`)
+    input.hide-element.btn-input(
+      type='radio'
+      title= `@{${attribute}}`
+      name=`attr_${attribute}`
+      value=value
+      hidden
+    )
+    span!=label
+
 mixin btn(opts)
   - var action = opts.action ? opts.action : 'toggle'
   if opts.classes

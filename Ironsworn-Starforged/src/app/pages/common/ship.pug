@@ -1,4 +1,5 @@
 include ../../components/assets/asset-builder
+include ../page
 
 -
   var
@@ -30,9 +31,9 @@ include ../../components/assets/asset-builder
     }
 
 mixin shipPage(sheetType)
-  div.page-container
+  div.page-container.ship-page
     input(type='radio' name=`attr_${sheetType}_page` class='ship hide-element' value='8')
-    div.ship.showhide
+    div.showhide
       .ship-grid
         .asset
           - const starship = assets.Assets.find(obj => { return obj.Name === 'Starship' })

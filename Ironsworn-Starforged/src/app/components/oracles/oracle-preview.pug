@@ -1,15 +1,9 @@
 include ./mixins/oracle-table
 include ./mixins/oracle-roll-btn
+include ../../common/pug/button
 
 mixin oraclePreviewToggle(type, name, id)
-  label.toggle-btn.oracle-btn
-    input.hide-element.btn-input(
-      type='radio'
-      title=`@{oracle_${type}_button}`
-      name=`attr_oracle_${type}_button`
-      value=id
-    )
-    span.btn-content.oracle-name=header.replace(/ - /i, ": ")
+  +toggleBtn(header.replace(/ - /i, ": "), `oracle_${type}_button`, id)
 
 mixin oracleRollGroup(group)
   +listGroup(group['Display name']||group.Name, false)

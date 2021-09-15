@@ -1,0 +1,72 @@
+.list-group
+  borderCommon()
+  border-width 4px
+  background-color $fg-color
+  // box-sizing border-box
+  margin 0em
+  margin-bottom 1em
+  height fit-content
+  height -moz-fit-content
+  // border-radius 1.3em
+  -webkit-column-break-inside avoid
+  page-break-inside avoid
+  break-inside avoid
+  border-radius 1em
+  overflow hidden
+  .list-group-title
+    color $bg-color
+    font-size 1.4em
+    font-weight bold
+    padding 0 5px 3px
+    text-transform uppercase
+    text-align center
+    display inline-block
+    vertical-align text-bottom
+    width stretch
+    width -moz-available
+  ul
+    display grid
+    gap 4px
+    padding 0
+    margin 0
+    border 0
+    width auto
+    // border-bottom-left-radius 1em
+    // border-bottom-right-radius 1em
+    overflow hidden
+    *
+      padding 0
+      margin 0
+      border 0
+      border-radius 0
+    li.list-group-item
+      height min-content
+      list-style-type none
+      margin 0px
+      background none
+      display flex
+      gap 4px
+      &:before
+        all: initial
+      & > *
+        background-color $bg-color
+      &:nth-child(2n) > *
+        background-color $bg-color-alt
+      .toggle-btn
+        width stretch
+        width -moz-available
+        margin 0
+        border 0
+        outline 0
+        align-content center
+        justify-content center
+        // interactiveHover($input-color, $fg-color)
+        span
+          display flex
+          justify-content center
+          align-items center
+      button
+        height 1.5em
+        width 1.5em
+        flex-grow 0
+        flex-shrink 0

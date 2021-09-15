@@ -1,332 +1,332 @@
-.ui-dialog .charsheet
-  div
-    &.search-bar
-      display flex
-      justify-content center
-      width 100%
-      margin 1em 0em 0.5em 0em
-    &.preview-bar
-      justify-content space-between
-      width 100%
-      display flex
-      margin 0em 0em 0.5em 0em
-    &.search-preview-bar
-      display flex
-      width auto
-    &.move-nav-content
-      padding 0.2em
-      width 100%
 
-  input
-    &.search-preview-bar
-      width 17.6em
-      borderCommon()
-      border-radius 0
-      &:focus
-        outline 3px solid $accent-color
-        outline-offset 0
-        box-shadow inset 0 0 0 2px
-    &.search-bar
-      width 50%
-      borderCommon()
-      &:focus
-        outline 3px solid $accent-color
-        outline-offset 0
-        box-shadow inset 0 0 0 2px
-    &.table-btn
-      &:checked
-        & ~ div
-          &.move-nav-content
-            background $fg-color
-            color $bg-color
-            transition 0.5s ease
-
-
-
-  .move
-    margin 0em
-    color $fg-color
+div
+  &.search-bar
     display flex
-    padding 0
-
-  .move-name
+    justify-content center
     width 100%
-    borderCommon()
-
-  .move-highlight
-    &:checked
-      & ~ .move-name
-        background $accent-color
-        outline-offset 0
-        box-shadow inset 0 0 0 2px
-
-  .move-column
+    margin 1em 0em 0.5em 0em
+  &.preview-bar
+    justify-content space-between
+    width 100%
     display flex
-    flex-direction column
-    margin-right 10px
-
-  span
-    &.move-result
-      width 36em
-    &.preview-move-roll
-      width 60%
-      margin-left 1em
-
-  .move-box
-    &:nth-child(n
-      & + 2)
-        margin-top 10px
-
-
-
-
-
-  .move-preview
+    margin 0em 0em 0.5em 0em
+  &.search-preview-bar
+    display flex
     width auto
+  &.move-nav-content
+    padding 0.2em
+    width 100%
 
-  .move-page-footer
-    text-align right !important
-    padding-right 1em
-
-
-
-  .move-show
-    display inline-flex
-    font-size 1em
-    margin 0em
-    padding 0.3em
-    cursor pointer
-    interactive-hover("#969696")
-
-  .column-wrap
-    flex-flow column wrap
-    width 22.5em
-
-  .move-delve-table
-    width auto !important
-
-  article.move-display
-    display flex
-    flex-flow column
-    std-font('Montserrat')
-    border-radius 1em
+input
+  &.search-preview-bar
+    width 17.6em
     borderCommon()
-    h3.move-title
-      width auto
-      display flex
-      align-self left
-      background-color $fg-color
-      color $bg-color
-      border-bottom 1px solid $fg-color
-      font-size 1.4em
-      font-weight bold
-      padding 0.2em 0.5em 0.1em 0.7em
-      text-transform uppercase
-      .move-progress-label
-        display block
-        std-font('Encode Sans Condensed')
-        font-size 80%
-        font-weight normal
-        text-transform none
-        font-style italic
-        bullet-before(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+    border-radius 0
+    &:focus
+      outline 3px solid $accent-color
+      outline-offset 0
+      box-shadow inset 0 0 0 2px
+  &.search-bar
+    width 50%
+    borderCommon()
+    &:focus
+      outline 3px solid $accent-color
+      outline-offset 0
+      box-shadow inset 0 0 0 2px
+  &.table-btn
+    &:checked
+      & ~ div
+        &.move-nav-content
+          background $fg-color
+          color $bg-color
+          transition 0.5s ease
 
-    button.button-text
-      border-radius 0
-      border-style solid
-      border-color $fg-color
-      border-width 0px 2px
+
+
+.move
+  margin 0em
+  color $fg-color
+  display flex
+  padding 0
+
+.move-name
+  width 100%
+  borderCommon()
+
+.move-highlight
+  &:checked
+    & ~ .move-name
+      background $accent-color
+      outline-offset 0
+      box-shadow inset 0 0 0 2px
+
+.move-column
+  display flex
+  flex-direction column
+  margin-right 10px
+
+span
+  &.move-result
+    width 36em
+  &.preview-move-roll
+    width 60%
+    margin-left 1em
+
+.move-box
+  &:nth-child(n
+    & + 2)
+      margin-top 10px
+
+
+
+
+
+.preview
+  width auto
+
+.move-page-footer
+  text-align right !important
+  padding-right 1em
+
+
+
+.move-show
+  display inline-flex
+  font-size 1em
+  margin 0em
+  padding 0.3em
+  cursor pointer
+  interactiveHover("#969696")
+
+.column-wrap
+  flex-flow column wrap
+  width 22.5em
+
+.move-delve-table
+  width auto !important
+
+article.move-display
+  display flex
+  flex-flow column
+  stdFont('Montserrat')
+  border-radius 1em
+  borderCommon()
+  h3.move-title
+    width auto
+    display flex
+    align-self left
+    background-color $fg-color
+    color $bg-color
+    border-bottom 1px solid $fg-color
+    font-size 1.4em
+    font-weight bold
+    padding 0.2em 0.5em 0.1em 0.7em
+    text-transform uppercase
+    .move-progress-label
+      display block
+      stdFont('Encode Sans Condensed')
+      font-size 80%
+      font-weight normal
+      text-transform none
+      font-style italic
+      bulletBefore(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+
+  button.button-text
+    border-radius 0
+    border-style solid
+    border-color $fg-color
+    border-width 0px 2px
+    width stretch
+    width -moz-available
+    height max-content
+    padding 4px
+    span
+      bulletBefore(21px, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
+      &:before
+        margin-bottom: -5px;
+  .move-body
+    borderCommon()
+    padding 1em
+    ul
+      margin 2px 0px 5px 1rem
+    p, li, td
+      stdFont('Encode Sans Condensed')
+    .oracle-embedded
+      .roll-label.embedded-btn
+        border-width 4px 4px 0px
+        font-size 1em
+      table.oracle-table
+        margin-top 0px
+        border-width 4px
+    p, li
+      line-height 1.4
+    p
+      margin-bottom 0.3em
+    table
+      borderCommon()
       width stretch
       width -moz-available
-      height max-content
-      padding 4px
-      span
-        bullet-before(21px, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
-        &:before
-          margin-bottom: -5px;
-    .move-body
-      borderCommon()
-      padding 1em
-      ul
-        margin 2px 0px 5px 1rem
-      p, li, td
-        std-font('Encode Sans Condensed')
-      .oracle-embedded
-        .roll-label.embedded-btn
-          border-width 4px 4px 0px
-          font-size 1em
-        table.oracle-table
-          margin-top 0px
-          border-width 4px
-      p, li
-        line-height 1.4
-      p
-        margin-bottom 0.3em
-      table
-        borderCommon()
-        width stretch
-        width -moz-available
-        margin 0.8em 0em
-        thead
-          padding 0.3em
-          background-color $fg-color
-          color $bg-color
-          th
-            padding-left 0.4em
-        tbody
-          td
-            padding-left 0.4em
-    .move-table
-      border none
-      width 30.5em
-      font-size 12px
-    .move-roll
-      width 18%
-    .move-footer
-      background-color $fg-color
-      color $bg-color
-      line-height 0.9em
-      font-size 0.9em
-      // std-font('Montserrat')
-      font-variant small-caps
-      font-weight bold
-      text-align left
-      padding 0.5rem
-
-  .clear-search
-    width fit-content
-    width -moz-fit-content
-    height auto
-    margin 0
-    font-weight bold
-    font-size 14px
-    padding 0.2em 0.2em 0.2em 0.2em
-    border 2px solid $fg-color
-    cursor pointer
-    interactive-hover()
-
-  .selected-move
-    z-index 3
-    &:checked
-      & ~ .move-name
-        background $fg-color !important
-        color $bg-color !important
-
-  input.move-preview:checked ~ div.move-preview,
-  input.full-move-list:checked ~ div.full-move-list
-    show-hide()
-
-  input[type=radio].move-begin-a-session:checked ~ article.move-display.move-begin-a-session,
-  input[type=radio].move-set-a-flag:checked ~ article.move-display.move-set-a-flag,
-  input[type=radio].move-change-your-fate:checked ~ article.move-display.move-change-your-fate,
-  input[type=radio].move-take-a-break:checked ~ article.move-display.move-take-a-break,
-  input[type=radio].move-end-a-session:checked ~ article.move-display.move-end-a-session,
-  input[type=radio].move-face-danger:checked ~ article.move-display.move-face-danger,
-  input[type=radio].move-secure-an-advantage:checked ~ article.move-display.move-secure-an-advantage,
-  input[type=radio].move-gather-information:checked ~ article.move-display.move-gather-information,
-  input[type=radio].move-compel:checked ~ article.move-display.move-compel,
-  input[type=radio].move-aid-your-ally:checked ~ article.move-display.move-aid-your-ally,
-  input[type=radio].move-check-your-gear:checked ~ article.move-display.move-check-your-gear,
-  input[type=radio].move-swear-an-iron-vow:checked ~ article.move-display.move-swear-an-iron-vow,
-  input[type=radio].move-reach-a-milestone:checked ~ article.move-display.move-reach-a-milestone,
-  input[type=radio].move-forsake-your-vow:checked ~ article.move-display.move-forsake-your-vow,
-  input[type=radio].move-fulfill-your-vow:checked ~ article.move-display.move-fulfill-your-vow,
-  input[type=radio].move-make-a-connection:checked ~ article.move-display.move-make-a-connection,
-  input[type=radio].move-develop-your-relationship:checked ~ article.move-display.move-develop-your-relationship,
-  input[type=radio].move-forge-a-bond:checked ~ article.move-display.move-forge-a-bond,
-  input[type=radio].move-test-your-relationship:checked ~ article.move-display.move-test-your-relationship,
-  input[type=radio].move-undertake-an-expedition:checked ~ article.move-display.move-undertake-an-expedition,
-  input[type=radio].move-explore-a-waypoint:checked ~ article.move-display.move-explore-a-waypoint,
-  input[type=radio].move-finish-an-expedition:checked ~ article.move-display.move-finish-an-expedition,
-  input[type=radio].move-set-a-course:checked ~ article.move-display.move-set-a-course,
-  input[type=radio].move-make-a-discovery:checked ~ article.move-display.move-make-a-discovery,
-  input[type=radio].move-confront-chaos:checked ~ article.move-display.move-confront-chaos,
-  input[type=radio].move-enter-the-fray:checked ~ article.move-display.move-enter-the-fray,
-  input[type=radio].move-gain-ground:checked ~ article.move-display.move-gain-ground,
-  input[type=radio].move-react-under-fire:checked ~ article.move-display.move-react-under-fire,
-  input[type=radio].move-strike:checked ~ article.move-display.move-strike,
-  input[type=radio].move-clash:checked ~ article.move-display.move-clash,
-  input[type=radio].move-face-defeat:checked ~ article.move-display.move-face-defeat,
-  input[type=radio].move-take-decisive-action:checked ~ article.move-display.move-take-decisive-action,
-  input[type=radio].move-battle:checked ~ article.move-display.move-battle,
-  input[type=radio].move-lose-momentum:checked ~ article.move-display.move-lose-momentum,
-  input[type=radio].move-endure-harm:checked ~ article.move-display.move-endure-harm,
-  input[type=radio].move-endure-stress:checked ~ article.move-display.move-endure-stress,
-  input[type=radio].move-withstand-damage:checked ~ article.move-display.move-withstand-damage,
-  input[type=radio].move-companion-takes-a-hit:checked ~ article.move-display.move-companion-takes-a-hit,
-  input[type=radio].move-sacrifice-resources:checked ~ article.move-display.move-sacrifice-resources,
-  input[type=radio].move-face-death:checked ~ article.move-display.move-face-death,
-  input[type=radio].move-face-desolation:checked ~ article.move-display.move-face-desolation,
-  input[type=radio].move-overcome-destruction:checked ~ article.move-display.move-overcome-destruction,
-  input[type=radio].move-sojourn:checked ~ article.move-display.move-sojourn,
-  input[type=radio].move-heal:checked ~ article.move-display.move-heal,
-  input[type=radio].move-hearten:checked ~ article.move-display.move-hearten,
-  input[type=radio].move-repair:checked ~ article.move-display.move-repair,
-  input[type=radio].move-resupply:checked ~ article.move-display.move-resupply,
-  input[type=radio].move-earn-experience:checked ~ article.move-display.move-earn-experience,
-  input[type=radio].move-advance:checked ~ article.move-display.move-advance,
-  input[type=radio].move-continue-a-legacy:checked ~ article.move-display.move-continue-a-legacy,
-  input[type=radio].move-pay-the-price:checked ~ article.move-display.move-pay-the-price,
-  input[type=radio].move-ask-the-oracle:checked ~ article.move-display.move-ask-the-oracle
-    show-hide()
-
-  .move-nav-child
-    display flex
-    width auto
-    height 1.3em
-    padding 0
-    margin 0.2em 0em 0.2em 0em
-    text-align center
-
-  ::-webkit-scrollbar
-    -webkit-appearance none
-    width 7px
-
-  ::-webkit-scrollbar-thumb
-    border-radius 4px
-    background-color rgba(0,0,0,0.5)
-    box-shadow 0 0 1px rgba(255,255,255,0.5)
-
-  .move-delve-column-stat-header,
-  .move-delve-stat-column
-    width 16%
-
-  .move-delve-column-stat-header-1,
-  .move-delve-stat-column-1
-    width 17%
-
-  .move-delve-column-stat-header-2,
-  .move-delve-stat-column-2
+      margin 0.8em 0em
+      thead
+        padding 0.3em
+        background-color $fg-color
+        color $bg-color
+        th
+          padding-left 0.4em
+      tbody
+        td
+          padding-left 0.4em
+  .move-table
+    border none
+    width 30.5em
+    font-size 12px
+  .move-roll
     width 18%
-
-  .move-delve-column-stat-header-3,
-  .move-delve-stat-column-3
-    width 15%
-
-  .move-delve-column-header,
-  .move-delve-column
-    width 50%
-
-  .move-delve-column-stat-header,
-  .move-delve-column-stat-header-1,
-  .move-delve-column-stat-header-2,
-  .move-delve-column-stat-header-3,
-  .move-delve-column-header
+  .move-footer
+    background-color $fg-color
+    color $bg-color
+    line-height 0.9em
+    font-size 0.9em
+    // stdFont('Montserrat')
+    font-variant small-caps
     font-weight bold
+    text-align left
+    padding 0.5rem
 
-  .move-delve-row-header
-    padding 0px 5px 0px 5px
-    display flex
-    height auto
-    border-bottom 2px solid $fg-color
+.clear-search
+  width fit-content
+  width -moz-fit-content
+  height auto
+  margin 0
+  font-weight bold
+  font-size 14px
+  padding 0.2em 0.2em 0.2em 0.2em
+  border 2px solid $fg-color
+  cursor pointer
+  interactiveHover()
 
-  .embedded-btn
-    padding-top 0.2em !important
-    // std-font('Montserrat')
+.selected-move
+  z-index 3
+  &:checked
+    & ~ .move-name
+      background $fg-color !important
+      color $bg-color !important
 
-  input.optional-move-failures:checked ~ div.optional-move-failures,
-  input.optional-move-sites:checked ~ div.optional-move-sites,
-  input.optional-move-threat:checked ~ div.optional-move-threat,
-  input.optional-move-rarity:checked ~ div.optional-move-rarity
-    display block
+input.preview:checked + div.preview,
+input.full-move-list:checked + div.full-move-list
+  showHide()
+
+input[type=radio].move-begin-a-session:checked + article.move-display.move-begin-a-session,
+input[type=radio].move-set-a-flag:checked + article.move-display.move-set-a-flag,
+input[type=radio].move-change-your-fate:checked + article.move-display.move-change-your-fate,
+input[type=radio].move-take-a-break:checked + article.move-display.move-take-a-break,
+input[type=radio].move-end-a-session:checked + article.move-display.move-end-a-session,
+input[type=radio].move-face-danger:checked + article.move-display.move-face-danger,
+input[type=radio].move-secure-an-advantage:checked + article.move-display.move-secure-an-advantage,
+input[type=radio].move-gather-information:checked + article.move-display.move-gather-information,
+input[type=radio].move-compel:checked + article.move-display.move-compel,
+input[type=radio].move-aid-your-ally:checked + article.move-display.move-aid-your-ally,
+input[type=radio].move-check-your-gear:checked + article.move-display.move-check-your-gear,
+input[type=radio].move-swear-an-iron-vow:checked + article.move-display.move-swear-an-iron-vow,
+input[type=radio].move-reach-a-milestone:checked + article.move-display.move-reach-a-milestone,
+input[type=radio].move-forsake-your-vow:checked + article.move-display.move-forsake-your-vow,
+input[type=radio].move-fulfill-your-vow:checked + article.move-display.move-fulfill-your-vow,
+input[type=radio].move-make-a-connection:checked + article.move-display.move-make-a-connection,
+input[type=radio].move-develop-your-relationship:checked + article.move-display.move-develop-your-relationship,
+input[type=radio].move-forge-a-bond:checked + article.move-display.move-forge-a-bond,
+input[type=radio].move-test-your-relationship:checked + article.move-display.move-test-your-relationship,
+input[type=radio].move-undertake-an-expedition:checked + article.move-display.move-undertake-an-expedition,
+input[type=radio].move-explore-a-waypoint:checked + article.move-display.move-explore-a-waypoint,
+input[type=radio].move-finish-an-expedition:checked + article.move-display.move-finish-an-expedition,
+input[type=radio].move-set-a-course:checked + article.move-display.move-set-a-course,
+input[type=radio].move-make-a-discovery:checked + article.move-display.move-make-a-discovery,
+input[type=radio].move-confront-chaos:checked + article.move-display.move-confront-chaos,
+input[type=radio].move-enter-the-fray:checked + article.move-display.move-enter-the-fray,
+input[type=radio].move-gain-ground:checked + article.move-display.move-gain-ground,
+input[type=radio].move-react-under-fire:checked + article.move-display.move-react-under-fire,
+input[type=radio].move-strike:checked + article.move-display.move-strike,
+input[type=radio].move-clash:checked + article.move-display.move-clash,
+input[type=radio].move-face-defeat:checked + article.move-display.move-face-defeat,
+input[type=radio].move-take-decisive-action:checked + article.move-display.move-take-decisive-action,
+input[type=radio].move-battle:checked + article.move-display.move-battle,
+input[type=radio].move-lose-momentum:checked + article.move-display.move-lose-momentum,
+input[type=radio].move-endure-harm:checked + article.move-display.move-endure-harm,
+input[type=radio].move-endure-stress:checked + article.move-display.move-endure-stress,
+input[type=radio].move-withstand-damage:checked + article.move-display.move-withstand-damage,
+input[type=radio].move-companion-takes-a-hit:checked + article.move-display.move-companion-takes-a-hit,
+input[type=radio].move-sacrifice-resources:checked + article.move-display.move-sacrifice-resources,
+input[type=radio].move-face-death:checked + article.move-display.move-face-death,
+input[type=radio].move-face-desolation:checked + article.move-display.move-face-desolation,
+input[type=radio].move-overcome-destruction:checked + article.move-display.move-overcome-destruction,
+input[type=radio].move-sojourn:checked + article.move-display.move-sojourn,
+input[type=radio].move-heal:checked + article.move-display.move-heal,
+input[type=radio].move-hearten:checked + article.move-display.move-hearten,
+input[type=radio].move-repair:checked + article.move-display.move-repair,
+input[type=radio].move-resupply:checked + article.move-display.move-resupply,
+input[type=radio].move-earn-experience:checked + article.move-display.move-earn-experience,
+input[type=radio].move-advance:checked + article.move-display.move-advance,
+input[type=radio].move-continue-a-legacy:checked + article.move-display.move-continue-a-legacy,
+input[type=radio].move-pay-the-price:checked + article.move-display.move-pay-the-price,
+input[type=radio].move-ask-the-oracle:checked + article.move-display.move-ask-the-oracle
+  showHide()
+
+.move-nav-child
+  display flex
+  width auto
+  height 1.3em
+  padding 0
+  margin 0.2em 0em 0.2em 0em
+  text-align center
+
+:-webkit-scrollbar
+  -webkit-appearance none
+  width 7px
+
+:-webkit-scrollbar-thumb
+  border-radius 4px
+  background-color rgba(0,0,0,0.5)
+  box-shadow 0 0 1px rgba(255,255,255,0.5)
+
+.move-delve-column-stat-header,
+.move-delve-stat-column
+  width 16%
+
+.move-delve-column-stat-header-1,
+.move-delve-stat-column-1
+  width 17%
+
+.move-delve-column-stat-header-2,
+.move-delve-stat-column-2
+  width 18%
+
+.move-delve-column-stat-header-3,
+.move-delve-stat-column-3
+  width 15%
+
+.move-delve-column-header,
+.move-delve-column
+  width 50%
+
+.move-delve-column-stat-header,
+.move-delve-column-stat-header-1,
+.move-delve-column-stat-header-2,
+.move-delve-column-stat-header-3,
+.move-delve-column-header
+  font-weight bold
+
+.move-delve-row-header
+  padding 0px 5px 0px 5px
+  display flex
+  height auto
+  border-bottom 2px solid $fg-color
+
+.embedded-btn
+  padding-top 0.2em !important
+  // stdFont('Montserrat')
+
+input.optional-move-failures:checked ~ div.optional-move-failures,
+input.optional-move-sites:checked ~ div.optional-move-sites,
+input.optional-move-threat:checked ~ div.optional-move-threat,
+input.optional-move-rarity:checked ~ div.optional-move-rarity
+  display block
 

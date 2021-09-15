@@ -1,59 +1,10 @@
-label
-  &.health-reset
-    font-size 14px
-    margin 0
-    padding 2px 7px 2px 6px
-    cursor pointer
-    interactive-hover($input-color)
-
-h3
-  &.health-max
-    font-size 14px
-    margin-right 0.3em
-    line-height 23px
-    padding-left 0.3em
-  &.health-max-value
-    padding-right 0.3em
-
-.health-max-value
-  font-size 14px
-  line-height 22px
-  color #555
-
-.health-max-box
-  display flex
-  background $input-color
-
-.health-status-box
-  display flex
-
-.load-value
-  width 27px
-
-.character-name
-  // grid-column 1
-  input
-    width 100% !important
-    border none
-
-.character-pronouns
-  input
-    width 100% !important
-    border none
-
-.character-callsign
-  // grid-column 2
-  input
-    width 100% !important
-    border none
-
-.resources > *
-  box-sizing border-box
-  background $bg-color
 
 .resources
+  & > *
+    // box-sizing border-box
+    background $bg-color
   display grid
-  box-sizing border-box
+  // box-sizing border-box
   color $fg-color
   background $fg-color
   border 4px solid $fg-color
@@ -109,7 +60,7 @@ h3
     display flex
     // display inline
     background $bg-color
-    interactive-hover($input-color, $fg-color)
+    interactiveHover($input-color, $fg-color)
 
     span
       display block
@@ -127,8 +78,7 @@ h3
     font-weight 600
     border none
     border-left 1px solid currentColor
-    &:focus
-      input-highlight(3px)
+    inputHighlight(3px)
     .resource-value-box
       display flex
       width 100%
@@ -136,3 +86,94 @@ h3
     cursor text
 
 
+  .resources-box-input
+    width: 80px
+    height: 40px !important
+    opacity: 0
+    vertical-align: top
+
+  .resources-box-back
+    width: 80px
+    height: 40px
+    margin-top: -40px
+
+  .resources-box
+    width: 80px
+    height: 40px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 0%
+    background: transparent
+    border: 2px solid $fg-color
+    margin-bottom: 2px
+
+  .resources-box-value
+    padding: 0px
+    font-weight: bold
+    height: 35px
+    padding-top: 10px
+    font-size: 18px
+    color: inherit
+
+  .resources-title-box
+    width: 80px
+    height: 40px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 0%
+    background: transparent
+    border: 2px solid $fg-color
+    margin-top: 20px
+    margin-bottom: 2px
+  label
+    &.health-reset
+      font-size 14px
+      margin 0
+      padding 2px 7px 2px 6px
+      cursor pointer
+      interactiveHover($input-color)
+
+  h3
+    &.health-max
+      font-size 14px
+      margin-right 0.3em
+      line-height 23px
+      padding-left 0.3em
+    &.health-max-value
+      padding-right 0.3em
+
+  .health-max-value
+    font-size 14px
+    line-height 22px
+    color #555
+
+  .health-max-box
+    display flex
+    background $input-color
+
+  .health-status-box
+    display flex
+
+  .load-value
+    width 27px
+
+  .character-name
+    // grid-column 1
+    input
+      width 100% !important
+      border none
+
+  .character-pronouns
+    input
+      width 100% !important
+      border none
+
+  .character-callsign
+    // grid-column 2
+    input
+      width 100% !important
+      border none

@@ -49,7 +49,7 @@ p
     margin 0 0 0px
     padding 0.1em 0.3em 0.3em 0.5em
     text-transform uppercase
-    std-font('Montserrat')
+    stdFont('Montserrat')
     display inline
     color $fg-color
     border-radius 0
@@ -63,9 +63,9 @@ p
   margin 0.3em 0.5em
   border-radius 2em
 
-.connection-name::placeholder,
-.connection-location::placeholder,
-.connection-descriptors::placeholder
+.connection-name:placeholder,
+.connection-location:placeholder,
+.connection-descriptors:placeholder
   color #8a8a8a
 
 input[type="checkbox"].show-connection-info
@@ -80,7 +80,7 @@ input[type="checkbox"].show-connection-info
       &.show-connection-info
         display flex
         flex-flow row wrap
-        show-hide()
+        showHide()
     & ~ span
       &.show-connection-info
         border-radius 0

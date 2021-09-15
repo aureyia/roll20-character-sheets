@@ -1,5 +1,18 @@
+include ../page
+include ../../components/generic/preview
+include ../../components/moves/moves
+
 mixin movesPage
-  div.page-container
-    input(type='radio' name='attr_character_page' class='moves hide-element' value='6')
-    div.moves.showhide
-      include ../../components/moves/moves
+  +page("moves", "character", 6)
+    +overview("move", 1)
+      each group in movegroups
+        +moveGroup(group)
+    +preview("move", 2)
+      +previewSidebar()
+        each group in movegroups
+          +moveGroup(group)
+      +previewMain
+        each move in moves.Moves
+          //- Stupid way for me to generate orcale ccs
+          //- - console.log(`input[type=radio].${move.id}:checked ~ div.${move.id},`)
+          +movePreviewFactory(move)

@@ -1,5 +1,7 @@
+include ../page
+
 mixin progressPage(sheetType)
-  div.page-container
+  div.page-container.page-progress
     input(type='radio' name=`attr_${sheetType}_page` class='progress-page hide-element' value='4')
-    div.progress-page.showhide
+    div.showhide
       include ../../components/progress/progress

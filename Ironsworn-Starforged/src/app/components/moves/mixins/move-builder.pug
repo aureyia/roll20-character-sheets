@@ -39,7 +39,7 @@ mixin container(move, options = false)
       +movePreview(move, options)
         block
   else
-    input(type='radio' name='attr_move_preview' class=`${move.id} hide-element` value=move.Name)
+    input(type='radio' name='attr_move_preview' class=`${move.id} hide-element` value=move.id)
     article(class=`${move.id} showhide move-display`)
       +movePreview(move, options)
         block

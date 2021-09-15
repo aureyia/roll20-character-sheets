@@ -1,49 +1,64 @@
+.overview
+  columns 3
+  column-gap 1em
 
-.ui-dialog .charsheet
+.close-preview
+  text-transform uppercase
+  width auto
+  height auto
+  margin 0
+  font-weight bold
+  font-size 14px
+  padding 0.2em
+  border 2px solid $fg-color
+  cursor pointer
+  text-align center
+  interactiveHover()
+
+.preview
+  display grid
+  grid-template-rows min-content 1fr
+  grid-template-columns 1fr 2fr
+  gap 1em
+  // font-size 1em
+  // font-weight normal
+  // height auto
+  // width inherit
+  // padding 0
   .close-preview
-    text-transform uppercase
-    width auto
-    height auto
-    margin 0
-    font-weight bold
-    font-size 14px
-    padding 0.2em
-    border 2px solid $fg-color
-    cursor pointer
-    text-align center
-    margin-bottom 1em
-    interactive-hover()
-  .preview-container
-    // display flex
-    // justify-content space-between
-    display grid
-    grid-template-columns 1fr 2fr
-    gap 1em
-    font-size 1em
-    // flex-flow row
-    font-weight normal
-    height auto
-    width inherit
+    grid-row 1
+  .preview-sidebar
+    display block
+    overflow auto
+    borderCommon()
+    padding 1em
+    overflow auto
     padding 0
-    .preview-sidebar
-      display block
-      overflow auto
-      borderCommon()
-      padding 1em
-      flex-grow 0
-      flex-shrink 0
-      // width max-content
-      width 21.9em
-      overflow auto
-      padding 0
-      height 50em
-      columns unset
-      column-gap unset
-      section // list group items
-        // display flex
-        border-radius 0
-        margin 0
-        border-bottom none
-    .preview-content
-      width stretch
-      width -moz-available
+    height 50em
+    grid-column 1
+    // flex-grow 0
+    // flex-shrink 0
+    // width max-content
+    // width 21.9em
+    // columns unset
+    // column-gap unset
+    // columns 1
+    section // list group items
+      // display flex
+      border-radius 0
+      margin 0
+      border-bottom none
+  .preview-main
+    width stretch
+    width -moz-available
+
+input.preview.hide-element, input.overview.hide-element
+  display none
+
+input.preview.hide-element:checked + .preview.showhide
+  showHide()
+  display grid
+
+input.overview.hide-element:checked + .overview.showhide
+  showHide()
+  display block

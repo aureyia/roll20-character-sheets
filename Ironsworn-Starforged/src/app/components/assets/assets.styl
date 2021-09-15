@@ -1,17 +1,17 @@
 input[type="checkbox"].showhide:checked ~ .showhide
-  show-hide()
+  showHide()
 
 select
   &.path-dropdown
     option[value="alchemist"]
       & ~ .alchemist
         display flex
-        show-hide()
+        showHide()
 
-input[type="radio"].asset-builder:checked ~ div.asset-builder,
-input[type="radio"].asset-view:checked ~ div.asset-view
+input[type="radio"].asset-builder:checked + div.asset-builder,
+input[type="radio"].asset-view:checked + div.asset-view
   display block
-  show-hide()
+  showHide()
 
 input[type="checkbox"].builder-titles-1:checked ~ div.builder-titles-1,
 input[type="checkbox"].builder-titles-2:checked ~ div.builder-titles-2,
@@ -29,7 +29,7 @@ input[type="checkbox"].track-dropdown-4:checked ~ div.track-dropdown-4,
 input[type="checkbox"].track-dropdown-5:checked ~ div.track-dropdown-5,
 input[type="checkbox"].track-dropdown-6:checked ~ div.track-dropdown-6
   display flex
-  show-hide()
+  showHide()
 
 div.builder-titles-1,
 div.builder-titles-2,
@@ -61,7 +61,7 @@ input[type=checkbox].custom-asset-ability
 
 .ability-checkbox,
 .build-text
-  std-font('Encode Sans Condensed')
+  stdFont('Encode Sans Condensed')
   font-size 13px
   resize none
   height 100px
@@ -69,7 +69,7 @@ input[type=checkbox].custom-asset-ability
   margin 0em 0.5em 0em 0.4em
 
 .ability-text
-  std-font('Encode Sans Condensed')
+  stdFont('Encode Sans Condensed')
   font-size 14.3px
   resize none
   height 100px
@@ -81,7 +81,7 @@ input[type=checkbox].custom-asset-ability
 
 .asset-description
   margin 0 12px 0px 12px
-  std-font('Encode Sans Condensed')
+  stdFont('Encode Sans Condensed')
 
 div
   &.asset-ability
@@ -98,7 +98,7 @@ div
       display flex
       flex-flow row wrap
       padding 0.5em
-      std-font('Encode Sans Condensed')
+      stdFont('Encode Sans Condensed')
       justify-content space-evenly
       .repitem
         float left !important
@@ -127,7 +127,7 @@ div
   line-height 1.25
   border-radius 1em
   box-shadow 2px 2px 6px 0px
-  std-font('Encode Sans Condensed')
+  stdFont('Encode Sans Condensed')
   input
     &.border-bottom
       border-bottom-color $fg-color
@@ -220,11 +220,11 @@ span.custom-asset-page
 //   // input[type='checkbox'].name:checked ~ div.name
 //   input[type='checkbox'].{name}:checked ~ div.{name}
 //     display block
-//     show-hide()
+//     showHide()
 
-input[type=checkbox].custom:checked ~ div.custom
+input[type=checkbox].custom:checked + div.custom
   display block
-  show-hide()
+  showHide()
 
 input[type=checkbox].ace:checked ~ div.ace,
 input[type=checkbox].agent:checked ~ div.agent,
@@ -330,10 +330,10 @@ input[type=checkbox].shuttle:checked ~ div.shuttle,
 input[type=checkbox].skiff:checked ~ div.skiff,
 input[type=checkbox].snub-fighter:checked ~ div.snub-fighter
   display block
-  show-hide()
+  showHide()
 
 span.asset-name
-  std-font('Exo')
+  stdFont('Exo')
   font-size 1.5em
   font-weight bold
   text-transform uppercase
@@ -347,7 +347,7 @@ span.asset-name
   padding-left 1em
 
 .category
-  std-font('Exo')
+  stdFont('Exo')
   font-size 1.1em
   text-transform uppercase
   font-weight bold
@@ -361,8 +361,8 @@ span.asset-name
   border-radius 0.4em 0.4em 0em 0em
   font-size 1em
   text-transform uppercase
-  std-font('Exo')
-  &::placeholder
+  stdFont('Exo')
+  &:placeholder
     color #b9b9b9
 
 .custom

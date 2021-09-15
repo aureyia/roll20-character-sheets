@@ -5,6 +5,8 @@
 //-   else if rollButton === true && oracle.Table
 //-     +oracleSingleButton(oracle)
 
+include ../../../common/pug/button
+
 mixin oracleListGroupItem(id, buttonLabel)
   +oracleRollBtn(id, buttonLabel)
 
@@ -37,22 +39,14 @@ mixin oracleRollBtn(id, buttonLabel, rollQuery="")
     if (!rollQuery.match(/header=/i)) {
       valueString = valueString + " " +  `{{header=${buttonLabel}}}`
     }
-  //- .button-container
   button(
     type='roll'
-    class='roll-show btn ui-draggable roll-icon-only'
+    class='roll-show ui-draggable roll-icon-only'
     title=`@{roll_${id}}`
     name=`roll_${id}`
     value=valueString
   )
-  label.toggle-btn.oracle-btn
-    input.hide-element.btn-input(
-      type='radio'
-      title=`@{selected_oracle}`
-      name=`attr_selected_oracle`
-      value=id
-    )
-    span.btn-content.oracle-name!=buttonLabel.replace(/ - /i, ": ")
+  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
 
 mixin oracleMultiBtn(oracle, btnText, indexOffset=0)
   - const labelText = oracle['Display name']||oracle['Name']

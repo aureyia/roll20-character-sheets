@@ -2,3 +2,23 @@ mixin previewCloseButton(previewType)
   label(title=translation['close-preview']).close-preview
     span.i18n-text(data-i18n='close-preview')=translation['close-preview']
     input(type='checkbox' class='hide-element' name=`attr_close_${previewType}_preview`)
+
+mixin overview(typeName, value=1, classes="")
+  input(type='radio' class='hide-element overview' name=`attr_${typeName}_view` value=value checked)
+  .overview.showhide
+    block
+
+mixin preview(typeName, value=2)
+  input(type='radio' class='hide-element preview' name=`attr_${typeName}_view` value=value)
+  .preview.showhide
+    +previewCloseButton(typeName)
+    block
+
+mixin previewSidebar(classes="")
+  nav.preview-sidebar
+    block
+
+mixin previewMain(classes="")
+    div.preview-main
+      block
+

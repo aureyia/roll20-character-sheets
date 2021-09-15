@@ -1,3 +1,5 @@
+@import "./reset.styl"
+
 $sf-black = #221E1F
 $sf-rich-black = #040506
 $sf-ui-gray-dark = #B8C2CD
@@ -18,25 +20,35 @@ $bg-color-alt = $sf-ui-gray-light // old: #e4e4e4. for alternating table rows, e
 $input-color = $sf-ui-gray-dark // old: #ccc. textinput background, when hovering over usable objects
 $accent-color = #fd0 // highlights active fields
 
-
 $header-font-lg = "Exo", sans-serif
 $header-font-sm = "Montserrat", sans-serif
 $body-font = "Montserrat", sans-serif
 $compact-font = "Encode Sans Condensed", sans-serif
 
-btn()
+
+borderCommon(width=2px)
+  border width solid $fg-color
+
+btn(fontSize = 14px)
+  borderCommon()
+  border-radius 0
   display flex
   width auto
-  font-size 14px
+  font-size fontSize
   padding 0
-  border 2px solid $fg-color
   cursor pointer
   background $bg-color
 
-input-highlight(shadow)
-  outline 3px solid $accent-color
-  outline-offset 0
-  box-shadow inset 0 0 0 shadow
+btnAttached(fontSize = 14px)
+  btn(fontSize)
+  border none
+  border-right 1px solid $fg-color
+
+inputHighlight(shadow)
+  &:focus
+    outline 3px solid $accent-color
+    outline-offset 0
+    box-shadow inset 0 0 0 shadow
 
 hide()
   visibility hidden
@@ -44,42 +56,45 @@ hide()
   opacity 0
   height 0
   border none !important
-  box-sizing border-box
+  // box-sizing border-box
   overflow hidden
 
-show-hide(time = 0.2s)
+showHide(time = 0.2s)
   visibility visible
   height auto
   opacity 1
   transition time ease
 
-borderCommon(width=2px)
-  border width solid $fg-color
-
 dark()
   background $fg-color
   color $bg-color
 
-interactive-hover(bg=$fg-color, fg=$bg-color)
-  transition 0.5s ease
+interactiveHover(bg=$fg-color, fg=$bg-color)
   cursor pointer
+  transition 0.5s ease
   &:hover
     background-color bg !important
     color fg !important
 
-std-font(primary = false)
+stdFont(primary = false)
   if primary
     font-family primary, Arial, sans-serif
   else
     font-family $body-font
 
-icon-button(icon)
-  &::before
+iconBtn(iconUrl)
+  &:before
     display block
     width 100%
     height 100%
+    margin 0
+    padding 0
+    border none
+    font-size unset
+    line-height unset
     background-color currentColor
-    mask-image url(icon)
+    background-origin border-box
+    mask-image url(iconUrl)
     mask-size 90% // contain could also work, but this pads it out a bit
     mask-repeat no-repeat
     mask-position center
@@ -87,6 +102,21 @@ icon-button(icon)
     top 0
     left 0
     position relative
-    margin 0
-    padding 0
     content ""
+
+bulletBefore(size, iconUrl)
+  margin-left (size * 1.5)
+  &:before
+    content '';
+    display inline-block;
+    height size
+    width size
+    -webkit-mask-image: url(iconUrl);
+    -webkit-mask-size: contain;
+    -webkitmask-repeat: no-repeat
+    mask-image: url(iconUrl);
+    mask-size: contain
+    mask-repeat: no-repeat
+    background-color currentColor
+    margin-right (size / 4)
+    margin-left -(size * 1.25)
