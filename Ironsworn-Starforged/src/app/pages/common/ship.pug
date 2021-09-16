@@ -31,13 +31,13 @@ include ../page
     }
 
 mixin shipPage(sheetType)
-  div.page-container.ship-page
-    input(type='radio' name=`attr_${sheetType}_page` class='ship hide-element' value='8')
-    div.showhide
+  div.page-container
+    input(type='radio' name=`attr_${_.kebabCase(sheetType)}_page` class='ship hide-element' value='8')
+    div.ship.showhide
       .ship-grid
         .asset
           - const starship = assets.Assets.find(obj => { return obj.Name === 'Starship' })
-          +assetTemplate(starship, { classes: 'visible', standalone: true })
+          +assetCard(starship, { classes: 'visible', standalone: true })
         .ship-category-info
           if sheetType === 'character'
             .boarded
@@ -49,7 +49,7 @@ mixin shipPage(sheetType)
               })
           h3.i18n-text(data-i18n='resource-vehicle-integrity')=translation['resource-vehicle-integrity']
           .info
-            +track(starship['Condition Meter'], `${sheetType}_ship`)
+            +assetMeter(starship['Condition Meter'], `${sheetType}_ship`)
           h3.i18n-text(data-i18n='impacts')=translation['impacts']
           .info
             - const shipImpacts = [impacts.find(obj => { return obj.title === 'ship' })]

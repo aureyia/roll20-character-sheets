@@ -1,3 +1,5 @@
+//- TODO: harmonize with new class names per asset-builder.pug
+
 mixin builderTitles(parent, child)
   input.border-bottom.no-border.view-title-width(
     type='text'
@@ -5,13 +7,13 @@ mixin builderTitles(parent, child)
     value=''
   )
 
-mixin assetTrackBox(parent, value)
-  .asset-track-box
+mixin assetMeterBox(parent, value)
+  .asset-meter-box
     if value == 0
-      .asset-track-box-display 0
+      .asset-meter-box-display 0
     else
-      .asset-track-box-display='+ ' + value
-    input(type='radio' name=`attr_custom-asset-track-${parent}` value=`${value}`)
+      .asset-meter-box-display='+ ' + value
+    input(type='radio' name=`attr_custom-asset-meter-${parent}` value=`${value}`)
 
 mixin abilityView(value)
   input(
@@ -78,17 +80,17 @@ mixin customAssets
           textarea.build-text(name=`attr_builder-ability-${ability}-text-area`)
         div.builder-tracks
           div.i18n-text(data-i18n='asset-custom-builder-tracks')=translation['asset-custom-builder-tracks']
-          select.sub-dropdown(name='attr_track-dropdown')
+          select.sub-dropdown(name='attr_meter-dropdown')
             each track in [ 0, 1, 2, 3, 4, 5, 6 ]
               if track == 0
                 option.i18n-text(
-                  data-i18n=`asset-custom-builder-track-dropdown-${track}`
+                  data-i18n=`asset-custom-builder-meter-dropdown-${track}`
                   value=`${track}`
                   selected=''
                 )='None'
               else
                 option.i18n-text(
-                  data-i18n=`asset-custom-builder-track-dropdown-${track}`
+                  data-i18n=`asset-custom-builder-meter-dropdown-${track}`
                   value=`${track}`
                 )='0 to ' + track
     .asset-view.hide-element
@@ -124,18 +126,18 @@ mixin customAssets
           each dropdownNumber in [ 0, 1, 2, 3, 4, 5, 6, 7]
             if dropdownNumber == 0
               input(
-                class=`track-dropdown-${dropdownNumber} hide-element`
+                class=`meter-dropdown-${dropdownNumber} hide-element`
                 type='checkbox'
-                name=`attr_track-dropdown-${dropdownNumber}`
+                name=`attr_meter-dropdown-${dropdownNumber}`
               )
             else
               input(
-                class=`track-dropdown-${dropdownNumber} hide-element`
+                class=`meter-dropdown-${dropdownNumber} hide-element`
                 type='checkbox'
-                name=`attr_track-dropdown-${dropdownNumber}`
+                name=`attr_meter-dropdown-${dropdownNumber}`
               )
-              div(class=`track-dropdown-${dropdownNumber} hide-element`)
-                .asset-track-wrapper.custom-track
+              div(class=`meter-dropdown-${dropdownNumber} hide-element`)
+                .asset-meter-wrapper.custom-track
                   - var currentBox = 0
                   while currentBox <= dropdownNumber
-                    +assetTrackBox(dropdownNumber, currentBox++)
+                    +assetMeterBox(dropdownNumber, currentBox++)
