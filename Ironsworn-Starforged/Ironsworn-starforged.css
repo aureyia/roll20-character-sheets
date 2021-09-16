@@ -2331,22 +2331,22 @@ h2,
   background-repeat: no-repeat;
 }
 .ui-dialog div.charsheet.charactersheet .category-path .asset-details .category {
-  color: #3b7fa9;
+  color: #3f7faa;
 }
 .ui-dialog div.charsheet.charactersheet .category-companion .asset-details .category {
-  color: #3c8b8a;
+  color: #3d8b8a;
 }
 .ui-dialog div.charsheet.charactersheet .category-module .asset-details .category {
-  color: #7e5990;
+  color: #7f5a90;
 }
 .ui-dialog div.charsheet.charactersheet .category-support-vehicle .asset-details .category {
-  color: #485690;
+  color: #495790;
 }
 .ui-dialog div.charsheet.charactersheet .category-deed .asset-details .category {
-  color: #4b974e;
+  color: #40834f;
 }
 .ui-dialog div.charsheet.charactersheet .category-command-vehicle .asset-details .category {
-  color: #99a3ad;
+  color: #9aa3ad;
 }
 .ui-dialog div.charsheet.charactersheet input.oracle-ironsworn:checked + div.oracle-ironsworn,
 .ui-dialog div.charsheet.charactersheet input.oracle-delve:checked + div.oracle-delve {
@@ -2896,6 +2896,8 @@ h2,
   cursor: pointer;
   transition: 0.5s ease;
   text-align: center;
+  font-weight: 600;
+  font-size: 14px;
 }
 .ui-dialog div.charsheet.charactersheet .toggle-btn:hover {
   background-color: #b8c2cd !important;
