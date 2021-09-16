@@ -35,15 +35,12 @@ mixin field(field, assetName)
     input.border-bottom.no-border(type='text' name=`attr_field-${field}` value='')
 
 mixin track(track, assetName)
-  .asset-track-wrapper
+  section.asset-track-wrapper(title=`Asset resource meter: ${_.capitalize(track.Name)}`)
     - var currentTrack = 0
     while currentTrack <= track.Max
-      .asset-track-box
-        if currentTrack == 0
-          .asset-track-box-display=0
-        else
-          .asset-track-box-display=`+ ${currentTrack}`
+      label.asset-track-box(title=`Set ${_.capitalize(track.Name)} to ${currentTrack}`)
         input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentTrack}`)
+        span.asset-track-box-display!=currentTrack
         - currentTrack++
 
 mixin assetTemplate(asset, options)

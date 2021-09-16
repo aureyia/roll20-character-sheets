@@ -170,29 +170,67 @@ input[type="checkbox"].asset-ability
   text-transform uppercase
 
 .asset-track-wrapper
-  margin 10px
   display flex
+  justify-content flex-end
+  flex-direction row-reverse
+  font-family "Exo", sans-serif
+  font-weight 700
+  .asset-track-box
+    &:first-child input[type="radio"]:checked + .asset-track-box-display
+      // paint-order stroke fill
+      // text-stroke $sf-ui-red 2px
+      // -webkit-text-stroke $sf-ui-red 2px
+      background-color $sf-ui-red
+    &:last-child input[type="radio"]:checked + .asset-track-box-display
+      // paint-order stroke fill
+      // text-stroke $sf-ui-blue 2px
+      // -webkit-text-stroke $sf-ui-blue 2px
+      background-color $sf-ui-blue
+    display flex
+    height 36px
+    margin 0
+    padding 0
+    width 31px
+    margin-right -2.5px
+    cursor pointer
+    input[type="radio"]
+      display none
+    .asset-track-box-display
+      mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg")
+      mask-position center
+      mask-repeat no-repeat
+      mask-size contain
+      background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/hex-meter-box-unchecked.svg")
+      background-color $bg-color
+      background-repeat no-repeat
+      background-size contain
+      background-position center
+      font-size 17px
+      font-weight bold
+      display flex
+      height inherit
+      width inherit
+      text-align center
+      text-anchor middle
+      align-items center
+      justify-content center
+      transition 0.5s ease
+      color $sf-ui-gray-dark
+      -webkit-text-stroke 0px transparent
+      // text-stroke 0px transparent
+      &:hover
+        color $fg-color
+    input[type="radio"]:checked + .asset-track-box-display
+      background-color $fg-color
+      color $bg-color
 
-.asset-track-box
-  width 100%
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  border-radius 0%
-  background transparent
-  border 2px solid $fg-color
-  padding 5px
-  margin-bottom 2px
 
 .asset-track-wrapper-wordy
   text-transform uppercase
   .asset-track-box
     flex-direction row
 
-.asset-track-box-display
-  font-size 17px
-  font-weight bold
+
 
 .ability-top
   margin-top 1em

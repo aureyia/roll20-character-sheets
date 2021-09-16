@@ -1,3 +1,23 @@
+// variables: rolltemplates
+
+$subheader-bg = $sf-black // formerly #23222b
+$template-bg = lighten($subheader-bg, 10%) // formerly #33323c
+$result-bg = lighten($subheader-bg, 15%) // formerly #403f4b
+$template-border = 1px solid black
+$strong-hit-color = $sf-ui-blue
+$weak-hit-color = $sf-ui-purple
+$miss-color = $sf-ui-red
+
+$content-padding = 0.4em 1em
+$subfooter-padding = 0.4em 0em
+// $border-strong-hit = 2px solid $strong-hit-color
+// $border-weak-hit = 2px solid $weak-hit-color
+// $border-miss = 2px solid $miss-color
+
+result-row()
+  background $result-bg
+  border $template-border
+
 sub-base(background, padding)
   line-height 1.5em
   font-weight 700
@@ -8,21 +28,22 @@ sub-base(background, padding)
 name-base(align)
   padding 0.2em 1em 0.4em 0.7em
   text-align align
-  font-variant-caps all-small-caps
+  // font-variant-caps all-small-caps
+  text-transform uppercase
   font-size 19px
   font-weight: bold;
 
 roll-container()
-  background #33323c
+  background $template-bg
   color $bg-color
   font-size 1em
   stdFont($body-font)
-  border 1px solid black
+  $template-border
 
 inline-roll()
   display inline-block
   min-width 1.5em
   text-align center
-  border 2px solid #33323c
+  border 2px solid $template-bg
   background transparent
   border-radius 1em

@@ -1,12 +1,14 @@
 @import "./reset.styl"
 
-$sf-black = #221E1F
-$sf-rich-black = #040506
-$sf-ui-gray-dark = #B8C2CD
-$sf-ui-gray-light = #dde1e7
-$sf-ui-blue = #28aae1
-$sf-ui-purple = #842A8C // not resampled yet?
-$sf-ui-red = #ce242b
+// brand colours
+$sf-black = #221E1F // not resampled yet
+$sf-rich-black = #040506 // not resampled yet
+$sf-ui-gray-dark = #B8C2CD // not resampled yet
+$sf-ui-gray-light = #dde1e7 // not resampled yet
+
+$sf-ui-blue = #28aae1 // strong hit
+$sf-ui-purple = #892890 // weak hit
+$sf-ui-red = #ce242b // miss
 $sf-shallows = #3d8b8a // companion
 $sf-forest = #40834f // deed
 $sf-sky = #3f7faa // path
@@ -14,12 +16,14 @@ $sf-ocean = #495790 // support vehicle
 $sf-oracle = #7f5a90 // module
 $sf-iron = #9aa3ad // command vehicle
 
+// basic ux colors
 $fg-color = $sf-black // old: #4c4d4f
 $bg-color = #fff
 $bg-color-alt = $sf-ui-gray-light // old: #e4e4e4. for alternating table rows, etc
 $input-color = $sf-ui-gray-dark // old: #ccc. textinput background, when hovering over usable objects
 $accent-color = #fd0 // highlights active fields
 
+// typography
 $header-font-lg = "Exo", sans-serif
 $body-font = "Encode Sans Expanded", sans-serif
 $header-font-sm = $body-font
@@ -135,6 +139,12 @@ bodyText(fontFamily=$body-font, fontSize=14.3px, listIndent=1rem)
     margin-left listIndent
   li
     list-style-type none
-    bulletBefore(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-oracle-subcategories/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+    bulletBefore(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
   p
     margin 0
+
+// places a double width stroke behind to fake an outside stroke
+textOutline(strokeColor, strokeWidth=2px)
+  paint-order stroke fill
+  text-stroke strokeWidth*2 strokeColor
+  -webkit-text-stroke strokeWidth*2 strokeColor

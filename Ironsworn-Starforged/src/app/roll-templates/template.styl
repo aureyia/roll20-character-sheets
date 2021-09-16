@@ -2,7 +2,6 @@
 @import './mixins/rolls'
 @import './oracles/oracles'
 
-
 .sheet-rolltemplate-starforged_moves .sheet-roll-container,
 .sheet-rolltemplate-starforged_progress .sheet-roll-container
   roll-container()
@@ -18,40 +17,39 @@
 
 .sheet-rolltemplate-starforged_progress .sheet-action-score .fullfail,
 .sheet-rolltemplate-starforged_moves .sheet-action-score .fullfail
-  border 2px solid #d22e53
+  border 2px solid $miss-color
 
 .sheet-rolltemplate-starforged_progress .sheet-action-score .fullcrit,
 .sheet-rolltemplate-starforged_moves .sheet-action-score .fullcrit
-  border 2px solid #42829e
+  border 2px solid $strong-hit-color
 
 .sheet-rolltemplate-starforged_progress .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-starforged_moves .sheet-challenge-dice .fullcrit
-  border 2px solid #d22e53
+  border 2px solid $miss-color
 
 .sheet-rolltemplate-starforged_progress .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-starforged_moves .sheet-challenge-dice .fullfail
-  border 2px solid #42829e
+  border 2px solid $strong-hit-color
 
 .sheet-rolltemplate-starforged_progress .sheet-roll-outcome,
 .sheet-rolltemplate-starforged_moves .sheet-roll-outcome
-  background #403f4b
-  border 1px solid black
+  result-row()
 
 .sheet-rolltemplate-starforged_moves .sheet-subheader,
 .sheet-rolltemplate-starforged_progress .sheet-subheader
-  sub-base(#23222b, 0.4em 1em 0.4em 1em)
+  sub-base($subheader-bg, $content-padding)
   text-transform uppercase
   font-style normal
 
 .sheet-rolltemplate-starforged_moves .sheet-subfooter,
 .sheet-rolltemplate-starforged_progress .sheet-subfooter
-  sub-base(#403f4b, 0.4em 0em 0.4em 0em)
+  sub-base($result-bg, $subfooter-padding)
   width 100%
   font-style italic
 
 .sheet-rolltemplate-starforged_moves .sheet-result-body,
 .sheet-rolltemplate-starforged_progress .sheet-result-body
-  padding 0.4em 1em 0.4em 1em
+  padding $content-padding
 
 .sheet-rolltemplate-starforged_moves .sheet-alert,
 .sheet-rolltemplate-starforged_progress .sheet-alert
@@ -62,23 +60,23 @@
 
 .sheet-rolltemplate-starforged_moves .sheet-opportunity,
 .sheet-rolltemplate-starforged_progress .sheet-opportunity
-  outcome-base(#40819f)
+  outcome-base($strong-hit-color)
 
 .sheet-rolltemplate-starforged_moves .sheet-strong-hit,
 .sheet-rolltemplate-starforged_progress .sheet-strong-hit
-  outcome-base(#63a9ca)
+  outcome-base($strong-hit-color) // fade?
 
 .sheet-rolltemplate-starforged_moves .sheet-weak-hit,
 .sheet-rolltemplate-starforged_progress .sheet-weak-hit
-  outcome-base(#83dbff)
+  outcome-base($weak-hit-color)
 
 .sheet-rolltemplate-starforged_moves .sheet-miss,
 .sheet-rolltemplate-starforged_progress .sheet-miss
-  outcome-base(#d8566f)
+  outcome-base($miss-color) // fade?
 
 .sheet-rolltemplate-starforged_moves .sheet-complication,
 .sheet-rolltemplate-starforged_progress .sheet-complication
-  outcome-base(#d22e53)
+  outcome-base($miss-color)
 
 .sheet-rolltemplate-starforged_moves .userscript-tcat,
 .sheet-rolltemplate-starforged_progress .userscript-tcat
