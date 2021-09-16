@@ -34,7 +34,7 @@ mixin assetTextInput(textinput, assetId)
     input(type='text' name=`attr_${id}` value='')
     //- old `attr_field-${field}`
 
-mixin track(track, assetName)
+mixin assetMeter(track, assetName)
   section.asset-track-wrapper(title=`Asset resource meter: ${_.capitalize(track.Name)}`)
     - var currentTrack = 0
     while currentTrack <= track.Max
