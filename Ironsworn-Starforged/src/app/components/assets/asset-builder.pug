@@ -9,12 +9,14 @@ mixin assetAbility(ability)
         checked
       )
       //- old name=`attr_ability_checkbox_${abilityId}`
+      //- TODO: reimplement as variable so its easier to switch back and forth for testing
     else
       input(
         type='checkbox'
         name=`attr_${ability.id}`
       )
       //- old: name=`attr_assetcheckbox_${abilityId}${number}`
+      //- TODO: see previous
     div.i18n-text(data-i18n=abilityId)!=assetBodyPlaceholder
     if ability.Input
       each input in ability.Input
@@ -34,27 +36,29 @@ mixin assetTextInput(textinput, assetId)
     input(type='text' name=`attr_${id}` value='')
     //- old `attr_field-${field}`
 
-mixin assetMeter(track, assetName)
-  section.asset-track-wrapper(title=`Asset resource meter: ${_.capitalize(track.Name)}`)
-    - var currentTrack = 0
-    while currentTrack <= track.Max
-      label.asset-track-box(title=`Set ${_.capitalize(track.Name)} to ${currentTrack}`)
-        input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentTrack}`)
-        span.asset-track-box-display!=currentTrack
-        - currentTrack++
+mixin assetMeter(meter, assetName)
+  section.asset-meter-wrapper(title=`Asset resource meter: ${_.capitalize(meter.Name)}`)
+    - var currentMeter = 0
+    while currentMeter <= meter.Max
+      label.asset-meter-box(title=`Set ${_.capitalize(meter.Name)} to ${currentMeter}`)
+        input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
+        //- TODO: migrate?
+        span.asset-meter-box-display!=currentMeter
+        - currentMeter++
 
 
 mixin assetCard(asset, options)
+  //- formerly:
   //- - let name = `${id.replace(/asset-/i, "")}`
+  - let name = asset.id
   - let iconWidth = 64
   - let category = _.kebabCase(asset.Category)
   if options.visiblityToggle === true
-    input(class=`${options.classes} ${asset.id}` type='checkbox' name=`attr_${asset.id}`)
-    //- formerly `attr_${name}`
-  div(class=`asset-card ${options.classes} ${asset.id} category-${category}`)
+    input(class=`${options.classes} ${name}` type='checkbox' name=`attr_${name}`)
+  div(class=`asset-card ${options.classes} ${name} category-${category}`)
     span.asset-category=asset.Category
     span.asset-name=asset.Name
-    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg`).asset-icon
+    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg`).asset-icon
     if asset.Description
       +assetDescription(asset)
     if asset.Input
@@ -72,7 +76,7 @@ mixin genericAssetBuilder(assetsArray, listId)
   datalist(id=listId)
     each asset in assetsArray
       //- generates classes and outputs to stdout
-      //- - console.log(`input[type=checkbox].${asset.id}:checked ~ div.asset-card.${asset.id},`)
+      //- - console.log(`input[type=checkbox][name=attr_asset][value=${asset.id}]:checked + div.asset-card.${asset.id},`)
       option.i18n-text(data-i18n=`${asset.id}-name` value=asset.Name)=translation[`${asset.id}-name`]
     option.i18n-text(data-i18n=`asset-custom-name` value='custom')=translation[`asset-custom-name`]
 

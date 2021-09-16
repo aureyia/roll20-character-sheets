@@ -209,10 +209,10 @@
   display: inline-block;
   height: 1rem;
   width: 1rem;
-  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
   -webkit-mask-size: contain;
   -webkitmask-repeat: no-repeat;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   background-color: currentColor;
@@ -1712,10 +1712,10 @@ u {
   display: inline-block;
   height: 1rem;
   width: 1rem;
-  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
   -webkit-mask-size: contain;
   -webkitmask-repeat: no-repeat;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   background-color: currentColor;
@@ -1743,10 +1743,10 @@ u {
   display: inline-block;
   height: 21px;
   width: 21px;
-  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
+  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
   -webkit-mask-size: contain;
   -webkitmask-repeat: no-repeat;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   background-color: currentColor;
@@ -2031,7 +2031,7 @@ u {
   opacity: 1;
   margin: 0px 5px 0 5px;
 }
-.ui-dialog div.charsheet.charactersheet .custom-track {
+.ui-dialog div.charsheet.charactersheet .custom-meter {
   width: 20.5em;
   margin: 0 !important;
 }
@@ -2187,9 +2187,9 @@ u {
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg");
   transition: all ease 0.3s;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg");
   background-size: 100%;
   mask-size: 100%;
   background-position: center;
@@ -2225,9 +2225,9 @@ u {
   appearance: none;
   color: #000;
   background-color: transparent;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-meter-box.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box.svg");
   transition: all ease 0.3s;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg");
   background-size: 100%;
   mask-size: 100%;
   background-position: center;
@@ -2273,14 +2273,14 @@ u {
   font-weight: bold;
   text-transform: uppercase;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper {
   display: flex;
   justify-content: flex-end;
   flex-direction: row-reverse;
   font-family: "Exo", sans-serif;
   font-weight: 700;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box {
   display: flex;
   height: 36px;
   margin: 0;
@@ -2289,21 +2289,21 @@ u {
   margin-right: -2.5px;
   cursor: pointer;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box:first-child input[type="radio"]:checked + .asset-track-box-display {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box:first-child input[type="radio"]:checked + .asset-meter-box-display {
   background-color: #ce242b;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box:last-child input[type="radio"]:checked + .asset-track-box-display {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box:last-child input[type="radio"]:checked + .asset-meter-box-display {
   background-color: #28aae1;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box input[type="radio"] {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box input[type="radio"] {
   display: none;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box .asset-track-box-display {
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg");
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box .asset-meter-box-display {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg");
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/hex-meter-box-unchecked.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-unchecked.svg");
   background-color: #fff;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2321,17 +2321,17 @@ u {
   color: #b8c2cd;
   -webkit-text-stroke: 0px transparent;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box .asset-track-box-display:hover {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box .asset-meter-box-display:hover {
   color: #221e1f;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box input[type="radio"]:checked + .asset-track-box-display {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper .asset-meter-box input[type="radio"]:checked + .asset-meter-box-display {
   background-color: #221e1f;
   color: #fff;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper-wordy {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper-wordy {
   text-transform: uppercase;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper-wordy .asset-meter-box {
+.ui-dialog div.charsheet.charactersheet .asset-meter-wrapper-wordy .asset-meter-box {
   flex-direction: row;
 }
 .ui-dialog div.charsheet.charactersheet .asset-meter-box-display {
@@ -2363,87 +2363,87 @@ u {
   opacity: 1;
   transition: 0.2s ease;
 }
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].ace:checked ~ div.ace,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].agent:checked ~ div.agent,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].archer:checked ~ div.archer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].armored:checked ~ div.armored,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].augmented:checked ~ div.augmented,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].bannersworn:checked ~ div.bannersworn,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].banshee:checked ~ div.banshee,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].blademaster:checked ~ div.blademaster,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].bonded:checked ~ div.bonded,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].bounty-hunter:checked ~ div.bounty-hunter,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].brawler:checked ~ div.brawler,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].combat-bot:checked ~ div.combat-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].commander:checked ~ div.commander,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].courier:checked ~ div.courier,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].devotant:checked ~ div.devotant,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].diplomat:checked ~ div.diplomat,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].empath:checked ~ div.empath,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].explorer:checked ~ div.explorer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].fated:checked ~ div.fated,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].firebrand:checked ~ div.firebrand,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].fugitive:checked ~ div.fugitive,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].gearhead:checked ~ div.gearhead,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].glowcat:checked ~ div.glowcat,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].gunner:checked ~ div.gunner,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].gunslinger:checked ~ div.gunslinger,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].haunted:checked ~ div.haunted,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].healer:checked ~ div.healer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].homesteader:checked ~ div.homesteader,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].kinetic:checked ~ div.kinetic,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].lore-hunter:checked ~ div.lore-hunter,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].loyalist:checked ~ div.loyalist,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].marked:checked ~ div.marked,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].mercenary:checked ~ div.mercenary,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].naturalist:checked ~ div.naturalist,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].navigator:checked ~ div.navigator,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].oathbreaker:checked ~ div.oathbreaker,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].outcast:checked ~ div.outcast,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].protocol-bot:checked ~ div.protocol-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].revenant:checked ~ div.revenant,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].rockhorn:checked ~ div.rockhorn,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].scavenger:checked ~ div.scavenger,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].scoundrel:checked ~ div.scoundrel,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].seer:checked ~ div.seer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].shade:checked ~ div.shade,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sidekick:checked ~ div.sidekick,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].slayer:checked ~ div.slayer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sniper:checked ~ div.sniper,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sprite:checked ~ div.sprite,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].survey-bot:checked ~ div.survey-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].symbiote:checked ~ div.symbiote,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].tech:checked ~ div.tech,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].trader:checked ~ div.trader,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].utility-bot:checked ~ div.utility-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].vanguard:checked ~ div.vanguard,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].vestige:checked ~ div.vestige,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].veteran:checked ~ div.veteran,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].voidborn:checked ~ div.voidborn,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].voidglider:checked ~ div.voidglider,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].weapon-master:checked ~ div.weapon-master,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].engine-upgrade:checked ~ div.engine-upgrade,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].expanded-hold:checked ~ div.expanded-hold,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].grappler:checked ~ div.grappler,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].heavy-cannons:checked ~ div.heavy-cannons,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].internal-refit:checked ~ div.internal-refit,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].medbay:checked ~ div.medbay,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].missile-array:checked ~ div.missile-array,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].overseer:checked ~ div.overseer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].reinforced-hull:checked ~ div.reinforced-hull,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].research-lab:checked ~ div.research-lab,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sensor-array:checked ~ div.sensor-array,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].shields:checked ~ div.shields,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].stealth-tech:checked ~ div.stealth-tech,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].vehicle-bay:checked ~ div.vehicle-bay,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].workshop:checked ~ div.workshop,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].exosuit:checked ~ div.exosuit,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].hoverbike:checked ~ div.hoverbike,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].rover:checked ~ div.rover,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].service-pod:checked ~ div.service-pod,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].shuttle:checked ~ div.shuttle,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].skiff:checked ~ div.skiff,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].snub-fighter:checked ~ div.snub-fighter {
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-ace]:checked + div.asset-card.asset-ace,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-agent]:checked + div.asset-card.asset-agent,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-archer]:checked + div.asset-card.asset-archer,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-armored]:checked + div.asset-card.asset-armored,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-augmented]:checked + div.asset-card.asset-augmented,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-bannersworn]:checked + div.asset-card.asset-bannersworn,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-banshee]:checked + div.asset-card.asset-banshee,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-blademaster]:checked + div.asset-card.asset-blademaster,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-bonded]:checked + div.asset-card.asset-bonded,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-bounty-hunter]:checked + div.asset-card.asset-bounty-hunter,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-brawler]:checked + div.asset-card.asset-brawler,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-combat-bot]:checked + div.asset-card.asset-combat-bot,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-commander]:checked + div.asset-card.asset-commander,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-courier]:checked + div.asset-card.asset-courier,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-devotant]:checked + div.asset-card.asset-devotant,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-diplomat]:checked + div.asset-card.asset-diplomat,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-empath]:checked + div.asset-card.asset-empath,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-explorer]:checked + div.asset-card.asset-explorer,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-fated]:checked + div.asset-card.asset-fated,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-firebrand]:checked + div.asset-card.asset-firebrand,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-fugitive]:checked + div.asset-card.asset-fugitive,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-gearhead]:checked + div.asset-card.asset-gearhead,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-glowcat]:checked + div.asset-card.asset-glowcat,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-gunner]:checked + div.asset-card.asset-gunner,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-gunslinger]:checked + div.asset-card.asset-gunslinger,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-haunted]:checked + div.asset-card.asset-haunted,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-healer]:checked + div.asset-card.asset-healer,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-homesteader]:checked + div.asset-card.asset-homesteader,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-kinetic]:checked + div.asset-card.asset-kinetic,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-lore-hunter]:checked + div.asset-card.asset-lore-hunter,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-loyalist]:checked + div.asset-card.asset-loyalist,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-marked]:checked + div.asset-card.asset-marked,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-mercenary]:checked + div.asset-card.asset-mercenary,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-naturalist]:checked + div.asset-card.asset-naturalist,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-navigator]:checked + div.asset-card.asset-navigator,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-oathbreaker]:checked + div.asset-card.asset-oathbreaker,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-outcast]:checked + div.asset-card.asset-outcast,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-protocol-bot]:checked + div.asset-card.asset-protocol-bot,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-revenant]:checked + div.asset-card.asset-revenant,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-rockhorn]:checked + div.asset-card.asset-rockhorn,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-scavenger]:checked + div.asset-card.asset-scavenger,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-scoundrel]:checked + div.asset-card.asset-scoundrel,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-seer]:checked + div.asset-card.asset-seer,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-shade]:checked + div.asset-card.asset-shade,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-sidekick]:checked + div.asset-card.asset-sidekick,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-slayer]:checked + div.asset-card.asset-slayer,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-sniper]:checked + div.asset-card.asset-sniper,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-sprite]:checked + div.asset-card.asset-sprite,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-survey-bot]:checked + div.asset-card.asset-survey-bot,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-symbiote]:checked + div.asset-card.asset-symbiote,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-tech]:checked + div.asset-card.asset-tech,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-trader]:checked + div.asset-card.asset-trader,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-utility-bot]:checked + div.asset-card.asset-utility-bot,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-vanguard]:checked + div.asset-card.asset-vanguard,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-vestige]:checked + div.asset-card.asset-vestige,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-veteran]:checked + div.asset-card.asset-veteran,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-voidborn]:checked + div.asset-card.asset-voidborn,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-voidglider]:checked + div.asset-card.asset-voidglider,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-weapon-master]:checked + div.asset-card.asset-weapon-master,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-engine-upgrade]:checked + div.asset-card.asset-engine-upgrade,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-expanded-hold]:checked + div.asset-card.asset-expanded-hold,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-grappler]:checked + div.asset-card.asset-grappler,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-heavy-cannons]:checked + div.asset-card.asset-heavy-cannons,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-internal-refit]:checked + div.asset-card.asset-internal-refit,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-medbay]:checked + div.asset-card.asset-medbay,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-missile-array]:checked + div.asset-card.asset-missile-array,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-overseer]:checked + div.asset-card.asset-overseer,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-reinforced-hull]:checked + div.asset-card.asset-reinforced-hull,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-research-lab]:checked + div.asset-card.asset-research-lab,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-sensor-array]:checked + div.asset-card.asset-sensor-array,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-shields]:checked + div.asset-card.asset-shields,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-stealth-tech]:checked + div.asset-card.asset-stealth-tech,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-vehicle-bay]:checked + div.asset-card.asset-vehicle-bay,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-workshop]:checked + div.asset-card.asset-workshop,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-exosuit]:checked + div.asset-card.asset-exosuit,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-hoverbike]:checked + div.asset-card.asset-hoverbike,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-rover]:checked + div.asset-card.asset-rover,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-service-pod]:checked + div.asset-card.asset-service-pod,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-shuttle]:checked + div.asset-card.asset-shuttle,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-skiff]:checked + div.asset-card.asset-skiff,
+.ui-dialog div.charsheet.charactersheet input[type=checkbox][name=attr_asset][value=asset-snub-fighter]:checked + div.asset-card.asset-snub-fighter {
   display: block;
   visibility: visible;
   height: auto;
@@ -2488,37 +2488,37 @@ u {
   padding: 0.5em;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-path {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-path.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-path.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-path .asset-category {
   color: #3f7faa;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-companion {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-companion.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-companion.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-companion .asset-category {
   color: #3d8b8a;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-module {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-module.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-module.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-module .asset-category {
   color: #7f5a90;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-support-vehicle {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-support-vehicle.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-support-vehicle.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-support-vehicle .asset-category {
   color: #495790;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-deed {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-deed.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-deed.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-deed .asset-category {
   color: #40834f;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-command-vehicle {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-command-vehicle.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-command-vehicle.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-command-vehicle .asset-category {
   color: #9aa3ad;
@@ -3113,7 +3113,7 @@ u {
   line-height: unset;
   background-color: currentColor;
   background-origin: border-box;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
   mask-size: 90%;
   mask-repeat: no-repeat;
   mask-position: center;
