@@ -6,8 +6,8 @@ mixin navBar(sheetType)
         each page in row
           label(id=`page-tab-${page.text}`).nav-child.page-label
             if page.checked
-              input(type='radio' name=`attr_${sheetType}_page_button` class='hide-element page-button' value=page.id checked)
+              input(type='radio' name=`attr_${sheetType}_page_button` class='switch-display page-button' value=page.id checked)
             else
-              input(type='radio' name=`attr_${sheetType}_page_button` class='hide-element page-button' value=page.id)
+              input(type='radio' name=`attr_${sheetType}_page_button` class='switch-display page-button' value=page.id)
             - var i18n_key = `nav-${page.text}`
             span.i18n-text.page-button-back(data-i18n=i18n_key)=translation[i18n_key]

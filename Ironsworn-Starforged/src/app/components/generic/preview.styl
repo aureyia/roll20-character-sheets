@@ -10,10 +10,20 @@
   font-weight bold
   font-size 14px
   padding 0.2em
-  border 2px solid $fg-color
+  border 2px solid $color-fg
   cursor pointer
   text-align center
   interactiveHover()
+  &.icon-only
+    &:before
+      font-family "Pictos"
+      content "*"
+      display block
+      height inherit
+      width inherit
+      background transparent
+      pointer-events none
+
 
 .preview
   display grid
@@ -49,16 +59,19 @@
       margin 0
       border-bottom none
   .preview-main
+    border-radius 1em
+    padding 0
+    borderCommon()
+    height max-content
     width stretch
     width -moz-available
+    overflow clip
 
-input.preview.hide-element, input.overview.hide-element
+input.preview.switch-display, input.overview.switch-display
   display none
 
-input.preview.hide-element:checked + .preview.showhide
-  showHide()
-  display grid
+input.preview.switch-display:checked + .preview.switchable-display
+  switchDisplayOn()
 
-input.overview.hide-element:checked + .overview.showhide
-  showHide()
-  display block
+input.overview.switch-display:checked + .overview.switchable-display
+  switchDisplayOn()

@@ -3,12 +3,12 @@ include ./asset-builder
 
 
 mixin assets()
-  .assets
-    fieldset.repeating_assets.fixed-width
-      .asset
-        - let assetsArray = assets.Assets.filter(obj => { return obj.Category === 'Path' || obj.Category === 'Companion' || obj.Category === 'Deed' })
-        +genericAssetBuilder(assetsArray, 'assetList')
-        +customAssets
-    .hidden-fields.hide-element
-      each asset in assets.Assets
-        input(class=`hide-element` type='checkbox' name=`attr_${asset.id}`)
+  fieldset.repeating_assets.fixed-width
+    .asset-container
+      - let assetsArray = assets.Assets.filter(obj => { return obj.Category === 'Path' || obj.Category === 'Companion' || obj.Category === 'Deed' })
+      +genericAssetBuilder(assetsArray, 'assetList')
+      +customAssets
+  .switch-display
+    each asset in assets.Assets
+      input(class=`switch-display` type='checkbox' name=`attr_${asset.id}`)
+      //- TODO: i'm not really sure what's happening here, prob worth checking

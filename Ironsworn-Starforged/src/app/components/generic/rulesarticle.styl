@@ -1,0 +1,118 @@
+input.switch-display:checked + article.gamerules.switchable-display
+  switchDisplayOn(grid)
+
+$header-font-size = 1.5em
+$header-padding = 0.5em
+$button-height = 30px
+
+article.gamerules
+  stdFont($body-font)
+  dark()
+  margin 0
+  border 0
+  display grid
+  align-items center
+  gap 0 0.5em
+  grid-template-areas "title roll close" "body body body" "footer footer footer"
+  grid-template-columns 1fr max-content max-content
+  grid-template-rows min-content min-content 1fr max-content
+  h3, .close-preview.icon-only, button.roll-show.icon-only
+    // align-self middle
+    line-height 1
+    font-size $header-font-size
+    height max-content
+    width max-content
+  h3
+    stdFont($header-font-lg)
+    font-weight 700
+    grid-area title
+    width auto
+    display flex
+    text-transform uppercase
+    grid-column-start 1
+    grid-row-start 1
+    margin $header-padding
+  .close-preview.icon-only
+    display flex
+    // align-self: middle
+    justify-content: middle
+    align-content: middle
+    grid-area close
+    border none
+    background none
+    line-height: 1.1;
+    text-anchor: middle;
+    background-color $color-warning
+    hexagonClip($header-font-size)
+    interactiveHover($color-bg, $color-warning)
+    margin-right 0.25em
+    &:before
+      width inherit
+      display flex
+      align-items center
+      justify-content center
+      height min-content
+      align-self center
+
+  button.roll-show.icon-only
+    background-color $color-cta
+    color $color-bg
+    hexagonClip($header-font-size)
+    interactiveHover($color-bg, $color-cta)
+
+  // button.button-text
+  //   font-weight 800
+  //   line-height: 1;
+  //   light()
+  //   interactiveHover($color-cta)
+  //   border 2px solid $color-cta
+  //   color $color-cta
+  //   grid-area roll
+  //   width stretch
+  //   width -moz-available
+  //   height $button-height
+  //   padding ($button-height/8)
+  //   margin 0
+  //   display flex
+  //   justify-content center
+  //   text-transform uppercase
+  //   &[type="roll"] span
+  //     bulletBefore(($button-height / 3 * 2 ), "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
+
+  //     font-size ($button-height/2)
+  //     &:before
+  //       width ($button-height / 3 * 2 )
+  //       margin-right ($button-height / 8 * 3 )
+  //       margin-left -($button-height / 3 * 2 )
+        // position: relative;
+        // bottom: 2px;
+
+  .gamerules-body
+    margin 2px 0px
+    // slight offset to compensate for apparent extension by border
+    grid-area body
+    color $color-fg
+    background-color $color-bg
+    width stretch
+    width -moz-available
+    padding 1em
+    display flex
+    flex-flow column
+    gap 1em
+    ul
+      margin 2px 0px 5px 0.3em
+    // p, li, td
+    //   line-height 1.4
+    p
+      margin-bottom 0.3em
+    // .oracle-embedded
+    .roll-label.embedded-btn
+      border-width 4px 4px 0px
+      font-size 1em
+
+  footer
+    grid-area footer
+    padding 0.5rem
+    line-height 0.9em
+    font-size 0.9em
+    text-align right

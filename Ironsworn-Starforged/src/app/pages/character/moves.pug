@@ -15,4 +15,5 @@ mixin movesPage
         each move in moves.Moves
           //- Stupid way for me to generate orcale ccs
           //- - console.log(`input[type=radio].${move.id}:checked ~ div.${move.id},`)
-          +movePreviewFactory(move)
+          input(type='radio' name='attr_move_preview' class=`${move.id} switch-display` value=move.id)
+          +moveRulesArticle(move, false, "switchable-display")

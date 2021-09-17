@@ -1,36 +1,47 @@
 .static-btn
   btn()
-  interactiveHover($input-color, $fg-color)
-  .btn-content
+  commonBorder()
+  interactiveHover($color-input, $color-fg)
+  .btn-content, span
     padding 0.2em 0.2em 0.2em 0.2em
     width 100%
     text-align center
 
 .toggle-btn
   btn()
-  interactiveHover($input-color, $fg-color)
+  commonBorder()
+  letter-spacing 0.0125ch
+  interactiveHover($color-input, $color-fg)
+  align-content center
+  justify-content center
   text-align center
   font-weight 600
   font-size 14px
+  span
+  // padding lives here so bgcolor fills when checked
+    padding 4px 2px
 .btn-input
   &:checked
     & ~ .btn-content
-      background $fg-color
-      color $bg-color
+      background $color-fg
+      color $color-bg
 button, .btn
   color currentColor
   text-shadow none
-  background $bg-color
+  background $color-bg
+  stdFont("Exo")
+  headerText(800)
+  font-size 1.125em
   &[type="roll"]
     &:before // unsetting r20's styling
       content none
       font-family inherit
-    &.roll-icon-only
+    &.icon-only
       // width 1.75em
       // height 1.75em
       margin 0
       padding 0
-      color $fg-color
+      color $color-fg
       iconBtn("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
   interactiveHover()
   &.placeholder-button

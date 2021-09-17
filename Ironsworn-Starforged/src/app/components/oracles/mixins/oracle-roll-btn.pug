@@ -1,14 +1,8 @@
-//- mixin oracleRollButton()
-//-   - console.log("Processing oracle", oracle.Name)
-//-   if rollButton === true && oracle.Tables
-//-     +oracleMultiBtn(oracle)
-//-   else if rollButton === true && oracle.Table
-//-     +oracleSingleButton(oracle)
-
 include ../../../common/pug/button
 
 mixin oracleListGroupItem(id, buttonLabel)
   +oracleRollBtn(id, buttonLabel)
+  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
 
 mixin oracleSubtablesListGroupItem(id, buttonLabel, tables)
   -
@@ -30,6 +24,7 @@ mixin oracleSubtablesListGroupItem(id, buttonLabel, tables)
     })
   - const rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}}`
   +oracleRollBtn(id, buttonLabel, rollQuery)
+  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
 
 mixin oracleRollBtn(id, buttonLabel, rollQuery="")
   //- generates CSS
@@ -41,12 +36,11 @@ mixin oracleRollBtn(id, buttonLabel, rollQuery="")
     }
   button(
     type='roll'
-    class='roll-show ui-draggable roll-icon-only'
+    class='roll-show ui-draggable icon-only'
     title=`@{roll_${id}}`
     name=`roll_${id}`
     value=valueString
   )
-  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
 
 mixin oracleMultiBtn(oracle, btnText, indexOffset=0)
   - const labelText = oracle['Display name']||oracle['Name']

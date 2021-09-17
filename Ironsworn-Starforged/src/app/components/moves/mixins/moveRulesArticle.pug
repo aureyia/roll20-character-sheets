@@ -1,0 +1,28 @@
+include ../../generic/rulesArticle
+include ../../rolls/rolls.pug
+
+mixin moveRulesArticle(move, options, classes="")
+  +rulesArticle(null, `move ${move.id} ${classes}`)
+    if options.hide_title != true
+      h3=move.Name
+        if move['Progress Move']
+          span.move-progress-label='Progress Move'
+    if options.hide_close_button != true
+      +previewCloseButton("move", true)
+    - const statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
+    if move['Progress Move']
+      +progressRollBtn(move, "roll-show icon-only")
+    else if statCheck
+      +movesRollBtn(move, "roll-show icon-only")
+    section.gamerules-body
+      .gamerules-text!=move.Text
+      if move.Oracle && options.hide_oracle != true
+        .oracle-embedded
+          - let btnText = `Roll the ${move.Name} oracle`
+          - var moveOracle = oracles.find(group => { return group.Name === 'Move' }).Oracles.find(oracle => { return oracle.Name === move.Name })
+          if moveOracle.Table
+            +oracleSingleButton(moveOracle, btnText)
+            +oracleTable(moveOracle)
+          else if moveOracle.Tables
+            +oracleMultiBtn(moveOracle)
+            +oracleMultiSubTable(moveOracle, btnText)

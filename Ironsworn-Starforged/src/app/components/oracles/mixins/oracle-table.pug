@@ -1,7 +1,7 @@
 mixin oracleTable(oracle, rollButton=false)
+  if (oracle.Description)
+    .oracle-description!=oracle.Description
   table.oracle-table
-    if (oracle.Description)
-      caption.oracle-description!=oracle.Description
     each row, index in oracle.Table
       +oracleTableRow(oracle.Table, row, index)
 
@@ -59,9 +59,9 @@ mixin oracleMultiSubTable(oracle, header=false)
 
 
 mixin oracleSubTable(subOracle, header=true)
+  if (subOracle.Description)
+    .oracle-description!=subOracle.Description
   table.oracle-table.oracle-subtable(id=subOracle.id)
-    if (subOracle.Description)
-      caption.oracle-description!=subOracle.Description
     if (header===true)
       thead
         th.oracle-subtitle(colspan=2)=subOracle.Name

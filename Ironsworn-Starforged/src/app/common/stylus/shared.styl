@@ -17,21 +17,26 @@ $sf-oracle = #7f5a90 // module
 $sf-iron = #9aa3ad // command vehicle
 
 // basic ux colors
-$fg-color = $sf-black // old: #4c4d4f
-$bg-color = #fff
-$bg-color-alt = $sf-ui-gray-light // old: #e4e4e4. for alternating table rows, etc
-$input-color = $sf-ui-gray-dark // old: #ccc. textinput background, when hovering over usable objects
-$accent-color = #fd0 // highlights active fields
+$color-fg = $sf-black // old: #4c4d4f
+$color-bg = #fff
+$color-bg-alt = $sf-ui-gray-light // old: #e4e4e4. for alternating table rows, etc
+$color-fg-lowkey = $sf-ui-gray-dark // 'faded' foreground colour
+$color-input = $sf-ui-gray-dark // old: #ccc. textinput background, when hovering over usable objects
+$color-highlight = #fd0 // highlights active fields
+$color-cta = $sf-ui-blue
+$color-warning = $sf-ui-red
+// 'close preview', 'delete', etc
 
 // typography
 $header-font-lg = "Exo", sans-serif
-$body-font = "Encode Sans Expanded", sans-serif
+// $body-font = "Encode Sans Expanded", sans-serif
+$body-font = "Encode Sans Semi Expanded", sans-serif
 $header-font-sm = $body-font
 $compact-font = "Encode Sans Condensed", sans-serif
 
 
 borderCommon(width=2px)
-  border width solid $fg-color
+  border width solid $color-fg
 
 btn(fontSize = 14px)
   borderCommon()
@@ -41,39 +46,48 @@ btn(fontSize = 14px)
   font-size fontSize
   padding 0
   cursor pointer
-  background $bg-color
-
+  background $color-bg
+  letter-spacing 0.1ch
 btnAttached(fontSize = 14px)
   btn(fontSize)
   border none
-  border-right 1px solid $fg-color
+  border-right 1px solid $color-fg
 
 inputHighlight(shadow)
   &:focus
-    outline 3px solid $accent-color
+    outline 3px solid $color-highlight
     outline-offset 0
     box-shadow inset 0 0 0 shadow
 
-hide()
-  visibility hidden
-  transition opacity 1s ease-out
+switchDisplayOff() // simplest version for stuff that doesn't need a fadein/fadeout
+  display none
+
+switchDisplayOn(displayMode=block)
+  display displayMode
+
+switchVisOff(time=0.2s) // for pages
+  visibility collapse
+  // sept 16 2021: proper collapse support in chrome/safari would obviate the need to set height/overflow, but alas, no. someday...
+  transition visibility, opacity time ease
   opacity 0
   height 0
-  border none !important
-  // box-sizing border-box
   overflow hidden
 
-showHide(time = 0.2s)
+switchVisOn() // for pages
   visibility visible
+  opacity 100%
   height auto
-  opacity 1
-  transition time ease
+  overflow unset
 
 dark()
-  background $fg-color
-  color $bg-color
+  background $color-fg
+  color $color-bg
 
-interactiveHover(bg=$fg-color, fg=$bg-color)
+light()
+  background $color-bg
+  color $color-fg
+
+interactiveHover(bg=$color-fg, fg=$color-bg)
   cursor pointer
   transition 0.5s ease
   &:hover
@@ -108,13 +122,13 @@ iconBtn(iconUrl)
     position relative
     content ""
 
-bulletBefore(size, iconUrl)
-  margin-left (size * 1.5)
+bulletBefore(forTextSize, iconUrl)
+  margin-left (forTextSize * 1.5)
   &:before
     content '';
     display inline-block;
-    height size
-    width size
+    height (forTextSize * 0.75)
+    width (forTextSize * 0.75)
     -webkit-mask-image: url(iconUrl);
     -webkit-mask-size: contain;
     -webkitmask-repeat: no-repeat
@@ -122,12 +136,13 @@ bulletBefore(size, iconUrl)
     mask-size: contain
     mask-repeat: no-repeat
     background-color currentColor
-    margin-right (size / 4)
-    margin-left -(size * 1.25)
+    margin-right (forTextSize / 4)
+    margin-left -(forTextSize * 1)
 
-headerText(wt = 900)
+headerText(wt = 900, spacing = 0.05ch)
   text-transform uppercase
   font-weight wt
+  letter-spacing 0.05ch
 
 bodyText(fontFamily=$body-font, fontSize=14.3px, listIndent=1rem)
   li, p
@@ -139,7 +154,7 @@ bodyText(fontFamily=$body-font, fontSize=14.3px, listIndent=1rem)
     margin-left listIndent
   li
     list-style-type none
-    bulletBefore(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+    bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
   p
     margin 0
 
@@ -148,3 +163,43 @@ textOutline(strokeColor, strokeWidth=2px)
   paint-order stroke fill
   text-stroke strokeWidth*2 strokeColor
   -webkit-text-stroke strokeWidth*2 strokeColor
+
+$hexagon_pointy = polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
+
+$hexagon_flat = polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+
+hexagonMask()
+  mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg")
+  mask-position center
+  mask-size contain
+  mask-repeat no-repeat
+
+// hexagonBg()
+
+hexWidthToHeight(hexWidth)
+  (hexWidth / (math(3, sqrt)/2))
+
+hexagonClip(hexWidth) // sets width and height to ensure correct proportion
+  width hexWidth
+  height hexWidthToHeight(hexWidth)
+  clip-path $hexagon_pointy
+  // TODO: as svg clip path? url + #id
+
+hexCheckbox(hexWidth, emptyImage="https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg")
+  -moz-appearance none
+  appearance none
+  hexagonClip(hexWidth)
+  cursor pointer
+  border none
+  width hexWidth
+  height hexWidthToHeight(hexWidth)
+  color currentColor
+  background-color transparent
+  background-image url(emptyImage)
+  background-size 100%
+  background-position center
+  transition all ease 0.3s
+  &:hover
+    background-color $color-fg-lowkey
+  &:checked
+    background-color currentColor

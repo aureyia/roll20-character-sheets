@@ -36,7 +36,7 @@ mixin repeatingVow()
           div.btn-div.i18n-text(data-i18n='vow-fulfill')=translation['vow-fulfill']
       input(
         type="text"
-        class="hide-element"
+        class="switch-display"
         name="attr_vow-filled"
         value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)`
         disabled
