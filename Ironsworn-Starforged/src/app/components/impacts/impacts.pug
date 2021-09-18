@@ -21,7 +21,7 @@ mixin impacts(impactArray, opts)
         .impact-list
           each impact in group.list
             +btn(impact)
-    input.hide-element(type='text' name='attr_impact_total' value=0)
+    input.switch-display(type='text' name='attr_impact_total' value=0)
     if opts.customImpacts
       .custom-impacts
         h4.i18n-text.other-impacts-title(data-i18n='impact-others')

@@ -11,7 +11,7 @@
 
 mixin toggleBtn(label, attribute, value, title, classes)
   label(class=`toggle-btn ${classes||''}`)
-    input.hide-element.btn-input(
+    input.switch-display.btn-input(
       type='radio'
       title= `@{${attribute}}`
       name=`attr_${attribute}`
@@ -25,14 +25,14 @@ mixin btn(opts)
   if opts.classes
     label(class=`${action}-btn ${opts.classes}`)
       if opts.pure_attr
-        input.btn-input.hide-element(type=opts.type name=`attr_${opts.attribute}`)
+        input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}`)
       else
         if opts.checked
-          input.btn-input.hide-element(type=opts.type name=`attr_${opts.attribute}_button` checked)
+          input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}_button` checked)
         else
-          input.btn-input.hide-element(type=opts.type name=`attr_${opts.attribute}_button`)
+          input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}_button`)
       span.i18n-text.btn-content(data-i18n=opts.translationId)=opts.text
   else
     label(class=`${action}-btn`)
-      input.btn-input.hide-element(type=opts.type name=`attr_${opts.attribute}_button`)
+      input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}_button`)
       span.i18n-text.btn-content(data-i18n=opts.translationId)=opts.text

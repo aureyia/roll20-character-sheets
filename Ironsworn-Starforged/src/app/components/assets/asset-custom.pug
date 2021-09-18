@@ -17,32 +17,32 @@ mixin assetMeterBox(parent, value)
 
 mixin abilityView(value)
   input(
-    class=`builder-ability-${value}-text hide-element`
+    class=`builder-ability-${value}-text switch-display`
     type='checkbox'
     name=`attr_builder-ability-${value}-text`
   )
-  div(class=`builder-ability-${value}-text hide-element`)
+  div(class=`builder-ability-${value}-text switchable-display`)
     input.custom-asset-ability(
       type='checkbox'
       name=`attr_assetcheckbox_builder-ability-${value}`
     )
     .asset-ability
       span.no-border.ability-text(name=`attr_builder-ability-${value}-text-area`)
-  input(class=`builder-ability-${value}-text-input hide-element` type='checkbox' name=`attr_builder-ability-${value}-text-input`)
-  div(class=`builder-ability-${value}-text-input hide-element`)
+  input(class=`builder-ability-${value}-text-input switch-display` type='checkbox' name=`attr_builder-ability-${value}-text-input`)
+  div(class=`builder-ability-${value}-text-input switchable-display`)
     input.custom-asset-ability(type='checkbox' name=`attr_assetcheckbox_builder-ability-${value}`)
     .asset-ability
       span.no-border.ability-text(name=`attr_builder-ability-${value}-text-area`)
       input.border-bottom.no-border(type='text' name=`attr_builder-ability-${value}-custom-text-input` value='')
 
 mixin customAssets
-  input.custom.hide-element(type='checkbox' name='attr_custom')
-  .custom.showhide
+  input.custom.switch-display(type='checkbox' name='attr_custom')
+  .custom.switchable-display
     input.asset-builder(type='radio' name='attr_custom-asset-page' value='1' checked='')
     span.i18n-text.custom-asset-page(data-i18n='asset-custom-builder-title')=translation['asset-custom-builder-title']
     input.asset-view(type='radio' name='attr_custom-asset-page' value='2')
     span.i18n-text.custom-asset-page(data-i18n='asset-custom-view-title')=translation['asset-custom-view-title']
-    .asset-builder.hide-element
+    .asset-builder.switchable-display
       .builder-name
         input.border-bottom.no-border(
           type='text'
@@ -93,7 +93,7 @@ mixin customAssets
                   data-i18n=`asset-custom-builder-meter-dropdown-${track}`
                   value=`${track}`
                 )='0 to ' + track
-    .asset-view.hide-element
+    .asset-view.switchable-display
       .flex-wrapper
         .flex-container
           span.asset-view-name(name='attr_name')
@@ -101,17 +101,17 @@ mixin customAssets
           each totalTitles in [ 0, 1, 2, 3 ]
             if totalTitles == 0
               input(
-                class=`builder-titles-${totalTitles} hide-element`
+                class=`builder-titles-${totalTitles} switch-display`
                 type='checkbox'
                 name=`attr_builder-titles-${totalTitles}`
               )
             else
               input(
-                class=`builder-titles-${totalTitles} hide-element`
+                class=`builder-titles-${totalTitles} switch-display`
                 type='checkbox'
                 name=`attr_builder-titles-${totalTitles}`
               )
-              div(class=`builder-titles-${totalTitles} hide-element`)
+              div(class=`builder-titles-${totalTitles} switchable-display`)
                 - var currentTitle = 1
                 while currentTitle <= totalTitles
                   +builderTitles(totalTitles, currentTitle++)
@@ -126,18 +126,18 @@ mixin customAssets
           each dropdownNumber in [ 0, 1, 2, 3, 4, 5, 6, 7]
             if dropdownNumber == 0
               input(
-                class=`meter-dropdown-${dropdownNumber} hide-element`
+                class=`meter-dropdown-${dropdownNumber} switch-display`
                 type='checkbox'
                 name=`attr_meter-dropdown-${dropdownNumber}`
               )
             else
               input(
-                class=`meter-dropdown-${dropdownNumber} hide-element`
+                class=`meter-dropdown-${dropdownNumber} switch-display`
                 type='checkbox'
                 name=`attr_meter-dropdown-${dropdownNumber}`
               )
-              div(class=`meter-dropdown-${dropdownNumber} hide-element`)
-                .asset-meter-wrapper.custom-track
+              div(class=`meter-dropdown-${dropdownNumber} switchable-display`)
+                .asset-meter.custom-track
                   - var currentBox = 0
                   while currentBox <= dropdownNumber
                     +assetMeterBox(dropdownNumber, currentBox++)

@@ -11,7 +11,7 @@ include ./tracks
           input(
           type='radio'
           name='attr_momentum'
-          class='momentum-box-input hide-element'
+          class='momentum-box-input switch-display'
           value=object.value
           checked
         )
@@ -19,24 +19,24 @@ include ./tracks
           input(
             type='radio'
             name='attr_momentum'
-            class='momentum-box-input hide-element'
+            class='momentum-box-input switch-display'
             value=object.value
           )
         .momentum-box-back
           h3.momentum-box-value=object.text
 
     label.momentum-burn
-      input(type='checkbox' class='momentum-burn hide-element' title='Burn Momentum' name='attr_momentumBurn')
+      input(type='checkbox' class='momentum-burn switch-display' title='Burn Momentum' name='attr_momentumBurn')
       .momentum-burn-back.i18n-text(data-i18n='momentum-burn')=translation['momentum-burn']
 
     .momentum-status-box
       h3.momentum-max.i18n-text(data-i18n='momentum-maximum')=translation['momentum-maximum']
       h3.momentum-status-value
         span.momentum-status-attr(name='attr_momentum_max')
-      input(type='text' class='hide-element' name='attr_momentum_max' value='10')
+      input(type='text' class='switch-display' name='attr_momentum_max' value='10')
 
     .momentum-status-box
       h3.momentum-reset.i18n-text(data-i18n='momentum-reset')=translation['momentum-reset']
       h3.momentum-status-value
         span.momentum-status-attr(name='attr_momentum_reset')
-      input(type='text' class='hide-element' name='attr_momentum_reset' value='2')
+      input(type='text' class='switch-display' name='attr_momentum_reset' value='2')

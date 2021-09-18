@@ -10,11 +10,14 @@ mixin oracleRollGroup(group)
     each oracle in group.Oracles
       - const header = `${group['Display name']||group.Name} - ${oracle.Name}`
       +listGroupItem()
+        -
+          //- console.log("Rendering:", oracle.Name)
+          let buttonLabel = (oracle['Display name'] ? oracle['Display name'] : oracle.Name).replace(/(Ask the Oracle|Character Name)\W*/i, "")
+          // trims excessively long strings so buttons stay on one line
         if (oracle.Tables)
-          - let buttonLabel = oracle['Display name']||oracle.Name
           +oracleSubtablesListGroupItem(oracle.id, buttonLabel, oracle.Tables)
         else
-          +oracleRollBtn(oracle.id, oracle['Display name']||oracle.Name)
+          +oracleListGroupItem(oracle.id, buttonLabel)
     if group.Subcategories
       each subCategory in group.Subcategories
         - const buttonLabel = subCategory['Display name']||subCategory.Name
@@ -22,19 +25,26 @@ mixin oracleRollGroup(group)
           +oracleSubtablesListGroupItem(subCategory.id, buttonLabel, subCategory.Oracles)
 
 mixin oraclePreview(oracle, groupName)
-  input(class=`${oracle.id} hide-element` type='radio' name=`attr_oracle_preview` value=oracle.id)
-  article(class=`${oracle.id} showhide oracle-table-preview` id=oracle.id)
+  input(class=`${oracle.id} switch-display` type='radio' name=`attr_oracle_preview` value=oracle.id)
+  //- article(class=`${oracle.id} switchable-display rules` id=oracle.id)
+  +rulesArticle(null,`oracle ${oracle.id} switchable-display`)
     - let nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replace(/ - /i, ": ") : `${groupName}: ${oracle['Display name']||oracle.Name}`
-    .oracle-title=nameString
+    h3=nameString
     if oracle.Table
-      +oracleTable(oracle)
-    else if oracle.Tables
-      +oracleMultiSubTable(oracle)
-    else if oracle.Oracles
-      if (oracle.Description)
-        .oracle-description=oracle.Description
-      each subCatOracle, index in oracle.Oracles
-        if subCatOracle.Table
-          +oracleSubTable(subCatOracle)
-        else if subCatOracle.Tables
-          +oracleMultiSubTable(subCatOracle, true)
+      //-       +progressRollBtn(move, "roll-show icon-only")
+      +oracleRollBtn(oracle.id, buttonLabel)
+    +previewCloseButton("oracle", true)
+    section.gamerules-body
+      if oracle.Table
+        +oracleTable(oracle)
+      else if oracle.Tables
+        +oracleMultiSubTable(oracle)
+      else if oracle.Oracles
+        +icon(oracle.id)
+        if (oracle.Description)
+          section.oracle-description=oracle.Description
+        each subCatOracle, index in oracle.Oracles
+          if subCatOracle.Table
+            +oracleSubTable(subCatOracle)
+          else if subCatOracle.Tables
+            +oracleMultiSubTable(subCatOracle, true)

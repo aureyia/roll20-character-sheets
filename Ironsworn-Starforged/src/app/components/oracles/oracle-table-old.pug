@@ -1,5 +1,5 @@
 mixin table(table)
-  table.oracle-table.oracle-table-preview
+  table.oracle-table.gamerules
     each row, index in table.Table
       tr.oracle-row
         - const initChance = (index === 0) ? row.Chance - (row.Chance - 1) : table.Table[index - 1].Chance + 1
@@ -26,7 +26,7 @@ mixin oracleMultipleTableFactory(oracle)
   - const rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}} {{header=${labelText}}}`
   - const id = oracle.id
   div(class=`${id}`)
-    button.roll-label.embedded-btn.hide-element(
+    button.roll-label.embedded-btn.switch-display(
       type='roll'
       title=`@{roll_${id}}`
       name=`roll_${id}`

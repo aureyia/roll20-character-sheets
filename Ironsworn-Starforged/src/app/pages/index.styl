@@ -1,5 +1,5 @@
 .changelog
-  border 2px solid $fg-color
+  border 2px solid $color-fg
   margin-bottom 1em
   padding 1em
 
@@ -7,12 +7,12 @@
   text-align center
 
 .close-changelog
-  border 2px solid $fg-color
+  border 2px solid $color-fg
   cursor pointer
   padding 0
   margin 0.5em 0 0 0
   text-align: center
-  interactive-hover($input-color, $fg-color)
+  interactive-hover($color-input, $color-fg)
 
 input.changelog:checked ~ div.changelog
   display none
@@ -66,14 +66,9 @@ div.mode
 .mode-image
   display flex
 
-.page-container
-  input.hide-element:checked + .showhide
-    display block
-    showHide()
-
 .sub-header
   margin-top 1em
-  border-bottom 3px solid $fg-color
+  border-bottom 3px solid $color-fg
 
 .ship-grid
   margin-top 1em
@@ -81,8 +76,8 @@ div.mode
   justify-content space-around
   grid-row-gap 1em
   h3
-    color $bg-color
-    background $fg-color
+    color $color-bg
+    background $color-fg
     margin-bottom 0.6em
   .asset
     grid-column 1
@@ -92,7 +87,7 @@ div.mode
   .ship-category-info
     grid-column 2
     grid-row 1
-    border 2px solid $fg-color
+    border 2px solid $color-fg
     border-radius 1em
     box-shadow 2px 2px 6px 0px
     .ship-onboard
@@ -109,7 +104,7 @@ div.mode
 
     input[type=text]
       border 0
-      border-bottom 2px solid $fg-color
+      border-bottom 2px solid $color-fg
       border-radius 0
       padding 0
       padding-left 0.3em

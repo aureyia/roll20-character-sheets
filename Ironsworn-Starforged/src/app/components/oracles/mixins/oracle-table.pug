@@ -1,9 +1,30 @@
+//- -
+//-   function getCurrentFilenames() {
+//-     fs.readdirSync("./").forEach(file => console.log(file) );
+//-   }
+//-   getCurrentFilenames();
+
+mixin icon(gameObjectId, imgClass="hex-icon")
+  -
+    const extensions = [".png", ".svg", ".jpg", ".jpeg"]
+    //- const localPath = "./../../../img/icons/"
+    const localPath = "./app/img/icons/"
+    const remotePath = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/"
+  each ext in extensions
+    if (fs.existsSync(localPath+gameObjectId+ext))
+      - console.log("Found icon:", localPath+gameObjectId+ext)
+      img(src=remotePath+gameObjectId+ext class=`${ext == ".svg" ? "vector" : "raster"} ${imgClass}`)
+    else
+      |
+
 mixin oracleTable(oracle, rollButton=false)
+  +icon(oracle.id)
+  if (oracle.Description)
+    section.oracle-description!=oracle.Description
   table.oracle-table
-    if (oracle.Description)
-      caption.oracle-description!=oracle.Description
-    each row, index in oracle.Table
-      +oracleTableRow(oracle.Table, row, index)
+    tbody
+      each row, index in oracle.Table
+        +oracleTableRow(oracle.Table, row, index)
 
 mixin oracleMultiSubTable(oracle, header=false)
   //-  builds tables with multiple Roll columns, e.g. regional tables
@@ -43,30 +64,34 @@ mixin oracleMultiSubTable(oracle, header=false)
         mergedRows.push(newRow);
       })
     }
-  if oracle.Description
-    .oracle-description=oracle.Description
-  table.oracle-table.oracle-subtable.oracle-subtable-multi
-    thead
-      if (header===true)
+  section.oracle-table.oracle-subtable-multi.oracle-subtable
+    if (header===true)
+      h4.oracle-subtitle(colspan=(oracle.Tables.length+1))=oracle['Display name']||oracle.Name
+    +icon(oracle.id)
+    if oracle.Description
+      .oracle-description=oracle.Description
+    table.oracle-table.oracle-subtable.oracle-subtable-multi
+      thead
         tr
-          th.oracle-subtitle(colspan=(oracle.Tables.length+1))=oracle['Display name']||oracle.Name
-      tr
-        each subOracle in oracle.Tables
-          th.oracle-column-head.oracle-roll=subOracle.Name||subOracle['Display name'].replace(/^.* - /g, "")
-        th.oracle-column-head.oracle-roll=`Result`
-    each row, index in mergedRows
-      +oracleTableRow(mergedRows, row, index)
+          each subOracle in oracle.Tables
+            th.oracle-column-head.oracle-roll=subOracle.Name||subOracle['Display name'].replace(/^.* - /g, "")
+          th.oracle-column-head.oracle-roll=`Result`
+      tbody
+        each row, index in mergedRows
+          +oracleTableRow(mergedRows, row, index)
 
 
 mixin oracleSubTable(subOracle, header=true)
-  table.oracle-table.oracle-subtable(id=subOracle.id)
-    if (subOracle.Description)
-      caption.oracle-description!=subOracle.Description
+  section.oracle-table.oracle-subtable
     if (header===true)
-      thead
-        th.oracle-subtitle(colspan=2)=subOracle.Name
-    each row, index in subOracle.Table
-      +oracleTableRow(subOracle.Table, row, index)
+      h4.oracle-subtitle=subOracle.Name
+    +icon(subOracle.id)
+    if (subOracle.Description)
+      .oracle-description!=subOracle.Description
+    table.oracle-table.oracle-subtable(id=subOracle.id)
+      tbody
+        each row, index in subOracle.Table
+          +oracleTableRow(subOracle.Table, row, index)
 
 
 mixin oracleTableRow(table, row, index)

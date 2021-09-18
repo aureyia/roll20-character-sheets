@@ -5,16 +5,16 @@
     margin-top 1em
 
   input[type=checkbox].momentum-burn:hover ~ div.momentum-burn-back
-    background-color $input-color
+    background-color $color-input
     transition: .5s ease;
 
   .momentum-box-input:hover ~ .momentum-box-back
-    background: $input-color
+    background: $color-input
     transition: .5s ease;
 
   .momentum-box-input:checked ~ .momentum-box-back
-    background: $fg-color
-    color: $bg-color
+    background: $color-fg
+    color: $color-bg
     transition: .5s ease;
 
   input[type=checkbox].momentum-burn
@@ -47,7 +47,7 @@
     align-items: center
     border-radius: 0%
     background: transparent
-    border 2px solid $fg-color
+    border 2px solid $color-fg
     padding-left 0.2em
 
   .momentum-status-value
@@ -78,9 +78,9 @@
     margin 0
 
   .momentum-dark
-    color $bg-color
-    border: 2px solid $fg-color
-    background: $fg-color
+    color $color-bg
+    border: 2px solid $color-fg
+    background: $color-fg
     width: 100%
 
   .momentum-max,
@@ -89,7 +89,7 @@
     font-size 1em
 
   .momentum-title
-    color $bg-color
+    color $color-bg
     line-height 1.2em
     font-size 1.2em
 
@@ -99,7 +99,7 @@
 
   .sub-header-static
     margin-top 0.2em
-    border: 1px solid $fg-color
+    border: 1px solid $color-fg
 
   .momentum-status-attr
     padding 0em 0.2em

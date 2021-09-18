@@ -1,7 +1,7 @@
 // Fonts
 @css {
 
-  @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:i,400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Encode+Sans+Semi+Expanded:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
 }
 // Common
 @import './common/stylus/shared'
@@ -16,6 +16,8 @@
   & *, ::before, ::after
     box-sizing border-box
   bodyText()
+  p, li, td
+    line-height 1.4
   input[type=text]
     font-weight: 600;
     inputHighlight(3px)
@@ -26,101 +28,77 @@
     text-overflow: ''
     &:-ms-expand
       display: none
-  h1
-    font-weight: bold
-    width: 100%
-    font-size: 28px
-    text-align: center
-    margin: 0 0 0px
-    padding: 10
-    text-transform: uppercase
-  h2
-    font-weight: bold
-    width: 100%
-    font-size: 18px
-    text-align: left
-    margin: 0 0 0px
-    padding: 0
-    text-transform: uppercase
-  h3
-    font-weight: bold
-    width: 100%
-    line-height 1.4em
-    font-size 1.2em
-    text-align: center
-    margin: 0 0 0px
-    padding: 0
-    text-transform: uppercase
-    &.divide
-      &:after,
-      &:before
-        display: inline-block
-        content: ""
-        height: 5px
-        border-top: 2px solid $fg-color
-        top: 0
-        width: 220px
-    &.site-divide
-      &:after,
-      &:before
-        display: inline-block
-        content: ""
-        height: 5px
-        border-top: 2px solid $fg-color
-        top: 0
-        width: 331px
-    &.site-denizens-divide
-      &:after,
-      &:before
-        display: inline-block
-        content: ""
-        height: 5px
-        border-top: 2px solid $fg-color
-        top: 0
-        width: 336px
-    &.site-divide-notes
-      &:after,
-      &:before
-        display: inline-block
-        content: ""
-        height: 5px
-        border-top: 2px solid $fg-color
-        top: 0
-        width: 352px
-  .divide
-    margin-top 1em
-  h4
-    font-weight: bold
-    width: 100%
-    font-size: 16px
-    text-align: center
-    margin: 0 0 0px
-    padding: 0
-    text-transform: uppercase
-    &.tab-title
-      display: inline-block
-  h5
-    font-weight: bold
-    font-size: 12px
-    text-align: left
-    margin: 0 0 0px
-    padding: 0
-    text-transform: uppercase
-  h6
-    font-size: 14px
-    font-weight: bold
-    text-align: left
-    margin-top: 2px
-  .heading-left
-    text-align: left
+  // h1
+  //   font-weight: bold
+  //   width: 100%
+  //   font-size: 28px
+  //   text-align: center
+  //   margin: 0 0 0px
+  //   padding: 10
+  //   text-transform: uppercase
+  // h2
+  //   font-weight: bold
+  //   width: 100%
+  //   font-size: 18px
+  //   text-align: left
+  //   margin: 0 0 0px
+  //   padding: 0
+  //   text-transform: uppercase
+  // h3
+  //   font-weight: bold
+  //   width: 100%
+  //   line-height 1.4em
+  //   font-size 1.2em
+  //   text-align: center
+  //   margin: 0 0 0px
+  //   padding: 0
+  //   text-transform: uppercase
+  //   &.divide
+  //     &:after,
+  //     &:before
+  //       display: inline-block
+  //       content: ""
+  //       height: 5px
+  //       border-top: 2px solid $color-fg
+  //       top: 0
+  //       width: 220px
+  //   &.site-divide
+  //     &:after,
+  //     &:before
+  //       display: inline-block
+  //       content: ""
+  //       height: 5px
+  //       border-top: 2px solid $color-fg
+  //       top: 0
+  //       width: 331px
+  //   &.site-denizens-divide
+  //     &:after,
+  //     &:before
+  //       display: inline-block
+  //       content: ""
+  //       height: 5px
+  //       border-top: 2px solid $color-fg
+  //       top: 0
+  //       width: 336px
+  //   &.site-divide-notes
+  //     &:after,
+  //     &:before
+  //       display: inline-block
+  //       content: ""
+  //       height: 5px
+  //       border-top: 2px solid $color-fg
+  //       top: 0
+  //       width: 352px
+  // .divide
+  //   margin-top 1em
   hr
     border: 0
     height: 1px
-    background $input-color
-    background-image: linear-gradient(to right, $input-color, #333, $input-color)
+    background $color-input
+    background-image: linear-gradient(to right, $color-input, #333, $color-input)
   textarea
     max-width 828px
-    border: 2px solid $fg-color
+    border: 2px solid $color-fg
     font-weight normal
   .impacts
     margin-bottom: 0px
@@ -147,12 +125,12 @@
     margin-top: -45px
   .track-box-input:hover ~ .track-box-back,
   .resources-box-input:hover ~ .resources-box-back
-    background: $input-color
+    background: $color-input
     transition: .5s ease;
   .track-box-input:checked ~ .track-box-back,
   .resources-box-input:checked ~ .resources-box-back
-    background: $fg-color
-    color: $bg-color
+    background: $color-fg
+    color: $color-bg
     transition: .5s ease;
   .track-box-value
     padding: 0px
@@ -165,98 +143,102 @@
     width: 100%
     font-weight: bold
     font-size: 14px
-    border: 2px solid $fg-color
+    border: 2px solid $color-fg
     background: #E6E7E8
-    color: $fg-color
+    color: $color-fg
     border-radius: 0
   .debil-desc
     width: 100%
     font-weight: bold
     font-size: 14px
   .border
-    border: 1px solid $input-color
+    border: 1px solid $color-input
     border-radius: 4px
   textarea.full-width
     width: 95%
     resize: vertical
-  input.filler[type="radio"],
-  input[type="checkbox"].checkbox
-    opacity: 0
-    width: 16px
-    height: 16px
-    position: relative
-    top: 5px
-    left: 6px
-    margin: -10px
-    cursor: pointer
-    z-index: 1
+  // input.filler[type="radio"],
+  // input[type="checkbox"].checkbox
+  //   opacity: 0
+  //   width: 16px
+  //   height: 16px
+  //   position: relative
+  //   top: 5px
+  //   left: 6px
+  //   margin: -10px
+  //   cursor: pointer
+  //   z-index: 1
   /* Fake radio/checkbox */
-  input[type="radio"] + span:before,
-  input[type="checkbox"].checkbox + span:before
-    margin-right: 4px
-    border: solid 1px #a8a8a8
-    line-height: 14px
-    text-align: center
-    display: inline-block
-    vertical-align: middle
-    -moz-box-shadow: 0 0 2px $input-color
-    -webkit-box-shadow: 0 0 2px $input-color
-    box-shadow: 0 0 2px $input-color
-    background: #f6f6f6
-    background: -moz-radial-gradient(#f6f6f6, #dfdfdf)
-    background: -webkit-radial-gradient(#f6f6f6, #dfdfdf)
-    background: -ms-radial-gradient(#f6f6f6, #dfdfdf)
-    background: -o-radial-gradient(#f6f6f6, #dfdfdf)
-    background: radial-gradient(#f6f6f6, #dfdfdf)
-  input[type="checkbox"].checkbox + span:before,
-  input.filler[type="radio"] + span:before
-    content: ""
-    width: 14px
-    height: 14px
-    font-size: 12px
-    -moz-border-radius: 3px
-    -webkit-border-radius: 3px
-    border-radius: 3px
-  input[type="checkbox"].checkbox:checked + span:before
-    content: "■"
-  input.zeroxp[type="radio"] + span:before
-    content: "0" !important
-  input.filler[type="radio"] + span:before
-    content: "■"
+  // input[type="radio"] + span:before,
+  // input[type="checkbox"].checkbox + span:before
+  //   margin-right: 4px
+  //   border: solid 1px #a8a8a8
+  //   line-height: 14px
+  //   text-align: center
+  //   display: inline-block
+  //   vertical-align: middle
+  //   -moz-box-shadow: 0 0 2px $color-input
+  //   -webkit-box-shadow: 0 0 2px $color-input
+  //   box-shadow: 0 0 2px $color-input
+  //   background: #f6f6f6
+  //   background: -moz-radial-gradient(#f6f6f6, #dfdfdf)
+  //   background: -webkit-radial-gradient(#f6f6f6, #dfdfdf)
+  //   background: -ms-radial-gradient(#f6f6f6, #dfdfdf)
+  //   background: -o-radial-gradient(#f6f6f6, #dfdfdf)
+  //   background: radial-gradient(#f6f6f6, #dfdfdf)
+  // input[type="checkbox"].checkbox + span:before,
+  // input.filler[type="radio"] + span:before
+  //   content: ""
+  //   width: 14px
+  //   height: 14px
+  //   font-size: 12px
+  //   -moz-border-radius: 3px
+  //   -webkit-border-radius: 3px
+  //   border-radius: 3px
+  // input[type="checkbox"].checkbox:checked + span:before
+  //   content: "■"
+  // input.zeroxp[type="radio"] + span:before
+  //   content: "0" !important
+  // input.filler[type="radio"] + span:before
+  //   content: "■"
   /* Remove dot from all radios _after_ selected one */
-  input.filler[type="radio"]:checked ~ input.filler[type="radio"] + span:before
-    content: ""
-  span.showhide:checked
-    background-color: $fg-color
-    color: $bg-color
+  // input.filler[type="radio"]:checked ~ input.filler[type="radio"] + span:before
+  //   content: ""
+  span.switchable-display:checked
+    background-color: $color-fg
+    color: $color-bg
     transition: .5s ease;
-  span.showhide
+  span.switchable-display
     display: inline
-    border: 1px solid $input-color
+    border: 1px solid $color-input
     margin-right: 11px
     border-radius: 4px
     padding: 2px 4px
     font-weight: bold
     font-size: 14px
-  span.showhide:hover
+  span.switchable-display:hover
     cursor: pointer
     border-radius: 4px
     padding: 2px 4px
-    background-color: $input-color
-    color: $fg-color
+    background-color: $color-input
+    color: $color-fg
     transition: .5s ease;
- .showhide
-    hide()
-  .hide-element
+  // toggles
+  input.switch-vis
     display none
-  input[type='checkbox'].hide-element, input[type='radio'].hide-element
+  input.switch-vis + .switchable-vis
+    switchVisOff()
+  input.switch-vis:checked + .switchable-vis
+    switchVisOn()
+  input.switch-display
     display none
-  div.hide-element
-    display none
+  input.switch-display + .switchable-display
+    switchDisplayOff()
+  input.switch-display:checked + .switchable-display
+    switchDisplayOn()
   div.preview-roll
     padding: 0em
-  input.showhide:checked + .showhide
-    showHide()
+
   span.preview-roll
     width: 30%
     margin-left: 1em
@@ -268,23 +250,41 @@
     height: auto
     margin-bottom: 5px
   input.border-bottom
-    border-bottom: 1px solid $fg-color
+    border-bottom: 1px solid $color-fg
     border-radius: 0em
   .full-width
     width: 100%
     margin-top: 0.3em
   .note-area
     border-radius 1em
-  h3, h2, .oracle-title, .move-title
+  h3, h2
     letter-spacing: 0.05rem;
   u
     text-decoration: underline 1pt solid currentColor
+  .hex-icon
+    object-fit contain
+    $iconWidth = 64px
+    &.vector
+      width $iconWidth
+      height hexWidthToHeight($iconWidth)
+    &.raster
+      hexagonClip($iconWidth)
+// nested block import doesn't seem to work properly, meaning i gotta do this one by one
 
-
-  // block import doesn't seem to work properly
+// Pages
 .ui-dialog div.charsheet.charactersheet
-  // Pages
   @import './pages/index'
+// generic widgets and other components, should be overwritten by more specific styling below
+.ui-dialog div.charsheet.charactersheet
+  @import './components/generic/preview'
+.ui-dialog div.charsheet.charactersheet
+  @import './components/generic/listgroup'
+.ui-dialog div.charsheet.charactersheet
+  @import './components/generic/buttons'
+.ui-dialog div.charsheet.charactersheet
+  @import './components/generic/repeating'
+.ui-dialog div.charsheet.charactersheet
+  @import './components/generic/rulesarticle'
 .ui-dialog div.charsheet.charactersheet
   @import './components/resources/resources'
 .ui-dialog div.charsheet.charactersheet
@@ -311,13 +311,6 @@
   @import './components/oracles/oracles'
 .ui-dialog div.charsheet.charactersheet
   @import './components/legacies/tracks'
-.ui-dialog div.charsheet.charactersheet
-  @import './components/generic/preview'
-.ui-dialog div.charsheet.charactersheet
-  @import './components/generic/listGroup'
-.ui-dialog div.charsheet.charactersheet
-  @import './components/generic/buttons'
-.ui-dialog div.charsheet.charactersheet
-  @import './components/generic/repeating'
+
 // Roll Templates
 @import './roll-templates/template'

@@ -23,40 +23,39 @@ input
     borderCommon()
     border-radius 0
     &:focus
-      outline 3px solid $accent-color
+      outline 3px solid $color-highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
   &.search-bar
     width 50%
     borderCommon()
     &:focus
-      outline 3px solid $accent-color
+      outline 3px solid $color-highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
   &.table-btn
     &:checked
       & ~ div
         &.move-nav-content
-          background $fg-color
-          color $bg-color
+          background $color-fg
+          color $color-bg
           transition 0.5s ease
 
 
 
 .move
   margin 0em
-  color $fg-color
+  color $color-fg
   display flex
   padding 0
 
 .move-name
   width 100%
-  borderCommon()
 
 .move-highlight
   &:checked
     & ~ .move-name
-      background $accent-color
+      background $color-highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
 
@@ -76,19 +75,8 @@ span
   &:nth-child(n
     & + 2)
       margin-top 10px
-
-
-
-
-
 .preview
   width auto
-
-.move-page-footer
-  text-align right !important
-  padding-right 1em
-
-
 
 .move-show
   display inline-flex
@@ -105,96 +93,23 @@ span
 .move-delve-table
   width auto !important
 
-article.move-display
-  display flex
-  flex-flow column
-  stdFont($body-font)
-  border-radius 1em
-  borderCommon()
-  h3.move-title
-    width auto
-    display flex
-    align-self left
-    background-color $fg-color
-    color $bg-color
-    border-bottom 1px solid $fg-color
-    font-size 1.4em
-    font-weight bold
-    padding 0.2em 0.5em 0.1em 0.7em
-    text-transform uppercase
-    .move-progress-label
-      display block
-      stdFont('Encode Sans Condensed')
-      font-size 80%
-      font-weight normal
-      text-transform none
-      font-style italic
-      bulletBefore(1rem, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
-
-  button.button-text
-    border-radius 0
-    border-style solid
-    border-color $fg-color
-    border-width 0px 2px
-    width stretch
-    width -moz-available
-    height max-content
-    padding 4px
-    margin 0
-    display flex
-    justify-content center
-    span
-      bulletBefore(21px, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
-      &:before
-        margin-bottom: -5px;
-  .move-body
-    borderCommon()
-    padding 1em
-    ul
-      margin 2px 0px 5px 1rem
-    p, li, td
-      stdFont('Encode Sans Condensed')
-    .oracle-embedded
-      .roll-label.embedded-btn
-        border-width 4px 4px 0px
-        font-size 1em
-      table.oracle-table
-        margin-top 0px
-        border-width 4px
-    p, li
-      line-height 1.4
-    p
-      margin-bottom 0.3em
-    table
-      borderCommon()
-      width stretch
-      width -moz-available
-      margin 0.8em 0em
-      thead
-        padding 0.3em
-        background-color $fg-color
-        color $bg-color
-        th
-          padding-left 0.4em
-      tbody
-        td
-          padding-left 0.4em
+article.gamerules
+  .move-progress-label
+    color $color-fg-lowkey
+    display block
+    stdFont('Encode Sans Condensed')
+    font-size 75%
+    font-weight normal
+    text-transform none
+    font-style italic
+    align-self end
+    margin-left 1em
   .move-table
     border none
     width 30.5em
     font-size 12px
   .move-roll
     width 18%
-  .move-footer
-    background-color $fg-color
-    color $bg-color
-    line-height 0.9em
-    font-size 0.9em
-    // stdFont($body-font)
-    font-variant small-caps
-    font-weight bold
-    text-align left
-    padding 0.5rem
 
 .clear-search
   width fit-content
@@ -204,7 +119,7 @@ article.move-display
   font-weight bold
   font-size 14px
   padding 0.2em 0.2em 0.2em 0.2em
-  border 2px solid $fg-color
+  border 2px solid $color-fg
   cursor pointer
   interactiveHover()
 
@@ -212,66 +127,62 @@ article.move-display
   z-index 3
   &:checked
     & ~ .move-name
-      background $fg-color !important
-      color $bg-color !important
+      background $color-fg !important
+      color $color-bg !important
 
-input.preview:checked + div.preview,
-input.full-move-list:checked + div.full-move-list
-  showHide()
-
-input[type=radio].move-begin-a-session:checked + article.move-display.move-begin-a-session,
-input[type=radio].move-set-a-flag:checked + article.move-display.move-set-a-flag,
-input[type=radio].move-change-your-fate:checked + article.move-display.move-change-your-fate,
-input[type=radio].move-take-a-break:checked + article.move-display.move-take-a-break,
-input[type=radio].move-end-a-session:checked + article.move-display.move-end-a-session,
-input[type=radio].move-face-danger:checked + article.move-display.move-face-danger,
-input[type=radio].move-secure-an-advantage:checked + article.move-display.move-secure-an-advantage,
-input[type=radio].move-gather-information:checked + article.move-display.move-gather-information,
-input[type=radio].move-compel:checked + article.move-display.move-compel,
-input[type=radio].move-aid-your-ally:checked + article.move-display.move-aid-your-ally,
-input[type=radio].move-check-your-gear:checked + article.move-display.move-check-your-gear,
-input[type=radio].move-swear-an-iron-vow:checked + article.move-display.move-swear-an-iron-vow,
-input[type=radio].move-reach-a-milestone:checked + article.move-display.move-reach-a-milestone,
-input[type=radio].move-forsake-your-vow:checked + article.move-display.move-forsake-your-vow,
-input[type=radio].move-fulfill-your-vow:checked + article.move-display.move-fulfill-your-vow,
-input[type=radio].move-make-a-connection:checked + article.move-display.move-make-a-connection,
-input[type=radio].move-develop-your-relationship:checked + article.move-display.move-develop-your-relationship,
-input[type=radio].move-forge-a-bond:checked + article.move-display.move-forge-a-bond,
-input[type=radio].move-test-your-relationship:checked + article.move-display.move-test-your-relationship,
-input[type=radio].move-undertake-an-expedition:checked + article.move-display.move-undertake-an-expedition,
-input[type=radio].move-explore-a-waypoint:checked + article.move-display.move-explore-a-waypoint,
-input[type=radio].move-finish-an-expedition:checked + article.move-display.move-finish-an-expedition,
-input[type=radio].move-set-a-course:checked + article.move-display.move-set-a-course,
-input[type=radio].move-make-a-discovery:checked + article.move-display.move-make-a-discovery,
-input[type=radio].move-confront-chaos:checked + article.move-display.move-confront-chaos,
-input[type=radio].move-enter-the-fray:checked + article.move-display.move-enter-the-fray,
-input[type=radio].move-gain-ground:checked + article.move-display.move-gain-ground,
-input[type=radio].move-react-under-fire:checked + article.move-display.move-react-under-fire,
-input[type=radio].move-strike:checked + article.move-display.move-strike,
-input[type=radio].move-clash:checked + article.move-display.move-clash,
-input[type=radio].move-face-defeat:checked + article.move-display.move-face-defeat,
-input[type=radio].move-take-decisive-action:checked + article.move-display.move-take-decisive-action,
-input[type=radio].move-battle:checked + article.move-display.move-battle,
-input[type=radio].move-lose-momentum:checked + article.move-display.move-lose-momentum,
-input[type=radio].move-endure-harm:checked + article.move-display.move-endure-harm,
-input[type=radio].move-endure-stress:checked + article.move-display.move-endure-stress,
-input[type=radio].move-withstand-damage:checked + article.move-display.move-withstand-damage,
-input[type=radio].move-companion-takes-a-hit:checked + article.move-display.move-companion-takes-a-hit,
-input[type=radio].move-sacrifice-resources:checked + article.move-display.move-sacrifice-resources,
-input[type=radio].move-face-death:checked + article.move-display.move-face-death,
-input[type=radio].move-face-desolation:checked + article.move-display.move-face-desolation,
-input[type=radio].move-overcome-destruction:checked + article.move-display.move-overcome-destruction,
-input[type=radio].move-sojourn:checked + article.move-display.move-sojourn,
-input[type=radio].move-heal:checked + article.move-display.move-heal,
-input[type=radio].move-hearten:checked + article.move-display.move-hearten,
-input[type=radio].move-repair:checked + article.move-display.move-repair,
-input[type=radio].move-resupply:checked + article.move-display.move-resupply,
-input[type=radio].move-earn-experience:checked + article.move-display.move-earn-experience,
-input[type=radio].move-advance:checked + article.move-display.move-advance,
-input[type=radio].move-continue-a-legacy:checked + article.move-display.move-continue-a-legacy,
-input[type=radio].move-pay-the-price:checked + article.move-display.move-pay-the-price,
-input[type=radio].move-ask-the-oracle:checked + article.move-display.move-ask-the-oracle
-  showHide()
+// input[type=radio].move-begin-a-session:checked + article.gamerules.move-begin-a-session,
+// input[type=radio].move-set-a-flag:checked + article.gamerules.move-set-a-flag,
+// input[type=radio].move-change-your-fate:checked + article.gamerules.move-change-your-fate,
+// input[type=radio].move-take-a-break:checked + article.gamerules.move-take-a-break,
+// input[type=radio].move-end-a-session:checked + article.gamerules.move-end-a-session,
+// input[type=radio].move-face-danger:checked + article.gamerules.move-face-danger,
+// input[type=radio].move-secure-an-advantage:checked + article.gamerules.move-secure-an-advantage,
+// input[type=radio].move-gather-information:checked + article.gamerules.move-gather-information,
+// input[type=radio].move-compel:checked + article.gamerules.move-compel,
+// input[type=radio].move-aid-your-ally:checked + article.gamerules.move-aid-your-ally,
+// input[type=radio].move-check-your-gear:checked + article.gamerules.move-check-your-gear,
+// input[type=radio].move-swear-an-iron-vow:checked + article.gamerules.move-swear-an-iron-vow,
+// input[type=radio].move-reach-a-milestone:checked + article.gamerules.move-reach-a-milestone,
+// input[type=radio].move-forsake-your-vow:checked + article.gamerules.move-forsake-your-vow,
+// input[type=radio].move-fulfill-your-vow:checked + article.gamerules.move-fulfill-your-vow,
+// input[type=radio].move-make-a-connection:checked + article.gamerules.move-make-a-connection,
+// input[type=radio].move-develop-your-relationship:checked + article.gamerules.move-develop-your-relationship,
+// input[type=radio].move-forge-a-bond:checked + article.gamerules.move-forge-a-bond,
+// input[type=radio].move-test-your-relationship:checked + article.gamerules.move-test-your-relationship,
+// input[type=radio].move-undertake-an-expedition:checked + article.gamerules.move-undertake-an-expedition,
+// input[type=radio].move-explore-a-waypoint:checked + article.gamerules.move-explore-a-waypoint,
+// input[type=radio].move-finish-an-expedition:checked + article.gamerules.move-finish-an-expedition,
+// input[type=radio].move-set-a-course:checked + article.gamerules.move-set-a-course,
+// input[type=radio].move-make-a-discovery:checked + article.gamerules.move-make-a-discovery,
+// input[type=radio].move-confront-chaos:checked + article.gamerules.move-confront-chaos,
+// input[type=radio].move-enter-the-fray:checked + article.gamerules.move-enter-the-fray,
+// input[type=radio].move-gain-ground:checked + article.gamerules.move-gain-ground,
+// input[type=radio].move-react-under-fire:checked + article.gamerules.move-react-under-fire,
+// input[type=radio].move-strike:checked + article.gamerules.move-strike,
+// input[type=radio].move-clash:checked + article.gamerules.move-clash,
+// input[type=radio].move-face-defeat:checked + article.gamerules.move-face-defeat,
+// input[type=radio].move-take-decisive-action:checked + article.gamerules.move-take-decisive-action,
+// input[type=radio].move-battle:checked + article.gamerules.move-battle,
+// input[type=radio].move-lose-momentum:checked + article.gamerules.move-lose-momentum,
+// input[type=radio].move-endure-harm:checked + article.gamerules.move-endure-harm,
+// input[type=radio].move-endure-stress:checked + article.gamerules.move-endure-stress,
+// input[type=radio].move-withstand-damage:checked + article.gamerules.move-withstand-damage,
+// input[type=radio].move-companion-takes-a-hit:checked + article.gamerules.move-companion-takes-a-hit,
+// input[type=radio].move-sacrifice-resources:checked + article.gamerules.move-sacrifice-resources,
+// input[type=radio].move-face-death:checked + article.gamerules.move-face-death,
+// input[type=radio].move-face-desolation:checked + article.gamerules.move-face-desolation,
+// input[type=radio].move-overcome-destruction:checked + article.gamerules.move-overcome-destruction,
+// input[type=radio].move-sojourn:checked + article.gamerules.move-sojourn,
+// input[type=radio].move-heal:checked + article.gamerules.move-heal,
+// input[type=radio].move-hearten:checked + article.gamerules.move-hearten,
+// input[type=radio].move-repair:checked + article.gamerules.move-repair,
+// input[type=radio].move-resupply:checked + article.gamerules.move-resupply,
+// input[type=radio].move-earn-experience:checked + article.gamerules.move-earn-experience,
+// input[type=radio].move-advance:checked + article.gamerules.move-advance,
+// input[type=radio].move-continue-a-legacy:checked + article.gamerules.move-continue-a-legacy,
+// input[type=radio].move-pay-the-price:checked + article.gamerules.move-pay-the-price,
+// input[type=radio].move-ask-the-oracle:checked + article.gamerules.move-ask-the-oracle
+//   switchDisplayOn()
 
 .move-nav-child
   display flex
@@ -321,7 +232,7 @@ input[type=radio].move-ask-the-oracle:checked + article.move-display.move-ask-th
   padding 0px 5px 0px 5px
   display flex
   height auto
-  border-bottom 2px solid $fg-color
+  border-bottom 2px solid $color-fg
 
 .embedded-btn
   padding-top 0.2em !important

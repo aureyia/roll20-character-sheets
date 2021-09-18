@@ -1,6 +1,15 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:i,400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Encode+Sans+Semi+Expanded:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+.ui-dialog h1,
+.ui-dialog h2,
+.ui-dialog h3,
+.ui-dialog h4,
+.ui-dialog h5,
+.ui-dialog h6,
+.ui-dialog label {
+  color: unset;
+}
 .ui-dialog .no-touch .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol {
   background-color: unset;
 }
@@ -30,6 +39,28 @@
 .ui-dialog .charmancer.locked span label {
   pointer-events: unset;
 }
+.ui-dialog .charsheet {
+  padding: unset;
+}
+.ui-dialog .charsheet p,
+.ui-dialog .charsheet ul,
+.ui-dialog .charsheet ol,
+.ui-dialog .charsheet button,
+.ui-dialog .charsheet span,
+.ui-dialog .charsheet input,
+.ui-dialog .charsheet textarea {
+  font-family: unset;
+  font-size: unset;
+}
+.ui-dialog .charsheet p.pictos,
+.ui-dialog .charsheet ul.pictos,
+.ui-dialog .charsheet ol.pictos,
+.ui-dialog .charsheet button.pictos,
+.ui-dialog .charsheet span.pictos,
+.ui-dialog .charsheet input.pictos,
+.ui-dialog .charsheet textarea.pictos {
+  font-family: "Pictos";
+}
 .ui-dialog .charsheet .btn,
 .ui-dialog .charsheet .btn.btn-default {
   display: unset;
@@ -42,11 +73,6 @@
   text-shadow: unset;
   vertical-align: unset;
   background-color: unset;
-  background-image: unset;
-  background-image: unset;
-  background-image: unset;
-  background-image: unset;
-  background-image: unset;
   background-image: unset;
   background-repeat: unset;
   filter: unset;
@@ -65,123 +91,75 @@
   filter: unset;
   margin-left: unset;
 }
-.ui-dialog .charsheet .btn .charsheet,
-.ui-dialog .charsheet .btn.btn-default .charsheet {
-  padding: unset;
-}
-.ui-dialog .charsheet .btn .charsheet input,
-.ui-dialog .charsheet .btn.btn-default .charsheet input {
+.ui-dialog .charsheet input {
   height: unset;
   vertical-align: unset;
   -webkit-box-sizing: unset;
   -moz-box-sizing: unset;
   box-sizing: unset;
 }
-.ui-dialog .charsheet .btn .charsheet hr,
-.ui-dialog .charsheet .btn.btn-default .charsheet hr {
+.ui-dialog .charsheet hr {
   clear: unset;
 }
-.ui-dialog .charsheet .btn .charsheet input[type=number],
-.ui-dialog .charsheet .btn.btn-default .charsheet input[type=number] {
+.ui-dialog .charsheet input[type=number] {
   width: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .sheet-row,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-row,
-.ui-dialog .charsheet .btn .charsheet .sheet-2colrow,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-2colrow,
-.ui-dialog .charsheet .btn .charsheet .sheet-3colrow,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-3colrow {
+.ui-dialog .charsheet .sheet-row,
+.ui-dialog .charsheet .sheet-2colrow,
+.ui-dialog .charsheet .sheet-3colrow {
   display: unset;
   clear: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .sheet-col,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-col {
+.ui-dialog .charsheet .sheet-col {
   display: unset;
   vertical-align: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .sheet-col img,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-col img {
+.ui-dialog .charsheet .sheet-col img {
   max-width: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .sheet-2colrow .sheet-col,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-2colrow .sheet-col {
+.ui-dialog .charsheet .sheet-2colrow .sheet-col {
   width: unset;
   margin-right: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .sheet-3colrow .sheet-col,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-3colrow .sheet-col {
+.ui-dialog .charsheet .sheet-3colrow .sheet-col {
   width: unset;
   margin-right: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .sheet-col:last-child,
-.ui-dialog .charsheet .btn.btn-default .charsheet .sheet-col:last-child {
+.ui-dialog .charsheet .sheet-col:last-child {
   margin-right: unset;
 }
-.ui-dialog .charsheet .btn .charsheet button,
-.ui-dialog .charsheet .btn.btn-default .charsheet button {
+.ui-dialog .charsheet button {
   background: none;
   text-shadow: unset;
 }
-.ui-dialog .charsheet .btn .charsheet button[type=roll],
-.ui-dialog .charsheet .btn.btn-default .charsheet button[type=roll],
-.ui-dialog .charsheet .btn .charsheet button[type=compendium],
-.ui-dialog .charsheet .btn.btn-default .charsheet button[type=compendium] {
+.ui-dialog .charsheet button[type=roll],
+.ui-dialog .charsheet button[type=compendium] {
   padding: 0;
   margin: 0;
   font-size: unset;
 }
-.ui-dialog .charsheet .btn .charsheet button[type=roll]:before,
-.ui-dialog .charsheet .btn.btn-default .charsheet button[type=roll]:before {
+.ui-dialog .charsheet button[type=roll]:before {
   font-family: unset;
   content: unset;
 }
-.ui-dialog .charsheet .btn .charsheet button[type=compendium]:before,
-.ui-dialog .charsheet .btn.btn-default .charsheet button[type=compendium]:before {
+.ui-dialog .charsheet button[type=compendium]:before {
   font-family: unset;
   content: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .repcontrol_edit,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repcontrol_edit {
-  float: unset;
-}
-.ui-dialog .charsheet .btn .charsheet .repcontainer .repitem,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repcontainer .repitem {
-  position: unset;
-  -webkit-box-sizing: unset;
-  -moz-box-sizing: unset;
-  box-sizing: unset;
-}
-.ui-dialog .charsheet .btn .charsheet .repcontainer .repitem .itemcontrol,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repcontainer .repitem .itemcontrol {
-  display: unset;
-  position: unset;
+.ui-dialog .repcontainer .repitem .itemcontrol {
   width: unset;
   height: unset;
-  background-color: unset;
 }
-.ui-dialog .charsheet .btn .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
-  float: unset;
-}
-.ui-dialog .charsheet .btn .charsheet .repcontainer .repitem .itemcontrol .repcontrol_move,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repcontainer .repitem .itemcontrol .repcontrol_move {
-  cursor: unset;
-}
-.ui-dialog .charsheet .btn .charsheet .repitem.repitembroken,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repitem.repitembroken {
+.ui-dialog .repitem.repitembroken {
   border: unset;
-}
-.ui-dialog .charsheet .btn .charsheet .repcontainer.editmode .repitem .itemcontrol,
-.ui-dialog .charsheet .btn.btn-default .charsheet .repcontainer.editmode .repitem .itemcontrol {
-  display: unset;
 }
 .ui-dialog div.charsheet.charactersheet {
   width: 842px !important;
   margin: 0 auto !important;
   padding: 15px;
-  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
   font-weight: normal;
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
 /* Fake radio/checkbox */
 /* Remove dot from all radios _after_ selected one */
 }
@@ -202,25 +180,30 @@
 }
 .ui-dialog div.charsheet.charactersheet li {
   list-style-type: none;
-  margin-left: 1.5rem;
+  margin-left: 1.5em;
 }
 .ui-dialog div.charsheet.charactersheet li:before {
   content: '';
   display: inline-block;
-  height: 1rem;
-  width: 1rem;
-  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  height: 0.75em;
+  width: 0.75em;
+  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
   -webkit-mask-size: contain;
   -webkitmask-repeat: no-repeat;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   background-color: currentColor;
-  margin-right: 0.25rem;
-  margin-left: -1.25rem;
+  margin-right: 0.25em;
+  margin-left: -1em;
 }
 .ui-dialog div.charsheet.charactersheet p {
   margin: 0;
+}
+.ui-dialog div.charsheet.charactersheet p,
+.ui-dialog div.charsheet.charactersheet li,
+.ui-dialog div.charsheet.charactersheet td {
+  line-height: 1.4;
 }
 .ui-dialog div.charsheet.charactersheet input[type=text] {
   font-weight: 600;
@@ -238,102 +221,6 @@
 }
 .ui-dialog div.charsheet.charactersheet select:-ms-expand {
   display: none;
-}
-.ui-dialog div.charsheet.charactersheet h1 {
-  font-weight: bold;
-  width: 100%;
-  font-size: 28px;
-  text-align: center;
-  margin: 0 0 0px;
-  padding: 10;
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet h2 {
-  font-weight: bold;
-  width: 100%;
-  font-size: 18px;
-  text-align: left;
-  margin: 0 0 0px;
-  padding: 0;
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet h3 {
-  font-weight: bold;
-  width: 100%;
-  line-height: 1.4em;
-  font-size: 1.2em;
-  text-align: center;
-  margin: 0 0 0px;
-  padding: 0;
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet h3.divide:after,
-.ui-dialog div.charsheet.charactersheet h3.divide:before {
-  display: inline-block;
-  content: "";
-  height: 5px;
-  border-top: 2px solid #221e1f;
-  top: 0;
-  width: 220px;
-}
-.ui-dialog div.charsheet.charactersheet h3.site-divide:after,
-.ui-dialog div.charsheet.charactersheet h3.site-divide:before {
-  display: inline-block;
-  content: "";
-  height: 5px;
-  border-top: 2px solid #221e1f;
-  top: 0;
-  width: 331px;
-}
-.ui-dialog div.charsheet.charactersheet h3.site-denizens-divide:after,
-.ui-dialog div.charsheet.charactersheet h3.site-denizens-divide:before {
-  display: inline-block;
-  content: "";
-  height: 5px;
-  border-top: 2px solid #221e1f;
-  top: 0;
-  width: 336px;
-}
-.ui-dialog div.charsheet.charactersheet h3.site-divide-notes:after,
-.ui-dialog div.charsheet.charactersheet h3.site-divide-notes:before {
-  display: inline-block;
-  content: "";
-  height: 5px;
-  border-top: 2px solid #221e1f;
-  top: 0;
-  width: 352px;
-}
-.ui-dialog div.charsheet.charactersheet .divide {
-  margin-top: 1em;
-}
-.ui-dialog div.charsheet.charactersheet h4 {
-  font-weight: bold;
-  width: 100%;
-  font-size: 16px;
-  text-align: center;
-  margin: 0 0 0px;
-  padding: 0;
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet h4.tab-title {
-  display: inline-block;
-}
-.ui-dialog div.charsheet.charactersheet h5 {
-  font-weight: bold;
-  font-size: 12px;
-  text-align: left;
-  margin: 0 0 0px;
-  padding: 0;
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet h6 {
-  font-size: 14px;
-  font-weight: bold;
-  text-align: left;
-  margin-top: 2px;
-}
-.ui-dialog div.charsheet.charactersheet .heading-left {
-  text-align: left;
 }
 .ui-dialog div.charsheet.charactersheet hr {
   border: 0;
@@ -416,64 +303,12 @@
   width: 95%;
   resize: vertical;
 }
-.ui-dialog div.charsheet.charactersheet input.filler[type="radio"],
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].checkbox {
-  opacity: 0;
-  width: 16px;
-  height: 16px;
-  position: relative;
-  top: 5px;
-  left: 6px;
-  margin: -10px;
-  cursor: pointer;
-  z-index: 1;
-}
-.ui-dialog div.charsheet.charactersheet input[type="radio"] + span:before,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].checkbox + span:before {
-  margin-right: 4px;
-  border: solid 1px #a8a8a8;
-  line-height: 14px;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  -moz-box-shadow: 0 0 2px #b8c2cd;
-  -webkit-box-shadow: 0 0 2px #b8c2cd;
-  box-shadow: 0 0 2px #b8c2cd;
-  background: #f6f6f6;
-  background: -moz-radial-gradient(#f6f6f6, #dfdfdf);
-  background: -webkit-radial-gradient(#f6f6f6, #dfdfdf);
-  background: -ms-radial-gradient(#f6f6f6, #dfdfdf);
-  background: -o-radial-gradient(#f6f6f6, #dfdfdf);
-  background: radial-gradient(#f6f6f6, #dfdfdf);
-}
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].checkbox + span:before,
-.ui-dialog div.charsheet.charactersheet input.filler[type="radio"] + span:before {
-  content: "";
-  width: 14px;
-  height: 14px;
-  font-size: 12px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].checkbox:checked + span:before {
-  content: "■";
-}
-.ui-dialog div.charsheet.charactersheet input.zeroxp[type="radio"] + span:before {
-  content: "0" !important;
-}
-.ui-dialog div.charsheet.charactersheet input.filler[type="radio"] + span:before {
-  content: "■";
-}
-.ui-dialog div.charsheet.charactersheet input.filler[type="radio"]:checked ~ input.filler[type="radio"] + span:before {
-  content: "";
-}
-.ui-dialog div.charsheet.charactersheet span.showhide:checked {
+.ui-dialog div.charsheet.charactersheet span.switchable-display:checked {
   background-color: #221e1f;
   color: #fff;
   transition: 0.5s ease;
 }
-.ui-dialog div.charsheet.charactersheet span.showhide {
+.ui-dialog div.charsheet.charactersheet span.switchable-display {
   display: inline;
   border: 1px solid #b8c2cd;
   margin-right: 11px;
@@ -482,7 +317,7 @@
   font-weight: bold;
   font-size: 14px;
 }
-.ui-dialog div.charsheet.charactersheet span.showhide:hover {
+.ui-dialog div.charsheet.charactersheet span.switchable-display:hover {
   cursor: pointer;
   border-radius: 4px;
   padding: 2px 4px;
@@ -490,66 +325,77 @@
   color: #221e1f;
   transition: 0.5s ease;
 }
-.showhide {
-  visibility: hidden;
-  transition: opacity 1s ease-out;
+.ui-dialog div.charsheet.charactersheet input.switch-vis {
+  display: none;
+}
+.ui-dialog div.charsheet.charactersheet input.switch-vis + .switchable-vis {
+  visibility: collapse;
+  transition: visibility, opacity 0.2s ease;
   opacity: 0;
   height: 0;
-  border: none !important;
   overflow: hidden;
 }
-.hide-element {
+.ui-dialog div.charsheet.charactersheet input.switch-vis:checked + .switchable-vis {
+  visibility: visible;
+  opacity: 100%;
+  height: auto;
+  overflow: unset;
+}
+.ui-dialog div.charsheet.charactersheet input.switch-display {
   display: none;
 }
-input[type='checkbox'].hide-element,
-input[type='radio'].hide-element {
+.ui-dialog div.charsheet.charactersheet input.switch-display + .switchable-display {
   display: none;
 }
-div.hide-element {
-  display: none;
+.ui-dialog div.charsheet.charactersheet input.switch-display:checked + .switchable-display {
+  display: block;
 }
-div.preview-roll {
+.ui-dialog div.charsheet.charactersheet div.preview-roll {
   padding: 0em;
 }
-input.showhide:checked + .showhide {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
-}
-span.preview-roll {
+.ui-dialog div.charsheet.charactersheet span.preview-roll {
   width: 30%;
   margin-left: 1em;
 }
-.button-container-preview {
+.ui-dialog div.charsheet.charactersheet .button-container-preview {
   width: 2.4em;
 }
-.no-border {
+.ui-dialog div.charsheet.charactersheet .no-border {
   border: 0;
 }
-.requirement-area {
+.ui-dialog div.charsheet.charactersheet .requirement-area {
   height: auto;
   margin-bottom: 5px;
 }
-input.border-bottom {
+.ui-dialog div.charsheet.charactersheet input.border-bottom {
   border-bottom: 1px solid #221e1f;
   border-radius: 0em;
 }
-.full-width {
+.ui-dialog div.charsheet.charactersheet .full-width {
   width: 100%;
   margin-top: 0.3em;
 }
-.note-area {
+.ui-dialog div.charsheet.charactersheet .note-area {
   border-radius: 1em;
 }
-h3,
-h2,
-.oracle-title,
-.move-title {
+.ui-dialog div.charsheet.charactersheet h3,
+.ui-dialog div.charsheet.charactersheet h2 {
   letter-spacing: 0.05rem;
 }
-u {
+.ui-dialog div.charsheet.charactersheet u {
   text-decoration: underline 1pt solid currentColor;
+}
+.ui-dialog div.charsheet.charactersheet .hex-icon {
+  object-fit: contain;
+}
+.ui-dialog div.charsheet.charactersheet .hex-icon.vector {
+  width: 64px;
+  height: 73.90083445627211px;
+}
+.ui-dialog div.charsheet.charactersheet .hex-icon.raster {
+  width: 64px;
+  height: 73.90083445627211px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
 .ui-dialog div.charsheet.charactersheet .changelog {
   border: 2px solid #221e1f;
@@ -620,13 +466,6 @@ u {
 .ui-dialog div.charsheet.charactersheet .mode-image {
   display: flex;
 }
-.ui-dialog div.charsheet.charactersheet .page-container input.hide-element:checked + .showhide {
-  display: block;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
-}
 .ui-dialog div.charsheet.charactersheet .sub-header {
   margin-top: 1em;
   border-bottom: 3px solid #221e1f;
@@ -695,6 +534,419 @@ u {
 }
 .ui-dialog div.charsheet.charactersheet .ship-btn {
   margin: 0;
+}
+.ui-dialog div.charsheet.charactersheet .overview {
+  columns: 3;
+  column-gap: 1em;
+}
+.ui-dialog div.charsheet.charactersheet .close-preview {
+  text-transform: uppercase;
+  width: auto;
+  height: auto;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0.2em;
+  border: 2px solid #221e1f;
+  cursor: pointer;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.ui-dialog div.charsheet.charactersheet .close-preview:hover {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet .close-preview.icon-only:before {
+  font-family: "Pictos";
+  content: "*";
+  display: block;
+  height: inherit;
+  width: inherit;
+  background: transparent;
+  pointer-events: none;
+}
+.ui-dialog div.charsheet.charactersheet .preview {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+}
+.ui-dialog div.charsheet.charactersheet .preview .close-preview {
+  grid-row: 1;
+}
+.ui-dialog div.charsheet.charactersheet .preview .preview-sidebar {
+  display: block;
+  overflow: auto;
+  border: 2px solid #221e1f;
+  padding: 1em;
+  overflow: auto;
+  padding: 0;
+  height: 50em;
+  grid-column: 1;
+}
+.ui-dialog div.charsheet.charactersheet .preview .preview-sidebar section {
+  border-radius: 0;
+  margin: 0;
+  border-bottom: none;
+}
+.ui-dialog div.charsheet.charactersheet .preview .preview-main {
+  border-radius: 1em;
+  padding: 0;
+  border: 2px solid #221e1f;
+  height: max-content;
+  width: stretch;
+  width: -moz-available;
+  overflow: clip;
+}
+.ui-dialog div.charsheet.charactersheet input.preview.switch-display,
+.ui-dialog div.charsheet.charactersheet input.overview.switch-display {
+  display: none;
+}
+.ui-dialog div.charsheet.charactersheet input.preview.switch-display:checked + .preview.switchable-display {
+  display: block;
+}
+.ui-dialog div.charsheet.charactersheet input.overview.switch-display:checked + .overview.switchable-display {
+  display: block;
+}
+.ui-dialog div.charsheet.charactersheet .list-group {
+  border: 2px solid #221e1f;
+  border-width: 4px;
+  background-color: #221e1f;
+  margin: 0em;
+  margin-bottom: 1em;
+  height: fit-content;
+  height: -moz-fit-content;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.ui-dialog div.charsheet.charactersheet .list-group .list-group-title {
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 0 5px 3px;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: stretch;
+  width: -moz-available;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul {
+  display: grid;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto;
+  overflow: hidden;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item {
+  height: min-content;
+  list-style-type: none;
+  margin: 0px;
+  background: none;
+  display: flex;
+  gap: 4px;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item:before {
+  all: initial;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item > * {
+  background-color: #fff;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item:nth-child(2n) > * {
+  background-color: #dde1e7;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item label.toggle-btn {
+  width: stretch;
+  width: -moz-available;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item label.toggle-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item button.icon-only,
+.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item button.placeholder-button {
+  height: 1.75em;
+  width: 1.75em;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: 0;
+  margin: 0;
+}
+.ui-dialog div.charsheet.charactersheet .static-btn {
+  border: 2px solid #221e1f;
+  border-radius: 0;
+  display: flex;
+  width: auto;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+  background: #fff;
+  letter-spacing: 0.1ch;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.ui-dialog div.charsheet.charactersheet .static-btn:hover {
+  background-color: #b8c2cd !important;
+  color: #221e1f !important;
+}
+.ui-dialog div.charsheet.charactersheet .static-btn .btn-content,
+.ui-dialog div.charsheet.charactersheet .static-btn span {
+  padding: 0.2em 0.2em 0.2em 0.2em;
+  width: 100%;
+  text-align: center;
+}
+.ui-dialog div.charsheet.charactersheet .toggle-btn {
+  border: 2px solid #221e1f;
+  border-radius: 0;
+  display: flex;
+  width: auto;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+  background: #fff;
+  letter-spacing: 0.1ch;
+  letter-spacing: 0.0125ch;
+  cursor: pointer;
+  transition: 0.5s ease;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+.ui-dialog div.charsheet.charactersheet .toggle-btn:hover {
+  background-color: #b8c2cd !important;
+  color: #221e1f !important;
+}
+.ui-dialog div.charsheet.charactersheet .toggle-btn span {
+  padding: 4px 2px;
+}
+.ui-dialog div.charsheet.charactersheet .btn-input:checked ~ .btn-content {
+  background: #221e1f;
+  color: #fff;
+}
+.ui-dialog div.charsheet.charactersheet button,
+.ui-dialog div.charsheet.charactersheet .btn {
+  color: currentColor;
+  text-shadow: none;
+  background: #fff;
+  font-family: "Exo", Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.05ch;
+  font-size: 1.125em;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.ui-dialog div.charsheet.charactersheet button[type="roll"]:before,
+.ui-dialog div.charsheet.charactersheet .btn[type="roll"]:before {
+  content: none;
+  font-family: inherit;
+}
+.ui-dialog div.charsheet.charactersheet button[type="roll"].icon-only,
+.ui-dialog div.charsheet.charactersheet .btn[type="roll"].icon-only {
+  margin: 0;
+  padding: 0;
+  color: #221e1f;
+}
+.ui-dialog div.charsheet.charactersheet button[type="roll"].icon-only:before,
+.ui-dialog div.charsheet.charactersheet .btn[type="roll"].icon-only:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: unset;
+  line-height: unset;
+  background-color: currentColor;
+  background-origin: border-box;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
+  mask-size: 90%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-origin: content-box;
+  top: 0;
+  left: 0;
+  position: relative;
+  content: "";
+}
+.ui-dialog div.charsheet.charactersheet button:hover,
+.ui-dialog div.charsheet.charactersheet .btn:hover {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet button.placeholder-button,
+.ui-dialog div.charsheet.charactersheet .btn.placeholder-button {
+  opacity: 100% !important;
+  background-image: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+.ui-dialog div.charsheet.charactersheet .repcontrol button.btn {
+  width: auto;
+  height: auto;
+  border: 2px solid #221e1f;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: none;
+  text-transform: uppercase;
+  padding: 0.2em;
+  margin: 0.3em;
+  color: #221e1f;
+  background: #dfe0e2;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.ui-dialog div.charsheet.charactersheet .repcontrol button.btn:hover {
+  background-color: #b8c2cd !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet .repcontrol button.btn:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 1px;
+}
+.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_edit {
+  margin-right: 3px;
+}
+.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_add {
+  margin-left: 3px;
+}
+.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_del {
+  float: right;
+  width: auto;
+  margin: 0;
+  height: auto;
+}
+.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_move {
+  cursor: move;
+  width: auto;
+  margin: 0;
+  height: auto;
+}
+.ui-dialog div.charsheet.charactersheet input.switch-display:checked + article.gamerules.switchable-display {
+  display: grid;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules {
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
+  background: #221e1f;
+  color: #fff;
+  margin: 0;
+  border: 0;
+  display: grid;
+  align-items: center;
+  gap: 0 0.5em;
+  grid-template-areas: "title roll close" "body body body" "footer footer footer";
+  grid-template-columns: 1fr max-content max-content;
+  grid-template-rows: min-content min-content 1fr max-content;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules h3,
+.ui-dialog div.charsheet.charactersheet article.gamerules .close-preview.icon-only,
+.ui-dialog div.charsheet.charactersheet article.gamerules button.roll-show.icon-only {
+  line-height: 1;
+  font-size: 1.5em;
+  height: max-content;
+  width: max-content;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules h3 {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  font-weight: 700;
+  grid-area: title;
+  width: auto;
+  display: flex;
+  text-transform: uppercase;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin: 0.5em;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules .close-preview.icon-only {
+  display: flex;
+  justify-content: middle;
+  align-content: middle;
+  grid-area: close;
+  border: none;
+  background: none;
+  line-height: 1.1;
+  text-anchor: middle;
+  background-color: #ce242b;
+  width: 1.5em;
+  height: 1.732050807568877em;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  cursor: pointer;
+  transition: 0.5s ease;
+  margin-right: 0.25em;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules .close-preview.icon-only:hover {
+  background-color: #fff !important;
+  color: #ce242b !important;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules .close-preview.icon-only:before {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+  align-self: center;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules button.roll-show.icon-only {
+  background-color: #28aae1;
+  color: #fff;
+  width: 1.5em;
+  height: 1.732050807568877em;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.ui-dialog div.charsheet.charactersheet article.gamerules button.roll-show.icon-only:hover {
+  background-color: #fff !important;
+  color: #28aae1 !important;
+}
+.ui-dialog div.charsheet.charactersheet .gamerules-body {
+  margin: 2px 0px;
+  grid-area: body;
+  color: #221e1f;
+  background-color: #fff;
+  width: stretch;
+  width: -moz-available;
+  padding: 1em;
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+.ui-dialog div.charsheet.charactersheet .gamerules-body ul {
+  margin: 2px 0px 5px 0.3em;
+}
+.ui-dialog div.charsheet.charactersheet .gamerules-body p {
+  margin-bottom: 0.3em;
+}
+.ui-dialog div.charsheet.charactersheet .gamerules-body .roll-label.embedded-btn {
+  border-width: 4px 4px 0px;
+  font-size: 1em;
+}
+.ui-dialog div.charsheet.charactersheet footer {
+  grid-area: footer;
+  padding: 0.5rem;
+  line-height: 0.9em;
+  font-size: 0.9em;
+  text-align: right;
 }
 .ui-dialog div.charsheet.charactersheet .resources {
   display: grid;
@@ -999,7 +1251,7 @@ u {
   margin: 0 0 0px;
   padding: 0.1em 0.3em 0.3em 0.5em;
   text-transform: uppercase;
-  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
   display: inline;
   color: #221e1f;
   border-radius: 0;
@@ -1027,12 +1279,8 @@ u {
   padding: 2px 4px;
 }
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].show-connection-info:checked ~ div.show-connection-info {
-  display: flex;
   flex-flow: row wrap;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+  display: flex;
 }
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].show-connection-info:checked ~ span.show-connection-info {
   border-radius: 0;
@@ -1181,10 +1429,7 @@ u {
   line-height: 25px;
 }
 .ui-dialog div.charsheet.charactersheet input[type='checkbox'].challenge-show:checked ~ div.countdown-row {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.7s ease;
+  display: 0.7s;
 }
 .ui-dialog div.charsheet.charactersheet input[type='checkbox'].challenge-show-button:checked ~ div.challenge-show-back {
   background: #221e1f;
@@ -1548,18 +1793,12 @@ u {
   display: flex;
   width: auto;
   margin-left: 5em;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+  display: block;
 }
 .ui-dialog div.charsheet.charactersheet input[type=radio].stat-edit:checked ~ div.stat-edit {
   display: flex;
   width: auto;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+  display: block;
 }
 .ui-dialog div.charsheet.charactersheet div.stat-toggle.set-toggle {
   width: 100%;
@@ -1630,7 +1869,6 @@ u {
 }
 .ui-dialog div.charsheet.charactersheet .move-name {
   width: 100%;
-  border: 2px solid #221e1f;
 }
 .ui-dialog div.charsheet.charactersheet .move-highlight:checked ~ .move-name {
   background: #fd0;
@@ -1655,10 +1893,6 @@ u {
 .ui-dialog div.charsheet.charactersheet .preview {
   width: auto;
 }
-.ui-dialog div.charsheet.charactersheet .move-page-footer {
-  text-align: right !important;
-  padding-right: 1em;
-}
 .ui-dialog div.charsheet.charactersheet .move-show {
   display: inline-flex;
   font-size: 1em;
@@ -1679,144 +1913,24 @@ u {
 .ui-dialog div.charsheet.charactersheet .move-delve-table {
   width: auto !important;
 }
-.ui-dialog div.charsheet.charactersheet article.move-display {
-  display: flex;
-  flex-flow: column;
-  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
-  border-radius: 1em;
-  border: 2px solid #221e1f;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display h3.move-title {
-  width: auto;
-  display: flex;
-  align-self: left;
-  background-color: #221e1f;
-  color: #fff;
-  border-bottom: 1px solid #221e1f;
-  font-size: 1.4em;
-  font-weight: bold;
-  padding: 0.2em 0.5em 0.1em 0.7em;
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display h3.move-title .move-progress-label {
+.ui-dialog div.charsheet.charactersheet article.gamerules .move-progress-label {
+  color: #b8c2cd;
   display: block;
   font-family: 'Encode Sans Condensed', Arial, sans-serif;
-  font-size: 80%;
+  font-size: 75%;
   font-weight: normal;
   text-transform: none;
   font-style: italic;
-  margin-left: 1.5rem;
+  align-self: end;
+  margin-left: 1em;
 }
-.ui-dialog div.charsheet.charactersheet article.move-display h3.move-title .move-progress-label:before {
-  content: '';
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
-  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
-  -webkit-mask-size: contain;
-  -webkitmask-repeat: no-repeat;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  background-color: currentColor;
-  margin-right: 0.25rem;
-  margin-left: -1.25rem;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display button.button-text {
-  border-radius: 0;
-  border-style: solid;
-  border-color: #221e1f;
-  border-width: 0px 2px;
-  width: stretch;
-  width: -moz-available;
-  height: max-content;
-  padding: 4px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display button.button-text span {
-  margin-left: 31.5px;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display button.button-text span:before {
-  content: '';
-  display: inline-block;
-  height: 21px;
-  width: 21px;
-  -webkit-mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
-  -webkit-mask-size: contain;
-  -webkitmask-repeat: no-repeat;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  background-color: currentColor;
-  margin-right: 5.25px;
-  margin-left: -26.25px;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display button.button-text span:before {
-  margin-bottom: -5px;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body {
-  border: 2px solid #221e1f;
-  padding: 1em;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body ul {
-  margin: 2px 0px 5px 1rem;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body p,
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body li,
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body td {
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body .oracle-embedded .roll-label.embedded-btn {
-  border-width: 4px 4px 0px;
-  font-size: 1em;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body .oracle-embedded table.oracle-table {
-  margin-top: 0px;
-  border-width: 4px;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body p,
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body li {
-  line-height: 1.4;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body p {
-  margin-bottom: 0.3em;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body table {
-  border: 2px solid #221e1f;
-  width: stretch;
-  width: -moz-available;
-  margin: 0.8em 0em;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body table thead {
-  padding: 0.3em;
-  background-color: #221e1f;
-  color: #fff;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body table thead th {
-  padding-left: 0.4em;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-body table tbody td {
-  padding-left: 0.4em;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-table {
+.ui-dialog div.charsheet.charactersheet article.gamerules .move-table {
   border: none;
   width: 30.5em;
   font-size: 12px;
 }
-.ui-dialog div.charsheet.charactersheet article.move-display .move-roll {
+.ui-dialog div.charsheet.charactersheet article.gamerules .move-roll {
   width: 18%;
-}
-.ui-dialog div.charsheet.charactersheet article.move-display .move-footer {
-  background-color: #221e1f;
-  color: #fff;
-  line-height: 0.9em;
-  font-size: 0.9em;
-  font-variant: small-caps;
-  font-weight: bold;
-  text-align: left;
-  padding: 0.5rem;
 }
 .ui-dialog div.charsheet.charactersheet .clear-search {
   width: fit-content;
@@ -1841,70 +1955,6 @@ u {
 .ui-dialog div.charsheet.charactersheet .selected-move:checked ~ .move-name {
   background: #221e1f !important;
   color: #fff !important;
-}
-.ui-dialog div.charsheet.charactersheet input.preview:checked + div.preview,
-.ui-dialog div.charsheet.charactersheet input.full-move-list:checked + div.full-move-list {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
-}
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-begin-a-session:checked + article.move-display.move-begin-a-session,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-set-a-flag:checked + article.move-display.move-set-a-flag,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-change-your-fate:checked + article.move-display.move-change-your-fate,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-take-a-break:checked + article.move-display.move-take-a-break,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-end-a-session:checked + article.move-display.move-end-a-session,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-face-danger:checked + article.move-display.move-face-danger,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-secure-an-advantage:checked + article.move-display.move-secure-an-advantage,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-gather-information:checked + article.move-display.move-gather-information,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-compel:checked + article.move-display.move-compel,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-aid-your-ally:checked + article.move-display.move-aid-your-ally,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-check-your-gear:checked + article.move-display.move-check-your-gear,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-swear-an-iron-vow:checked + article.move-display.move-swear-an-iron-vow,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-reach-a-milestone:checked + article.move-display.move-reach-a-milestone,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-forsake-your-vow:checked + article.move-display.move-forsake-your-vow,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-fulfill-your-vow:checked + article.move-display.move-fulfill-your-vow,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-make-a-connection:checked + article.move-display.move-make-a-connection,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-develop-your-relationship:checked + article.move-display.move-develop-your-relationship,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-forge-a-bond:checked + article.move-display.move-forge-a-bond,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-test-your-relationship:checked + article.move-display.move-test-your-relationship,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-undertake-an-expedition:checked + article.move-display.move-undertake-an-expedition,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-explore-a-waypoint:checked + article.move-display.move-explore-a-waypoint,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-finish-an-expedition:checked + article.move-display.move-finish-an-expedition,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-set-a-course:checked + article.move-display.move-set-a-course,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-make-a-discovery:checked + article.move-display.move-make-a-discovery,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-confront-chaos:checked + article.move-display.move-confront-chaos,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-enter-the-fray:checked + article.move-display.move-enter-the-fray,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-gain-ground:checked + article.move-display.move-gain-ground,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-react-under-fire:checked + article.move-display.move-react-under-fire,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-strike:checked + article.move-display.move-strike,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-clash:checked + article.move-display.move-clash,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-face-defeat:checked + article.move-display.move-face-defeat,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-take-decisive-action:checked + article.move-display.move-take-decisive-action,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-battle:checked + article.move-display.move-battle,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-lose-momentum:checked + article.move-display.move-lose-momentum,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-endure-harm:checked + article.move-display.move-endure-harm,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-endure-stress:checked + article.move-display.move-endure-stress,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-withstand-damage:checked + article.move-display.move-withstand-damage,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-companion-takes-a-hit:checked + article.move-display.move-companion-takes-a-hit,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-sacrifice-resources:checked + article.move-display.move-sacrifice-resources,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-face-death:checked + article.move-display.move-face-death,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-face-desolation:checked + article.move-display.move-face-desolation,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-overcome-destruction:checked + article.move-display.move-overcome-destruction,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-sojourn:checked + article.move-display.move-sojourn,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-heal:checked + article.move-display.move-heal,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-hearten:checked + article.move-display.move-hearten,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-repair:checked + article.move-display.move-repair,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-resupply:checked + article.move-display.move-resupply,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-earn-experience:checked + article.move-display.move-earn-experience,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-advance:checked + article.move-display.move-advance,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-continue-a-legacy:checked + article.move-display.move-continue-a-legacy,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-pay-the-price:checked + article.move-display.move-pay-the-price,
-.ui-dialog div.charsheet.charactersheet input[type=radio].move-ask-the-oracle:checked + article.move-display.move-ask-the-oracle {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
 }
 .ui-dialog div.charsheet.charactersheet .move-nav-child {
   display: flex;
@@ -1965,26 +2015,25 @@ u {
 .ui-dialog div.charsheet.charactersheet input.optional-move-rarity:checked ~ div.optional-move-rarity {
   display: block;
 }
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].showhide:checked ~ .showhide {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
-}
-.ui-dialog div.charsheet.charactersheet select.path-dropdown option[value="alchemist"] ~ .alchemist {
+.ui-dialog div.charsheet.charactersheet .page-assets {
   display: flex;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+  flex-flow: column;
+  gap: 1em;
 }
-.ui-dialog div.charsheet.charactersheet input[type="radio"].asset-builder:checked + div.asset-builder,
-.ui-dialog div.charsheet.charactersheet input[type="radio"].asset-view:checked + div.asset-view {
+.ui-dialog div.charsheet.charactersheet .page-assets .repcontainer[data-groupname="repeating_assets"] {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1em;
+  justify-content: space-around;
+  align-content: start;
+}
+.ui-dialog div.charsheet.charactersheet .page-assets .repcontainer[data-groupname="repeating_assets"] .repitem {
+  width: max-content;
+  height: max-content;
+}
+.ui-dialog div.charsheet.charactersheet input[type="radio"].asset-builder:checked + .asset-builder,
+.ui-dialog div.charsheet.charactersheet input[type="radio"].asset-view:checked + .asset-view {
   display: block;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
 }
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-titles-1:checked ~ div.builder-titles-1,
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-titles-2:checked ~ div.builder-titles-2,
@@ -2002,10 +2051,6 @@ u {
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-5:checked ~ div.meter-dropdown-5,
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-6:checked ~ div.meter-dropdown-6 {
   display: flex;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
 }
 .ui-dialog div.charsheet.charactersheet div.builder-titles-1,
 .ui-dialog div.charsheet.charactersheet div.builder-titles-2,
@@ -2031,7 +2076,7 @@ u {
   opacity: 1;
   margin: 0px 5px 0 5px;
 }
-.ui-dialog div.charsheet.charactersheet .custom-track {
+.ui-dialog div.charsheet.charactersheet .custom-meter {
   width: 20.5em;
   margin: 0 !important;
 }
@@ -2044,20 +2089,8 @@ u {
   width: 22em;
   margin: 0em 0.5em 0em 0.4em;
 }
-.ui-dialog div.charsheet.charactersheet .ability-text {
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
-  font-size: 14.3px;
-  resize: none;
-  height: 100px;
-  margin-bottom: 0em;
-  width: 18em;
-}
 .ui-dialog div.charsheet.charactersheet .builder-dropdown {
   font-size: 14px;
-}
-.ui-dialog div.charsheet.charactersheet .asset-description {
-  margin: 0 12px 0px 12px;
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
 }
 .ui-dialog div.charsheet.charactersheet div.assets {
   display: block !important;
@@ -2067,32 +2100,31 @@ u {
   display: flex;
   flex-flow: row wrap;
   padding: 0.5em;
-  font-family: 'Encode Sans Condensed', Arial, sans-serif;
   justify-content: space-evenly;
 }
 .ui-dialog div.charsheet.charactersheet div.assets .repcontainer .repitem {
   float: left !important;
 }
-.ui-dialog div.charsheet.charactersheet .asset {
+.ui-dialog div.charsheet.charactersheet .asset-container {
   display: inline-block;
   width: 320px;
 }
-.ui-dialog div.charsheet.charactersheet .asset input {
+.ui-dialog div.charsheet.charactersheet .asset-container input {
   width: inherit;
 }
-.ui-dialog div.charsheet.charactersheet .asset input.border-bottom {
+.ui-dialog div.charsheet.charactersheet .asset-container input.border-bottom {
   border-bottom-color: #221e1f;
   padding: 0;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card {
+.ui-dialog div.charsheet.charactersheet article.asset-card {
+  font-size: 16px;
+  font-weight: 400;
   display: grid;
-  font-size: 12px;
   padding: 16px 16px;
   font-weight: 400;
-  letter-spacing: 0.025rem;
   box-sizing: border-box;
   width: 320px;
-  height: 448px !important;
+  height: 448px;
   border: 1.777777777777778px solid #b7c3ce;
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -2101,27 +2133,29 @@ u {
   grid-template-areas: "assetcategory icon" "name icon" "input icon" "description icon" "body body" "footer footer";
   grid-template-columns: 1fr 64px;
   grid-template-rows: max-content max-content max-content max-content 1fr max-content;
-  gap: 3.555555555555555px;
+  gap: 1.777777777777778px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-category,
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-name {
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-category,
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-name {
+  font-family: "Exo", Arial, sans-serif;
   text-transform: uppercase;
+  text-align: left;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-name {
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-name {
   grid-area: name;
   font-weight: 800;
   height: 16.444444444444443px;
   line-height: 16.444444444444443px;
   font-size: 21.583333333333332px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-category {
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-category {
   grid-area: assetcategory;
   font-weight: 600;
   height: 10.222222222222221px;
   line-height: 10.222222222222221px;
   font-size: 13.416666666666666px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-icon {
+.ui-dialog div.charsheet.charactersheet article.asset-card img.asset-icon {
   box-sizing: border-box;
   grid-area: icon;
   width: 64px;
@@ -2133,24 +2167,29 @@ u {
   margin-top: 0px;
   margin-top: -1.25px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-textinput {
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-textinput {
+  cursor: pointer;
   display: flex;
   grid-area: input;
   font-size: 12.483333333333333px;
   border-bottom: 1.777777777777778px solid #000;
   width: stretch;
   width: -moz-available;
+  padding: 0;
+  margin: 0;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-textinput span {
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-textinput span {
   align-self: end;
   color: #b7c3ce;
   height: min-content;
   width: max-content;
+  font-family: "Exo", Arial, sans-serif;
   text-transform: uppercase;
   line-height: 1;
   font-weight: 600;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-textinput input[type=text] {
+.ui-dialog div.charsheet.charactersheet article.asset-card .asset-textinput input[type=text] {
+  font-family: "Encode Sans Condensed", Arial, sans-serif;
   width: stretch;
   width: -moz-available;
   border: none;
@@ -2158,53 +2197,70 @@ u {
   font-weight: 500;
   background: transparent;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities *,
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-description * {
+  line-height: 1.25;
+  font-family: 'Encode Sans Condensed', Arial, sans-serif;
+  letter-spacing: 0.01ch;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities {
   grid-area: body;
   display: flex;
   flex-flow: column;
   gap: 3.555555555555555px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities .asset-ability {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability {
   display: flex;
   gap: 5.333333333333333px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities .asset-ability ul,
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities .asset-ability ul li {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability ul,
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability ul li {
   margin: 0;
   padding: 0;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities .asset-ability ul li {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability ul li {
   margin: 3.555555555555555px 0;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities .asset-ability input[type="checkbox"] {
-  border: none;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability input[type="checkbox"] {
   flex-shrink: 0;
   flex-grow: 0;
-  width: 14.08px;
-  height: 16.258183580379864px;
-  color: #000;
   align-self: start;
   -moz-appearance: none;
   appearance: none;
+  width: 14.08px;
+  height: 16.258183580379864px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  cursor: pointer;
+  border: none;
+  width: 14.08px;
+  height: 16.258183580379864px;
+  color: currentColor;
   background-color: transparent;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg");
-  transition: all ease 0.3s;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg");
   background-size: 100%;
-  mask-size: 100%;
   background-position: center;
-  mask-position: center;
+  transition: all ease 0.3s;
+  margin-top: 1.777777777777778px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-abilities .asset-ability input[type="checkbox"]:checked {
-  background-color: #000;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability input[type="checkbox"]:hover {
+  background-color: #b8c2cd;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-meter {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability input[type="checkbox"]:checked {
+  background-color: currentColor;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter {
   grid-area: footer;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
+  color: #b8c2cd;
+  transition: 0.5s ease;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-meter label.asset-meter-box {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box {
+  cursor: pointer;
+  transition: inherit;
   width: 32px;
   height: 36.950417228136054px;
   display: flex;
@@ -2216,40 +2272,58 @@ u {
   margin: 0;
   margin-right: -2.311111111111111px;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-meter label.asset-meter-box span {
-  color: #000;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box input[type="radio"] {
+  display: none;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-meter label.asset-meter-box input[type=radio] {
-  border: none;
-  -moz-appearance: none;
-  appearance: none;
-  color: #000;
-  background-color: transparent;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-meter-box.svg");
-  transition: all ease 0.3s;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg");
-  background-size: 100%;
-  mask-size: 100%;
-  background-position: center;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:first-child:hover {
+  color: #ce242b;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:first-child input[type="radio"]:checked + .asset-meter-box-display {
+  color: $fg-color;
+  background-color: #ce242b;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:last-child:hover {
+  color: #28aae1;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:last-child input[type="radio"]:checked + .asset-meter-box-display {
+  color: $fg-color;
+  background-color: #28aae1;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box .asset-meter-box-display {
+  transition: inherit;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg");
   mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-unchecked.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
   height: inherit;
   width: inherit;
-}
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-meter label.asset-meter-box input[type=radio]::after {
-  font-weight: 700;
-  display: block;
   text-align: center;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  font-size: 1.5em;
+  text-anchor: middle;
+  align-items: center;
+  justify-content: center;
+  color: #b8c2cd;
+  -webkit-text-stroke: 0px transparent;
 }
-.ui-dialog div.charsheet.charactersheet .asset-card .asset-meter label.asset-meter-box input[type=radio]:checked {
-  background-color: #000;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box .asset-meter-box-display:hover {
+  color: #221e1f;
+}
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box input[type="radio"]:checked + .asset-meter-box-display {
+  background-color: #221e1f;
   color: #fff;
+}
+.ui-dialog div.charsheet.charactersheet .asset-meter-wordy {
+  text-transform: uppercase;
+}
+.ui-dialog div.charsheet.charactersheet .asset-meter-wordy .asset-meter-box {
+  flex-direction: row;
 }
 .ui-dialog div.charsheet.charactersheet .asset-type-selection {
   background: #221e1f;
@@ -2273,71 +2347,6 @@ u {
   font-weight: bold;
   text-transform: uppercase;
 }
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row-reverse;
-  font-family: "Exo", sans-serif;
-  font-weight: 700;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box {
-  display: flex;
-  height: 36px;
-  margin: 0;
-  padding: 0;
-  width: 31px;
-  margin-right: -2.5px;
-  cursor: pointer;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box:first-child input[type="radio"]:checked + .asset-track-box-display {
-  background-color: #ce242b;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box:last-child input[type="radio"]:checked + .asset-track-box-display {
-  background-color: #28aae1;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box input[type="radio"] {
-  display: none;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box .asset-track-box-display {
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg");
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/hex-meter-box-unchecked.svg");
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  font-size: 17px;
-  font-weight: bold;
-  display: flex;
-  height: inherit;
-  width: inherit;
-  text-align: center;
-  text-anchor: middle;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s ease;
-  color: #b8c2cd;
-  -webkit-text-stroke: 0px transparent;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box .asset-track-box-display:hover {
-  color: #221e1f;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper .asset-track-box input[type="radio"]:checked + .asset-track-box-display {
-  background-color: #221e1f;
-  color: #fff;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper-wordy {
-  text-transform: uppercase;
-}
-.ui-dialog div.charsheet.charactersheet .asset-track-wrapper-wordy .asset-meter-box {
-  flex-direction: row;
-}
-.ui-dialog div.charsheet.charactersheet .asset-meter-box-display {
-  font-size: 17px;
-  font-weight: bold;
-}
 .ui-dialog div.charsheet.charactersheet .ability-top {
   margin-top: 1em;
 }
@@ -2348,107 +2357,91 @@ u {
   margin-left: 0.3em;
   margin-right: 0.5em;
 }
-.ui-dialog div.charsheet.charactersheet .asset-description-text {
-  margin-top: 0.4em;
-}
-.ui-dialog div.charsheet.charactersheet .asset-body {
-  font-size: 14.3px;
-  line-height: 1.25;
-  margin: 0 0 4px;
-}
 .ui-dialog div.charsheet.charactersheet input[type=checkbox].custom:checked + div.custom {
-  display: block;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+  display: grid;
 }
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].ace:checked ~ div.ace,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].agent:checked ~ div.agent,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].archer:checked ~ div.archer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].armored:checked ~ div.armored,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].augmented:checked ~ div.augmented,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].bannersworn:checked ~ div.bannersworn,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].banshee:checked ~ div.banshee,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].blademaster:checked ~ div.blademaster,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].bonded:checked ~ div.bonded,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].bounty-hunter:checked ~ div.bounty-hunter,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].brawler:checked ~ div.brawler,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].combat-bot:checked ~ div.combat-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].commander:checked ~ div.commander,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].courier:checked ~ div.courier,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].devotant:checked ~ div.devotant,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].diplomat:checked ~ div.diplomat,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].empath:checked ~ div.empath,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].explorer:checked ~ div.explorer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].fated:checked ~ div.fated,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].firebrand:checked ~ div.firebrand,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].fugitive:checked ~ div.fugitive,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].gearhead:checked ~ div.gearhead,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].glowcat:checked ~ div.glowcat,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].gunner:checked ~ div.gunner,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].gunslinger:checked ~ div.gunslinger,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].haunted:checked ~ div.haunted,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].healer:checked ~ div.healer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].homesteader:checked ~ div.homesteader,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].kinetic:checked ~ div.kinetic,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].lore-hunter:checked ~ div.lore-hunter,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].loyalist:checked ~ div.loyalist,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].marked:checked ~ div.marked,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].mercenary:checked ~ div.mercenary,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].naturalist:checked ~ div.naturalist,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].navigator:checked ~ div.navigator,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].oathbreaker:checked ~ div.oathbreaker,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].outcast:checked ~ div.outcast,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].protocol-bot:checked ~ div.protocol-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].revenant:checked ~ div.revenant,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].rockhorn:checked ~ div.rockhorn,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].scavenger:checked ~ div.scavenger,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].scoundrel:checked ~ div.scoundrel,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].seer:checked ~ div.seer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].shade:checked ~ div.shade,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sidekick:checked ~ div.sidekick,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].slayer:checked ~ div.slayer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sniper:checked ~ div.sniper,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sprite:checked ~ div.sprite,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].survey-bot:checked ~ div.survey-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].symbiote:checked ~ div.symbiote,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].tech:checked ~ div.tech,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].trader:checked ~ div.trader,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].utility-bot:checked ~ div.utility-bot,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].vanguard:checked ~ div.vanguard,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].vestige:checked ~ div.vestige,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].veteran:checked ~ div.veteran,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].voidborn:checked ~ div.voidborn,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].voidglider:checked ~ div.voidglider,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].weapon-master:checked ~ div.weapon-master,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].engine-upgrade:checked ~ div.engine-upgrade,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].expanded-hold:checked ~ div.expanded-hold,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].grappler:checked ~ div.grappler,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].heavy-cannons:checked ~ div.heavy-cannons,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].internal-refit:checked ~ div.internal-refit,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].medbay:checked ~ div.medbay,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].missile-array:checked ~ div.missile-array,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].overseer:checked ~ div.overseer,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].reinforced-hull:checked ~ div.reinforced-hull,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].research-lab:checked ~ div.research-lab,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].sensor-array:checked ~ div.sensor-array,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].shields:checked ~ div.shields,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].stealth-tech:checked ~ div.stealth-tech,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].vehicle-bay:checked ~ div.vehicle-bay,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].workshop:checked ~ div.workshop,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].exosuit:checked ~ div.exosuit,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].hoverbike:checked ~ div.hoverbike,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].rover:checked ~ div.rover,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].service-pod:checked ~ div.service-pod,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].shuttle:checked ~ div.shuttle,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].skiff:checked ~ div.skiff,
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].snub-fighter:checked ~ div.snub-fighter {
-  display: block;
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_ace]:checked + .asset-card.asset-ace,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_agent]:checked + .asset-card.asset-agent,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_archer]:checked + .asset-card.asset-archer,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_armored]:checked + .asset-card.asset-armored,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_augmented]:checked + .asset-card.asset-augmented,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_bannersworn]:checked + .asset-card.asset-bannersworn,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_banshee]:checked + .asset-card.asset-banshee,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_blademaster]:checked + .asset-card.asset-blademaster,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_bonded]:checked + .asset-card.asset-bonded,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_bounty-hunter]:checked + .asset-card.asset-bounty-hunter,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_brawler]:checked + .asset-card.asset-brawler,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_combat-bot]:checked + .asset-card.asset-combat-bot,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_commander]:checked + .asset-card.asset-commander,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_courier]:checked + .asset-card.asset-courier,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_devotant]:checked + .asset-card.asset-devotant,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_diplomat]:checked + .asset-card.asset-diplomat,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_empath]:checked + .asset-card.asset-empath,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_explorer]:checked + .asset-card.asset-explorer,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_fated]:checked + .asset-card.asset-fated,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_firebrand]:checked + .asset-card.asset-firebrand,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_fugitive]:checked + .asset-card.asset-fugitive,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_gearhead]:checked + .asset-card.asset-gearhead,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_glowcat]:checked + .asset-card.asset-glowcat,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_gunner]:checked + .asset-card.asset-gunner,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_gunslinger]:checked + .asset-card.asset-gunslinger,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_haunted]:checked + .asset-card.asset-haunted,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_healer]:checked + .asset-card.asset-healer,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_homesteader]:checked + .asset-card.asset-homesteader,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_kinetic]:checked + .asset-card.asset-kinetic,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_lore-hunter]:checked + .asset-card.asset-lore-hunter,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_loyalist]:checked + .asset-card.asset-loyalist,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_marked]:checked + .asset-card.asset-marked,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_mercenary]:checked + .asset-card.asset-mercenary,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_naturalist]:checked + .asset-card.asset-naturalist,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_navigator]:checked + .asset-card.asset-navigator,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_oathbreaker]:checked + .asset-card.asset-oathbreaker,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_outcast]:checked + .asset-card.asset-outcast,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_protocol-bot]:checked + .asset-card.asset-protocol-bot,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_revenant]:checked + .asset-card.asset-revenant,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_rockhorn]:checked + .asset-card.asset-rockhorn,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_scavenger]:checked + .asset-card.asset-scavenger,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_scoundrel]:checked + .asset-card.asset-scoundrel,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_seer]:checked + .asset-card.asset-seer,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_shade]:checked + .asset-card.asset-shade,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sidekick]:checked + .asset-card.asset-sidekick,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_slayer]:checked + .asset-card.asset-slayer,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sniper]:checked + .asset-card.asset-sniper,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sprite]:checked + .asset-card.asset-sprite,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_survey-bot]:checked + .asset-card.asset-survey-bot,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_symbiote]:checked + .asset-card.asset-symbiote,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_tech]:checked + .asset-card.asset-tech,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_trader]:checked + .asset-card.asset-trader,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_utility-bot]:checked + .asset-card.asset-utility-bot,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_vanguard]:checked + .asset-card.asset-vanguard,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_vestige]:checked + .asset-card.asset-vestige,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_veteran]:checked + .asset-card.asset-veteran,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_voidborn]:checked + .asset-card.asset-voidborn,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_voidglider]:checked + .asset-card.asset-voidglider,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_weapon-master]:checked + .asset-card.asset-weapon-master,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_engine-upgrade]:checked + .asset-card.asset-engine-upgrade,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_expanded-hold]:checked + .asset-card.asset-expanded-hold,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_grappler]:checked + .asset-card.asset-grappler,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_heavy-cannons]:checked + .asset-card.asset-heavy-cannons,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_internal-refit]:checked + .asset-card.asset-internal-refit,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_medbay]:checked + .asset-card.asset-medbay,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_missile-array]:checked + .asset-card.asset-missile-array,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_overseer]:checked + .asset-card.asset-overseer,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_reinforced-hull]:checked + .asset-card.asset-reinforced-hull,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_research-lab]:checked + .asset-card.asset-research-lab,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sensor-array]:checked + .asset-card.asset-sensor-array,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_shields]:checked + .asset-card.asset-shields,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_stealth-tech]:checked + .asset-card.asset-stealth-tech,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_vehicle-bay]:checked + .asset-card.asset-vehicle-bay,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_workshop]:checked + .asset-card.asset-workshop,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_exosuit]:checked + .asset-card.asset-exosuit,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_hoverbike]:checked + .asset-card.asset-hoverbike,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_rover]:checked + .asset-card.asset-rover,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_service-pod]:checked + .asset-card.asset-service-pod,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_shuttle]:checked + .asset-card.asset-shuttle,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_skiff]:checked + .asset-card.asset-skiff,
+.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_snub-fighter]:checked + .asset-card.asset-snub-fighter {
+  display: grid;
 }
 .ui-dialog div.charsheet.charactersheet span.asset-name {
   font-family: 'Exo', Arial, sans-serif;
@@ -2488,51 +2481,79 @@ u {
   padding: 0.5em;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-path {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-path.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-path.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-path .asset-category {
   color: #3f7faa;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-companion {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-companion.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-companion.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-companion .asset-category {
   color: #3d8b8a;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-module {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-module.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-module.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-module .asset-category {
   color: #7f5a90;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-support-vehicle {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-support-vehicle.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-support-vehicle.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-support-vehicle .asset-category {
   color: #495790;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-deed {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-deed.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-deed.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-deed .asset-category {
   color: #40834f;
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-command-vehicle {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-asset-refactor/Ironsworn-Starforged/src/app/img/hex-asset-bg-command-vehicle.svg");
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-command-vehicle.svg");
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-command-vehicle .asset-category {
   color: #9aa3ad;
 }
 .ui-dialog div.charsheet.charactersheet input.oracle-ironsworn:checked + div.oracle-ironsworn,
 .ui-dialog div.charsheet.charactersheet input.oracle-delve:checked + div.oracle-delve {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.7s ease;
+  display: 0.7s;
 }
 .ui-dialog div.charsheet.charactersheet .oracle-btn {
   margin: 0;
   width: 100%;
+}
+.ui-dialog div.charsheet.charactersheet section.oracle-table h4 {
+  font-family: "Exo", Arial, sans-serif;
+  background: #fff;
+  color: #221e1f;
+  font-weight: 700;
+  background: none;
+  font-size: 1.375em;
+  padding: 0;
+  margin-bottom: 0.25em;
+}
+.ui-dialog div.charsheet.charactersheet table.oracle-table {
+  border: none;
+  width: stretch;
+  width: -moz-available;
+  margin: 0;
+}
+.ui-dialog div.charsheet.charactersheet table.oracle-table thead {
+  border-top: 4px solid #b8c2cd;
+  padding: 0.3em;
+  background-color: #221e1f;
+  color: #fff;
+}
+.ui-dialog div.charsheet.charactersheet table.oracle-table thead th {
+  padding-left: 0.4em;
+}
+.ui-dialog div.charsheet.charactersheet table.oracle-table tbody {
+  border-top: 4px solid #b8c2cd;
+}
+.ui-dialog div.charsheet.charactersheet table.oracle-table tbody td {
+  padding-left: 0.4em;
 }
 .ui-dialog div.charsheet.charactersheet .oracle {
   margin: 0em;
@@ -2554,124 +2575,109 @@ u {
   background-color: #221e1f;
   color: #fff;
 }
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview {
+.ui-dialog div.charsheet.charactersheet article.gamerules {
   font-weight: 500;
+  width: stretch;
+  width: -moz-available;
 }
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview caption.oracle-description,
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview div.oracle-description {
-  background-color: #221e1f;
-  color: #fff;
-}
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview caption.oracle-description p,
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview div.oracle-description p,
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview caption.oracle-description ol,
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview div.oracle-description ol,
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview caption.oracle-description ul,
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview div.oracle-description ul {
-  padding: 0.5em;
-  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
-}
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.showhide.oracle-table-ask-the-oracle-almost-certain,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.showhide.oracle-table-ask-the-oracle-likely,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.showhide.oracle-table-ask-the-oracle-50-50,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.showhide.oracle-table-ask-the-oracle-unlikely,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.showhide.oracle-table-ask-the-oracle-small-chance,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-background-assets:checked + article.showhide.oracle-table-character-creation-background-assets,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.showhide.oracle-table-character-creation-backstory-prompts,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-starship-history:checked + article.showhide.oracle-table-character-creation-starship-history,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.showhide.oracle-table-character-creation-starship-quirks,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.showhide.oracle-table-character-creation-sector-trouble,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.showhide.oracle-table-character-creation-inciting-incident,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-action:checked + article.showhide.oracle-table-core-action,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-theme:checked + article.showhide.oracle-table-core-theme,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-descriptor:checked + article.showhide.oracle-table-core-descriptor,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-focus:checked + article.showhide.oracle-table-core-focus,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sighting:checked + article.showhide.oracle-table-space-sighting,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-stellar-object:checked + article.showhide.oracle-table-space-stellar-object,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sector-name-prefix:checked + article.showhide.oracle-table-space-sector-name-prefix,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sector-name-suffix:checked + article.showhide.oracle-table-space-sector-name-suffix,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-peril:checked + article.showhide.oracle-table-space-peril,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-opportunity:checked + article.showhide.oracle-table-space-opportunity,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-planetary-class:checked + article.showhide.oracle-table-planet-planetary-class,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-peril:checked + article.showhide.oracle-table-planet-peril,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-opportunity:checked + article.showhide.oracle-table-planet-opportunity,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-desert-world:checked + article.showhide.oracle-subcategory-planet-desert-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.showhide.oracle-subcategory-planet-furnace-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-grave-world:checked + article.showhide.oracle-subcategory-planet-grave-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-ice-world:checked + article.showhide.oracle-subcategory-planet-ice-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.showhide.oracle-subcategory-planet-jovian-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.showhide.oracle-subcategory-planet-jungle-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.showhide.oracle-subcategory-planet-ocean-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.showhide.oracle-subcategory-planet-rocky-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.showhide.oracle-subcategory-planet-shattered-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.showhide.oracle-subcategory-planet-tainted-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-vital-world:checked + article.showhide.oracle-subcategory-planet-vital-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-location:checked + article.showhide.oracle-table-settlement-location,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-population:checked + article.showhide.oracle-table-settlement-population,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-first-look:checked + article.showhide.oracle-table-settlement-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-initial-contact:checked + article.showhide.oracle-table-settlement-initial-contact,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-authority:checked + article.showhide.oracle-table-settlement-authority,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-projects:checked + article.showhide.oracle-table-settlement-projects,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-trouble:checked + article.showhide.oracle-table-settlement-trouble,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-name:checked + article.showhide.oracle-table-settlement-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-name:checked + article.showhide.oracle-table-starship-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-type:checked + article.showhide.oracle-table-starship-type,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-fleet:checked + article.showhide.oracle-table-starship-fleet,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-initial-contact:checked + article.showhide.oracle-table-starship-initial-contact,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-first-look:checked + article.showhide.oracle-table-starship-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-mission:checked + article.showhide.oracle-table-starship-mission,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-given-name:checked + article.showhide.oracle-table-character-given-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-callsign:checked + article.showhide.oracle-table-character-callsign,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-family-name:checked + article.showhide.oracle-table-character-family-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-first-look:checked + article.showhide.oracle-table-character-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-disposition:checked + article.showhide.oracle-table-character-disposition,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-role:checked + article.showhide.oracle-table-character-role,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-goal:checked + article.showhide.oracle-table-character-goal,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-revealed-aspect:checked + article.showhide.oracle-table-character-revealed-aspect,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-environment:checked + article.showhide.oracle-table-creature-environment,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-scale:checked + article.showhide.oracle-table-creature-scale,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-ultra-scale:checked + article.showhide.oracle-table-creature-ultra-scale,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-basic-form:checked + article.showhide.oracle-table-creature-basic-form,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-first-look:checked + article.showhide.oracle-table-creature-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.showhide.oracle-table-creature-encountered-b_havior,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-revealed-aspect:checked + article.showhide.oracle-table-creature-revealed-aspect,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-location:checked + article.showhide.oracle-table-derelict-location,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-type:checked + article.showhide.oracle-table-derelict-type,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-condition:checked + article.showhide.oracle-table-derelict-condition,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-outer-first-look:checked + article.showhide.oracle-table-derelict-outer-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-inner-first-look:checked + article.showhide.oracle-table-derelict-inner-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-zone:checked + article.showhide.oracle-table-derelict-zone,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-access:checked + article.showhide.oracle-subcategory-derelict-access,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-community:checked + article.showhide.oracle-subcategory-derelict-community,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-engineering:checked + article.showhide.oracle-subcategory-derelict-engineering,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-living:checked + article.showhide.oracle-subcategory-derelict-living,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-medical:checked + article.showhide.oracle-subcategory-derelict-medical,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-operations:checked + article.showhide.oracle-subcategory-derelict-operations,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-production:checked + article.showhide.oracle-subcategory-derelict-production,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-research:checked + article.showhide.oracle-subcategory-derelict-research,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-location:checked + article.showhide.oracle-table-precursor-vault-location,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-scale:checked + article.showhide.oracle-table-precursor-vault-scale,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-form:checked + article.showhide.oracle-table-precursor-vault-form,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-shape:checked + article.showhide.oracle-table-precursor-vault-shape,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-material:checked + article.showhide.oracle-table-precursor-vault-material,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-first-look:checked + article.showhide.oracle-table-precursor-vault-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.showhide.oracle-subcategory-precursor-vault-interior,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.showhide.oracle-subcategory-precursor-vault-sanctum,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-location-theme-type:checked + article.showhide.oracle-table-location-theme-type,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.showhide.oracle-subcategory-location-theme-chaotic,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.showhide.oracle-subcategory-location-theme-fortified,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.showhide.oracle-subcategory-location-theme-haunted,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-infested:checked + article.showhide.oracle-subcategory-location-theme-infested,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.showhide.oracle-subcategory-location-theme-inhabited,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.showhide.oracle-subcategory-location-theme-ruined,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.showhide.oracle-subcategory-location-theme-sacred,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.showhide.oracle-table-miscellaneous-story-complication,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.showhide.oracle-table-miscellaneous-combat-action,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.showhide.oracle-table-miscellaneous-anomaly-effect {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.switchable-display.oracle-table-ask-the-oracle-almost-certain,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.switchable-display.oracle-table-ask-the-oracle-likely,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.switchable-display.oracle-table-ask-the-oracle-50-50,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.switchable-display.oracle-table-ask-the-oracle-unlikely,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.switchable-display.oracle-table-ask-the-oracle-small-chance,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-background-assets:checked + article.switchable-display.oracle-table-character-creation-background-assets,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.switchable-display.oracle-table-character-creation-backstory-prompts,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-starship-history:checked + article.switchable-display.oracle-table-character-creation-starship-history,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.switchable-display.oracle-table-character-creation-starship-quirks,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.switchable-display.oracle-table-character-creation-sector-trouble,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.switchable-display.oracle-table-character-creation-inciting-incident,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-action:checked + article.switchable-display.oracle-table-core-action,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-theme:checked + article.switchable-display.oracle-table-core-theme,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-descriptor:checked + article.switchable-display.oracle-table-core-descriptor,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-focus:checked + article.switchable-display.oracle-table-core-focus,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sighting:checked + article.switchable-display.oracle-table-space-sighting,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-stellar-object:checked + article.switchable-display.oracle-table-space-stellar-object,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sector-name-prefix:checked + article.switchable-display.oracle-table-space-sector-name-prefix,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sector-name-suffix:checked + article.switchable-display.oracle-table-space-sector-name-suffix,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-peril:checked + article.switchable-display.oracle-table-space-peril,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-opportunity:checked + article.switchable-display.oracle-table-space-opportunity,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-planetary-class:checked + article.switchable-display.oracle-table-planet-planetary-class,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-peril:checked + article.switchable-display.oracle-table-planet-peril,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-opportunity:checked + article.switchable-display.oracle-table-planet-opportunity,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-desert-world:checked + article.switchable-display.oracle-subcategory-planet-desert-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.switchable-display.oracle-subcategory-planet-furnace-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-grave-world:checked + article.switchable-display.oracle-subcategory-planet-grave-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-ice-world:checked + article.switchable-display.oracle-subcategory-planet-ice-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.switchable-display.oracle-subcategory-planet-jovian-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.switchable-display.oracle-subcategory-planet-jungle-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.switchable-display.oracle-subcategory-planet-ocean-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.switchable-display.oracle-subcategory-planet-rocky-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.switchable-display.oracle-subcategory-planet-shattered-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.switchable-display.oracle-subcategory-planet-tainted-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-vital-world:checked + article.switchable-display.oracle-subcategory-planet-vital-world,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-location:checked + article.switchable-display.oracle-table-settlement-location,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-population:checked + article.switchable-display.oracle-table-settlement-population,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-first-look:checked + article.switchable-display.oracle-table-settlement-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-initial-contact:checked + article.switchable-display.oracle-table-settlement-initial-contact,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-authority:checked + article.switchable-display.oracle-table-settlement-authority,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-projects:checked + article.switchable-display.oracle-table-settlement-projects,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-trouble:checked + article.switchable-display.oracle-table-settlement-trouble,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-name:checked + article.switchable-display.oracle-table-settlement-name,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-name:checked + article.switchable-display.oracle-table-starship-name,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-type:checked + article.switchable-display.oracle-table-starship-type,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-fleet:checked + article.switchable-display.oracle-table-starship-fleet,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-initial-contact:checked + article.switchable-display.oracle-table-starship-initial-contact,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-first-look:checked + article.switchable-display.oracle-table-starship-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-mission:checked + article.switchable-display.oracle-table-starship-mission,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-given-name:checked + article.switchable-display.oracle-table-character-given-name,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-callsign:checked + article.switchable-display.oracle-table-character-callsign,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-family-name:checked + article.switchable-display.oracle-table-character-family-name,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-first-look:checked + article.switchable-display.oracle-table-character-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-disposition:checked + article.switchable-display.oracle-table-character-disposition,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-role:checked + article.switchable-display.oracle-table-character-role,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-goal:checked + article.switchable-display.oracle-table-character-goal,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-revealed-aspect:checked + article.switchable-display.oracle-table-character-revealed-aspect,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-environment:checked + article.switchable-display.oracle-table-creature-environment,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-scale:checked + article.switchable-display.oracle-table-creature-scale,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-ultra-scale:checked + article.switchable-display.oracle-table-creature-ultra-scale,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-basic-form:checked + article.switchable-display.oracle-table-creature-basic-form,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-first-look:checked + article.switchable-display.oracle-table-creature-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.switchable-display.oracle-table-creature-encountered-b_havior,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-revealed-aspect:checked + article.switchable-display.oracle-table-creature-revealed-aspect,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-location:checked + article.switchable-display.oracle-table-derelict-location,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-type:checked + article.switchable-display.oracle-table-derelict-type,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-condition:checked + article.switchable-display.oracle-table-derelict-condition,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-outer-first-look:checked + article.switchable-display.oracle-table-derelict-outer-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-inner-first-look:checked + article.switchable-display.oracle-table-derelict-inner-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-zone:checked + article.switchable-display.oracle-table-derelict-zone,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-access:checked + article.switchable-display.oracle-subcategory-derelict-access,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-community:checked + article.switchable-display.oracle-subcategory-derelict-community,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-engineering:checked + article.switchable-display.oracle-subcategory-derelict-engineering,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-living:checked + article.switchable-display.oracle-subcategory-derelict-living,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-medical:checked + article.switchable-display.oracle-subcategory-derelict-medical,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-operations:checked + article.switchable-display.oracle-subcategory-derelict-operations,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-production:checked + article.switchable-display.oracle-subcategory-derelict-production,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-research:checked + article.switchable-display.oracle-subcategory-derelict-research,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-location:checked + article.switchable-display.oracle-table-precursor-vault-location,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-scale:checked + article.switchable-display.oracle-table-precursor-vault-scale,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-form:checked + article.switchable-display.oracle-table-precursor-vault-form,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-shape:checked + article.switchable-display.oracle-table-precursor-vault-shape,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-material:checked + article.switchable-display.oracle-table-precursor-vault-material,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-first-look:checked + article.switchable-display.oracle-table-precursor-vault-first-look,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.switchable-display.oracle-subcategory-precursor-vault-interior,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.switchable-display.oracle-subcategory-precursor-vault-sanctum,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-location-theme-type:checked + article.switchable-display.oracle-table-location-theme-type,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.switchable-display.oracle-subcategory-location-theme-chaotic,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.switchable-display.oracle-subcategory-location-theme-fortified,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.switchable-display.oracle-subcategory-location-theme-haunted,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-infested:checked + article.switchable-display.oracle-subcategory-location-theme-infested,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.switchable-display.oracle-subcategory-location-theme-inhabited,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.switchable-display.oracle-subcategory-location-theme-ruined,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.switchable-display.oracle-subcategory-location-theme-sacred,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.switchable-display.oracle-table-miscellaneous-story-complication,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.switchable-display.oracle-table-miscellaneous-combat-action,
+.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.switchable-display.oracle-table-miscellaneous-anomaly-effect {
+  display: grid;
 }
 .ui-dialog div.charsheet.charactersheet .oracle-container {
   opacity: 1;
@@ -2701,16 +2707,12 @@ u {
 .ui-dialog div.charsheet.charactersheet .oracle-title {
   background-color: #221e1f;
   color: #fff;
-  border-bottom: 1px solid #221e1f;
   font-size: 1.4em;
   font-weight: bold;
   padding-left: 5px;
   padding-right: 5px;
   text-transform: uppercase;
   text-align: center;
-}
-.ui-dialog div.charsheet.charactersheet .oracle-table-preview {
-  width: auto;
 }
 .ui-dialog div.charsheet.charactersheet table.oracle-table {
   width: -moz-available;
@@ -2731,14 +2733,10 @@ u {
   cursor: pointer;
   transition: 0.5s ease;
 }
-.ui-dialog div.charsheet.charactersheet .oracle-table {
-  border: 4px solid #221e1f;
-}
 .ui-dialog div.charsheet.charactersheet .flex-table {
   display: flex;
 }
-.ui-dialog div.charsheet.charactersheet .oracle-row:nth-child(2n),
-.ui-dialog div.charsheet.charactersheet .oracle:nth-child(2n) {
+.ui-dialog div.charsheet.charactersheet .oracle-row:nth-child(2n) {
   background-color: #dde1e7;
 }
 .ui-dialog div.charsheet.charactersheet .oracle-row {
@@ -2794,18 +2792,6 @@ u {
   padding: 0;
   margin: 0;
   margin-right: 0.3em;
-}
-.ui-dialog div.charsheet.charactersheet .oracle-footer {
-  background-color: #221e1f;
-  color: #fff;
-  line-height: 0.9em;
-  font-size: 0.9em;
-  font-variant: small-caps;
-  font-weight: bold;
-  text-align: left;
-  padding: 0.5rem;
-  border-bottom-right-radius: 1em;
-  border-bottom-left-radius: 1em;
 }
 .ui-dialog div.charsheet.charactersheet .column-wrap {
   width: 50%;
@@ -2892,295 +2878,6 @@ u {
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].experience-box:hover ~ .experience-fill {
   background: #e6e7e8;
 }
-.ui-dialog div.charsheet.charactersheet .overview {
-  columns: 3;
-  column-gap: 1em;
-}
-.ui-dialog div.charsheet.charactersheet .close-preview {
-  text-transform: uppercase;
-  width: auto;
-  height: auto;
-  margin: 0;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 0.2em;
-  border: 2px solid #221e1f;
-  cursor: pointer;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.5s ease;
-}
-.ui-dialog div.charsheet.charactersheet .close-preview:hover {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog div.charsheet.charactersheet .preview {
-  display: grid;
-  grid-template-rows: min-content 1fr;
-  grid-template-columns: 1fr 2fr;
-  gap: 1em;
-}
-.ui-dialog div.charsheet.charactersheet .preview .close-preview {
-  grid-row: 1;
-}
-.ui-dialog div.charsheet.charactersheet .preview .preview-sidebar {
-  display: block;
-  overflow: auto;
-  border: 2px solid #221e1f;
-  padding: 1em;
-  overflow: auto;
-  padding: 0;
-  height: 50em;
-  grid-column: 1;
-}
-.ui-dialog div.charsheet.charactersheet .preview .preview-sidebar section {
-  border-radius: 0;
-  margin: 0;
-  border-bottom: none;
-}
-.ui-dialog div.charsheet.charactersheet .preview .preview-main {
-  width: stretch;
-  width: -moz-available;
-}
-.ui-dialog div.charsheet.charactersheet input.preview.hide-element,
-.ui-dialog div.charsheet.charactersheet input.overview.hide-element {
-  display: none;
-}
-.ui-dialog div.charsheet.charactersheet input.preview.hide-element:checked + .preview.showhide {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
-  display: grid;
-}
-.ui-dialog div.charsheet.charactersheet input.overview.hide-element:checked + .overview.showhide {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  transition: 0.2s ease;
-  display: block;
-}
-.ui-dialog div.charsheet.charactersheet .list-group {
-  border: 2px solid #221e1f;
-  border-width: 4px;
-  background-color: #221e1f;
-  margin: 0em;
-  margin-bottom: 1em;
-  height: fit-content;
-  height: -moz-fit-content;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-  border-radius: 1em;
-  overflow: hidden;
-}
-.ui-dialog div.charsheet.charactersheet .list-group .list-group-title {
-  color: #fff;
-  font-size: 1.4em;
-  font-weight: bold;
-  padding: 0 5px 3px;
-  text-transform: uppercase;
-  text-align: center;
-  display: inline-block;
-  vertical-align: text-bottom;
-  width: stretch;
-  width: -moz-available;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul {
-  display: grid;
-  gap: 4px;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  width: auto;
-  overflow: hidden;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul * {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item {
-  height: min-content;
-  list-style-type: none;
-  margin: 0px;
-  background: none;
-  display: flex;
-  gap: 4px;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item:before {
-  all: initial;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item > * {
-  background-color: #fff;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item:nth-child(2n) > * {
-  background-color: #dde1e7;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn {
-  width: stretch;
-  width: -moz-available;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  align-content: center;
-  justify-content: center;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ui-dialog div.charsheet.charactersheet .list-group ul li.list-group-item button {
-  height: 1.5em;
-  width: 1.5em;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-.ui-dialog div.charsheet.charactersheet .static-btn {
-  border: 2px solid #221e1f;
-  border-radius: 0;
-  display: flex;
-  width: auto;
-  font-size: 14px;
-  padding: 0;
-  cursor: pointer;
-  background: #fff;
-  cursor: pointer;
-  transition: 0.5s ease;
-}
-.ui-dialog div.charsheet.charactersheet .static-btn:hover {
-  background-color: #b8c2cd !important;
-  color: #221e1f !important;
-}
-.ui-dialog div.charsheet.charactersheet .static-btn .btn-content {
-  padding: 0.2em 0.2em 0.2em 0.2em;
-  width: 100%;
-  text-align: center;
-}
-.ui-dialog div.charsheet.charactersheet .toggle-btn {
-  border: 2px solid #221e1f;
-  border-radius: 0;
-  display: flex;
-  width: auto;
-  font-size: 14px;
-  padding: 0;
-  cursor: pointer;
-  background: #fff;
-  cursor: pointer;
-  transition: 0.5s ease;
-  text-align: center;
-  font-weight: 600;
-  font-size: 14px;
-}
-.ui-dialog div.charsheet.charactersheet .toggle-btn:hover {
-  background-color: #b8c2cd !important;
-  color: #221e1f !important;
-}
-.ui-dialog div.charsheet.charactersheet .btn-input:checked ~ .btn-content {
-  background: #221e1f;
-  color: #fff;
-}
-.ui-dialog div.charsheet.charactersheet button,
-.ui-dialog div.charsheet.charactersheet .btn {
-  color: currentColor;
-  text-shadow: none;
-  background: #fff;
-  cursor: pointer;
-  transition: 0.5s ease;
-}
-.ui-dialog div.charsheet.charactersheet button[type="roll"]:before,
-.ui-dialog div.charsheet.charactersheet .btn[type="roll"]:before {
-  content: none;
-  font-family: inherit;
-}
-.ui-dialog div.charsheet.charactersheet button[type="roll"].roll-icon-only,
-.ui-dialog div.charsheet.charactersheet .btn[type="roll"].roll-icon-only {
-  margin: 0;
-  padding: 0;
-  color: #221e1f;
-}
-.ui-dialog div.charsheet.charactersheet button[type="roll"].roll-icon-only:before,
-.ui-dialog div.charsheet.charactersheet .btn[type="roll"].roll-icon-only:before {
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border: none;
-  font-size: unset;
-  line-height: unset;
-  background-color: currentColor;
-  background-origin: border-box;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/resource-buttons/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg");
-  mask-size: 90%;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-origin: content-box;
-  top: 0;
-  left: 0;
-  position: relative;
-  content: "";
-}
-.ui-dialog div.charsheet.charactersheet button:hover,
-.ui-dialog div.charsheet.charactersheet .btn:hover {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog div.charsheet.charactersheet button.placeholder-button,
-.ui-dialog div.charsheet.charactersheet .btn.placeholder-button {
-  opacity: 100% !important;
-  background-image: none !important;
-  pointer-events: none !important;
-  cursor: default !important;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_edit,
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_add {
-  width: auto;
-  height: auto;
-  border: 2px solid #221e1f;
-  border-radius: 0;
-  font-weight: bold;
-  font-size: 12px;
-  text-shadow: none;
-  text-transform: uppercase;
-  padding: 0.2em;
-  margin: 0.3em;
-  color: #221e1f;
-  background: #dfe0e2;
-  cursor: pointer;
-  transition: 0.5s ease;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_edit:hover,
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_add:hover {
-  background-color: "#bcbec2" !important;
-  color: #fff !important;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_edit:focus,
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_add:focus {
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 1px;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_edit {
-  margin-right: 3px;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_add {
-  margin-left: 3px;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_del {
-  float: right;
-  width: auto;
-  margin: 0;
-  height: auto;
-}
-.ui-dialog div.charsheet.charactersheet .repcontainer .repcontrol_move {
-  cursor: move;
-  width: auto;
-  margin: 0;
-  height: auto;
-}
 .sheet-rolltemplate-starforged_oracles .sheet-result-row {
   padding: 0.5em;
 }
@@ -3203,7 +2900,7 @@ u {
   background: #3a3335;
   color: #fff;
   font-size: 1em;
-  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
 }
 .sheet-rolltemplate-starforged_oracles .sheet-result-row {
   display: flex;
@@ -3246,7 +2943,7 @@ u {
   background: #3a3335;
   color: #fff;
   font-size: 1em;
-  font-family: "Encode Sans Expanded", sans-serif, Arial, sans-serif;
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
 }
 .sheet-rolltemplate-starforged_moves .sheet-result-row,
 .sheet-rolltemplate-starforged_progress .sheet-result-row {
