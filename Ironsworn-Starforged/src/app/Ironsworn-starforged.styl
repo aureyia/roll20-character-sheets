@@ -261,7 +261,14 @@
     letter-spacing: 0.05rem;
   u
     text-decoration: underline 1pt solid currentColor
-
+  .hex-icon
+    object-fit contain
+    $iconWidth = 64px
+    &.vector
+      width $iconWidth
+      height hexWidthToHeight($iconWidth)
+    &.raster
+      hexagonClip($iconWidth)
 // nested block import doesn't seem to work properly, meaning i gotta do this one by one
 
 // Pages

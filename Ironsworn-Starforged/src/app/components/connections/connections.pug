@@ -5,12 +5,10 @@ mixin connections()
     fieldset.repeating_connection
       .connection-container
         p.connection-title.i18n-text(data-i18n='character-name')
-        // i18n = 'character-name'
         input.border-bottom.connection-name(type='text' name='attr_connection-name' placeholder='Name')
         label.details-btn
           input.switch-display.btn-input(type='checkbox' name='attr_details_button')
           .btn-content.i18n-text(data-i18n='details')
-        // i18n = 'details'
         input.switch-display.show-connection-info(type='checkbox' name='attr_details')
         .show-connection-info.switchable-display
           .full-width

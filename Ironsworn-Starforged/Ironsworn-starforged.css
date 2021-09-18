@@ -385,6 +385,18 @@
 .ui-dialog div.charsheet.charactersheet u {
   text-decoration: underline 1pt solid currentColor;
 }
+.ui-dialog div.charsheet.charactersheet .hex-icon {
+  object-fit: contain;
+}
+.ui-dialog div.charsheet.charactersheet .hex-icon.vector {
+  width: 64px;
+  height: 73.90083445627211px;
+}
+.ui-dialog div.charsheet.charactersheet .hex-icon.raster {
+  width: 64px;
+  height: 73.90083445627211px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
 .ui-dialog div.charsheet.charactersheet .changelog {
   border: 2px solid #221e1f;
   margin-bottom: 1em;
@@ -2512,9 +2524,18 @@
   margin: 0;
   width: 100%;
 }
+.ui-dialog div.charsheet.charactersheet section.oracle-table h4 {
+  font-family: "Exo", Arial, sans-serif;
+  background: #fff;
+  color: #221e1f;
+  font-weight: 700;
+  background: none;
+  font-size: 1.375em;
+  padding: 0;
+  margin-bottom: 0.25em;
+}
 .ui-dialog div.charsheet.charactersheet table.oracle-table {
   border: none;
-  border-top: 4px solid #b8c2cd;
   width: stretch;
   width: -moz-available;
   margin: 0;
@@ -2527,6 +2548,9 @@
 }
 .ui-dialog div.charsheet.charactersheet table.oracle-table thead th {
   padding-left: 0.4em;
+}
+.ui-dialog div.charsheet.charactersheet table.oracle-table tbody {
+  border-top: 4px solid #b8c2cd;
 }
 .ui-dialog div.charsheet.charactersheet table.oracle-table tbody td {
   padding-left: 0.4em;
