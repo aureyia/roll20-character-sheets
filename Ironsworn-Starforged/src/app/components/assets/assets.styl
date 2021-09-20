@@ -95,12 +95,15 @@ div
       .repitem
         float left !important
 
-
-$asset_width = 320px
+// TODO: reconfigure as em for accessibility
+$asset_width = 20em // original: 320px
+// 20em = 232px
 $inch = $asset_width/2.5 // pixels per inch
 $point = $inch/72 // pixels per point
+$pica = $inch/6 // pixels per pica
 
 .asset-container
+  font-size 1em
   display inline-block
   width $asset_width
   input
@@ -110,10 +113,10 @@ $point = $inch/72 // pixels per point
       padding 0
 
 article.asset-card
-  font-size 9*$point
+  // font-size 9*$point
   font-weight 400
   display grid
-  padding 9*$point 9*$point // 9 points
+  padding 9*$point 9*$point // 9 points top
   // (0.125*$inch)-(1*$point) // offset to account for border width
   font-weight 400
   box-sizing border-box
@@ -127,7 +130,7 @@ article.asset-card
   grid-template-areas "assetcategory icon" "name icon" "input icon" "description icon" "body body" "footer footer"
   grid-template-columns 1fr (0.5*$inch) // 1/5 of the width
   grid-template-rows max-content max-content max-content max-content 1fr max-content
-  gap 1*$point
+  // gap 1*$point
   .asset-category, .asset-name
     stdFont("Exo")
     text-transform uppercase
@@ -155,7 +158,7 @@ article.asset-card
     padding 0
     margin 0
     margin-top 0px
-    margin-top -1.25px
+    margin-top 0px // -1.25px // TODO: set as point value
   .asset-textinput
     cursor pointer
     display flex
@@ -183,34 +186,39 @@ article.asset-card
       width stretch
       width -moz-available
       border none
-      margin-bottom: -3%; // TODO: replace cuz 3% keys to screen size iirc D:
+      margin-bottom 1*$point // TODO: replace cuz 3% keys to screen size iirc D:
       font-weight 500
       background: transparent;
-  section.asset-abilities *, section.asset-description *
-    line-height 1.25
+  section.asset-abilities, section.asset-description, section.asset-abilities *, section.asset-description *
+    line-height (10.295*$point)
     stdFont('Encode Sans Condensed')
     letter-spacing 0.01ch
+    // underline thickness: 0.040 pica
   section.asset-abilities
     grid-area body
     display flex
     flex-flow column
-    gap 2*$point
+    gap 0.815*$point
+    // gap 2*$point
     section.asset-ability
       display flex
-      gap 3*$point
+      // gap 3*$point
+      gap 4.125*$point
+      // 12 points from left edge of bullet to left edge of ability text
       ul, ul li
         margin 0
         padding 0
       ul li
-        margin 2*$point 0
+        // margin 2*$point 0
       input[type="checkbox"]
         flex-shrink 0
         flex-grow 0
         align-self start
-        hexCheckbox(0.110*$inch)
-        margin-top 1*$point
+        hexCheckbox(7.875*$point)
+        // no top margin - highest point lines up with bottom of icon
+        margin-left 1*$point // sits 10pts from edge
       // label.asset-ability-textinput
-  section.asset-meter
+  section.resource-meter
     // height of numbers: 6.5pt
     // height of small labels: 5.35 (same as input label)
     grid-area footer
@@ -221,7 +229,7 @@ article.asset-card
     transition 0.5s ease
     font-family "Exo", sans-serif
     font-weight 700
-    label.asset-meter-box
+    label.resource-meter-box
       cursor pointer
       transition inherit
       width (0.250*$inch)
@@ -240,16 +248,16 @@ article.asset-card
       &:first-child
         &:hover
           color $sf-ui-red
-        input[type="radio"]:checked + .asset-meter-box-display
-          color $fg-color
+        input[type="radio"]:checked + .resource-meter-box-display
+          color $color-fg
           background-color $sf-ui-red
       &:last-child
         &:hover
           color $sf-ui-blue
-        input[type="radio"]:checked + .asset-meter-box-display
-          color $fg-color
+        input[type="radio"]:checked + .resource-meter-box-display
+          color $color-fg
           background-color $sf-ui-blue
-      .asset-meter-box-display
+      .resource-meter-box-display
         transition inherit
         mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg")
         mask-position center
@@ -260,8 +268,8 @@ article.asset-card
         background-size contain
         background-position center
         background-color $color-bg
-        font-size 17px // TODO: set to scale
-        font-weight bold
+        font-size (0.125*$inch / (math(3, sqrt)/2))
+        font-weight 700
         display flex
         height inherit
         width inherit
@@ -274,7 +282,7 @@ article.asset-card
         // text-stroke 0px transparent
         &:hover
           color $color-fg
-      input[type="radio"]:checked + .asset-meter-box-display
+      input[type="radio"]:checked + .resource-meter-box-display
         background-color $color-fg
         color $color-bg
       // display flex
@@ -286,9 +294,9 @@ article.asset-card
       // cursor pointer
 
 
-.asset-meter-wordy
+.resource-meter-wordy
   text-transform uppercase
-  .asset-meter-box
+  .resource-meter-box
     flex-direction row
 
 .asset-type-selection
@@ -324,128 +332,12 @@ span.custom-asset-page
   margin-left 0.3em
   margin-right 0.5em
 
-// TODO: pull all assets from json and create a template for each
-// assets = json('starforged_assets_wip_june_2.json', { hash: true, leave-strings: true })
-// for asset in assets
-//   name = asset.Name.toLowerCase().replace(/\s/g, '-')
-//   // input[type='checkbox'].name:checked ~ div.name
-//   input[type='checkbox'].{name}:checked ~ div.{name}
-//     display block
-//     switchDisplayOn()
-
 input[type=checkbox].custom:checked + div.custom
   switchDisplayOn(grid)
 
-input.switch-display[type=checkbox][name=attr_ace]:checked + .asset-card.asset-ace,
-input.switch-display[type=checkbox][name=attr_agent]:checked + .asset-card.asset-agent,
-input.switch-display[type=checkbox][name=attr_archer]:checked + .asset-card.asset-archer,
-input.switch-display[type=checkbox][name=attr_armored]:checked + .asset-card.asset-armored,
-input.switch-display[type=checkbox][name=attr_augmented]:checked + .asset-card.asset-augmented,
-input.switch-display[type=checkbox][name=attr_bannersworn]:checked + .asset-card.asset-bannersworn,
-input.switch-display[type=checkbox][name=attr_banshee]:checked + .asset-card.asset-banshee,
-input.switch-display[type=checkbox][name=attr_blademaster]:checked + .asset-card.asset-blademaster,
-input.switch-display[type=checkbox][name=attr_bonded]:checked + .asset-card.asset-bonded,
-input.switch-display[type=checkbox][name=attr_bounty-hunter]:checked + .asset-card.asset-bounty-hunter,
-input.switch-display[type=checkbox][name=attr_brawler]:checked + .asset-card.asset-brawler,
-input.switch-display[type=checkbox][name=attr_combat-bot]:checked + .asset-card.asset-combat-bot,
-input.switch-display[type=checkbox][name=attr_commander]:checked + .asset-card.asset-commander,
-input.switch-display[type=checkbox][name=attr_courier]:checked + .asset-card.asset-courier,
-input.switch-display[type=checkbox][name=attr_devotant]:checked + .asset-card.asset-devotant,
-input.switch-display[type=checkbox][name=attr_diplomat]:checked + .asset-card.asset-diplomat,
-input.switch-display[type=checkbox][name=attr_empath]:checked + .asset-card.asset-empath,
-input.switch-display[type=checkbox][name=attr_explorer]:checked + .asset-card.asset-explorer,
-input.switch-display[type=checkbox][name=attr_fated]:checked + .asset-card.asset-fated,
-input.switch-display[type=checkbox][name=attr_firebrand]:checked + .asset-card.asset-firebrand,
-input.switch-display[type=checkbox][name=attr_fugitive]:checked + .asset-card.asset-fugitive,
-input.switch-display[type=checkbox][name=attr_gearhead]:checked + .asset-card.asset-gearhead,
-input.switch-display[type=checkbox][name=attr_glowcat]:checked + .asset-card.asset-glowcat,
-input.switch-display[type=checkbox][name=attr_gunner]:checked + .asset-card.asset-gunner,
-input.switch-display[type=checkbox][name=attr_gunslinger]:checked + .asset-card.asset-gunslinger,
-input.switch-display[type=checkbox][name=attr_haunted]:checked + .asset-card.asset-haunted,
-input.switch-display[type=checkbox][name=attr_healer]:checked + .asset-card.asset-healer,
-input.switch-display[type=checkbox][name=attr_homesteader]:checked + .asset-card.asset-homesteader,
-input.switch-display[type=checkbox][name=attr_kinetic]:checked + .asset-card.asset-kinetic,
-input.switch-display[type=checkbox][name=attr_lore-hunter]:checked + .asset-card.asset-lore-hunter,
-input.switch-display[type=checkbox][name=attr_loyalist]:checked + .asset-card.asset-loyalist,
-input.switch-display[type=checkbox][name=attr_marked]:checked + .asset-card.asset-marked,
-input.switch-display[type=checkbox][name=attr_mercenary]:checked + .asset-card.asset-mercenary,
-input.switch-display[type=checkbox][name=attr_naturalist]:checked + .asset-card.asset-naturalist,
-input.switch-display[type=checkbox][name=attr_navigator]:checked + .asset-card.asset-navigator,
-input.switch-display[type=checkbox][name=attr_oathbreaker]:checked + .asset-card.asset-oathbreaker,
-input.switch-display[type=checkbox][name=attr_outcast]:checked + .asset-card.asset-outcast,
-input.switch-display[type=checkbox][name=attr_protocol-bot]:checked + .asset-card.asset-protocol-bot,
-input.switch-display[type=checkbox][name=attr_revenant]:checked + .asset-card.asset-revenant,
-input.switch-display[type=checkbox][name=attr_rockhorn]:checked + .asset-card.asset-rockhorn,
-input.switch-display[type=checkbox][name=attr_scavenger]:checked + .asset-card.asset-scavenger,
-input.switch-display[type=checkbox][name=attr_scoundrel]:checked + .asset-card.asset-scoundrel,
-input.switch-display[type=checkbox][name=attr_seer]:checked + .asset-card.asset-seer,
-input.switch-display[type=checkbox][name=attr_shade]:checked + .asset-card.asset-shade,
-input.switch-display[type=checkbox][name=attr_sidekick]:checked + .asset-card.asset-sidekick,
-input.switch-display[type=checkbox][name=attr_slayer]:checked + .asset-card.asset-slayer,
-input.switch-display[type=checkbox][name=attr_sniper]:checked + .asset-card.asset-sniper,
-input.switch-display[type=checkbox][name=attr_sprite]:checked + .asset-card.asset-sprite,
-input.switch-display[type=checkbox][name=attr_survey-bot]:checked + .asset-card.asset-survey-bot,
-input.switch-display[type=checkbox][name=attr_symbiote]:checked + .asset-card.asset-symbiote,
-input.switch-display[type=checkbox][name=attr_tech]:checked + .asset-card.asset-tech,
-input.switch-display[type=checkbox][name=attr_trader]:checked + .asset-card.asset-trader,
-input.switch-display[type=checkbox][name=attr_utility-bot]:checked + .asset-card.asset-utility-bot,
-input.switch-display[type=checkbox][name=attr_vanguard]:checked + .asset-card.asset-vanguard,
-input.switch-display[type=checkbox][name=attr_vestige]:checked + .asset-card.asset-vestige,
-input.switch-display[type=checkbox][name=attr_veteran]:checked + .asset-card.asset-veteran,
-input.switch-display[type=checkbox][name=attr_voidborn]:checked + .asset-card.asset-voidborn,
-input.switch-display[type=checkbox][name=attr_voidglider]:checked + .asset-card.asset-voidglider,
-input.switch-display[type=checkbox][name=attr_weapon-master]:checked + .asset-card.asset-weapon-master,
-input.switch-display[type=checkbox][name=attr_engine-upgrade]:checked + .asset-card.asset-engine-upgrade,
-input.switch-display[type=checkbox][name=attr_expanded-hold]:checked + .asset-card.asset-expanded-hold,
-input.switch-display[type=checkbox][name=attr_grappler]:checked + .asset-card.asset-grappler,
-input.switch-display[type=checkbox][name=attr_heavy-cannons]:checked + .asset-card.asset-heavy-cannons,
-input.switch-display[type=checkbox][name=attr_internal-refit]:checked + .asset-card.asset-internal-refit,
-input.switch-display[type=checkbox][name=attr_medbay]:checked + .asset-card.asset-medbay,
-input.switch-display[type=checkbox][name=attr_missile-array]:checked + .asset-card.asset-missile-array,
-input.switch-display[type=checkbox][name=attr_overseer]:checked + .asset-card.asset-overseer,
-input.switch-display[type=checkbox][name=attr_reinforced-hull]:checked + .asset-card.asset-reinforced-hull,
-input.switch-display[type=checkbox][name=attr_research-lab]:checked + .asset-card.asset-research-lab,
-input.switch-display[type=checkbox][name=attr_sensor-array]:checked + .asset-card.asset-sensor-array,
-input.switch-display[type=checkbox][name=attr_shields]:checked + .asset-card.asset-shields,
-input.switch-display[type=checkbox][name=attr_stealth-tech]:checked + .asset-card.asset-stealth-tech,
-input.switch-display[type=checkbox][name=attr_vehicle-bay]:checked + .asset-card.asset-vehicle-bay,
-input.switch-display[type=checkbox][name=attr_workshop]:checked + .asset-card.asset-workshop,
-input.switch-display[type=checkbox][name=attr_exosuit]:checked + .asset-card.asset-exosuit,
-input.switch-display[type=checkbox][name=attr_hoverbike]:checked + .asset-card.asset-hoverbike,
-input.switch-display[type=checkbox][name=attr_rover]:checked + .asset-card.asset-rover,
-input.switch-display[type=checkbox][name=attr_service-pod]:checked + .asset-card.asset-service-pod,
-input.switch-display[type=checkbox][name=attr_shuttle]:checked + .asset-card.asset-shuttle,
-input.switch-display[type=checkbox][name=attr_skiff]:checked + .asset-card.asset-skiff,
-input.switch-display[type=checkbox][name=attr_snub-fighter]:checked + .asset-card.asset-snub-fighter,
-input.switch-display[type=checkbox][name=attr_engine-upgrade]:checked + .asset-card.asset-engine-upgrade,
-input.switch-display[type=checkbox][name=attr_expanded-hold]:checked + .asset-card.asset-expanded-hold,
-input.switch-display[type=checkbox][name=attr_grappler]:checked + .asset-card.asset-grappler,
-input.switch-display[type=checkbox][name=attr_heavy-cannons]:checked + .asset-card.asset-heavy-cannons,
-input.switch-display[type=checkbox][name=attr_internal-refit]:checked + .asset-card.asset-internal-refit,
-input.switch-display[type=checkbox][name=attr_medbay]:checked + .asset-card.asset-medbay,
-input.switch-display[type=checkbox][name=attr_missile-array]:checked + .asset-card.asset-missile-array,
-input.switch-display[type=checkbox][name=attr_overseer]:checked + .asset-card.asset-overseer,
-input.switch-display[type=checkbox][name=attr_reinforced-hull]:checked + .asset-card.asset-reinforced-hull,
-input.switch-display[type=checkbox][name=attr_research-lab]:checked + .asset-card.asset-research-lab,
-input.switch-display[type=checkbox][name=attr_sensor-array]:checked + .asset-card.asset-sensor-array,
-input.switch-display[type=checkbox][name=attr_shields]:checked + .asset-card.asset-shields,
-input.switch-display[type=checkbox][name=attr_stealth-tech]:checked + .asset-card.asset-stealth-tech,
-input.switch-display[type=checkbox][name=attr_vehicle-bay]:checked + .asset-card.asset-vehicle-bay,
-input.switch-display[type=checkbox][name=attr_workshop]:checked + .asset-card.asset-workshop,
-input.switch-display[type=checkbox][name=attr_exosuit]:checked + .asset-card.asset-exosuit,
-input.switch-display[type=checkbox][name=attr_hoverbike]:checked + .asset-card.asset-hoverbike,
-input.switch-display[type=checkbox][name=attr_rover]:checked + .asset-card.asset-rover,
-input.switch-display[type=checkbox][name=attr_service-pod]:checked + .asset-card.asset-service-pod,
-input.switch-display[type=checkbox][name=attr_shuttle]:checked + .asset-card.asset-shuttle,
-input.switch-display[type=checkbox][name=attr_skiff]:checked + .asset-card.asset-skiff,
-input.switch-display[type=checkbox][name=attr_snub-fighter]:checked + .asset-card.asset-snub-fighter
-  switchDisplayOn(grid)
-
-span.asset-name
-  stdFont('Exo')
-  font-size 1.5em
-  font-weight bold
-  text-transform uppercase
+for key in $assets
+  input.switch-display[type=checkbox]:checked + .asset-card.{key}
+    switchDisplayOn(grid)
 
 .asset-content-header
   display flex
@@ -454,12 +346,6 @@ span.asset-name
 .asset-details
   align-self center
   padding-left 1em
-
-.category
-  stdFont('Exo')
-  font-size 1.1em
-  text-transform uppercase
-  font-weight bold
 
 .asset-options-header
   padding 0.2em 0.4em

@@ -1,0 +1,58 @@
+// activeTab(sheetName, pageName)
+//   [value=page-{pageName}]
+//     & ~ .page-tablist > .page-tab
+//       &[name=act_sheet_{sheetName}_page_{pageName}]
+
+// activePage(sheetName, pageName)
+//   [value=page-{pageName}]
+//     & ~ .page-container > .page#sheet-{sheetName}-page-{pageName}
+
+// inactivePage(sheetName, pageName)
+//   :not([value=page-{pageName}])
+//     & ~ .page-container > .page#sheet-{sheetName}-page-{pageName}
+
+
+.page-tablist
+  display flex
+  flex-flow row wrap
+  border 1px solid $color-fg
+  margin-bottom 1em
+  & > .page-tab
+    borderCommon()
+    flex 1
+    flex-basis 20%
+    min-width max-content
+    width 100%
+    text-align-last center
+    overflow hidden
+    margin 0
+    padding 0
+    cursor pointer
+    interactiveHover($color-input, $color-fg)
+
+input.pager
+  &~ .page-container
+    display contents
+    & > .page
+      fadeIn()
+      display flex
+      flex-flow row wrap
+  for sheetName, sheetData in $sheets
+    for pageName in (sheetData.pages)
+      &[name=attr_sheet-{sheetName}-display]
+        &[value=page-{pageName}]
+          & ~ .page-tablist > .page-tab
+            &[name=act_sheet-{sheetName}-page-{pageName}]
+              interactiveActive()
+        & ~ .page-container > .page#sheet-{sheetName}-page-{pageName}
+          visOn()
+      &:not([value=page-{pageName}])
+        & ~ .page-container > .page#sheet-{sheetName}-page-{pageName}
+          visOff()
+
+
+
+
+// bottom-radius(dir, value)
+//   border-bottom-{dir}-radius value
+

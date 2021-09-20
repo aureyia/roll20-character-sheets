@@ -5,6 +5,10 @@ mixin oracleListGroupItem(id, buttonLabel)
   +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
 
 mixin oracleSubtablesListGroupItem(id, buttonLabel, tables)
+  +oracleSubtablesRollBtn(id, buttonLabel, tables)
+  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
+
+mixin oracleSubtablesRollBtn(id, buttonLabel, tables)
   -
     let counter = 0;Label
     let options = [];
@@ -24,7 +28,6 @@ mixin oracleSubtablesListGroupItem(id, buttonLabel, tables)
     })
   - const rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}}`
   +oracleRollBtn(id, buttonLabel, rollQuery)
-  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
 
 mixin oracleRollBtn(id, buttonLabel, rollQuery="")
   //- generates CSS

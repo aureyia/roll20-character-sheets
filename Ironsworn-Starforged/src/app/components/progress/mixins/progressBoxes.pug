@@ -10,10 +10,10 @@ mixin progressTrackBoxes(track, name)
     div.progress-row
       div
         label.btn
-          span.i18n-text(data-i18n="progress-mark")=translation["progress-mark"]
+          +i18n("progress-mark")
           input(class="mark-vow switch-display" type="checkbox" name="attr_mark_progress")
         label.btn
-          span.i18n-text(data-i18n="progress-clear")=translation["progress-clear"]
+          +i18n("progress-clear")
           input(class="clear-vow switch-display" type="checkbox" name="attr_clear_progress")
       each value in track
         +progressBoxComplex(`attr_progress_${value}`)
@@ -23,7 +23,7 @@ mixin progressTrackBoxes(track, name)
           name="rollProgress"
           value=`&{template:starforged_progress} {{progress_name=@{${name}}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
         )
-          span.i18n-text(data-i18n="progress-conclude")=translation["progress-conclude"]
+          +i18n("progress-conclude")
       input.switch-display(type='text' name='attr_progress-filled' value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)` disabled='true')
 
 mixin progressBoxComplex(attribute_name)

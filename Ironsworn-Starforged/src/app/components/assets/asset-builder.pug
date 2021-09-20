@@ -1,54 +1,53 @@
+include ./../resources/resourcemeter
+include ./../../common/pug/pager
+
 mixin assetAbility(ability)
   //- consider having the attr name converted to snake case?
   section.asset-ability
     //- - console.log(ability.id)
-    - var assetBodyPlaceholder=translation[ability.id]
     - var attribute=_.snakeCase(ability.id.replace(/asset-(.*)-ability-([0-9])/gi, "ability_checkbox_$1_$2"))
     //- - console.log(attribute)
     //- TODO: migrate to using ability id
     //- - var attribute=ability.id
-    if ability.Enabled
-      input(
-        type='checkbox'
-        name=`attr_${attribute}`
-        checked
-      )
+    +attrToggleCheck(attribute, null, ability.Enabled)
+    //- input(
+    //-   type='checkbox'
+    //-   name=`attr_${attribute}`
+    //-   checked=ability.Enabled||false
+    //- )
       //- old name=`attr_ability_checkbox_${abilityId}`
-    else
-      input(
-        type='checkbox'
-        name=`attr_${attribute}`
-      )
       //- old: name=`attr_assetcheckbox_${abilityId}${number}`
       //- TODO: see previous
-    div.i18n-text(data-i18n=abilityId)!=assetBodyPlaceholder
+    +i18n(ability.id)
     if ability.Input
       each input in ability.Input
         - var inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
         label.asset-ability-textinput
-          span.i18n-text(data-i18n=inputId)=translation[inputId]
+          +i18n(inputId)
           input(type='text' name=`attr_${inputId}` value='')
 
 mixin assetDescription(asset)
   - var translationDesc = `${asset.id}-description`
-  section.asset-description(data-i18n=translationDesc)=translation[translationDesc]
+  +i18n(translationDesc).asset-description
 
 mixin assetTextInput(textinput, assetId)
   - let id = `${assetId}-textinput-${_.kebabCase(textinput)}`
   label.asset-textinput
-    span.i18n-text( data-i18n=id )=translation[id]
+    +i18n(id)
     input(type='text' name=`attr_${id}` value='')
     //- old `attr_field-${field}`
 
-mixin assetMeter(meter, assetName)
-  section.asset-meter(title=`Asset resource meter: ${_.capitalize(meter.Name)}`)
-    - var currentMeter = 0
-    while currentMeter <= meter.Max
-      label.asset-meter-box(title=`Set ${_.capitalize(meter.Name)} to ${currentMeter}`)
-        input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
-        //- TODO: migrate?
-        span.asset-meter-box-display!=currentMeter
-        - currentMeter++
+mixin assetMeterBar(meter, assetName)
+  +resourceMeterBar(meter.Name, meter.Max, `assettrack_${assetName}`, meter.Min||null)
+  //- section.asset-meter(title=`Asset resource meter: ${_.capitalize(meter.Name)}`)
+  //-   - var currentMeter = 0
+  //-   while currentMeter <= meter.Max
+  //-     label.asset-meter-box(title=`Set ${_.capitalize(meter.Name)} to ${currentMeter}`)
+  //-       //- input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
+  //-       +attrToggleRadio(`assettrack_${assetName}`, currentMeter, null, ability.Enabled)
+  //-       //- TODO: migrate?
+  //-       span.asset-meter-box-display!=currentMeter
+  //-       - currentMeter++
 
 
 mixin assetCard(asset, options)
@@ -71,7 +70,7 @@ mixin assetCard(asset, options)
       each ability in asset.Abilities
         +assetAbility(ability)
     if asset['Condition Meter'] && options.standalone === false
-      +assetMeter(asset['Condition Meter'])
+      +assetMeterBar(asset['Condition Meter'])
 
 mixin genericAssetBuilder(assetsArray, listId)
   //- Asset Datalist
@@ -83,8 +82,10 @@ mixin genericAssetBuilder(assetsArray, listId)
       - var assetIdShort = asset.id.replace("asset-", "")
       //- generates classes and outputs to stdout
       //- - console.log(`input[type=checkbox][name=attr_asset][value=${assetIdShort}]:checked + div.asset-card.${asset.id},`)
-      option.i18n-text(data-i18n=`${asset.id}-name` value=assetIdShort)=translation[`${asset.id}-name`]
-    option.i18n-text(data-i18n=`asset-custom-name` value='custom')=translation[`asset-custom-name`]
+      option(value=assetIdShort)
+        +i18n(`${asset.id}-name`)
+    option(value='custom')
+      +i18n(`asset-custom-name`)
 
   //- Asset Content
   each asset in assetsArray

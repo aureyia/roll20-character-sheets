@@ -8,7 +8,7 @@ mixin moveRulesArticle(move, options, classes="")
         if move['Progress Move']
           span.move-progress-label='Progress Move'
     if options.hide_close_button != true
-      +previewCloseButton("move", true)
+      +closeButton("move", "preview")
     - const statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
     if move['Progress Move']
       +progressRollBtn(move, "roll-show icon-only")

@@ -1,0 +1,55 @@
+//- simple vis / display toggle; when checked, the pager div is
+
+
+//- toggles: basic hidden switch with no block/wrapper attached
+mixin attrToggleRadio(attrName, value, classes=[], checked=false, id)
+  input(type='radio' name='attr_'+attrName value=value class=classes id=id checked=(checked||false) hidden)
+
+mixin attrToggleCheck(attrName, classes=[], checked=false, id)
+  input(type='checkbox' name='attr_'+attrName class=classes id=id checked=(checked||false) hidden )
+
+//- pagers: provides show/hide wrapper for paging functional
+mixin visPagerRadio(attrName, value, classes=[], checked=false)
+  +attrToggleRadio(attrName, value, [...classes, "switch-vis"], checked)
+  div( class=[...classes, "pager", "switchable-vis"] hidden )
+    block
+
+mixin visPagerCheck(attrName, classes=[], checked=false)
+  +attrToggleCheck(attrName, [...classes, "switch-vis"], checked)
+  div( class=[...classes, "pager", "switchable-vis"] hidden )
+    block
+
+//- mixin displayToggleRadio(attrName, value, classes, checked=false)
+//-   input(
+//-     type='radio'
+//-     name='attr_'+attrName
+//-     value=value
+//-     class=[...classes, "switch-display"]
+//-     checked=checked||false
+//-     hidden
+//-     )
+
+//- mixin displayPagerRadio(attrName, value, classes, checked=false)
+//-   +displayToggleRadio(attrName, value, classes, checked)
+//-   div(
+//-     class=[...classes, "pager", "switchable-display"]
+//-     hidden
+//-   )
+//-     block
+
+//- mixin displayToggleCheck(attrName, classes, checked=false)
+//-   input(
+//-     type='checkbox'
+//-     name='attr_'+attrName
+//-     class=[...classes, "switch-display"]
+//-     checked=checked||false
+//-     hidden
+//-   )
+
+//- mixin displayPagerCheck(attrName, classes, checked=false)
+//-   +displayToggleCheck(attrName, classes, checked)
+//-   div(
+//-     class=[...classes, "pager", "switchable-display"]
+//-     hidden
+//-   )
+//-     block

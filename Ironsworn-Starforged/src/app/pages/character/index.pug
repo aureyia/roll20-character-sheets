@@ -1,5 +1,3 @@
-include ../../components/nav/nav-bar
-include ../../components/resources/resources
 include ../common/connections
 include ../common/vows
 include ../common/progress
@@ -10,25 +8,18 @@ include ./summary
 include ./oracles
 include ./legacies
 
-- var type = 'character'
+- var sheetType = 'character'
 
-.header
-  +resources(type)
-
-  //- Momentum
+header
+  +resources(sheetType)
   include ../../components/momentum/momentum
-
-  //- Nav Bar
-  +navBar(type)
-
-//- Pages
-.page-container
-  +summaryPage
-  +connectionsPage(type)
-  +vowsPage(type)
-  +assetsPage
-  +movesPage
-  +progressPage(type)
-  +oraclesPage
-  +legaciesPage(type)
-  +shipPage(type)
++pageTabs(sheetType)
+  +summaryPage(sheetType)
+  +connectionsPage(sheetType)
+  +vowsPage(sheetType)
+  +assetsPage(sheetType)
+  +movesPage(sheetType)
+  +progressPage(sheetType)
+  +oraclesPage(sheetType)
+  +legaciesPage(sheetType)
+  +shipPage(sheetType)

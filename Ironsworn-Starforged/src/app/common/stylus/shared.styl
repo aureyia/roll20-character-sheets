@@ -27,6 +27,9 @@ $color-cta = $sf-ui-blue
 $color-warning = $sf-ui-red
 // 'close preview', 'delete', etc
 
+// base text size
+// $base-font-size
+
 // typography
 $header-font-lg = "Exo", sans-serif
 // $body-font = "Encode Sans Expanded", sans-serif
@@ -59,25 +62,40 @@ inputHighlight(shadow)
     outline-offset 0
     box-shadow inset 0 0 0 shadow
 
-switchDisplayOff() // simplest version for stuff that doesn't need a fadein/fadeout
-  display none
+visOff()
+  visibility hidden !important
+  height 0 !important
+  width 0 !important
+  overflow hidden !important
+  opacity 0 !important
+  border 0 !important
+  padding 0 !important
+  margin 0 !important
+visOn()
+  visibility visible !important
+  opacity 1 !important
+fadeIn()
+  transition opacity 0.5s ease
 
-switchDisplayOn(displayMode=block)
-  display displayMode
+// switchDisplayOff() // simplest version for stuff that doesn't need a fadein/fadeout
+//   display none
 
-switchVisOff(time=0.2s) // for pages
-  visibility collapse
-  // sept 16 2021: proper collapse support in chrome/safari would obviate the need to set height/overflow, but alas, no. someday...
-  transition visibility, opacity time ease
-  opacity 0
-  height 0
-  overflow hidden
+// switchDisplayOn(displayMode=flex)
+//   display displayMode
 
-switchVisOn() // for pages
-  visibility visible
-  opacity 100%
-  height auto
-  overflow unset
+// switchVisOff(time=0.2s) // for pages
+//   visibility collapse
+//   // sept 16 2021: proper collapse support in chrome/safari would obviate the need to set height/overflow, but alas, no. someday...
+//   transition visibility, opacity time ease
+//   opacity 0
+//   height 0
+//   overflow hidden
+
+// switchVisOn() // for pages
+//   visibility visible
+//   opacity 100%
+//   height auto
+//   overflow unset
 
 dark()
   background $color-fg
@@ -93,6 +111,10 @@ interactiveHover(bg=$color-fg, fg=$color-bg)
   &:hover
     background-color bg !important
     color fg !important
+
+interactiveActive(bg=$color-fg, fg=$color-bg)
+  background-color bg !important
+  color fg !important
 
 stdFont(primary = false)
   if primary
@@ -144,19 +166,6 @@ headerText(wt = 900, spacing = 0.05ch)
   font-weight wt
   letter-spacing 0.05ch
 
-bodyText(fontFamily=$body-font, fontSize=14.3px, listIndent=1rem)
-  li, p
-    font-size fontSize
-    font-weight normal
-    line-height 1.25
-  stdFont()
-  ol, ul
-    margin-left listIndent
-  li
-    list-style-type none
-    bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
-  p
-    margin 0
 
 // places a double width stroke behind to fake an outside stroke
 textOutline(strokeColor, strokeWidth=2px)

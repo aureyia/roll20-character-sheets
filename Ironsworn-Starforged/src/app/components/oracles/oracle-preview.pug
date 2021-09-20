@@ -31,9 +31,12 @@ mixin oraclePreview(oracle, groupName)
     - let nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replace(/ - /i, ": ") : `${groupName}: ${oracle['Display name']||oracle.Name}`
     h3=nameString
     if oracle.Table
-      //-       +progressRollBtn(move, "roll-show icon-only")
-      +oracleRollBtn(oracle.id, buttonLabel)
-    +previewCloseButton("oracle", true)
+      +oracleRollBtn(oracle.id, oracle['Display name']||oracle.Name)
+    else if oracle.Tables
+      +oracleSubtablesRollBtn(oracle.id, oracle['Display name']||oracle.Name, oracle.Tables)
+    else if oracle.Oracles
+      +oracleSubtablesRollBtn(oracle.id, oracle['Display name']||oracle.Name, oracle.Oracles)
+    +closeButton("oracle", "preview")
     section.gamerules-body
       if oracle.Table
         +oracleTable(oracle)

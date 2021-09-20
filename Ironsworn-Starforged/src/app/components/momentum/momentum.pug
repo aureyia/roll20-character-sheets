@@ -27,16 +27,19 @@ include ./tracks
 
     label.momentum-burn
       input(type='checkbox' class='momentum-burn switch-display' title='Burn Momentum' name='attr_momentumBurn')
-      .momentum-burn-back.i18n-text(data-i18n='momentum-burn')=translation['momentum-burn']
+      .momentum-burn-back
+        +i18n('momentum-burn')
 
     .momentum-status-box
-      h3.momentum-max.i18n-text(data-i18n='momentum-maximum')=translation['momentum-maximum']
+      h3.momentum-max
+        +i18n('momentum-maximum')
       h3.momentum-status-value
         span.momentum-status-attr(name='attr_momentum_max')
       input(type='text' class='switch-display' name='attr_momentum_max' value='10')
 
     .momentum-status-box
-      h3.momentum-reset.i18n-text(data-i18n='momentum-reset')=translation['momentum-reset']
+      h3.momentum-reset
+        +i18n('momentum-reset')
       h3.momentum-status-value
         span.momentum-status-attr(name='attr_momentum_reset')
       input(type='text' class='switch-display' name='attr_momentum_reset' value='2')

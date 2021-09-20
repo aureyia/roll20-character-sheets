@@ -12,7 +12,7 @@ mixin icon(gameObjectId, imgClass="hex-icon")
     const remotePath = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/"
   each ext in extensions
     if (fs.existsSync(localPath+gameObjectId+ext))
-      - console.log("Found icon:", localPath+gameObjectId+ext)
+      //- - console.log("Found icon:", localPath+gameObjectId+ext)
       img(src=remotePath+gameObjectId+ext class=`${ext == ".svg" ? "vector" : "raster"} ${imgClass}`)
     else
       |
@@ -69,7 +69,7 @@ mixin oracleMultiSubTable(oracle, header=false)
       h4.oracle-subtitle(colspan=(oracle.Tables.length+1))=oracle['Display name']||oracle.Name
     +icon(oracle.id)
     if oracle.Description
-      .oracle-description=oracle.Description
+      section.oracle-description=oracle.Description
     table.oracle-table.oracle-subtable.oracle-subtable-multi
       thead
         tr
@@ -87,7 +87,7 @@ mixin oracleSubTable(subOracle, header=true)
       h4.oracle-subtitle=subOracle.Name
     +icon(subOracle.id)
     if (subOracle.Description)
-      .oracle-description!=subOracle.Description
+      section.oracle-description!=subOracle.Description
     table.oracle-table.oracle-subtable(id=subOracle.id)
       tbody
         each row, index in subOracle.Table

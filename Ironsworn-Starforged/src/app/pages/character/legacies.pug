@@ -1,6 +1,6 @@
 include ../../components/legacies/tracks
 include ../page
 
-mixin legaciesPage
-  +page("legacies", "character",10)
+mixin legaciesPage(sheetType)
+  +page("legacies", sheetType)
     +legacies()

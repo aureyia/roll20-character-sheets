@@ -3,11 +3,6 @@ include ../../components/vows/vow-container
 include ../page
 
 mixin vowsPage(sheetType)
-  if sheetType == 'shared'
-    +page("vows", sheetType, 2, true)
-      fieldset.repeating_vow
-        +repeatingVow()
-  else
-    +page("vows", sheetType, 2)
-      fieldset.repeating_vow
-        +repeatingVow()
+  +page("vows", sheetType)
+    fieldset.repeating_vow
+      +repeatingVow()

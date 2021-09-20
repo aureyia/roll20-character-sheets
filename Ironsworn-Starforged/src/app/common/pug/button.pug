@@ -11,28 +11,27 @@
 
 mixin toggleBtn(label, attribute, value, title, classes)
   label(class=`toggle-btn ${classes||''}`)
-    input.switch-display.btn-input(
-      type='radio'
-      title= `@{${attribute}}`
-      name=`attr_${attribute}`
-      value=value
-      hidden
-    )
     span!=label
+    +attrToggleRadio(attribute, value)
+    //- input.switch-display.btn-input(
+    //-   type='radio'
+    //-   title= `@{${attribute}}`
+    //-   name=`attr_${attribute}`
+    //-   value=value
+    //-   hidden
+    //- )
+    //- FIXME i18n
 
 mixin btn(opts)
   - var action = opts.action ? opts.action : 'toggle'
   if opts.classes
     label(class=`${action}-btn ${opts.classes}`)
       if opts.pure_attr
-        input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}`)
+        input.btn-input.switch-display(hidden type=opts.type name=`attr_${opts.attribute}` checked=opts.checked||false)
       else
-        if opts.checked
-          input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}_button` checked)
-        else
-          input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}_button`)
-      span.i18n-text.btn-content(data-i18n=opts.translationId)=opts.text
+        input.btn-input.switch-display(hidden type=opts.type name=`attr_${opts.attribute}_button` checked=opts.checked||false)
+      +i18n(opts.translationId)
   else
     label(class=`${action}-btn`)
-      input.btn-input.switch-display(type=opts.type name=`attr_${opts.attribute}_button`)
-      span.i18n-text.btn-content(data-i18n=opts.translationId)=opts.text
+      input.btn-input.switch-display(hidden type=opts.type name=`attr_${opts.attribute}_button` checked=opts.checked||false)
+      +i18n(opts.translationId)

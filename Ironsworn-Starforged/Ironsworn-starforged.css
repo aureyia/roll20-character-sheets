@@ -39,7 +39,8 @@
 .ui-dialog .charmancer.locked span label {
   pointer-events: unset;
 }
-.ui-dialog .charsheet {
+.ui-dialog .charsheet.charactersheet {
+  font-size: 16px;
   padding: unset;
 }
 .ui-dialog .charsheet p,
@@ -82,10 +83,8 @@
   border: unset;
   border-bottom-color: unset;
   -webkit-border-radius: unset;
-  -moz-border-radius: unset;
   border-radius: unset;
   -webkit-box-shadow: unset;
-  -moz-box-shadow: unset;
   box-shadow: unset;
   cursor: unset;
   filter: unset;
@@ -155,28 +154,27 @@
 }
 .ui-dialog div.charsheet.charactersheet {
   width: 842px !important;
-  margin: 0 auto !important;
-  padding: 15px;
-  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
-  font-weight: normal;
+  font-size: 16px;
   font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
 /* Fake radio/checkbox */
 /* Remove dot from all radios _after_ selected one */
 }
-.ui-dialog div.charsheet.charactersheet *,
-.ui-dialog div.charsheet.charactersheet ::before,
-.ui-dialog div.charsheet.charactersheet ::after {
-  box-sizing: border-box;
+.ui-dialog div.charsheet.charactersheet h1,
+.ui-dialog div.charsheet.charactersheet h2,
+.ui-dialog div.charsheet.charactersheet h3,
+.ui-dialog div.charsheet.charactersheet h4,
+.ui-dialog div.charsheet.charactersheet h5,
+.ui-dialog div.charsheet.charactersheet h6 {
+  font-family: "Exo", Arial, sans-serif;
 }
-.ui-dialog div.charsheet.charactersheet li,
-.ui-dialog div.charsheet.charactersheet p {
-  font-size: 14.3px;
-  font-weight: normal;
-  line-height: 1.25;
+.ui-dialog div.charsheet.charactersheet span.i18n-text {
+  display: contents;
 }
 .ui-dialog div.charsheet.charactersheet ol,
 .ui-dialog div.charsheet.charactersheet ul {
-  margin-left: 1rem;
+  margin-left: 1em;
 }
 .ui-dialog div.charsheet.charactersheet li {
   list-style-type: none;
@@ -200,13 +198,16 @@
 .ui-dialog div.charsheet.charactersheet p {
   margin: 0;
 }
-.ui-dialog div.charsheet.charactersheet p,
-.ui-dialog div.charsheet.charactersheet li,
-.ui-dialog div.charsheet.charactersheet td {
-  line-height: 1.4;
+.ui-dialog div.charsheet.charactersheet *,
+.ui-dialog div.charsheet.charactersheet ::before,
+.ui-dialog div.charsheet.charactersheet ::after {
+  box-sizing: border-box;
+}
+.ui-dialog div.charsheet.charactersheet label {
+  cursor: pointer;
 }
 .ui-dialog div.charsheet.charactersheet input[type=text] {
-  font-weight: 600;
+  font-weight: 500;
 }
 .ui-dialog div.charsheet.charactersheet input[type=text]:focus {
   outline: 3px solid #fd0;
@@ -218,9 +219,6 @@
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-}
-.ui-dialog div.charsheet.charactersheet select:-ms-expand {
-  display: none;
 }
 .ui-dialog div.charsheet.charactersheet hr {
   border: 0;
@@ -325,31 +323,6 @@
   color: #221e1f;
   transition: 0.5s ease;
 }
-.ui-dialog div.charsheet.charactersheet input.switch-vis {
-  display: none;
-}
-.ui-dialog div.charsheet.charactersheet input.switch-vis + .switchable-vis {
-  visibility: collapse;
-  transition: visibility, opacity 0.2s ease;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-.ui-dialog div.charsheet.charactersheet input.switch-vis:checked + .switchable-vis {
-  visibility: visible;
-  opacity: 100%;
-  height: auto;
-  overflow: unset;
-}
-.ui-dialog div.charsheet.charactersheet input.switch-display {
-  display: none;
-}
-.ui-dialog div.charsheet.charactersheet input.switch-display + .switchable-display {
-  display: none;
-}
-.ui-dialog div.charsheet.charactersheet input.switch-display:checked + .switchable-display {
-  display: block;
-}
 .ui-dialog div.charsheet.charactersheet div.preview-roll {
   padding: 0em;
 }
@@ -419,16 +392,8 @@
   display: flex;
   justify-content: space-evenly;
 }
-.ui-dialog div.charsheet.charactersheet h2.mode-title {
-  text-align: center;
-}
-.ui-dialog div.charsheet.charactersheet div.mode-title {
-  margin-bottom: 2em;
-}
 .ui-dialog div.charsheet.charactersheet label.mode {
   text-align: center;
-}
-.ui-dialog div.charsheet.charactersheet label.mode {
   margin: 0.5em;
   padding: 0;
   cursor: pointer;
@@ -436,10 +401,10 @@
   opacity: 1;
   z-index: 5;
   width: auto;
-}
-.ui-dialog div.charsheet.charactersheet label.mode:hover h4 {
-  color: #797979;
-  transition: 0.5s ease;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  gap: 1em;
 }
 .ui-dialog div.charsheet.charactersheet label.mode:hover .mode-image {
   opacity: 0.7;
@@ -449,14 +414,16 @@
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
-.ui-dialog div.charsheet.charactersheet input[type=radio].character-mode:checked ~ div.character-mode,
-.ui-dialog div.charsheet.charactersheet input[type=radio].shared-mode:checked ~ div.shared-mode {
-  display: block;
+.ui-dialog div.charsheet.charactersheet #sheet-select {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1em;
 }
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].modes-show:checked ~ div.modes-show {
-  display: block;
+.ui-dialog div.charsheet.charactersheet #sheet-select .mode-title {
+  text-transform: uppercase;
 }
-.ui-dialog div.charsheet.charactersheet div.mode {
+.ui-dialog div.charsheet.charactersheet .mode {
   display: flex;
   justify-content: center;
   width: fit-content;
@@ -466,74 +433,47 @@
 .ui-dialog div.charsheet.charactersheet .mode-image {
   display: flex;
 }
-.ui-dialog div.charsheet.charactersheet .sub-header {
-  margin-top: 1em;
-  border-bottom: 3px solid #221e1f;
+.ui-dialog div.charsheet.charactersheet input[type=hidden][name=attr_mode][value=sheet-select] ~ #sheet-select {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
-.ui-dialog div.charsheet.charactersheet .ship-grid {
-  margin-top: 1em;
-  display: grid;
-  justify-content: space-around;
-  grid-row-gap: 1em;
+.ui-dialog div.charsheet.charactersheet input[type=hidden][name=attr_mode]:not([value=sheet-select]) ~ #sheet-select {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
-.ui-dialog div.charsheet.charactersheet .ship-grid h3 {
-  color: #fff;
-  background: #221e1f;
-  margin-bottom: 0.6em;
+.ui-dialog div.charsheet.charactersheet input[type=hidden][name=attr_mode][value=sheet-character] ~ #sheet-character {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
-.ui-dialog div.charsheet.charactersheet .ship-grid .asset {
-  grid-column: 1;
-  margin: 0;
-  grid-row: 1;
-  height: fit-content;
+.ui-dialog div.charsheet.charactersheet input[type=hidden][name=attr_mode]:not([value=sheet-character]) ~ #sheet-character {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-info {
-  grid-column: 2;
-  grid-row: 1;
-  border: 2px solid #221e1f;
-  border-radius: 1em;
-  box-shadow: 2px 2px 6px 0px;
+.ui-dialog div.charsheet.charactersheet input[type=hidden][name=attr_mode][value=sheet-shared] ~ #sheet-shared {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-info .ship-onboard {
-  margin: 0.3em;
-  border-radius: 1em;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-info .ship-onboard .btn-content {
-  border-radius: 1em;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-info .info {
-  padding: 0em 0.4em;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-info h3:nth-child(1) {
-  border-top-left-radius: 0.6em;
-  border-top-right-radius: 0.6em;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-info input[type=text] {
-  border: 0;
-  border-bottom: 2px solid #221e1f;
-  border-radius: 0;
-  padding: 0;
-  padding-left: 0.3em;
-  width: 100%;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-support-vehicles {
-  grid-row: 2;
-  grid-column: 2;
-  width: 320px;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .ship-category-modules {
-  grid-row: 2;
-  grid-column: 1;
-  width: 320px;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .impact-btn {
-  width: 45%;
-}
-.ui-dialog div.charsheet.charactersheet .ship-grid .impact-group {
-  width: 100%;
-}
-.ui-dialog div.charsheet.charactersheet .ship-btn {
-  margin: 0;
+.ui-dialog div.charsheet.charactersheet input[type=hidden][name=attr_mode]:not([value=sheet-shared]) ~ #sheet-shared {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .ui-dialog div.charsheet.charactersheet .overview {
   columns: 3;
@@ -602,12 +542,6 @@
 .ui-dialog div.charsheet.charactersheet input.preview.switch-display,
 .ui-dialog div.charsheet.charactersheet input.overview.switch-display {
   display: none;
-}
-.ui-dialog div.charsheet.charactersheet input.preview.switch-display:checked + .preview.switchable-display {
-  display: block;
-}
-.ui-dialog div.charsheet.charactersheet input.overview.switch-display:checked + .overview.switchable-display {
-  display: block;
 }
 .ui-dialog div.charsheet.charactersheet .list-group {
   border: 2px solid #221e1f;
@@ -842,9 +776,6 @@
   margin: 0;
   height: auto;
 }
-.ui-dialog div.charsheet.charactersheet input.switch-display:checked + article.gamerules.switchable-display {
-  display: grid;
-}
 .ui-dialog div.charsheet.charactersheet article.gamerules {
   font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
   background: #221e1f;
@@ -879,8 +810,7 @@
 }
 .ui-dialog div.charsheet.charactersheet article.gamerules .close-preview.icon-only {
   display: flex;
-  justify-content: middle;
-  align-content: middle;
+  justify-content: center;
   grid-area: close;
   border: none;
   background: none;
@@ -957,7 +887,7 @@
   justify-content: stretch;
   margin-bottom: 0.1em;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr repeat(max-content);
+  grid-template-columns: 1fr repeat(auto-fill, max-content);
 }
 .ui-dialog div.charsheet.charactersheet .resources > * {
   background: #fff;
@@ -1280,7 +1210,6 @@
 }
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].show-connection-info:checked ~ div.show-connection-info {
   flex-flow: row wrap;
-  display: flex;
 }
 .ui-dialog div.charsheet.charactersheet input[type="checkbox"].show-connection-info:checked ~ span.show-connection-info {
   border-radius: 0;
@@ -1428,9 +1357,6 @@
   padding: 0em 1em 0em 1em;
   line-height: 25px;
 }
-.ui-dialog div.charsheet.charactersheet input[type='checkbox'].challenge-show:checked ~ div.countdown-row {
-  display: 0.7s;
-}
 .ui-dialog div.charsheet.charactersheet input[type='checkbox'].challenge-show-button:checked ~ div.challenge-show-back {
   background: #221e1f;
   color: #fff;
@@ -1561,64 +1487,271 @@
   display: block;
   background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
 }
-.ui-dialog div.charsheet.charactersheet .nav-bar {
-  margin-top: 0.3em;
+.ui-dialog div.charsheet.charactersheet .page-tablist {
+  display: flex;
+  flex-flow: row wrap;
   border: 1px solid #221e1f;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
   margin-bottom: 1em;
 }
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row {
-  display: flex;
-}
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row:nth-last-child(1) .nav-child:nth-child(1) {
-  border-bottom-left-radius: 0.79em;
-}
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row:nth-last-child(1) .nav-child:nth-child(1) label,
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row:nth-last-child(1) .nav-child:nth-child(1) .page-button {
-  border-bottom-left-radius: 0.5em;
-}
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row:nth-last-child(1) .nav-child:nth-last-child(1) {
-  border-bottom-right-radius: 0.79em;
-}
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row:nth-last-child(1) .nav-child:nth-last-child(1) label,
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row:nth-last-child(1) .nav-child:nth-last-child(1) .page-button {
-  border-bottom-right-radius: 0.5em;
-}
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row .nav-child {
+.ui-dialog div.charsheet.charactersheet .page-tablist > .page-tab {
   border: 2px solid #221e1f;
+  flex: 1;
+  flex-basis: 20%;
+  min-width: max-content;
   width: 100%;
   text-align-last: center;
   overflow: hidden;
-}
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row label {
   margin: 0;
   padding: 0;
   cursor: pointer;
   cursor: pointer;
   transition: 0.5s ease;
 }
-.ui-dialog div.charsheet.charactersheet .nav-bar .nav-row label:hover {
+.ui-dialog div.charsheet.charactersheet .page-tablist > .page-tab:hover {
   background-color: #b8c2cd !important;
   color: #221e1f !important;
 }
-.ui-dialog div.charsheet.charactersheet .page-button-back {
-  padding: 0.1em;
-  font-weight: 600;
-  height: 100%;
-  width: 100%;
-  display: block;
+.ui-dialog div.charsheet.charactersheet input.pager~ .page-container {
+  display: contents;
 }
-.ui-dialog div.charsheet.charactersheet .page-button:checked ~ span.page-button-back {
-  background: #221e1f;
-  color: #fff;
-  transition: 0.5s ease;
+.ui-dialog div.charsheet.charactersheet input.pager~ .page-container > .page {
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-flow: row wrap;
 }
-.ui-dialog div.charsheet.charactersheet .summary {
-  margin-top: 1em;
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-progress] ~ .page-tablist > .page-tab[name=act_sheet-character-page-progress] {
+  background-color: #221e1f !important;
+  color: #fff !important;
 }
-.ui-dialog div.charsheet.charactersheet label.page-label {
-  text-align: center;
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-progress {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-progress]) ~ .page-container > .page#sheet-character-page-progress {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-moves] ~ .page-tablist > .page-tab[name=act_sheet-character-page-moves] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-moves {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-moves]) ~ .page-container > .page#sheet-character-page-moves {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-connections] ~ .page-tablist > .page-tab[name=act_sheet-character-page-connections] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-connections {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-connections]) ~ .page-container > .page#sheet-character-page-connections {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-legacies] ~ .page-tablist > .page-tab[name=act_sheet-character-page-legacies] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-legacies {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-legacies]) ~ .page-container > .page#sheet-character-page-legacies {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-oracles] ~ .page-tablist > .page-tab[name=act_sheet-character-page-oracles] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-oracles {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-oracles]) ~ .page-container > .page#sheet-character-page-oracles {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-vows] ~ .page-tablist > .page-tab[name=act_sheet-character-page-vows] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-vows {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-vows]) ~ .page-container > .page#sheet-character-page-vows {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-summary] ~ .page-tablist > .page-tab[name=act_sheet-character-page-summary] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-summary {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-summary]) ~ .page-container > .page#sheet-character-page-summary {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-assets] ~ .page-tablist > .page-tab[name=act_sheet-character-page-assets] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-assets {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-assets]) ~ .page-container > .page#sheet-character-page-assets {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=page-ship] ~ .page-tablist > .page-tab[name=act_sheet-character-page-ship] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-character-display] ~ .page-container > .page#sheet-character-page-ship {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-ship]) ~ .page-container > .page#sheet-character-page-ship {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=page-vows] ~ .page-tablist > .page-tab[name=act_sheet-shared-page-vows] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display] ~ .page-container > .page#sheet-shared-page-vows {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-vows]) ~ .page-container > .page#sheet-shared-page-vows {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=page-progress] ~ .page-tablist > .page-tab[name=act_sheet-shared-page-progress] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display] ~ .page-container > .page#sheet-shared-page-progress {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-progress]) ~ .page-container > .page#sheet-shared-page-progress {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=page-connections] ~ .page-tablist > .page-tab[name=act_sheet-shared-page-connections] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display] ~ .page-container > .page#sheet-shared-page-connections {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-connections]) ~ .page-container > .page#sheet-shared-page-connections {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=page-ship] ~ .page-tablist > .page-tab[name=act_sheet-shared-page-ship] {
+  background-color: #221e1f !important;
+  color: #fff !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager[name=attr_sheet-shared-display] ~ .page-container > .page#sheet-shared-page-ship {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.ui-dialog div.charsheet.charactersheet input.pager:not([value=page-ship]) ~ .page-container > .page#sheet-shared-page-ship {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .ui-dialog div.charsheet.charactersheet .momentum {
   display: flex;
@@ -1793,12 +1926,10 @@
   display: flex;
   width: auto;
   margin-left: 5em;
-  display: block;
 }
 .ui-dialog div.charsheet.charactersheet input[type=radio].stat-edit:checked ~ div.stat-edit {
   display: flex;
   width: auto;
-  display: block;
 }
 .ui-dialog div.charsheet.charactersheet div.stat-toggle.set-toggle {
   width: 100%;
@@ -1903,7 +2034,7 @@
   transition: 0.5s ease;
 }
 .ui-dialog div.charsheet.charactersheet .move-show:hover {
-  background-color: "#969696" !important;
+  background-color: #969696 !important;
   color: #fff !important;
 }
 .ui-dialog div.charsheet.charactersheet .column-wrap {
@@ -2031,27 +2162,6 @@
   width: max-content;
   height: max-content;
 }
-.ui-dialog div.charsheet.charactersheet input[type="radio"].asset-builder:checked + .asset-builder,
-.ui-dialog div.charsheet.charactersheet input[type="radio"].asset-view:checked + .asset-view {
-  display: block;
-}
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-titles-1:checked ~ div.builder-titles-1,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-titles-2:checked ~ div.builder-titles-2,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-titles-3:checked ~ div.builder-titles-3,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-ability-1-text:checked ~ div.builder-ability-1-text,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-ability-1-text-input:checked ~ div.builder-ability-1-text-input,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-ability-2-text:checked ~ div.builder-ability-2-text,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-ability-2-text-input:checked ~ div.builder-ability-2-text-input,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-ability-3-text:checked ~ div.builder-ability-3-text,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].builder-ability-3-text-input:checked ~ div.builder-ability-3-text-input,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-1:checked ~ div.meter-dropdown-1,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-2:checked ~ div.meter-dropdown-2,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-3:checked ~ div.meter-dropdown-3,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-4:checked ~ div.meter-dropdown-4,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-5:checked ~ div.meter-dropdown-5,
-.ui-dialog div.charsheet.charactersheet input[type="checkbox"].meter-dropdown-6:checked ~ div.meter-dropdown-6 {
-  display: flex;
-}
 .ui-dialog div.charsheet.charactersheet div.builder-titles-1,
 .ui-dialog div.charsheet.charactersheet div.builder-titles-2,
 .ui-dialog div.charsheet.charactersheet div.builder-titles-3 {
@@ -2106,8 +2216,9 @@
   float: left !important;
 }
 .ui-dialog div.charsheet.charactersheet .asset-container {
+  font-size: 1em;
   display: inline-block;
-  width: 320px;
+  width: 20em;
 }
 .ui-dialog div.charsheet.charactersheet .asset-container input {
   width: inherit;
@@ -2117,23 +2228,21 @@
   padding: 0;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card {
-  font-size: 16px;
   font-weight: 400;
   display: grid;
-  padding: 16px 16px;
+  padding: 1em 1em;
   font-weight: 400;
   box-sizing: border-box;
-  width: 320px;
-  height: 448px;
-  border: 1.777777777777778px solid #b7c3ce;
+  width: 20em;
+  height: 28em;
+  border: 0.111111111111111em solid #b7c3ce;
   background-origin: border-box;
   background-repeat: no-repeat;
   background-position: top right;
-  background-size: 121.6px auto;
+  background-size: 7.6em auto;
   grid-template-areas: "assetcategory icon" "name icon" "input icon" "description icon" "body body" "footer footer";
-  grid-template-columns: 1fr 64px;
+  grid-template-columns: 1fr 4em;
   grid-template-rows: max-content max-content max-content max-content 1fr max-content;
-  gap: 1.777777777777778px;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card .asset-category,
 .ui-dialog div.charsheet.charactersheet article.asset-card .asset-name {
@@ -2144,35 +2253,35 @@
 .ui-dialog div.charsheet.charactersheet article.asset-card .asset-name {
   grid-area: name;
   font-weight: 800;
-  height: 16.444444444444443px;
-  line-height: 16.444444444444443px;
-  font-size: 21.583333333333332px;
+  height: 1.027777777777778em;
+  line-height: 1.027777777777778em;
+  font-size: 1.348958333333333em;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card .asset-category {
   grid-area: assetcategory;
   font-weight: 600;
-  height: 10.222222222222221px;
-  line-height: 10.222222222222221px;
-  font-size: 13.416666666666666px;
+  height: 0.638888888888889em;
+  line-height: 0.638888888888889em;
+  font-size: 0.838541666666667em;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card img.asset-icon {
   box-sizing: border-box;
   grid-area: icon;
-  width: 64px;
-  height: 73.90083445627211px;
+  width: 4em;
+  height: 4.618802153517007em;
   align-self: start;
   justify-self: end;
   padding: 0;
   margin: 0;
   margin-top: 0px;
-  margin-top: -1.25px;
+  margin-top: 0px;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card .asset-textinput {
   cursor: pointer;
   display: flex;
   grid-area: input;
-  font-size: 12.483333333333333px;
-  border-bottom: 1.777777777777778px solid #000;
+  font-size: 0.780208333333333em;
+  border-bottom: 0.111111111111111em solid #000;
   width: stretch;
   width: -moz-available;
   padding: 0;
@@ -2193,13 +2302,15 @@
   width: stretch;
   width: -moz-available;
   border: none;
-  margin-bottom: -3%;
+  margin-bottom: 0.111111111111111em;
   font-weight: 500;
   background: transparent;
 }
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities,
+.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-description,
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities *,
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-description * {
-  line-height: 1.25;
+  line-height: 1.143888888888889em;
   font-family: 'Encode Sans Condensed', Arial, sans-serif;
   letter-spacing: 0.01ch;
 }
@@ -2207,19 +2318,16 @@
   grid-area: body;
   display: flex;
   flex-flow: column;
-  gap: 3.555555555555555px;
+  gap: 0.090555555555556em;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability {
   display: flex;
-  gap: 5.333333333333333px;
+  gap: 0.458333333333333em;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability ul,
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability ul li {
   margin: 0;
   padding: 0;
-}
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability ul li {
-  margin: 3.555555555555555px 0;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability input[type="checkbox"] {
   flex-shrink: 0;
@@ -2227,20 +2335,20 @@
   align-self: start;
   -moz-appearance: none;
   appearance: none;
-  width: 14.08px;
-  height: 16.258183580379864px;
+  width: 0.875em;
+  height: 1.010362971081845em;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   cursor: pointer;
   border: none;
-  width: 14.08px;
-  height: 16.258183580379864px;
+  width: 0.875em;
+  height: 1.010362971081845em;
   color: currentColor;
   background-color: transparent;
   background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg");
   background-size: 100%;
   background-position: center;
   transition: all ease 0.3s;
-  margin-top: 1.777777777777778px;
+  margin-left: 0.111111111111111em;
 }
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability input[type="checkbox"]:hover {
   background-color: #b8c2cd;
@@ -2248,7 +2356,7 @@
 .ui-dialog div.charsheet.charactersheet article.asset-card section.asset-abilities section.asset-ability input[type="checkbox"]:checked {
   background-color: currentColor;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter {
   grid-area: footer;
   display: flex;
   flex-direction: row-reverse;
@@ -2258,11 +2366,11 @@
   font-family: "Exo", sans-serif;
   font-weight: 700;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box {
   cursor: pointer;
   transition: inherit;
-  width: 32px;
-  height: 36.950417228136054px;
+  width: 2em;
+  height: 2.309401076758503em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2270,26 +2378,26 @@
   border: none;
   padding: 0;
   margin: 0;
-  margin-right: -2.311111111111111px;
+  margin-right: -0.144444444444444em;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box input[type="radio"] {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box input[type="radio"] {
   display: none;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:first-child:hover {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:first-child:hover {
   color: #ce242b;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:first-child input[type="radio"]:checked + .asset-meter-box-display {
-  color: $fg-color;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:first-child input[type="radio"]:checked + .resource-meter-box-display {
+  color: #221e1f;
   background-color: #ce242b;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:last-child:hover {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:last-child:hover {
   color: #28aae1;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box:last-child input[type="radio"]:checked + .asset-meter-box-display {
-  color: $fg-color;
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:last-child input[type="radio"]:checked + .resource-meter-box-display {
+  color: #221e1f;
   background-color: #28aae1;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box .asset-meter-box-display {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box .resource-meter-box-display {
   transition: inherit;
   mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg");
   mask-position: center;
@@ -2300,8 +2408,8 @@
   background-size: contain;
   background-position: center;
   background-color: #fff;
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 1.154700538379252em;
+  font-weight: 700;
   display: flex;
   height: inherit;
   width: inherit;
@@ -2312,17 +2420,17 @@
   color: #b8c2cd;
   -webkit-text-stroke: 0px transparent;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box .asset-meter-box-display:hover {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box .resource-meter-box-display:hover {
   color: #221e1f;
 }
-.ui-dialog div.charsheet.charactersheet article.asset-card section.asset-meter label.asset-meter-box input[type="radio"]:checked + .asset-meter-box-display {
+.ui-dialog div.charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box input[type="radio"]:checked + .resource-meter-box-display {
   background-color: #221e1f;
   color: #fff;
 }
-.ui-dialog div.charsheet.charactersheet .asset-meter-wordy {
+.ui-dialog div.charsheet.charactersheet .resource-meter-wordy {
   text-transform: uppercase;
 }
-.ui-dialog div.charsheet.charactersheet .asset-meter-wordy .asset-meter-box {
+.ui-dialog div.charsheet.charactersheet .resource-meter-wordy .resource-meter-box {
   flex-direction: row;
 }
 .ui-dialog div.charsheet.charactersheet .asset-type-selection {
@@ -2357,98 +2465,6 @@
   margin-left: 0.3em;
   margin-right: 0.5em;
 }
-.ui-dialog div.charsheet.charactersheet input[type=checkbox].custom:checked + div.custom {
-  display: grid;
-}
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_ace]:checked + .asset-card.asset-ace,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_agent]:checked + .asset-card.asset-agent,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_archer]:checked + .asset-card.asset-archer,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_armored]:checked + .asset-card.asset-armored,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_augmented]:checked + .asset-card.asset-augmented,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_bannersworn]:checked + .asset-card.asset-bannersworn,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_banshee]:checked + .asset-card.asset-banshee,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_blademaster]:checked + .asset-card.asset-blademaster,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_bonded]:checked + .asset-card.asset-bonded,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_bounty-hunter]:checked + .asset-card.asset-bounty-hunter,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_brawler]:checked + .asset-card.asset-brawler,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_combat-bot]:checked + .asset-card.asset-combat-bot,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_commander]:checked + .asset-card.asset-commander,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_courier]:checked + .asset-card.asset-courier,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_devotant]:checked + .asset-card.asset-devotant,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_diplomat]:checked + .asset-card.asset-diplomat,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_empath]:checked + .asset-card.asset-empath,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_explorer]:checked + .asset-card.asset-explorer,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_fated]:checked + .asset-card.asset-fated,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_firebrand]:checked + .asset-card.asset-firebrand,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_fugitive]:checked + .asset-card.asset-fugitive,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_gearhead]:checked + .asset-card.asset-gearhead,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_glowcat]:checked + .asset-card.asset-glowcat,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_gunner]:checked + .asset-card.asset-gunner,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_gunslinger]:checked + .asset-card.asset-gunslinger,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_haunted]:checked + .asset-card.asset-haunted,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_healer]:checked + .asset-card.asset-healer,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_homesteader]:checked + .asset-card.asset-homesteader,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_kinetic]:checked + .asset-card.asset-kinetic,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_lore-hunter]:checked + .asset-card.asset-lore-hunter,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_loyalist]:checked + .asset-card.asset-loyalist,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_marked]:checked + .asset-card.asset-marked,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_mercenary]:checked + .asset-card.asset-mercenary,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_naturalist]:checked + .asset-card.asset-naturalist,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_navigator]:checked + .asset-card.asset-navigator,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_oathbreaker]:checked + .asset-card.asset-oathbreaker,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_outcast]:checked + .asset-card.asset-outcast,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_protocol-bot]:checked + .asset-card.asset-protocol-bot,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_revenant]:checked + .asset-card.asset-revenant,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_rockhorn]:checked + .asset-card.asset-rockhorn,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_scavenger]:checked + .asset-card.asset-scavenger,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_scoundrel]:checked + .asset-card.asset-scoundrel,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_seer]:checked + .asset-card.asset-seer,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_shade]:checked + .asset-card.asset-shade,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sidekick]:checked + .asset-card.asset-sidekick,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_slayer]:checked + .asset-card.asset-slayer,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sniper]:checked + .asset-card.asset-sniper,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sprite]:checked + .asset-card.asset-sprite,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_survey-bot]:checked + .asset-card.asset-survey-bot,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_symbiote]:checked + .asset-card.asset-symbiote,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_tech]:checked + .asset-card.asset-tech,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_trader]:checked + .asset-card.asset-trader,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_utility-bot]:checked + .asset-card.asset-utility-bot,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_vanguard]:checked + .asset-card.asset-vanguard,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_vestige]:checked + .asset-card.asset-vestige,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_veteran]:checked + .asset-card.asset-veteran,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_voidborn]:checked + .asset-card.asset-voidborn,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_voidglider]:checked + .asset-card.asset-voidglider,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_weapon-master]:checked + .asset-card.asset-weapon-master,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_engine-upgrade]:checked + .asset-card.asset-engine-upgrade,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_expanded-hold]:checked + .asset-card.asset-expanded-hold,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_grappler]:checked + .asset-card.asset-grappler,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_heavy-cannons]:checked + .asset-card.asset-heavy-cannons,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_internal-refit]:checked + .asset-card.asset-internal-refit,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_medbay]:checked + .asset-card.asset-medbay,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_missile-array]:checked + .asset-card.asset-missile-array,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_overseer]:checked + .asset-card.asset-overseer,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_reinforced-hull]:checked + .asset-card.asset-reinforced-hull,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_research-lab]:checked + .asset-card.asset-research-lab,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_sensor-array]:checked + .asset-card.asset-sensor-array,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_shields]:checked + .asset-card.asset-shields,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_stealth-tech]:checked + .asset-card.asset-stealth-tech,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_vehicle-bay]:checked + .asset-card.asset-vehicle-bay,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_workshop]:checked + .asset-card.asset-workshop,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_exosuit]:checked + .asset-card.asset-exosuit,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_hoverbike]:checked + .asset-card.asset-hoverbike,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_rover]:checked + .asset-card.asset-rover,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_service-pod]:checked + .asset-card.asset-service-pod,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_shuttle]:checked + .asset-card.asset-shuttle,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_skiff]:checked + .asset-card.asset-skiff,
-.ui-dialog div.charsheet.charactersheet input.switch-display[type=checkbox][name=attr_snub-fighter]:checked + .asset-card.asset-snub-fighter {
-  display: grid;
-}
-.ui-dialog div.charsheet.charactersheet span.asset-name {
-  font-family: 'Exo', Arial, sans-serif;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 .ui-dialog div.charsheet.charactersheet .asset-content-header {
   display: flex;
   justify-content: space-between;
@@ -2456,12 +2472,6 @@
 .ui-dialog div.charsheet.charactersheet .asset-details {
   align-self: center;
   padding-left: 1em;
-}
-.ui-dialog div.charsheet.charactersheet .category {
-  font-family: 'Exo', Arial, sans-serif;
-  font-size: 1.1em;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 .ui-dialog div.charsheet.charactersheet .asset-options-header {
   padding: 0.2em 0.4em;
@@ -2515,10 +2525,6 @@
 }
 .ui-dialog div.charsheet.charactersheet .asset-card.category-command-vehicle .asset-category {
   color: #9aa3ad;
-}
-.ui-dialog div.charsheet.charactersheet input.oracle-ironsworn:checked + div.oracle-ironsworn,
-.ui-dialog div.charsheet.charactersheet input.oracle-delve:checked + div.oracle-delve {
-  display: 0.7s;
 }
 .ui-dialog div.charsheet.charactersheet .oracle-btn {
   margin: 0;
@@ -2580,105 +2586,6 @@
   width: stretch;
   width: -moz-available;
 }
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.switchable-display.oracle-table-ask-the-oracle-almost-certain,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.switchable-display.oracle-table-ask-the-oracle-likely,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.switchable-display.oracle-table-ask-the-oracle-50-50,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.switchable-display.oracle-table-ask-the-oracle-unlikely,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.switchable-display.oracle-table-ask-the-oracle-small-chance,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-background-assets:checked + article.switchable-display.oracle-table-character-creation-background-assets,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.switchable-display.oracle-table-character-creation-backstory-prompts,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-starship-history:checked + article.switchable-display.oracle-table-character-creation-starship-history,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.switchable-display.oracle-table-character-creation-starship-quirks,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.switchable-display.oracle-table-character-creation-sector-trouble,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.switchable-display.oracle-table-character-creation-inciting-incident,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-action:checked + article.switchable-display.oracle-table-core-action,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-theme:checked + article.switchable-display.oracle-table-core-theme,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-descriptor:checked + article.switchable-display.oracle-table-core-descriptor,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-core-focus:checked + article.switchable-display.oracle-table-core-focus,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sighting:checked + article.switchable-display.oracle-table-space-sighting,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-stellar-object:checked + article.switchable-display.oracle-table-space-stellar-object,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sector-name-prefix:checked + article.switchable-display.oracle-table-space-sector-name-prefix,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-sector-name-suffix:checked + article.switchable-display.oracle-table-space-sector-name-suffix,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-peril:checked + article.switchable-display.oracle-table-space-peril,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-space-opportunity:checked + article.switchable-display.oracle-table-space-opportunity,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-planetary-class:checked + article.switchable-display.oracle-table-planet-planetary-class,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-peril:checked + article.switchable-display.oracle-table-planet-peril,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-planet-opportunity:checked + article.switchable-display.oracle-table-planet-opportunity,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-desert-world:checked + article.switchable-display.oracle-subcategory-planet-desert-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.switchable-display.oracle-subcategory-planet-furnace-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-grave-world:checked + article.switchable-display.oracle-subcategory-planet-grave-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-ice-world:checked + article.switchable-display.oracle-subcategory-planet-ice-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.switchable-display.oracle-subcategory-planet-jovian-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.switchable-display.oracle-subcategory-planet-jungle-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.switchable-display.oracle-subcategory-planet-ocean-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.switchable-display.oracle-subcategory-planet-rocky-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.switchable-display.oracle-subcategory-planet-shattered-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.switchable-display.oracle-subcategory-planet-tainted-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-planet-vital-world:checked + article.switchable-display.oracle-subcategory-planet-vital-world,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-location:checked + article.switchable-display.oracle-table-settlement-location,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-population:checked + article.switchable-display.oracle-table-settlement-population,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-first-look:checked + article.switchable-display.oracle-table-settlement-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-initial-contact:checked + article.switchable-display.oracle-table-settlement-initial-contact,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-authority:checked + article.switchable-display.oracle-table-settlement-authority,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-projects:checked + article.switchable-display.oracle-table-settlement-projects,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-trouble:checked + article.switchable-display.oracle-table-settlement-trouble,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-settlement-name:checked + article.switchable-display.oracle-table-settlement-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-name:checked + article.switchable-display.oracle-table-starship-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-type:checked + article.switchable-display.oracle-table-starship-type,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-fleet:checked + article.switchable-display.oracle-table-starship-fleet,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-initial-contact:checked + article.switchable-display.oracle-table-starship-initial-contact,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-first-look:checked + article.switchable-display.oracle-table-starship-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-starship-mission:checked + article.switchable-display.oracle-table-starship-mission,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-given-name:checked + article.switchable-display.oracle-table-character-given-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-callsign:checked + article.switchable-display.oracle-table-character-callsign,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-family-name:checked + article.switchable-display.oracle-table-character-family-name,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-first-look:checked + article.switchable-display.oracle-table-character-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-disposition:checked + article.switchable-display.oracle-table-character-disposition,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-role:checked + article.switchable-display.oracle-table-character-role,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-goal:checked + article.switchable-display.oracle-table-character-goal,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-character-revealed-aspect:checked + article.switchable-display.oracle-table-character-revealed-aspect,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-environment:checked + article.switchable-display.oracle-table-creature-environment,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-scale:checked + article.switchable-display.oracle-table-creature-scale,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-ultra-scale:checked + article.switchable-display.oracle-table-creature-ultra-scale,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-basic-form:checked + article.switchable-display.oracle-table-creature-basic-form,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-first-look:checked + article.switchable-display.oracle-table-creature-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.switchable-display.oracle-table-creature-encountered-b_havior,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-creature-revealed-aspect:checked + article.switchable-display.oracle-table-creature-revealed-aspect,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-location:checked + article.switchable-display.oracle-table-derelict-location,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-type:checked + article.switchable-display.oracle-table-derelict-type,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-condition:checked + article.switchable-display.oracle-table-derelict-condition,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-outer-first-look:checked + article.switchable-display.oracle-table-derelict-outer-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-inner-first-look:checked + article.switchable-display.oracle-table-derelict-inner-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-derelict-zone:checked + article.switchable-display.oracle-table-derelict-zone,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-access:checked + article.switchable-display.oracle-subcategory-derelict-access,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-community:checked + article.switchable-display.oracle-subcategory-derelict-community,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-engineering:checked + article.switchable-display.oracle-subcategory-derelict-engineering,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-living:checked + article.switchable-display.oracle-subcategory-derelict-living,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-medical:checked + article.switchable-display.oracle-subcategory-derelict-medical,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-operations:checked + article.switchable-display.oracle-subcategory-derelict-operations,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-production:checked + article.switchable-display.oracle-subcategory-derelict-production,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-derelict-research:checked + article.switchable-display.oracle-subcategory-derelict-research,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-location:checked + article.switchable-display.oracle-table-precursor-vault-location,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-scale:checked + article.switchable-display.oracle-table-precursor-vault-scale,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-form:checked + article.switchable-display.oracle-table-precursor-vault-form,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-shape:checked + article.switchable-display.oracle-table-precursor-vault-shape,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-material:checked + article.switchable-display.oracle-table-precursor-vault-material,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-precursor-vault-first-look:checked + article.switchable-display.oracle-table-precursor-vault-first-look,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.switchable-display.oracle-subcategory-precursor-vault-interior,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.switchable-display.oracle-subcategory-precursor-vault-sanctum,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-location-theme-type:checked + article.switchable-display.oracle-table-location-theme-type,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.switchable-display.oracle-subcategory-location-theme-chaotic,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.switchable-display.oracle-subcategory-location-theme-fortified,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.switchable-display.oracle-subcategory-location-theme-haunted,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-infested:checked + article.switchable-display.oracle-subcategory-location-theme-infested,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.switchable-display.oracle-subcategory-location-theme-inhabited,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.switchable-display.oracle-subcategory-location-theme-ruined,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.switchable-display.oracle-subcategory-location-theme-sacred,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.switchable-display.oracle-table-miscellaneous-story-complication,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.switchable-display.oracle-table-miscellaneous-combat-action,
-.ui-dialog div.charsheet.charactersheet input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.switchable-display.oracle-table-miscellaneous-anomaly-effect {
-  display: grid;
-}
 .ui-dialog div.charsheet.charactersheet .oracle-container {
   opacity: 1;
   font-size: 1em;
@@ -2702,7 +2609,7 @@
 }
 .ui-dialog div.charsheet.charactersheet .oracle-box {
   border: 2px solid #221e1f;
-  height: fit-content;
+  height: max-content;
 }
 .ui-dialog div.charsheet.charactersheet .oracle-title {
   background-color: #221e1f;

@@ -1,9 +1,11 @@
+//- - var scripts = fs.readdirSync("./app/workers/scripts");
 script(type="text/worker")
+  include ./scripts/_data.js
+  include ./scripts/_utility.js
   include ./scripts/assets.js
   include ./scripts/momentum.js
   include ./scripts/moves.js
   include ./scripts/oracles.js
-  include ./scripts/pages.js
   include ./scripts/progress.js
   include ./scripts/stats.js
   include ./scripts/vows.js
@@ -11,3 +13,5 @@ script(type="text/worker")
   include ./scripts/legacies.js
   include ./scripts/impacts.js
   include ./scripts/ship.js
+  include ./scripts/pages.js
+  include ./scripts/widgets.js

@@ -1,11 +1,13 @@
 mixin challengeDice
   .sheet-result-body.sheet-result-row
-    div.i18n-text(data-i18n='challenge-dice')=translation['challenge-dice']
+    div
+      +i18n('challenge-dice')
     div.sheet-challenge-dice {{challenge1}} {{challenge2}}
 
 mixin actionBody(type)
   .sheet-result-body.sheet-result-row
-    div.i18n-text(data-i18n='action-score')=translation['action-score']
+    div
+      +i18n('action-score')
     div.sheet-action-score {{#{type}}}
   +challengeDice
 

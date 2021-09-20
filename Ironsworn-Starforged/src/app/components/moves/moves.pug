@@ -11,4 +11,4 @@ mixin moveGroup(moveCategory)
       +listGroupItem()
         +moveListButton(move)
         +toggleBtn(move.Name, "selected_move", move.id)
-          //- span.move-name.btn-content.i18n-text(data-i18n=moveKey)=translation[moveKey]
+          //- +i18n(moveKey).move-name.btn-content.i18n-text

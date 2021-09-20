@@ -3,10 +3,11 @@ include ../../components/vows/vow-container
 include ../../components/stats/character
 include ../page
 
-mixin summaryPage
-  +page("summary", "character", 1)
+mixin summaryPage(sheetType)
+  +page("summary", sheetType)
     +stats()
-    h3.divide.i18n-text(data-i18n='impacts')=translation['impacts']
+    h3.divide
+      +i18n('impacts')
     - const impactArray = impacts.filter(obj => { return obj.title !== 'ship' })
     +impacts(impactArray, { title: true, customImpacts: true})
     include ../../components/notes/notes

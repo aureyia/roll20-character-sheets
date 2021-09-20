@@ -1,30 +1,34 @@
 //- Commented out for first release
-//- input.changelog.switch-display(type='checkbox' name='attr_changelog_1.0.0')
+//- input.changelog(
+//-   type='hidden',
+//-   name='attr_changelog'
+//-   )
 //- .changelog
-//-   .copy
-//-   label.close-changelog
-//-     input(type='checkbox' name=`attr_close_changelog` class='switch-display')
-//-     div.i18n-text(data-i18n='page-info-close')=translation['page-info-close']
+//-   button(
+//-     name="act_close_changelog"
+//-     value='1.0.0'
+//-   )
+//-     +i18n('page-info-close')
+//- see the FIXME w/ compareSemVer in pages.js
 
-- var sheets = [ 'character', 'shared' ]
-input(type='checkbox' name='attr_modes_choice' class='modes-show switch-display' checked)
-div.modes-show.switchable-display
-  div.mode-title
-    h2.mode-title.i18n-text(data-i18n='page-select')=translation['page-select']
-  div.modes
+//- functionally speaking there's *multiple* documents here, so i think having multiple <main> elements is actually more sensible than not (esp since only one is ever seen at a time)
 
+//- -1 => select, 0 => character, 1 => shared
+//- FIXME migrating away from these cuz r20 gets upset about css selectors for numeric [value=*]
+
+input(type="hidden", name="attr_mode", value="sheet-select")
+#sheet-select(role="dialog")
+  h1.mode-title
+    +i18n('page-select')
+  nav.modes
     each page, index in sheets
       label.mode
-        h4.i18n-text(data-i18n=`page-name-${page}`)=translation[`page-name-${page}`]
-        div.mode
-          input(type='radio' name='attr_mode_button' class='switch-display' value=index)
-          div.mode-image.switchable-display
-            img(src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page}-sheet.png`)
-
-input(type='radio' name='attr_mode' class='character-mode switch-display' value='0')
-div.character-mode.switchable-display
+        img.mode-image(
+          src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page.name}-sheet.png`
+        )
+        button(type="action" name="act_set_mode", value=`sheet-${page.name}`)
+          +i18n(`page-name-${page.name}`)
+.ironsworn-sheet#sheet-character
   include ./character/index
-
-input(type='radio' name='attr_mode' class='shared-mode switch-display' value='1')
-div.shared-mode.switchable-display
+.ironsworn-sheet#sheet-shared
   include ./shared/index

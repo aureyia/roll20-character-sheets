@@ -2,9 +2,7 @@ mixin challengeRankRadio()
   div.challenge-rank-radio
     each challengeRank, index in challengeranks
       label.challenge-rank-option
-        if challengeRank.checked
-          input(type="radio" class="switch-display" name="attr_rank" value=index checked)
-        else
-          input(type="radio" class="switch-display" name="attr_rank" value=index)
+        input(type="radio" class="switch-display" name="attr_rank" value=index checked=challengeRank.checked||false)
         - var translation = `difficulty-${challengeRank.text}`
-        h5(data-i18n=translation)=translation[translation]
+        h5
+          +i18n(translation)

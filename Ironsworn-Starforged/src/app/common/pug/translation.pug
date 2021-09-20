@@ -1,0 +1,9 @@
+//- wrapper element for translation keys to provide a concise way to add them
+//- style with display: contents
+
+mixin i18n(i18n_key)
+  span(data-i18n=i18n_key).i18n-text!=translation[i18n_key]
+
+//- ( +)(.*?)\.i18n-text\((.*?)\)=translation\[(.*)\]
+//- $1$2\n$1  +i18n($4)
+

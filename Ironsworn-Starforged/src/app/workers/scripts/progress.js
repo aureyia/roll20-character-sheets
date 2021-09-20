@@ -2,7 +2,7 @@ const stdProgress = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 on(
   "change:repeating_progress:mark_progress change:repeating_vow:mark_progress change:repeating_connection:mark_progress",
-  function(values) {
+  function (values) {
     const type = values.sourceAttribute.match(/repeating_(.*?)_/)[1];
     const progressStrings = stdProgress;
     const rankValue = `repeating_${type}_rank`;
@@ -16,18 +16,18 @@ on(
       `repeating_${type}_progress_${progressStrings[6]}`,
       `repeating_${type}_progress_${progressStrings[7]}`,
       `repeating_${type}_progress_${progressStrings[8]}`,
-      `repeating_${type}_progress_${progressStrings[9]}`
+      `repeating_${type}_progress_${progressStrings[9]}`,
     ];
 
     updateProgressBoxes({
       attributes: progressBoxAttrs,
-      rank: { kind: "attribute", value: rankValue }
+      rank: { kind: "attribute", value: rankValue },
     });
   }
 );
 
 function updateProgressBoxes(opts) {
-  getAttrs(opts.attributes, function(attrValues) {
+  getAttrs(opts.attributes, function (attrValues) {
     const progress = [
       parseInt(attrValues[opts.attributes[0]]),
       parseInt(attrValues[opts.attributes[1]]),
@@ -38,7 +38,7 @@ function updateProgressBoxes(opts) {
       parseInt(attrValues[opts.attributes[6]]),
       parseInt(attrValues[opts.attributes[7]]),
       parseInt(attrValues[opts.attributes[8]]),
-      parseInt(attrValues[opts.attributes[9]])
+      parseInt(attrValues[opts.attributes[9]]),
     ];
 
     opts.rank.kind === "static"
@@ -47,7 +47,7 @@ function updateProgressBoxes(opts) {
           progress,
           opts.attributes
         )
-      : getAttrs([opts.rank.value], function(value) {
+      : getAttrs([opts.rank.value], function (value) {
           generateMarkAndUpdateProgress(
             parseInt(value[opts.rank.value]),
             progress,
@@ -64,7 +64,7 @@ function generateMarkAndUpdateProgress(rank, progress, attributes) {
 
 function getCurrentProgress(progressValues) {
   let total = 0;
-  progressValues.map(x => {
+  progressValues.map((x) => {
     total = x + total;
   });
   return total;
@@ -77,7 +77,7 @@ function updateProgress(mark, progressValues, attributes) {
   for (; finalValue > 0; ) {
     let updateValue = finalValue < 4 ? finalValue : 4;
     setAttrs({
-      [attributes[progressNumber]]: updateValue
+      [attributes[progressNumber]]: updateValue,
     });
     finalValue = finalValue - updateValue;
     progressNumber++;
@@ -103,7 +103,7 @@ function chosenChallengeRank(rank) {
 
 on(
   "change:repeating_progress:clear_progress change:repeating_vow:clear_progress change:repeating_connection:clear_progress",
-  function(values) {
+  function (values) {
     const type = values.sourceAttribute.match(/repeating_(.*?)_/)[1];
     const progressStrings = stdProgress;
 
@@ -117,13 +117,13 @@ on(
       ["repeating_" + type + "_progress_" + progressStrings[6]]: "0",
       ["repeating_" + type + "_progress_" + progressStrings[7]]: "0",
       ["repeating_" + type + "_progress_" + progressStrings[8]]: "0",
-      ["repeating_" + type + "_progress_" + progressStrings[9]]: "0"
+      ["repeating_" + type + "_progress_" + progressStrings[9]]: "0",
     });
   }
 );
 
-on("change:repeating_progress:challenge-show-button", function(eventinfo) {
+on("change:repeating_progress:challenge-show-button", function (eventInfo) {
   setAttrs({
-    "repeating_progress_challenge-show": eventinfo.newValue
+    "repeating_progress_challenge-show": btnValue(eventInfo),
   });
 });

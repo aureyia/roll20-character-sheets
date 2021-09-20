@@ -24,8 +24,10 @@
     pointer-events unset
   .charmancer.locked span label
     pointer-events unset
-  .charsheet
-    padding unset
+  .charsheet // 'root' font-size set here
+    &.charactersheet
+      font-size 16px
+      padding unset
     p, ul, ol, button, span, input, textarea
       font-family unset
       font-size unset
@@ -51,10 +53,8 @@
       border unset
       border-bottom-color unset
       -webkit-border-radius unset
-      -moz-border-radius unset
       border-radius unset
       -webkit-box-shadow unset
-      -moz-box-shadow unset
       box-shadow unset
       cursor unset
       filter unset

@@ -9,25 +9,43 @@
 .ui-dialog div.charsheet.charactersheet
   // lazy way of gaining some specificity over r20's css :)
   width 842px !important
-  margin 0 auto !important
-  padding 15px
-  stdFont($body-font)
-  font-weight normal
+  // padding 15px
+  // margin 0 auto !important
+
+  // baseline font settings
+  font-size 16px // default for most browsers; since this is the sheet's 'root', it's the only place a 'hard' pixel value should be used
+  stdFont()
+  font-weight 400
+  line-height 1.25
+  h1, h2, h3, h4, h5, h6
+    stdFont("Exo")
+  // TODO contextually, using an H1 probably makes sense here: the sheet is its own self-contained document. this probably means switching it over
+  // normally the other big reason to do this would be, like, SEO, but that's not a concern here
+  span.i18n-text
+    display contents
+  // FIXME 'display: contents' accessibility bugs have been resolved on most major browsers except safari, but we don't need to worry about safari support (officially r20 only worries about FF and chrome anyways). the mobile version of r20 appears to pass through their app, so if anything we should test it there instead
+  ol, ul
+    margin-left 1em
+  li
+    list-style-type none
+    bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+  p
+    margin 0
   & *, ::before, ::after
     box-sizing border-box
-  bodyText()
-  p, li, td
-    line-height 1.4
+  label
+    cursor pointer
   input[type=text]
-    font-weight: 600;
+    font-weight: 500;
     inputHighlight(3px)
   select
     -webkit-appearance: none
     -moz-appearance: none
     text-indent: 1px
     text-overflow: ''
-    &:-ms-expand
-      display: none
+    // &:-ms-expand
+    //   display: none
+
   // h1
   //   font-weight: bold
   //   width: 100%
@@ -223,22 +241,8 @@
     background-color: $color-input
     color: $color-fg
     transition: .5s ease;
-  // toggles
-  input.switch-vis
-    display none
-  input.switch-vis + .switchable-vis
-    switchVisOff()
-  input.switch-vis:checked + .switchable-vis
-    switchVisOn()
-  input.switch-display
-    display none
-  input.switch-display + .switchable-display
-    switchDisplayOff()
-  input.switch-display:checked + .switchable-display
-    switchDisplayOn()
   div.preview-roll
     padding: 0em
-
   span.preview-roll
     width: 30%
     margin-left: 1em
@@ -275,6 +279,8 @@
 .ui-dialog div.charsheet.charactersheet
   @import './pages/index'
 // generic widgets and other components, should be overwritten by more specific styling below
+// .ui-dialog div.charsheet.charactersheet
+//   @import './common/stylus/pager'
 .ui-dialog div.charsheet.charactersheet
   @import './components/generic/preview'
 .ui-dialog div.charsheet.charactersheet
@@ -296,7 +302,7 @@
 .ui-dialog div.charsheet.charactersheet
   @import './components/progress/progress'
 .ui-dialog div.charsheet.charactersheet
-  @import './components/nav/nav-bar'
+  @import './components/tabs/tabs'
 .ui-dialog div.charsheet.charactersheet
   @import './components/momentum/momentum'
 .ui-dialog div.charsheet.charactersheet

@@ -1,7 +1,8 @@
 mixin statEditor()
   each stat in stats
     div.stat
-      h3.stats-title.i18n-text(data-i18n=`stat-${stat}`)=translation[`stat-${stat}`]
+      h3.stats-title
+        +i18n(`stat-${stat}`)
       input(
         type='text'
         class='stats-input'
@@ -18,23 +19,25 @@ mixin statStatic()
     name=`roll${_.upperFirst(stat)}`
     value=`&{template:starforged_moves} {{name=Roll +${stat}}} {{action=[[{d6+@{${stat}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{${stat}}+(?{Modifier|0})]]}} {{negate2=[[2+@{${stat}}+(?{Modifier|0})]]}} {{negate3=[[3+@{${stat}}+(?{Modifier|0})]]}} {{negate4=[[4+@{${stat}}+(?{Modifier|0})]]}} {{negate5=[[5+@{${stat}}+(?{Modifier|0})]]}} {{negate6=[[6+@{${stat}}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{${stat}}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{${stat}}]]}}`
     )
-      h3.stats-title.i18n-text(data-i18n=`stat-${stat}`)=translation[`stat-${stat}`]
+      h3.stats-title
+        +i18n(`stat-${stat}`)
       span(class='stats-input' name=`attr_${stat}`)
 
-mixin stats
-  div.stats
-    input(type='radio' class='switch-display stat-edit' name='attr_stat_mode' value='1')
-    div.stat-edit.switchable-display
-      div.stat-toggle.set-toggle
-        label.stat-toggle.set-toggle
-          span.i18n-text(data-i18n="stat-toggle-apply")=translation["stat-toggle-apply"]
-          input(type='radio' class='switch-display' name='attr_stat_mode_button' value='2')
-      +statEditor()
+mixin actionBtn(attribute, value, i18n_key)
+  button(
+  name=`act_${attribute}`,
+  value=value,
+  data-i18n=i18n_key,
+  data-i18n-title=i18n_key,
+  data-i18n-aria-label=i18n_key)!=translation[i18n_key]
 
-    input(type='radio' class='switch-display stat-set' name='attr_stat_mode' value='2' checked)
-    div.stat-set.switchable-display
+
+mixin stats
+  section.stats
+    input(type="hidden" name="attr_stat_mode")
+    .stat_mode_1
+      +actionBtn('set_stat_mode', 2, "stat-toggle-apply")
+      +statEditor()
+    .stat_mode_2
+      +actionBtn('set_stat_mode', 1, "edit")
       +statStatic()
-      div.stat-toggle.edit-toggle
-        label.stat-toggle.edit-toggle
-          span.i18n-text(data-i18n='edit')=translation['edit']
-          input(type='radio' class='switch-display' name='attr_stat_mode_button' value='1')

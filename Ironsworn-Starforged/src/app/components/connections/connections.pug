@@ -21,10 +21,7 @@ mixin connections()
             .challenge-rank-radio
               each challengeRank, index in challengeranks
                 label.challenge-rank-option
-                  if challengeRank.checked
-                    input(type="radio" class="switch-display" name="attr_rank" value=index checked)
-                  else
-                    input(type="radio" class="switch-display" name="attr_rank" value=index)
+                  input(type="radio" class="switch-display" name="attr_rank" value=index checked=challengeRank.checked||false)
                   h5=challengeRank.text
             +progressTrackBoxes(track, 'connection-name')
           .full-width

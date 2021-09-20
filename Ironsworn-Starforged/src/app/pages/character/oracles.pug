@@ -2,8 +2,8 @@ include ../../components/oracles/oracle-preview
 include ../../components/generic/preview
 include ../page
 
-mixin oraclesPage
-  +page("oracles", "character", 7)
+mixin oraclesPage(sheetType)
+  +page("oracles", sheetType)
     +overview("oracle", 1)
       each group in oracles
         if group.Name !== 'Move'

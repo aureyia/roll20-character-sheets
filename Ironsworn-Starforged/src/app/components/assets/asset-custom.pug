@@ -39,9 +39,9 @@ mixin customAssets
   input.custom.switch-display(type='checkbox' name='attr_custom')
   .custom.switchable-display
     input.asset-builder(type='radio' name='attr_custom-asset-page' value='1' checked='')
-    span.i18n-text.custom-asset-page(data-i18n='asset-custom-builder-title')=translation['asset-custom-builder-title']
+    +i18n('asset-custom-builder-title').custom-asset-page
     input.asset-view(type='radio' name='attr_custom-asset-page' value='2')
-    span.i18n-text.custom-asset-page(data-i18n='asset-custom-view-title')=translation['asset-custom-view-title']
+    +i18n('asset-custom-view-title').custom-asset-page
     .asset-builder.switchable-display
       .builder-name
         input.border-bottom.no-border(
@@ -52,12 +52,17 @@ mixin customAssets
           placeholder=translation["asset-custom-builder-name-placeholder"]
         )
       div(class='builder-titles')
-        div(data-i18n='asset-custom-builder-titles')=translation['asset-custom-builder-titles']
+        div
+          +i18n("data-i18n='asset-custom-builder-titles'")
         select.sub-dropdown.builder-dropdown(name='attr_builder-titles')
-          option.i18n-text(data-i18n='asset-custom-builder-inputs-0' value='0' selected='')=translation['asset-custom-builder-inputs-0']
-          option.i18n-text(data-i18n='asset-custom-builder-inputs-1' value='1')=translation['asset-custom-builder-inputs-1']
-          option.i18n-text(data-i18n='asset-custom-builder-inputs-2' value='2')=translation['asset-custom-builder-inputs-2']
-          option.i18n-text(data-i18n='asset-custom-builder-inputs-3' value='3')=translation['asset-custom-builder-inputs-3']
+          option(value='0' selected='')
+            +i18n("asset-custom-builder-inputs-0")
+          option(value='1')
+            +i18n("asset-custom-builder-inputs-1")
+          option(value='2')
+            +i18n("asset-custom-builder-inputs-2")
+          option(value='3')
+            +i18n("asset-custom-builder-inputs-3")
         each ability in [1, 2, 3]
           - var abilityText = `Ability ${ability}`
           div(class=`builder-ability-${ability}`)
@@ -79,7 +84,8 @@ mixin customAssets
             ) Text Box with Input
           textarea.build-text(name=`attr_builder-ability-${ability}-text-area`)
         div.builder-tracks
-          div.i18n-text(data-i18n='asset-custom-builder-tracks')=translation['asset-custom-builder-tracks']
+          div
+            +i18n('asset-custom-builder-tracks')
           select.sub-dropdown(name='attr_meter-dropdown')
             each track in [ 0, 1, 2, 3, 4, 5, 6 ]
               if track == 0

@@ -1,6 +1,6 @@
 include ../../components/assets/assets
 include ../page
 
-mixin assetsPage
-  +page("assets", "character",5)
+mixin assetsPage(sheetType)
+  +page("assets", sheetType)
     +assets

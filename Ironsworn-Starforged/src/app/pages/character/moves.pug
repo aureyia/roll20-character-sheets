@@ -2,8 +2,8 @@ include ../page
 include ../../components/generic/preview
 include ../../components/moves/moves
 
-mixin movesPage
-  +page("moves", "character", 6)
+mixin movesPage(sheetType)
+  +page("moves", sheetType)
     +overview("move", 1)
       each group in movegroups
         +moveGroup(group)
@@ -13,7 +13,5 @@ mixin movesPage
           +moveGroup(group)
       +previewMain
         each move in moves.Moves
-          //- Stupid way for me to generate orcale ccs
-          //- - console.log(`input[type=radio].${move.id}:checked ~ div.${move.id},`)
           input(type='radio' name='attr_move_preview' class=`${move.id} switch-display` value=move.id)
           +moveRulesArticle(move, false, "switchable-display")

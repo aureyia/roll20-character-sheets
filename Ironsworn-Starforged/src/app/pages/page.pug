@@ -1,7 +1,7 @@
-mixin page(pageType, sheetType, value, checked=false)
-  if checked == true
-    input(type='radio' name=`attr_${_.kebabCase(sheetType)}_page` class=`switch-vis` value=value checked)
-  else
-    input(type='radio' name=`attr_${_.kebabCase(sheetType)}_page` class=`switch-vis` value=value)
-  article(class=`page switchable-vis page-content page-${_.kebabCase(pageType)}` id=`page-${_.kebabCase(sheetType)}-${_.kebabCase(pageType)}`)
+mixin page(pageType, sheetType)
+  article(
+    class=`page page-${_.kebabCase(pageType)}`
+    id=`sheet-${_.kebabCase(sheetType)}-page-${_.kebabCase(pageType)}`
+    role="tabpanel"
+  )
     block

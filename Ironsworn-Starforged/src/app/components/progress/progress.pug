@@ -8,14 +8,15 @@ fieldset.repeating_progress
     input.progress-name(type='text' name='attr_name')
     label.challenge-show
       input(type='checkbox' class='switch-display challenge-show-button' name='attr_challenge-show-button')
-      .challenge-show-back.i18n-text(data-i18n='progress-challenge')=translation['progress-challenge']
+      .challenge-show-back
+        +i18n('progress-challenge')
   +challengeRankRadio
   +progressTrackBoxes(track, 'name')
   .progress-container
     input(type='checkbox' class='switch-display challenge-show' name='attr_challenge-show')
     .countdown-row.switchable-display
       label.challenge-label
-        span.i18n-text(data-i18n='scene-challenge-countdown')=translation['scene-challenge-countdown']
+        +i18n('scene-challenge-countdown')
       each index in challenge
         label.challenge-box
           input.challenge.switch-display(type='checkbox' class='switch-display' name=`attr_countdown-${index}`)

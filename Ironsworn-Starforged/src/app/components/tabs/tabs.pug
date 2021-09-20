@@ -1,0 +1,53 @@
+mixin tab(tabName, parentName, i18n_key, classes=[])
+  -
+    const btnValue = tabName
+    const btnName = `act_set_${parentName}-display`
+  button(
+    type="action"
+    role="tab"
+    name=btnName
+    value=btnValue
+    class=classes
+    aria-controls=`${parentName}-${tabName}`
+  )
+    +i18n(i18n_key)
+
+mixin tabList(parentName, defaultTab, ariaLabel, classes=[])
+  input(
+    type="hidden"
+    name=`attr_${parentName}-display`
+    value=defaultTab
+  ).pager
+  nav(
+    aria-label=ariaLabel
+    role="tablist"
+    class=classes
+    id=parentName
+  )
+    block
+
+//- FIXME: switch aria-label to is i18n data
+
+mixin pageTabs(sheetType)
+  - const sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
+  -
+    const pages = sheet.pages
+    const defaultTab = `page-${_.kebabCase(sheet.start)}`
+    const parentName =`sheet-${_.kebabCase(sheetType)}`
+  +tabList(
+    parentName,
+    defaultTab,
+    `Starforged ${sheetType} sheet tabs`,
+    ["page-tablist"]
+  )
+    each page in pages
+      - const pageName = `page-${_.kebabCase(page)}`;
+      +tab(
+        pageName,
+        parentName,
+        `nav-${_.kebabCase(page)}`,
+        ["page-tab"]
+      )
+  main.page-container
+    //- block items should have role="tabpanel"
+    block
