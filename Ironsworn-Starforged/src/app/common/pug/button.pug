@@ -22,6 +22,26 @@ mixin toggleBtn(label, attribute, value, title, classes)
     //- )
     //- FIXME i18n
 
+mixin actionBtn(action, value=null, i18n_key=action, classes=[], iconOnly=false)
+  if iconOnly == true
+    button(
+      name=`act_${action}`
+      value=value
+      class=classes
+      data-i18n-title=i18n_key
+      data-i18n-aria-label=i18n_key
+    )
+  else
+    button(
+      name=`act_${action}`
+      value=value
+      class=classes
+      data-i18n=i18n_key
+      data-i18n-title=i18n_key
+      data-i18n-aria-label=i18n_key
+    )!=translation[i18n_key]
+
+
 mixin btn(opts)
   - var action = opts.action ? opts.action : 'toggle'
   if opts.classes

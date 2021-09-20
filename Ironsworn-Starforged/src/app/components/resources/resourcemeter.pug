@@ -1,16 +1,17 @@
-mixin resourceMeterBar(meterName, max, meterAttrName=_.kebabCase(meterName), min=0, startsAt=max)
-  section.resource-meter(title=`${_.capitalize(meterName)} meter`)
-    - var currentMeter = parseInt(`${min}`)
+mixin resourceMeterBar(attribute, i18n_key=attribute, max=5, min=0, startsAt=max, plusSigns=false)
+  section(
+    data-i18n-title=i18n_key
+    data-i18n-aria-label=i18n_key
+  ).resource-meter
+    - var currentMeter = min
     while currentMeter <= max
-      label.resource-meter-box(
-        title=`Set ${_.capitalize(meterName)} to ${currentMeter}`)
-        +attrToggleRadio(`assettrack_${meterName}`, currentMeter, null, ability.Enabled)
+      label.resource-meter-box()
+        +attrToggleRadio(attribute, currentMeter, null, currentMeter == startsAt)
         span.resource-meter-box-display!=currentMeter
-        - currentMeter++
+      - currentMeter++
 
-//- numeric input - might be more screen-reader/mobile friendly?
-
-mixin resourceMeterSpinner( meterName, max=5, meterAttrName=_.kebabCase(meterName), min=0, startsAt=max )
-  label( class=["resource-meter", meterAttrName] title=`Current ${meterName}` )
-    +i18n(meterName.toLowerCase())
-    input( type="number" name=meterAttrName min=min max=max step=1 )
+//- numeric input via number spinner - might be more semantically apropos + mobile friendly?
+mixin resourceMeterSpinner(attribute, i18n_key=attribute, max=5, min=0, startsAt=max )
+  label( class=["resource-meter", attribute])
+    +i18n(i18n_key)
+    input( type="number" name=`attr_${attribute}` min=min max=max step=1 )

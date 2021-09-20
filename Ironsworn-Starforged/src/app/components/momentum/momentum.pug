@@ -1,45 +1,12 @@
-include ./tracks
-.sub-header-static
-  .momentum.momentum-header
-    .momentum.momentum-dark
-      h3.momentum-title.i18n-text(data-i18n='momentum')
+include ./../resources/resourcemeter.pug
 
-  .momentum
-    each object in momentumPositiveTrack
-      label.momentum-box
-        if object.checked
-          input(
-          type='radio'
-          name='attr_momentum'
-          class='momentum-box-input switch-display'
-          value=object.value
-          checked
-        )
-        else
-          input(
-            type='radio'
-            name='attr_momentum'
-            class='momentum-box-input switch-display'
-            value=object.value
-          )
-        .momentum-box-back
-          h3.momentum-box-value=object.text
-
-    label.momentum-burn
-      input(type='checkbox' class='momentum-burn switch-display' title='Burn Momentum' name='attr_momentumBurn')
-      .momentum-burn-back
-        +i18n('momentum-burn')
-
+section#momentum
+  h3#momentum-header
+    +i18n("momentum")
+  section#momentum-bar
+    +resourceMeterBar("momentum", "momentum", 10, -6, 2)
+    +actionBtn("momentum-burn")
     .momentum-status-box
-      h3.momentum-max
-        +i18n('momentum-maximum')
-      h3.momentum-status-value
-        span.momentum-status-attr(name='attr_momentum_max')
-      input(type='text' class='switch-display' name='attr_momentum_max' value='10')
-
+      +attrSpan('momentum-maximum', "momentum_max")
     .momentum-status-box
-      h3.momentum-reset
-        +i18n('momentum-reset')
-      h3.momentum-status-value
-        span.momentum-status-attr(name='attr_momentum_reset')
-      input(type='text' class='switch-display' name='attr_momentum_reset' value='2')
+      +attrSpan('momentum-reset', "momentum_reset")

@@ -3,14 +3,14 @@ const pages = ["oracle", "move"];
 
 pageWidgets.forEach((widget) => {
   pages.forEach((page) => {
-    listenAttrBtn(`${page}_${widget}`);
+    listenSetAttr(`${page}_${widget}`);
   });
 });
 
 const generalWidgets = ["changelog"];
 
 generalWidgets.forEach((widget) => {
-  listenAttrBtn(widget);
+  listenSetAttr(widget);
 });
 
 // pageWidgets.forEach((widget) => {

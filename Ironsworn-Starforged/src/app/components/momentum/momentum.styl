@@ -1,105 +1,19 @@
-.momentum
+
+#momentum-header
+  text-transform uppercase
+  dark()
+
+#momentum
   display flex
-
-  .footer
-    margin-top 1em
-
-  input[type=checkbox].momentum-burn:hover ~ div.momentum-burn-back
-    background-color $color-input
-    transition: .5s ease;
-
-  .momentum-box-input:hover ~ .momentum-box-back
-    background: $color-input
-    transition: .5s ease;
-
-  .momentum-box-input:checked ~ .momentum-box-back
-    background: $color-fg
-    color: $color-bg
-    transition: .5s ease;
-
-  input[type=checkbox].momentum-burn
-    opacity 0
-    border 0
-
-  div.momentum-burn-back
-    font-weight bold
-    text-align center
-    line-height 22px
-    padding 0em 0.2em
-
-  label.momentum-burn
+  flex-flow column
+  text-align center
+  .momentum-status-box, .resource-meter-box
     borderCommon()
-    text-transform: uppercase
-    padding 0
-    cursor pointer
-    margin 0
-    font-size 1em
 
-  .momentum-box-input
-    opacity 0
-    border 0
+#momentum-bar
+  display flex
+  .resource-meter
+    display contents
 
-  .momentum-status-box
-    text-transform: uppercase
-    display: flex
-    flex-direction: row
-    justify-content: center
-    align-items: center
-    border-radius: 0%
-    background: transparent
-    border 2px solid $color-fg
-    padding-left 0.2em
-
-  .momentum-status-value
-    width auto
-    font-size 1em
-
-  h3.momentum-max-box,
-  h3.momentum-reset-box
-    display: inline
-    padding-left: 1em
-
-  .momentum-box-value
-    font-weight bold
-    font-size 16px
-    color inherit
-
-  .momentum-input
-    font-weight bold
-    width 30px
-    font-size 13px
-    text-align center
-    background transparent
-
-  .momentum-box
-    cursor pointer
-    borderCommon()
-    padding 0
-    margin 0
-
-  .momentum-dark
-    color $color-bg
-    border: 2px solid $color-fg
-    background: $color-fg
-    width: 100%
-
-  .momentum-max,
-  .momentum-reset
-    line-height 1.4em
-    font-size 1em
-
-  .momentum-title
-    color $color-bg
-    line-height 1.2em
-    font-size 1.2em
-
-
-  .momentum-header
-    height 20px
-
-  .sub-header-static
-    margin-top 0.2em
-    border: 1px solid $color-fg
-
-  .momentum-status-attr
-    padding 0em 0.2em
+.attr-span
+  display contents

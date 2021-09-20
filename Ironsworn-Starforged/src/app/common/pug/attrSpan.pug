@@ -1,0 +1,8 @@
+mixin attrSpan(i18n_key_label, attribute, value)
+  +i18n(i18n_key_label)
+  =" "
+  span(name=`attr_${attribute}`).attr-span
+  if value
+    input(type='hidden' name=`attr_${attribute}` value=value)
+  else
+    input(type='hidden' name=`attr_${attribute}`)

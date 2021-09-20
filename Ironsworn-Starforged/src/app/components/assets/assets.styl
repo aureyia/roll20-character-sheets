@@ -168,7 +168,6 @@ article.asset-card
     font-size 1.3125*5.35*$point
     border-bottom 1*$point solid black
     width stretch
-    width -moz-available
     padding 0
     margin 0
     span
@@ -184,7 +183,6 @@ article.asset-card
     input[type=text]
       stdFont("Encode Sans Condensed")
       width stretch
-      width -moz-available
       border none
       margin-bottom 1*$point // TODO: replace cuz 3% keys to screen size iirc D:
       font-weight 500
@@ -278,8 +276,6 @@ article.asset-card
         align-items center
         justify-content center
         color $color-fg-lowkey
-        -webkit-text-stroke 0px transparent
-        // text-stroke 0px transparent
         &:hover
           color $color-fg
       input[type="radio"]:checked + .resource-meter-box-display
@@ -311,11 +307,11 @@ article.asset-card
   font-size 15px
   font-weight bold
   text-transform uppercase
-  -webkit-appearance menulist
+  appearance menulist
   margin 6px 4px
 
 .sub-dropdown
-  -webkit-appearance menulist
+  appearance menulist
   width auto
   margin 7px 4px
   font-weight bold

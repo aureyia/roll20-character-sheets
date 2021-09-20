@@ -1,7 +1,7 @@
 sheets.forEach((sheet) => {
-  listenAttrBtn(`sheet-${sheet.name}-display`);
+  listenSetAttr(`sheet-${sheet.name}-display`);
 });
 
-listenAttrBtn("mode");
+listenSetAttr("mode");
 
-listenAttrBtn("stat_mode");
+listenSetAttr("stat_mode");

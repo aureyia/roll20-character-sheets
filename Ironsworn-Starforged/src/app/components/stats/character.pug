@@ -23,13 +23,7 @@ mixin statStatic()
         +i18n(`stat-${stat}`)
       span(class='stats-input' name=`attr_${stat}`)
 
-mixin actionBtn(attribute, value, i18n_key)
-  button(
-  name=`act_${attribute}`,
-  value=value,
-  data-i18n=i18n_key,
-  data-i18n-title=i18n_key,
-  data-i18n-aria-label=i18n_key)!=translation[i18n_key]
+
 
 
 mixin stats

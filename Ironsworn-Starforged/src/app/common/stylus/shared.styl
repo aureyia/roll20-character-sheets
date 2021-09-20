@@ -105,6 +105,17 @@ light()
   background $color-bg
   color $color-fg
 
+labelText()
+  stdFont("Exo")
+  text-transform uppercase
+  font-weight 700
+  text-align center
+
+headerText()
+  stdFont("Exo")
+  text-transform uppercase
+  font-weight 800
+
 interactiveHover(bg=$color-fg, fg=$color-bg)
   cursor pointer
   transition 0.5s ease
@@ -151,9 +162,6 @@ bulletBefore(forTextSize, iconUrl)
     display inline-block;
     height (forTextSize * 0.75)
     width (forTextSize * 0.75)
-    -webkit-mask-image: url(iconUrl);
-    -webkit-mask-size: contain;
-    -webkitmask-repeat: no-repeat
     mask-image: url(iconUrl);
     mask-size: contain
     mask-repeat: no-repeat
@@ -171,7 +179,6 @@ headerText(wt = 900, spacing = 0.05ch)
 textOutline(strokeColor, strokeWidth=2px)
   paint-order stroke fill
   text-stroke strokeWidth*2 strokeColor
-  -webkit-text-stroke strokeWidth*2 strokeColor
 
 $hexagon_pointy = polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
 
@@ -195,7 +202,6 @@ hexagonClip(hexWidth) // sets width and height to ensure correct proportion
   // TODO: as svg clip path? url + #id
 
 hexCheckbox(hexWidth, emptyImage="https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg")
-  -moz-appearance none
   appearance none
   hexagonClip(hexWidth)
   cursor pointer

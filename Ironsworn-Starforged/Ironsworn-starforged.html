@@ -1,6 +1,6 @@
 
 <input type="hidden" name="attr_mode" value="sheet-select"/>
-<div id="sheet-select" role="dialog">
+<div class="ironsworn-sheet" id="sheet-select" role="dialog">
   <h1 class="mode-title"><span class="i18n-text" data-i18n="page-select">Select the sheet type</span>
   </h1>
   <nav class="modes">
@@ -69,134 +69,72 @@
         <input class="resource-value health-status-box" type="text" name="attr_total_xp" value="0"/>
       </label>
     </div>
-    <div class="sub-header-static">
-      <div class="momentum momentum-header">
-        <div class="momentum momentum-dark">
-          <h3 class="momentum-title i18n-text" data-i18n="momentum"></h3>
+    <section id="momentum">
+      <h3 id="momentum-header"><span class="i18n-text" data-i18n="momentum">Momentum</span>
+      </h3>
+      <section id="momentum-bar">
+            <section class="resource-meter" data-i18n-title="momentum" data-i18n-aria-label="momentum">
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="-6" hidden="hidden"/><span class="resource-meter-box-display">-6</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="-5" hidden="hidden"/><span class="resource-meter-box-display">-5</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="-4" hidden="hidden"/><span class="resource-meter-box-display">-4</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="-3" hidden="hidden"/><span class="resource-meter-box-display">-3</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="-2" hidden="hidden"/><span class="resource-meter-box-display">-2</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="-1" hidden="hidden"/><span class="resource-meter-box-display">-1</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="0" hidden="hidden"/><span class="resource-meter-box-display">0</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="1" hidden="hidden"/><span class="resource-meter-box-display">1</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="2" checked="checked" hidden="hidden"/><span class="resource-meter-box-display">2</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="3" hidden="hidden"/><span class="resource-meter-box-display">3</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="4" hidden="hidden"/><span class="resource-meter-box-display">4</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="5" hidden="hidden"/><span class="resource-meter-box-display">5</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="6" hidden="hidden"/><span class="resource-meter-box-display">6</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="7" hidden="hidden"/><span class="resource-meter-box-display">7</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="8" hidden="hidden"/><span class="resource-meter-box-display">8</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="9" hidden="hidden"/><span class="resource-meter-box-display">9</span>
+              </label>
+              <label class="resource-meter-box">
+                  <input type="radio" name="attr_momentum" value="10" hidden="hidden"/><span class="resource-meter-box-display">10</span>
+              </label>
+            </section>
+          <button name="act_momentum-burn" data-i18n="momentum-burn" data-i18n-title="momentum-burn" data-i18n-aria-label="momentum-burn">Burn</button>
+        <div class="momentum-status-box"><span class="i18n-text" data-i18n="momentum-maximum">Max</span> <span class="attr-span" name="attr_momentum_max"></span>
+          <input type="hidden" name="attr_momentum_max"/>
         </div>
-      </div>
-      <div class="momentum">
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="10"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+10</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="9"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+9</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="8"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+8</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="7"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+7</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="6"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+6</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="5"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+5</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="4"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+4</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="3"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+3</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="2" checked="checked"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+2</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="1"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">+1</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="0"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">0</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="-1"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">-1</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="-2"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">-2</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="-3"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">-3</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="-4"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">-4</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="-5"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">-5</h3>
-          </div>
-        </label>
-        <label class="momentum-box">
-          <input class="momentum-box-input switch-display" type="radio" name="attr_momentum" value="-6"/>
-          <div class="momentum-box-back">
-            <h3 class="momentum-box-value">-6</h3>
-          </div>
-        </label>
-        <label class="momentum-burn">
-          <input class="momentum-burn switch-display" type="checkbox" title="Burn Momentum" name="attr_momentumBurn"/>
-          <div class="momentum-burn-back"><span class="i18n-text" data-i18n="momentum-burn">Burn</span>
-          </div>
-        </label>
-        <div class="momentum-status-box">
-          <h3 class="momentum-max"><span class="i18n-text" data-i18n="momentum-maximum">Max</span>
-          </h3>
-          <h3 class="momentum-status-value"><span class="momentum-status-attr" name="attr_momentum_max"></span></h3>
-          <input class="switch-display" type="text" name="attr_momentum_max" value="10"/>
+        <div class="momentum-status-box"><span class="i18n-text" data-i18n="momentum-reset">Reset</span> <span class="attr-span" name="attr_momentum_reset"></span>
+          <input type="hidden" name="attr_momentum_reset"/>
         </div>
-        <div class="momentum-status-box">
-          <h3 class="momentum-reset"><span class="i18n-text" data-i18n="momentum-reset">Reset</span>
-          </h3>
-          <h3 class="momentum-status-value"><span class="momentum-status-attr" name="attr_momentum_reset"></span></h3>
-          <input class="switch-display" type="text" name="attr_momentum_reset" value="2"/>
-        </div>
-      </div>
-    </div>
+      </section>
+    </section>
   </header>
   <input class="pager" type="hidden" name="attr_sheet-character-display" value="page-summary"/>
   <nav class="page-tablist" aria-label="Starforged character sheet tabs" role="tablist" id="sheet-character">
@@ -901,8 +839,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_archer_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-archer-ability-3"><p>When you load a specialized projectile such as a zip line, explosive, or electromagnetic disrupter, suffer -1 ammo. When you then take your shot by making a move, you may set the value of your action die to 5. On a hit, envision the effects and take +1 momentum.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Ammo meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="6" data-i18n-aria-label="6">
+                            </section>
                     </article>
                     <input class="switch-display  asset-armored" type="checkbox" name="attr_armored"/>
                     <article class="asset-card  asset-armored category-path switchable-display"><span class="asset-category">Path</span>
@@ -975,8 +913,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_banshee_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-banshee-ability-3"><p>When you make a combat move and roll a 1 on your action die, the banshee senses the danger and emits a powerful scream to alert you or distract your foes. You may reroll that die, but must first <u>Lose Momentum</u> (-1).</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                            </section>
                     </article>
                     <input class="switch-display  asset-blademaster" type="checkbox" name="attr_blademaster"/>
                     <article class="asset-card  asset-blademaster category-path switchable-display"><span class="asset-category">Path</span>
@@ -1058,8 +996,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_combat_bot_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-combat-bot-ability-3"><p>Once per fight, when you <u>React Under Fire</u> by using the bot to draw fire or create a diversion, roll +its health. On a strong hit, mark progress. On a weak hit, face the cost as normal, but then you are in control.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                            </section>
                     </article>
                     <input class="switch-display  asset-commander" type="checkbox" name="attr_commander"/>
                     <article class="asset-card  asset-commander category-path switchable-display"><span class="asset-category">Path</span>
@@ -1090,8 +1028,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_courier_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-courier-ability-3"><p>When you <u>Fulfill Your Vow</u> to a connection by finishing a courier mission, you may <u>Develop Your Relationship</u> and mark progress twice.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Safety meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                            </section>
                     </article>
                     <input class="switch-display  asset-devotant" type="checkbox" name="attr_devotant"/>
                     <article class="asset-card  asset-devotant category-path switchable-display"><span class="asset-category">Path</span>
@@ -1188,8 +1126,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_firebrand_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-firebrand-ability-3"><p>When you have at least +3 fire, you may <u>Gain Ground</u> or <u>Strike</u> by unleashing hell. If you do, take an automatic strong hit and mark progress. Then, set your fire to 0.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Fire meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                            </section>
                     </article>
                     <input class="switch-display  asset-fugitive" type="checkbox" name="attr_fugitive"/>
                     <article class="asset-card  asset-fugitive category-path switchable-display"><span class="asset-category">Path</span>
@@ -1205,8 +1143,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_fugitive_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-fugitive-ability-3"><p>When you <u>Fulfill Your Vow</u> (extreme or greater) by clearing your name or defeating the power or authority who marked you as a fugitive, gain this ability at no cost. You may then exchange this asset for another with the same number of marked abilities.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Fugitive meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
+                            </section>
                     </article>
                     <input class="switch-display  asset-gearhead" type="checkbox" name="attr_gearhead"/>
                     <article class="asset-card  asset-gearhead category-path switchable-display"><span class="asset-category">Path</span>
@@ -1240,8 +1178,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_glowcat_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-glowcat-ability-3"><p>When you <u>Endure Stress</u> in the company of the glowcat, add +1. On a strong hit with a match, take +momentum equal to their health.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
+                            </section>
                     </article>
                     <input class="switch-display  asset-gunner" type="checkbox" name="attr_gunner"/>
                     <article class="asset-card  asset-gunner category-path switchable-display"><span class="asset-category">Path</span>
@@ -1479,8 +1417,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_protocol_bot_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-protocol-bot-ability-3"><p>If you make a move in a charged interaction and the value of your action die is less than the bot's health, you may reroll it as the bot interjects with their commentary or advice.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
+                            </section>
                     </article>
                     <input class="switch-display  asset-revenant" type="checkbox" name="attr_revenant"/>
                     <article class="asset-card  asset-revenant category-deed switchable-display"><span class="asset-category">Deed</span>
@@ -1514,8 +1452,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_rockhorn_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-rockhorn-ability-3"><p>The rockhorn will come to your aid in your most vulnerable moments. When you <u>Endure Harm</u> or <u>Endure Stress</u> and roll a miss, you may reroll your action die if its value is less than the rockhorn's health.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                            </section>
                     </article>
                     <input class="switch-display  asset-scavenger" type="checkbox" name="attr_scavenger"/>
                     <article class="asset-card  asset-scavenger category-path switchable-display"><span class="asset-category">Path</span>
@@ -1597,8 +1535,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_sidekick_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-sidekick-ability-3"><p>When your sidekick acts to get you out of a tough spot, you may <u>Face Danger</u> or <u>React Under Fire</u> and roll +their health (instead of your own stat). On a hit, take +1 momentum.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                            </section>
                     </article>
                     <input class="switch-display  asset-slayer" type="checkbox" name="attr_slayer"/>
                     <article class="asset-card  asset-slayer category-path switchable-display"><span class="asset-category">Path</span>
@@ -1647,8 +1585,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_sprite_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-sprite-ability-3"><p>With a moment's rest, the sprite can mend its form and return automatically to max health.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="2" data-i18n-aria-label="2">
+                            </section>
                     </article>
                     <input class="switch-display  asset-survey-bot" type="checkbox" name="attr_survey-bot"/>
                     <article class="asset-card  asset-survey-bot category-companion switchable-display"><span class="asset-category">Companion</span>
@@ -1667,8 +1605,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_survey_bot_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-survey-bot-ability-3"><p>When you <u>Explore a Waypoint</u> aided by the bot's sensors, or <u>Face Danger</u> to detect a threat, roll +its health and take +1 momentum on a hit.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
+                            </section>
                     </article>
                     <input class="switch-display  asset-symbiote" type="checkbox" name="attr_symbiote"/>
                     <article class="asset-card  asset-symbiote category-companion switchable-display"><span class="asset-category">Companion</span>
@@ -1687,8 +1625,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_symbiote_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-symbiote-ability-3"><p>The symbiote gains power and has +3 health.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="2" data-i18n-aria-label="2">
+                            </section>
                     </article>
                     <input class="switch-display  asset-tech" type="checkbox" name="attr_tech"/>
                     <article class="asset-card  asset-tech category-path switchable-display"><span class="asset-category">Path</span>
@@ -1737,8 +1675,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_utility_bot_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-utility-bot-ability-3"><p>When you <u>Check Your Gear</u> to see if the bot has a specific tool or technique available, roll +its health and take +1 momentum on a hit.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                            </section>
                     </article>
                     <input class="switch-display  asset-vanguard" type="checkbox" name="attr_vanguard"/>
                     <article class="asset-card  asset-vanguard category-deed switchable-display"><span class="asset-category">Deed</span>
@@ -1820,8 +1758,8 @@
                               <input type="checkbox" name="attr_ability_checkbox_voidglider_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-voidglider-ability-3"><p>When you make a move by signaling the voidglider to distract or attack a spacebound foe, roll +its health and take +1 momentum on a hit.</p></span>
                           </section>
                       </section>
-                          <section class="resource-meter" title="Health meter">
-                          </section>
+                            <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                            </section>
                     </article>
                     <input class="switch-display  asset-weapon-master" type="checkbox" name="attr_weapon-master"/>
                     <article class="asset-card  asset-weapon-master category-path switchable-display"><span class="asset-category">Path</span>
@@ -22457,8 +22395,8 @@
               <h3><span class="i18n-text" data-i18n="resource-vehicle-integrity">Integrity</span>
               </h3>
               <div class="info">
-                    <section class="resource-meter" title="Integrity meter">
-                    </section>
+                      <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                      </section>
               </div>
               <h3><span class="i18n-text" data-i18n="impacts">Impacts</span>
               </h3>
@@ -22561,8 +22499,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_expanded_hold_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-expanded-hold-ability-3"><p>When you make a move to outrun a threat and have at least 1 cargo, you may first lighten your load by dropping cargo. If you do, suffer -cargo by the amount dropped, add +that amount, and take +2 momentum on a hit.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Cargo meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
+                              </section>
                       </article>
                       <input class="switch-display  asset-grappler" type="checkbox" name="attr_grappler"/>
                       <article class="asset-card  asset-grappler category-module switchable-display"><span class="asset-category">Module</span>
@@ -22638,8 +22576,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_missile_array_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-missile-array-ability-3"><p>When you have at least 3 ammo and <u>Take Decisive Action</u> by unleashing all of your missiles, roll an action die before making the progress roll. If your action die is equal to or less than ammo, you may reroll each challenge die. Then, set ammo to 0.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Ammo meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                              </section>
                       </article>
                       <input class="switch-display  asset-overseer" type="checkbox" name="attr_overseer"/>
                       <article class="asset-card  asset-overseer category-module switchable-display"><span class="asset-category">Module</span>
@@ -22718,8 +22656,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_shields_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-shields-ability-3"><p>When you <u>Enter the Fray</u> and score a strong hit, you may raise your shields to 3 without rolling. If you do, take +1 momentum.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Shields meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                              </section>
                       </article>
                       <input class="switch-display  asset-stealth-tech" type="checkbox" name="attr_stealth-tech"/>
                       <article class="asset-card  asset-stealth-tech category-module switchable-display"><span class="asset-category">Module</span>
@@ -22810,8 +22748,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_exosuit_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-exosuit-ability-3"><p>When you <u>Withstand Damage</u>, you may reroll one challenge die.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="6" data-i18n-aria-label="6">
+                              </section>
                       </article>
                       <input class="switch-display  asset-hoverbike" type="checkbox" name="attr_hoverbike"/>
                       <article class="asset-card  asset-hoverbike category-support-vehicle switchable-display"><span class="asset-category">Support Vehicle</span>
@@ -22830,8 +22768,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_hoverbike_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-hoverbike-ability-3"><p>When you make a move while maneuvering your bike and burn momentum to improve your result, roll your action die. On a 5 or 6, do not reset momentum.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
+                              </section>
                       </article>
                       <input class="switch-display  asset-rover" type="checkbox" name="attr_rover"/>
                       <article class="asset-card  asset-rover category-support-vehicle switchable-display"><span class="asset-category">Support Vehicle</span>
@@ -22850,8 +22788,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_rover_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-rover-ability-3"><p>When you <u>Face Danger</u> or <u>React Under Fire</u> by taking a hit or crashing through an obstacle, you may roll +integrity. If you do, take +1 momentum on a hit.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
+                              </section>
                       </article>
                       <input class="switch-display  asset-service-pod" type="checkbox" name="attr_service-pod"/>
                       <article class="asset-card  asset-service-pod category-support-vehicle switchable-display"><span class="asset-category">Support Vehicle</span>
@@ -22870,8 +22808,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_service_pod_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-service-pod-ability-3"><p>When you make a move while controlling the pod and push its capabilities to the limit, you may take an automatic strong hit. If you do, <u>Withstand Damage</u> (-2).</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                              </section>
                       </article>
                       <input class="switch-display  asset-shuttle" type="checkbox" name="attr_shuttle"/>
                       <article class="asset-card  asset-shuttle category-support-vehicle switchable-display"><span class="asset-category">Support Vehicle</span>
@@ -22890,8 +22828,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_shuttle_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-shuttle-ability-3"><p>You shuttle is sealed against high pressure environments, can travel underwater, and is more resistant to damage; when you <u>Withstand Damage</u>, add +1.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                              </section>
                       </article>
                       <input class="switch-display  asset-skiff" type="checkbox" name="attr_skiff"/>
                       <article class="asset-card  asset-skiff category-support-vehicle switchable-display"><span class="asset-category">Support Vehicle</span>
@@ -22910,8 +22848,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_skiff_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-skiff-ability-3"><p>Your skiff is fully stocked. When you <u>Check Your Gear</u>, add +1 and take +1 momentum on a hit.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                              </section>
                       </article>
                       <input class="switch-display  asset-snub-fighter" type="checkbox" name="attr_snub-fighter"/>
                       <article class="asset-card  asset-snub-fighter category-support-vehicle switchable-display"><span class="asset-category">Support Vehicle</span>
@@ -22930,8 +22868,8 @@
                                 <input type="checkbox" name="attr_ability_checkbox_snub_fighter_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-snub-fighter-ability-3"><p>When you personally defeat a notable foe in your snub fighter, envision the victory mark you make on the fuselage. Tally your victories in this box. For every five, mark 2 ticks on your quests legacy track.</p></span>
                             </section>
                         </section>
-                            <section class="resource-meter" title="Integrity meter">
-                            </section>
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
+                              </section>
                       </article>
                 </div>
               </fieldset>
@@ -23588,7 +23526,7 @@
                 <h3><span class="i18n-text" data-i18n="resource-vehicle-integrity">Integrity</span>
                 </h3>
                 <div class="info">
-                      <section class="resource-meter" title="Integrity meter">
+                      <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
                       </section>
                 </div>
                 <h3><span class="i18n-text" data-i18n="impacts">Impacts</span>
@@ -23692,7 +23630,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_expanded_hold_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-expanded-hold-ability-3"><p>When you make a move to outrun a threat and have at least 1 cargo, you may first lighten your load by dropping cargo. If you do, suffer -cargo by the amount dropped, add +that amount, and take +2 momentum on a hit.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Cargo meter">
+                              <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
                               </section>
                         </article>
                         <input class="switch-display  asset-grappler" type="checkbox" name="attr_grappler"/>
@@ -23769,7 +23707,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_missile_array_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-missile-array-ability-3"><p>When you have at least 3 ammo and <u>Take Decisive Action</u> by unleashing all of your missiles, roll an action die before making the progress roll. If your action die is equal to or less than ammo, you may reroll each challenge die. Then, set ammo to 0.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Ammo meter">
+                              <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
                               </section>
                         </article>
                         <input class="switch-display  asset-overseer" type="checkbox" name="attr_overseer"/>
@@ -23849,7 +23787,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_shields_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-shields-ability-3"><p>When you <u>Enter the Fray</u> and score a strong hit, you may raise your shields to 3 without rolling. If you do, take +1 momentum.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Shields meter">
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
                               </section>
                         </article>
                         <input class="switch-display  asset-stealth-tech" type="checkbox" name="attr_stealth-tech"/>
@@ -23941,7 +23879,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_exosuit_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-exosuit-ability-3"><p>When you <u>Withstand Damage</u>, you may reroll one challenge die.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="6" data-i18n-aria-label="6">
                               </section>
                         </article>
                         <input class="switch-display  asset-hoverbike" type="checkbox" name="attr_hoverbike"/>
@@ -23961,7 +23899,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_hoverbike_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-hoverbike-ability-3"><p>When you make a move while maneuvering your bike and burn momentum to improve your result, roll your action die. On a 5 or 6, do not reset momentum.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="3" data-i18n-aria-label="3">
                               </section>
                         </article>
                         <input class="switch-display  asset-rover" type="checkbox" name="attr_rover"/>
@@ -23981,7 +23919,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_rover_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-rover-ability-3"><p>When you <u>Face Danger</u> or <u>React Under Fire</u> by taking a hit or crashing through an obstacle, you may roll +integrity. If you do, take +1 momentum on a hit.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="5" data-i18n-aria-label="5">
                               </section>
                         </article>
                         <input class="switch-display  asset-service-pod" type="checkbox" name="attr_service-pod"/>
@@ -24001,7 +23939,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_service_pod_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-service-pod-ability-3"><p>When you make a move while controlling the pod and push its capabilities to the limit, you may take an automatic strong hit. If you do, <u>Withstand Damage</u> (-2).</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
                               </section>
                         </article>
                         <input class="switch-display  asset-shuttle" type="checkbox" name="attr_shuttle"/>
@@ -24021,7 +23959,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_shuttle_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-shuttle-ability-3"><p>You shuttle is sealed against high pressure environments, can travel underwater, and is more resistant to damage; when you <u>Withstand Damage</u>, add +1.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
                               </section>
                         </article>
                         <input class="switch-display  asset-skiff" type="checkbox" name="attr_skiff"/>
@@ -24041,7 +23979,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_skiff_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-skiff-ability-3"><p>Your skiff is fully stocked. When you <u>Check Your Gear</u>, add +1 and take +1 momentum on a hit.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
                               </section>
                         </article>
                         <input class="switch-display  asset-snub-fighter" type="checkbox" name="attr_snub-fighter"/>
@@ -24061,7 +23999,7 @@
                                   <input type="checkbox" name="attr_ability_checkbox_snub_fighter_3" hidden="hidden"/><span class="i18n-text" data-i18n="asset-snub-fighter-ability-3"><p>When you personally defeat a notable foe in your snub fighter, envision the victory mark you make on the fuselage. Tally your victories in this box. For every five, mark 2 ticks on your quests legacy track.</p></span>
                               </section>
                           </section>
-                              <section class="resource-meter" title="Integrity meter">
+                              <section class="resource-meter" data-i18n-title="4" data-i18n-aria-label="4">
                               </section>
                         </article>
                   </div>
@@ -39092,17 +39030,30 @@ function btnValue(eventInfo) {
 }
 
 // listen for clicked:set_foobar and uses the button value to update attr_foobar
-function listenAttrBtn(attribute, trigger = `set_${attribute}`) {
+function listenSetAttr(attribute, trigger = `set_${attribute}`) {
   on(`clicked:${trigger}`, (eventInfo) =>
     setAttrs(
       { [attribute]: btnValue(eventInfo) }
       // console.log(
-      //   "[listenAttrBtn]",
+      //   "[listenSetAttr]",
       //   eventInfo.triggerName,
       //   "sets value:",
       //   btnValue(eventInfo)
       // );
     )
+  );
+}
+
+function listenAddAttr(attribute) {
+  // TODO: needs to check the maximum amount
+  on(`clicked:add_${attribute}`, (eventInfo) =>
+    setAttrs({ [attribute]: attribute + (btnValue(eventInfo) || 1) })
+  );
+}
+
+function listenSubtractAttr(attribute) {
+  on(`clicked:subtract_${attribute}`, (eventInfo) =>
+    setAttrs({ [attribute]: attribute - (btnValue(eventInfo) || 1) })
   );
 }
   on("change:repeating_assets:assettype", function (values) {
@@ -39796,20 +39747,21 @@ const assets = [
 
 // // });
   // Do not allow Momentum to go over MAX.
-on('change:momentum change:momentum_max', function() {
-  getAttrs(["momentum","momentum_max"], function(values) {
-      if(parseInt(values.momentum) > parseInt(values.momentum_max)) setAttrs({ momentum: parseInt(values.momentum_max)});
+on("change:momentum change:momentum_max", function () {
+  getAttrs(["momentum", "momentum_max"], function (values) {
+    if (parseInt(values.momentum) > parseInt(values.momentum_max))
+      setAttrs({ momentum: parseInt(values.momentum_max) });
   });
 });
 
-on('change:momentumBurn', function() {
-  getAttrs([ "momentum_reset" ], function(values) {
-      setAttrs({
-          momentum: parseInt(values.momentum_reset),
-          momentumBurn: 'off'
-      });
+on("click:momentum-burn", function () {
+  getAttrs(["momentum_reset"], function (values) {
+    setAttrs({
+      momentum: parseInt(values.momentum_reset),
+    });
   });
-});// on('change:selected_move', function(eventInfo) {
+});
+  // on('change:selected_move', function(eventInfo) {
 //   if (eventInfo.newValue !== 'none') {
 //     setAttrs({
 //       move_view: '2',
@@ -40137,25 +40089,25 @@ on(
   }
 );
   sheets.forEach((sheet) => {
-  listenAttrBtn(`sheet-${sheet.name}-display`);
+  listenSetAttr(`sheet-${sheet.name}-display`);
 });
 
-listenAttrBtn("mode");
+listenSetAttr("mode");
 
-listenAttrBtn("stat_mode");
+listenSetAttr("stat_mode");
   const pageWidgets = ["preview"];
 const pages = ["oracle", "move"];
 
 pageWidgets.forEach((widget) => {
   pages.forEach((page) => {
-    listenAttrBtn(`${page}_${widget}`);
+    listenSetAttr(`${page}_${widget}`);
   });
 });
 
 const generalWidgets = ["changelog"];
 
 generalWidgets.forEach((widget) => {
-  listenAttrBtn(widget);
+  listenSetAttr(widget);
 });
 
 // pageWidgets.forEach((widget) => {

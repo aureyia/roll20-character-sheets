@@ -2,6 +2,14 @@ const gulp = require("gulp");
 const gulpPug = require("gulp-pug");
 const gulpData = require("gulp-data");
 const gulpStylus = require("gulp-stylus");
+const gulpPostcss = require("gulp-postcss");
+// const autoprefixer = require("autoprefixer");
+// const combineMediaQuery = require("postcss-combine-media-query");
+// const combineDuplicatedSelectors = require("postcss-combine-duplicated-selectors");
+const purgeCss = require("@fullhuman/postcss-purgecss");
+const perfectionist = require("perfectionist");
+const postcssAddRootSelector = require("postcss-add-root-selector");
+const cssNano = require("cssnano");
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
@@ -128,7 +136,7 @@ gulp.task("css", async () => {
   return gulp
     .src("./app/Ironsworn-starforged.styl")
     .pipe(gulpStylus({ rawDefine: stylusDataOut }))
-    .pipe(gulp.dest("../"));
+    .pipe(gulp.dest("./temp"));
 });
 
 gulp.task("html", () => {
@@ -148,6 +156,44 @@ gulp.task("html", () => {
     .pipe(gulp.dest("../"));
 });
 
+gulp.task("postCss", async () => {
+  const plugins = [
+    purgeCss({
+      content: ["../*.html"],
+      fontFace: true,
+      // i really oughta do some stylus cleanup, but until then...
+    }),
+    postcssAddRootSelector({
+      rootSelector: ".ui-dialog div.charsheet.charactersheet",
+      // lazy way of gaining some specificity over r20's selectors :D
+    }),
+    cssNano({
+      preset: [
+        "advanced",
+        {
+          discardComments: { removeAll: true },
+        },
+        {
+          autoprefixer: {
+            add: true,
+            browsers: ["last 2 chrome versions", "last 2 firefox versions"],
+          },
+        },
+        {
+          cssDeclarationSorter: { order: "smacss" },
+        },
+      ],
+    }),
+    // cssNano doesn't have granular whitespace config, so we beautify it w/ another postCss plugin to keep the css readable for ppl building this thing; r20 minifies the spacing on its own, anyways.
+    perfectionist({ format: "compact", indentSize: 2 }),
+    // FIXME perfectionist doesn't seem to be doing anything
+  ];
+  return gulp
+    .src("./temp/*.css")
+    .pipe(gulpPostcss(plugins))
+    .pipe(gulp.dest("../"));
+});
+
 const taskSeries = [
   "dataforge",
   "mergeTranslation",
@@ -155,6 +201,7 @@ const taskSeries = [
   "workerData",
   "css",
   "html",
+  "postCss",
 ];
 
 gulp.task(
