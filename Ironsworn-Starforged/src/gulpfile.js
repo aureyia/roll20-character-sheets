@@ -166,6 +166,7 @@ gulp.task("postCss", async () => {
     postcssAddRootSelector({
       rootSelector: ".ui-dialog div.charsheet.charactersheet",
       // lazy way of gaining some specificity over r20's selectors :D
+      // also keeps the css in stylus uncluttered + related to only the stuff we can see in the compiled html
     }),
     cssNano({
       preset: [
