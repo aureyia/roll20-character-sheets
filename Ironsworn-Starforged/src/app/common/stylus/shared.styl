@@ -11,8 +11,6 @@ $body_line_height = 1.25
 $short_transition = 0.3s
 $long_transition = 0.5s
 
-@import "./reset.styl"
-
 // brand colours
 $sf_black = #221E1F // not resampled yet
 $sf_rich-black = #040506 // not resampled yet
@@ -60,7 +58,8 @@ stdFont(primary = false)
 borderCommon(width=2px)
   border width solid $color_fg
 
-visOff()
+visOff(time=$long_transition)
+  transition opacity time
   visibility hidden !important
   height 0 !important
   width 0 !important
@@ -69,7 +68,8 @@ visOff()
   border 0 !important
   padding 0 !important
   margin 0 !important
-visOn()
+visOn(time=$long_transition)
+  transition opacity time
   visibility visible !important
   opacity 1 !important
 
@@ -82,6 +82,7 @@ fadeOut(time=$long_transition)
   transition time
   visibility hidden !important
   opacity 0 !important
+  // z-index -1
 
 colorThemeDark()
   background-color $color_fg
@@ -122,7 +123,8 @@ bodyText()
   stdFont($type_body)
   font-weight 400
   letter-spacing 0.025ch
-  line-height 1.25
+  line-height 1.45
+  word-spacing 0.1ch
   font-size 1em
   text-transform none
 
@@ -139,12 +141,10 @@ footerText()
   font-size 75%
 
 interactiveHover(bg=$color_fg, fg=$color_bg)
-  transition color, background-color $long_transition ease
   &:hover:enabled
     interactiveAltColor(bg, fg)
 
 interactiveActive(bg=$color_fg, fg=$color_bg)
-  transition color, background-color $long_transition ease
   &:active
     interactiveAltColor(bg, fg)
 
@@ -153,13 +153,17 @@ interactiveAltColor(fg=$color_bg, bg=$color_fg)
   color fg !important
 
 interactiveFocus(shadow=3px)
+  outline 0px solid transparent
+  box-shadow inset 0 0 0 0 transparent
   &:focus
     outline 3px solid $color_highlight
     outline-offset 0
     box-shadow inset 0 0 0 shadow
-    z-index 1 // so it renders above other objects when focused
+    z-index 1 // so it renders above adjacent objects when focused
 
 interactive(bg=$color_bg, fg=$color_fg)
+  transition-property color, background-color, box-shadow, outline
+  transition-duration $short_transition
   background-color bg
   color fg
   cursor pointer
@@ -294,3 +298,4 @@ hexCheckbox(hexWidth, emptyImage="https://raw.githubusercontent.com/aureyia/roll
     background-color $color_fg_alt
   &:checked
     background-color currentColor
+

@@ -5,6 +5,7 @@
 }
 // Common
 @import './common/stylus/shared'
+@import './common/stylus/reset'
 // Sheet Core
 *, ::before, ::after
   box-sizing border-box
@@ -72,24 +73,12 @@ textarea
   background: #E6E7E8
   color: $color_fg
   border-radius: 0
-
 .border
   border: 1px solid $color_input
   border-radius: 4px
 textarea.full-width
   width: 95%
   resize: vertical
-span.switchable-display:checked
-  background-color: $color_fg
-  color: $color_bg
-  transition: .5s ease;
-span.switchable-display:hover
-  cursor: pointer
-  border-radius: 4px
-  padding: 2px 4px
-  background-color: $color_input
-  color: $color_fg
-  transition: .5s ease;
 div.preview-roll
   padding: 0em
 span.preview-roll
@@ -110,8 +99,6 @@ input.border-bottom
   margin-top: 0.3em
 .note-area
   border-radius 1em
-h3, h2
-  letter-spacing: 0.05rem;
 u
   text-decoration: underline 1pt solid currentColor
 .hex-icon
@@ -122,11 +109,8 @@ u
     height hexWidthToHeightPointy($iconWidth)
   &.raster
     hexagonClip($iconWidth)
-// nested block import doesn't seem to work properly, meaning i gotta do this one by one
-
-// Pages
-@import './pages/index'
 // generic widgets and other components, should be overwritten by more specific styling below
+@import './components/r20-native/repcontrol'
 @import './components/generic/preview'
 @import './components/generic/listgroup'
 @import './components/generic/buttons'
@@ -146,5 +130,6 @@ u
 @import './components/oracles/oracles'
 @import './components/legacies/tracks'
 
-// Roll Templates
-@import './roll-templates/template'
+// Pages
+@import './pages/page'
+@import './pages/index'

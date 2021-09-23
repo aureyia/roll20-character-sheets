@@ -5,3 +5,30 @@ mixin page(pageType, sheetType)
     role="tabpanel"
   )
     block
+
+mixin pageTabList(sheetType, ariaLabel, classes=[])
+  -
+    const sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
+    const pages = sheet.pages
+    const defaultTab = `page-${_.kebabCase(sheet.start)}`
+    const parentName =`sheet-${_.kebabCase(sheetType)}`
+  +tabList( parentName, defaultTab, `Starforged ${sheetType} sheet tabs`)
+    each page in pages
+      - const pageName = `page-${_.kebabCase(page)}`;
+      +tab(
+        pageName,
+        parentName,
+        `nav-${_.kebabCase(page)}`,
+        ["page-tab"]
+      )
+
+
+mixin pageMain(sheetType)
+  -
+    const sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
+    const defaultTab = `page-${_.kebabCase(sheet.start)}`
+    const parentName =`sheet-${_.kebabCase(sheetType)}`
+  main.page-container
+    input( type="hidden" name=`attr_${parentName}-display` value=defaultTab ).pager
+    block
+    //- block items should have role="tabpanel"

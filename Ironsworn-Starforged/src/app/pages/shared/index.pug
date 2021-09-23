@@ -1,6 +1,7 @@
 include ../../components/tabs/tabs
 include ../../components/resources/resources
 include ../../components/resources/resourcemeter
+include ../page
 include ../common/vows
 include ../common/connections
 include ../common/progress
@@ -10,8 +11,9 @@ include ../common/ship
 
 header
   +resources(sheetType)
+  +pageTabList(sheetType)
 
-+pageTabs(sheetType)
++pageMain(sheetType)
   +vowsPage(sheetType)
   +connectionsPage(sheetType)
   +progressPage(sheetType)

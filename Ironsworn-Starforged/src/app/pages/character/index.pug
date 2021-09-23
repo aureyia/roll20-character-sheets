@@ -2,6 +2,7 @@ include ../common/connections
 include ../common/vows
 include ../common/progress
 include ../common/ship
+include ../page
 include ./moves
 include ./assets
 include ./summary
@@ -13,7 +14,8 @@ include ./legacies
 header
   +resources(sheetType)
   include ../../components/momentum/momentum
-+pageTabs(sheetType)
+  +pageTabList(sheetType)
++pageMain(sheetType)
   +summaryPage(sheetType)
   +connectionsPage(sheetType)
   +vowsPage(sheetType)

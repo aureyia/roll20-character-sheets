@@ -1,4 +1,6 @@
 /* r20 default character sheet styles. add and remove as needed*/
+@import "./shared.styl"
+
 *
   font-size $root_font_size
   padding initial
@@ -10,8 +12,8 @@
 p, ul, ol, button, span, input, textarea
   font-family inherit
   font-size inherit
-  &.pictos
-    font-family "Pictos"
+.pictos
+  font-family "Pictos" !important
 input
   height initial
   vertical-align initial

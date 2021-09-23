@@ -3,7 +3,6 @@
   column-gap 1em
   width -moz-available
 
-
 .preview
   display grid
   grid-template-rows min-content 1fr
@@ -38,12 +37,3 @@
     width stretch
     width -moz-available
     overflow clip
-
-input.preview.switch-display, input.overview.switch-display
-  display none
-
-input.preview.switch-display:checked + .preview.switchable-display
-  switchDisplayOn()
-
-input.overview.switch-display:checked + .overview.switchable-display
-  switchDisplayOn()

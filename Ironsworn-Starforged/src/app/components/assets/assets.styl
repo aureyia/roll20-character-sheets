@@ -1,13 +1,3 @@
-// input[type="checkbox"].switchable-display:checked ~ .switchable-display
-//   switchDisplayOn()
-
-// select
-//   &.path-dropdown
-//     option[value="alchemist"]
-//       & ~ .alchemist
-//         display flex
-//         switchDisplayOn()
-
 .page-assets
   display flex
   flex-flow column
@@ -318,7 +308,7 @@ input[type=checkbox].custom:checked + div.custom
   switchDisplayOn(grid)
 
 for key in $assets
-  input.switch-display[type=checkbox]:checked + .asset-card.{key}
+  input[type=radio]:checked + .asset-card.{key}
     switchDisplayOn(grid)
 
 .asset-content-header
