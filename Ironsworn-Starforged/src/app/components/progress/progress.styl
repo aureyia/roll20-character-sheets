@@ -1,3 +1,27 @@
+.track-box-input
+  width: 80px
+  height: 45px !important
+  opacity: 0
+  vertical-align: top
+.track-box-back
+  width: 80px
+  height: 45px
+  margin-top: -45px
+.track-box-input:hover ~ .track-box-back,
+.resources-box-input:hover ~ .resources-box-back
+  background: $color_input
+  transition: .5s ease;
+.track-box-input:checked ~ .track-box-back,
+.resources-box-input:checked ~ .resources-box-back
+  background: $color_fg
+  color: $color_bg
+  transition: .5s ease;
+.track-box-value
+  padding: 0px
+  height: 35px
+  padding-top: 10px
+  color: inherit
+
 .challenge-rank-radio
   display flex
   justify-content space-around
@@ -5,7 +29,7 @@
   margin-top 0.3em
   margin-bottom 10px
   .challenge-rank-option
-    border 2px solid $color-fg
+    borderCommon()
     margin 0.2em 0.5em 0.2em 0.5em
     padding 0
     cursor pointer
@@ -13,8 +37,8 @@
     input
       &:checked
         & ~ h5
-          background $color-fg
-          color $color-bg
+          background $color_fg
+          color $color_bg
 
 .progress-container
   display flex
@@ -24,21 +48,17 @@
 
 .progress-name
   width 100%
-  font-weight bold
-  font-size 14px
 
 input
   &.progress-name
     background #e6e7e8
-    border 2px solid $color-fg
+    borderCommon()
     border-radius 0
     margin-bottom 0.2em
 
 .progress-input
   width 40px
   height 40px
-  font-size 22px
-  font-weight bold
   background transparent
   text-align center
   justify-content center
@@ -48,10 +68,10 @@ input
   cursor pointer
   borderCommon()
   border-radius 0
-  interactiveHover($color-input, $color-fg)
+  interactiveHover($color_input, $color_fg)
 
   &:focus
-    outline 3px solid $color-highlight
+    outline 3px solid $color_highlight
     outline-offset 0
     box-shadow inset 0 0 0 2px
 
@@ -69,7 +89,7 @@ input.progress-name
   height auto
   cursor pointer
   border-left 0
-  interactiveHover($color-input, $color-fg)
+  interactiveHover($color_input, $color_fg)
 
 
 .challenge-show-back
@@ -81,8 +101,8 @@ input[type='checkbox'].challenge-show:checked ~ div.countdown-row
   switchDisplayOn(0.7s)
 
 input[type='checkbox'].challenge-show-button:checked ~ div.challenge-show-back
-  background $color-fg
-  color $color-bg
+  background $color_fg
+  color $color_bg
 
 /* grid container to hold challenge boxes and countdown boxes */
 
@@ -113,10 +133,10 @@ label.challenge-label
 .challenge-fill
   height 100%
   width 100%
-  background $color-bg
+  background $color_bg
 
 input[type="checkbox"].challenge:checked ~ .challenge-fill
-  background $color-fg
+  background $color_fg
 
 input[type="checkbox"].challenge:hover ~ .challenge-fill
   background #E6E7E8
@@ -140,31 +160,29 @@ input[type="checkbox"].challenge:hover ~ .challenge-fill
   width 36px
   height 36px
   pointer-events none
-  background $color-bg
+  background $color_bg
 
 .progress-input-holder input[min="1"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px))
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px))
 
 .progress-input-holder input[min="2"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
 
 .progress-input-holder input[min="3"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
 
 .progress-input-holder input[min="4"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
 
 /* large inputs */
 
 .large-progress-input
   width 60px
   height 60px
-  font-size 22px
-  font-weight bold
   background transparent
   text-align center
   justify-content center
@@ -174,9 +192,9 @@ input[type="checkbox"].challenge:hover ~ .challenge-fill
   cursor pointer
   borderCommon()
   border-radius 0.3em
-  interactiveHover($color-input, $color-fg)
+  interactiveHover($color_input, $color_fg)
   &:focus
-    outline 3px solid $color-highlight
+    outline 3px solid $color_highlight
     outline-offset 0
     box-shadow inset 0 0 0 2px
 
@@ -195,20 +213,20 @@ input[type="checkbox"].challenge:hover ~ .challenge-fill
   width 56px
   height 56px
   pointer-events none
-  background $color-bg
+  background $color_bg
 
 .large-progress-input-holder input[min="1"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px))
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px))
 
 .large-progress-input-holder input[min="2"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
 
 .large-progress-input-holder input[min="3"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
 
 .large-progress-input-holder input[min="4"]:valid + span
   display block
-  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), $color-fg calc(50% - 1px), $color-fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)
+  background-image linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), $color_fg calc(50% - 1px), $color_fg calc(50% + 1px), transparent calc(50% + 1px), transparent 100%)

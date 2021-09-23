@@ -23,29 +23,29 @@ input
     borderCommon()
     border-radius 0
     &:focus
-      outline 3px solid $color-highlight
+      outline 3px solid $color_highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
   &.search-bar
     width 50%
     borderCommon()
     &:focus
-      outline 3px solid $color-highlight
+      outline 3px solid $color_highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
   &.table-btn
     &:checked
       & ~ div
         &.move-nav-content
-          background $color-fg
-          color $color-bg
+          background $color_fg
+          color $color_bg
           transition 0.5s ease
 
 
 
 .move
   margin 0em
-  color $color-fg
+  color $color_fg
   display flex
   padding 0
 
@@ -55,7 +55,7 @@ input
 .move-highlight
   &:checked
     & ~ .move-name
-      background $color-highlight
+      background $color_highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
 
@@ -80,7 +80,6 @@ span
 
 .move-show
   display inline-flex
-  font-size 1em
   margin 0em
   padding 0.3em
   cursor pointer
@@ -95,19 +94,15 @@ span
 
 article.gamerules
   .move-progress-label
-    color $color-fg-lowkey
+    footerText()
+    color $color_fg_alt
     display block
-    stdFont('Encode Sans Condensed')
-    font-size 75%
-    font-weight normal
-    text-transform none
     font-style italic
     align-self end
     margin-left 1em
   .move-table
     border none
     width 30.5em
-    font-size 12px
   .move-roll
     width 18%
 
@@ -115,10 +110,7 @@ article.gamerules
   width fit-content
   height auto
   margin 0
-  font-weight bold
-  font-size 14px
   padding 0.2em 0.2em 0.2em 0.2em
-  border 2px solid $color-fg
   cursor pointer
   interactiveHover()
 
@@ -126,8 +118,8 @@ article.gamerules
   z-index 3
   &:checked
     & ~ .move-name
-      background $color-fg !important
-      color $color-bg !important
+      background $color_fg !important
+      color $color_bg !important
 
 // TODO: iterate thru $moves for toggle classes
 
@@ -168,22 +160,15 @@ article.gamerules
 .move-delve-column
   width 50%
 
-.move-delve-column-stat-header,
-.move-delve-column-stat-header-1,
-.move-delve-column-stat-header-2,
-.move-delve-column-stat-header-3,
-.move-delve-column-header
-  font-weight bold
-
 .move-delve-row-header
   padding 0px 5px 0px 5px
   display flex
   height auto
-  border-bottom 2px solid $color-fg
+  border-bottom 2px solid $color_fg
 
 .embedded-btn
   padding-top 0.2em !important
-  // stdFont($body-font)
+  // stdFont($type_body)
 
 input.optional-move-failures:checked ~ div.optional-move-failures,
 input.optional-move-sites:checked ~ div.optional-move-sites,

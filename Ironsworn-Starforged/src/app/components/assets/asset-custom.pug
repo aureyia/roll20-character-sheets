@@ -13,7 +13,7 @@ mixin assetMeterBox(parent, value)
       .asset-meter-box-display 0
     else
       .asset-meter-box-display='+ ' + value
-    input(type='radio' name=`attr_custom-asset-meter-${parent}` value=`${value}`)
+    input(hidden type='radio' name=`attr_custom-asset-meter-${parent}` value=`${value}`)
 
 mixin abilityView(value)
   input(
@@ -28,7 +28,7 @@ mixin abilityView(value)
     )
     .asset-ability
       span.no-border.ability-text(name=`attr_builder-ability-${value}-text-area`)
-  input(class=`builder-ability-${value}-text-input switch-display` type='checkbox' name=`attr_builder-ability-${value}-text-input`)
+  input(hidden class=`builder-ability-${value}-text-input switch-display` type='checkbox' name=`attr_builder-ability-${value}-text-input`)
   div(class=`builder-ability-${value}-text-input switchable-display`)
     input.custom-asset-ability(type='checkbox' name=`attr_assetcheckbox_builder-ability-${value}`)
     .asset-ability

@@ -10,5 +10,5 @@ mixin assets()
       +customAssets
   .switch-display
     each asset in assets.Assets
-      input(class=`switch-display` type='checkbox' name=`attr_${asset.id}`)
+      input(hidden class=`switch-display` type='checkbox' name=`attr_${asset.id}`)
       //- TODO: i'm not really sure what's happening here, prob worth checking

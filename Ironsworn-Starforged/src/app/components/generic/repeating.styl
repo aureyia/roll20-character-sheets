@@ -4,18 +4,16 @@
   // .repcontrol_edit, .repcontrol_add
     width auto
     height auto
-    border 2px solid $color-fg
+    borderCommon()
     border-radius 0
-    font-weight bold
-    font-size 12px
     text-shadow none
     text-transform uppercase
     padding 0.2em
     margin 0.3em
-    color $color-fg
+    color $color_fg
     background #dfe0e2
-    interactiveHover($color-input)
-    inputHighlight(1px)
+    interactiveHover($color_input)
+    interactiveFocus(1px)
 .repcontainer
   .repcontrol_edit
     margin-right 3px

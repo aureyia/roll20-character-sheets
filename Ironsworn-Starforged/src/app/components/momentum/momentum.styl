@@ -1,19 +1,35 @@
-
-#momentum-header
-  text-transform uppercase
-  dark()
-
-#momentum
+section#momentum
   display flex
-  flex-flow column
   text-align center
-  .momentum-status-box, .resource-meter-box
-    borderCommon()
-
-#momentum-bar
-  display flex
+  borderCommon()
+  flex-flow row wrap
+  .momentum-header
+    flex-basis 100%
+    padding 0.25em
+    headerText()
+    colorThemeDark()
   .resource-meter
     display contents
+    display flex
+    flex-grow 10
+    margin 0
+  button[name=act_momentum-burn], .momentum-status-box
+    flex-grow 1
+  .momentum-status-box, .resource-meter-box
+    borderCommon()
+    labelText()
+    color $color_fg_alt
+  .resource-meter-box, .momentum-status-box, button[name=act_momentum-burn]
+    width max-content
+    padding 0.25em
+  .resource-meter-box
+    interactive()
+    width (100/17)%
+  input[type=radio]:checked + .resource-meter-box
+    interactiveAltColor()
 
-.attr-span
-  display contents
+
+
+
+
+

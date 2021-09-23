@@ -17,27 +17,22 @@ mixin repeatingVow()
   div.vow
     .progress-row
       div
-        label.btn
-          input(class="mark-vow hide" type="checkbox" name="attr_mark_progress")
-          div.btn-div
-            +i18n('progress-mark')
-        label.btn
-          input(class="clear-vow hide" type="checkbox" name="attr_clear_progress")
-          div.btn-div
-            +i18n('clear-btn')
+        label
+          input(hidden class="mark-vow hide" type="checkbox" name="attr_mark_progress")
+          +i18n('progress-mark')
+        label
+          input(hidden class="clear-vow hide" type="checkbox" name="attr_clear_progress")
+          +i18n('clear-btn')
       each index in track
         +progressBoxComplex(`attr_progress_${index}`)
-      div
-        label.btn
-          button(
-            type="roll"
-            class='hide'
-            name="rollVow"
-            value="&{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"
-          )
-          div.btn-div
-            +i18n('vow-fulfill')
+      button(
+        type="roll"
+        name="rollVow"
+        value="&{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"
+      )
+        +i18n('vow-fulfill')
       input(
+        hidden
         type="text"
         class="switch-display"
         name="attr_vow-filled"

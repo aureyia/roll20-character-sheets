@@ -1,13 +1,12 @@
 input.switch-display:checked + article.gamerules.switchable-display
   switchDisplayOn(grid)
 
-$header-font-size = 1.5em
 $header-padding = 0.5em
 $button-height = 30px
 
 article.gamerules
-  stdFont($body-font)
-  dark()
+  stdFont($type_body)
+  colorThemeDark()
   margin 0
   border 0
   display grid
@@ -17,55 +16,33 @@ article.gamerules
   grid-template-columns 1fr max-content max-content
   grid-template-rows min-content min-content 1fr max-content
   h3, .close-preview.icon-only, button.roll-show.icon-only
+    font-size $h2_size
+  h3
     line-height 1
-    font-size $header-font-size
+    colorThemeDark()
+    grid-area title
     height max-content
     width max-content
-  h3
-    stdFont($header-font-lg)
-    font-weight 700
-    grid-area title
     width auto
     display flex
-    text-transform uppercase
     grid-column-start 1
     grid-row-start 1
     margin $header-padding
-  .close-preview.icon-only
-    display flex
-    justify-content: center
-    grid-area close
-    border none
-    background none
-    line-height: 1.1;
-    text-anchor: middle;
-    background-color $color-warning
-    hexagonClip($header-font-size)
-    interactiveHover($color-bg, $color-warning)
-    margin-right 0.25em
-    &:before
-      width inherit
-      display flex
-      align-items center
-      justify-content center
-      height min-content
-      align-self center
-
   button.roll-show.icon-only
-    background-color $color-cta
-    color $color-bg
-    hexagonClip($header-font-size)
-    interactiveHover($color-bg, $color-cta)
+    background-color $color_cta
+    color $color_bg
+    hexagonClip($h2_size)
+    interactiveHover($color_bg, $color_cta)
 
   // button.button-text
-  //   font-weight 800
   //   line-height: 1;
-  //   light()
-  //   interactiveHover($color-cta)
-  //   border 2px solid $color-cta
-  //   color $color-cta
+  //   colorThemeLight()
+  //   interactiveHover($color_cta)
+  //   border 2px solid $color_cta
+  //   color $color_cta
   //   grid-area roll
   //   width stretch
+  //  width -moz-available
   //   height $button-height
   //   padding ($button-height/8)
   //   margin 0
@@ -87,9 +64,10 @@ article.gamerules
     margin 2px 0px
     // slight offset to compensate for apparent extension by border
     grid-area body
-    color $color-fg
-    background-color $color-bg
+    color $color_fg
+    background-color $color_bg
     width stretch
+    width -moz-available
     padding 1em
     display flex
     flex-flow column
@@ -103,11 +81,8 @@ article.gamerules
     // .oracle-embedded
     .roll-label.embedded-btn
       border-width 4px 4px 0px
-      font-size 1em
 
   footer
     grid-area footer
     padding 0.5rem
-    line-height 0.9em
-    font-size 0.9em
     text-align right

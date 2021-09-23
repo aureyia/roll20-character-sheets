@@ -1,113 +1,118 @@
 /* r20 default character sheet styles. add and remove as needed*/
-.ui-dialog
-  h1, h2, h3, h4, h5, h6, label
-    color unset
-  .no-touch .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol
-    background-color unset
-  button[type=roll].ui-draggable-dragging
-    z-index unset
-    width unset
-    height unset
-    padding unset
-    font-size unset
-    margin unset
-  button[type=roll].ui-draggable-dragging:before
-    font-family unset
-    content unset
-  button.disabled
-    opacity unset
-    cursor unset
-  .charmancer .sheet-choice
-    display unset
-  .charmancer.locked input
-    opacity unset
-    pointer-events unset
-  .charmancer.locked span label
-    pointer-events unset
-  .charsheet // 'root' font-size set here
-    &.charactersheet
-      font-size 16px
-      padding unset
-    p, ul, ol, button, span, input, textarea
-      font-family unset
-      font-size unset
-      &.pictos
-        font-family "Pictos"
-    .btn, .btn.btn-default
-      display unset
-      padding unset
-      margin-bottom unset
-      font-size unset
-      line-height unset
-      color unset
-      text-align unset
-      text-shadow unset
-      vertical-align unset
-      background-color unset
-      background-image unset
-      background-repeat unset
-      filter unset
-      border-color unset
-      border-color unset
-      filter unset
-      border unset
-      border-bottom-color unset
-      border-radius unset
-      box-shadow unset
-      cursor unset
-      filter unset
-      margin-left unset
-    input
-      height unset
-      vertical-align unset
-      box-sizing unset
-    hr
-      clear unset
-    input[type=number]
-      width unset
-    .sheet-row,
-    .sheet-2colrow,
-    .sheet-3colrow
-      display unset
-      clear unset
-    .sheet-col
-      display unset
-      vertical-align unset
-    .sheet-col img
-      max-width unset
-    .sheet-2colrow .sheet-col
-      width unset
-      margin-right unset
-    .sheet-3colrow .sheet-col
-      width unset
-      margin-right unset
-    .sheet-col:last-child
-      margin-right unset
-    button
-      background none
-      text-shadow unset
-    button[type=roll],
-    button[type=compendium]
-      padding 0
-      margin 0
-      font-size unset
-    button[type=roll]:before
-      font-family unset
-      content unset
-    button[type=compendium]:before
-      font-family unset
-      content unset
-    // .repcontrol_edit
-    // .repcontainer .repitem
-      // position unset
-      // box-sizing unset
-    .repcontainer .repitem .itemcontrol
-      // display unset
-      // position unset
-      width unset
-      height unset
-      // background-color unset
-    .repitem.repitembroken
-      border unset
-    .repcontainer.editmode .repitem .itemcontrol
-      // display unset
+*
+  font-size $root_font_size
+  padding initial
+  box-sizing border-box
+.ironsworn-sheet
+  width inherit
+  header
+    width inherit
+p, ul, ol, button, span, input, textarea
+  font-family inherit
+  font-size inherit
+  &.pictos
+    font-family "Pictos"
+input
+  height initial
+  vertical-align initial
+hr
+  clear initial
+input[type=number]
+  width initial
+.sheet-row,
+.sheet-2colrow,
+.sheet-3colrow
+  display initial
+  clear initial
+.sheet-col
+  display initial
+  vertical-align initial
+.sheet-col img
+  max-width initial
+.sheet-2colrow .sheet-col
+  width initial
+  margin-right initial
+.sheet-3colrow .sheet-col
+  width initial
+  margin-right initial
+.sheet-col:last-child
+  margin-right initial
+button
+  background none
+  text-shadow initial
+  box-shadow none
+button[type=roll],
+button[type=compendium]
+  padding unset
+  margin unset
+  font-size initial
+button[type=roll]:before
+  font-family initial
+  content initial
+button[type=compendium]:before
+  font-family initial
+  content initial
+// .repcontrol_edit
+// .repcontainer .repitem
+  // position initial
+  // box-sizing initial
+.repcontainer .repitem .itemcontrol
+  // display initial
+  // position initial
+  width initial
+  height initial
+  // background-color initial
+.repitem.repitembroken
+  border initial
+// .repcontainer.editmode .repitem .itemcontrol
+  // display initial
+h1, h2, h3, h4, h5, h6, label
+  color initial
+.no-touch .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol
+  background-color initial
+button[type=roll].ui-draggable-dragging
+  z-index initial
+  width initial
+  height initial
+  padding initial
+  font-size initial
+  margin initial
+button[type=roll].ui-draggable-dragging:before
+  font-family initial
+  content initial
+button.disabled
+  opacity initial
+.charmancer .sheet-choice
+  display initial
+.charmancer.locked input
+  opacity initial
+  pointer-events initial
+.charmancer.locked span label
+  pointer-events initial
+.btn, .btn.btn-default
+  margin 0
+  display initial
+  padding initial
+  font-size initial
+  line-height initial
+  color initial
+  text-align initial
+  text-shadow initial
+  vertical-align initial
+  background-color initial
+  background-image none
+  background-repeat no-repeat
+  filter initial
+  border-color initial
+  filter initial
+  border initial
+  border-bottom-color initial
+  border-radius initial
+  box-shadow none
+label input[type=checkbox]
+  // display unset
+  // &[hidden="hidden"]
+  //   display none
+input, textarea, select, .uneditable-input
+  width unset
+  // display unset

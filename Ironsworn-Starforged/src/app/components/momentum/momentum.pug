@@ -1,12 +1,11 @@
 include ./../resources/resourcemeter.pug
 
 section#momentum
-  h3#momentum-header
+  h3.momentum-header
     +i18n("momentum")
-  section#momentum-bar
-    +resourceMeterBar("momentum", "momentum", 10, -6, 2)
-    +actionBtn("momentum-burn")
-    .momentum-status-box
-      +attrSpan('momentum-maximum', "momentum_max")
-    .momentum-status-box
-      +attrSpan('momentum-reset', "momentum_reset")
+  +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
+  +actionBtn("momentum-burn")
+  .momentum-status-box
+    +attrSpan('momentum-maximum', "momentum_max")
+  .momentum-status-box
+    +attrSpan('momentum-reset', "momentum_reset")

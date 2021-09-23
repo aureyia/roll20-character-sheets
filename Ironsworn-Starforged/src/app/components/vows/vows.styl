@@ -1,24 +1,24 @@
 input
   &.vow-name
-    background $color-input
-    border 2px solid $color-fg
+    background $color_input
+    borderCommon()
     border-radius 0
     margin-bottom 0.2em
     margin-top 1em
     background #e6e7e8
-    border 2px solid $color-fg
+    borderCommon()
     border-radius 0
     margin-bottom 0.2em
     &:focus
-      outline 3px solid $color-highlight
+      outline 3px solid $color_highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
 
 .fulfill-vow:hover,
 .mark-vow:hover,
 .vow-clear-label:hover
-  background-color $color-input
-  color $color-fg
+  background-color $color_input
+  color $color_fg
   transition 0.5s ease
 
 .vows
@@ -32,8 +32,3 @@ input
 
 .vow-name
   width 100%
-  font-weight bold
-  font-size 14px
-
-.btn-div
-  display inline

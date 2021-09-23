@@ -9,12 +9,12 @@ mixin progressTrackBoxes(track, name)
   .progress-container
     div.progress-row
       div
-        label.btn
+        label
           +i18n("progress-mark")
-          input(class="mark-vow switch-display" type="checkbox" name="attr_mark_progress")
-        label.btn
+          input(hidden class="mark-vow switch-display" type="checkbox" name="attr_mark_progress")
+        label
           +i18n("progress-clear")
-          input(class="clear-vow switch-display" type="checkbox" name="attr_clear_progress")
+          input(hidden class="clear-vow switch-display" type="checkbox" name="attr_clear_progress")
       each value in track
         +progressBoxComplex(`attr_progress_${value}`)
       div
@@ -24,7 +24,7 @@ mixin progressTrackBoxes(track, name)
           value=`&{template:starforged_progress} {{progress_name=@{${name}}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
         )
           +i18n("progress-conclude")
-      input.switch-display(type='text' name='attr_progress-filled' value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)` disabled='true')
+      input.switch-display(type='hidden' name='attr_progress-filled' value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)`)
 
 mixin progressBoxComplex(attribute_name)
   .progress-input-holder

@@ -15,33 +15,32 @@ input.oracle-delve:checked + div.oracle-delve
 section.oracle-table
   h4
     stdFont("Exo")
-    light()
-    font-weight 700
+    colorThemeLight()
     background none
-    font-size 1.375em
     padding 0
     margin-bottom 0.25em
 
 table.oracle-table
   border none
   width stretch
+  width -moz-available
   margin 0
   thead
-    border-top 4px solid $color-fg-lowkey
+    borderCommon(4px 0 0 0)
     padding 0.3em
-    background-color $color-fg
-    color $color-bg
+    background-color $color_fg
+    color $color_bg
     th
       padding-left 0.4em
   tbody
-    border-top 4px solid $color-fg-lowkey
+    borderCommon(4px 0 0 0)
     td
       padding-left 0.4em
 
 
 .oracle
   margin: 0em
-  color: $color-fg
+  color: $color_fg
   display: flex
 
 .oracle-subtitle, .oracle-column-head
@@ -49,24 +48,23 @@ table.oracle-table
   padding-left 0.35em
 
 .oracle-column-head
-  font-weight 600
-  background-color $sf-ui-gray-dark
-  color $color-fg
+  background-color $color_bg_alt_2
+  color $color_fg
 
 .oracle-subtitle
   text-transform uppercase
-  background-color $color-fg
-  color $color-bg
+  background-color $color_fg
+  color $color_bg
 
 article.gamerules
-  font-weight 500
   width stretch
+  width -moz-available
   // caption.oracle-description, div.oracle-description
-    // background-color $color-fg
-    // color $color-bg
+    // background-color $color_fg
+    // color $color_bg
     // p, ol, ul
       // padding 0.5em
-      // stdFont($body-font)
+      // stdFont($type_body)
 
 // commenting this out for now - true to the text, but too easy to mistake for an accordion in this context!
 // .oracle-subcategory .oracle-btn .oracle-name
@@ -276,9 +274,6 @@ input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.sw
 
 .oracle-container
   opacity 1
-  // stdFont($body-font)
-  font-size 1em
-  font-weight bold
   justify-content space-between
   padding 0.1em
 
@@ -294,11 +289,10 @@ input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.sw
   // height auto
 
 .theme-outline
-  border: 1px solid $color-fg
+  border: 1px solid $color_fg
 
 span.oracle-result
   width 80%
-  font-size 13px
 
 .oracle-box
   borderCommon()
@@ -306,11 +300,9 @@ span.oracle-result
   height max-content
 
 .oracle-title
-  background-color $color-fg
-  color $color-bg
-  // border-bottom 1px solid $color-fg
-  font-size 1.4em
-  font-weight bold
+  background-color $color_fg
+  color $color_bg
+  // border-bottom 1px solid $color_fg
   padding-left 5px
   padding-right 5px
   text-transform uppercase
@@ -320,6 +312,7 @@ span.oracle-result
 
 table.oracle-table
   width stretch
+  width -moz-available
   // table-layout auto
 
 tr.oracle-row
@@ -327,7 +320,6 @@ tr.oracle-row
 
 .oracle-show
   display inline-flex
-  font-size 1em
   margin 0em
   padding 0.3em
 
@@ -337,13 +329,13 @@ tr.oracle-row
   transition .5s ease
 
 .oracle-table
-  // border 4px solid $color-fg
+  // border borderCommon(4px)
 
 .flex-table
   display flex
 
 .oracle-row:nth-child(2n)
-  background-color: $color-bg-alt
+  background-color: $color_bg_alt
 
 .oracle-row
   padding 3px 0px 3px 0px
@@ -389,7 +381,7 @@ th.oracle-column-head.oracle-roll
   width 33%
   height 44em
   overflow auto
-  border 3px solid $color-fg
+  border 3px solid $color_fg
   padding 0
   margin 0
   margin-right 0.3em

@@ -1,0 +1,9 @@
+*.html
+*.css
+*.json
+.vscode
+translations
+src/app/img
+src/node_modules
+src/temp
+assets

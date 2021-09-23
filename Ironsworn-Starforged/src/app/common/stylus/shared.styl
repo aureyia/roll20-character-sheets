@@ -1,66 +1,64 @@
+$sheet_width = 842px
+$sheet_padding = 0px
+$breakpoint_mobile_width = 768px
+$root_font_size = 16px
+$h1_size = 2em
+$h2_size = 1.5em
+$h3_size = 1.17em
+$h4_size = 1em
+$string_line_height = 1
+$body_line_height = 1.25
+$short_transition = 0.3s
+$long_transition = 0.5s
+
 @import "./reset.styl"
 
 // brand colours
-$sf-black = #221E1F // not resampled yet
-$sf-rich-black = #040506 // not resampled yet
-$sf-ui-gray-dark = #B8C2CD // not resampled yet
-$sf-ui-gray-light = #dde1e7 // not resampled yet
+$sf_black = #221E1F // not resampled yet
+$sf_rich-black = #040506 // not resampled yet
+$sf_ui_gray_dark = #B8C2CD // not resampled yet
+$sf_ui_gray_light = #dde1e7 // not resampled yet
 
-$sf-ui-blue = #28aae1 // strong hit
-$sf-ui-purple = #892890 // weak hit
-$sf-ui-red = #ce242b // miss
-$sf-shallows = #3d8b8a // companion
-$sf-forest = #40834f // deed
-$sf-sky = #3f7faa // path
-$sf-ocean = #495790 // support vehicle
-$sf-oracle = #7f5a90 // module
-$sf-iron = #9aa3ad // command vehicle
+$sf_ui_blue = #28aae1 // strong hit
+$sf_ui_purple = #892890 // weak hit
+$sf_ui_red = #ce242b // miss
+$sf_shallows = #3d8b8a // companion
+$sf_forest = #40834f // deed
+$sf_sky = #3f7faa // path
+$sf_ocean = #495790 // support vehicle
+$sf_oracle = #7f5a90 // module
+$sf_iron = #9aa3ad // command vehicle
 
 // basic ux colors
-$color-fg = $sf-black // old: #4c4d4f
-$color-bg = #fff
-$color-bg-alt = $sf-ui-gray-light // old: #e4e4e4. for alternating table rows, etc
-$color-fg-lowkey = $sf-ui-gray-dark // 'faded' foreground colour
-$color-input = $sf-ui-gray-dark // old: #ccc. textinput background, when hovering over usable objects
-$color-highlight = #fd0 // highlights active fields
-$color-cta = $sf-ui-blue
-$color-warning = $sf-ui-red
+$color_fg = $sf_black // old: #4c4d4f
+$color_bg = #fff
+$color_bg_alt = $sf_ui_gray_light // old: #e4e4e4. for alternating table rows, etc
+$color_bg_alt_2 = $sf_ui_gray_dark
+$color_fg_alt = $sf_ui_gray_dark // 'faded' foreground colour
+$color_input = $sf_ui_gray_dark // old: #ccc. inputBox background, when hovering over usable objects
+$color_highlight = #fd0 // highlights active fields
+$color_cta = $sf_ui_blue
+$color_warning = $sf_ui_red
 // 'close preview', 'delete', etc
 
 // base text size
 // $base-font-size
 
 // typography
-$header-font-lg = "Exo", sans-serif
-// $body-font = "Encode Sans Expanded", sans-serif
-$body-font = "Encode Sans Semi Expanded", sans-serif
-$header-font-sm = $body-font
-$compact-font = "Encode Sans Condensed", sans-serif
+$type_display = "Exo", sans-serif
+// $type_body = "Encode Sans Expanded", sans-serif
+$type_body = "Encode Sans Semi Expanded", sans-serif
+$type_header_sm = $type_body
+$type_compact = "Encode Sans Condensed", sans-serif
 
+stdFont(primary = false)
+  if primary
+    font-family primary, Arial, sans-serif
+  else
+    font-family $type_body
 
 borderCommon(width=2px)
-  border width solid $color-fg
-
-btn(fontSize = 14px)
-  borderCommon()
-  border-radius 0
-  display flex
-  width auto
-  font-size fontSize
-  padding 0
-  cursor pointer
-  background $color-bg
-  letter-spacing 0.1ch
-btnAttached(fontSize = 14px)
-  btn(fontSize)
-  border none
-  border-right 1px solid $color-fg
-
-inputHighlight(shadow)
-  &:focus
-    outline 3px solid $color-highlight
-    outline-offset 0
-    box-shadow inset 0 0 0 shadow
+  border width solid $color_fg
 
 visOff()
   visibility hidden !important
@@ -74,64 +72,149 @@ visOff()
 visOn()
   visibility visible !important
   opacity 1 !important
-fadeIn()
-  transition opacity 0.5s ease
 
-// switchDisplayOff() // simplest version for stuff that doesn't need a fadein/fadeout
-//   display none
+fadeIn(time=$long_transition)
+  transition time
+  visibility visible !important
+  opacity 1 !important
 
-// switchDisplayOn(displayMode=flex)
-//   display displayMode
+fadeOut(time=$long_transition)
+  transition time
+  visibility hidden !important
+  opacity 0 !important
 
-// switchVisOff(time=0.2s) // for pages
-//   visibility collapse
-//   // sept 16 2021: proper collapse support in chrome/safari would obviate the need to set height/overflow, but alas, no. someday...
-//   transition visibility, opacity time ease
-//   opacity 0
-//   height 0
-//   overflow hidden
+colorThemeDark()
+  background-color $color_fg
+  color $color_bg
 
-// switchVisOn() // for pages
-//   visibility visible
-//   opacity 100%
-//   height auto
-//   overflow unset
+colorThemeLight()
+  background-color $color_bg
+  color $color_fg
 
-dark()
-  background $color-fg
-  color $color-bg
-
-light()
-  background $color-bg
-  color $color-fg
-
-labelText()
-  stdFont("Exo")
+labelText(fontSize=1em)
+  stdFont($type_display)
+  font-size fontSize
+  font-weight 600
+  letter-spacing 0.05ch
   text-transform uppercase
-  font-weight 700
   text-align center
+  line-height $string_line_height
+
+subLabelText(fontSize=0.9em)
+  labelText(fontSize)
+  stdFont($type_header_sm)
+  letter-spacing 0.025ch
+  text-transform none
 
 headerText()
-  stdFont("Exo")
-  text-transform uppercase
+  stdFont($type_display)
   font-weight 800
+  letter-spacing 0.05ch
+  text-transform uppercase
+  line-height 1
 
-interactiveHover(bg=$color-fg, fg=$color-bg)
-  cursor pointer
-  transition 0.5s ease
-  &:hover
-    background-color bg !important
-    color fg !important
+headerTextSm()
+  headerText()
+  stdFont($type_header_sm)
+  font-weight 700
 
-interactiveActive(bg=$color-fg, fg=$color-bg)
+bodyText()
+  stdFont($type_body)
+  font-weight 400
+  letter-spacing 0.025ch
+  line-height 1.25
+  font-size 1em
+  text-transform none
+
+bodyTextSm()
+  bodyText()
+  stdFont($type_compact)
+
+inputText()
+  bodyText()
+  line-height 1
+
+footerText()
+  bodyTextSm()
+  font-size 75%
+
+interactiveHover(bg=$color_fg, fg=$color_bg)
+  transition color, background-color $long_transition ease
+  &:hover:enabled
+    interactiveAltColor(bg, fg)
+
+interactiveActive(bg=$color_fg, fg=$color_bg)
+  transition color, background-color $long_transition ease
+  &:active
+    interactiveAltColor(bg, fg)
+
+interactiveAltColor(fg=$color_bg, bg=$color_fg)
   background-color bg !important
   color fg !important
 
-stdFont(primary = false)
-  if primary
-    font-family primary, Arial, sans-serif
-  else
-    font-family $body-font
+interactiveFocus(shadow=3px)
+  &:focus
+    outline 3px solid $color_highlight
+    outline-offset 0
+    box-shadow inset 0 0 0 shadow
+    z-index 1 // so it renders above other objects when focused
+
+interactive(bg=$color_bg, fg=$color_fg)
+  background-color bg
+  color fg
+  cursor pointer
+  interactiveFocus()
+  interactiveActive(bg, fg)
+  interactiveHover(bg, fg)
+
+interactiveInactive(bg=$color_bg_alt fg=$color_fg_alt)
+  background-color bg
+  color fg
+  cursor not-allowed
+  &:active, &:hover
+    background-color inherit
+    color inherit
+
+
+btn(fontSize = 1em, padding=0.25em 0.5em, borderWidth=2px)
+  colorThemeLight()
+  labelText()
+  interactive()
+  borderCommon(borderWidth)
+  font-size fontSize
+  width stretch
+  width -moz-available
+  height auto
+  padding padding
+  border-radius 0
+  display flex
+  align-content center
+  justify-content center
+  text-align center
+  align-items center
+
+inputBox()
+  inputText()
+  interactiveFocus()
+  padding 0.125em 0.5ch
+  color $color_fg
+  background-color $color_bg_alt
+  border-radius 0
+
+embeddedInput()
+  padding 0
+  align-items stretch
+  display flex
+  background-color currentColor // shows only as 1px hairline gap between children
+  gap 1px
+  > *
+    border 0
+    margin 0
+  > button, > label
+    width max-content
+    display flex
+    flex 0
+    border none
 
 iconBtn(iconUrl)
   &:before
@@ -169,19 +252,12 @@ bulletBefore(forTextSize, iconUrl)
     margin-right (forTextSize / 4)
     margin-left -(forTextSize * 1)
 
-headerText(wt = 900, spacing = 0.05ch)
-  text-transform uppercase
-  font-weight wt
-  letter-spacing 0.05ch
-
-
 // places a double width stroke behind to fake an outside stroke
 textOutline(strokeColor, strokeWidth=2px)
   paint-order stroke fill
   text-stroke strokeWidth*2 strokeColor
 
 $hexagon_pointy = polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
-
 $hexagon_flat = polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
 
 hexagonMask()
@@ -192,12 +268,12 @@ hexagonMask()
 
 // hexagonBg()
 
-hexWidthToHeight(hexWidth)
-  (hexWidth / (math(3, sqrt)/2))
+hexWidthToHeightPointy(hexWidth)
+  (hexWidth*2) / math(3, sqrt)
 
 hexagonClip(hexWidth) // sets width and height to ensure correct proportion
   width hexWidth
-  height hexWidthToHeight(hexWidth)
+  height hexWidthToHeightPointy(hexWidth)
   clip-path $hexagon_pointy
   // TODO: as svg clip path? url + #id
 
@@ -207,14 +283,14 @@ hexCheckbox(hexWidth, emptyImage="https://raw.githubusercontent.com/aureyia/roll
   cursor pointer
   border none
   width hexWidth
-  height hexWidthToHeight(hexWidth)
+  height hexWidthToHeightPointy(hexWidth)
   color currentColor
   background-color transparent
   background-image url(emptyImage)
   background-size 100%
   background-position center
-  transition all ease 0.3s
+  transition $short_transition
   &:hover
-    background-color $color-fg-lowkey
+    background-color $color_fg_alt
   &:checked
     background-color currentColor

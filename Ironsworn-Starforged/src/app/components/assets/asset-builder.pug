@@ -21,18 +21,19 @@ mixin assetAbility(ability)
     +i18n(ability.id)
     if ability.Input
       each input in ability.Input
-        - var inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
-        label.asset-ability-textinput
+        - var inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
+        label.asset-ability-inputBox
           +i18n(inputId)
           input(type='text' name=`attr_${inputId}` value='')
 
 mixin assetDescription(asset)
   - var translationDesc = `${asset.id}-description`
-  +i18n(translationDesc).asset-description
+  section.asset-description
+    +i18n(translationDesc)
 
-mixin assetTextInput(textinput, assetId)
-  - let id = `${assetId}-textinput-${_.kebabCase(textinput)}`
-  label.asset-textinput
+mixin assetinputBox(inputBox, assetId)
+  - let id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
+  label.asset-inputBox
     +i18n(id)
     input(type='text' name=`attr_${id}` value='')
     //- old `attr_field-${field}`
@@ -56,16 +57,16 @@ mixin assetCard(asset, options)
   - let iconWidth = 64
   - let category = _.kebabCase(asset.Category)
   if options.visibilityToggle === true
-    input(class=`switch-display ${options.classes ? options.classes : ""} ${asset.id}` type='checkbox' name=`attr_${name}`)
+    input(hidden class=["switch-display", options.classes ? options.classes : "", asset.id] type='checkbox' name=`attr_${name}`)
   article(class=`asset-card ${options.classes ? options.classes : ""} ${asset.id} category-${category} ${options.visibilityToggle ? "switchable-display" : ""}`)
     span.asset-category=asset.Category
     h3.asset-name=asset.Name
-    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg`).asset-icon
+    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg` alt="").asset-icon
     if asset.Description
       +assetDescription(asset)
     if asset.Input
-      each textinput in asset.Input
-        +assetTextInput(textinput, asset.id)
+      each inputBox in asset.Input
+        +assetinputBox(inputBox, asset.id)
     section.asset-abilities
       each ability in asset.Abilities
         +assetAbility(ability)
@@ -74,7 +75,7 @@ mixin assetCard(asset, options)
 
 mixin genericAssetBuilder(assetsArray, listId)
   //- Asset Datalist
-  input.asset-options-header(type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
+  input.asset-options-header(hidden type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
   datalist(id=listId)
     each asset in assetsArray
       //- TODO: migrate to more sensible name scheme

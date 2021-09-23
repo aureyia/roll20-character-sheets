@@ -1,8 +1,13 @@
 //- wrapper element for translation keys to provide a concise way to add them
 //- style with display: contents
 
-mixin i18n(i18n_key)
-  span(data-i18n=i18n_key).i18n-text!=translation[i18n_key]
+mixin i18n(i18n_key, elementType="span")
+  if (elementType == "span")
+    span(data-i18n=i18n_key).i18n-text!=translation[i18n_key]
+    //- styled with 'display: contents'
+  else
+    - console.log("mixin i18n: elementType", elementType, "not recognized, falling back to <span>")
+    span(data-i18n=i18n_key).i18n-text!=translation[i18n_key]
 
 //- ( +)(.*?)\.i18n-text\((.*?)\)=translation\[(.*)\]
 //- $1$2\n$1  +i18n($4)

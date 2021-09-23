@@ -3,10 +3,10 @@
 
 //- toggles: basic hidden switch with no block/wrapper attached
 mixin attrToggleRadio(attrName, value, classes=[], checked=false, id)
-  input(type='radio' name='attr_'+attrName value=value class=classes id=id checked=(checked||false) hidden)
+  input(hidden type='radio' name='attr_'+attrName value=value class=classes id=id checked=(checked||false))
 
 mixin attrToggleCheck(attrName, classes=[], checked=false, id)
-  input(type='checkbox' name='attr_'+attrName class=classes id=id checked=(checked||false) hidden )
+  input(hidden type='checkbox' name='attr_'+attrName class=classes id=id checked=(checked||false))
 
 //- pagers: provides show/hide wrapper for paging functional
 mixin visPagerRadio(attrName, value, classes=[], checked=false)

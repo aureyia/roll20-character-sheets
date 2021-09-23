@@ -1,3 +1,5 @@
+//- TODO: consider redoing this as a modal that displays impact options only when needed; active impacts can then be displayed
+
 //-
   opts: {
     type: '<any html btn type>',
@@ -11,9 +13,9 @@
 
 mixin toggleBtn(label, attribute, value, title, classes)
   label(class=`toggle-btn ${classes||''}`)
-    span!=label
+    span.i18n-text!=label
     +attrToggleRadio(attribute, value)
-    //- input.switch-display.btn-input(
+    //- input.switch-display(
     //-   type='radio'
     //-   title= `@{${attribute}}`
     //-   name=`attr_${attribute}`
@@ -47,11 +49,11 @@ mixin btn(opts)
   if opts.classes
     label(class=`${action}-btn ${opts.classes}`)
       if opts.pure_attr
-        input.btn-input.switch-display(hidden type=opts.type name=`attr_${opts.attribute}` checked=opts.checked||false)
+        input(hidden type=opts.type name=`attr_${opts.attribute}` checked=opts.checked||false)
       else
-        input.btn-input.switch-display(hidden type=opts.type name=`attr_${opts.attribute}_button` checked=opts.checked||false)
+        input(hidden type=opts.type name=`attr_${opts.attribute}_button` checked=opts.checked||false)
       +i18n(opts.translationId)
   else
     label(class=`${action}-btn`)
-      input.btn-input.switch-display(hidden type=opts.type name=`attr_${opts.attribute}_button` checked=opts.checked||false)
+      input(hidden type=opts.type name=`attr_${opts.attribute}_button` checked=opts.checked||false)
       +i18n(opts.translationId)

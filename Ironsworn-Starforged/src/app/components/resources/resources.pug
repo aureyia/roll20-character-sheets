@@ -1,63 +1,78 @@
-- var charResources = [ 'health', 'spirit', 'supply']
-- var sharedResources = [ 'supply' ]
-- var standard = [ 5, 4, 3, 2, 1, 0 ]
-- var inverse = [ 0, 1, 2, 3, 4, 5 ]
+include ../../components/generic/buttons
+include ./resourcemeter
+-
+  var charResources = [ 'health', 'spirit', 'supply'];
+  var sharedResources = [ 'supply' ];
+  var maxStandardResource = 5;
+  var minStandardResource = 0;
+  var standardValues = _.range(maxStandardResource, minStandardResource);
+  var inverse = _.range(minStandardResource, maxStandardResource);
 
-mixin options(trackValues)
+mixin characterResourceDropdownOptions(trackValues)
   each val in trackValues
     option(value=val)=`+${val}`
 
-mixin dropdowns(resource)
-  div.resource
-    //- old title: title=`@{roll${resource}}`
-    button(
-      type="roll"
-      name=`roll${resource}`
-      title=`Roll +${resource}`
-      value!=`&{template:starforged_moves} {{name=roll +${resource}}} {{action=[[{d6+@{${resource}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{${resource}}+(?{Modifier|0})]]}} {{negate2=[[2+@{${resource}}+(?{Modifier|0})]]}} {{negate3=[[3+@{${resource}}+(?{Modifier|0})]]}} {{negate4=[[4+@{${resource}}+(?{Modifier|0})]]}} {{negate5=[[5+@{${resource}}+(?{Modifier|0})]]}} {{negate6=[[6+@{${resource}}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{${resource}}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{${resource}}]]}}`
-    ).roll-resource
-      +i18n(`resource-${resource}`).resource-title.i18n-text
-    select(class="resource-value" name=`attr_${resource}` title=`Set ${resource}`)
+mixin resourceRollableDropdown(resourceId, sheetType)
+  section(id=`${sheetType}-${resourceId}`).resource.resource-numeric
+    +actionRollBtn().roll-resource.roll-resource
+      +i18n(`resource-${resourceId}`).resource-title.i18n-text
+    select(name=`attr_${resourceId}` title=`Set ${resourceId}`)
       if resource == 'wealth'
         - var trackValues = inverse
-        +options(inverse)
       else
-        - var trackValues = standard
-        +options(standard)
+        - var trackValues = standardValues
+      +characterResourceDropdownOptions(trackValues)
 
-mixin character(resources)
-  div.resources
-    label.resource.character-name
-      +i18n('character-name').resource-title.i18n-text
-      input(type='text' class="resource-value" name="attr_character_name" placeholder=translation['character-name']).resource-value-box
+mixin characterResourceText(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId), value="")
+  section(id=resourceId).resource.resource-string
+    label(for=`${resourceId}-input`)
+      +i18n(i18n_key).resource-title
+    input(type='text' id=`${resourceId}-input` name=`attr_${attribute}` placeholder=translation[i18n_key] value=value)
 
-    label.resource.character-callsign
-      +i18n('character-callsign').resource-title.i18n-text
-      input(type='text' class="resource-value" name="attr_character_callsign" placeholder=translation['character-callsign']).resource-value-box
+mixin characterResourceRollable(resourceId, attribute, i18n_key, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
+  section(id=`${sheetType}-${resourceId}`).resource.resource-numeric.resource-rollable
+    +actionRollBtn(attribute, i18n_key, false)
+    +resourceMeterSpinner(attribute, value, max, min)
 
-    label.resource.character-pronouns
-      +i18n('character-pronouns').resource-title.i18n-text
-      input(type='text' class="resource-value" name="attr_character_pronouns" placeholder=translation['character-pronouns']).resource-value-box
+mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId))
+  section(id=resourceId).resource.resource-numeric
+    label(for=`${resourceId}-input`)
+      +i18n(i18n_key).resource-title
+    +resourceMeterSpinner(attribute)
 
+-
+  var textResources = ["character-name", "character-callsign", "character-pronouns"];
+  var numericResources = [
+    {
+      id: "character-experience",
+      attribute: "xp"
+    },
+    {
+      id: "character-experience-spent",
+      attribute: "total_xp"
+    }
+  ];
+
+
+mixin characterResources(resources)
+  section.resources#character-vitals
+    each textResource in textResources
+      +characterResourceText(textResource)
+  section.resources#character-resource-meters
     each resource in resources
-      +dropdowns(resource)
+      +characterResourceRollable(resource, resource, "resource-"+resource, "character")
+    each xpResource in numericResources
+      +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)
 
-    label.resource
-      +i18n('character-experience').resource-title.i18n-text
-      input(type='text' class="resource-value" name="attr_xp" value="0").health-status-box
-    label.resource
-      +i18n('character-experience-spent').resource-title.i18n-text
-      input(type='text' class="resource-value" name="attr_total_xp" value="0").health-status-box
-
-mixin shared(resources)
+mixin sharedResources(resources)
   div.resources
     each resource in resources
-      +dropdowns(resource)
+      +resourceRollableDropdown(resource, shared)
 
 mixin resources(sheetType)
   if sheetType == 'shared'
     - var resources = sharedResources
-    +shared(resources)
+    +sharedResources(resources)
   else
     - var resources = charResources
-    +character(resources)
+    +characterResources(resources)

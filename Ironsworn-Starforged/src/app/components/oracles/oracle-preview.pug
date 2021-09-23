@@ -25,7 +25,7 @@ mixin oracleRollGroup(group)
           +oracleSubtablesListGroupItem(subCategory.id, buttonLabel, subCategory.Oracles)
 
 mixin oraclePreview(oracle, groupName)
-  input(class=`${oracle.id} switch-display` type='radio' name=`attr_oracle_preview` value=oracle.id)
+  input(hidden class=`${oracle.id} switch-display` type='radio' name=`attr_oracle_preview` value=oracle.id)
   //- article(class=`${oracle.id} switchable-display rules` id=oracle.id)
   +rulesArticle(null,`oracle ${oracle.id} switchable-display`)
     - let nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replace(/ - /i, ": ") : `${groupName}: ${oracle['Display name']||oracle.Name}`

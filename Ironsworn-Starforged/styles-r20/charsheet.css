@@ -1,0 +1,647 @@
+body {
+	background: white;
+}
+
+#edit-button {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+.clear {
+	clear: both;
+}
+
+.characterdialog .bioinfo blockquote {
+	border-left: none;
+}
+
+.ui-dialog {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	scrollbar-width: thin;
+	padding: 0;
+	scrollbar-color: #90A4AE #CFD8DC;
+}
+
+.ui-dialog::-webkit-scrollbar {
+	width: 9px;
+}
+
+.ui-dialog::-webkit-scrollbar-track {
+	background: #CFD8DC;
+}
+
+.ui-dialog::-webkit-scrollbar-thumb {
+	background-color: #90A4AE;
+	border-radius: 2px;
+	border: 1px solid #CFD8DC;
+}
+
+.ui-dialog.patinece__parent {
+	overflow: hidden;
+}
+
+.ui-dialog.patinece__parent .loader {
+	padding: 0;
+}
+
+.ui-dialog.patinece__parent .loader svg {
+	position: relative;
+	height: 80px;
+	width: 80px;
+	top: 50%;
+	left: 50%;
+	margin-top: -40px;
+	margin-left: -40px;
+}
+
+.largedialog label {
+	width: 100%;
+	text-align: left;
+	float: none;
+	display: block;
+	padding-right: 10px;
+}
+
+label input {
+	display: inline-block;
+}
+
+label input[type=checkbox] {
+	display: inline-block;
+}
+
+.largedialog textarea {
+	width: 100%;
+	height: 150px;
+}
+
+.largedialog .clear {
+	height: 15px;
+}
+
+.largedialog small {
+	text-align: right;
+	color: #999;
+	font-size: 0.85em;
+	display: block;
+	width: 100%;
+}
+
+.divider {
+	height: 100%;
+	border-right: 1px solid #C3C3C4;
+}
+
+.ui-dialog .largedialog {
+	padding: 0px 20px 0px 20px;
+}
+
+.ui-dialog {
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
+	transition: transform 0.2s, opacity 0.2s;
+}
+
+.ui-dialog.collapsed {
+	opacity: 0.40;
+}
+
+.ui-dialog.collapsed .ui-dialog-content {
+	display: none !important;
+}
+
+.ui-dialog.dialog-collapsed {
+	opacity: 0.40;
+	max-width: 300px !important;
+	max-height: 50px !important;
+	-webkit-transform: scale(0.75, 0.75);
+	-moz-transform: scale(0.75, 0.75);
+	transform: scale(0.75, 0.75);
+}
+
+.ui-dialog.dialog-collapsed .ui-dialog-titlebar button {
+	display: none;
+}
+
+.ui-dialog.dialog-collapsed .ui-dialog-content {
+	display: none !important;
+}
+
+.dialog {
+	display: none;
+}
+
+.ui-dialog {
+	position: fixed !important;
+}
+
+.ui-dialog-content::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 8px;
+	height: 8px;
+}
+
+.ui-dialog-content::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	border: 2px solid rgba(0, 0, 0, 0);
+	/* should match background, can't be transparent */
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.ui-dialog .ui-dialog-content {
+	overflow-x: hidden !important;
+	scrollbar-width: thin;
+}
+.ui-dialog .nav-tabs li a {
+	color: #404040;
+}
+
+.ui-dialog label {
+	margin: 0;
+}
+
+.ui-dialog input {
+	margin-top: 0;
+	margin-bottom: 0;
+	vertical-align: baseline;
+}
+
+.dialog label {
+	display: block;
+	padding-right: 10px;
+}
+
+.characterviewer label {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+.characterviewer .content {
+	margin-bottom: 20px;
+}
+
+.characterviewer .avatar {
+	float: left;
+	margin-right: 10px !important;
+	margin-bottom: 10px !important;
+	max-width: 250px;
+	position: relative;
+	z-index: 1;
+}
+
+.characterviewer .avatar video {
+	max-width: 100%;
+	height: auto;
+}
+
+/* bio and info tab styles */
+.note-editor table { width: 100%;max-width: 100%;margin-bottom: 20px;}
+.note-editor table > thead > tr > th,
+.note-editor table > tbody > tr > th,
+.note-editor table > tfoot > tr > th,
+.note-editor table > thead > tr > td,
+.note-editor table > tbody > tr > td,
+.note-editor table > tfoot > tr > td {padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;}
+.note-editor table > thead > tr > th,
+.note-editor table > thead > tr > td {border-bottom: 2px solid #000!important;font-weight: bold!important;}
+.note-editor table > thead > tr > th {vertical-align: bottom;border-bottom: 2px solid #ddd;}
+.note-editor table {border: 1px solid #ddd;}
+.note-editor table > thead > tr > th,
+.note-editor table > tbody > tr > th,
+.note-editor table > tfoot > tr > th,
+.note-editor table > thead > tr > td,
+.note-editor table > tbody > tr > td,
+.note-editor table > tfoot > tr > td {border: 1px solid #ddd;}
+.node-editor table > thead > tr > th,
+.node-editor table > thead > tr > td {border-bottom-width: 2px;}
+.note-popover {z-index: 10700;}
+.note-editor:first-of-type {z-index: 2;}
+.note-editor {z-index: 1;}
+.note-editor .note-btn-group .dropdown-menu {left:auto;right:0;}
+.note-editor .dropdown-menu.dropdown-style,
+.note-editor .dropdown-menu.note-table {left:0;right:auto;}
+.modal.link-dialog {z-index: 13000;}
+.modal.link-dialog * {box-sizing: border-box;}
+.modal.link-dialog .checkbox {display: none;}
+.note-editor a[href^="http://journal.roll20.net"] {color: #B021A4!important;text-decoration: underline;}
+.note-editor a {color: #337ab7;text-decoration: none;}
+.note-editor a:hover,
+.note-editor a:focus {color: #23527c;text-decoration: underline;}
+
+/* character sheet styles */
+
+.ui-dialog .charsheet {
+	padding: 10px;
+}
+
+.ui-dialog .charsheet input {
+	height: auto;
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ui-dialog .charsheet hr {
+	clear: both;
+}
+
+.ui-dialog .charsheet input[type=number] {
+	width: 3.5em;
+}
+
+.ui-dialog .charsheet .sheet-row,
+.ui-dialog .charsheet .sheet-2colrow,
+.ui-dialog .charsheet .sheet-3colrow {
+	display: block;
+	clear: both;
+}
+
+.ui-dialog .charsheet .sheet-col {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.ui-dialog .charsheet .sheet-col img {
+	max-width: 100%;
+}
+
+.ui-dialog .charsheet .sheet-2colrow .sheet-col {
+	width: calc(50% - 20px);
+	margin-right: 30px;
+}
+
+.ui-dialog .charsheet .sheet-3colrow .sheet-col {
+	width: calc(33% - 21px);
+	margin-right: 30px;
+}
+
+.ui-dialog .charsheet .sheet-col:last-child {
+	margin-right: 0px !important;
+}
+
+.ui-dialog .charsheet button[type=roll],
+.ui-dialog .charsheet button[type=compendium] {
+	padding: 2px 3px;
+	font-size: 1.3em;
+	margin: 0px 3px 0px 3px;
+}
+
+.ui-dialog .charsheet button[type=roll]:before {
+	font-family: "dicefontd20";
+	content: "t";
+}
+
+.ui-dialog .charsheet button[type=compendium]:before {
+	font-family: "pictos";
+	content: "i";
+}
+
+button[type=roll].ui-draggable-dragging {
+	z-index: 11000;
+	width: auto !important;
+	height: auto !important;
+	padding: 2px 3px;
+	font-size: 1.3em;
+	margin: 0px 3px 0px 3px;
+}
+
+button[type=roll].ui-draggable-dragging:before {
+	font-family: "dicefontd20";
+	content: "t";
+}
+
+.ui-dialog .charsheet .repcontrol_edit {
+	float: right;
+}
+
+.ui-dialog .charsheet .repcontainer .repitem {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ui-dialog .charsheet .repcontainer .repitem .itemcontrol {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.40);
+}
+
+.ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
+	float: right;
+}
+
+.ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_move {
+	cursor: move;
+}
+
+.ui-dialog .charsheet .repitem.repitembroken {
+	border: 1px solid red !important;
+}
+
+.no-touch .ui-dialog .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol {
+	background-color: rgba(241, 255, 92, 0.60);
+}
+
+.ui-dialog .charsheet .repcontainer.editmode .repitem .itemcontrol {
+	display: block;
+}
+
+.ui-dialog button.disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.ui-dialog .charmancer .sheet-choice {
+	display: none;
+}
+
+.ui-dialog .charmancer.locked input {
+	opacity: .5;
+	pointer-events: none;
+}
+
+.ui-dialog .charmancer.locked span label {
+	pointer-events: none;
+}
+
+/* Attributes & Abilities */
+
+.addattrib,
+.addabil {
+	float: right;
+	margin-right: 20px;
+}
+
+.attributes {
+	font-size: 1.1em;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.attributes .heading {
+	float: left;
+	width: 20%;
+	font-weight: bold;
+	text-align: left;
+	margin-right: 10px;
+}
+
+.attributes .heading small {
+	font-size: 0.825em;
+	color: #777;
+	font-weight: normal;
+	text-align: left;
+}
+
+.attributes .heading:first-child {
+	width: 40%;
+}
+
+.attributes .attrib {
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.attributes .attrib > div {
+	float: left;
+	width: 16%;
+	text-align: left;
+	margin-right: 10px;
+}
+
+.attributes .attrib .divider {
+	width: auto;
+	padding: 5px 5px 0px 5px;
+	font-size: 1.2em;
+}
+
+.attributes .attrib > .attrname {
+	width: 40%;
+	min-height: 30px;
+}
+
+.attributes .attrib input {
+	width: 80%;
+}
+
+.attributes .body.editable .attrib div.attrname:hover {
+	background-color: #FFFFBA;
+}
+
+.abilities .abil {
+	position: relative;
+	background-color: white;
+}
+
+.abilities .body .abil.editing .editabil {
+	display: none;
+}
+
+.abilities .body .abil .saveabil {
+	display: none;
+}
+
+.abilities .body .abil.editing .saveabil {
+	display: inline;
+	color: green;
+}
+
+.abilities .body .abil.editing .handle {
+	display: none;
+}
+
+.abilities .body .abil .action,
+.abilities .body .abil .instructions {
+	display: none;
+}
+
+.abilities .body .abil.editing .action,
+.abilities .body .abil.editing .instructions {
+	display: block;
+}
+
+.abilities .body input[type=text] {
+	width: 150px;
+}
+
+.abilities .body .bartoggle label {
+	font-size: 0.9em;
+	font-style: italic;
+	font-weight: normal;
+	margin-top: 5px;
+	display: inline-block;
+	margin-right: 5px;
+	width: auto;
+}
+
+.abilities .body .bartoggle .istokenaction-label {
+	display: none;
+}
+
+.abilities .body .abil.editing .bartoggle {
+	display: none;
+}
+
+.abilities .body.editable .abil .bartoggle .istokenaction-label {
+	display: inline-block;
+}
+
+.abilities .body .testabil {
+	color: black;
+	vertical-align: middle;
+	font-size: 1.1em;
+	display: none;
+}
+
+.abilities .body .abil.editing .testabil {
+	display: block;
+}
+
+.abilities .body .rollabil {
+	margin-right: 10px;
+	font-size: 1.2em;
+	color: black;
+	padding: 3px 5px;
+}
+
+.abilities .body hr {
+	display: none;
+}
+
+.abilities .body .abil.editing hr {
+	display: block;
+}
+
+.attributesabilities .sortcontrols {
+	position: absolute;
+	right: -22px;
+	top: 5px;
+	display: none;
+	width: 45px;
+}
+
+.attributesabilities .abil {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #eeeeee;
+	background-color: white;
+}
+
+.attributesabilities .abil .sortcontrols {
+	right: 0px;
+	top: 10px;
+	width: auto;
+}
+
+.attributesabilities .attributes .body.editable .attrib:hover .sortcontrols,
+.attributesabilities .abilities .body.editable .abil:hover .sortcontrols {
+	display: block;
+}
+
+.attributesabilities .attributes .body.editable .attrib .sortcontrols:hover,
+.attributesabilities .abilities .body.editable .abil .sortcontrols:hover {
+	display: block;
+}
+
+.attributesabilities .sortcontrols > div {
+	display: block;
+	float: left;
+	margin-right: 7px;
+	color: #aaa !important;
+}
+
+.attributesabilities .sortcontrols > div:hover {
+	color: #666 !important;
+}
+
+.attributesabilities .sortcontrols > div {
+	cursor: pointer;
+}
+
+.attributesabilities .sortcontrols .handle {
+	cursor: move;
+}
+
+.attributesabilities .abil label {
+	margin-bottom: 0px;
+}
+
+/* Macrobar */
+#background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-color: white;
+	z-index: -5;
+}
+
+#macrobar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 63px;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* display: none; */
+}
+
+#macrobar p {
+	font-size: 1.5em;
+	line-height: 25px;
+	text-align: center;
+	color: white;
+	margin: 0;
+}
+
+#macrobar_macros {
+	width: 100%;
+	height: 38px;
+	padding: 5px;
+	white-space: nowrap;
+}
+
+#macrobar.sorting {
+	pointer-events: auto;
+}
+
+#macrobar.sorting #macrobar_macros {
+	background: rgba(251, 255, 227, 0.50);
+}
+
+#macrobar.sorting button {
+	pointer-events: none;
+}
+
+#macrobar .macrobox {
+	display: inline-block;
+	width: auto;
+	margin-right: 15px;
+}
+
+#macrobar .emptybox {
+	width: 75px;
+	display: inline-block;
+	pointer-events: auto;
+}
+
+#macrobar button.emptybox {
+	width: 30px;
+	opacity: 0.0;
+}
+
+#macrobar div.macrobox:hover,
+#macrobar div.macrobox.ui-sortable-helper {
+	padding-right: 12px;
+	margin-right: 3px;
+	border-radius: 3px;
+	background-color: #999;
+	cursor: move;
+}

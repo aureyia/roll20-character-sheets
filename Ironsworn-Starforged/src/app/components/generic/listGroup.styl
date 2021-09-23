@@ -1,7 +1,7 @@
 .list-group
   borderCommon()
   border-width 4px
-  background-color $color-fg
+  background-color $color_fg
   // box-sizing border-box
   margin 0em
   margin-bottom 1em
@@ -10,15 +10,13 @@
   border-radius 1em
   overflow hidden
   .list-group-title
-    color $color-bg
-    font-size 1.4em
-    font-weight bold
+    colorThemeDark()
     padding 0 5px 3px
-    text-transform uppercase
     text-align center
     display inline-block
     vertical-align text-bottom
     width stretch
+    width -moz-available
   ul
     display grid
     gap 4px
@@ -44,18 +42,19 @@
       &:before
         all: initial
       & > *
-        background-color $color-bg
+        background-color $color_bg
       &:nth-child(2n) > *
-        background-color $color-bg-alt
+        background-color $color_bg_alt
       label.toggle-btn
+        subLabelText(1em)
         width stretch
+        width -moz-available
         margin 0
         border 0
         outline 0
+        padding 0
         span
-          display flex
-          justify-content center
-          align-items center
+          display contents
       button.icon-only, button.placeholder-button
         height 1.75em
         width 1.75em

@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "todo-tree.filtering.excludeGlobs": [
+      "**/node_modules",
+      "**/*.html",
+      "**/*.css"
+    ],
+    "terminal.integrated.cwd": "/Volumes/Work/Development/roll20-character-sheets/Ironsworn/src",
+    "todo-tree.general.tagGroups": {
+      "TODO": ["- TODO"]
+    }
+  }
+}

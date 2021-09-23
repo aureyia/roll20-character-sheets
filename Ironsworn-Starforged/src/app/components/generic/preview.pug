@@ -16,12 +16,12 @@ mixin closeButton(pageName, parentWidget="preview", iconOnly=true)
     //-   input(type='checkbox' class='switch-vis' name=`attr_close_${previewType}_preview`)
 
 mixin overview(previewType, value=1, classes="")
-  input(type='radio' class='switch-vis overview' name=`attr_${previewType}_view` value=value checked)
+  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}_view` value=value checked)
   .overview.switchable-vis
     block
 
 mixin preview(previewType, value=2)
-  input(type='radio' class='switch-vis preview' name=`attr_${previewType}_view` value=value)
+  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}_view` value=value)
   .preview.switchable-vis
     block
 

@@ -6,8 +6,9 @@ include ../page
 mixin summaryPage(sheetType)
   +page("summary", sheetType)
     +stats()
-    h3.divide
-      +i18n('impacts')
     - const impactArray = impacts.filter(obj => { return obj.title !== 'ship' })
-    +impacts(impactArray, { title: true, customImpacts: true})
+    section.impacts
+      h3.divide
+        +i18n('impacts')
+      +impacts(impactArray, { title: true, customImpacts: true})
     include ../../components/notes/notes

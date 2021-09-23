@@ -15,20 +15,13 @@
 .page-tablist
   display flex
   flex-flow row wrap
-  border 1px solid $color-fg
+  border 1px solid $color_fg
   margin-bottom 1em
   & > .page-tab
-    borderCommon()
     flex 1
     flex-basis 20%
     min-width max-content
     width 100%
-    text-align-last center
-    overflow hidden
-    margin 0
-    padding 0
-    cursor pointer
-    interactiveHover($color-input, $color-fg)
 
 input.pager
   &~ .page-container
@@ -43,7 +36,7 @@ input.pager
         &[value=page-{pageName}]
           & ~ .page-tablist > .page-tab
             &[name=act_sheet-{sheetName}-page-{pageName}]
-              interactiveActive()
+              interactiveAltColor()
         & ~ .page-container > .page#sheet-{sheetName}-page-{pageName}
           visOn()
       &:not([value=page-{pageName}])

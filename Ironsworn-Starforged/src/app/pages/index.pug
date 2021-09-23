@@ -25,6 +25,7 @@ input(type="hidden", name="attr_mode", value="sheet-select")
       label.mode
         img.mode-image(
           src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page.name}-sheet.png`
+          data-i18n-alt =`page-name-${page.name}`
         )
         button(type="action" name="act_set_mode", value=`sheet-${page.name}`)
           +i18n(`page-name-${page.name}`)

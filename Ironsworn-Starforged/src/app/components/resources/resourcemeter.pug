@@ -1,17 +1,40 @@
-mixin resourceMeterBar(attribute, i18n_key=attribute, max=5, min=0, startsAt=max, plusSigns=false)
+mixin resourceMeterBar(attribute, radioIdPrefix, i18n_key=attribute, max=5, min=0, startsAt=max, plusSigns=false)
   section(
     data-i18n-title=i18n_key
     data-i18n-aria-label=i18n_key
   ).resource-meter
+    input(type="hidden" name=`attr_${attribute}_max` value=max)
+    input(type="hidden" name=`attr_${attribute}_min` value=min)
+    input(type="hidden" name=`attr_${attribute}_minmax` value=false)
     - var currentMeter = min
     while currentMeter <= max
-      label.resource-meter-box()
-        +attrToggleRadio(attribute, currentMeter, null, currentMeter == startsAt)
-        span.resource-meter-box-display!=currentMeter
+      - const displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
+      - const radioId = `${radioIdPrefix}_${currentMeter}`
+      +attrToggleRadio(attribute, currentMeter, null, currentMeter == startsAt, radioId)
+      label.resource-meter-box(for=radioId)!=displayText
       - currentMeter++
 
 //- numeric input via number spinner - might be more semantically apropos + mobile friendly?
-mixin resourceMeterSpinner(attribute, i18n_key=attribute, max=5, min=0, startsAt=max )
-  label( class=["resource-meter", attribute])
-    +i18n(i18n_key)
-    input( type="number" name=`attr_${attribute}` min=min max=max step=1 )
+
+mixin resourceMeterSpinner(attribute, value, max=value, min=0)
+  section.resource-spinner
+    input(type="hidden" name=`attr_${attribute}_max` value=max)
+    input(type="hidden" name=`attr_${attribute}_min` value=min)
+    input(type="hidden" name=`attr_${attribute}_minmax` value=false)
+    input(type='number' id=`${attribute}-input` name=`attr_${attribute}` value=value min=min max=max step=1)
+    +resourceIncrementBtn(attribute, false, 1, false)
+    +resourceIncrementBtn(attribute, false, 1, true)
+    +resourceIncrementBtn(attribute, true, 1, false)
+    +resourceIncrementBtn(attribute, true, 1, true)
+
+mixin resourceIncrementBtn(attribute, add=true, amount = 1, disabled=false, hidden=disabled)
+  - let btnName, btnText, classes;
+  if add == true
+    - btnName = `act_add_${attribute}`
+    - btnText = "+"
+    - classes = ["spinner-plus"]
+  else
+    - btnName = `act_subtract_${attribute}`
+    - btnText = "-"
+    - classes = ["spinner-minus"]
+  button(type="action" name=btnName value=amount class=classes disabled=disabled)!=btnText

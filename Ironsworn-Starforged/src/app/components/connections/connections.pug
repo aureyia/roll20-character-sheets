@@ -7,9 +7,9 @@ mixin connections()
         p.connection-title.i18n-text(data-i18n='character-name')
         input.border-bottom.connection-name(type='text' name='attr_connection-name' placeholder='Name')
         label.details-btn
-          input.switch-display.btn-input(type='checkbox' name='attr_details_button')
-          .btn-content.i18n-text(data-i18n='details')
-        input.switch-display.show-connection-info(type='checkbox' name='attr_details')
+          input.switch-display.btn-input(hidden type='checkbox' name='attr_details_button')
+          +i18n("details")
+        input.switch-display.show-connection-info(hidden type='checkbox' name='attr_details')
         .show-connection-info.switchable-display
           .full-width
             p.connection-title.i18n-text(data-i18n='location')
@@ -20,9 +20,10 @@ mixin connections()
           .full-width
             .challenge-rank-radio
               each challengeRank, index in challengeranks
+                - const i18n_key = `difficulty-${challengeRank.text}`
                 label.challenge-rank-option
-                  input(type="radio" class="switch-display" name="attr_rank" value=index checked=challengeRank.checked||false)
-                  h5=challengeRank.text
+                  input(hidden type="radio" data-i18n-aria-label=i18n_key aria-label=translation[i18n_key] name="attr_rank" value=index checked=challengeRank.checked||false)
+                  +i18n(i18n_key)
             +progressTrackBoxes(track, 'connection-name')
           .full-width
             textarea.connection-notes(name='attr_connection-notes')

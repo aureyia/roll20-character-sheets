@@ -9,35 +9,42 @@
 *, ::before, ::after
   box-sizing border-box
 .ironsworn-sheet
-  width 842px !important
-  font-size 16px
-  stdFont()
+  width $sheet_width !important
+  font-size $root_font_size
+  padding $sheet_padding
+  stdFont($type_body)
   font-weight 400
   line-height 1.25
 h1, h2, h3, h4, h5, h6
   headerText()
+h1
+  font-size $h1_size
+h2
+  font-size $h2_size
+h3
+  font-size $h3_size
+h4
+  font-size $h4_size
 span.i18n-text
   display contents
-// FIXME 'display: contents' accessibility bugs have been resolved on most major browsers except safari, but we don't need to worry about safari support (officially r20 only worries about FF and chrome anyways). the mobile version of r20 appears to pass through their app, so if anything we should test it there instead
+p, ul
+  margin 0
+  bodyText()
 ol, ul
   margin-left 1em
 li
   list-style-type none
   bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
-p
-  margin 0
-
-label
-  labelText()
-  interactiveHover()
-  borderCommon()
-  cursor pointer
-  border initial
-  padding initial
-  margin initial
+button, label, .btn, button[type=roll]
+  btn()
 input[type=text]
-  font-weight: 500;
-  inputHighlight(3px)
+input[type=number]
+input[type=search]
+textarea
+select
+  inputBox()
+input[type=number]
+  min-width 5ch
 select
   appearance none
   text-indent: 1px
@@ -45,17 +52,12 @@ select
 hr
   border: 0
   height: 1px
-  background $color-input
-  background-image: linear-gradient(to right, $color-input, #333, $color-input)
+  background $color_input
+  background-image: linear-gradient(to right, $color_input, #333, $color_input)
 textarea
-  max-width 828px
-  border: 2px solid $color-fg
-  font-weight normal
-.impacts
-  margin-bottom: 0px
-.debility
-  display: flex
-  flex-flow: row wrap
+  max-width ($sheet_width - $sheet_padding*2)
+  // TODO: the below oughta live in its own file w/ other resource meter styles
+
 .flex-container
   display flex
   align-items flex-start
@@ -63,69 +65,30 @@ textarea
   display flex
   flex-direction column
   margin-bottom 10px
-  font-weight normal
   padding 0.5em
-.track-box-input
-  width: 80px
-  height: 45px !important
-  opacity: 0
-  vertical-align: top
-.track-box-back
-  width: 80px
-  height: 45px
-  margin-top: -45px
-.track-box-input:hover ~ .track-box-back,
-.resources-box-input:hover ~ .resources-box-back
-  background: $color-input
-  transition: .5s ease;
-.track-box-input:checked ~ .track-box-back,
-.resources-box-input:checked ~ .resources-box-back
-  background: $color-fg
-  color: $color-bg
-  transition: .5s ease;
-.track-box-value
-  padding: 0px
-  font-weight: bold
-  height: 35px
-  padding-top: 10px
-  font-size: 18px
-  color: inherit
 .pc-name
   width: 100%
-  font-weight: bold
-  font-size: 14px
-  border: 2px solid $color-fg
+  borderCommon()
   background: #E6E7E8
-  color: $color-fg
+  color: $color_fg
   border-radius: 0
-.debil-desc
-  width: 100%
-  font-weight: bold
-  font-size: 14px
+
 .border
-  border: 1px solid $color-input
+  border: 1px solid $color_input
   border-radius: 4px
 textarea.full-width
   width: 95%
   resize: vertical
 span.switchable-display:checked
-  background-color: $color-fg
-  color: $color-bg
+  background-color: $color_fg
+  color: $color_bg
   transition: .5s ease;
-span.switchable-display
-  display: inline
-  border: 1px solid $color-input
-  margin-right: 11px
-  border-radius: 4px
-  padding: 2px 4px
-  font-weight: bold
-  font-size: 14px
 span.switchable-display:hover
   cursor: pointer
   border-radius: 4px
   padding: 2px 4px
-  background-color: $color-input
-  color: $color-fg
+  background-color: $color_input
+  color: $color_fg
   transition: .5s ease;
 div.preview-roll
   padding: 0em
@@ -140,7 +103,7 @@ span.preview-roll
   height: auto
   margin-bottom: 5px
 input.border-bottom
-  border-bottom: 1px solid $color-fg
+  border-bottom: 1px solid $color_fg
   border-radius: 0em
 .full-width
   width: 100%
@@ -153,10 +116,10 @@ u
   text-decoration: underline 1pt solid currentColor
 .hex-icon
   object-fit contain
-  $iconWidth = 64px
+  $iconWidth = 4rem
   &.vector
     width $iconWidth
-    height hexWidthToHeight($iconWidth)
+    height hexWidthToHeightPointy($iconWidth)
   &.raster
     hexagonClip($iconWidth)
 // nested block import doesn't seem to work properly, meaning i gotta do this one by one

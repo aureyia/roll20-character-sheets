@@ -13,5 +13,5 @@ mixin movesPage(sheetType)
           +moveGroup(group)
       +previewMain
         each move in moves.Moves
-          input(type='radio' name='attr_move_preview' class=`${move.id} switch-display` value=move.id)
+          input(hidden type='radio' name='attr_move_preview' class=`${move.id} switch-display` value=move.id)
           +moveRulesArticle(move, false, "switchable-display")

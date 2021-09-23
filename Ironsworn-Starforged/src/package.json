@@ -33,8 +33,10 @@
     "perfectionist": "^2.4.0",
     "postcss": "^8.3.6",
     "postcss-add-root-selector": "^1.0.4",
+    "postcss-autoreset": "^3.0.4",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-combine-media-query": "^1.0.1",
+    "postcss-initial": "^3.0.4",
     "pug": "3.0.2",
     "stylus": "0.54.8"
   },

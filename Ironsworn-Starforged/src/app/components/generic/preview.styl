@@ -1,28 +1,7 @@
 .overview
   columns 3
   column-gap 1em
-
-.close-preview
-  text-transform uppercase
-  width auto
-  height auto
-  margin 0
-  font-weight bold
-  font-size 14px
-  padding 0.2em
-  border 2px solid $color-fg
-  cursor pointer
-  text-align center
-  interactiveHover()
-  &.icon-only
-    &:before
-      font-family "Pictos"
-      content "*"
-      display block
-      height inherit
-      width inherit
-      background transparent
-      pointer-events none
+  width -moz-available
 
 
 .preview
@@ -37,6 +16,7 @@
   // padding 0
   .close-preview
     grid-row 1
+    margin-right 0.25em
   .preview-sidebar
     display block
     overflow auto
@@ -46,15 +26,7 @@
     padding 0
     height 50em
     grid-column 1
-    // flex-grow 0
-    // flex-shrink 0
-    // width max-content
-    // width 21.9em
-    // columns unset
-    // column-gap unset
-    // columns 1
-    section // list group items
-      // display flex
+    section
       border-radius 0
       margin 0
       border-bottom none
@@ -64,6 +36,7 @@
     borderCommon()
     height max-content
     width stretch
+    width -moz-available
     overflow clip
 
 input.preview.switch-display, input.overview.switch-display
