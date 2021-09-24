@@ -14,10 +14,11 @@ taskSeries.forEach(task => require(`./gulp/${task}`));
 
 gulp.task(
   'watch',
-  gulp.series(taskSeries, () => {
+  gulp.series(...taskSeries, () => {
     gulp.watch('./app/**/*.styl', gulp.series(['buildCss']));
     gulp.watch(['./app/**/*.pug', './app/**/*.js'], gulp.series(['buildHtml']));
   })
 );
 
-gulp.task('build', gulp.series(taskSeries));
+gulp.task('build', gulp.series(...taskSeries));
+//- note that passing it as an array runs tasks in parallel! hence the rest param.

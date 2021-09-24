@@ -9,27 +9,28 @@ const cssNano = require('cssnano');
 
 gulp.task('postCssMain', async () => {
  const postCssPlugins = [
-    // purgeCss({
-    //   content: ['../*.html'],
-    // }),
+    purgeCss({
+      content: ['../*.html'],
+    }),
     addRootSelector({
       rootSelector: '.ui-dialog .charsheet.charactersheet'
     }),
  ];
   return gulp
-    .src('./temp/Ironsworn-starforged.css')
+    .src('./temp/css-raw/Ironsworn-starforged.css')
     .pipe(postcss(postCssPlugins))
     .pipe(gulp.dest('./temp/'));
 });
-// gulp.task('postCssRollTemplates', async () => {
-//  const postCssPlugins = [
-//     purgeCss({
-//       content: ['../*.html'],
-//     }),
-//  ];
-//   return gulp
-//     .src('./temp/template.css')
-// });
+gulp.task('postCssRollTemplates', async () => {
+ const postCssPlugins = [
+    purgeCss({
+      content: ['../*.html'],
+    }),
+ ];
+  return gulp
+    .src('./temp/css-raw/template.css')
+    .pipe(gulp.dest('./temp/'));
+});
 gulp.task('postCssConcat', async () => {
   const postCssPlugins = [
     autoprefixer(),

@@ -3,7 +3,7 @@ const mergeJson = require('gulp-merge-json');
 const path = require('path');
 
 module.exports = gulp.task('compileData', async () => {
-  return await gulp
+  return gulp
     .src(['app/data/**/*.json', '../translation.json'], { allowEmpty: true })
     .pipe(
       mergeJson({

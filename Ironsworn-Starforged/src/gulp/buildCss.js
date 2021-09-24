@@ -29,5 +29,5 @@ module.exports = gulp.task('buildCss', async () => {
   return gulp
     .src(['./app/Ironsworn-starforged.styl', "./app/roll-templates/template.styl"])
     .pipe(stylus({ rawDefine: stylusDataOut }))
-    .pipe(gulp.dest('./temp/'))
+    .pipe(gulp.dest('./temp/css-raw'))
 });

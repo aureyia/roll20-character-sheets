@@ -14,7 +14,7 @@ const targetFiles = {
   translations: ["translation-assets"]
 };
 
-module.exports = gulp.task("fetchDataforged", async () => {
+module.exports = gulp.task("fetchDataforged", async () =>  {
   const gitHubRaw = axios.create({
     baseURL,
   }
