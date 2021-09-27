@@ -16,5 +16,12 @@ temp/
 .prettierrc
 .prettierignore
 
-# NYI
+# stylint
+.stylintrc
+.stylintignore
+
+# r20's stylesheets for use as reference
 styles-r20/
+
+# eslint
+.eslintrc

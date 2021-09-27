@@ -2,21 +2,25 @@ const gulp = require('gulp');
 const mergeJson = require('gulp-merge-json');
 const path = require('path');
 
-module.exports = gulp.task('compileData', async () => {
-  return gulp
-    .src(['app/data/**/*.json', '../translation.json'], { allowEmpty: true })
+module.exports = async function mergeGameData() {
+  return new Promise((resolve, reject) => {
+    gulp
+    .src(['app/data/*.json', '../translation.json'], { allowEmpty: true })
     .pipe(
       mergeJson({
         fileName: 'data.json',
         edit: (json, file) => {
-          var filename = path.basename(file.path),
+          let filename = path.basename(file.path),
             primaryKey = filename.replace(path.extname(filename), '');
-          var data = {
+          let data = {
             [primaryKey.toLowerCase()]: json
           };
           return data;
         },
       })
     )
-    .pipe(gulp.dest('./temp'));
-});
+    .pipe(gulp.dest('./temp'))
+    .on('end', resolve)
+    .on('error', reject)
+  });
+};

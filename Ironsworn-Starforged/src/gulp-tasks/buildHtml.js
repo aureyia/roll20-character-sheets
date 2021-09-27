@@ -3,8 +3,9 @@ const gulpData = require('gulp-data');
 const pug = require('gulp-pug');
 const readJSON = require('./helpers/readJson.js');
 
-module.exports = gulp.task('buildHtml', () =>  {
-  return gulp
+module.exports = async function buildHtml() {
+  return new Promise((resolve, reject) => {
+    gulp
     .src('./app/Ironsworn-starforged.pug')
     .pipe(
       gulpData(() => {
@@ -17,5 +18,8 @@ module.exports = gulp.task('buildHtml', () =>  {
         ...require('../app/pug.config.js'),
       })
     )
-    .pipe(gulp.dest('../'));
-});
+    .pipe(gulp.dest('../'))
+    .on('end', resolve)
+    .on('error', reject)
+  });
+};
