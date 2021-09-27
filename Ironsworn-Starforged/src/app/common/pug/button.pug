@@ -15,37 +15,39 @@ mixin toggleBtn(label, attribute, value, title, classes)
   label(class=`toggle-btn ${classes||''}`)
     span.i18n-text!=label
     +attrToggleRadio(attribute, value)
-    //- input.switch-display(
-    //-   type='radio'
-    //-   title= `@{${attribute}}`
-    //-   name=`attr_${attribute}`
-    //-   value=value
-    //-   hidden
-    //- )
-    //- FIXME i18n
 
-mixin actionBtn(action, value=null, i18n_key=action, classes=[], iconOnly=false)
+mixin actionBtn(action, value=null, i18n_key=action, classes=[], blockContent=false, iconOnly=false)
   if iconOnly == true
     button(
       name=`act_${action}`
+      type="action"
       value=value
       class=classes
       data-i18n-title=i18n_key
       data-i18n-aria-label=i18n_key
     )
+    if blockContent==true
+      block
   else
     button(
       name=`act_${action}`
+      type="action"
       value=value
       class=classes
       data-i18n=i18n_key
       data-i18n-title=i18n_key
       data-i18n-aria-label=i18n_key
-    )!=translation[i18n_key]
+    )
+      +i18n(i18n_key)
+      if blockContent==true
+        block
 
+
+mixin setAttrBtn(attribute, value, i18n_key, classes, iconOnly, blockContent=false)
+  +actionBtn(`set-${attribute}`, value, i18n_key, classes, blockContent, iconOnly)
 
 mixin btn(opts)
-  - var action = opts.action ? opts.action : 'toggle'
+  - action = opts.action ? opts.action : 'toggle'
   if opts.classes
     label(class=`${action}-btn ${opts.classes}`)
       if opts.pure_attr

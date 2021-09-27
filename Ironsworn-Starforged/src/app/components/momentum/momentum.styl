@@ -1,35 +1,64 @@
 section#momentum
-  display flex
-  text-align center
+  flexCenter()
   borderCommon()
-  flex-flow row wrap
+  colorThemeDark()
+
+  flex-flow row
+  align-items stretch
+
   .momentum-header
-    flex-basis 100%
-    padding 0.25em
+    flexCenter()
     headerText()
-    colorThemeDark()
+
+    padding 0.25em
+    width max-content
+
   .resource-meter
+    colorThemeDark()
+
     display contents
     display flex
     flex-grow 10
     margin 0
-  button[name=act_momentum-burn], .momentum-status-box
+
+  button.burn-momentum
+    colorThemeLight()
+
+    &:before
+      display inline
+      content "🔥"
+
+  button.burn-momentum, .momentum-status-box
     flex-grow 1
+    max-width max-content
+    width max-content
+    white-space nowrap
+
   .momentum-status-box, .resource-meter-box
     borderCommon()
     labelText()
+
     color $color_fg_alt
-  .resource-meter-box, .momentum-status-box, button[name=act_momentum-burn]
-    width max-content
+
+  .momentum-status-box
+    bodyTextSm()
+
+  .resource-meter-box, .momentum-status-box, button[name=act_burn-momentum]
     padding 0.25em
+    width max-content
+
   .resource-meter-box
     interactive()
-    width (100/17)%
+
+    width: (100 / 17)%
+
+    for num in 1 .. 6
+      &[for=momentum_-{num}]
+        interactive($color_bg, $color_warning)
+
   input[type=radio]:checked + .resource-meter-box
     interactiveAltColor()
 
-
-
-
-
-
+    for num in 1 .. 6
+      &[for=momentum_-{num}]
+        interactiveAltColor($color_warning)

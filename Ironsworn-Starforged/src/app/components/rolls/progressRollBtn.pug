@@ -1,0 +1,13 @@
+include ../../common/pug/translation
+
+mixin progressRollBtn(opts, visibility, content_i18n)
+  - formattedName = _.kebabCase(opts.Name)
+  button(
+    type="roll"
+    title=`Roll the ${opts.Name} progress move`
+    name=`roll_${formattedName}`
+    class=visibility
+    value!=`&{template:starforged_progress} {{header=@{character_name}}} {{progress_name=${opts.Name}}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
+  )
+    if content_i18n
+      +i18n(content_i18n)

@@ -1,70 +1,155 @@
-@import './../common/stylus/shared'
-@import './mixins/outcomes'
-@import './mixins/rolls'
-@import './oracles/oracles'
+@import "../common/stylus/shared"
+@import "./oracle/oracle-roll-templates"
 
-.sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-starforged_progress
-  .sheet-roll-container
-    roll-container()
-    a[href^="!"], a[href^="~"]
-      background-color transparent
-      padding 5px
-      color $color_bg
-      display inline-block
-      border none
-      text-transform uppercase
-      font-weight bold
-      width 100%
-      text-align center
+// variables: rolltemplates
+$subheader_bg = $sf_black // formerly #23222b
+$template_bg = lighten($subheader_bg, 10%) // formerly #33323c
+$result_bg = lighten($subheader_bg, 15%) // formerly #403f4b
+$template_border = 1px solid $sf_rich_black
+$strong_hit_color = $sf_ui_blue
+$weak_hit_color = $sf_ui_purple
+$miss_color = $sf_ui_red
+$content_padding = 0.4em 1em
+$subfooter_padding = 0.4em 0
+// r20's padding on parent of roll container; can be negated by setting negative margins
+$r20_padding_right = 10px
+$r20_padding_bottom = 7px
+$r20_padding_left = 45px
+
+tplMargin(margin = 7px)
+  margin-right - ($r20_padding_right - margin)
+  margin-bottom - ($r20_padding_bottom - margin)
+  margin-left - ($r20_padding_left - margin)
+
+// $border_strong_hit = 2px solid $strong_hit_color
+// $border_weak_hit = 2px solid $weak_hit_color
+// $border_miss = 2px solid $miss_color
+resultRow(border = $template_border)
+  border border
+  background $result_bg
+
+subBase(padding)
+  padding padding
+  text-align left
+  font-weight 700
+  line-height 1.5em
+
+nameBase(align)
+  padding 0.2em 1em 0.4em 0.7em
+  text-align align
+  // font-variant-caps all-small-caps
+  text-transform uppercase
+  font-weight bold
+
+rollContainer()
+  tplMargin()
+  bodyText()
+  colorThemeDark()
+
+  border $template_border
+
+inlineRoll()
+  display inline-block
+  min-width 1.5em
+  border 2px solid $template_bg
+  border-radius 1em
+  background transparent
+  text-align center
+
+outcomeBase(background)
+  margin 0.3em 0.5em 0.3em 0.3em
+  width 1em
+  border-radius 1em
+  background-color background
+
+// .sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-starforged_progress
+section.sheet-roll-container
+  rollContainer()
+
+  h1.sheet-subheader
+    colorThemeDarker()
+    headerTextSm()
+    subBase($content_padding)
+
+    font-size 1.5rem
+
+  a[href^="!"], a[href^="~"]
+    display inline-block
+    padding 5px
+    width 100%
+    border none
+    background-color transparent
+    color $color_bg
+    text-align center
+    text-transform uppercase
+    font-weight bold
+
   .sheet-result-row
     display flex
     justify-content space-between
+    padding 0.5em
+
   .inlinerollresult
-    inline-roll()
+    inlineRoll()
+
   .sheet-action-score
     .fullfail
-      border 2px solid $miss-color
+      border 2px solid $miss_color
+
     .fullcrit
-      border 2px solid $strong-hit-color
+      border 2px solid $strong_hit_color
+
   .sheet-challenge-dice
     .fullfail
-      border 2px solid $strong-hit-color
+      border 2px solid $strong_hit_color
+
     .fullcrit
-      border 2px solid $miss-color
+      border 2px solid $miss_color
+
   .sheet-roll-outcome
-    result-row()
-  .sheet-subheader
-    sub-base($subheader-bg, $content-padding)
-    text-transform uppercase
-    font-style normal
+    resultRow()
+
   .sheet-subfooter
-    sub-base($result-bg, $subfooter-padding)
+    subBase($subfooter_padding)
+
     width 100%
+    background-color $result_bg
     font-style italic
+
   .sheet-result-body
-    padding $content-padding
+    padding $content_padding
+
   .sheet-alert
-    margin 0.2em 0.3em 0.2em 0.3em
-    border-radius 1em
-    width auto
+    margin 0.2em 0.3em
     padding 0.5em
-  .sheet-opportunity
-    outcome-base($strong-hit-color)
+    width auto
+    border-radius 1em
+
+  .sheet-strong-hit-match
+    outcomeBase($strong_hit_color)
+
   .sheet-strong-hit
-    outcome-base($strong-hit-color) // fade?
+    outcomeBase($strong_hit_color) // fade?
+
   .sheet-weak-hit
-    outcome-base($weak-hit-color)
+    outcomeBase($weak_hit_color)
+
   .sheet-miss
-    outcome-base($miss-color) // fade?
-  .sheet-complication
-    outcome-base($miss-color)
+    outcomeBase($miss_color) // fade?
+
+  .sheet-miss-match
+    outcomeBase($miss_color)
+
   .userscript-tcat
     font-weight 700
+
   .sheet-momentum-title
     line-height 22px
+
   .sheet-roll-button
     justify-content center
-    background #5e5d6f
-    border-radius 0.4em
     margin 0.2em
+    border-radius 0.4em
+    background #5e5d6f
+
     interactiveHover(#9290ad)

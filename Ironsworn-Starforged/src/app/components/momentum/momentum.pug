@@ -1,11 +1,21 @@
 include ./../resources/resourcemeter.pug
 
+//- -
+//-   function autoCalcMin(attrX, attrY) {
+//-     return `@{${attrX}/2 + ${attrY} / 2} - abs(@{${attrX}} - @{${attrY}} / 2`;
+//-   }
+
 section#momentum
+  input(type="hidden" name="attr_momentum-burn-available" value="true")
   h3.momentum-header
     +i18n("momentum")
-  +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
-  +actionBtn("momentum-burn")
   .momentum-status-box
     +attrSpan('momentum-maximum', "momentum_max")
-  .momentum-status-box
-    +attrSpan('momentum-reset', "momentum_reset")
+  +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
+  +actionBtn("burn-momentum", null, null, ["burn-momentum"], true)
+    input(type='hidden' name=`attr_momentum_reset` value=value)
+    +i18n("momentum-burn")
+    span!=" &rarr; "
+    span(name="attr_momentum_reset").attr-span
+  //- .momentum-status-box
+  //-   +attrSpan('momentum-reset', "momentum_reset")

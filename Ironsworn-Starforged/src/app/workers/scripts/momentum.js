@@ -1,15 +1,17 @@
-// Do not allow Momentum to go over MAX.
-on("change:momentum change:momentum_max", function () {
-  getAttrs(["momentum", "momentum_max"], function (values) {
-    if (parseInt(values.momentum) > parseInt(values.momentum_max))
-      setAttrs({ momentum: parseInt(values.momentum_max) });
+on(`click:burn-momentum`, (eventInfo) => {
+  log(`click:burn-momentum`, eventInfo);
+  getAttrs(["momentum", "momentum_reset"], (data) => {
+    log(`click:burn-momentum`, data);
+    let currentMomentum = normalizeAttr(data["momentum"]);
+    let momentumReset = normalizeAttr(data["momentum_reset"]);
+    let newValue = Math.min(currentMomentum, momentumReset);
+    if (newValue != currentMomentum) {
+      return setAttrs({
+        momentum: newValue
+      });
+    }
   });
+  return;
 });
 
-on("click:momentum-burn", function () {
-  getAttrs(["momentum_reset"], function (values) {
-    setAttrs({
-      momentum: parseInt(values.momentum_reset),
-    });
-  });
-});
+new AttrClampListener("momentum");

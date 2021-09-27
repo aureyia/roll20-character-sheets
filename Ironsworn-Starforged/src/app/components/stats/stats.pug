@@ -1,0 +1,54 @@
+include ../rolls/rolls
+
+mixin stats
+  +editToggle("stats")
+    +editToggleItem("stats", true)
+      +statsEditor()
+    +editToggleItem("stats", false)
+      +statsStatic()
+
+mixin statsEditor()
+  each stat in stats
+    section().stat
+      h3.stats-title
+        +i18n(`stat-${stat}`)
+      input(
+        type='text'
+        class='stats-input'
+        name=`attr_${stat}`
+        value='0'
+      )
+
+mixin statsStatic()
+  each stat in stats
+    +actionRollBtn(stat, `stat-${stat}`, ["stat"], true)
+      h3.stats-title
+        +i18n(`stat-${stat}`)
+      span(class='stats-input' name=`attr_${stat}`)
+
+mixin editToggle(parentName, defaultMode="off", ariaLabel)
+  section(class=parentName, aria-label=ariaLabel)
+    input(type="hidden" name=`attr_editor-${parentName}` value=defaultMode)
+    block
+
+mixin editToggleItem(parentName, toggleOff=false)
+  -
+    classes;
+    btnValue;
+    btnClasses;
+    i18n_key;
+    if (toggleOff == true) {
+      classes = ["editor-on"];
+      btnValue = "off";
+      btnClasses = ["note-icon-menu-check"]
+      i18n_key = "stat-toggle-apply";
+    }
+    else if (toggleOff == false) {
+      classes = ["editor-off"];
+      btnValue = "on";
+      btnClasses = ["note-icon-pencil"]
+      i18n_key = "edit";
+    };
+  section(class=classes)
+    block
+    +setAttrBtn(`editor-${parentName}`, btnValue, i18n_key, btnClasses)

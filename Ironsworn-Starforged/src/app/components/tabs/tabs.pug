@@ -1,13 +1,14 @@
 mixin tab(tabName, parentName, i18n_key, classes=[])
   -
-    const btnValue = tabName
-    const btnName = `act_set_${parentName}-display`
+    btnValue = tabName
+    btnName = `act_set-${parentName}-display`
   button(
     type="action"
     role="tab"
     name=btnName
     value=btnValue
     class=classes
+    id = `${parentName}-tab-${tabName}`
     aria-controls=`${parentName}-${tabName}`
   )
     +i18n(i18n_key)

@@ -1,64 +1,76 @@
 .static-btn
   btn()
+
   .btn-content, span
-    padding 0.2em 0.2em 0.2em 0.2em
+    padding 0.2em
     width 100%
     text-align center
 
 .toggle-btn
   btn()
+
   span
     padding 4px 2px
+
 .btn-input
   &:checked
     & ~ .btn-content
       background $color_fg
       color $color_bg
+
 button
   &[type="roll"]
     &:before // unsetting r20's styling
       content none
       font-family inherit
+
     &.icon-only
       margin 0
       padding 0
       color $color_fg
-      iconBtn("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
+
+      iconBtn("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg")
+
       border 0
+
   &.placeholder-button
-    opacity 100% !important
     background-image none !important
-    pointer-events none !important
+    opacity 100% !important
     cursor default !important
+    pointer-events none !important
 
 // hex buttons
 .close-preview
-  text-transform uppercase
-  width auto
-  height auto
   margin 0
   padding 0.2em
-  cursor pointer
+  width auto
+  height auto
   text-align center
+  text-transform uppercase
+  cursor pointer
+
   interactiveHover()
+
   &.icon-only
-    align-items center
-    align-self center
-    background none
-    border none
     display flex
-    grid-area close
-    height max-content
     justify-content center
-    line-height 1
-    text-anchor: middle;
+    align-self center
+    align-items center
     width max-content
+    height max-content
+    border none
+    background none
+    line-height 1
+    grid-area close
+    text-anchor middle
+
     hexagonClip($h2_size)
-    interactive(bg=$color_warning fg=#fff)
+    interactive($color_warning, #fff)
+
     &:before
-      font-family "Pictos"
-      content "*"
-      height inherit
       width inherit
+      height inherit
       background transparent
       color inherit
+      content "*"
+      font-family "Pictos"

@@ -8,13 +8,13 @@ mixin page(pageType, sheetType)
 
 mixin pageTabList(sheetType, ariaLabel, classes=[])
   -
-    const sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
-    const pages = sheet.pages
-    const defaultTab = `page-${_.kebabCase(sheet.start)}`
-    const parentName =`sheet-${_.kebabCase(sheetType)}`
+    sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
+    pages = sheet.pages
+    defaultTab = `${_.kebabCase(sheet.start)}`
+    parentName =`sheet-${_.kebabCase(sheetType)}`
   +tabList( parentName, defaultTab, `Starforged ${sheetType} sheet tabs`)
     each page in pages
-      - const pageName = `page-${_.kebabCase(page)}`;
+      - pageName = `${_.kebabCase(page)}`;
       +tab(
         pageName,
         parentName,
@@ -25,9 +25,9 @@ mixin pageTabList(sheetType, ariaLabel, classes=[])
 
 mixin pageMain(sheetType)
   -
-    const sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
-    const defaultTab = `page-${_.kebabCase(sheet.start)}`
-    const parentName =`sheet-${_.kebabCase(sheetType)}`
+    sheet = sheets.find(item => item.name == _.kebabCase(sheetType))
+    defaultTab = `${_.kebabCase(sheet.start)}`
+    parentName =`sheet-${_.kebabCase(sheetType)}`
   main.page-container
     input( type="hidden" name=`attr_${parentName}-display` value=defaultTab ).pager
     block

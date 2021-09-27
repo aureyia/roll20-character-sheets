@@ -1,11 +1,9 @@
 column-wrap(height)
-  display: flex;
-  flex-flow: column wrap;
-  height: height
+  display flex
+  flex-flow column wrap
+  height height
 
-input.oracle-ironsworn:checked + div.oracle-ironsworn,
-input.oracle-ironsworn:checked + div.oracle-ironsworn,
-input.oracle-delve:checked + div.oracle-delve
+input.oracle-ironsworn:checked + div.oracle-ironsworn, input.oracle-ironsworn:checked + div.oracle-ironsworn, input.oracle-delve:checked + div.oracle-delve
   switchDisplayOn(0.7s)
 
 .oracle-btn
@@ -16,32 +14,32 @@ section.oracle-table
   h4
     stdFont("Exo")
     colorThemeLight()
-    background none
-    padding 0
+
     margin-bottom 0.25em
+    padding 0
+    background none
 
 table.oracle-table
-  border none
+  margin 0
   width stretch
   width -moz-available
-  margin 0
+  border none
+
   thead
-    borderCommon(4px 0 0 0)
     padding 0.3em
     background-color $color_fg
     color $color_bg
+
     th
       padding-left 0.4em
-  tbody
-    borderCommon(4px 0 0 0)
+
     td
       padding-left 0.4em
 
-
 .oracle
-  margin: 0em
-  color: $color_fg
-  display: flex
+  display flex
+  margin 0
+  color $color_fg
 
 .oracle-subtitle, .oracle-column-head
   padding-right 0.5em
@@ -52,230 +50,37 @@ table.oracle-table
   color $color_fg
 
 .oracle-subtitle
-  text-transform uppercase
   background-color $color_fg
   color $color_bg
+  text-transform uppercase
 
 article.gamerules
   width stretch
   width -moz-available
   // caption.oracle-description, div.oracle-description
-    // background-color $color_fg
-    // color $color_bg
-    // p, ol, ul
-      // padding 0.5em
-      // stdFont($type_body)
+  // background-color $color_fg
+  // color $color_bg
+  // p, ol, ul
+  // padding 0.5em
+  // stdFont($type_body)
 
 // commenting this out for now - true to the text, but too easy to mistake for an accordion in this context!
 // .oracle-subcategory .oracle-btn .oracle-name
-//   &:before
-//     content: "▸";
+// &:before
+// content: "▸";
 
 // TODO: Figure out how to hash the json so we can create the css
 // oracles = json('../../data/oracles.json', { hash: true })
 // for group in oracles
-//   for oracle in group.Oracles
-//     input[type=radio].{oracle.Name}:checked + div.{oracle.Name}
-input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.switchable-display.oracle-table-ask-the-oracle-almost-certain,
-input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.switchable-display.oracle-table-ask-the-oracle-likely,
-input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.switchable-display.oracle-table-ask-the-oracle-50-50,
-input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.switchable-display.oracle-table-ask-the-oracle-unlikely,
-input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.switchable-display.oracle-table-ask-the-oracle-small-chance,
-input[type=radio].oracle-table-character-creation-background-assets:checked + article.switchable-display.oracle-table-character-creation-background-assets,
-input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.switchable-display.oracle-table-character-creation-backstory-prompts,
-input[type=radio].oracle-table-character-creation-starship-history:checked + article.switchable-display.oracle-table-character-creation-starship-history,
-input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.switchable-display.oracle-table-character-creation-starship-quirks,
-input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.switchable-display.oracle-table-character-creation-sector-trouble,
-input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.switchable-display.oracle-table-character-creation-inciting-incident,
-input[type=radio].oracle-table-core-action:checked + article.switchable-display.oracle-table-core-action,
-input[type=radio].oracle-table-core-theme:checked + article.switchable-display.oracle-table-core-theme,
-input[type=radio].oracle-table-core-descriptor:checked + article.switchable-display.oracle-table-core-descriptor,
-input[type=radio].oracle-table-core-focus:checked + article.switchable-display.oracle-table-core-focus,
-input[type=radio].oracle-table-space-sighting:checked + article.switchable-display.oracle-table-space-sighting,
-input[type=radio].oracle-table-space-stellar-object:checked + article.switchable-display.oracle-table-space-stellar-object,
-input[type=radio].oracle-table-space-sector-name-prefix:checked + article.switchable-display.oracle-table-space-sector-name-prefix,
-input[type=radio].oracle-table-space-sector-name-suffix:checked + article.switchable-display.oracle-table-space-sector-name-suffix,
-input[type=radio].oracle-table-space-peril:checked + article.switchable-display.oracle-table-space-peril,
-input[type=radio].oracle-table-space-opportunity:checked + article.switchable-display.oracle-table-space-opportunity,
-input[type=radio].oracle-table-planet-planetary-class:checked + article.switchable-display.oracle-table-planet-planetary-class,
-input[type=radio].oracle-table-planet-peril:checked + article.switchable-display.oracle-table-planet-peril,
-input[type=radio].oracle-table-planet-opportunity:checked + article.switchable-display.oracle-table-planet-opportunity,
-input[type=radio].oracle-subcategory-planet-desert-world:checked + article.switchable-display.oracle-subcategory-planet-desert-world,
-input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.switchable-display.oracle-subcategory-planet-furnace-world,
-input[type=radio].oracle-subcategory-planet-grave-world:checked + article.switchable-display.oracle-subcategory-planet-grave-world,
-input[type=radio].oracle-subcategory-planet-ice-world:checked + article.switchable-display.oracle-subcategory-planet-ice-world,
-input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.switchable-display.oracle-subcategory-planet-jovian-world,
-input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.switchable-display.oracle-subcategory-planet-jungle-world,
-input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.switchable-display.oracle-subcategory-planet-ocean-world,
-input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.switchable-display.oracle-subcategory-planet-rocky-world,
-input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.switchable-display.oracle-subcategory-planet-shattered-world,
-input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.switchable-display.oracle-subcategory-planet-tainted-world,
-input[type=radio].oracle-subcategory-planet-vital-world:checked + article.switchable-display.oracle-subcategory-planet-vital-world,
-input[type=radio].oracle-table-settlement-location:checked + article.switchable-display.oracle-table-settlement-location,
-input[type=radio].oracle-table-settlement-population:checked + article.switchable-display.oracle-table-settlement-population,
-input[type=radio].oracle-table-settlement-first-look:checked + article.switchable-display.oracle-table-settlement-first-look,
-input[type=radio].oracle-table-settlement-initial-contact:checked + article.switchable-display.oracle-table-settlement-initial-contact,
-input[type=radio].oracle-table-settlement-authority:checked + article.switchable-display.oracle-table-settlement-authority,
-input[type=radio].oracle-table-settlement-projects:checked + article.switchable-display.oracle-table-settlement-projects,
-input[type=radio].oracle-table-settlement-trouble:checked + article.switchable-display.oracle-table-settlement-trouble,
-input[type=radio].oracle-table-settlement-name:checked + article.switchable-display.oracle-table-settlement-name,
-input[type=radio].oracle-table-starship-name:checked + article.switchable-display.oracle-table-starship-name,
-input[type=radio].oracle-table-starship-type:checked + article.switchable-display.oracle-table-starship-type,
-input[type=radio].oracle-table-starship-fleet:checked + article.switchable-display.oracle-table-starship-fleet,
-input[type=radio].oracle-table-starship-initial-contact:checked + article.switchable-display.oracle-table-starship-initial-contact,
-input[type=radio].oracle-table-starship-first-look:checked + article.switchable-display.oracle-table-starship-first-look,
-input[type=radio].oracle-table-starship-mission:checked + article.switchable-display.oracle-table-starship-mission,
-input[type=radio].oracle-table-character-given-name:checked + article.switchable-display.oracle-table-character-given-name,
-input[type=radio].oracle-table-character-callsign:checked + article.switchable-display.oracle-table-character-callsign,
-input[type=radio].oracle-table-character-family-name:checked + article.switchable-display.oracle-table-character-family-name,
-input[type=radio].oracle-table-character-first-look:checked + article.switchable-display.oracle-table-character-first-look,
-input[type=radio].oracle-table-character-disposition:checked + article.switchable-display.oracle-table-character-disposition,
-input[type=radio].oracle-table-character-role:checked + article.switchable-display.oracle-table-character-role,
-input[type=radio].oracle-table-character-goal:checked + article.switchable-display.oracle-table-character-goal,
-input[type=radio].oracle-table-character-revealed-aspect:checked + article.switchable-display.oracle-table-character-revealed-aspect,
-input[type=radio].oracle-table-creature-environment:checked + article.switchable-display.oracle-table-creature-environment,
-input[type=radio].oracle-table-creature-scale:checked + article.switchable-display.oracle-table-creature-scale,
-input[type=radio].oracle-table-creature-ultra-scale:checked + article.switchable-display.oracle-table-creature-ultra-scale,
-input[type=radio].oracle-table-creature-basic-form:checked + article.switchable-display.oracle-table-creature-basic-form,
-input[type=radio].oracle-table-creature-first-look:checked + article.switchable-display.oracle-table-creature-first-look,
-input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.switchable-display.oracle-table-creature-encountered-b_havior,
-input[type=radio].oracle-table-creature-revealed-aspect:checked + article.switchable-display.oracle-table-creature-revealed-aspect,
-input[type=radio].oracle-table-derelict-location:checked + article.switchable-display.oracle-table-derelict-location,
-input[type=radio].oracle-table-derelict-type:checked + article.switchable-display.oracle-table-derelict-type,
-input[type=radio].oracle-table-derelict-condition:checked + article.switchable-display.oracle-table-derelict-condition,
-input[type=radio].oracle-table-derelict-outer-first-look:checked + article.switchable-display.oracle-table-derelict-outer-first-look,
-input[type=radio].oracle-table-derelict-inner-first-look:checked + article.switchable-display.oracle-table-derelict-inner-first-look,
-input[type=radio].oracle-table-derelict-zone:checked + article.switchable-display.oracle-table-derelict-zone,
-input[type=radio].oracle-subcategory-derelict-access:checked + article.switchable-display.oracle-subcategory-derelict-access,
-input[type=radio].oracle-subcategory-derelict-community:checked + article.switchable-display.oracle-subcategory-derelict-community,
-input[type=radio].oracle-subcategory-derelict-engineering:checked + article.switchable-display.oracle-subcategory-derelict-engineering,
-input[type=radio].oracle-subcategory-derelict-living:checked + article.switchable-display.oracle-subcategory-derelict-living,
-input[type=radio].oracle-subcategory-derelict-medical:checked + article.switchable-display.oracle-subcategory-derelict-medical,
-input[type=radio].oracle-subcategory-derelict-operations:checked + article.switchable-display.oracle-subcategory-derelict-operations,
-input[type=radio].oracle-subcategory-derelict-production:checked + article.switchable-display.oracle-subcategory-derelict-production,
-input[type=radio].oracle-subcategory-derelict-research:checked + article.switchable-display.oracle-subcategory-derelict-research,
-input[type=radio].oracle-table-precursor-vault-location:checked + article.switchable-display.oracle-table-precursor-vault-location,
-input[type=radio].oracle-table-precursor-vault-scale:checked + article.switchable-display.oracle-table-precursor-vault-scale,
-input[type=radio].oracle-table-precursor-vault-form:checked + article.switchable-display.oracle-table-precursor-vault-form,
-input[type=radio].oracle-table-precursor-vault-shape:checked + article.switchable-display.oracle-table-precursor-vault-shape,
-input[type=radio].oracle-table-precursor-vault-material:checked + article.switchable-display.oracle-table-precursor-vault-material,
-input[type=radio].oracle-table-precursor-vault-first-look:checked + article.switchable-display.oracle-table-precursor-vault-first-look,
-input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.switchable-display.oracle-subcategory-precursor-vault-interior,
-input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.switchable-display.oracle-subcategory-precursor-vault-sanctum,
-input[type=radio].oracle-table-location-theme-type:checked + article.switchable-display.oracle-table-location-theme-type,
-input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.switchable-display.oracle-subcategory-location-theme-chaotic,
-input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.switchable-display.oracle-subcategory-location-theme-fortified,
-input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.switchable-display.oracle-subcategory-location-theme-haunted,
-input[type=radio].oracle-subcategory-location-theme-infested:checked + article.switchable-display.oracle-subcategory-location-theme-infested,
-input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.switchable-display.oracle-subcategory-location-theme-inhabited,
-input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.switchable-display.oracle-subcategory-location-theme-ruined,
-input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.switchable-display.oracle-subcategory-location-theme-sacred,
-input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.switchable-display.oracle-table-miscellaneous-story-complication,
-input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.switchable-display.oracle-table-miscellaneous-combat-action,
-input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.switchable-display.oracle-table-miscellaneous-anomaly-effect,
-input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.switchable-display.oracle-table-ask-the-oracle-almost-certain,
-input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.switchable-display.oracle-table-ask-the-oracle-likely,
-input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.switchable-display.oracle-table-ask-the-oracle-50-50,
-input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.switchable-display.oracle-table-ask-the-oracle-unlikely,
-input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.switchable-display.oracle-table-ask-the-oracle-small-chance,
-input[type=radio].oracle-table-character-creation-background-assets:checked + article.switchable-display.oracle-table-character-creation-background-assets,
-input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.switchable-display.oracle-table-character-creation-backstory-prompts,
-input[type=radio].oracle-table-character-creation-starship-history:checked + article.switchable-display.oracle-table-character-creation-starship-history,
-input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.switchable-display.oracle-table-character-creation-starship-quirks,
-input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.switchable-display.oracle-table-character-creation-sector-trouble,
-input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.switchable-display.oracle-table-character-creation-inciting-incident,
-input[type=radio].oracle-table-core-action:checked + article.switchable-display.oracle-table-core-action,
-input[type=radio].oracle-table-core-theme:checked + article.switchable-display.oracle-table-core-theme,
-input[type=radio].oracle-table-core-descriptor:checked + article.switchable-display.oracle-table-core-descriptor,
-input[type=radio].oracle-table-core-focus:checked + article.switchable-display.oracle-table-core-focus,
-input[type=radio].oracle-table-space-sighting:checked + article.switchable-display.oracle-table-space-sighting,
-input[type=radio].oracle-table-space-stellar-object:checked + article.switchable-display.oracle-table-space-stellar-object,
-input[type=radio].oracle-table-space-sector-name-prefix:checked + article.switchable-display.oracle-table-space-sector-name-prefix,
-input[type=radio].oracle-table-space-sector-name-suffix:checked + article.switchable-display.oracle-table-space-sector-name-suffix,
-input[type=radio].oracle-table-space-peril:checked + article.switchable-display.oracle-table-space-peril,
-input[type=radio].oracle-table-space-opportunity:checked + article.switchable-display.oracle-table-space-opportunity,
-input[type=radio].oracle-table-planet-planetary-class:checked + article.switchable-display.oracle-table-planet-planetary-class,
-input[type=radio].oracle-table-planet-peril:checked + article.switchable-display.oracle-table-planet-peril,
-input[type=radio].oracle-table-planet-opportunity:checked + article.switchable-display.oracle-table-planet-opportunity,
-input[type=radio].oracle-subcategory-planet-desert-world:checked + article.switchable-display.oracle-subcategory-planet-desert-world,
-input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.switchable-display.oracle-subcategory-planet-furnace-world,
-input[type=radio].oracle-subcategory-planet-grave-world:checked + article.switchable-display.oracle-subcategory-planet-grave-world,
-input[type=radio].oracle-subcategory-planet-ice-world:checked + article.switchable-display.oracle-subcategory-planet-ice-world,
-input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.switchable-display.oracle-subcategory-planet-jovian-world,
-input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.switchable-display.oracle-subcategory-planet-jungle-world,
-input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.switchable-display.oracle-subcategory-planet-ocean-world,
-input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.switchable-display.oracle-subcategory-planet-rocky-world,
-input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.switchable-display.oracle-subcategory-planet-shattered-world,
-input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.switchable-display.oracle-subcategory-planet-tainted-world,
-input[type=radio].oracle-subcategory-planet-vital-world:checked + article.switchable-display.oracle-subcategory-planet-vital-world,
-input[type=radio].oracle-table-settlement-location:checked + article.switchable-display.oracle-table-settlement-location,
-input[type=radio].oracle-table-settlement-population:checked + article.switchable-display.oracle-table-settlement-population,
-input[type=radio].oracle-table-settlement-first-look:checked + article.switchable-display.oracle-table-settlement-first-look,
-input[type=radio].oracle-table-settlement-initial-contact:checked + article.switchable-display.oracle-table-settlement-initial-contact,
-input[type=radio].oracle-table-settlement-authority:checked + article.switchable-display.oracle-table-settlement-authority,
-input[type=radio].oracle-table-settlement-projects:checked + article.switchable-display.oracle-table-settlement-projects,
-input[type=radio].oracle-table-settlement-trouble:checked + article.switchable-display.oracle-table-settlement-trouble,
-input[type=radio].oracle-table-settlement-name:checked + article.switchable-display.oracle-table-settlement-name,
-input[type=radio].oracle-table-starship-name:checked + article.switchable-display.oracle-table-starship-name,
-input[type=radio].oracle-table-starship-type:checked + article.switchable-display.oracle-table-starship-type,
-input[type=radio].oracle-table-starship-fleet:checked + article.switchable-display.oracle-table-starship-fleet,
-input[type=radio].oracle-table-starship-initial-contact:checked + article.switchable-display.oracle-table-starship-initial-contact,
-input[type=radio].oracle-table-starship-first-look:checked + article.switchable-display.oracle-table-starship-first-look,
-input[type=radio].oracle-table-starship-mission:checked + article.switchable-display.oracle-table-starship-mission,
-input[type=radio].oracle-table-character-given-name:checked + article.switchable-display.oracle-table-character-given-name,
-input[type=radio].oracle-table-character-callsign:checked + article.switchable-display.oracle-table-character-callsign,
-input[type=radio].oracle-table-character-family-name:checked + article.switchable-display.oracle-table-character-family-name,
-input[type=radio].oracle-table-character-first-look:checked + article.switchable-display.oracle-table-character-first-look,
-input[type=radio].oracle-table-character-disposition:checked + article.switchable-display.oracle-table-character-disposition,
-input[type=radio].oracle-table-character-role:checked + article.switchable-display.oracle-table-character-role,
-input[type=radio].oracle-table-character-goal:checked + article.switchable-display.oracle-table-character-goal,
-input[type=radio].oracle-table-character-revealed-aspect:checked + article.switchable-display.oracle-table-character-revealed-aspect,
-input[type=radio].oracle-table-creature-environment:checked + article.switchable-display.oracle-table-creature-environment,
-input[type=radio].oracle-table-creature-scale:checked + article.switchable-display.oracle-table-creature-scale,
-input[type=radio].oracle-table-creature-ultra-scale:checked + article.switchable-display.oracle-table-creature-ultra-scale,
-input[type=radio].oracle-table-creature-basic-form:checked + article.switchable-display.oracle-table-creature-basic-form,
-input[type=radio].oracle-table-creature-first-look:checked + article.switchable-display.oracle-table-creature-first-look,
-input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.switchable-display.oracle-table-creature-encountered-b_havior,
-input[type=radio].oracle-table-creature-revealed-aspect:checked + article.switchable-display.oracle-table-creature-revealed-aspect,
-input[type=radio].oracle-table-derelict-location:checked + article.switchable-display.oracle-table-derelict-location,
-input[type=radio].oracle-table-derelict-type:checked + article.switchable-display.oracle-table-derelict-type,
-input[type=radio].oracle-table-derelict-condition:checked + article.switchable-display.oracle-table-derelict-condition,
-input[type=radio].oracle-table-derelict-outer-first-look:checked + article.switchable-display.oracle-table-derelict-outer-first-look,
-input[type=radio].oracle-table-derelict-inner-first-look:checked + article.switchable-display.oracle-table-derelict-inner-first-look,
-input[type=radio].oracle-table-derelict-zone:checked + article.switchable-display.oracle-table-derelict-zone,
-input[type=radio].oracle-subcategory-derelict-access:checked + article.switchable-display.oracle-subcategory-derelict-access,
-input[type=radio].oracle-subcategory-derelict-community:checked + article.switchable-display.oracle-subcategory-derelict-community,
-input[type=radio].oracle-subcategory-derelict-engineering:checked + article.switchable-display.oracle-subcategory-derelict-engineering,
-input[type=radio].oracle-subcategory-derelict-living:checked + article.switchable-display.oracle-subcategory-derelict-living,
-input[type=radio].oracle-subcategory-derelict-medical:checked + article.switchable-display.oracle-subcategory-derelict-medical,
-input[type=radio].oracle-subcategory-derelict-operations:checked + article.switchable-display.oracle-subcategory-derelict-operations,
-input[type=radio].oracle-subcategory-derelict-production:checked + article.switchable-display.oracle-subcategory-derelict-production,
-input[type=radio].oracle-subcategory-derelict-research:checked + article.switchable-display.oracle-subcategory-derelict-research,
-input[type=radio].oracle-table-precursor-vault-location:checked + article.switchable-display.oracle-table-precursor-vault-location,
-input[type=radio].oracle-table-precursor-vault-scale:checked + article.switchable-display.oracle-table-precursor-vault-scale,
-input[type=radio].oracle-table-precursor-vault-form:checked + article.switchable-display.oracle-table-precursor-vault-form,
-input[type=radio].oracle-table-precursor-vault-shape:checked + article.switchable-display.oracle-table-precursor-vault-shape,
-input[type=radio].oracle-table-precursor-vault-material:checked + article.switchable-display.oracle-table-precursor-vault-material,
-input[type=radio].oracle-table-precursor-vault-first-look:checked + article.switchable-display.oracle-table-precursor-vault-first-look,
-input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.switchable-display.oracle-subcategory-precursor-vault-interior,
-input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.switchable-display.oracle-subcategory-precursor-vault-sanctum,
-input[type=radio].oracle-table-location-theme-type:checked + article.switchable-display.oracle-table-location-theme-type,
-input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.switchable-display.oracle-subcategory-location-theme-chaotic,
-input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.switchable-display.oracle-subcategory-location-theme-fortified,
-input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.switchable-display.oracle-subcategory-location-theme-haunted,
-input[type=radio].oracle-subcategory-location-theme-infested:checked + article.switchable-display.oracle-subcategory-location-theme-infested,
-input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.switchable-display.oracle-subcategory-location-theme-inhabited,
-input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.switchable-display.oracle-subcategory-location-theme-ruined,
-input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.switchable-display.oracle-subcategory-location-theme-sacred,
-input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.switchable-display.oracle-table-miscellaneous-story-complication,
-input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.switchable-display.oracle-table-miscellaneous-combat-action,
-input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.switchable-display.oracle-table-miscellaneous-anomaly-effect
+// for oracle in group.Oracles
+// input[type=radio].{oracle.Name}:checked + div.{oracle.Name}
+input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.switchable-display.oracle-table-ask-the-oracle-almost-certain, input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.switchable-display.oracle-table-ask-the-oracle-likely, input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.switchable-display.oracle-table-ask-the-oracle-50-50, input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.switchable-display.oracle-table-ask-the-oracle-unlikely, input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.switchable-display.oracle-table-ask-the-oracle-small-chance, input[type=radio].oracle-table-character-creation-background-assets:checked + article.switchable-display.oracle-table-character-creation-background-assets, input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.switchable-display.oracle-table-character-creation-backstory-prompts, input[type=radio].oracle-table-character-creation-starship-history:checked + article.switchable-display.oracle-table-character-creation-starship-history, input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.switchable-display.oracle-table-character-creation-starship-quirks, input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.switchable-display.oracle-table-character-creation-sector-trouble, input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.switchable-display.oracle-table-character-creation-inciting-incident, input[type=radio].oracle-table-core-action:checked + article.switchable-display.oracle-table-core-action, input[type=radio].oracle-table-core-theme:checked + article.switchable-display.oracle-table-core-theme, input[type=radio].oracle-table-core-descriptor:checked + article.switchable-display.oracle-table-core-descriptor, input[type=radio].oracle-table-core-focus:checked + article.switchable-display.oracle-table-core-focus, input[type=radio].oracle-table-space-sighting:checked + article.switchable-display.oracle-table-space-sighting, input[type=radio].oracle-table-space-stellar-object:checked + article.switchable-display.oracle-table-space-stellar-object, input[type=radio].oracle-table-space-sector-name-prefix:checked + article.switchable-display.oracle-table-space-sector-name-prefix, input[type=radio].oracle-table-space-sector-name-suffix:checked + article.switchable-display.oracle-table-space-sector-name-suffix, input[type=radio].oracle-table-space-peril:checked + article.switchable-display.oracle-table-space-peril, input[type=radio].oracle-table-space-opportunity:checked + article.switchable-display.oracle-table-space-opportunity, input[type=radio].oracle-table-planet-planetary-class:checked + article.switchable-display.oracle-table-planet-planetary-class, input[type=radio].oracle-table-planet-peril:checked + article.switchable-display.oracle-table-planet-peril, input[type=radio].oracle-table-planet-opportunity:checked + article.switchable-display.oracle-table-planet-opportunity, input[type=radio].oracle-subcategory-planet-desert-world:checked + article.switchable-display.oracle-subcategory-planet-desert-world, input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.switchable-display.oracle-subcategory-planet-furnace-world, input[type=radio].oracle-subcategory-planet-grave-world:checked + article.switchable-display.oracle-subcategory-planet-grave-world, input[type=radio].oracle-subcategory-planet-ice-world:checked + article.switchable-display.oracle-subcategory-planet-ice-world, input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.switchable-display.oracle-subcategory-planet-jovian-world, input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.switchable-display.oracle-subcategory-planet-jungle-world, input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.switchable-display.oracle-subcategory-planet-ocean-world, input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.switchable-display.oracle-subcategory-planet-rocky-world, input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.switchable-display.oracle-subcategory-planet-shattered-world, input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.switchable-display.oracle-subcategory-planet-tainted-world, input[type=radio].oracle-subcategory-planet-vital-world:checked + article.switchable-display.oracle-subcategory-planet-vital-world, input[type=radio].oracle-table-settlement-location:checked + article.switchable-display.oracle-table-settlement-location, input[type=radio].oracle-table-settlement-population:checked + article.switchable-display.oracle-table-settlement-population, input[type=radio].oracle-table-settlement-first-look:checked + article.switchable-display.oracle-table-settlement-first-look, input[type=radio].oracle-table-settlement-initial-contact:checked + article.switchable-display.oracle-table-settlement-initial-contact, input[type=radio].oracle-table-settlement-authority:checked + article.switchable-display.oracle-table-settlement-authority, input[type=radio].oracle-table-settlement-projects:checked + article.switchable-display.oracle-table-settlement-projects, input[type=radio].oracle-table-settlement-trouble:checked + article.switchable-display.oracle-table-settlement-trouble, input[type=radio].oracle-table-settlement-name:checked + article.switchable-display.oracle-table-settlement-name, input[type=radio].oracle-table-starship-name:checked + article.switchable-display.oracle-table-starship-name, input[type=radio].oracle-table-starship-type:checked + article.switchable-display.oracle-table-starship-type, input[type=radio].oracle-table-starship-fleet:checked + article.switchable-display.oracle-table-starship-fleet, input[type=radio].oracle-table-starship-initial-contact:checked + article.switchable-display.oracle-table-starship-initial-contact, input[type=radio].oracle-table-starship-first-look:checked + article.switchable-display.oracle-table-starship-first-look, input[type=radio].oracle-table-starship-mission:checked + article.switchable-display.oracle-table-starship-mission, input[type=radio].oracle-table-character-given-name:checked + article.switchable-display.oracle-table-character-given-name, input[type=radio].oracle-table-character-callsign:checked + article.switchable-display.oracle-table-character-callsign, input[type=radio].oracle-table-character-family-name:checked + article.switchable-display.oracle-table-character-family-name, input[type=radio].oracle-table-character-first-look:checked + article.switchable-display.oracle-table-character-first-look, input[type=radio].oracle-table-character-disposition:checked + article.switchable-display.oracle-table-character-disposition, input[type=radio].oracle-table-character-role:checked + article.switchable-display.oracle-table-character-role, input[type=radio].oracle-table-character-goal:checked + article.switchable-display.oracle-table-character-goal, input[type=radio].oracle-table-character-revealed-aspect:checked + article.switchable-display.oracle-table-character-revealed-aspect, input[type=radio].oracle-table-creature-environment:checked + article.switchable-display.oracle-table-creature-environment, input[type=radio].oracle-table-creature-scale:checked + article.switchable-display.oracle-table-creature-scale, input[type=radio].oracle-table-creature-ultra-scale:checked + article.switchable-display.oracle-table-creature-ultra-scale, input[type=radio].oracle-table-creature-basic-form:checked + article.switchable-display.oracle-table-creature-basic-form, input[type=radio].oracle-table-creature-first-look:checked + article.switchable-display.oracle-table-creature-first-look, input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.switchable-display.oracle-table-creature-encountered-b_havior, input[type=radio].oracle-table-creature-revealed-aspect:checked + article.switchable-display.oracle-table-creature-revealed-aspect, input[type=radio].oracle-table-derelict-location:checked + article.switchable-display.oracle-table-derelict-location, input[type=radio].oracle-table-derelict-type:checked + article.switchable-display.oracle-table-derelict-type, input[type=radio].oracle-table-derelict-condition:checked + article.switchable-display.oracle-table-derelict-condition, input[type=radio].oracle-table-derelict-outer-first-look:checked + article.switchable-display.oracle-table-derelict-outer-first-look, input[type=radio].oracle-table-derelict-inner-first-look:checked + article.switchable-display.oracle-table-derelict-inner-first-look, input[type=radio].oracle-table-derelict-zone:checked + article.switchable-display.oracle-table-derelict-zone, input[type=radio].oracle-subcategory-derelict-access:checked + article.switchable-display.oracle-subcategory-derelict-access, input[type=radio].oracle-subcategory-derelict-community:checked + article.switchable-display.oracle-subcategory-derelict-community, input[type=radio].oracle-subcategory-derelict-engineering:checked + article.switchable-display.oracle-subcategory-derelict-engineering, input[type=radio].oracle-subcategory-derelict-living:checked + article.switchable-display.oracle-subcategory-derelict-living, input[type=radio].oracle-subcategory-derelict-medical:checked + article.switchable-display.oracle-subcategory-derelict-medical, input[type=radio].oracle-subcategory-derelict-operations:checked + article.switchable-display.oracle-subcategory-derelict-operations, input[type=radio].oracle-subcategory-derelict-production:checked + article.switchable-display.oracle-subcategory-derelict-production, input[type=radio].oracle-subcategory-derelict-research:checked + article.switchable-display.oracle-subcategory-derelict-research, input[type=radio].oracle-table-precursor-vault-location:checked + article.switchable-display.oracle-table-precursor-vault-location, input[type=radio].oracle-table-precursor-vault-scale:checked + article.switchable-display.oracle-table-precursor-vault-scale, input[type=radio].oracle-table-precursor-vault-form:checked + article.switchable-display.oracle-table-precursor-vault-form, input[type=radio].oracle-table-precursor-vault-shape:checked + article.switchable-display.oracle-table-precursor-vault-shape, input[type=radio].oracle-table-precursor-vault-material:checked + article.switchable-display.oracle-table-precursor-vault-material, input[type=radio].oracle-table-precursor-vault-first-look:checked + article.switchable-display.oracle-table-precursor-vault-first-look, input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.switchable-display.oracle-subcategory-precursor-vault-interior, input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.switchable-display.oracle-subcategory-precursor-vault-sanctum, input[type=radio].oracle-table-location-theme-type:checked + article.switchable-display.oracle-table-location-theme-type, input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.switchable-display.oracle-subcategory-location-theme-chaotic, input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.switchable-display.oracle-subcategory-location-theme-fortified, input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.switchable-display.oracle-subcategory-location-theme-haunted, input[type=radio].oracle-subcategory-location-theme-infested:checked + article.switchable-display.oracle-subcategory-location-theme-infested, input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.switchable-display.oracle-subcategory-location-theme-inhabited, input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.switchable-display.oracle-subcategory-location-theme-ruined, input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.switchable-display.oracle-subcategory-location-theme-sacred, input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.switchable-display.oracle-table-miscellaneous-story-complication, input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.switchable-display.oracle-table-miscellaneous-combat-action, input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.switchable-display.oracle-table-miscellaneous-anomaly-effect, input[type=radio].oracle-table-ask-the-oracle-almost-certain:checked + article.switchable-display.oracle-table-ask-the-oracle-almost-certain, input[type=radio].oracle-table-ask-the-oracle-likely:checked + article.switchable-display.oracle-table-ask-the-oracle-likely, input[type=radio].oracle-table-ask-the-oracle-50-50:checked + article.switchable-display.oracle-table-ask-the-oracle-50-50, input[type=radio].oracle-table-ask-the-oracle-unlikely:checked + article.switchable-display.oracle-table-ask-the-oracle-unlikely, input[type=radio].oracle-table-ask-the-oracle-small-chance:checked + article.switchable-display.oracle-table-ask-the-oracle-small-chance, input[type=radio].oracle-table-character-creation-background-assets:checked + article.switchable-display.oracle-table-character-creation-background-assets, input[type=radio].oracle-table-character-creation-backstory-prompts:checked + article.switchable-display.oracle-table-character-creation-backstory-prompts, input[type=radio].oracle-table-character-creation-starship-history:checked + article.switchable-display.oracle-table-character-creation-starship-history, input[type=radio].oracle-table-character-creation-starship-quirks:checked + article.switchable-display.oracle-table-character-creation-starship-quirks, input[type=radio].oracle-table-character-creation-sector-trouble:checked + article.switchable-display.oracle-table-character-creation-sector-trouble, input[type=radio].oracle-table-character-creation-inciting-incident:checked + article.switchable-display.oracle-table-character-creation-inciting-incident, input[type=radio].oracle-table-core-action:checked + article.switchable-display.oracle-table-core-action, input[type=radio].oracle-table-core-theme:checked + article.switchable-display.oracle-table-core-theme, input[type=radio].oracle-table-core-descriptor:checked + article.switchable-display.oracle-table-core-descriptor, input[type=radio].oracle-table-core-focus:checked + article.switchable-display.oracle-table-core-focus, input[type=radio].oracle-table-space-sighting:checked + article.switchable-display.oracle-table-space-sighting, input[type=radio].oracle-table-space-stellar-object:checked + article.switchable-display.oracle-table-space-stellar-object, input[type=radio].oracle-table-space-sector-name-prefix:checked + article.switchable-display.oracle-table-space-sector-name-prefix, input[type=radio].oracle-table-space-sector-name-suffix:checked + article.switchable-display.oracle-table-space-sector-name-suffix, input[type=radio].oracle-table-space-peril:checked + article.switchable-display.oracle-table-space-peril, input[type=radio].oracle-table-space-opportunity:checked + article.switchable-display.oracle-table-space-opportunity, input[type=radio].oracle-table-planet-planetary-class:checked + article.switchable-display.oracle-table-planet-planetary-class, input[type=radio].oracle-table-planet-peril:checked + article.switchable-display.oracle-table-planet-peril, input[type=radio].oracle-table-planet-opportunity:checked + article.switchable-display.oracle-table-planet-opportunity, input[type=radio].oracle-subcategory-planet-desert-world:checked + article.switchable-display.oracle-subcategory-planet-desert-world, input[type=radio].oracle-subcategory-planet-furnace-world:checked + article.switchable-display.oracle-subcategory-planet-furnace-world, input[type=radio].oracle-subcategory-planet-grave-world:checked + article.switchable-display.oracle-subcategory-planet-grave-world, input[type=radio].oracle-subcategory-planet-ice-world:checked + article.switchable-display.oracle-subcategory-planet-ice-world, input[type=radio].oracle-subcategory-planet-jovian-world:checked + article.switchable-display.oracle-subcategory-planet-jovian-world, input[type=radio].oracle-subcategory-planet-jungle-world:checked + article.switchable-display.oracle-subcategory-planet-jungle-world, input[type=radio].oracle-subcategory-planet-ocean-world:checked + article.switchable-display.oracle-subcategory-planet-ocean-world, input[type=radio].oracle-subcategory-planet-rocky-world:checked + article.switchable-display.oracle-subcategory-planet-rocky-world, input[type=radio].oracle-subcategory-planet-shattered-world:checked + article.switchable-display.oracle-subcategory-planet-shattered-world, input[type=radio].oracle-subcategory-planet-tainted-world:checked + article.switchable-display.oracle-subcategory-planet-tainted-world, input[type=radio].oracle-subcategory-planet-vital-world:checked + article.switchable-display.oracle-subcategory-planet-vital-world, input[type=radio].oracle-table-settlement-location:checked + article.switchable-display.oracle-table-settlement-location, input[type=radio].oracle-table-settlement-population:checked + article.switchable-display.oracle-table-settlement-population, input[type=radio].oracle-table-settlement-first-look:checked + article.switchable-display.oracle-table-settlement-first-look, input[type=radio].oracle-table-settlement-initial-contact:checked + article.switchable-display.oracle-table-settlement-initial-contact, input[type=radio].oracle-table-settlement-authority:checked + article.switchable-display.oracle-table-settlement-authority, input[type=radio].oracle-table-settlement-projects:checked + article.switchable-display.oracle-table-settlement-projects, input[type=radio].oracle-table-settlement-trouble:checked + article.switchable-display.oracle-table-settlement-trouble, input[type=radio].oracle-table-settlement-name:checked + article.switchable-display.oracle-table-settlement-name, input[type=radio].oracle-table-starship-name:checked + article.switchable-display.oracle-table-starship-name, input[type=radio].oracle-table-starship-type:checked + article.switchable-display.oracle-table-starship-type, input[type=radio].oracle-table-starship-fleet:checked + article.switchable-display.oracle-table-starship-fleet, input[type=radio].oracle-table-starship-initial-contact:checked + article.switchable-display.oracle-table-starship-initial-contact, input[type=radio].oracle-table-starship-first-look:checked + article.switchable-display.oracle-table-starship-first-look, input[type=radio].oracle-table-starship-mission:checked + article.switchable-display.oracle-table-starship-mission, input[type=radio].oracle-table-character-given-name:checked + article.switchable-display.oracle-table-character-given-name, input[type=radio].oracle-table-character-callsign:checked + article.switchable-display.oracle-table-character-callsign, input[type=radio].oracle-table-character-family-name:checked + article.switchable-display.oracle-table-character-family-name, input[type=radio].oracle-table-character-first-look:checked + article.switchable-display.oracle-table-character-first-look, input[type=radio].oracle-table-character-disposition:checked + article.switchable-display.oracle-table-character-disposition, input[type=radio].oracle-table-character-role:checked + article.switchable-display.oracle-table-character-role, input[type=radio].oracle-table-character-goal:checked + article.switchable-display.oracle-table-character-goal, input[type=radio].oracle-table-character-revealed-aspect:checked + article.switchable-display.oracle-table-character-revealed-aspect, input[type=radio].oracle-table-creature-environment:checked + article.switchable-display.oracle-table-creature-environment, input[type=radio].oracle-table-creature-scale:checked + article.switchable-display.oracle-table-creature-scale, input[type=radio].oracle-table-creature-ultra-scale:checked + article.switchable-display.oracle-table-creature-ultra-scale, input[type=radio].oracle-table-creature-basic-form:checked + article.switchable-display.oracle-table-creature-basic-form, input[type=radio].oracle-table-creature-first-look:checked + article.switchable-display.oracle-table-creature-first-look, input[type=radio].oracle-table-creature-encountered-b_havior:checked + article.switchable-display.oracle-table-creature-encountered-b_havior, input[type=radio].oracle-table-creature-revealed-aspect:checked + article.switchable-display.oracle-table-creature-revealed-aspect, input[type=radio].oracle-table-derelict-location:checked + article.switchable-display.oracle-table-derelict-location, input[type=radio].oracle-table-derelict-type:checked + article.switchable-display.oracle-table-derelict-type, input[type=radio].oracle-table-derelict-condition:checked + article.switchable-display.oracle-table-derelict-condition, input[type=radio].oracle-table-derelict-outer-first-look:checked + article.switchable-display.oracle-table-derelict-outer-first-look, input[type=radio].oracle-table-derelict-inner-first-look:checked + article.switchable-display.oracle-table-derelict-inner-first-look, input[type=radio].oracle-table-derelict-zone:checked + article.switchable-display.oracle-table-derelict-zone, input[type=radio].oracle-subcategory-derelict-access:checked + article.switchable-display.oracle-subcategory-derelict-access, input[type=radio].oracle-subcategory-derelict-community:checked + article.switchable-display.oracle-subcategory-derelict-community, input[type=radio].oracle-subcategory-derelict-engineering:checked + article.switchable-display.oracle-subcategory-derelict-engineering, input[type=radio].oracle-subcategory-derelict-living:checked + article.switchable-display.oracle-subcategory-derelict-living, input[type=radio].oracle-subcategory-derelict-medical:checked + article.switchable-display.oracle-subcategory-derelict-medical, input[type=radio].oracle-subcategory-derelict-operations:checked + article.switchable-display.oracle-subcategory-derelict-operations, input[type=radio].oracle-subcategory-derelict-production:checked + article.switchable-display.oracle-subcategory-derelict-production, input[type=radio].oracle-subcategory-derelict-research:checked + article.switchable-display.oracle-subcategory-derelict-research, input[type=radio].oracle-table-precursor-vault-location:checked + article.switchable-display.oracle-table-precursor-vault-location, input[type=radio].oracle-table-precursor-vault-scale:checked + article.switchable-display.oracle-table-precursor-vault-scale, input[type=radio].oracle-table-precursor-vault-form:checked + article.switchable-display.oracle-table-precursor-vault-form, input[type=radio].oracle-table-precursor-vault-shape:checked + article.switchable-display.oracle-table-precursor-vault-shape, input[type=radio].oracle-table-precursor-vault-material:checked + article.switchable-display.oracle-table-precursor-vault-material, input[type=radio].oracle-table-precursor-vault-first-look:checked + article.switchable-display.oracle-table-precursor-vault-first-look, input[type=radio].oracle-subcategory-precursor-vault-interior:checked + article.switchable-display.oracle-subcategory-precursor-vault-interior, input[type=radio].oracle-subcategory-precursor-vault-sanctum:checked + article.switchable-display.oracle-subcategory-precursor-vault-sanctum, input[type=radio].oracle-table-location-theme-type:checked + article.switchable-display.oracle-table-location-theme-type, input[type=radio].oracle-subcategory-location-theme-chaotic:checked + article.switchable-display.oracle-subcategory-location-theme-chaotic, input[type=radio].oracle-subcategory-location-theme-fortified:checked + article.switchable-display.oracle-subcategory-location-theme-fortified, input[type=radio].oracle-subcategory-location-theme-haunted:checked + article.switchable-display.oracle-subcategory-location-theme-haunted, input[type=radio].oracle-subcategory-location-theme-infested:checked + article.switchable-display.oracle-subcategory-location-theme-infested, input[type=radio].oracle-subcategory-location-theme-inhabited:checked + article.switchable-display.oracle-subcategory-location-theme-inhabited, input[type=radio].oracle-subcategory-location-theme-ruined:checked + article.switchable-display.oracle-subcategory-location-theme-ruined, input[type=radio].oracle-subcategory-location-theme-sacred:checked + article.switchable-display.oracle-subcategory-location-theme-sacred, input[type=radio].oracle-table-miscellaneous-story-complication:checked + article.switchable-display.oracle-table-miscellaneous-story-complication, input[type=radio].oracle-table-miscellaneous-combat-action:checked + article.switchable-display.oracle-table-miscellaneous-combat-action, input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.switchable-display.oracle-table-miscellaneous-anomaly-effect
   switchDisplayOn(grid)
 
 .oracle-container
-  opacity 1
   justify-content space-between
   padding 0.1em
+  opacity 1
 
 .oracle-column
   display flex
@@ -289,26 +94,25 @@ input[type=radio].oracle-table-miscellaneous-anomaly-effect:checked + article.sw
   // height auto
 
 .theme-outline
-  border: 1px solid $color_fg
+  border 1px solid $color_fg
 
 span.oracle-result
   width 80%
 
 .oracle-box
   borderCommon()
+
   // box-sizing border-box
   height max-content
 
 .oracle-title
-  background-color $color_fg
-  color $color_bg
+  padding-right 5px
   // border-bottom 1px solid $color_fg
   padding-left 5px
-  padding-right 5px
-  text-transform uppercase
+  background-color $color_fg
+  color $color_bg
   text-align center
-
-
+  text-transform uppercase
 
 table.oracle-table
   width stretch
@@ -320,13 +124,13 @@ tr.oracle-row
 
 .oracle-show
   display inline-flex
-  margin 0em
+  margin 0
   padding 0.3em
 
 .oracle-show:hover
   background #969696
   cursor pointer
-  transition .5s ease
+  transition 0.5s ease
 
 .oracle-table
   // border borderCommon(4px)
@@ -335,11 +139,11 @@ tr.oracle-row
   display flex
 
 .oracle-row:nth-child(2n)
-  background-color: $color_bg_alt
+  background-color $color_bg_alt
 
 .oracle-row
-  padding 3px 0px 3px 0px
   display flex
+  padding 3px 0
   height auto
 
 tr.oracle-row
@@ -352,10 +156,10 @@ tr.oracle-row td
   width 50%
 
 .oracle-row-3
-  width: 33.33%
+  width 33.33%
 
 .oracle-row-4
-  width: 25%
+  width 25%
 
 td.oracle-roll
   // width: 20%
@@ -378,13 +182,13 @@ th.oracle-column-head.oracle-roll
   display flex
 
 .table-list
-  width 33%
-  height 44em
   overflow auto
-  border 3px solid $color_fg
-  padding 0
   margin 0
   margin-right 0.3em
+  padding 0
+  width 33%
+  height 44em
+  border 3px solid $color_fg
 
 .column-wrap
   width 50%

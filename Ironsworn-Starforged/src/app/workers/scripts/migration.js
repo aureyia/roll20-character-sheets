@@ -1,5 +1,5 @@
 // on('sheet:opened', openSheet);
-// var openSheet = function() {
+// let openSheet = function() {
 //     //getSections is a function that I use to get all the repeating section attributes. It iterates through each section and gets all the IDs, and adds those full attribute names to the getArray that is passed to it; baseGet in this case. Once all the sections have been parsed, it calls the callback function passed to it; updateSheet in this case
 //     getSections(updateSheet, baseGet);
 //   },

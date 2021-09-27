@@ -1,0 +1,59 @@
+mixin oracleRollBtn(id, buttonLabel, rollQuery="")
+  //- generates CSS
+  //- - console.log(`input[type=radio].${id}:checked ~ div.${id},`)
+  -
+    valueString = `&{template:starforged_oracles} ${rollQuery} {{${id}=[[d100]]}}`;
+    if (!rollQuery.match(/header=/i)) {
+      valueString = valueString + " " +  `{{header=${buttonLabel}}}`
+    }
+  button(
+    type='roll'
+    class='roll-show ui-draggable icon-only'
+    title=`@{roll_${id}}`
+    name=`roll_${id}`
+    value=valueString
+  )
+
+mixin oracleMultiBtn(oracle, btnText, indexOffset=0)
+  - labelText = oracle['Display name']||oracle['Name']
+  - options = oracle.Tables.map((table, index) => { return `${table['Display name']||table['Name']},${index+indexOffset}` })
+  - rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}} {{header=${labelText}}}`
+  - id = oracle.id
+  button.roll-label.embedded-btn.button-text(
+    type='roll'
+    title=`@{roll_${id}}`
+    name=`roll_${id}`
+    value=`&{template:starforged_oracles} ${rollQuery}  {{${id}=[[d100]]}}`
+  )!=btnText||labelText
+
+mixin oracleSingleBtn(oracle, btnText)
+  - labelText=oracle['Display name']||oracle.Name
+  - id = oracle.id
+  button.roll-label.embedded-btn.button-text(
+    type='roll'
+    title=`@{roll_${id}}`
+    name=`roll_${id}`
+    value=`&{template:starforged_oracles} {{header=${labelText}}} {{${id}=[[d100]]}}`
+  )!=btnText||labelText
+
+
+mixin oracleSubtablesRollBtn(id, buttonLabel, tables)
+  -
+    counter = 0;Label
+    options = [];
+    tables.forEach((oracle) => {
+      if (oracle.Tables) {
+        oracle.Tables.forEach(subtable => {
+          tableLabel = subtable['Display name']||subtable['Name'];
+          options.push(`${tableLabel},${counter}`);
+          counter++;
+        })
+      }
+      else {
+        tableLabel = oracle['Display name']||oracle['Name'];
+        options.push(`${tableLabel},${counter}`);
+        counter++;
+      }
+    })
+  - rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}}`
+  +oracleRollBtn(id, buttonLabel, rollQuery)

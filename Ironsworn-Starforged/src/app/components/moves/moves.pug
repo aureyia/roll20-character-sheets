@@ -4,8 +4,8 @@ include ../generic/listGroup
 include ../generic/preview
 
 mixin moveGroup(moveCategory)
-  - var title_i18n = `move-group-title-${moveCategory}`
-  - var moveList = moves.Moves.filter(obj => { return obj.Category === translation[title_i18n] })
+  - title_i18n = `move-group-title-${moveCategory}`
+  - moveList = moves.Moves.filter(obj => { return obj.Category === translation[title_i18n] })
   +listGroup(title_i18n)
     each move in moveList
       +listGroupItem()

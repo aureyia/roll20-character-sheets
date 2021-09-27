@@ -5,6 +5,7 @@ const readJson = require('./helpers/readJson')
 const toStylusObject = require('./helpers/toStylusObject')
 const buildStylusData = require('./helpers/buildStylusData.js');
 const addRootSelector = require('postcss-add-root-selector');
+const postcss = require('gulp-postcss')
 
 module.exports = async function buildCss(stylusSrc, rootSelector=false, cssDest="./temp") {
   const postCssPlugins = [

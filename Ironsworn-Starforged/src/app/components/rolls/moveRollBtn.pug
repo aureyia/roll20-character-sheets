@@ -1,0 +1,14 @@
+include ../../common/pug/translation
+
+mixin moveRollBtn(opts, classes, content_i18n)
+  - formattedName = _.kebabCase(opts.Name)
+  - roll20MoveData = rolls[opts.Name]
+  button(
+    type="roll"
+    title=`Roll the ${opts.Name} move`
+    class=classes
+    name=`roll_${formattedName}`
+    value!=`&{template:starforged_moves} {{header=@{character_name}}} {{name=${opts.Name}}} {{action=[[{d6+${roll20MoveData.stat}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{negate2=[[2+${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{negate3=[[3+${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{negate4=[[4+${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{negate5=[[5+${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{negate6=[[6+${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[${roll20MoveData.repeat_stat}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[${roll20MoveData.repeat_stat}]]}}`
+  )
+    if content_i18n
+      +i18n(content_i18n)

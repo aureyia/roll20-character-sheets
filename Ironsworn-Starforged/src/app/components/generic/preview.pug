@@ -1,27 +1,21 @@
 mixin closeButton(pageName, parentWidget="preview", iconOnly=true)
   -
-    let classes = [`close-${parentWidget}`]
+    classes = [`close-${parentWidget}`]
     if (iconOnly) {
       classes.push("icon-only")
     }
-  button(type="action" role="" class=classes name=`act_set_${pageName}_${parentWidget}` data-i18n-title=`close-${parentWidget}` data-i18n-aria-label=`close-${parentWidget}` value="false")
+  button(type="action" role="" class=classes name=`act_set-${pageName}-${parentWidget}` data-i18n-title=`close-${parentWidget}` data-i18n-aria-label=`close-${parentWidget}` value="false")
     if (!iconOnly)
       +i18n(`close-${parentWidget}`)
 
-    //- label(title=translation['close-preview']).close-preview.icon-only
-    //-   input(type='checkbox' class='switch-vis' name=`attr_close_${previewType}_preview`)
-      else
-    //- label(title=translation['close-preview']).close-preview
-    //-   +i18n('close-preview')
-    //-   input(type='checkbox' class='switch-vis' name=`attr_close_${previewType}_preview`)
 
 mixin overview(previewType, value=1, classes="")
-  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}_view` value=value checked)
+  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}-view` value=value checked)
   .overview.switchable-vis
     block
 
 mixin preview(previewType, value=2)
-  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}_view` value=value)
+  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}-view` value=value)
   .preview.switchable-vis
     block
 

@@ -1,22 +1,13 @@
 $sheet_width = 842px
-$sheet_padding = 0px
+$sheet_padding = 0
 $breakpoint_mobile_width = 768px
-$root_font_size = 16px
-$h1_size = 2em
-$h2_size = 1.5em
-$h3_size = 1.17em
-$h4_size = 1em
-$string_line_height = 1
-$body_line_height = 1.25
 $short_transition = 0.3s
 $long_transition = 0.5s
-
 // brand colours
 $sf_black = #221E1F // not resampled yet
-$sf_rich-black = #040506 // not resampled yet
+$sf_rich_black = #040506 // not resampled yet
 $sf_ui_gray_dark = #B8C2CD // not resampled yet
 $sf_ui_gray_light = #dde1e7 // not resampled yet
-
 $sf_ui_blue = #28aae1 // strong hit
 $sf_ui_purple = #892890 // weak hit
 $sf_ui_red = #ce242b // miss
@@ -26,7 +17,6 @@ $sf_sky = #3f7faa // path
 $sf_ocean = #495790 // support vehicle
 $sf_oracle = #7f5a90 // module
 $sf_iron = #9aa3ad // command vehicle
-
 // basic ux colors
 $color_fg = $sf_black // old: #4c4d4f
 $color_bg = #fff
@@ -40,7 +30,7 @@ $color_warning = $sf_ui_red
 // 'close preview', 'delete', etc
 
 // base text size
-// $base-font-size
+// $base_font_size
 
 // typography
 $type_display = "Exo", sans-serif
@@ -48,85 +38,122 @@ $type_display = "Exo", sans-serif
 $type_body = "Encode Sans Semi Expanded", sans-serif
 $type_header_sm = $type_body
 $type_compact = "Encode Sans Condensed", sans-serif
+$root_font_size = 16px
+$h1_size = 2em
+$h2_size = 1.5em
+$h3_size = 1.17em
+$h4_size = 1em
+$string_line_height = 1 // for single lines of text like headers, buttons, labels, etc; makes it easier to control apparent padding/margins in a granular way
+$body_line_height = 1.4
+// typography - spacing
+// "loose" is for headers, "tight" is for body text
+$word_spacing_loose = 0.25ch // 1ch = width of font's '0' character
+$word_spacing_tight = 0.1ch
+$letter_spacing_loose = 0.05ch
+$letter_spacing_tight = 0.025ch
+
+typeSpacingLoose()
+  word-spacing $word_spacing_loose
+  letter-spacing $letter_spacing_loose
+
+typeSpacingTight()
+  word-spacing $word_spacing_tight
+  letter-spacing $letter_spacing_tight
 
 stdFont(primary = false)
-  if primary
+  if (primary)
     font-family primary, Arial, sans-serif
   else
     font-family $type_body
 
-borderCommon(width=2px)
+borderCommon(width = 2px)
   border width solid $color_fg
 
-visOff(time=$long_transition)
-  transition opacity time
+visOff(time = $long_transition)
   visibility hidden !important
-  height 0 !important
-  width 0 !important
   overflow hidden !important
-  opacity 0 !important
-  border 0 !important
-  padding 0 !important
   margin 0 !important
-visOn(time=$long_transition)
+  padding 0 !important
+  width 0 !important
+  height 0 !important
+  border 0 !important
+  opacity 0 !important
   transition opacity time
+
+visOn(time = $long_transition)
   visibility visible !important
   opacity 1 !important
+  transition opacity time
 
-fadeIn(time=$long_transition)
-  transition time
+fadeIn(time = $long_transition)
   visibility visible !important
   opacity 1 !important
-
-fadeOut(time=$long_transition)
   transition time
+
+fadeOut(time = $long_transition)
   visibility hidden !important
   opacity 0 !important
+  transition time
   // z-index -1
 
 colorThemeDark()
   background-color $color_fg
   color $color_bg
 
+colorThemeDarker()
+  background-color $sf_rich_black
+  color $color_bg
+
 colorThemeLight()
   background-color $color_bg
   color $color_fg
 
-labelText(fontSize=1em)
+labelText(fontSize = 1em)
   stdFont($type_display)
-  font-size fontSize
-  font-weight 600
-  letter-spacing 0.05ch
-  text-transform uppercase
+
   text-align center
+  text-transform uppercase
+
+  typeSpacingLoose()
+
+  font-weight 600
+  font-size fontSize
   line-height $string_line_height
 
-subLabelText(fontSize=0.9em)
+subLabelText(fontSize = 0.9em)
   labelText(fontSize)
   stdFont($type_header_sm)
-  letter-spacing 0.025ch
+
   text-transform none
+
+  typeSpacingTight()
 
 headerText()
   stdFont($type_display)
-  font-weight 800
-  letter-spacing 0.05ch
+
   text-transform uppercase
-  line-height 1
+
+  typeSpacingLoose()
+
+  font-weight 800
+  line-height $string_line_height
 
 headerTextSm()
   headerText()
   stdFont($type_header_sm)
+
   font-weight 700
 
 bodyText()
   stdFont($type_body)
-  font-weight 400
-  letter-spacing 0.025ch
-  line-height 1.45
-  word-spacing 0.1ch
-  font-size 1em
+
   text-transform none
+
+  typeSpacingTight()
+
+  font-weight 400
+  font-size 1em
+  line-height $body_line_height
 
 bodyTextSm()
   bodyText()
@@ -134,146 +161,154 @@ bodyTextSm()
 
 inputText()
   bodyText()
-  line-height 1
+
+  line-height $string_line_height
 
 footerText()
   bodyTextSm()
+
   font-size 75%
 
-interactiveHover(bg=$color_fg, fg=$color_bg)
+interactiveHover(bg = $color_fg, fg = $color_bg)
   &:hover:enabled
     interactiveAltColor(bg, fg)
 
-interactiveActive(bg=$color_fg, fg=$color_bg)
+interactiveActive(bg = $color_fg, fg = $color_bg)
   &:active
     interactiveAltColor(bg, fg)
 
-interactiveAltColor(fg=$color_bg, bg=$color_fg)
+interactiveAltColor(fg = $color_bg, bg = $color_fg)
   background-color bg !important
   color fg !important
 
-interactiveFocus(shadow=3px)
-  outline 0px solid transparent
+interactiveFocus(shadow = 3px)
+  outline 0 solid transparent
   box-shadow inset 0 0 0 0 transparent
+
   &:focus
+    z-index 1 // so it renders above adjacent objects when focused
     outline 3px solid $color_highlight
     outline-offset 0
     box-shadow inset 0 0 0 shadow
-    z-index 1 // so it renders above adjacent objects when focused
 
-interactive(bg=$color_bg, fg=$color_fg)
-  transition-property color, background-color, box-shadow, outline
-  transition-duration $short_transition
+interactive(bg = $color_bg, fg = $color_fg)
   background-color bg
   color fg
   cursor pointer
+  transition-duration $short_transition
+  transition-property color, background-color, box-shadow, outline
+
   interactiveFocus()
   interactiveActive(bg, fg)
   interactiveHover(bg, fg)
 
-interactiveInactive(bg=$color_bg_alt fg=$color_fg_alt)
+interactiveInactive(bg = $color_bg_alt fg = $color_fg_alt)
   background-color bg
   color fg
   cursor not-allowed
+
   &:active, &:hover
     background-color inherit
     color inherit
 
-
-btn(fontSize = 1em, padding=0.25em 0.5em, borderWidth=2px)
+btn(fontSize = 1em, padding = 0.25em 0.5em, borderWidth = 2px)
   colorThemeLight()
   labelText()
   interactive()
   borderCommon(borderWidth)
-  font-size fontSize
+
+  display flex
+  justify-content center
+  align-items center
+  align-content center
+  padding padding
   width stretch
   width -moz-available
   height auto
-  padding padding
   border-radius 0
-  display flex
-  align-content center
-  justify-content center
   text-align center
-  align-items center
+  font-size fontSize
 
 inputBox()
   inputText()
   interactiveFocus()
+
   padding 0.125em 0.5ch
-  color $color_fg
-  background-color $color_bg_alt
   border-radius 0
+  background-color $color_bg_alt
+  color $color_fg
 
 embeddedInput()
-  padding 0
-  align-items stretch
   display flex
+  align-items stretch
+  padding 0
   background-color currentColor // shows only as 1px hairline gap between children
   gap 1px
+
   > *
-    border 0
     margin 0
+    border 0
+
   > button, > label
-    width max-content
     display flex
     flex 0
+    width max-content
     border none
 
 iconBtn(iconUrl)
   &:before
+    position relative
+    top 0
+    left 0
     display block
-    width 100%
-    height 100%
     margin 0
     padding 0
+    width 100%
+    height 100%
     border none
-    font-size unset
-    line-height unset
     background-color currentColor
     background-origin border-box
+    content ""
+    font-size unset
+    line-height unset
     mask-image url(iconUrl)
     mask-size 90% // contain could also work, but this pads it out a bit
     mask-repeat no-repeat
     mask-position center
     mask-origin content-box
-    top 0
-    left 0
-    position relative
-    content ""
 
 bulletBefore(forTextSize, iconUrl)
-  margin-left (forTextSize * 1.5)
+  margin-left: (forTextSize * 1.5)
+
   &:before
-    content '';
-    display inline-block;
-    height (forTextSize * 0.75)
-    width (forTextSize * 0.75)
-    mask-image: url(iconUrl);
-    mask-size: contain
-    mask-repeat: no-repeat
-    background-color currentColor
-    margin-right (forTextSize / 4)
+    display inline-block
+    margin-right: (forTextSize / 4)
     margin-left -(forTextSize * 1)
+    width: (forTextSize * 0.75)
+    height: (forTextSize * 0.75)
+    background-color currentColor
+    content ""
+    mask-image url(iconUrl)
+    mask-size contain
+    mask-repeat no-repeat
 
 // places a double width stroke behind to fake an outside stroke
-textOutline(strokeColor, strokeWidth=2px)
+textOutline(strokeColor, strokeWidth = 2px)
   paint-order stroke fill
-  text-stroke strokeWidth*2 strokeColor
+  text-stroke (strokeWidth * 2) strokeColor
 
 $hexagon_pointy = polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
-$hexagon_flat = polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+$hexagon_flat = polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%)
 
 hexagonMask()
-  mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-checked.svg")
+  mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-checkbox-checked.svg")
   mask-position center
   mask-size contain
   mask-repeat no-repeat
 
 // hexagonBg()
-
 hexWidthToHeightPointy(hexWidth)
-  (hexWidth*2) / math(3, sqrt)
+  ((hexWidth * 2) / math(3, sqrt))
 
 hexagonClip(hexWidth) // sets width and height to ensure correct proportion
   width hexWidth
@@ -281,21 +316,48 @@ hexagonClip(hexWidth) // sets width and height to ensure correct proportion
   clip-path $hexagon_pointy
   // TODO: as svg clip path? url + #id
 
-hexCheckbox(hexWidth, emptyImage="https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-checkbox-unchecked.svg")
+hexCheckbox(hexWidth, emptyImage = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-checkbox-unchecked.svg")
   appearance none
+
   hexagonClip(hexWidth)
-  cursor pointer
-  border none
+
   width hexWidth
   height hexWidthToHeightPointy(hexWidth)
-  color currentColor
+  border none
   background-color transparent
   background-image url(emptyImage)
-  background-size 100%
   background-position center
+  background-size 100%
+  color currentColor
+  cursor pointer
   transition $short_transition
+
   &:hover
     background-color $color_fg_alt
+
   &:checked
     background-color currentColor
 
+editToggle(parentClass)
+  input[name=attr_editor-{parentClass}]
+    &[value="off"]
+      ~ .editor-on
+        visOff()
+
+      ~ .editor-off
+        visOn()
+
+    &[value="on"]
+      ~ .editor-off
+        visOff()
+
+      ~ .editor-on
+        visOn()
+
+flexCenter()
+  display flex
+  justify-content center
+  align-items center
+  align-content center
+  text-align center
+  justify-items center

@@ -1,16 +1,11 @@
 .page-tablist
   display flex
   flex-flow row wrap
-  border 1px solid $color_fg
   margin 0
+  border 1px solid $color_fg
+
   & > .page-tab
     flex 1
     flex-basis 20%
     min-width max-content
     width 100%
-
-// input.tabber
-//   for sheetName, sheetData in $sheets
-//     for pageName in (sheetData.pages)
-//       &[name=attr_sheet-{sheetName}-display][value=page-{pageName}] ~ .page-tab[name=act_sheet-{sheetName}-page-{pageName}]
-//         interactiveAltColor($color_bg, $color_fg)

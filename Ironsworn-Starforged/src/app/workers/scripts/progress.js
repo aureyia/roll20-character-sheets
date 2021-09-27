@@ -32,7 +32,7 @@ on(
 
 function updateProgressBoxes(opts) {
   getAttrs(opts.attributes, (attrValues) => {
-    const progress = opts.attributes.map((box) => parseInt(attrValues[box]));
+    const progress = opts.attributes.map((box) => normalizeAttr(attrValues[box]));
 
     opts.rank.kind === 'static'
       ? generateMarkAndUpdateProgress(
@@ -42,7 +42,7 @@ function updateProgressBoxes(opts) {
         )
       : getAttrs([opts.rank.value], (value) => {
           generateMarkAndUpdateProgress(
-            parseInt(value[opts.rank.value]),
+            normalizeAttr(value[opts.rank.value]),
             progress,
             opts.attributes
           );

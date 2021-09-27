@@ -1,0 +1,16 @@
+include ./oracleRollTemplate
+
+rolltemplate(class=`sheet-rolltemplate-starforged_oracles`)
+  section.sheet-roll-container
+    h1.sheet-subheader {{header}}
+    | {{#custom-oracle}}
+    .sheet-result-row
+      .sheet-oracle-table-text {{custom-oracle}}
+    | {{/custom-oracle}}
+
+    each category in oracles
+      each oracle in category.Oracles
+        +oracleRollTemplate(oracle)
+      if category.Subcategories
+        each subCategory in category.Subcategories
+          +oracleRollTemplate(subCategory)

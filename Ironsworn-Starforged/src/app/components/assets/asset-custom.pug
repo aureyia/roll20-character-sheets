@@ -1,6 +1,6 @@
 //- TODO: harmonize with new class names per asset-builder.pug
 
-mixin builderTitles(parent, child)
+mixin assetBuilderTitles(parent, child)
   input.border-bottom.no-border.view-title-width(
     type='text'
     name=`attr_builder-titles-${parent}-${child}`
@@ -15,7 +15,7 @@ mixin assetMeterBox(parent, value)
       .asset-meter-box-display='+ ' + value
     input(hidden type='radio' name=`attr_custom-asset-meter-${parent}` value=`${value}`)
 
-mixin abilityView(value)
+mixin assetAbilityView(value)
   input(
     class=`builder-ability-${value}-text switch-display`
     type='checkbox'
@@ -35,115 +35,140 @@ mixin abilityView(value)
       span.no-border.ability-text(name=`attr_builder-ability-${value}-text-area`)
       input.border-bottom.no-border(type='text' name=`attr_builder-ability-${value}-custom-text-input` value='')
 
+-
+  customAssetAbilitiesMax = 3;
+  customAssetMeterMax = 8;
+  customAssetTotalTitlesMax = 4;
+  customAssetDropdownsMax = 8;
+
+mixin customAssetBuilder
+  .asset-builder
+    .builder-name
+      input.border-bottom.no-border(
+        type='text'
+        name='attr_name'
+        value=''
+        data-i18n-placeholder='asset-custom-builder-name-placeholder'
+        placeholder=translation["asset-custom-builder-name-placeholder"]
+      )
+    div(class='builder-titles')
+      div
+        +i18n("data-i18n='asset-custom-builder-titles'")
+      select.sub-dropdown.builder-dropdown(name='attr_builder-titles')
+        option(value='0' selected='')
+          +i18n("asset-custom-builder-inputs-0")
+        option(value='1')
+          +i18n("asset-custom-builder-inputs-1")
+        option(value='2')
+          +i18n("asset-custom-builder-inputs-2")
+        option(value='3')
+          +i18n("asset-custom-builder-inputs-3")
+      - counter = 0
+      while counter < customAssetAbilitiesMax
+        - abilityText = `Ability ${counter+1}`
+        div(class=`builder-ability-${counter+1}`)
+        div.i18n-text(data-i18n=`asset-custom-builder-ability-${counter+1}`)=abilityText
+        select.sub-dropdown(name=`attr_builder-ability-${counter+1}`)
+          option.i18n-text(
+            data-i18n='asset-custom-builder-ability-dropdown-default'
+            value=''
+            selected=''
+            disabled=''
+          )!="Select"
+          option.i18n-text(
+            data-i18n='asset-custom-builder-ability-dropdown-text'
+            value='text'
+          )!="Text Box"
+          option.i18n-text(
+            data-i18n='asset-custom-builder-ability-dropdown-input'
+            value='text-input'
+          )!="Text Box with Input"
+        textarea.build-text(name=`attr_builder-ability-${counter+1}-text-area`)
+        - counter++
+      div.builder-tracks
+        div
+          +i18n('asset-custom-builder-tracks')
+        select.sub-dropdown(name='attr_meter-dropdown')
+          - counter = 0;
+          while counter < customAssetMeterMax
+            if counter == 0
+              option.i18n-text(
+                data-i18n=`asset-custom-builder-meter-dropdown-${counter}`
+                value=`${counter}`
+                selected=''
+              )='None'
+            else
+              option.i18n-text(
+                data-i18n=`asset-custom-builder-meter-dropdown-${counter}`
+                value=`${counter}`
+              )='0 to ' + counter
+            - counter++
+
+mixin customAssetView
+  .asset-view
+    .flex-wrapper
+      .flex-container
+        span.asset-view-name(name='attr_name')
+      .flex-container
+        +customAssetTitles
+      each count in [1,2,3]
+        .flex-container.ability-view
+          +assetAbilityView(count)
+    .flex-wrapper
+      .flex-container
+        +customAssetDropdowns
+
+mixin customAssetTitles
+  - counter = 0
+  while counter < customAssetTotalTitlesMax
+    if counter == 0
+      input(
+        class=`builder-titles-${counter} switch-display`
+        type='checkbox'
+        name=`attr_builder-titles-${counter}`
+      )
+    else
+      input(
+        class=`builder-titles-${totalTitles} switch-display`
+        type='checkbox'
+        name=`attr_builder-titles-${totalTitles}`
+      )
+      div(class=`builder-titles-${totalTitles} switchable-display`)
+        - currentTitle = 1
+        while currentTitle <= totalTitles
+          +assetBuilderTitles(totalTitles, currentTitle++)
+    - counter ++
+
+
+mixin customAssetDropdowns
+  - counter = 0;
+  while counter < customAssetDropdownsMax
+    if counter == 0
+      input(
+        class=`meter-dropdown-${counter} switch-display`
+        type='checkbox'
+        name=`attr_meter-dropdown-${counter}`
+      )
+    else
+      input(
+        class=`meter-dropdown-${counter} switch-display`
+        type='checkbox'
+        name=`attr_meter-dropdown-${counter}`
+      )
+      div(class=`meter-dropdown-${counter} switchable-display`)
+        .asset-meter.custom-track
+          - currentBox = 0
+          while currentBox <= counter
+            +assetMeterBox(counter, currentBox++)
+    - counter ++
+
+
 mixin customAssets
   input.custom.switch-display(type='checkbox' name='attr_custom')
-  .custom.switchable-display
+  .custom
     input.asset-builder(type='radio' name='attr_custom-asset-page' value='1' checked='')
     +i18n('asset-custom-builder-title').custom-asset-page
     input.asset-view(type='radio' name='attr_custom-asset-page' value='2')
     +i18n('asset-custom-view-title').custom-asset-page
-    .asset-builder.switchable-display
-      .builder-name
-        input.border-bottom.no-border(
-          type='text'
-          name='attr_name'
-          value=''
-          data-i18n-placeholder='asset-custom-builder-name-placeholder'
-          placeholder=translation["asset-custom-builder-name-placeholder"]
-        )
-      div(class='builder-titles')
-        div
-          +i18n("data-i18n='asset-custom-builder-titles'")
-        select.sub-dropdown.builder-dropdown(name='attr_builder-titles')
-          option(value='0' selected='')
-            +i18n("asset-custom-builder-inputs-0")
-          option(value='1')
-            +i18n("asset-custom-builder-inputs-1")
-          option(value='2')
-            +i18n("asset-custom-builder-inputs-2")
-          option(value='3')
-            +i18n("asset-custom-builder-inputs-3")
-        each ability in [1, 2, 3]
-          - var abilityText = `Ability ${ability}`
-          div(class=`builder-ability-${ability}`)
-          div.i18n-text(data-i18n=`asset-custom-builder-ability-${ability}`)=abilityText
-          select.sub-dropdown(name=`attr_builder-ability-${ability}`)
-            option.i18n-text(
-              data-i18n='asset-custom-builder-ability-dropdown-default'
-              value=''
-              selected=''
-              disabled=''
-            ) Select
-            option.i18n-text(
-              data-i18n='asset-custom-builder-ability-dropdown-text'
-              value='text'
-            ) Text Box
-            option.i18n-text(
-              data-i18n='asset-custom-builder-ability-dropdown-input'
-              value='text-input'
-            ) Text Box with Input
-          textarea.build-text(name=`attr_builder-ability-${ability}-text-area`)
-        div.builder-tracks
-          div
-            +i18n('asset-custom-builder-tracks')
-          select.sub-dropdown(name='attr_meter-dropdown')
-            each track in [ 0, 1, 2, 3, 4, 5, 6 ]
-              if track == 0
-                option.i18n-text(
-                  data-i18n=`asset-custom-builder-meter-dropdown-${track}`
-                  value=`${track}`
-                  selected=''
-                )='None'
-              else
-                option.i18n-text(
-                  data-i18n=`asset-custom-builder-meter-dropdown-${track}`
-                  value=`${track}`
-                )='0 to ' + track
-    .asset-view.switchable-display
-      .flex-wrapper
-        .flex-container
-          span.asset-view-name(name='attr_name')
-        .flex-container
-          each totalTitles in [ 0, 1, 2, 3 ]
-            if totalTitles == 0
-              input(
-                class=`builder-titles-${totalTitles} switch-display`
-                type='checkbox'
-                name=`attr_builder-titles-${totalTitles}`
-              )
-            else
-              input(
-                class=`builder-titles-${totalTitles} switch-display`
-                type='checkbox'
-                name=`attr_builder-titles-${totalTitles}`
-              )
-              div(class=`builder-titles-${totalTitles} switchable-display`)
-                - var currentTitle = 1
-                while currentTitle <= totalTitles
-                  +builderTitles(totalTitles, currentTitle++)
-        .flex-container.ability-top
-          +abilityView(1)
-        .flex-container
-          +abilityView(2)
-        .flex-container
-          +abilityView(3)
-      .flex-wrapper
-        .flex-container
-          each dropdownNumber in [ 0, 1, 2, 3, 4, 5, 6, 7]
-            if dropdownNumber == 0
-              input(
-                class=`meter-dropdown-${dropdownNumber} switch-display`
-                type='checkbox'
-                name=`attr_meter-dropdown-${dropdownNumber}`
-              )
-            else
-              input(
-                class=`meter-dropdown-${dropdownNumber} switch-display`
-                type='checkbox'
-                name=`attr_meter-dropdown-${dropdownNumber}`
-              )
-              div(class=`meter-dropdown-${dropdownNumber} switchable-display`)
-                .asset-meter.custom-track
-                  - var currentBox = 0
-                  while currentBox <= dropdownNumber
-                    +assetMeterBox(dropdownNumber, currentBox++)
+    +customAssetBuilder
+    +customAssetView

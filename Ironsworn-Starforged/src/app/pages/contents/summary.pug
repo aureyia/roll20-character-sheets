@@ -1,12 +1,12 @@
 include ../../components/impacts/impacts
 include ../../components/vows/vow-container
-include ../../components/stats/character
+include ../../components/stats/stats
 include ../page
 
 mixin summaryPage(sheetType)
   +page("summary", sheetType)
     +stats()
-    - const impactArray = impacts.filter(obj => { return obj.title !== 'ship' })
+    - impactArray = impacts.filter(obj => { return obj.title !== 'ship' })
     section.impacts
       h3.divide
         +i18n('impacts')

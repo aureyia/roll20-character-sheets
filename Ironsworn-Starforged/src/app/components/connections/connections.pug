@@ -20,7 +20,7 @@ mixin connections()
           .full-width
             .challenge-rank-radio
               each challengeRank, index in challengeranks
-                - const i18n_key = `difficulty-${challengeRank.text}`
+                - i18n_key = `difficulty-${challengeRank.text}`
                 label.challenge-rank-option
                   input(hidden type="radio" data-i18n-aria-label=i18n_key aria-label=translation[i18n_key] name="attr_rank" value=index checked=challengeRank.checked||false)
                   +i18n(i18n_key)

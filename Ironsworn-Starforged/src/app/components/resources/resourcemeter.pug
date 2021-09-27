@@ -6,10 +6,10 @@ mixin resourceMeterBar(attribute, radioIdPrefix, i18n_key=attribute, max=5, min=
     input(type="hidden" name=`attr_${attribute}_max` value=max)
     input(type="hidden" name=`attr_${attribute}_min` value=min)
     input(type="hidden" name=`attr_${attribute}_minmax` value=false)
-    - var currentMeter = min
+    - currentMeter = min
     while currentMeter <= max
-      - const displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
-      - const radioId = `${radioIdPrefix}_${currentMeter}`
+      - displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
+      - radioId = `${radioIdPrefix}_${currentMeter}`
       +attrToggleRadio(attribute, currentMeter, null, currentMeter == startsAt, radioId)
       label.resource-meter-box(for=radioId)!=displayText
       - currentMeter++
@@ -18,23 +18,17 @@ mixin resourceMeterBar(attribute, radioIdPrefix, i18n_key=attribute, max=5, min=
 
 mixin resourceMeterSpinner(attribute, value, max=value, min=0)
   section.resource-spinner
-    input(type="hidden" name=`attr_${attribute}_max` value=max)
-    input(type="hidden" name=`attr_${attribute}_min` value=min)
-    input(type="hidden" name=`attr_${attribute}_minmax` value=false)
+    //- input(type="hidden" name=`attr_${attribute}_max` value=max)
+    //- input(type="hidden" name=`attr_${attribute}_min` value=min)
+    //- input(type="hidden" name=`attr_${attribute}_minmax` value=false)
     input(type='number' id=`${attribute}-input` name=`attr_${attribute}` value=value min=min max=max step=1)
-    +resourceIncrementBtn(attribute, false, 1, false)
-    +resourceIncrementBtn(attribute, false, 1, true)
-    +resourceIncrementBtn(attribute, true, 1, false)
-    +resourceIncrementBtn(attribute, true, 1, true)
+    //- +resourceIncrementBtn(attribute, 1, "+", ["spinner-plus"], false)
+    //- +resourceIncrementBtn(attribute, 1, "+",["spinner-plus"],  true)
+    //- +resourceIncrementBtn(attribute, -1, "-",["spinner-minus"],  false)
+    //- +resourceIncrementBtn(attribute, -1, "-",["spinner-minus"],  true)
 
-mixin resourceIncrementBtn(attribute, add=true, amount = 1, disabled=false, hidden=disabled)
-  - let btnName, btnText, classes;
-  if add == true
-    - btnName = `act_add_${attribute}`
-    - btnText = "+"
-    - classes = ["spinner-plus"]
-  else
-    - btnName = `act_subtract_${attribute}`
-    - btnText = "-"
-    - classes = ["spinner-minus"]
-  button(type="action" name=btnName value=amount class=classes disabled=disabled)!=btnText
+mixin resourceIncrementBtn(attribute, value = 1, btnText = "+", classes=[], disabled=false, hidden=disabled)
+  //- set to a negative number if you want it to decrement
+  //- FIXME: i18n, aria label/role
+  //- button(type="action" name=`act_edit-${attribute}` value=value class=classes disabled=disabled)!=btnText
+  button(type="action" name=`act_activate` value=value class=classes disabled=disabled)!=btnText

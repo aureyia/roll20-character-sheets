@@ -4,4 +4,4 @@ sheets.forEach((sheet) => {
 
 listenSetAttr("mode");
 
-listenSetAttr("stat_mode");
+listenSetAttr("stat-mode");

@@ -1,34 +1,39 @@
 .legacies
   display grid
   grid-gap 0.5em
+
   .progress-boxes
-    text-transform: uppercase;
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
+    display grid
+    justify-content space-between
+    text-transform uppercase
+    grid-auto-flow column
+
     .progress-input
-      width: 60px
-      height: 60px
+      width 60px
+      height 60px
+
   .experience-boxes
-    display: flex;
-    justify-content: space-between;
+    display flex
+    justify-content space-between
+
   .title
-    grid-column 1
-    font-weight bold
     padding 0.3em 0em 0em 0em
+    font-weight bold
+    grid-column 1
+
   .ten-marker
-    justify-self right
+    margin 0
     padding 0
-    margin: 0
     height fit-content
+    justify-self right
+
   .legacy-roll
-    margin: 0
+    margin 0
+
   .legacy-row-1
     display grid
 
-.quests,
-.bonds,
-.discoveries
+.quests, .bonds, .discoveries
   display grid
   grid-gap 0.3em
 
@@ -36,30 +41,34 @@ label.experience-box
   &:nth-child(1)
     border-top-left-radius 0.3em
     border-bottom-left-radius 0.3em
+
     div
       border-top-left-radius 0.16em
       border-bottom-left-radius 0.16em
+
   &:nth-last-child(1)
     border-top-right-radius 0.3em
     border-bottom-right-radius 0.3em
+
     div
       border-top-right-radius 0.16em
       border-bottom-right-radius 0.16em
-  border 2px solid black
-  padding 0
+
   display inline-flex
-  height 1em
   margin 0.2em 0em
+  padding 0
+  height 1em
+  border 2px solid black
   cursor pointer
 
 input.experience-box
+  vertical-align top
   opacity 0
   cursor pointer
-  vertical-align top
 
 .experience-fill
-  height 100%
   width 100%
+  height 100%
   background $color_bg
 
 input[type="checkbox"].experience-box:checked ~ .experience-fill

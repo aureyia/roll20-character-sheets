@@ -1,0 +1,39 @@
+include ../mixins/negations
+include ../mixins/headers
+include ../mixins/body
+include ../mixins/actions
+
+//- this is a mixin so the variables are properly scoped
+mixin rollTemplateActionRoll
+  - let maxNegMomentum = 6
+  rolltemplate.sheet-rolltemplate-starforged_moves
+    section.sheet-roll-container
+      | {{#action}}
+      +actionHeader
+      | {{#rollLess() momentum 0}}
+      - let counter = 1;
+      while counter <= maxNegMomentum
+        +negationRoll(counter, 'action')
+        - counter++;
+      | {{/rollLess() momentum 0}}
+      | {{#^rollLess() momentum 0}}
+      +actionBody('action')
+      +standardActionWithMomentum('action')
+      | {{/^rollLess() momentum 0}}
+      | {{/action}}
+
+      | {{#custom}}
+      | {{#header}}
+      .sheet-result-body.sheet-result-row
+        h1 {{header}}
+      | {{/header}}
+      .sheet-result-body.sheet-result-row
+        div {{name}}
+      | {{#allprops() custom name header}}
+      .sheet-result-body.sheet-result-row
+        div {{key}}
+        div {{value}}
+      | {{/allprops() custom name header}}
+      | {{/custom}}
+
++rollTemplateActionRoll

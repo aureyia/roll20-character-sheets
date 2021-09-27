@@ -1,120 +1,136 @@
-/* r20 default character sheet styles. add and remove as needed*/
+/* r20 default character sheet styles. add and remove as needed */
 @import "./shared.styl"
 
 *
-  font-size $root_font_size
-  padding initial
   box-sizing border-box
+  padding initial
+  font-size $root_font_size
+
 .ironsworn-sheet
   width inherit
+
   header
     width inherit
+
 p, ul, ol, button, span, input, textarea
-  font-family inherit
   font-size inherit
+  font-family inherit
+
 .pictos
   font-family "Pictos" !important
+
 input
   height initial
   vertical-align initial
+
 hr
   clear initial
+
 input[type=number]
   width initial
-.sheet-row,
-.sheet-2colrow,
-.sheet-3colrow
+
+.sheet-row, .sheet-2colrow, .sheet-3colrow
   display initial
   clear initial
+
 .sheet-col
   display initial
   vertical-align initial
+
 .sheet-col img
   max-width initial
+
 .sheet-2colrow .sheet-col
-  width initial
   margin-right initial
+  width initial
+
 .sheet-3colrow .sheet-col
-  width initial
   margin-right initial
+  width initial
+
 .sheet-col:last-child
   margin-right initial
+
 button
   background none
-  text-shadow initial
   box-shadow none
-button[type=roll],
-button[type=compendium]
-  padding unset
+  text-shadow initial
+
+button[type=roll], button[type=compendium]
   margin unset
+  padding unset
   font-size initial
+
 button[type=roll]:before
-  font-family initial
   content initial
+  font-family initial
+
 button[type=compendium]:before
-  font-family initial
   content initial
-// .repcontrol_edit
-// .repcontainer .repitem
-  // position initial
-  // box-sizing initial
+  font-family initial
+
 .repcontainer .repitem .itemcontrol
   // display initial
   // position initial
   width initial
   height initial
-  // background-color initial
+  // background-color inherit
+
 .repitem.repitembroken
   border initial
-// .repcontainer.editmode .repitem .itemcontrol
-  // display initial
+
 h1, h2, h3, h4, h5, h6, label
-  color initial
+  color inherit
+
 .no-touch .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol
-  background-color initial
+  background-color inherit
+
 button[type=roll].ui-draggable-dragging
   z-index initial
+  margin initial
+  padding initial
   width initial
   height initial
-  padding initial
   font-size initial
-  margin initial
+
 button[type=roll].ui-draggable-dragging:before
-  font-family initial
   content initial
+  font-family initial
+
 button.disabled
   opacity initial
+
 .charmancer .sheet-choice
   display initial
+
 .charmancer.locked input
   opacity initial
   pointer-events initial
+
 .charmancer.locked span label
   pointer-events initial
+
 .btn, .btn.btn-default
-  margin 0
   display initial
+  margin 0
   padding initial
-  font-size initial
-  line-height initial
-  color initial
-  text-align initial
-  text-shadow initial
-  vertical-align initial
-  background-color initial
+  border initial
+  border-color inherit
+  border-bottom-color inherit
+  border-radius initial
+  filter initial
+  filter initial
+  background-color inherit
   background-image none
   background-repeat no-repeat
-  filter initial
-  border-color initial
-  filter initial
-  border initial
-  border-bottom-color initial
-  border-radius initial
   box-shadow none
-label input[type=checkbox]
-  // display unset
-  // &[hidden="hidden"]
-  //   display none
+  color inherit
+  vertical-align initial
+  text-align initial
+  text-shadow initial
+  font-size initial
+  line-height initial
+
 input, textarea, select, .uneditable-input
   width unset
   // display unset

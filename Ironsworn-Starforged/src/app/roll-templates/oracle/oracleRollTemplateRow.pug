@@ -1,0 +1,38 @@
+mixin oracleRollTemplateRow(id, table, row, index)
+  - initChance
+  if index === 0
+    - initChance = row.Chance - (row.Chance - 1)
+  else
+    - initChance = table[index - 1].Chance + 1
+  -
+    //- appends any Assets or Details info to the row
+    finalChance = row.Chance;
+    detailsKeys = ["Assets", "Details"];
+    detailsStrings = [];
+    detailsKeys.forEach(key => {
+      if (row[key]) {
+        if (key === "Assets") {
+          row[key] = row[key].map(item => item.toUpperCase());
+        }
+        detailsStrings.push(row[key])
+      };
+    });
+    detailString;
+    if (detailsStrings.length > 0) {
+      detailsStrings = detailsStrings.flat(2);
+      detailString = `(${detailsStrings.join(", ")})`;
+    }
+    result = `${row.Description}${detailString ? " " + detailString : ""}`
+  if initChance === finalChance
+    | {{#rollTotal() #{id} #{finalChance}}}
+    |
+    span=result
+    |
+    | {{/rollTotal() #{id} #{finalChance}}}
+  else
+    |
+    | {{#rollBetween() #{id} #{initChance} #{finalChance}}}
+    |
+    span=result
+    |
+    | {{/rollBetween() #{id} #{initChance} #{finalChance}}}

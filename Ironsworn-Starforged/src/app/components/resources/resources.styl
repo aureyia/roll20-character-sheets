@@ -2,55 +2,73 @@
 .resource-meter
   display flex
   flex-flow row-reverse
+  justify-content center
+  align-items stretch
   text-align center
   text-anchor middle
-  align-items stretch
-  justify-content center
 
 .resource-meter-box
   margin 0
   padding 0.25rem
 
 .resources
-  width inherit
   display flex
   flex-flow row
   justify-content stretch
+  width inherit
   height max-content
+
   borderCommon()
+
   .resource
     embeddedInput()
     borderCommon()
-    height max-content
+
     flex-grow 1
     margin 0
-    max-width $breakpoint_mobile_width
     min-width max-content
+    max-width $breakpoint_mobile_width
+    height max-content
+
     > button, label
       min-width max-content
+
     &.resource-numeric
       button, label
         flex-grow 3
+
       input[type=number]
-        min-width 2.5ch
+        display flex
         flex-grow 1
+        padding 0
+        min-width 1ch
         max-width 4ch
-      &.resource-rollable
-        width 3.5ch
+        font-weight bold
+        font-size 125%
+        padding-inline-start 5px
+        // ::-webkit-inner-spin-button
+        // the above works on chrome, which might make it worth adding
+
+    &.resource-rollable
+      width 3.5ch
+
     &.resource-string
       button, label
         flex-grow 0
         max-width max-content
+
       input[type=text]
         flex-grow 1
         width 15ch
+
       // &#character-callsign, #character-pronouns
       &#character-name
         flex-grow 2
+
         input[type=text]
           width 20ch
 
-$resources = (health supply spirit momentum xp)
+$resources = health supply spirit momentum xp
 
 .resource-spinner
   display grid
@@ -58,32 +76,27 @@ $resources = (health supply spirit momentum xp)
   grid-template-rows 1fr 1fr
   grid-template-columns 1fr min-content
   gap 1px
+
   input[type=number]
     grid-area input
-    appearance textfield
+    // appearance textfield
+
   button
-    color white
-    border 0
-    font-size 100%
     padding 0
-    line-height 1
     width 1.6ch
+    border 0
+    color white
+    font-size 100%
+    line-height 1
+
     fadeIn($short_transition)
+
     &.spinner-plus
       grid-area plus
+
       interactive($color_cta, $color_bg)
+
     &.spinner-minus
       grid-area minus
+
       interactive($color_warning, $color_bg)
-    &:disabled
-      interactiveInactive($color_fg_alt, $color_bg_alt)
-      fadeOut($short_transition)
-      // TODO: revist this when r20 jquery is available, to disable it more cleanly (so there's not an extra element and it can transition more nicely)
-  for $resource in $resources
-    input[name=attr_{$resource}_minmax]
-      &[value="min"] ~ .spinner-minus,
-      &[value="max"] ~ .spinner-plus
-        &:enabled
-          fadeOut($short_transition)
-        &:disabled
-          fadeIn($short_transition)

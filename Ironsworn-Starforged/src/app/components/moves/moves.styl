@@ -3,16 +3,19 @@ div
   &.search-bar
     display flex
     justify-content center
+    margin 1em 0 0.5em
     width 100%
-    margin 1em 0em 0.5em 0em
+
   &.preview-bar
-    justify-content space-between
-    width 100%
     display flex
-    margin 0em 0em 0.5em 0em
+    justify-content space-between
+    margin 0 0 0.5em
+    width 100%
+
   &.search-preview-bar
     display flex
     width auto
+
   &.move-nav-content
     padding 0.2em
     width 100%
@@ -20,19 +23,26 @@ div
 input
   &.search-preview-bar
     width 17.6em
+
     borderCommon()
+
     border-radius 0
+
     &:focus
       outline 3px solid $color_highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
+
   &.search-bar
     width 50%
+
     borderCommon()
+
     &:focus
       outline 3px solid $color_highlight
       outline-offset 0
       box-shadow inset 0 0 0 2px
+
   &.table-btn
     &:checked
       & ~ div
@@ -41,13 +51,11 @@ input
           color $color_bg
           transition 0.5s ease
 
-
-
 .move
-  margin 0em
-  color $color_fg
   display flex
+  margin 0
   padding 0
+  color $color_fg
 
 .move-name
   width 100%
@@ -55,8 +63,8 @@ input
 .move-highlight
   &:checked
     & ~ .move-name
-      background $color_highlight
       outline-offset 0
+      background $color_highlight
       box-shadow inset 0 0 0 2px
 
 .move-column
@@ -67,22 +75,25 @@ input
 span
   &.move-result
     width 36em
+
   &.preview-move-roll
-    width 60%
     margin-left 1em
+    width 60%
 
 .move-box
   &:nth-child(n
     & + 2)
       margin-top 10px
+
 .preview
   width auto
 
 .move-show
   display inline-flex
-  margin 0em
+  margin 0
   padding 0.3em
   cursor pointer
+
   interactiveHover(#969696)
 
 .column-wrap
@@ -95,74 +106,73 @@ span
 article.gamerules
   .move-progress-label
     footerText()
-    color $color_fg_alt
+
     display block
-    font-style italic
     align-self end
     margin-left 1em
+    color $color_fg_alt
+    font-style italic
+
   .move-table
-    border none
     width 30.5em
+    border none
+
   .move-roll
     width 18%
 
 .clear-search
+  margin 0
+  padding 0.2em
   width fit-content
   height auto
-  margin 0
-  padding 0.2em 0.2em 0.2em 0.2em
   cursor pointer
+
   interactiveHover()
 
 .selected-move
   z-index 3
+
   &:checked
     & ~ .move-name
       background $color_fg !important
       color $color_bg !important
 
 // TODO: iterate thru $moves for toggle classes
-
 .move-nav-child
   display flex
+  margin 0.2em 0
+  padding 0
   width auto
   height 1.3em
-  padding 0
-  margin 0.2em 0em 0.2em 0em
   text-align center
 
 :-webkit-scrollbar
-  -webkit-appearance none
   width 7px
+  -webkit-appearance none
 
 :-webkit-scrollbar-thumb
   border-radius 4px
-  background-color rgba(0,0,0,0.5)
-  box-shadow 0 0 1px rgba(255,255,255,0.5)
+  background-color rgba(0, 0, 0, 0.5)
+  box-shadow 0 0 1px rgba(255, 255, 255, 0.5)
 
-.move-delve-column-stat-header,
-.move-delve-stat-column
+.move-delve-column-stat-header, .move-delve-stat-column
   width 16%
 
-.move-delve-column-stat-header-1,
-.move-delve-stat-column-1
+.move-delve-column-stat-header-1, .move-delve-stat-column-1
   width 17%
 
-.move-delve-column-stat-header-2,
-.move-delve-stat-column-2
+.move-delve-column-stat-header-2, .move-delve-stat-column-2
   width 18%
 
-.move-delve-column-stat-header-3,
-.move-delve-stat-column-3
+.move-delve-column-stat-header-3, .move-delve-stat-column-3
   width 15%
 
-.move-delve-column-header,
-.move-delve-column
+.move-delve-column-header, .move-delve-column
   width 50%
 
 .move-delve-row-header
-  padding 0px 5px 0px 5px
   display flex
+  padding 0 5px
   height auto
   border-bottom 2px solid $color_fg
 
@@ -170,9 +180,7 @@ article.gamerules
   padding-top 0.2em !important
   // stdFont($type_body)
 
-input.optional-move-failures:checked ~ div.optional-move-failures,
-input.optional-move-sites:checked ~ div.optional-move-sites,
-input.optional-move-threat:checked ~ div.optional-move-threat,
-input.optional-move-rarity:checked ~ div.optional-move-rarity
+/*
+input.optional-move-failures:checked ~ div.optional-move-failures, input.optional-move-sites:checked ~ div.optional-move-sites, input.optional-move-threat:checked ~ div.optional-move-threat, input.optional-move-rarity:checked ~ div.optional-move-rarity
   display block
-
+*/

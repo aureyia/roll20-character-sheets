@@ -3,7 +3,7 @@ const pages = ["oracle", "move"];
 
 pageWidgets.forEach((widget) => {
   pages.forEach((page) => {
-    listenSetAttr(`${page}_${widget}`);
+    listenSetAttr(`${page}-${widget}`);
   });
 });
 
@@ -15,17 +15,17 @@ generalWidgets.forEach((widget) => {
 
 // pageWidgets.forEach((widget) => {
 //   pages.forEach((page) => {
-//     on(`clicked:set_${page}_${widget}`, function (eventInfo) {
+//     on(`clicked:set-${page}-${widget}`, function (eventInfo) {
 //       // console.log("event received:", eventInfo);
 //       setAttrs({
-//         [`${page}_${widget}`]: btnValue(eventInfo),
+//         [`${page}-${widget}`]: btnValue(eventInfo),
 //       });
 //     });
 //   });
 // });
 
 // generalWidgets.forEach((widget) => {
-//   on(`clicked:set_${widget}`, function (eventInfo) {
+//   on(`clicked:set-${widget}`, function (eventInfo) {
 //     // console.log("event received:", eventInfo);
 //     setAttrs({
 //       [`${widget}`]: btnValue(eventInfo),
@@ -36,11 +36,11 @@ generalWidgets.forEach((widget) => {
 // FIXME this is for later so it's easy to find; it's a function to compare. alternately, we could move to a pure date string to facilitate easy comparison, and make the semver mostly cosmetic - YYMMDD ?
 
 // function compareSemVer(a, b) {
-//   var pa = a.split(".");
-//   var pb = b.split(".");
-//   for (var i = 0; i < 3; i++) {
-//     var na = Number(pa[i]);
-//     var nb = Number(pb[i]);
+//   let pa = a.split(".");
+//   let pb = b.split(".");
+//   for (let i = 0; i < 3; i++) {
+//     let na = Number(pa[i]);
+//     let nb = Number(pb[i]);
 //     if (na > nb) return 1;
 //     if (nb > na) return -1;
 //     if (!isNaN(na) && isNaN(nb)) return 1;

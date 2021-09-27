@@ -1,8 +1,9 @@
 include ./body
 
-mixin opportunity
+//- TODO: something to handle stuff that upgrades/downgrades roll results, such as Take Decisive Action
+mixin strongHitMatch
   .sheet-result-row.sheet-roll-outcome
-    .sheet-opportunity
+    .sheet-strong-hit-match
     .sheet-subfooter
       +i18n('roll-strong-hit-match')
 
@@ -18,6 +19,7 @@ mixin momentumStrongHit
     .sheet-strong-hit
     .sheet-subfooter
       +i18n('momentum-burn-strong-hit')
+      +actionBtn("burn-momentum", null, null, ["burn-momentum"], true)
 //- TODO: additional mixin for burning momentum for a strong hit with a match?
 mixin weakHit
   .sheet-result-row.sheet-roll-outcome
@@ -31,6 +33,7 @@ mixin momentumWeakHit
     .sheet-weak-hit
     .sheet-subfooter
       +i18n('momentum-burn-weak-hit')
+      +actionBtn("burn-momentum", null, null, ["burn-momentum"], true)
 
 mixin miss
   .sheet-result-row.sheet-roll-outcome
@@ -38,8 +41,8 @@ mixin miss
     .sheet-subfooter
       +i18n('roll-miss')
 
-mixin complication
+mixin missMatch
   .sheet-result-row.sheet-roll-outcome
-    .sheet-complication
+    .sheet-miss-match
     .sheet-subfooter
       +i18n('roll-miss-match')

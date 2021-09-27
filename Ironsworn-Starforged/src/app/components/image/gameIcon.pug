@@ -1,0 +1,19 @@
+//- NOTE: leaves an empty space if there's no relevant icon
+mixin gameIcon(gameObjectId, classes=["hex-icon"])
+  -
+    extensions = [".png", ".svg", ".jpg", ".jpeg"]
+    //- localPath = "./../../../img/icons/"
+    localPath = "./app/img/icons/"
+    remotePath = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/"
+  each ext in extensions
+    if (fs.existsSync(localPath+gameObjectId+ext))
+      //- - console.log("Found icon:", localPath+gameObjectId+ext)
+      img(
+        src=remotePath+gameObjectId+ext,
+        class=[
+          (ext == ".svg" ? "vector" : "raster"),
+          ...classes
+        ]
+      )
+    else
+      |

@@ -1,85 +1,69 @@
-$header-padding = 0.5em
-$button-height = 30px
+$header_padding = 0.5em
+$button_height = 30px
 
 article.gamerules
   stdFont($type_body)
   colorThemeDark()
-  margin 0
-  border 0
+
   display grid
   align-items center
+  margin 0
+  border 0
   gap 0 0.5em
   grid-template-areas "title roll close" "body body body" "footer footer footer"
   grid-template-columns 1fr max-content max-content
   grid-template-rows min-content min-content 1fr max-content
+
   h3, .close-preview.icon-only, button.roll-show.icon-only
     font-size $h2_size
+
   h3
     line-height 1
+
     colorThemeDark()
-    grid-area title
-    height max-content
+
+    display flex
+    margin $header_padding
     width max-content
     width auto
-    display flex
+    height max-content
+    grid-area title
     grid-column-start 1
     grid-row-start 1
-    margin $header-padding
+
   button.roll-show.icon-only
     background-color $color_cta
     color $color_bg
+
     hexagonClip($h2_size)
     interactiveHover($color_bg, $color_cta)
 
-  // button.button-text
-  //   line-height: 1;
-  //   colorThemeLight()
-  //   interactiveHover($color_cta)
-  //   border 2px solid $color_cta
-  //   color $color_cta
-  //   grid-area roll
-  //   width stretch
-  //  width -moz-available
-  //   height $button-height
-  //   padding ($button-height/8)
-  //   margin 0
-  //   display flex
-  //   justify-content center
-  //   text-transform uppercase
-  //   &[type="roll"] span
-  //     bulletBefore(($button-height / 3 * 2 ), "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/dice-2d10.svg")
+.gamerules-body
+  display flex
+  flex-flow column
+  margin 2px 0
+  padding 1em
+  width stretch
+  width -moz-available
+  background-color $color_bg
+  color $color_fg
+  // slight offset to compensate for apparent extension by border
+  grid-area body
+  gap 1em
 
-  //     font-size ($button-height/2)
-  //     &:before
-  //       width ($button-height / 3 * 2 )
-  //       margin-right ($button-height / 8 * 3 )
-  //       margin-left -($button-height / 3 * 2 )
-        // position: relative;
-        // bottom: 2px;
+  ul
+    margin 2px 0 5px 0.3em
 
-  .gamerules-body
-    margin 2px 0px
-    // slight offset to compensate for apparent extension by border
-    grid-area body
-    color $color_fg
-    background-color $color_bg
-    width stretch
-    width -moz-available
-    padding 1em
-    display flex
-    flex-flow column
-    gap 1em
-    ul
-      margin 2px 0px 5px 0.3em
-    // p, li, td
-    //   line-height 1.4
-    p
-      margin-bottom 0.3em
-    // .oracle-embedded
-    .roll-label.embedded-btn
-      border-width 4px 4px 0px
+  // p, li, td
+  // line-height 1.4
+  p
+    margin-bottom 0.3em
 
-  footer
-    grid-area footer
-    padding 0.5rem
-    text-align right
+  // .oracle-embedded
+  .roll-label.embedded-btn
+    border-width 4px 4px 0
+
+footer
+  padding 0.5rem
+  text-align right
+  grid-area footer

@@ -2,307 +2,322 @@
   display flex
   flex-flow column
   gap 1em
+
   .repcontainer[data-groupname="repeating_assets"]
     display flex
     flex-flow row wrap
-    gap 1em
     justify-content space-around
-    align-content start
+    align-content flex-start
+    gap 1em
+
     .repitem
       width max-content
       height max-content
 
-input[type="radio"].asset-builder:checked + .asset-builder,
-input[type="radio"].asset-view:checked + .asset-view
+input[type="radio"].asset-builder:checked + .asset-builder, input[type="radio"].asset-view:checked + .asset-view
   switchDisplayOn()
 
-input[type="checkbox"].builder-titles-1:checked ~ div.builder-titles-1,
-input[type="checkbox"].builder-titles-2:checked ~ div.builder-titles-2,
-input[type="checkbox"].builder-titles-3:checked ~ div.builder-titles-3,
-input[type="checkbox"].builder-ability-1-text:checked ~ div.builder-ability-1-text,
-input[type="checkbox"].builder-ability-1-text-input:checked ~ div.builder-ability-1-text-input,
-input[type="checkbox"].builder-ability-2-text:checked ~ div.builder-ability-2-text,
-input[type="checkbox"].builder-ability-2-text-input:checked ~ div.builder-ability-2-text-input,
-input[type="checkbox"].builder-ability-3-text:checked ~ div.builder-ability-3-text,
-input[type="checkbox"].builder-ability-3-text-input:checked ~ div.builder-ability-3-text-input,
-input[type="checkbox"].meter-dropdown-1:checked ~ div.meter-dropdown-1,
-input[type="checkbox"].meter-dropdown-2:checked ~ div.meter-dropdown-2,
-input[type="checkbox"].meter-dropdown-3:checked ~ div.meter-dropdown-3,
-input[type="checkbox"].meter-dropdown-4:checked ~ div.meter-dropdown-4,
-input[type="checkbox"].meter-dropdown-5:checked ~ div.meter-dropdown-5,
-input[type="checkbox"].meter-dropdown-6:checked ~ div.meter-dropdown-6
-  switchDisplayOn(flex)
+$asset_builder_toggle_classes = builder-titles-1 builder-titles-2 builder-titles-3 builder-ability-1-text builder-ability-1-text-input builder-ability-2-text builder-ability-2-text-input builder-ability-3-text builder-ability-3-text-input meter-dropdown-1 meter-dropdown-2 meter-dropdown-3 meter-dropdown-4 meter-dropdown-5 meter-dropdown-6
 
-div.builder-titles-1,
-div.builder-titles-2,
-div.builder-titles-3
+for $toggle_class in $asset_builder_toggle_classes
+  input[type="checkbox"].{$toggle_class}:checked ~ div.{$toggle_class}
+    switchDisplayOn(flex)
+
+div.builder-titles-1, div.builder-titles-2, div.builder-titles-3
   flex-flow column
   margin-bottom 0.3em
 
 .view-title-width
+  margin 0 1em
   width 22em
-  margin 0em 1em
 
 .custom
   > input[type=radio]
-    margin-left: 4px
-  div[class|=builder-ability]
-    align-items: flex-start
+    margin-left 4px
 
-div.asset-view,
-div.asset-builder
+  div[class|=builder-ability]
+    align-items flex-start
+
+div.asset-view, div.asset-builder
   margin-top 0.3em
 
 input[type=checkbox].custom-asset-ability
+  margin 0 5px
   opacity 1
-  margin 0px 5px 0 5px
 
 .custom-meter
-  width 20.5em
   margin 0 !important
+  width 20.5em
 
-.ability-checkbox,
-.build-text
-  stdFont('Encode Sans Condensed')
-  resize none
-  height 100px
+.ability-checkbox, .build-text
+  stdFont("Encode Sans Condensed")
+
+  margin 0 0.5em 0 0.4em
   width 22em
-  margin 0em 0.5em 0em 0.4em
+  height 100px
+  resize none
 
 div
   &.assets
     display block !important
     text-align left
+
     .repcontainer
       display flex
       flex-flow row wrap
-      padding 0.5em
       justify-content space-evenly
+      padding 0.5em
+
+/*
       .repitem
         float left !important
-
-// TODO: reconfigure as em for accessibility
+*/
 $asset_width = 20rem // original: 320px
 // 20em = 232px
-$inch = $asset_width/2.5 // pixels per inch
-$point = $inch/72 // pixels per point
-$pica = $inch/6 // pixels per pica
+$inch = ($asset_width / 2.5) // pixels per inch
+$point = ($inch / 72) // pixels per point
+$pica = ($inch / 6) // pixels per pica
 
 .asset-container
-  font-size 1em
   display inline-block
   width $asset_width
+  font-size 1em
+
   input
     width inherit
+
     &.border-bottom
-      border-bottom-color $color_fg
       padding 0
+      border-bottom-color $color_fg
 
 article.asset-card
   // font-size 9*$point
   display grid
-  padding 9*$point 9*$point // 9 points top
   // (0.125*$inch)-(1*$point) // offset to account for border width
   box-sizing border-box
+  padding 9 * $point // 9 points top
   width $asset_width // 320px
-  height (3.5*$inch) // 448px
-  border (1*$point) solid #B7C3CE
-  background-origin border-box
-  background-repeat no-repeat
+  height 3.5 * $inch // 448px
+  border 1 * $point solid #B7C3CE
   background-position top right
-  background-size (0.950*$inch) auto
+  background-origin border-box
+  background-size 0.95 * $inch auto
+  background-repeat no-repeat
   grid-template-areas "assetcategory icon" "name icon" "input icon" "description icon" "body body" "footer footer"
-  grid-template-columns 1fr (0.5*$inch) // 1/5 of the width
+  grid-template-columns 1fr 0.5 * $inch // 1/5 of the width
   grid-template-rows max-content max-content max-content max-content 1fr max-content
+
   // gap 1*$point
   .asset-category, .asset-name
     stdFont("Exo")
-    text-transform uppercase
+
     text-align left
+    text-transform uppercase
     // margin-bottom 2*$point
+
   .asset-name
-    grid-area name
+    height 9.25 * $point // we want height 16px
     font-weight 800
-    height 9.25*$point // we want height 16px
-    line-height 9.25*$point
-    font-size 1.3125*9.25*$point
+    font-size 1.3125 * 9.25 * $point
+    line-height 9.25 * $point
+    grid-area name
+
   .asset-category
-    grid-area assetcategory
+    height 5.75 * $point
     font-weight 600
-    height 5.75*$point
-    line-height 5.75*$point
-    font-size 1.3125*5.75*$point
+    font-size 1.3125 * 5.75 * $point
+    line-height 5.75 * $point
+    grid-area assetcategory
+
   img.asset-icon
-    box-sizing border-box
-    grid-area icon
-    width (36*$point)
-    height ((36*$point) / (math(3, sqrt)/2))
     align-self start
-    justify-self end
-    padding 0
+    box-sizing border-box
     margin 0
-    margin-top 0px
-    margin-top 0px // -1.25px // TODO: set as point value
+    margin-top 0
+    margin-top 0 // -1.25px // TODO: set as point value
+    padding 0
+    width 36 * $point
+    height: ((36 * $point) / (math(3, sqrt) / 2))
+    grid-area icon
+    justify-self end
+
   .asset-inputBox
-    cursor pointer
     display flex
-    grid-area input
-    // height 5.35*$point
-    // line-height 5.35*$point
-    font-size 1.3125*5.35*$point
-    border-bottom 1*$point solid black
+    margin 0
+    padding 0
     width stretch
     width -moz-available
-    padding 0
-    margin 0
+    border-bottom 1 * $point solid black
+    // height 5.35*$point
+    // line-height 5.35*$point
+    font-size 1.3125 * 5.35 * $point
+    cursor pointer
+    grid-area input
+
     span
       align-self end
-      color #B7C3CE
-      height min-content
       width max-content
+      height min-content
+      color #B7C3CE
+
       stdFont("Exo")
+
       text-transform uppercase
-      line-height 1
       // margin-bottom 2*$point
       font-weight 600
+      line-height 1
+
     input[type=text]
       stdFont("Encode Sans Condensed")
+
+      margin-bottom 1 * $point // TODO: replace cuz 3% keys to screen size iirc D:
       width stretch
       width -moz-available
       border none
-      margin-bottom 1*$point // TODO: replace cuz 3% keys to screen size iirc D:
+      background transparent
       font-weight 500
-      background: transparent;
+
   section.asset-abilities, section.asset-description, section.asset-abilities *, section.asset-description *
-    line-height (10.295*$point)
-    stdFont('Encode Sans Condensed')
+    line-height 10.295 * $point
+
+    stdFont("Encode Sans Condensed")
+
     letter-spacing 0.01ch
     // underline thickness: 0.040 pica
+
   section.asset-abilities
-    grid-area body
     display flex
     flex-flow column
-    gap 0.815*$point
+    grid-area body
+    gap 0.815 * $point
+
     // gap 2*$point
     section.asset-ability
       display flex
       // gap 3*$point
-      gap 4.125*$point
+      gap 4.125 * $point
+
       // 12 points from left edge of bullet to left edge of ability text
       ul, ul li
         margin 0
         padding 0
+
       ul li
         // margin 2*$point 0
+
       input[type="checkbox"]
-        flex-shrink 0
         flex-grow 0
+        flex-shrink 0
         align-self start
-        hexCheckbox(7.875*$point)
+
+        hexCheckbox(7.875 * $point)
+
         // no top margin - highest point lines up with bottom of icon
-        margin-left 1*$point // sits 10pts from edge
-      // label.asset-ability-inputBox
+        margin-left 1 * $point // sits 10pts from edge
+
   section.resource-meter
-    // height of numbers: 6.5pt
-    // height of small labels: 5.35 (same as input label)
-    grid-area footer
     display flex
     flex-direction row-reverse
     justify-content flex-end
     color #b8c2cd
-    transition 0.5s ease
-    font-family "Exo", sans-serif
     font-weight 700
+    font-family "Exo", sans-serif
+    transition 0.5s ease
+    // height of numbers: 6.5pt
+    // height of small labels: 5.35 (same as input label)
+    grid-area footer
+
     label.resource-meter-box
-      cursor pointer
-      transition inherit
-      width (0.250*$inch)
-      height (0.250*$inch / (math(3, sqrt)/2))
       display flex
       flex-direction column
       justify-content center
       align-items center
-      border none
-      padding 0
       margin 0
-      margin-right -1.3*$point
+      margin-right -1.3 * $point
+      padding 0
+      width 0.25 * $inch
+      height: (0.25 * $inch / (math(3, sqrt) / 2))
+      border none
+      cursor pointer
+      transition inherit
+
       input[type="radio"]
         display none
+
       // minimum and maximum values get special colors
       &:first-child
         &:hover
           color $sf_ui_red
+
         input[type="radio"]:checked + .resource-meter-box-display
-          color $color_fg
           background-color $sf_ui_red
+          color $color_fg
+
       &:last-child
         &:hover
           color $sf_ui_blue
+
         input[type="radio"]:checked + .resource-meter-box-display
-          color $color_fg
           background-color $sf_ui_blue
+          color $color_fg
+
       .resource-meter-box-display
-        mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-checked.svg")
+        background-color $color_bg
+        background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box-unchecked.svg")
+        background-position center
+        background-size contain
+        background-repeat no-repeat
+        color $color_fg_alt
+        font-size: (0.125 * $inch / (math(3, sqrt) / 2))
+        mask-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box-checked.svg")
         mask-position center
         mask-repeat no-repeat
         mask-size contain
-        background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-meter-box-unchecked.svg")
-        background-repeat no-repeat
-        background-size contain
-        background-position center
-        font-size (0.125*$inch / (math(3, sqrt)/2))
-        background-color $color_bg
-        color $color_fg_alt
+
         &:hover
           color $color_fg
+
       input[type="radio"]:checked + .resource-meter-box-display
         background-color $color_fg
         color $color_bg
-      // display flex
-      // height 36px
-      // margin 0
-      // padding 0
-      // width 31px
-      // margin-right -2.5px
-      // cursor pointer
-
 
 .resource-meter-wordy
   text-transform uppercase
+
   .resource-meter-box
     flex-direction row
 
 .asset-type-selection
+  border 0
   background $color_fg
   color $color_bg
-  border 0
 
 .asset-type-dropdown
-  color $color_bg
-  background $color_fg
-  width auto
-  font-weight bold
-  text-transform uppercase
-  appearance menulist
   margin 6px 4px
+  width auto
+  background $color_fg
+  color $color_bg
+  text-transform uppercase
+  font-weight bold
+  appearance menulist
 
 .sub-dropdown
-  appearance menulist
-  width auto
   margin 7px 4px
-  font-weight bold
+  width auto
   text-transform uppercase
+  font-weight bold
+  appearance menulist
 
-
-.ability-top
-  margin-top 1em
+.custom
+  .ability-view:first-child
+    margin-top 1em
 
 .builder-name
   margin-bottom 0.5em
 
 span.custom-asset-page
-  margin-left 0.3em
   margin-right 0.5em
+  margin-left 0.3em
 
 input[type=checkbox].custom:checked + div.custom
   switchDisplayOn(grid)
@@ -321,13 +336,15 @@ for key in $assets
 
 .asset-options-header
   padding 0.2em 0.4em
-  background $color_fg
-  color $color_bg
   width 100%
   border 0
-  border-radius 0.4em 0.4em 0em 0em
+  border-radius 0.4em 0.4em 0 0
+  background $color_fg
+  color $color_bg
   text-transform uppercase
-  stdFont('Exo')
+
+  stdFont("Exo")
+
   &:placeholder
     color #b9b9b9
 
@@ -335,16 +352,17 @@ for key in $assets
   padding 0.5em
 
 $categories = {
-  'path': $sf_sky,
-  'companion':$sf_shallows,
-  'module': $sf_oracle,
-  'support-vehicle': $sf_ocean,
-  'deed': $sf_forest,
-  'command-vehicle': $sf_iron
+  path: $sf_sky,
+  companion: $sf_shallows,
+  module: $sf_oracle,
+  support-vehicle: $sf_ocean,
+  deed: $sf_forest,
+  command-vehicle: $sf_iron
 }
 
 for key, category in $categories
   .asset-card.category-{key}
     .asset-category
       color category
-    background-image: url('https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/hex-asset-bg-' + key + '.svg');
+
+    background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-" + key + ".svg")

@@ -3,12 +3,13 @@ include ./asset-builder
 
 
 mixin assets()
+  - assetsArray = assets.Assets.filter(obj => { return obj.Category === 'Path' || obj.Category === 'Companion' || obj.Category === 'Deed' })
   fieldset.repeating_assets.fixed-width
     .asset-container
-      - let assetsArray = assets.Assets.filter(obj => { return obj.Category === 'Path' || obj.Category === 'Companion' || obj.Category === 'Deed' })
       +genericAssetBuilder(assetsArray, 'assetList')
       +customAssets
   .switch-display
     each asset in assets.Assets
       input(hidden class=`switch-display` type='checkbox' name=`attr_${asset.id}`)
       //- TODO: i'm not really sure what's happening here, prob worth checking
+      //- would it be possible to hide checked assets from the datalist by giving them a class and setting it to Display: none with css?

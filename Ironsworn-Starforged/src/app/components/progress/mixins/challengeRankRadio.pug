@@ -2,6 +2,6 @@ mixin challengeRankRadio()
   div.challenge-rank-radio
     each challengeRank, index in challengeranks
       label.challenge-rank-option
-        - var i18n_key = `difficulty-${challengeRank.text}`
+        - i18n_key = `difficulty-${challengeRank.text}`
         input(hidden type="radio" aria-label=translation[i18n_key] data-i18n-aria-label=i18n_key class="switch-display" name="attr_rank" value=index checked=challengeRank.checked||false)
         +i18n(i18n_key)

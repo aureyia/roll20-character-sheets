@@ -9,19 +9,19 @@ mixin moveRulesArticle(move, options, classes="")
           span.move-progress-label='Progress Move'
     if options.hide_close_button != true
       +closeButton("move", "preview")
-    - const statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
+    - statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
     if move['Progress Move']
       +progressRollBtn(move, "roll-show icon-only")
     else if statCheck
-      +movesRollBtn(move, "roll-show icon-only")
+      +moveRollBtn(move, "roll-show icon-only")
     section.gamerules-body
       .gamerules-text!=move.Text
       if move.Oracle && options.hide_oracle != true
         .oracle-embedded
-          - let btnText = `Roll the ${move.Name} oracle`
-          - var moveOracle = oracles.find(group => { return group.Name === 'Move' }).Oracles.find(oracle => { return oracle.Name === move.Name })
+          - btnText = `Roll the ${move.Name} oracle`
+          - moveOracle = oracles.find(group => { return group.Name === 'Move' }).Oracles.find(oracle => { return oracle.Name === move.Name })
           if moveOracle.Table
-            +oracleSingleButton(moveOracle, btnText)
+            +oracleSingleBtn(moveOracle, btnText)
             +oracleTable(moveOracle)
           else if moveOracle.Tables
             +oracleMultiBtn(moveOracle)

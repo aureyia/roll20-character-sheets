@@ -1,26 +1,34 @@
-include ../../components/generic/buttons
+//- include ../../components/stats/stats
 include ./resourcemeter
+include ../../components/rolls/rolls
+
 -
-  var charResources = [ 'health', 'spirit', 'supply'];
-  var sharedResources = [ 'supply' ];
-  var maxStandardResource = 5;
-  var minStandardResource = 0;
-  var standardValues = _.range(maxStandardResource, minStandardResource);
-  var inverse = _.range(minStandardResource, maxStandardResource);
+  charResources = ['health', 'spirit', 'supply'];
+  sharedResources = ['supply'];
+  maxStandardResource = 5;
+  minStandardResource = 0;
+  standardValues = _.range(maxStandardResource, minStandardResource);
+  inverse = _.range(minStandardResource, maxStandardResource);
+  textResources = ["character-name", "character-callsign", "character-pronouns"];
+  numericResources = [
+    { id: "character-experience", attribute: "xp" },
+    { id: "character-experience-spent", attribute: "total_xp" }
+  ];
 
 mixin characterResourceDropdownOptions(trackValues)
   each val in trackValues
-    option(value=val)=`+${val}`
+    option(value=val)!=`+${val}`
 
 mixin resourceRollableDropdown(resourceId, sheetType)
   section(id=`${sheetType}-${resourceId}`).resource.resource-numeric
-    +actionRollBtn().roll-resource.roll-resource
-      +i18n(`resource-${resourceId}`).resource-title.i18n-text
-    select(name=`attr_${resourceId}` title=`Set ${resourceId}`)
-      if resource == 'wealth'
-        - var trackValues = inverse
+    -
+      trackValues;
+      if (resource == 'wealth')
+        {trackValues = inverse}
       else
-        - var trackValues = standardValues
+        {trackValues = standardValues};
+    +actionRollBtn(resourceId, `resource-${resourceId}`)
+    select(name=`attr_${resourceId}` title=`Set ${resourceId}`)
       +characterResourceDropdownOptions(trackValues)
 
 mixin characterResourceText(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId), value="")
@@ -31,7 +39,7 @@ mixin characterResourceText(resourceId, i18n_key=resourceId, attribute=_.snakeCa
 
 mixin characterResourceRollable(resourceId, attribute, i18n_key, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
   section(id=`${sheetType}-${resourceId}`).resource.resource-numeric.resource-rollable
-    +actionRollBtn(attribute, i18n_key, false)
+    +actionRollBtn(attribute, i18n_key)
     +resourceMeterSpinner(attribute, value, max, min)
 
 mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId))
@@ -39,20 +47,6 @@ mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snak
     label(for=`${resourceId}-input`)
       +i18n(i18n_key).resource-title
     +resourceMeterSpinner(attribute)
-
--
-  var textResources = ["character-name", "character-callsign", "character-pronouns"];
-  var numericResources = [
-    {
-      id: "character-experience",
-      attribute: "xp"
-    },
-    {
-      id: "character-experience-spent",
-      attribute: "total_xp"
-    }
-  ];
-
 
 mixin characterResources(resources)
   section.resources#character-vitals
@@ -70,9 +64,10 @@ mixin sharedResources(resources)
       +resourceRollableDropdown(resource, shared)
 
 mixin resources(sheetType)
+  - resources;
   if sheetType == 'shared'
-    - var resources = sharedResources
+    - resources = sharedResources;
     +sharedResources(resources)
   else
-    - var resources = charResources
+    - resources = charResources;
     +characterResources(resources)

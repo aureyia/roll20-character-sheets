@@ -1,9 +1,6 @@
 {
   "Name": "Assets",
-  "Source": {
-    "Name": "Starforged Backer Preview",
-    "Date": "081921"
-  },
+  "Source": { "Name": "Starforged Backer Preview", "Date": "081921" },
   "Assets": [
     {
       "Name": "Ace",
@@ -27,11 +24,7 @@
                 {
                   "Details": "When you must [Endure Stress](#Endure-Stress) while piloting a vehicle",
                   "Text": "while piloting a vehicle",
-                  "Stat Options": {
-                    "Stats": [
-                      "Vehicle Integrity"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Vehicle Integrity"] }
                 }
               ]
             }
@@ -63,11 +56,7 @@
                 {
                   "Details": "When you covertly [Gather Information](#Gather-Information)",
                   "Text": "covertly",
-                  "Stat Options": {
-                    "Stats": [
-                      "Shadow"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Shadow"] }
                 }
               ]
             }
@@ -89,11 +78,7 @@
             "Triggers": [
               {
                 "Text": "When you replenish your ammo by crafting projectiles",
-                "Stat Options": {
-                  "Stats": [
-                    "Wits"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Wits"] }
               }
             ],
             "Asset": "Archer",
@@ -111,11 +96,7 @@
                 {
                   "Details": "When you [Enter the Fray](#Enter-the-Fray) by unleashing a volley of bow shots",
                   "Text": "by unleashing a volley of bow shots",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -158,10 +139,7 @@
     {
       "Name": "Augmented",
       "Category": "Path",
-      "Input": [
-        "One",
-        "Two"
-      ],
+      "Input": ["One", "Two"],
       "Abilities": [
         {
           "Text": "<p>You are equipped with an advanced prosthetic, implant, or mechanical enhancement. When you make a move directly aided by the augment, envision how it gives you exceptional capabilities and add +1. On a strong hit with a match, your augment exceeds expectations; take +2 momentum. On a miss with a match, the augment is broken; you must <u>Repair</u> and spend 3 repair points to bring it back to working condition.</p>",
@@ -182,9 +160,7 @@
     {
       "Name": "Bannersworn",
       "Category": "Path",
-      "Input": [
-        "Ideology"
-      ],
+      "Input": ["Ideology"],
       "Abilities": [
         {
           "Text": "<p>You are bound to a clan, faction, or creed. When you <u>Swear an Iron Vow</u> in service to this ideology, reroll any dice. On a hit, mark 1 tick on your bonds legacy track.</p>",
@@ -205,9 +181,7 @@
     {
       "Name": "Banshee",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your banshee companion accompanies you on planetside missions, using its echolocation to help guide the way. When you ride your banshee as you <u>Undertake an Expedition</u> or <u>Set a Course</u>, you may roll +its health.</p>",
@@ -218,11 +192,7 @@
                 {
                   "Details": "When you ride your banshee as you [Undertake an Expedition](#Undertake-an-Expedition)",
                   "Text": "riding your banshee",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -232,11 +202,7 @@
                 {
                   "Details": "When you ride your banshee as you [Set a Course](#Set-a-Course)",
                   "Text": "riding your banshee",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -284,9 +250,7 @@
     {
       "Name": "Bonded",
       "Category": "Deed",
-      "Input": [
-        "Bond-mate"
-      ],
+      "Input": ["Bond-mate"],
       "Description": "<p>One time only, once you <u>Forge a Bond</u> with a special individual…</p>",
       "Abilities": [
         {
@@ -349,9 +313,7 @@
     {
       "Name": "Combat Bot",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your combat bot companion fights at your side. When you <u>Strike</u> aided by the bot, add +1; if you <u>Clash</u>, take +1 momentum on a hit.</p>",
@@ -367,11 +329,7 @@
                 {
                   "Details": "When you use the threat of violence to [Compel](#Compel)",
                   "Text": "using the threat of violence",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -381,11 +339,7 @@
                 {
                   "Details": "When you [Gain Ground](#Gain-Ground) while the bot brings its weapons to bear",
                   "Text": "while your combat bot brings its weapons to bear",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -401,11 +355,7 @@
                 {
                   "Details": "Once per fight, when you [React Under Fire](#React-Under-Fire) by using the bot to draw fire or create a diversion",
                   "Text": "Once per fight, by by using the combat bot to draw fire or create a diversion",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -458,11 +408,7 @@
                 {
                   "Details": "When you [Sojourn](#Sojourn) during a courier mission",
                   "Text": "during a courier mission",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -484,10 +430,7 @@
     {
       "Name": "Devotant",
       "Category": "Path",
-      "Input": [
-        "Name",
-        "Linked Stat"
-      ],
+      "Input": ["Name", "Linked Stat"],
       "Abilities": [
         {
           "Text": "<p>You worship a god, power, or entity. Give it a name and choose one of your stats to represent its nature. When you <u>Secure an Advantage</u> or <u>Gain Ground</u> by calling on it for guidance or blessings, roll +linked stat. On a hit, take +1 momentum or +1 spirit. On a strong hit with a match, a miracle or sign manifests; take another +1 momentum or +1 spirit.</p>",
@@ -499,11 +442,7 @@
                 {
                   "Details": "When you [Secure an Advantage](#Secure-an-Advantage) by calling on your god, power, or entity for guidance or blessings",
                   "Text": "by calling on your god, power, or entity for guidance or blessings",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Linked Stat"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Linked Stat"] }
                 }
               ]
             },
@@ -513,11 +452,7 @@
                 {
                   "Details": "When you [Gain Ground](#Gain-Ground) by calling on your god, power, or entity for guidance or blessings",
                   "Text": "by calling on your god, power, or entity for guidance or blessings",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Linked Stat"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Linked Stat"] }
                 }
               ]
             }
@@ -533,11 +468,7 @@
                 {
                   "Details": "When you [Swear an Iron Vow](#Swear-an-Iron-Vow) in service to your faith",
                   "Text": "in service to your faith",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Linked Stat"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Linked Stat"] }
                 }
               ]
             }
@@ -553,11 +484,7 @@
                 {
                   "Details": "When you [Hearten](#Hearten) through contemplation or sharing of your faith",
                   "Text": "through contemplation or sharing of your faith",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Linked Stat"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Linked Stat"] }
                 }
               ]
             }
@@ -601,11 +528,7 @@
             "Triggers": [
               {
                 "Text": "When you read the intent, emotions, or memories of a nearby being",
-                "Stat Options": {
-                  "Stats": [
-                    "Heart"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Heart"] }
               }
             ],
             "Text": "When you read the intent, emotions, or memories of a nearby being, roll +heart. On a strong hit, you glimpse a helpful aspect of their inner self. Envision what you learn, take +2 momentum, and add +1 if you use that insight while making a move to interact with them in this scene. On a weak hit, the visions are murky; take +1 momentum. On a miss, you reveal a troubling motive or secret; [Pay the Price](#Pay-the-Price)."
@@ -625,11 +548,7 @@
                 {
                   "Details": "When you [Face Danger](#Face-Danger) to soothe a being's distress by creating an empathic bond",
                   "Text": "to soothe a being's distress by creating an empathic bond",
-                  "Stat Options": {
-                    "Stats": [
-                      "Spirit"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Spirit"] }
                 }
               ]
             }
@@ -662,9 +581,7 @@
     {
       "Name": "Exosuit",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your lumbering rig houses one pilot, is sealed against hostile environments, and is armed with fixed or held weapons. When you make a forceful, damaging, or resistant move, you may (after rolling) replace the value of your action die with the rig's integrity; if you do, <u>Lose Momentum</u> (-1).</p>",
@@ -767,11 +684,7 @@
             "Triggers": [
               {
                 "Text": "When you rest and meditate to gather fiery energy",
-                "Stat Options": {
-                  "Stats": [
-                    "Spirit"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Spirit"] }
               }
             ],
             "Text": "You wield fiery energy. When you rest and meditate to gather this energy, roll +spirit. On a strong hit, take up to +3 fire. On a weak hit, take +2. On a miss, take +2 fire but [Endure Harm](#Endure-Harm) (-2). Your max fire is +5. When you make moves aided by this energy to attack or overcome obstacles, add +2 and suffer -1 fire."
@@ -844,9 +757,7 @@
     {
       "Name": "Glowcat",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your glowcat companion perceives the inner emotions and intentions of people and creatures in its vicinity, and embodies those impressions through the colors and intensity of its luminescent fur. When you <u>Secure an Advantage</u> by studying the glowcat's reactions in a charged interaction, you may add +your companion's health.</p>",
@@ -884,10 +795,7 @@
                 "Text": "When you take a minute or so to ready the grappler",
                 "Stat Options": {
                   "Method": "highest",
-                  "Stats": [
-                    "Attached Asset Condition Meter",
-                    "Wits"
-                  ]
+                  "Stats": ["Attached Asset Condition Meter", "Wits"]
                 }
               }
             ],
@@ -922,9 +830,7 @@
         },
         {
           "Text": "<p>Give your favorite gun a name. When you <u>Clash</u> with it, add +1. When you <u>Enter the Fray</u> or <u>Endure Stress</u> while wielding it, add +1 and take +1 momentum on a hit.</p>",
-          "Input": [
-            "Name"
-          ],
+          "Input": ["Name"],
           "id": "asset-gunner-ability-3"
         }
       ],
@@ -1014,9 +920,7 @@
     {
       "Name": "Homesteader",
       "Category": "Deed",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Description": "<p>Once you fill 4 boxes on your bonds legacy track…</p>",
       "Abilities": [
         {
@@ -1038,9 +942,7 @@
     {
       "Name": "Hoverbike",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your unarmed hoverbike provides speedy planetside ground transport, and is equipped to carry up to two people and their gear. When you <u>Underake an Expedition</u> (+edge), take +1 momentum on a hit. On a strong hit with a match, you also surge ahead or find a new path; mark progress.</p>",
@@ -1081,11 +983,7 @@
             "Triggers": [
               {
                 "Text": "When you [Sacrifice Resources](#Sacrifice-Resources) and your supply is reduced to 0",
-                "Stat Options": {
-                  "Stats": [
-                    "Attached Asset Condition Meter"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Attached Asset Condition Meter"] }
               }
             ],
             "Text": "Your vessel is stocked with reserves. When you [Sacrifice Resources](#Sacrifice-Resources) and your supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. Otherwise, mark unprepared."
@@ -1121,9 +1019,7 @@
     },
     {
       "Name": "Lore Hunter",
-      "Aliases": [
-        "Archivist"
-      ],
+      "Aliases": ["Archivist"],
       "Category": "Path",
       "Abilities": [
         {
@@ -1165,9 +1061,7 @@
     {
       "Name": "Marked",
       "Category": "Deed",
-      "Input": [
-        "Identifier"
-      ],
+      "Input": ["Identifier"],
       "Description": "<p>Once you fill 5 boxes on your quests legacy track…</p>",
       "Abilities": [
         {
@@ -1177,10 +1071,7 @@
         },
         {
           "Text": "<p>When you risk your reputation to overcome failure, reroll any dice. If you score a miss, make a mark on this asset. When you have 5 such marks, discard this asset.</p>",
-          "Counter": {
-            "Name": "Marks",
-            "Max": 5
-          },
+          "Counter": { "Name": "Marks", "Max": 5 },
           "id": "asset-marked-ability-2"
         },
         {
@@ -1334,11 +1225,7 @@
             "Triggers": [
               {
                 "Text": "When you [Sacrifice Resources](#Sacrifice-Resources) and your supply is reduced to 0",
-                "Stat Options": {
-                  "Stats": [
-                    "Wits"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Wits"] }
               }
             ],
             "Text": "When you [Sacrifice Resources](#Sacrifice-Resources) and your supply is reduced to 0, roll +wits. On a strong hit, you manage to scrape by and take +1 supply. On a weak hit, you may [Lose Momentum](#Lose-Momentum) (-1) in exchange for +1 supply. On a miss, your supply remains at 0 and you [Lose Momentum](#Lose-Momentum) (-1)."
@@ -1355,9 +1242,7 @@
     {
       "Name": "Overseer",
       "Category": "Module",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your AI module keeps watch over the vehicle's systems and sensor data. When you <u>Secure an Advantage</u> or <u>Gain Ground</u> by talking through a situation with the overseer, you may roll +integrity. If you do, take +1 momentum on a hit.</p>",
@@ -1369,9 +1254,7 @@
                   "Details": "When you [Secure an Advantage](#Secure-an-Advantage) by talking through a situation with the overseer",
                   "Text": "by talking through a situation with the overseer AI",
                   "Stat Options": {
-                    "Stats": [
-                      "Attached Asset Condition Meter"
-                    ]
+                    "Stats": ["Attached Asset Condition Meter"]
                   }
                 }
               ]
@@ -1383,9 +1266,7 @@
                   "Details": "When you [Gain Ground](#Gain-Ground) by talking through a situation with the overseer",
                   "Text": "by talking through a situation with the overseer AI",
                   "Stat Options": {
-                    "Stats": [
-                      "Attached Asset Condition Meter"
-                    ]
+                    "Stats": ["Attached Asset Condition Meter"]
                   }
                 }
               ]
@@ -1408,9 +1289,7 @@
                   "Details": "When you [Face Danger](#Face-Danger) by handing over control to the AI in an emergency, or to summon the vehicle remotely within a hazardous situation",
                   "Text": "by handing over control to the AI in an emergency, or to summon the vehicle remotely within a hazardous situation",
                   "Stat Options": {
-                    "Stats": [
-                      "Attached Asset Condition Meter"
-                    ]
+                    "Stats": ["Attached Asset Condition Meter"]
                   }
                 }
               ]
@@ -1424,9 +1303,7 @@
     {
       "Name": "Protocol Bot",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your protocol bot companion is programmed with knowledge of cultures, languages, and customs. When you are aided by the bot as you make a move in a formal social interaction, add +1. On a strong hit with a match, you learn something which builds understanding or empathy; also mark 1 tick on your bonds legacy track.</p>",
@@ -1512,11 +1389,7 @@
                 {
                   "Details": "When you [Gather Information](#Gather-Information) by studying a place where death left its mark",
                   "Text": "by studying a place where death left its mark",
-                  "Stat Options": {
-                    "Stats": [
-                      "Heart"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Heart"] }
                 }
               ]
             }
@@ -1529,9 +1402,7 @@
     {
       "Name": "Rockhorn",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your rockhorn companion uses its resilient, stone-like hide and brute strength to overcome threats. When you make a move by sending the rockhorn to directly attack a foe or smash an obstacle, roll +its health.</p>",
@@ -1542,11 +1413,7 @@
                 {
                   "Details": "When you make a move by sending the rockhorn to directly attack a foe or smash an obstacle",
                   "Text": "by sending the rockhorn to directly attack a foe or smash an obstacle",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -1573,9 +1440,7 @@
     {
       "Name": "Rover",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your unarmed rover provides protected planetside transport. When you <u>Undertake an Expedition</u> or <u>Set a Course</u>, add +1. When you <u>Finish an Expedition</u> in your rover, you may reroll one challenge die.</p>",
@@ -1595,11 +1460,7 @@
                 {
                   "Details": "When you [Face Danger](#Face-Danger) by taking a hit or crashing through an obstacle",
                   "Text": "by taking a hit or crashing through an obstacle",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -1609,11 +1470,7 @@
                 {
                   "Details": "When you [React Under Fire](#React-Under-Fire) by taking a hit or crashing through an obstacle",
                   "Text": "by taking a hit or crashing through an obstacle",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -1649,12 +1506,7 @@
               "Triggers": [
                 {
                   "Details": "When you [Check Your Gear](#Check-Your-Gear)",
-                  "Stat Options": {
-                    "Stats": [
-                      "Wits",
-                      "Supply"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Wits", "Supply"] }
                 }
               ]
             }
@@ -1682,11 +1534,7 @@
                 {
                   "Details": "When you [Make a Connection](#Make-a-Connection) to search out a new contact",
                   "Text": "to search out a new contact",
-                  "Stat Options": {
-                    "Stats": [
-                      "Shadow"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Shadow"] }
                 }
               ]
             }
@@ -1718,11 +1566,7 @@
                 {
                   "Details": "When you focus or medidate to [Gather Information](#Gather-Information) about a place, being, or situation (in person or remotely)",
                   "Text": "focus or medidate to Gather Information about a place, being, or situation (in person or remotely)",
-                  "Stat Options": {
-                    "Stats": [
-                      "Spirit"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Spirit"] }
                 }
               ]
             }
@@ -1759,9 +1603,7 @@
                   "Details": "When you [Enter the Fray](#Enter-the-Fray) against an ambush",
                   "Text": "against an ambush",
                   "Stat Options": {
-                    "Stats": [
-                      "Attached Asset Condition Meter"
-                    ]
+                    "Stats": ["Attached Asset Condition Meter"]
                   }
                 }
               ]
@@ -1773,9 +1615,7 @@
                   "Details": "When you [Face Danger](#Face-Danger) to detect a hidden threat",
                   "Text": "to detect a hidden threat",
                   "Stat Options": {
-                    "Stats": [
-                      "Attached Asset Condition Meter"
-                    ]
+                    "Stats": ["Attached Asset Condition Meter"]
                   }
                 }
               ]
@@ -1789,9 +1629,7 @@
     {
       "Name": "Service Pod",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your utility vehicle houses one pilot for short-range, low gravity operations. When you make a move using the pod's manipulator arms to perform a delicate or forceful task, add +1 and take +1 momentum on a hit.</p>",
@@ -1807,11 +1645,7 @@
                 {
                   "Details": "When you [Face Danger](#Face-Danger) by maneuvering your pod through a hazardous or obstructed area",
                   "Text": "by maneuvering your pod through a hazardous or obstructed area",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -1821,11 +1655,7 @@
                 {
                   "Details": "When you [Gain Ground](#Gain-Ground) by maneuvering your pod through a hazardous or obstructed area",
                   "Text": "by maneuvering your pod through a hazardous or obstructed area",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -1835,11 +1665,7 @@
                 {
                   "Details": "When you [React Under Fire](#React-Under-Fire) by maneuvering your pod through a hazardous or obstructed area",
                   "Text": "by maneuvering your pod through a hazardous or obstructed area",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -1876,11 +1702,7 @@
             "Triggers": [
               {
                 "Text": "When you expand your veil to immerse your surroundings in darkness",
-                "Stat Options": {
-                  "Stats": [
-                    "Shadow"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Shadow"] }
               }
             ],
             "Text": "When you expand your veil to immerse your surroundings in darkness, roll +shadow. On a strong hit, the darkness extends to all adjacent spaces. On a weak hit, only your immediate surroundings are made dark. On a miss, you fail and draw unwanted attention."
@@ -1909,10 +1731,7 @@
               {
                 "Text": "When you raise your shields",
                 "Stat Options": {
-                  "Stats": [
-                    "Attached Asset Condition Meter",
-                    "Wits"
-                  ]
+                  "Stats": ["Attached Asset Condition Meter", "Wits"]
                 }
               }
             ],
@@ -1929,11 +1748,7 @@
                 {
                   "Details": "When you [React Under Fire](#React-Under-Fire) by letting your shields take the blow",
                   "Text": "by letting your shields take the blow",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -1956,9 +1771,7 @@
     {
       "Name": "Shuttle",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your unarmed shuttle provides short-range transport for several people and equipment through space or atmosphere. When you travel to a location (not your command vehicle), you and your allies may take +1 momentum when you arrive.</p>",
@@ -1984,9 +1797,7 @@
     {
       "Name": "Skiff",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your unarmed flatbed hover-vehicle carries several people, gear, and cargo over land or water. When you <u>Undertake an Expedition</u> or <u>Set a Course</u>, you may rely on the skiff's simple reliability and roll +integrity. If you do, take +1 momentum on a hit.</p>",
@@ -1997,11 +1808,7 @@
                 {
                   "Details": "When you [Undertake an Expedition](#Undertake-an-Expedition) and rely on the skiff's simple reliability",
                   "Text": "rely on the skiff's simple reliability",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -2011,11 +1818,7 @@
                 {
                   "Details": "When you [Set a Course](#Set-a-Course) and rely on the skiff's simple reliability",
                   "Text": "rely on the skiff's simple reliability",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2032,11 +1835,7 @@
                 {
                   "Details": "When you [Strike](#Strike) by firing the skiff's cannon",
                   "Text": "by firing the skiff's cannon",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -2046,11 +1845,7 @@
                 {
                   "Details": "When you [Clash](#Clash) by firing the skiff's cannon",
                   "Text": "by firing the skiff's cannon",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2072,10 +1867,7 @@
     {
       "Name": "Sidekick",
       "Category": "Companion",
-      "Input": [
-        "Name",
-        "Expertise"
-      ],
+      "Input": ["Name", "Expertise"],
       "Abilities": [
         {
           "Text": "<p>Your sidekick has a helpful expertise. When you make a move outside of a fight directly aided by their expertise, you may reroll your action die if its value is less than your sidekick's health. If you then score a strong hit with a match, mark 1 tick on your bonds legacy track.</p>",
@@ -2095,11 +1887,7 @@
                 {
                   "Details": "When your sidekick acts to get you out of a tough spot",
                   "Text": "your sidekick acts to get you out of a tough spot",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -2109,11 +1897,7 @@
                 {
                   "Details": "When your sidekick acts to get you out of a tough spot",
                   "Text": "your sidekick acts to get you out of a tough spot",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2167,11 +1951,7 @@
                 {
                   "Details": "When you [Strike](#Strike) from a distance with time enough to line up your shot",
                   "Text": "from a distance with time enough to line up your shot",
-                  "Stat Options": {
-                    "Stats": [
-                      "Wits"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Wits"] }
                 }
               ]
             }
@@ -2188,9 +1968,7 @@
     {
       "Name": "Snub Fighter",
       "Category": "Support Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your snub fighter carries a single pilot for space or atmospheric flight and combat. When you <u>Enter the Fray</u>, you may roll +integrity; if you do, take +2 momentum on a hit.</p>",
@@ -2201,11 +1979,7 @@
                 {
                   "Details": "When you [Enter the Fray](#Enter-the-Fray) in your snub fighter",
                   "Text": "in your snub fighter",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2219,9 +1993,7 @@
         },
         {
           "Text": "<p>When you personally defeat a notable foe in your snub fighter, envision the victory mark you make on the fuselage. Tally your victories in this box. For every five, mark 2 ticks on your quests legacy track.</p>",
-          "Counter": {
-            "Name": "Victory Marks"
-          },
+          "Counter": { "Name": "Victory Marks" },
           "id": "asset-snub-fighter-ability-3"
         }
       ],
@@ -2235,9 +2007,7 @@
     {
       "Name": "Sprite",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your sprite companion alters its delicate, crystalline form to fly, swim, or scurry, and can covertly navigate even the harshest of environments. When you make a move by sending it to perform trickery (such as creating a distraction, sneaking into a protected location, or stealing an object) add +its health.</p>",
@@ -2263,9 +2033,7 @@
     {
       "Name": "Starship",
       "Category": "Command Vehicle",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your armed, multipurpose starship is suited for interstellar and atmospheric flight. It can comfortably transport several people, has space for cargo, and can carry and launch support vehicles. When you <u>Advance</u>, you may spend experience to equip this vehicle with module assets.</p>",
@@ -2285,11 +2053,7 @@
                 {
                   "Details": "When you [Withstand Damage](#Withstand-Damage) to your starship",
                   "Text": "to your starship",
-                  "Stat Options": {
-                    "Stats": [
-                      "Heart"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Heart"] }
                 }
               ]
             }
@@ -2326,11 +2090,7 @@
                 {
                   "Details": "When you are poised to [Strike](#Strike) from hiding",
                   "Text": "poised to Strike from hiding",
-                  "Stat Options": {
-                    "Stats": [
-                      "Shadow"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Shadow"] }
                 }
               ]
             }
@@ -2343,9 +2103,7 @@
     {
       "Name": "Survey Bot",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your survey bot companion scans the path ahead. When you <u>Undertake an Expedition</u> (+wits) overland or within a site, add +1.</p>",
@@ -2361,11 +2119,7 @@
                 {
                   "Details": "Once per expedition, when you [Secure an Advantage](#Secure-an-Advantage) by sending the bot to scout ahead",
                   "Text": "Once per expedition, by sending the survey bot to scout ahead",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2381,11 +2135,7 @@
                 {
                   "Details": "When you [Explore a Waypoint](#Explore-a-Waypoint) aided by the bot's sensors",
                   "Text": "aided by the survey bot's sensors",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             },
@@ -2395,11 +2145,7 @@
                 {
                   "Details": "When you [Face Danger](#Face-Danger) to detect a threat",
                   "Text": "to detect a threat",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2417,9 +2163,7 @@
     {
       "Name": "Symbiote",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>You are physically bound to a being with +2 health. When you make aggressive moves while giving yourself to the symbiote's power, add +its health. If you face physical harm, choose either the <u>Endure Harm</u> or <u>Companion Takes a Hit</u> move. To restore the symbiote's health, you must <u>Endure Stress</u> and give the symbiote +health equal to the -spirit you face. If you make a move aided by the symbiote and roll a 1 on your action die, your fragile bond is broken for several hours.</p>",
@@ -2433,10 +2177,7 @@
         {
           "Text": "<p>The symbiote gains power and has +3 health.</p>",
           "Alter Properties": {
-            "Condition Meter": {
-              "Name": "Health",
-              "Max": 3
-            }
+            "Condition Meter": { "Name": "Health", "Max": 3 }
           },
           "id": "asset-symbiote-ability-3"
         }
@@ -2481,11 +2222,7 @@
                 {
                   "Details": "When you [Sojourn](#Sojourn)",
                   "Text": "Sojourn",
-                  "Stat Options": {
-                    "Stats": [
-                      "Supply"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Supply"] }
                 }
               ]
             },
@@ -2495,11 +2232,7 @@
                 {
                   "Details": "When you [Compel](#Compel)",
                   "Text": "Compel",
-                  "Stat Options": {
-                    "Stats": [
-                      "Supply"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Supply"] }
                 }
               ]
             }
@@ -2521,9 +2254,7 @@
     {
       "Name": "Utility Bot",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your utility bot companion has helpful tools at-hand. When you make a move by directing it to access a system, cut through an obstacle, analyze a mechanical issue, or assemble or disassemble a device, roll +its health and take +1 momentum on a hit. On a strong hit with a match, it reveals an unexpected advantage or insight; take another +1 momentum.</p>",
@@ -2535,11 +2266,7 @@
                 {
                   "Details": "When you make a move by directing the utility bot to access a system, cut through an obstacle, analyze a mechanical issue, or assemble or disassemble a device",
                   "Text": "directing the utility bot to access a system, cut through an obstacle, analyze a mechanical issue, or assemble or disassemble a device",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2559,11 +2286,7 @@
                 {
                   "Details": "When you [Check Your Gear](#Check-Your-Gear) to see if the bot has a specific tool or technique available",
                   "Text": "to see if your utility bot has a specific tool or technique available",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2593,11 +2316,7 @@
             "Triggers": [
               {
                 "Text": "When you seek safe haven in a remote environment",
-                "Stat Options": {
-                  "Stats": [
-                    "Discoveries Legacy"
-                  ]
-                }
+                "Stat Options": { "Stats": ["Discoveries Legacy"] }
               }
             ],
             "Progress Move": true,
@@ -2618,11 +2337,7 @@
                 {
                   "Details": "When you [Endure Stress](#Endure-Stress)",
                   "Text": "Endure Stress",
-                  "Stat Options": {
-                    "Stats": [
-                      "Wits"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Wits"] }
                 }
               ]
             }
@@ -2655,9 +2370,7 @@
     {
       "Name": "Vestige",
       "Category": "Path",
-      "Input": [
-        "Last of"
-      ],
+      "Input": ["Last of"],
       "Abilities": [
         {
           "Text": "<p>You are all that remains of a people, culture, or tradition. When you <u>Face Death</u> or <u>Face Desolation</u>, memories or visions of your heritage give you the strength to carry on. Envision how this manifests, and reroll any dice. On a strong hit with a match, a surprising new aspect of your heritage is revealed; take +2 momentum and mark 2 ticks on your bonds legacy track.</p>",
@@ -2718,9 +2431,7 @@
     {
       "Name": "Voidglider",
       "Category": "Companion",
-      "Input": [
-        "Name"
-      ],
+      "Input": ["Name"],
       "Abilities": [
         {
           "Text": "<p>Your voidglider companion cruises in your starship's energy wake and helps guide the way on spacebound expeditions. When you <u>Undertake an Expedition</u> and roll a strong hit, take +1 momentum.</p>",
@@ -2736,11 +2447,7 @@
                 {
                   "Details": "When you are riding the voidglider and make a move to detect or evade a threat by relying on its instincts",
                   "Text": "riding the voidglider and make a move to detect or evade a threat by relying on its instincts",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2756,11 +2463,7 @@
                 {
                   "Details": "When you make a move by signaling the voidglider to distract or attack a spacebound foe",
                   "Text": "signaling the voidglider to distract or attack a spacebound foe",
-                  "Stat Options": {
-                    "Stats": [
-                      "Asset Condition Meter"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Asset Condition Meter"] }
                 }
               ]
             }
@@ -2797,11 +2500,7 @@
                 {
                   "Details": "When you [Secure an Advantage](#Secure-an-Advantage) by suiting up and gathering your gear for a perilous encounter or mission",
                   "Text": "suiting up and gathering your gear for a perilous encounter or mission",
-                  "Stat Options": {
-                    "Stats": [
-                      "Supply"
-                    ]
-                  }
+                  "Stat Options": { "Stats": ["Supply"] }
                 }
               ]
             }

@@ -1,0 +1,13 @@
+mixin modalBtn(popupId, i18n_key)
+  a.btn(href=popupId)
+    +i18n(i18n_key)
+
+mixin modalContent(popupId)
+  .overlay(class=popupId role="dialog")
+    .popup
+      a.close(href="#") &times;
+      block
+
+//- FIXME the dialog element is supported by default in chrome but not by FF (without special settings)
+
+//- details: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

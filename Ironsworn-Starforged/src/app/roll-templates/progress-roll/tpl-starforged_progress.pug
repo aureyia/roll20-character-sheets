@@ -1,15 +1,16 @@
 include ../mixins/headers
 include ../mixins/body
 include ../mixins/outcomes
+//- FIXME: it'd be cool to add a rank indicator in the bottom left corner. even just text saying 'Dangerous' or something
 
 rolltemplate.sheet-rolltemplate-starforged_progress
-  div.sheet-roll-container
+  section.sheet-roll-container
     | {{#progress}}
-    +progressHeader 
+    +progressHeader
     +progressBody
     | {{#rollGreater() progress challenge1}}
     | {{#rollTotal() challenge1 challenge2}}
-    +opportunity
+    +strongHitMatch
     | {{/rollTotal() challenge1 challenge2}}
     | {{#^rollTotal() challenge1 challenge2}}
     | {{#rollGreater() progress challenge2}}
@@ -22,7 +23,7 @@ rolltemplate.sheet-rolltemplate-starforged_progress
     | {{/rollGreater() progress challenge1}}
     | {{#^rollGreater() progress challenge1}}
     | {{#rollTotal() challenge1 challenge2}}
-    +complication
+    +missMatch
     | {{/rollTotal() challenge1 challenge2}}
     | {{#^rollTotal() challenge1 challenge2}}
     | {{#rollGreater() progress challenge2}}

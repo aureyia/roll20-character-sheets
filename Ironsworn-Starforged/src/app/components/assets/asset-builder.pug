@@ -5,10 +5,10 @@ mixin assetAbility(ability)
   //- consider having the attr name converted to snake case?
   section.asset-ability
     //- - console.log(ability.id)
-    - var attribute=_.snakeCase(ability.id.replace(/asset-(.*)-ability-([0-9])/gi, "ability_checkbox_$1_$2"))
+    - attribute=_.snakeCase(ability.id.replace(/asset-(.*)-ability-([0-9])/gi, "ability_checkbox_$1_$2"))
     //- - console.log(attribute)
     //- TODO: migrate to using ability id
-    //- - var attribute=ability.id
+    //- - attribute=ability.id
     +attrToggleCheck(attribute, null, ability.Enabled)
     //- input(
     //-   type='checkbox'
@@ -21,18 +21,18 @@ mixin assetAbility(ability)
     +i18n(ability.id)
     if ability.Input
       each input in ability.Input
-        - var inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
+        - inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
         label.asset-ability-inputBox
           +i18n(inputId)
           input(type='text' name=`attr_${inputId}` value='')
 
 mixin assetDescription(asset)
-  - var translationDesc = `${asset.id}-description`
+  - translationDesc = `${asset.id}-description`
   section.asset-description
     +i18n(translationDesc)
 
 mixin assetinputBox(inputBox, assetId)
-  - let id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
+  - id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
   label.asset-inputBox
     +i18n(id)
     input(type='text' name=`attr_${id}` value='')
@@ -41,7 +41,7 @@ mixin assetinputBox(inputBox, assetId)
 mixin assetMeterBar(meter, assetName)
   +resourceMeterBar(meter.Name, meter.Max, `assettrack_${assetName}`, meter.Min||null)
   //- section.asset-meter(title=`Asset resource meter: ${_.capitalize(meter.Name)}`)
-  //-   - var currentMeter = 0
+  //-   - currentMeter = 0
   //-   while currentMeter <= meter.Max
   //-     label.asset-meter-box(title=`Set ${_.capitalize(meter.Name)} to ${currentMeter}`)
   //-       //- input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
@@ -53,15 +53,15 @@ mixin assetMeterBar(meter, assetName)
 
 mixin assetCard(asset, options)
   //- TODO: migrate to asset attr matching id of asset for clarity/long-term maintainability
-  - let name = asset.id.replace(/asset-/i, "")
-  - let iconWidth = 64
-  - let category = _.kebabCase(asset.Category)
+  - name = asset.id.replace(/asset-/i, "")
+  - iconWidth = 64
+  - category = _.kebabCase(asset.Category)
   if options.visibilityToggle === true
     input(hidden class=["switch-display", options.classes ? options.classes : "", asset.id] type='checkbox' name=`attr_${name}`)
   article(class=`asset-card ${options.classes ? options.classes : ""} ${asset.id} category-${category} ${options.visibilityToggle ? "switchable-display" : ""}`)
     span.asset-category=asset.Category
     h3.asset-name=asset.Name
-    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/icons/${asset.id}.svg` alt="").asset-icon
+    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/${asset.id}.svg` alt="").asset-icon
     if asset.Description
       +assetDescription(asset)
     if asset.Input
@@ -80,7 +80,7 @@ mixin genericAssetBuilder(assetsArray, listId)
     each asset in assetsArray
       //- TODO: migrate to more sensible name scheme
       //- ideally it'd use translation strings as the list 'value', or have some other means of diplaying that more nicely
-      - var assetIdShort = asset.id.replace("asset-", "")
+      - assetIdShort = asset.id.replace("asset-", "")
       //- generates classes and outputs to stdout
       //- - console.log(`input[type=checkbox][name=attr_asset][value=${assetIdShort}]:checked + div.asset-card.${asset.id},`)
       option(value=assetIdShort)

@@ -2,8 +2,7 @@ include ../../components/assets/asset-builder
 include ../page
 
 -
-  var
-    shipCategories = {
+  shipCategories = {
       modules: {
         "type": "checkbox",
         "attribute": "ship-modules",
@@ -34,7 +33,7 @@ mixin shipPage(sheetType)
   +page("ship", sheetType)
     .ship-grid
       .asset
-        - const starship = assets.Assets.find(obj => { return obj.Name === 'Starship' })
+        - starship = assets.Assets.find(obj => { return obj.Name === 'Starship' })
         +assetCard(starship, { classes: 'visible', standalone: true })
       .ship-category-info
         if sheetType === 'character'
@@ -52,7 +51,7 @@ mixin shipPage(sheetType)
         h3
           +i18n('impacts')
         .info
-          - const shipImpacts = [impacts.find(obj => { return obj.title === 'ship' })]
+          - shipImpacts = [impacts.find(obj => { return obj.title === 'ship' })]
           +impacts(shipImpacts, {character: true})
         h3
           +i18n('passengers')
@@ -77,14 +76,14 @@ mixin shipPage(sheetType)
         h3
           +i18n('ship-modules')
         fieldset.repeating_module-assets
-          - var assetsArray = assets.Assets.filter(obj => { return obj.Category === 'Module' })
+          - moduleAssets = assets.Assets.filter(obj => { return obj.Category === 'Module' })
           .asset
-            +genericAssetBuilder(assetsArray, 'moduleList')
+            +genericAssetBuilder(moduleAssets, 'moduleList')
 
       .ship-category-support-vehicles
         h3
           +i18n('ship-support-vehicles')
         fieldset.repeating_support-vehicle-assets
-          - var assetsArray = assets.Assets.filter(obj => { return obj.Category === 'Support Vehicle' })
+          - shipAssets = assets.Assets.filter(obj => { return obj.Category === 'Support Vehicle' })
           .asset
-            +genericAssetBuilder(assetsArray, 'supportVehiclesList')
+            +genericAssetBuilder(shipAssets, 'supportVehiclesList')

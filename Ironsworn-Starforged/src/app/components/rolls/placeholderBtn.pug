@@ -1,0 +1,8 @@
+
+//- a disabled button so that layout is maintained w/ empty buttons
+mixin placeholderBtn(opts, visibility)
+  button(
+    type="roll"
+    class=`${visibility} placeholder-button`
+    disabled
+  )

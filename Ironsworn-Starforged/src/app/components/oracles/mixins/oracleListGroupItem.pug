@@ -1,0 +1,10 @@
+include ../../../common/pug/button
+include ./oracleRollBtn
+
+mixin oracleListGroupItem(id, buttonLabel)
+  +oracleRollBtn(id, buttonLabel)
+  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
+
+mixin oracleSubtablesListGroupItem(id, buttonLabel, tables)
+  +oracleSubtablesRollBtn(id, buttonLabel, tables)
+  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)

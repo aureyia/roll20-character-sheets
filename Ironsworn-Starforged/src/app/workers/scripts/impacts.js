@@ -24,6 +24,8 @@ const momentumAttrs = [
   'onboard_check_ship_button',
 ];
 
+const baseMomentumReset = 2;
+
 function buildImpactEvents(impacts) {
   return impacts.map((impact) => `change:${impact}`).join(' ');
 }
@@ -33,16 +35,16 @@ on(
     shipImpactAttrs
   )} change:onboard_check_ship_button`,
   function () {
-    var numImpacts = 0;
+    let numImpacts = 0;
     getAttrs(
       impactsAttrs.concat(momentumAttrs).concat(shipImpactAttrs),
       function (values) {
-        for (var attr in impactsAttrs) {
+        for (let attr in impactsAttrs) {
           if (values[impactsAttrs[attr]] === 'on') {
             numImpacts += 1;
           }
         }
-        for (var attr in shipImpactAttrs) {
+        for (let attr in shipImpactAttrs) {
           if (
             values[shipImpactAttrs[attr]] === 'on' &&
             values['onboard_check_ship_button'] === 'on'
@@ -50,14 +52,9 @@ on(
             numImpacts += 1;
           }
         }
-        const momentumReset = function () {
-          if (numImpacts === 0) return 2;
-          if (numImpacts === 1) return 1;
-          if (numImpacts > 1) return 0;
-        };
         setAttrs({
           momentum_max: 10 - numImpacts,
-          momentum_reset: momentumReset(),
+          momentum_reset: Math.max(baseMomentumReset - numImpacts, 0)
         });
       }
     );

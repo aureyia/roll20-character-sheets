@@ -1,0 +1,52 @@
+.box
+  margin 0 auto
+  padding 35px
+  width 40%
+  background-clip padding-box
+  text-align center
+
+.overlay
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  visibility hidden
+  background rgba(0, 0, 0, 0.7)
+  opacity 0
+  transition opacity 500ms
+
+.overlay:target
+  visibility visible
+  opacity 1
+
+.popup
+  position relative
+  margin 70px auto
+  padding 20px
+  width 30%
+  border-radius 5px
+  background #fff
+  transition all 5s ease-in-out
+
+  .close
+    position absolute
+    top 20px
+    right 30px
+    color #333
+    text-decoration none
+    font-weight bold
+    font-size 30px
+    transition all 200ms
+    // &:hover
+
+.popup .content
+  overflow auto
+  max-height 30%
+
+@media screen and (max-width 700px)
+  .box
+    width 70%
+
+  .popup
+    width 70%

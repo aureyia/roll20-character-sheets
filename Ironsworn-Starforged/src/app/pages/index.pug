@@ -1,3 +1,15 @@
+include ./page
+include ./contents/connections
+include ./contents/vows
+include ./contents/progress
+include ./contents/ship
+include ./contents/moves
+include ./contents/assets
+include ./contents/summary
+include ./contents/oracles
+include ./contents/legacies
+include ../components/resources/resources
+
 //- Commented out for first release
 //- input.changelog(
 //-   type='hidden',
@@ -11,25 +23,42 @@
 //-     +i18n('page-info-close')
 //- see the FIXME w/ compareSemVer in pages.js
 
-//- functionally speaking there's *multiple* documents here, so i think having multiple <main> elements is actually more sensible than not (esp since only one is ever seen at a time)
 
-//- -1 => select, 0 => character, 1 => shared
+//- formerly: -1 => select, 0 => character, 1 => shared
 //- FIXME migrating away from these cuz r20 gets upset about css selectors for numeric [value=*]
 
-input(type="hidden", name="attr_mode", value="sheet-select")
+input(type="hidden" name="attr_mode" value="sheet-select")
 .ironsworn-sheet#sheet-select(role="dialog")
   h1.mode-title
     +i18n('page-select')
   nav.modes
     each page, index in sheets
       label.mode
-        img.mode-image(
-          src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page.name}-sheet.png`
-          data-i18n-alt =`page-name-${page.name}`
-        )
-        button(type="action" name="act_set_mode", value=`sheet-${page.name}`)
+        img.mode-image(src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page.name}-sheet.png` data-i18n-alt=`page-name-${page.name}` )
+        button(type="action" name="act_set-mode" value=`sheet-${page.name}`)
           +i18n(`page-name-${page.name}`)
 .ironsworn-sheet#sheet-character
-  include ./character/index
+  header
+    +resources("character")
+    include ../components/momentum/momentum
+    +pageTabList("character")
+    button(type="action" value="51", name="act_ask-the-oracle") Ask the Oracle (50/50)
+  +pageMain("character")
+    +summaryPage("character")
+    +connectionsPage("character")
+    +vowsPage("character")
+    +assetsPage("character")
+    +movesPage("character")
+    +progressPage("character")
+    +oraclesPage("character")
+    +legaciesPage("character")
+    +shipPage("character")
 .ironsworn-sheet#sheet-shared
-  include ./shared/index
+  header
+    +resources('shared')
+    +pageTabList('shared')
+  +pageMain('shared')
+    +vowsPage('shared')
+    +connectionsPage('shared')
+    +progressPage('shared')
+    +shipPage('shared')

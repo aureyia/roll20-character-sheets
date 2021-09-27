@@ -59,7 +59,7 @@ task(buildHtml);
 // css tasks
 
 async function buildSheetCss() {
-  return buildCss("./app/Ironsworn-starforged.styl")
+  return buildCss("./app/Ironsworn-starforged.styl", true)
 }
 async function buildTemplateCss() {
   return buildCss("./app/roll-templates/template.styl")

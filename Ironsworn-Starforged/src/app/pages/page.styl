@@ -1,8 +1,9 @@
 .page-tablist
   display flex
   flex-flow row wrap
-  border 1px solid $color_fg
   margin 0
+  border 1px solid $color_fg
+
   & > .page-tab
     flex 1
     flex-basis 20%
@@ -13,11 +14,13 @@ input.tabber, input.pager
   for sheetName, sheetData in $sheets
     &[name=attr_sheet-{sheetName}-display]
       for pageName in (sheetData.pages)
-        &[value=page-{pageName}]
-          ~ .page-tab[name=act_set_sheet-{sheetName}-display][value=page-{pageName}]
+        &[value={pageName}]
+          ~ .page-tab[name=act_set-sheet-{sheetName}-display][value={pageName}]
             interactiveAltColor($color_bg, $color_fg)
+
           ~ article#sheet-{sheetName}-page-{pageName}
             visOn()
-        &:not([value=page-{pageName}])
+
+        &:not([value={pageName}])
           ~ article#sheet-{sheetName}-page-{pageName}
             visOff()

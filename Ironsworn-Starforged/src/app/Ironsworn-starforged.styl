@@ -1,135 +1,171 @@
 // Fonts
 @css {
-
   @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:i,400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Encode+Sans+Semi+Expanded:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
 }
+
 // Common
-@import './common/stylus/shared'
-@import './common/stylus/reset'
+@import "./common/stylus/shared"
+@import "./common/stylus/reset"
+
 // Sheet Core
 *, ::before, ::after
   box-sizing border-box
+
 .ironsworn-sheet
+  padding $sheet_padding
   width $sheet_width !important
   font-size $root_font_size
-  padding $sheet_padding
+
   stdFont($type_body)
+
   font-weight 400
   line-height 1.25
+
 h1, h2, h3, h4, h5, h6
   headerText()
+
 h1
   font-size $h1_size
+
 h2
   font-size $h2_size
+
 h3
   font-size $h3_size
+
 h4
   font-size $h4_size
+
 span.i18n-text
   display contents
+
 p, ul
   margin 0
+
   bodyText()
+
 ol, ul
   margin-left 1em
+
 li
   list-style-type none
-  bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/src/app/img/bullet-8-point-star.svg")
+
+  bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/star-bullet.svg")
+
 button, label, .btn, button[type=roll]
   btn()
-input[type=text]
-input[type=number]
-input[type=search]
-textarea
-select
+
+input[type=text], input[type=number], input[type=search], textarea, select
   inputBox()
+
 input[type=number]
   min-width 5ch
+
 select
+  text-indent 1px
+  text-overflow ""
   appearance none
-  text-indent: 1px
-  text-overflow: ''
+
 hr
-  border: 0
-  height: 1px
+  height 1px
+  border 0
   background $color_input
-  background-image: linear-gradient(to right, $color_input, #333, $color_input)
+  background-image linear-gradient(to right, $color_input, #333, $color_input)
+
 textarea
-  max-width ($sheet_width - $sheet_padding*2)
+  max-width: ($sheet_width - $sheet_padding * 2)
   // TODO: the below oughta live in its own file w/ other resource meter styles
 
 .flex-container
   display flex
   align-items flex-start
+
 .flex-wrapper
   display flex
   flex-direction column
   margin-bottom 10px
   padding 0.5em
+
 .pc-name
-  width: 100%
+  width 100%
+
   borderCommon()
-  background: #E6E7E8
-  color: $color_fg
-  border-radius: 0
+
+  border-radius 0
+  background #E6E7E8
+  color $color_fg
+
 .border
-  border: 1px solid $color_input
-  border-radius: 4px
+  border 1px solid $color_input
+  border-radius 4px
+
 textarea.full-width
-  width: 95%
-  resize: vertical
+  width 95%
+  resize vertical
+
 div.preview-roll
-  padding: 0em
+  padding 0
+
 span.preview-roll
-  width: 30%
-  margin-left: 1em
+  margin-left 1em
+  width 30%
+
 .button-container-preview
-  width: 2.4em
+  width 2.4em
+
 .no-border
-  border: 0
+  border 0
+
 .requirement-area
-  height: auto
-  margin-bottom: 5px
+  margin-bottom 5px
+  height auto
+
 input.border-bottom
-  border-bottom: 1px solid $color_fg
-  border-radius: 0em
+  border-bottom 1px solid $color_fg
+  border-radius 0
+
 .full-width
-  width: 100%
-  margin-top: 0.3em
+  margin-top 0.3em
+  width 100%
+
 .note-area
   border-radius 1em
+
 u
-  text-decoration: underline 1pt solid currentColor
+  text-decoration underline 1pt solid currentColor
+
 .hex-icon
   object-fit contain
+
   $iconWidth = 4rem
+
   &.vector
     width $iconWidth
     height hexWidthToHeightPointy($iconWidth)
+
   &.raster
     hexagonClip($iconWidth)
-// generic widgets and other components, should be overwritten by more specific styling below
-@import './components/r20-native/repcontrol'
-@import './components/generic/preview'
-@import './components/generic/listgroup'
-@import './components/generic/buttons'
-@import './components/generic/repeating'
-@import './components/generic/rulesarticle'
-@import './components/resources/resources'
-@import './components/impacts/impacts'
-@import './components/connections/connections'
-@import './components/vows/vows'
-@import './components/progress/progress'
-@import './components/tabs/tabs'
-@import './components/momentum/momentum'
-@import './components/stats/stats'
-@import './components/notes/notes'
-@import './components/moves/moves'
-@import './components/assets/assets'
-@import './components/oracles/oracles'
-@import './components/legacies/tracks'
 
+// generic widgets and other components, should be overwritten by more specific styling below
+@import "./components/r20-native/repcontrol"
+@import "./components/generic/preview"
+@import "./components/generic/listgroup"
+@import "./components/generic/buttons"
+@import "./components/generic/repeating"
+@import "./components/generic/rulesarticle"
+@import "./components/resources/resources"
+@import "./components/impacts/impacts"
+@import "./components/connections/connections"
+@import "./components/vows/vows"
+@import "./components/progress/progress"
+@import "./components/tabs/tabs"
+@import "./components/momentum/momentum"
+@import "./components/stats/stats"
+@import "./components/notes/notes"
+@import "./components/moves/moves"
+@import "./components/assets/assets"
+@import "./components/oracles/oracles"
+@import "./components/legacies/tracks"
 // Pages
-@import './pages/page'
-@import './pages/index'
+@import "./pages/page"
+@import "./pages/index"
