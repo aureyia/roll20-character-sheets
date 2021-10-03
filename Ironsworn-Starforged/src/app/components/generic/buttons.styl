@@ -6,9 +6,6 @@
     width 100%
     text-align center
 
-.toggle-btn
-  btn()
-
   span
     padding 4px 2px
 
@@ -19,7 +16,7 @@
       color $color_bg
 
 button
-  &[type="roll"]
+  &[type=roll], &[type=action]
     &:before // unsetting r20's styling
       content none
       font-family inherit
@@ -27,11 +24,17 @@ button
     &.icon-only
       margin 0
       padding 0
+      border 0
       color $color_fg
 
-      iconBtn("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg")
+      &[name=act_progress-roll]
+        iconBtn($icon_progress_roll)
 
-      border 0
+      &[name^=roll_oracle]
+        iconBtn($icon_roll_oracle)
+
+      &[name=act_action-roll]
+        iconBtn($icon_action_roll)
 
   &.placeholder-button
     background-image none !important
@@ -40,37 +43,40 @@ button
     pointer-events none !important
 
 // hex buttons
-.close-preview
-  margin 0
+hexButtonIcon($bg_color, $fg_color, $icon)
+  btn($bg_color, $fg_color, 1em, 0, 0)
+  iconBtn($icon)
+  hexagonClip($h2_size)
+
+hexButtonFontIcon($bg_color, $fg_color, $content, $font = "Pictos")
+  display flex
+  justify-content center
+  align-self center
+  align-items center
   padding 0.2em
-  width auto
-  height auto
+  width max-content
+  height max-content
+  border none
+  background none
+  color $fg_color
   text-align center
-  text-transform uppercase
+  line-height 1
   cursor pointer
+  grid-area close
+  text-anchor middle
 
-  interactiveHover()
+  btn($bg_color, $fg_color, 1em, 0, 0)
+  hexagonClip($h2_size)
 
-  &.icon-only
+  &:before
     display flex
-    justify-content center
     align-self center
-    align-items center
-    width max-content
-    height max-content
-    border none
-    background none
-    line-height 1
-    grid-area close
-    text-anchor middle
+    width min-content
+    height min-content
+    background transparent
+    color inherit
+    content $content
+    font-family $font
 
-    hexagonClip($h2_size)
-    interactive($color_warning, #fff)
-
-    &:before
-      width inherit
-      height inherit
-      background transparent
-      color inherit
-      content "*"
-      font-family "Pictos"
+button[type="action"].close-preview-display
+  hexButtonFontIcon($color_warning, white, "*")

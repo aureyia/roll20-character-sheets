@@ -1,14 +1,7 @@
 include ../../common/pug/translation
 
-mixin actionRollBtn(attribute, i18n_key=attribute, classes=[], blockContent=false, iconOnly=false)
-  button(
-    type="roll"
-    class=classes
-    name=`roll_${attribute}`
-    title=`Roll +${attribute}`
-    value!=`&{template:starforged_moves} {{name=Roll +${attribute}}} {{action=[[{d6+@{${attribute}}+(?{Modifier|0}),{10}}kl1]]}} {{negate1=[[1+@{${attribute}}+(?{Modifier|0})]]}} {{negate2=[[2+@{${attribute}}+(?{Modifier|0})]]}} {{negate3=[[3+@{${attribute}}+(?{Modifier|0})]]}} {{negate4=[[4+@{${attribute}}+(?{Modifier|0})]]}} {{negate5=[[5+@{${attribute}}+(?{Modifier|0})]]}} {{negate6=[[6+@{${attribute}}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[@{${attribute}}+(?{Modifier|0})]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{${attribute}}]]}}`
-  ).action-roll
-      if blockContent==true
-        block
-      else if iconOnly==false
-        +i18n(i18n_key)
+mixin actionRollBtn(move, classes=[], blockContent=false, iconOnly=false)
+  - let i18n_key = move.id.replace("move-", "move-title-")
+  - let moveData = rolls[move.Name]
+  - let value = `&{template:starforged_moves} {{action=[[{d6+${moveData.stat}+(?{Modifier|0}),{10}}kl1]]}} {{header=@{character_name}}} {{add=[[(?{Modifier|0})]]}} {{stat=[[${moveData.repeat_stat}]]}} {{name=^{${i18n_key}}}} {{negate1=[[1+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate2=[[2+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate3=[[3+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate4=[[4+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate5=[[5+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate6=[[6+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[${moveData.repeat_stat}+(?{Modifier|0})]]}} {{burn_strong=^{momentum-burn-strong-hit}}} {{burn_weak=^{momentum-burn-weak-hit}}}`
+  +actionBtn("action-roll", value, i18n_key, classes, blockContent, iconOnly)

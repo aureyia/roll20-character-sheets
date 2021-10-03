@@ -1,6 +1,8 @@
+//- todo: once jquery is available, explore implementing this with <a>
+
 mixin page(pageType, sheetType)
   article(
-    class=`page page-${_.kebabCase(pageType)}`
+    class=[`page`,`page-${_.kebabCase(pageType)}`]
     id=`sheet-${_.kebabCase(sheetType)}-page-${_.kebabCase(pageType)}`
     role="tabpanel"
   )
@@ -19,6 +21,7 @@ mixin pageTabList(sheetType, ariaLabel, classes=[])
         pageName,
         parentName,
         `nav-${_.kebabCase(page)}`,
+        false
         ["page-tab"]
       )
 

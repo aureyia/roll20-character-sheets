@@ -1,31 +1,59 @@
+function eventValue(eventInfo) {
+  console.log(eventInfo);
+  return eventInfo.htmlAttributes.value;
+}
 
-on("clicked:activate", function(eventInfo) {
-  console.log("Activate button clicked!", eventInfo)
-});
+function eventClasses(eventInfo) {
+  return eventInfo.htmlAttributes.class.split(" ");
+}
+
+function eventTitle(eventInfo) {
+  return eventInfo.htmlAttributes.title;
+}
+
 
 on("clicked:set-sheet-character-display", function(eventInfo) {
   setAttrs({
-    ["sheet-character-display"]: eventInfo.htmlAttributes.value
+    ["sheet-character-display"]: eventValue(eventInfo)
   })
 });
 
 on("clicked:set-sheet-shared-display", function(eventInfo) {
   setAttrs({
-    ["sheet-shared-display"]: eventInfo.htmlAttributes.value
+    ["sheet-shared-display"]: eventValue(eventInfo)
   })
 });
 
-on("clicked:burn-momentum", function(eventInfo) {
+on("clicked:set-mode", function(eventInfo) {
+  setAttrs({
+    ["mode"]: eventValue(eventInfo)
+  })
+});
+
+on("clicked:set-stat-mode", function(eventInfo) {
+  setAttrs({
+    ["stat-mode"]: eventValue(eventInfo)
+  })
+});
+
+on("clicked:momentum-burn", function(eventInfo) {
+  console.log(eventInfo);
   getAttrs(["momentum_reset", "momentum"], function(data) {
-    let currentMomentum = Number(data.momentum.valueOf());
-    let reset = Number(data.momentum_reset.valueOf());
-    if (currentMomentum >= reset) {
-      let template = `&{template:default} {{name=@{character_name} burns momentum!}} {{new action score=${currentMomentum}}} {{momentum reset=${reset}}}`;
-      setAttrs({
-        ["momentum"]: reset
-      });
+    console.log(data);
+    let momentum = Number(data.momentum);
+    let momentum_reset = Number(data.momentum_reset);
+    // console.log(currentMomentum, reset);
+    if (momentum >= momentum_reset) {
+      const template = `&{template:momentum_burn} {{action_score=[[@{momentum}]]}} {{momentum_reset=[[@{momentum_reset}]]}} {{character_name=@{character_name}}}`;
+      console.log(template);
       startRoll(template, function(data) {
-        finishRoll(data.rollId);
+        finishRoll(data.rollId, {
+          momentum_reset,
+          momentum
+        })
+      });
+      setAttrs({
+        ["momentum"]: momentum_reset
       });
     } else {
       return;
@@ -33,3 +61,4 @@ on("clicked:burn-momentum", function(eventInfo) {
   })
 });
 
+// // lazy 'legacy' roll conversion

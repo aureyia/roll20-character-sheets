@@ -1,4 +1,4 @@
-mixin tab(tabName, parentName, i18n_key, classes=[])
+mixin tab(tabName, parentName, i18n_key, fallbackLabel=false, classes=[], aria_controls = tabName)
   -
     btnValue = tabName
     btnName = `act_set-${parentName}-display`
@@ -7,11 +7,11 @@ mixin tab(tabName, parentName, i18n_key, classes=[])
     role="tab"
     name=btnName
     value=btnValue
-    class=classes
+    class=["page-tab", ...classes]
     id = `${parentName}-tab-${tabName}`
-    aria-controls=`${parentName}-${tabName}`
+    aria-controls=aria_controls
   )
-    +i18n(i18n_key)
+    +i18n(i18n_key, fallbackLabel)
 
 mixin tabList(parentName, defaultTab, ariaLabel, classes=[])
   nav(

@@ -1,0 +1,53 @@
+
+.sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-action_roll
+  > .sheet-roll-container
+    .sheet-momentum-burn.sheet-btn
+      > a
+        iconBefore(1em, $icon_momentum_burn)
+
+        padding 0.25em
+
+    .sheet-action-score
+      gap 0.5em
+
+      .sheet-arithmetic
+        bodyTextLg()
+
+        display flex
+        flex-flow row
+        margin-left auto
+        color $color_fg_alt
+        font-weight 500
+        font-size 1em
+
+        & > * > .inlinerollresult
+          padding 0
+          min-width unset
+          border 0
+          border-radius 0
+          color inherit
+          font-weight inherit
+          font-size inherit
+
+      .sheet-total
+        .fullfail
+          border 2px solid $miss_color
+
+        .fullcrit
+          border 2px solid $strong_hit_color
+
+.sheet-rolltemplate-starforged_moves
+  > .sheet-roll-container
+    .sheet-subheader
+      &:after
+        color $color_fg_alt
+
+      iconAfter(1.5em, $icon_action_roll, 0 -5px 0 0)
+
+.sheet-rolltemplate-momentum_burn
+  > .sheet-roll-container
+    .sheet-subheader
+      &:after
+        color $color_fg_alt
+
+      iconAfter(1.5em, $icon_momentum_burn, 0 -5px 0 0)

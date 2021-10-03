@@ -4,11 +4,18 @@ mixin challengeDice
       +i18n('challenge-dice')
     div.sheet-challenge-dice {{challenge1}} {{challenge2}}
 
-mixin actionBody(type)
-  .sheet-result-body.sheet-result-row
-    div
+mixin actionBody(type=action)
+  .sheet-result-body.sheet-result-row.sheet-action-score
+    .sheet-label
       +i18n('action-score')
-    div.sheet-action-score {{#{type}}}
+    //- .sheet-arithmetic
+    //-   .sheet-die $[[0]]
+    //-   !=` + `
+    //-   .sheet-stat {{stat}}
+    //-   !=` + `
+    //-   .sheet-add {{add}}
+    //-   !=` = `
+    .sheet-total {{#{type}}}
   +challengeDice
 
 mixin progressBody
@@ -17,11 +24,6 @@ mixin progressBody
     div {{progress}}
   +challengeDice
   //- TODO: figure out the most sensible way to handle translation strings here
-
-mixin momentumBody
-  .sheet-result-body.sheet-result-row
-    div.i18n-text.sheet-momentum-title(data-i18n='momentum')=translation['momentum']
-    div {{momentum}}
 
 mixin limitAlert
   div.sheet-result-body.sheet-result-row

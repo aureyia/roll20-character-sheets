@@ -58,7 +58,7 @@ mixin assetCard(asset, options)
   - category = _.kebabCase(asset.Category)
   if options.visibilityToggle === true
     input(hidden class=["switch-display", options.classes ? options.classes : "", asset.id] type='checkbox' name=`attr_${name}`)
-  article(class=`asset-card ${options.classes ? options.classes : ""} ${asset.id} category-${category} ${options.visibilityToggle ? "switchable-display" : ""}`)
+  article(class=[`asset-card`,`${options.classes ? options.classes : ""}`,`${asset.id}`,`category-${category}`,`${options.visibilityToggle ? "switchable-display" : ""}`])
     span.asset-category=asset.Category
     h3.asset-name=asset.Name
     img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/${asset.id}.svg` alt="").asset-icon

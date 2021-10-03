@@ -18,10 +18,10 @@ mixin repeatingVow()
     .progress-row
       div
         label
-          input(hidden class="mark-vow hide" type="checkbox" name="attr_mark_progress")
+          input(hidden class=["mark-vow", "hide"] type="checkbox" name="attr_mark_progress")
           +i18n('progress-mark')
         label
-          input(hidden class="clear-vow hide" type="checkbox" name="attr_clear_progress")
+          input(hidden class=["clear-vow", "hide"] type="checkbox" name="attr_clear_progress")
           +i18n('clear-btn')
       each index in track
         +progressBoxComplex(`attr_progress_${index}`)
@@ -34,7 +34,7 @@ mixin repeatingVow()
       input(
         hidden
         type="text"
-        class="switch-display"
+        class=["switch-display"]
         name="attr_vow-filled"
         value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)`
         disabled

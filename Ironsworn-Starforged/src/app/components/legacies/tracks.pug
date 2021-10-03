@@ -39,7 +39,7 @@ mixin legacies()
               button(
                 data-i18n="roll"
                 type="roll"
-                class='legacy-roll'
+                class=['legacy-roll']
                 name="rollProgress"
                 value=`&{template:starforged_progress} {{progress_name=Legacy ${legacy} Progress}} {{progress=[[@{legacy_progress_${legacy}-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
               )=translation.roll

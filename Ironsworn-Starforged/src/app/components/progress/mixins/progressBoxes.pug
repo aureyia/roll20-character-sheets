@@ -11,30 +11,27 @@ mixin progressTrackBoxes(track, name)
       div
         label
           +i18n("progress-mark")
-          input(hidden class="mark-vow switch-display" type="checkbox" name="attr_mark_progress")
+          input(hidden class=["mark-vow","switch-display"] type="checkbox" name="attr_mark_progress")
         label
           +i18n("progress-clear")
-          input(hidden class="clear-vow switch-display" type="checkbox" name="attr_clear_progress")
+          input(hidden class=["clear-vow","switch-display"] type="checkbox" name="attr_clear_progress")
       each value in track
         +progressBoxComplex(`attr_progress_${value}`)
       div
-        button(
-          type="roll"
-          name="rollProgress"
-          value=`&{template:starforged_progress} {{progress_name=@{${name}}}} {{progress=[[@{progress-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
-        )
-          +i18n("progress-conclude")
+        //- +progressRollBtn("[[@{progress-filled}]]", "progress-conclude")
+        //- TODO: fix so it refs repeating progress
+        //- +progressRollBtn("[[?{Filled Progress|0}]]", "progress-conclude", ['roll-show'], true)
       input.switch-display(type='hidden' name='attr_progress-filled' value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)`)
 
 mixin progressBoxComplex(attribute_name)
   .progress-input-holder
-    select(name=attribute_name class="progress-input")
+    select(name=attribute_name class=["progress-input"])
       +progressBox
     +progress_inputs(attribute_name)
 
 mixin largeProgressBoxComplex(attribute_name)
   .large-progress-input-holder
-    select(name=attribute_name class="large-progress-input")
+    select(name=attribute_name class=["large-progress-input"])
       +progressBox
     +progress_inputs(attribute_name, { classes: 'large-input' })
 
@@ -42,7 +39,7 @@ mixin progress_inputs(attribute_name, opts = null)
   each index in ['1', '2', '3', '4']
     if opts
       if opts.classes
-        input.hide(type='number' class=`hide ${opts.classes}` name=attribute_name min=index required)
+        input.hide(type='number' class=[`hide`,`${opts.classes}`] name=attribute_name min=index required)
     else
       input.hide(type='number' name=attribute_name min=index required)
     span

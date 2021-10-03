@@ -1,19 +1,19 @@
 include ../../generic/rulesArticle
 include ../../rolls/rolls.pug
 
-mixin moveRulesArticle(move, options, classes="")
-  +rulesArticle(null, `move ${move.id} ${classes}`)
+mixin moveRulesArticle(move, options, classes=[])
+  +rulesArticle(null, ["move", move.id, ...classes])
     if options.hide_title != true
       h3=move.Name
         if move['Progress Move']
           span.move-progress-label='Progress Move'
     if options.hide_close_button != true
-      +closeButton("move", "preview")
+      +closeButton("move", "preview-display")
     - statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
     if move['Progress Move']
-      +progressRollBtn(move, "roll-show icon-only")
+      +progressRollBtn(move, null, ['roll-show'], false, true)
     else if statCheck
-      +moveRollBtn(move, "roll-show icon-only")
+      +actionRollBtn(move, ["roll-show"], false, true)
     section.gamerules-body
       .gamerules-text!=move.Text
       if move.Oracle && options.hide_oracle != true

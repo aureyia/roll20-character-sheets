@@ -10,6 +10,6 @@ mixin assets()
       +customAssets
   .switch-display
     each asset in assets.Assets
-      input(hidden class=`switch-display` type='checkbox' name=`attr_${asset.id}`)
+      input(hidden class=[`switch-display`] type='checkbox' name=`attr_${asset.id}`)
       //- TODO: i'm not really sure what's happening here, prob worth checking
       //- would it be possible to hide checked assets from the datalist by giving them a class and setting it to Display: none with css?

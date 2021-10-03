@@ -1,4 +1,4 @@
-mixin rulesArticle(footerContent="", classes="")
-  article(class=`gamerules ${classes}`)
+mixin rulesArticle(footerContent="", classes=[])
+  article(class=["gamerules", ...classes])
     block
     footer.gamerules-footer!=footerContent

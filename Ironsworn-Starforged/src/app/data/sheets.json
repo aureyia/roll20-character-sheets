@@ -3,15 +3,15 @@
     "name": "character",
     "start": "summary",
     "pages": [
-      "progress",
-      "moves",
-      "connections",
-      "legacies",
-      "oracles",
-      "vows",
       "summary",
       "assets",
-      "ship"
+      "vows",
+      "progress",
+      "connections",
+      "legacies",
+      "ship",
+      "moves",
+      "oracles"
     ]
   },
   {

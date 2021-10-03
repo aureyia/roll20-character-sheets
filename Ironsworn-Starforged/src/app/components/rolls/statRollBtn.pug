@@ -1,0 +1,14 @@
+include ../../common/pug/translation
+
+mixin statRollBtn(attribute, i18n_key=attribute, classes=[], blockContent=false, iconOnly=false)
+  button(
+    type="roll"
+    class=classes
+    name=`roll_${attribute}`
+    title=`Roll +${attribute}`
+    value=attribute
+  ).action-roll
+      if blockContent==true
+        block
+      else if iconOnly==false
+        +i18n(i18n_key)

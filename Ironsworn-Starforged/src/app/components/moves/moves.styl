@@ -1,4 +1,21 @@
 
+for $moveId in $moves
+  input[name=attr_move-preview-display]
+    &[value={$moveId}]
+      ~ .preview-main .{$moveId}
+        display grid
+
+      ~ .preview-list [value={$moveId}]
+        interactiveAltColor($color_bg, $color_fg)
+
+    &:not([value={$moveId}]) ~ .preview-main .{$moveId}
+      display none
+
+.page-moves
+  display grid
+  grid-template-columns max-content 1fr
+  gap 1em
+
 div
   &.search-bar
     display flex
@@ -76,7 +93,7 @@ span
   &.move-result
     width 36em
 
-  &.preview-move-roll
+  &.preview-roll-move
     margin-left 1em
     width 60%
 
@@ -110,14 +127,14 @@ article.gamerules
     display block
     align-self end
     margin-left 1em
-    color $color_fg_alt
+    color $color_fg_fade
     font-style italic
 
   .move-table
     width 30.5em
     border none
 
-  .move-roll
+  .roll-move
     width 18%
 
 .clear-search

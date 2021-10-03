@@ -17,19 +17,19 @@ mixin assetMeterBox(parent, value)
 
 mixin assetAbilityView(value)
   input(
-    class=`builder-ability-${value}-text switch-display`
+    class=[`builder-ability-${value}-text`,`switch-display`]
     type='checkbox'
     name=`attr_builder-ability-${value}-text`
   )
-  div(class=`builder-ability-${value}-text switchable-display`)
+  div(class=[`builder-ability-${value}-text`,`switchable-display`])
     input.custom-asset-ability(
       type='checkbox'
       name=`attr_assetcheckbox_builder-ability-${value}`
     )
     .asset-ability
       span.no-border.ability-text(name=`attr_builder-ability-${value}-text-area`)
-  input(hidden class=`builder-ability-${value}-text-input switch-display` type='checkbox' name=`attr_builder-ability-${value}-text-input`)
-  div(class=`builder-ability-${value}-text-input switchable-display`)
+  input(hidden class=[`builder-ability-${value}-text-input`,`switch-display`] type='checkbox' name=`attr_builder-ability-${value}-text-input`)
+  div(class=[`builder-ability-${value}-text-input`,`switchable-display`])
     input.custom-asset-ability(type='checkbox' name=`attr_assetcheckbox_builder-ability-${value}`)
     .asset-ability
       span.no-border.ability-text(name=`attr_builder-ability-${value}-text-area`)
@@ -51,7 +51,7 @@ mixin customAssetBuilder
         data-i18n-placeholder='asset-custom-builder-name-placeholder'
         placeholder=translation["asset-custom-builder-name-placeholder"]
       )
-    div(class='builder-titles')
+    div(class=['builder-titles'])
       div
         +i18n("data-i18n='asset-custom-builder-titles'")
       select.sub-dropdown.builder-dropdown(name='attr_builder-titles')
@@ -66,7 +66,7 @@ mixin customAssetBuilder
       - counter = 0
       while counter < customAssetAbilitiesMax
         - abilityText = `Ability ${counter+1}`
-        div(class=`builder-ability-${counter+1}`)
+        div(class=[`builder-ability-${counter+1}`])
         div.i18n-text(data-i18n=`asset-custom-builder-ability-${counter+1}`)=abilityText
         select.sub-dropdown(name=`attr_builder-ability-${counter+1}`)
           option.i18n-text(
@@ -123,17 +123,17 @@ mixin customAssetTitles
   while counter < customAssetTotalTitlesMax
     if counter == 0
       input(
-        class=`builder-titles-${counter} switch-display`
+        class=[`builder-titles-${counter}`,`switch-display`]
         type='checkbox'
         name=`attr_builder-titles-${counter}`
       )
     else
       input(
-        class=`builder-titles-${totalTitles} switch-display`
+        class=[`builder-titles-${totalTitles}`,`switch-display`]
         type='checkbox'
         name=`attr_builder-titles-${totalTitles}`
       )
-      div(class=`builder-titles-${totalTitles} switchable-display`)
+      div(class=[`builder-titles-${totalTitles}`, `switchable-display`])
         - currentTitle = 1
         while currentTitle <= totalTitles
           +assetBuilderTitles(totalTitles, currentTitle++)
@@ -145,17 +145,17 @@ mixin customAssetDropdowns
   while counter < customAssetDropdownsMax
     if counter == 0
       input(
-        class=`meter-dropdown-${counter} switch-display`
+        class=[`meter-dropdown-${counter}`,`switch-display`]
         type='checkbox'
         name=`attr_meter-dropdown-${counter}`
       )
     else
       input(
-        class=`meter-dropdown-${counter} switch-display`
+        class=[`meter-dropdown-${counter}`,`switch-display`]
         type='checkbox'
         name=`attr_meter-dropdown-${counter}`
       )
-      div(class=`meter-dropdown-${counter} switchable-display`)
+      div(class=[`meter-dropdown-${counter}`,`switchable-display`])
         .asset-meter.custom-track
           - currentBox = 0
           while currentBox <= counter

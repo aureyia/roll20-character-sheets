@@ -11,12 +11,12 @@ mixin resourceMeterBar(attribute, radioIdPrefix, i18n_key=attribute, max=5, min=
       - displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
       - radioId = `${radioIdPrefix}_${currentMeter}`
       +attrToggleRadio(attribute, currentMeter, null, currentMeter == startsAt, radioId)
-      label.resource-meter-box(for=radioId)!=displayText
+      label.resource-meter-box(for=radioId title=`Set ${translation[i18n_key]} to ${displayText}`)!=displayText
       - currentMeter++
 
 //- numeric input via number spinner - might be more semantically apropos + mobile friendly?
 
-mixin resourceMeterSpinner(attribute, value, max=value, min=0)
+mixin resourceMeterSpinner(attribute, value=0, max=value, min=0)
   section.resource-spinner
     //- input(type="hidden" name=`attr_${attribute}_max` value=max)
     //- input(type="hidden" name=`attr_${attribute}_min` value=min)

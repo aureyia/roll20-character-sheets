@@ -4,14 +4,9 @@ include ../../components/moves/moves
 
 mixin movesPage(sheetType)
   +page("moves", sheetType)
-    +overview("move", 1)
+    +previewList("move")
       each group in movegroups
         +moveGroup(group)
-    +preview("move", 2)
-      +previewSidebar()
-        each group in movegroups
-          +moveGroup(group)
-      +previewMain
-        each move in moves.Moves
-          input(hidden type='radio' name='attr_move_preview' class=`${move.id} switch-display` value=move.id)
-          +moveRulesArticle(move, false, "switchable-display")
+    +previewMain
+      each move in moves.Moves
+        +moveRulesArticle(move, false)

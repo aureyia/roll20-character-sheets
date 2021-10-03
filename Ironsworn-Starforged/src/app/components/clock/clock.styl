@@ -1,0 +1,95 @@
+
+$clock_size = 200px
+$clock_indicator_size = ($clock_size / 5)
+$clock_font_size = ($clock_indicator_size * 0.9)
+$clock_outer_border_width = ($clock_size / 25)
+$clock_wedge_gap = ($clock_outer_border_width / 2)
+$clock_shadow = $clock_outer_border_width / 2 $clock_outer_border_width / 2 $clock_outer_border_width rgba(0, 0, 0, 0.5)
+
+.clock > .clock-widget
+  position relative
+  display grid
+  overflow clip
+  padding 0
+  width $clock_size
+  height $clock_size
+  border $clock_outer_border_width solid transparent
+  border-radius 50%
+  background-color $color_fg
+  background-position center
+  box-shadow $clock_shadow
+  color $color_warning
+  // TODO make sure setting currentColor sets the wedge color etc too
+  transition background 2s
+
+  &:hover
+    background $color_fg radial-gradient(circle, transparent 1%, $color_fg 1%) center / 15000%
+
+  &:active
+    background-color currentColor
+    background-size 100%
+    transition background 0s
+
+.clock-wedge
+  position absolute
+  bottom 50%
+  left 50%
+  z-index 99
+  box-sizing content-box
+  margin 0
+  width 55%
+  height 55%
+  outline 0
+  // border 1px solid black
+  border ($clock_wedge_gap / 2) solid transparent
+  background-color currentColor
+  background-clip content-box
+  color inherit
+  cursor pointer
+  transition 0.3s ease
+  transform-origin bottom left
+  appearance none
+
+  &[value=wedge-0]
+    display none !important
+
+  &:checked
+    & ~ .clock-wedge
+      background-color $color_bg
+
+      &:hover
+        background-color inherit
+
+.clock-numeric-display
+  labelText()
+  colorThemeDark()
+  shrinkWrap()
+
+  z-index 100
+  align-self center
+  width $clock_indicator_size
+  height $clock_indicator_size
+  border-radius 50%
+  text-align center
+  font-size $clock_font_size
+  justify-self center
+
+for $maxWedges in 4 6 8 10
+  $wedgeRadius = (360deg / $maxWedges)
+  $skew = $wedgeRadius - 90deg
+
+  .clock-control[value=wedge-{$maxWedges}]
+    // special effect when clock is full
+    &+ .clock.clock-{$maxWedges}
+      background-color inherit
+
+      > .clock-wedge
+        background-color $color_fg
+
+      > .clock-numeric-display
+        background-color inherit
+
+  .clock-{$maxWedges}
+    for $wedgeIndex in 1 .. $maxWedges
+      .wedge-{$wedgeIndex}
+        transform rotate(($wedgeIndex - 1) * $wedgeRadius) skewY($skew)

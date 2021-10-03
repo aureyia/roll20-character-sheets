@@ -7,13 +7,13 @@ include ../mixins/actions
 mixin rollTemplateActionRoll
   - let maxNegMomentum = 6
   rolltemplate.sheet-rolltemplate-starforged_moves
-    section.sheet-roll-container
+    .sheet-roll-container
       | {{#action}}
       +actionHeader
       | {{#rollLess() momentum 0}}
       - let counter = 1;
       while counter <= maxNegMomentum
-        +negationRoll(counter, 'action')
+        +cancelRoll(counter, 'action')
         - counter++;
       | {{/rollLess() momentum 0}}
       | {{#^rollLess() momentum 0}}

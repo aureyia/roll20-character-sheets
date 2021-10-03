@@ -1,64 +1,72 @@
-section#momentum
+$momentum_gradient = linear-gradient(-90deg, #ce242b, #c80052, #b10074, #892890, #7b47aa, #685fbf, #5175cf, #3988d9, #259adf, #28aae1)
+$momentum_colors = #ce242b #cd073f #c80052 #be0064 #b10074 #9f1883 #892890 #813ca0 #784caf #6c5bbc #5f68c6 #5175cf #4280d6 #348cdb #2896de #23a0e0 #28aae1
+
+// it's possible to get these as the FG color thru use of filters, but precalculating them is probably a better idea
+#momentum
   flexCenter()
-  borderCommon()
-  colorThemeDark()
+  colorThemeLight()
+  borderCommon(4px)
 
   flex-flow row
   align-items stretch
 
   .momentum-header
     flexCenter()
-    headerText()
+    labelText()
 
     padding 0.25em
     width max-content
 
-  .resource-meter
-    colorThemeDark()
-
-    display contents
-    display flex
-    flex-grow 10
-    margin 0
-
-  button.burn-momentum
+  button.momentum-burn
     colorThemeLight()
+    iconBefore(1em, $icon_momentum_burn)
 
-    &:before
-      display inline
-      content "🔥"
+    border-width 0
 
-  button.burn-momentum, .momentum-status-box
+  button.momentum-burn, .momentum-status-box
     flex-grow 1
     max-width max-content
     width max-content
     white-space nowrap
 
   .momentum-status-box, .resource-meter-box
-    borderCommon()
     labelText()
 
-    color $color_fg_alt
+    color $color_fg_fade
 
   .momentum-status-box
     bodyTextSm()
 
-  .resource-meter-box, .momentum-status-box, button[name=act_burn-momentum]
+    font-size 90%
+
+  .resource-meter
+    display flex
+    flex-grow 10
+    margin 0
+    border solid $color_fg
+    border-width 0 1px
+    background-image $momentum_gradient
+    gap 2px
+
+  .resource-meter-box, .momentum-status-box, button[name=act_momentum-burn]
     padding 0.25em
     width max-content
 
   .resource-meter-box
-    interactive()
+    interactive(#fff, transparent)
 
     width: (100 / 17)%
+    border none
 
-    for num in 1 .. 6
-      &[for=momentum_-{num}]
-        interactive($color_bg, $color_warning)
+    for num in -6 .. 10
+      $colorIndex = num + 6
 
-  input[type=radio]:checked + .resource-meter-box
-    interactiveAltColor()
+      &[for=momentum_{num}]
+        color: $momentum_colors[$colorIndex]
 
-    for num in 1 .. 6
-      &[for=momentum_-{num}]
-        interactiveAltColor($color_warning)
+  input[type=radio][name=attr_momentum]:checked + .resource-meter-box, .resource-meter-box:hover
+    interactiveAltColor(#fff, transparent)
+
+    paint-order stroke fill
+    text-stroke 2px black
+    -webkit-text-stroke 2px black

@@ -1,0 +1,27 @@
+include "../../common/pug/attrSpan"
+
+mixin clock(wedges=6, clockId)
+  section(class=["clock"])
+    input(
+      type="hidden"
+      name=`attr_${clockId}`
+      class=["clock-control"]
+    )
+    section(class=[`clock-${wedges}`, `clock-widget`] id=clockId)
+      each wedgeIndex in _.range(wedges+1)
+        //- the "0" wedge is left hidden. TODO:
+        - let isHiddenWedge = (wedgeIndex == 0);
+        +clockWedge(wedgeIndex, wedges, clockId, isHiddenWedge, isHiddenWedge)
+      button(type="action" name=`act_reset-clock` class=["clock-numeric-display"] value="" title="Reset clock to 0")
+        +attrSpan(`attr_${clockId}`)
+
+mixin clockWedge(wedgeIndex, wedges, clockId=clock, checked=false, hidden=false)
+  input(
+    type="radio"
+    name=`attr_${clockId}`
+    value=`wedge-${wedgeIndex}`
+    class=["clock-wedge"]
+    checked=isHiddenWedge
+    hidden=isHiddenWedge
+    title=`Set clock to ${wedgeIndex}⁄${wedges}`
+  )

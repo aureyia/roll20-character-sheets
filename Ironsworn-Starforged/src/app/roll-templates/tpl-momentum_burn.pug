@@ -1,0 +1,19 @@
+include ./mixins/actions
+
+
+rolltemplate.sheet-rolltemplate-momentum_burn
+  .sheet-roll-container
+    .sheet-subheader
+      !=`{{character_name}} burns momentum!`
+    .sheet-result-body.sheet-result-row.sheet-action-score
+      .sheet-label
+        +i18n('action-score')
+      .sheet-total
+        !=`{{action_score}}`
+    .sheet-result-body.sheet-result-row
+      div
+        +i18n('momentum-reset')
+      div
+        !=`{{momentum_reset}}`
+    +standardAction("action")
+//- challenge1, challenge2, action

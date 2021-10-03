@@ -10,7 +10,7 @@ include ../../components/rolls/rolls
   standardValues = _.range(maxStandardResource, minStandardResource);
   inverse = _.range(minStandardResource, maxStandardResource);
   textResources = ["character-name", "character-callsign", "character-pronouns"];
-  numericResources = [
+  xpResources = [
     { id: "character-experience", attribute: "xp" },
     { id: "character-experience-spent", attribute: "total_xp" }
   ];
@@ -27,7 +27,7 @@ mixin resourceRollableDropdown(resourceId, sheetType)
         {trackValues = inverse}
       else
         {trackValues = standardValues};
-    +actionRollBtn(resourceId, `resource-${resourceId}`)
+    +statRollBtn(resourceId, `resource-${resourceId}`)
     select(name=`attr_${resourceId}` title=`Set ${resourceId}`)
       +characterResourceDropdownOptions(trackValues)
 
@@ -39,7 +39,7 @@ mixin characterResourceText(resourceId, i18n_key=resourceId, attribute=_.snakeCa
 
 mixin characterResourceRollable(resourceId, attribute, i18n_key, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
   section(id=`${sheetType}-${resourceId}`).resource.resource-numeric.resource-rollable
-    +actionRollBtn(attribute, i18n_key)
+    +statRollBtn(attribute, i18n_key)
     +resourceMeterSpinner(attribute, value, max, min)
 
 mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId))
@@ -48,6 +48,11 @@ mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snak
       +i18n(i18n_key).resource-title
     +resourceMeterSpinner(attribute)
 
+mixin experience
+  each xpResource in xpResources
+    +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)
+
+
 mixin characterResources(resources)
   section.resources#character-vitals
     each textResource in textResources
@@ -55,8 +60,7 @@ mixin characterResources(resources)
   section.resources#character-resource-meters
     each resource in resources
       +characterResourceRollable(resource, resource, "resource-"+resource, "character")
-    each xpResource in numericResources
-      +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)
+    +experience
 
 mixin sharedResources(resources)
   div.resources

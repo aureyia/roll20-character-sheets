@@ -1,29 +1,34 @@
+include ../tabs/tabs
+
+mixin previewToggle(previewId, parentName, i18n_key, fallbackLabel)
+  +tab(previewId, parentName, i18n_key, fallbackLabel, ["toggle-btn"])
+
 mixin closeButton(pageName, parentWidget="preview", iconOnly=true)
   -
     classes = [`close-${parentWidget}`]
     if (iconOnly) {
       classes.push("icon-only")
     }
-  button(type="action" role="" class=classes name=`act_set-${pageName}-${parentWidget}` data-i18n-title=`close-${parentWidget}` data-i18n-aria-label=`close-${parentWidget}` value="false")
+  button(type="action" role="" class=classes name=`act_set-${pageName}-${parentWidget}` data-i18n-title=`close-preview` data-i18n-aria-label=`close-preview` value="false")
     if (!iconOnly)
-      +i18n(`close-${parentWidget}`)
+      +i18n(`close-preview`)
 
 
-mixin overview(previewType, value=1, classes="")
-  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}-view` value=value checked)
-  .overview.switchable-vis
+mixin previewList(previewType, classes=[])
+  input(type='hidden' class=["preview-control", ...classes] name=`attr_${previewType}-preview-display` value="false")
+  .preview-list
     block
 
 mixin preview(previewType, value=2)
-  input(hidden type='radio' class='switch-vis' name=`attr_${previewType}-view` value=value)
+  input(hidden type='radio' class=['switch-vis'] name=`attr_${previewType}-view` value=value)
   .preview.switchable-vis
     block
 
-mixin previewSidebar(classes="")
+mixin previewSidebar(classes=[])
   nav.preview-sidebar
     block
 
-mixin previewMain(classes="")
-    div.preview-main
-      block
+mixin previewMain(classes=[])
+  div.preview-main
+    block
 

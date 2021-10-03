@@ -3,8 +3,7 @@ include ./mixins/oracleListGroupItem
 include ../../common/pug/button
 include ../image/gameIcon
 
-mixin oraclePreviewToggle(type, name, id)
-  +toggleBtn(header.replace(/ - /i, ": "), `oracle_${type}_button`, id)
+
 
 mixin oracleRollGroup(group)
   +listGroup(group['Display name']||group.Name, false)
@@ -26,9 +25,8 @@ mixin oracleRollGroup(group)
           +oracleSubtablesListGroupItem(subCategory.id, buttonLabel, subCategory.Oracles)
 
 mixin oraclePreview(oracle, groupName)
-  input(hidden class=`${oracle.id} switch-display` type='radio' name=`attr_oracle_preview` value=oracle.id)
-  //- article(class=`${oracle.id} switchable-display rules` id=oracle.id)
-  +rulesArticle(null,`oracle ${oracle.id} switchable-display`)
+  input(hidden class=[oracle.id,"switch-display"] type='radio' name=`attr_oracle_preview` value=oracle.id)
+  +rulesArticle(null, ["oracle", oracle.id, "switchable-display"])
     - nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replace(/ - /i, ": ") : `${groupName}: ${oracle['Display name']||oracle.Name}`
     h3=nameString
     if oracle.Table
@@ -37,7 +35,7 @@ mixin oraclePreview(oracle, groupName)
       +oracleSubtablesRollBtn(oracle.id, oracle['Display name']||oracle.Name, oracle.Tables)
     else if oracle.Oracles
       +oracleSubtablesRollBtn(oracle.id, oracle['Display name']||oracle.Name, oracle.Oracles)
-    +closeButton("oracle", "preview")
+    +closeButton("oracle", "preview-display")
     section.gamerules-body
       if oracle.Table
         +oracleTable(oracle)

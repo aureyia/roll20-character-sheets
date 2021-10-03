@@ -1,3 +1,5 @@
+@import "./icons.styl"
+
 $sheet_width = 842px
 $sheet_padding = 0
 $breakpoint_mobile_width = 768px
@@ -19,10 +21,12 @@ $sf_oracle = #7f5a90 // module
 $sf_iron = #9aa3ad // command vehicle
 // basic ux colors
 $color_fg = $sf_black // old: #4c4d4f
+$color_fg_alt = $sf_ui_gray_dark // 'faded' foreground colour
 $color_bg = #fff
 $color_bg_alt = $sf_ui_gray_light // old: #e4e4e4. for alternating table rows, etc
 $color_bg_alt_2 = $sf_ui_gray_dark
-$color_fg_alt = $sf_ui_gray_dark // 'faded' foreground colour
+$color_fg_fade = blend(alpha($color_fg, 0.7), $color_bg)
+$color_bg_fade = blend(alpha($color_bg, 0.7), $color_fg)
 $color_input = $sf_ui_gray_dark // old: #ccc. inputBox background, when hovering over usable objects
 $color_highlight = #fd0 // highlights active fields
 $color_cta = $sf_ui_blue
@@ -60,14 +64,14 @@ typeSpacingTight()
   word-spacing $word_spacing_tight
   letter-spacing $letter_spacing_tight
 
-stdFont(primary = false)
-  if (primary)
-    font-family primary, Arial, sans-serif
+stdFont($primary = false)
+  if ($primary)
+    font-family $primary, Arial, sans-serif
   else
     font-family $type_body
 
-borderCommon(width = 2px)
-  border width solid $color_fg
+borderCommon($width = 2px, $color = currentColor)
+  border $width solid $color
 
 visOff(time = $long_transition)
   visibility hidden !important
@@ -145,8 +149,6 @@ headerTextSm()
   font-weight 700
 
 bodyText()
-  stdFont($type_body)
-
   text-transform none
 
   typeSpacingTight()
@@ -154,6 +156,10 @@ bodyText()
   font-weight 400
   font-size 1em
   line-height $body_line_height
+
+bodyTextLg()
+  bodyText()
+  stdFont($type_body)
 
 bodyTextSm()
   bodyText()
@@ -169,40 +175,43 @@ footerText()
 
   font-size 75%
 
-interactiveHover(bg = $color_fg, fg = $color_bg)
-  &:hover:enabled
-    interactiveAltColor(bg, fg)
+interactiveHover($bg = $color_fg, $fg = $color_bg)
+  &:hover:not(:disabled)
+    interactiveAltColor($bg, $fg)
 
-interactiveActive(bg = $color_fg, fg = $color_bg)
+interactiveActive($bg = $color_fg, $fg = $color_bg)
   &:active
-    interactiveAltColor(bg, fg)
+    interactiveAltColor($bg, $fg)
 
-interactiveAltColor(fg = $color_bg, bg = $color_fg)
-  background-color bg !important
-  color fg !important
+    text-decoration none
+
+interactiveAltColor($fg = $color_bg, $bg = $color_fg)
+  background-color $bg !important
+  color $fg !important
 
 interactiveFocus(shadow = 3px)
   outline 0 solid transparent
   box-shadow inset 0 0 0 0 transparent
 
   &:focus
-    z-index 1 // so it renders above adjacent objects when focused
+    z-index 100 // so it renders above adjacent objects when focused
     outline 3px solid $color_highlight
     outline-offset 0
     box-shadow inset 0 0 0 shadow
+    text-decoration none
 
 interactive(bg = $color_bg, fg = $color_fg)
   background-color bg
   color fg
   cursor pointer
   transition-duration $short_transition
-  transition-property color, background-color, box-shadow, outline
+  transition-property color, background-color, box-shadow, outline, mix-blend-mode
 
   interactiveFocus()
   interactiveActive(bg, fg)
   interactiveHover(bg, fg)
 
-interactiveInactive(bg = $color_bg_alt fg = $color_fg_alt)
+interactiveInactive(bg = $color_bg_alt, fg = $color_fg_alt)
   background-color bg
   color fg
   cursor not-allowed
@@ -211,23 +220,22 @@ interactiveInactive(bg = $color_bg_alt fg = $color_fg_alt)
     background-color inherit
     color inherit
 
-btn(fontSize = 1em, padding = 0.25em 0.5em, borderWidth = 2px)
-  colorThemeLight()
+btn($bgColor = $color_bg, $fgColor = $color_fg, $fontSize = 1em, $padding = 0.25em 0.5em, $borderWidth = 2px)
   labelText()
-  interactive()
-  borderCommon(borderWidth)
+  interactive($bgColor, $fgColor)
+  borderCommon($borderWidth)
 
   display flex
   justify-content center
   align-items center
   align-content center
-  padding padding
+  padding $padding
   width stretch
   width -moz-available
   height auto
   border-radius 0
   text-align center
-  font-size fontSize
+  font-size $fontSize
 
 inputBox()
   inputText()
@@ -262,7 +270,7 @@ iconBtn(iconUrl)
     left 0
     display block
     margin 0
-    padding 0
+    padding 2px
     width 100%
     height 100%
     border none
@@ -272,12 +280,12 @@ iconBtn(iconUrl)
     font-size unset
     line-height unset
     mask-image url(iconUrl)
-    mask-size 90% // contain could also work, but this pads it out a bit
+    mask-size contain
     mask-repeat no-repeat
     mask-position center
     mask-origin content-box
 
-bulletBefore(forTextSize, iconUrl)
+bulletBefore(forTextSize, $iconUrl)
   margin-left: (forTextSize * 1.5)
 
   &:before
@@ -288,14 +296,45 @@ bulletBefore(forTextSize, iconUrl)
     height: (forTextSize * 0.75)
     background-color currentColor
     content ""
-    mask-image url(iconUrl)
+    mask-image url($iconUrl)
     mask-size contain
     mask-repeat no-repeat
 
+iconStandard(size, $iconUrl)
+  display inline-block
+  width size
+  height size
+  background-color currentColor
+  content ""
+  mask-image url($iconUrl)
+  mask-size contain
+  mask-repeat no-repeat
+  mask-position center
+
+iconBefore($size, $iconUrl, $margins = 0 0.25ch 0 0)
+  &:before
+    iconStandard($size, $iconUrl)
+
+    margin $margins
+
+iconAfter($size, $iconUrl, $margins = 0 0 0 0.25ch)
+  &:after
+    iconStandard($size, $iconUrl)
+
+    margin $margins
+
+iconBehind($size, $iconUrl, $margins = 0 0 0 0)
+  &:before
+    position absolute
+    z-index -1
+    width inherit
+    height inherit
+
 // places a double width stroke behind to fake an outside stroke
-textOutline(strokeColor, strokeWidth = 2px)
+textOutline(strokeColor = black, strokeWidth = 2px)
   paint-order stroke fill
-  text-stroke (strokeWidth * 2) strokeColor
+  // text-stroke (strokeWidth * 2) strokeColor
+  -webkit-text-stroke (strokeWidth * 2) strokeColor
 
 $hexagon_pointy = polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
 $hexagon_flat = polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%)
@@ -361,3 +400,9 @@ flexCenter()
   align-content center
   text-align center
   justify-items center
+
+shrinkWrap()
+  margin none
+  padding none
+  outline none
+  border none

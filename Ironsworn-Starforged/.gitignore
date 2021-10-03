@@ -11,6 +11,7 @@ temp/
 
 #osx
 .DS_store
+*/**/.DS_store
 
 # prettier
 .prettierrc

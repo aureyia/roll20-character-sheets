@@ -1,48 +1,41 @@
 include ./body
 
 //- TODO: something to handle stuff that upgrades/downgrades roll results, such as Take Decisive Action
+-
+  function inlineMomentumBurn(hitType) {
+    return `[{{burn_${hitType}}}](~{{header}}|momentum-burn)`
+  }
+
 mixin strongHitMatch
   .sheet-result-row.sheet-roll-outcome
-    .sheet-strong-hit-match
-    .sheet-subfooter
+    .sheet-subfooter.sheet-strong-hit-match
       +i18n('roll-strong-hit-match')
 
 mixin strongHit
   .sheet-result-row.sheet-roll-outcome
-    .sheet-strong-hit
-    .sheet-subfooter
+    .sheet-subfooter.sheet-strong-hit
       +i18n('roll-strong-hit')
 
 mixin momentumStrongHit
-  +momentumBody
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-strong-hit
-    .sheet-subfooter
-      +i18n('momentum-burn-strong-hit')
-      +actionBtn("burn-momentum", null, null, ["burn-momentum"], true)
+  .sheet-result-row.sheet-strong-hit.momentum-burn.btn
+    !=inlineMomentumBurn("strong")
+
 //- TODO: additional mixin for burning momentum for a strong hit with a match?
 mixin weakHit
   .sheet-result-row.sheet-roll-outcome
-    .sheet-weak-hit
-    .sheet-subfooter
+    .sheet-subfooter.sheet-weak-hit
       +i18n('roll-weak-hit')
 
 mixin momentumWeakHit
-  +momentumBody
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-weak-hit
-    .sheet-subfooter
-      +i18n('momentum-burn-weak-hit')
-      +actionBtn("burn-momentum", null, null, ["burn-momentum"], true)
+  .sheet-result-row.sheet-weak-hit.momentum-burn.btn
+    !=inlineMomentumBurn("weak")
 
 mixin miss
   .sheet-result-row.sheet-roll-outcome
-    .sheet-miss
-    .sheet-subfooter
+    .sheet-subfooter.sheet-miss
       +i18n('roll-miss')
 
 mixin missMatch
   .sheet-result-row.sheet-roll-outcome
-    .sheet-miss-match
-    .sheet-subfooter
+    .sheet-subfooter.sheet-miss-match
       +i18n('roll-miss-match')

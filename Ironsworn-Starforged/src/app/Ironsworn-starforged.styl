@@ -42,7 +42,7 @@ span.i18n-text
 p, ul
   margin 0
 
-  bodyText()
+  bodyTextLg()
 
 ol, ul
   margin-left 1em
@@ -52,7 +52,7 @@ li
 
   bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/star-bullet.svg")
 
-button, label, .btn, button[type=roll]
+button, label, .btn, button[type=roll], button[type=action][name=act_action-roll], button[type=action][name=act_progress-roll]
   btn()
 
 input[type=text], input[type=number], input[type=search], textarea, select
@@ -153,19 +153,19 @@ u
 @import "./components/generic/buttons"
 @import "./components/generic/repeating"
 @import "./components/generic/rulesarticle"
+@import "./components/tabs/tabs"
 @import "./components/resources/resources"
 @import "./components/impacts/impacts"
 @import "./components/connections/connections"
 @import "./components/vows/vows"
 @import "./components/progress/progress"
-@import "./components/tabs/tabs"
-@import "./components/momentum/momentum"
+@import "./components/legacies/tracks"
 @import "./components/stats/stats"
 @import "./components/notes/notes"
 @import "./components/moves/moves"
 @import "./components/assets/assets"
 @import "./components/oracles/oracles"
-@import "./components/legacies/tracks"
+@import "./components/momentum/momentum"
 // Pages
 @import "./pages/page"
 @import "./pages/index"

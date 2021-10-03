@@ -14,17 +14,17 @@ mixin statsEditor()
         +i18n(`stat-${stat}`)
       input(
         type='text'
-        class='stats-input'
+        class=['stats-input']
         name=`attr_${stat}`
         value='0'
       )
 
 mixin statsStatic()
   each stat in stats
-    +actionRollBtn(stat, `stat-${stat}`, ["stat"], true)
+    +statRollBtn(stat, `stat-${stat}`, ["stat"], true)
       h3.stats-title
         +i18n(`stat-${stat}`)
-      span(class='stats-input' name=`attr_${stat}`)
+      span(class=['stats-input'] name=`attr_${stat}`)
 
 mixin editToggle(parentName, defaultMode="off", ariaLabel)
   section(class=parentName, aria-label=ariaLabel)

@@ -3,8 +3,8 @@ include ../../rolls/rolls.pug
 mixin moveListButton(move)
   - statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
   if move['Progress Move']
-    +progressRollBtn(move, 'roll-show icon-only')
+    +progressRollBtn(move, null, ['roll-show'], false, true)
   else if statCheck
-    +moveRollBtn(move, 'roll-show icon-only')
+    +actionRollBtn(move, ['roll-show'], false, true)
   else
-    +placeholderBtn(move, 'roll-show')
+    +placeholderBtn(move, ['roll-show'])

@@ -22,7 +22,7 @@ super(trigger, "IncrementAttrListener");
 on(trigger, (eventInfo) =>{
 log(eventInfo);
 getAttrs([attr], attributes => {
-let increment = parseInt(getBtnValue(eventInfo));
+let increment = parseInt(eventValue(eventInfo));
 let previousValue = parseInt(attributes[attr]);
 return setAttr({
 [attr]: previousValue + increment

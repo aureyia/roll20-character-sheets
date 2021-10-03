@@ -66,7 +66,7 @@
 //     let trigger = `click:set-${attr}`;
 //     super(trigger, "SetAttrListener");
 //     on(trigger, (eventInfo) => {
-//       let value = normalizeAttr(getBtnValue(eventInfo));
+//       let value = normalizeAttr(eventValue(eventInfo));
 //       setAttr({
 //         [attr]: value
 //       });

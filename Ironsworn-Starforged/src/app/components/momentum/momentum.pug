@@ -6,14 +6,14 @@ include ./../resources/resourcemeter.pug
 //-   }
 
 section#momentum
-  input(type="hidden" name="attr_momentum-burn-available" value="true")
+  //- input(type="hidden" name="attr_momentum-burn-available" value="true")
   h3.momentum-header
     +i18n("momentum")
   .momentum-status-box
     +attrSpan('momentum-maximum', "momentum_max")
   +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
-  +actionBtn("burn-momentum", null, null, ["burn-momentum"], true)
-    input(type='hidden' name=`attr_momentum_reset` value=value)
+  +actionBtn("momentum-burn", null, null, ["momentum-burn"], true)
+    input(type='hidden' name=`attr_momentum_reset` value=2)
     +i18n("momentum-burn")
     span!=" &rarr; "
     span(name="attr_momentum_reset").attr-span

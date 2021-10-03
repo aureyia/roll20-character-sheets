@@ -8,13 +8,14 @@ article.gamerules
   display grid
   align-items center
   margin 0
+  height max-content
   border 0
   gap 0 0.5em
   grid-template-areas "title roll close" "body body body" "footer footer footer"
   grid-template-columns 1fr max-content max-content
   grid-template-rows min-content min-content 1fr max-content
 
-  h3, .close-preview.icon-only, button.roll-show.icon-only
+  h3, .close-preview-display.icon-only, button.roll-show.icon-only
     font-size $h2_size
 
   h3
@@ -32,11 +33,7 @@ article.gamerules
     grid-row-start 1
 
   button.roll-show.icon-only
-    background-color $color_cta
-    color $color_bg
-
-    hexagonClip($h2_size)
-    interactiveHover($color_bg, $color_cta)
+    hexButtonIcon($color_cta, white, $icon)
 
 .gamerules-body
   display flex

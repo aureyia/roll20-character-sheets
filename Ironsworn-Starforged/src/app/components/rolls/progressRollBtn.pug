@@ -1,13 +1,11 @@
 include ../../common/pug/translation
+include ../../common/pug/button
 
-mixin progressRollBtn(opts, visibility, content_i18n)
-  - formattedName = _.kebabCase(opts.Name)
-  button(
-    type="roll"
-    title=`Roll the ${opts.Name} progress move`
-    name=`roll_${formattedName}`
-    class=visibility
-    value!=`&{template:starforged_progress} {{header=@{character_name}}} {{progress_name=${opts.Name}}} {{progress=[[?{Filled Progress|0}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}`
-  )
-    if content_i18n
-      +i18n(content_i18n)
+mixin progressRollBtn(move, value=rolls[move.Name], classes=[], blockContent=false, iconOnly=false)
+  - let i18n_key = move.id.replace("move-", "move-title-")
+  +actionBtn("progress-roll", value, i18n_key, classes, blockContent, iconOnly)
+
+//- remember, there's some weirdness to be accounted for with repeating sections
+//- progress_name
+//- [[@{progress-filled}]]
+

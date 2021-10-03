@@ -110,7 +110,7 @@
 //   else {return value;}
 // };
 
-// function getBtnValue(eventInfo) {
+// function eventValue(eventInfo) {
 //   return normalizeAttr(eventInfo.htmlAttributes.value);
 // };
 
@@ -132,7 +132,7 @@
 // // it's whitespace insensitive, currently; the Math method name is case insensitive, too
 // async function parseBtnValue(eventInfo) {
 //   console.log("parseBtnValue eventInfo", eventInfo);
-//   const value = getBtnValue(eventInfo);
+//   const value = eventValue(eventInfo);
 //   console.log("parseBtnValue btnValue", value);
 //   if (value.match(/:/)) {
 //     let valueArr = value.replace(/\s/g, "").split(":");
@@ -176,7 +176,7 @@
 //     // getAttrs([attr, `${attr}_max`, `${attr}_min`], (data) => {
 //     getAttrsWithLimits([attr], (data) => {
 //       console.log("listenIncrementAttr receives data", data);
-//       let newValue = normalizeAttr(data[attr]) + normalizeAttr(getBtnValue(eventInfo));
+//       let newValue = normalizeAttr(data[attr]) + normalizeAttr(eventValue(eventInfo));
 //       let maxValue;
 //       let minValue;
 //       ["max", "min"].forEach(value => {

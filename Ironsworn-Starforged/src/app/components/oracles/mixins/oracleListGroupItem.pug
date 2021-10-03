@@ -1,10 +1,13 @@
 include ../../../common/pug/button
 include ./oracleRollBtn
 
+mixin oraclePreviewToggle(previewId, i18n_key, fallbackLabel)
+  +previewToggle(previewId, "oracle-preview", i18n_key, fallbackLabel)
+
 mixin oracleListGroupItem(id, buttonLabel)
   +oracleRollBtn(id, buttonLabel)
-  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
+  +oraclePreviewToggle(id, id, buttonLabel.replace(/ - /i, ": "))
 
 mixin oracleSubtablesListGroupItem(id, buttonLabel, tables)
   +oracleSubtablesRollBtn(id, buttonLabel, tables)
-  +toggleBtn(buttonLabel.replace(/ - /i, ": "), "selected_oracle", id)
+  +oraclePreviewToggle(id, id, buttonLabel.replace(/ - /i, ": "))
