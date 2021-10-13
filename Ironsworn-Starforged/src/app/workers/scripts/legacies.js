@@ -1,3 +1,18 @@
+
+on('clicked:legacy-mark', eventInfo => {
+  log('clicked:legacy-mark', eventInfo);
+})
+
+
+on('change:legacy_progress_quests-filled change:legacy_progress_bonds-filled change:legacy_progress_discoveries-filled', function() {
+  getAttrs(["legacy_progress_quests-filled", "legacy_progress_bonds-filled", "legacy_progress_discoveries-filled"], attrData => {
+    log(attrData);
+    // setAttrs({
+    //   xp: filledLegacyBoxes*2
+    // })
+  })
+});
+
 on('change:clear_legacy_quests_button change:clear_legacy_bonds_button change:clear_legacy_discoveries_button', function(values) {
   const type = values.sourceAttribute.match(/clear_legacy_(.*?)_/)[1]
   const progressAttrs = setLegacyProgressAttrs(type)
@@ -7,7 +22,7 @@ on('change:clear_legacy_quests_button change:clear_legacy_bonds_button change:cl
 function setLegacyProgressAttrs (type) {
   let attrs = new Object();
   for(let index = 1; index <= 10; index++) {
-    attrs[`legacy_progress_${type}_${index}`] = '0'; 
+    attrs[`legacy_progress_${type}_${index}`] = '0';
   };
   return attrs;
 }
@@ -22,7 +37,7 @@ on('change:mark_legacy_quests_button change:mark_legacy_bonds_button change:mark
 function generateLegacyAttrArray (type) {
   let attrs = new Array();
   for(let index = 1; index <= 10; index++) {
-    attrs.push(`legacy_progress_${type}_${index}`); 
+    attrs.push(`legacy_progress_${type}_${index}`);
   };
   return attrs;
 }
@@ -37,4 +52,4 @@ on('change:legacy_quests_plus_ten_button change:legacy_bonds_plus_ten_button cha
   setAttrs({
     [`legacy_progress_${type}-filled`]: filledAttr,
   });
-})
+});

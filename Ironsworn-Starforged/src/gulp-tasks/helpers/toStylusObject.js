@@ -12,6 +12,6 @@ module.exports = function toStylusObject(options) {
       return _.omit(item, blacklist);
     }
   );
-  // console.log(output);
+  // log(output);
   return output;
 }

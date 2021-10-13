@@ -1,0 +1,40 @@
+include ../progress/mixins/progressTrack
+
+//-
+  @mixin
+  @outputs html
+
+  @memberof components/legacies
+
+
+mixin legacyTrack(legacy)
+  section(class=[legacy, "legacy-track", "progress-track"])
+    - let trackName = `legacy_progress_${legacy}`
+    +progressTotal(trackName)
+    h2.title=translation[`legacy-${legacy}-title`]
+    +progressClearBtn(legacy)
+    +legacyMarkBtn(legacy)
+    +progressTrackBar(trackName, legacy)
+    +legacyPlusTen(legacy)
+    +legacyRollButton(legacy)
+
+mixin legacyRollButton(legacy)
+  +progressRollBtn(`Legacy ${legacy} Progress`, `@{legacy_progress_${legacy}-filled}`)
+
+mixin legacyXpBoxes(legacy, index)
+  .experience-boxes
+    input(type='hidden' name=`attr_legacy_progress_${legacy}_${index}`)
+    each box in [ 1, 2 ]
+      input(type='checkbox' name=`attr_${legacy}_experience_${index}_${box}` class=["experience-box"])
+
+mixin legacyMarkBtn(legacy)
+  +actionBtn("legacy-mark", null, i18n_key)
+  +btn({type: 'checkbox', text: 'mark', translationId: 'progress-mark', attribute: `mark_legacy_${legacy}`, action: 'static'})
+
+mixin legacyPlusTen(legacy)
+  +btn({
+    type: 'checkbox',
+    text: '+10',
+    attribute: `legacy_${legacy}_plus_ten`,
+    classes: 'ten-marker'
+  })

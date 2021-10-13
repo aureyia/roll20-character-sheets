@@ -2,7 +2,7 @@ include ../oracle/oracleRollTemplate
 
 rolltemplate.sheet-rolltemplate-starforged_oracles
   .sheet-roll-container
-    .sheet-subheader {{header}}
+    +tplHeader("header")
     | {{#custom-oracle}}
     .sheet-result-row
       .sheet-oracle-table-text {{custom-oracle}}

@@ -12,6 +12,7 @@
   box-sizing border-box
 
 .ironsworn-sheet
+  color $color_fg
   padding $sheet_padding
   width $sheet_width !important
   font-size $root_font_size
@@ -52,7 +53,7 @@ li
 
   bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/star-bullet.svg")
 
-button, label, .btn, button[type=roll], button[type=action][name=act_action-roll], button[type=action][name=act_progress-roll]
+label, .btn, button[type=roll], button[type=action][name^=act_roll]
   btn()
 
 input[type=text], input[type=number], input[type=search], textarea, select
@@ -146,6 +147,8 @@ u
   &.raster
     hexagonClip($iconWidth)
 
+
+
 // generic widgets and other components, should be overwritten by more specific styling below
 @import "./components/r20-native/repcontrol"
 @import "./components/generic/preview"
@@ -154,18 +157,19 @@ u
 @import "./components/generic/repeating"
 @import "./components/generic/rulesarticle"
 @import "./components/tabs/tabs"
+@import "./components/details/details"
 @import "./components/resources/resources"
-@import "./components/impacts/impacts"
 @import "./components/connections/connections"
 @import "./components/vows/vows"
 @import "./components/progress/progress"
-@import "./components/legacies/tracks"
+@import "./components/legacies/legacy-tracks"
 @import "./components/stats/stats"
 @import "./components/notes/notes"
 @import "./components/moves/moves"
 @import "./components/assets/assets"
 @import "./components/oracles/oracles"
 @import "./components/momentum/momentum"
+@import "./components/impacts/impacts"
 // Pages
 @import "./pages/page"
 @import "./pages/index"

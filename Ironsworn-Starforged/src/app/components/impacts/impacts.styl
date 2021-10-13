@@ -13,14 +13,11 @@
 .debil-desc
   width: 100%
 
-.impact-btn
-  width 90%
-  border-radius 1em
-  input
-    &:checked
-     &~
-      div
-        border-radius 0.7em
+.impacts
+  toggleBtn($color_danger)
+  .toggle-btn
+    width 90%
+    border-radius 1em
 
 .severity-track
   display flex
@@ -44,6 +41,8 @@ p.impact-clear
   text-transform: uppercase
   font-weight bold
   margin-bottom 0.3em
+
+
 
 .custom-impacts
   margin-left 0.6em

@@ -3,5 +3,5 @@ include ../../common/pug/translation
 mixin actionRollBtn(move, classes=[], blockContent=false, iconOnly=false)
   - let i18n_key = move.id.replace("move-", "move-title-")
   - let moveData = rolls[move.Name]
-  - let value = `&{template:starforged_moves} {{action=[[{d6+${moveData.stat}+(?{Modifier|0}),{10}}kl1]]}} {{header=@{character_name}}} {{add=[[(?{Modifier|0})]]}} {{stat=[[${moveData.repeat_stat}]]}} {{name=^{${i18n_key}}}} {{negate1=[[1+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate2=[[2+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate3=[[3+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate4=[[4+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate5=[[5+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{negate6=[[6+${moveData.repeat_stat}+(?{Modifier|0})]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{modifiers=[[${moveData.repeat_stat}+(?{Modifier|0})]]}} {{burn_strong=^{momentum-burn-strong-hit}}} {{burn_weak=^{momentum-burn-weak-hit}}}`
-  +actionBtn("action-roll", value, i18n_key, classes, blockContent, iconOnly)
+  - let value = `&{template:action_roll} {{actionScore=[[[[1d6]]+[[${moveData.repeat_stat}]]+[[(?{Adds|0})]]]]}} {{actionDie=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challengeDie1=[[d10]]}} {{challengeDie2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{momentumBurn=[[0]]}} {{moveOutcome=[[0]]}} {{header=^{${i18n_key}}}} {{icon=action-roll}} {{surtitle=@{character_name}}}`
+  +actionBtn("roll-action", value, i18n_key, classes, blockContent, iconOnly)

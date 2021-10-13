@@ -11,7 +11,7 @@ mixin moveRulesArticle(move, options, classes=[])
       +closeButton("move", "preview-display")
     - statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
     if move['Progress Move']
-      +progressRollBtn(move, null, ['roll-show'], false, true)
+      +progressRollBtn(move.Name, rolls[move.Name], move.id.replace("move-", "move-title-"),['roll-show'], false, true)
     else if statCheck
       +actionRollBtn(move, ["roll-show"], false, true)
     section.gamerules-body

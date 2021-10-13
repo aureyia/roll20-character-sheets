@@ -16,7 +16,7 @@ generalWidgets.forEach((widget) => {
 // pageWidgets.forEach((widget) => {
 //   pages.forEach((page) => {
 //     on(`clicked:set-${page}-${widget}`, function (eventInfo) {
-//       // console.log("event received:", eventInfo);
+//       // log("event received:", eventInfo);
 //       setAttrs({
 //         [`${page}-${widget}`]: btnValue(eventInfo),
 //       });
@@ -26,7 +26,7 @@ generalWidgets.forEach((widget) => {
 
 // generalWidgets.forEach((widget) => {
 //   on(`clicked:set-${widget}`, function (eventInfo) {
-//     // console.log("event received:", eventInfo);
+//     // log("event received:", eventInfo);
 //     setAttrs({
 //       [`${widget}`]: btnValue(eventInfo),
 //     });

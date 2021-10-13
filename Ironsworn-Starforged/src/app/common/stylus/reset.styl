@@ -56,7 +56,7 @@ button
   box-shadow none
   text-shadow initial
 
-button[type=roll], button[type=compendium], button[type=action][name=act_action-roll], button[type=action][name=act_progress-roll]
+button[type=roll], button[type=compendium], button[type=action][name=act_roll-action], button[type=action][name=act_roll-progress]
   margin unset
   padding unset
   font-size initial
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6, label
 .no-touch .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol
   background-color inherit
 
-button[type=roll], button[type=action][name=act_action-roll], button[type=action][name=act_progress-roll]
+button[type=roll], button[type=action][name=act_roll-action], button[type=action][name=act_roll-progress]
   &.ui-draggable-dragging
     z-index initial
     margin initial
@@ -116,7 +116,6 @@ button.disabled
   border-bottom-color inherit
   border-radius initial
   filter initial
-  filter initial
   background-color inherit
   background-image none
   background-repeat no-repeat
@@ -127,6 +126,9 @@ button.disabled
   text-shadow initial
   font-size initial
   line-height initial
+
+input[type=hidden], input[hidden=hidden]
+  display none !important
 
 input, textarea, select, .uneditable-input
   width unset

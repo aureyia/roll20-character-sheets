@@ -16,19 +16,17 @@ mixin actionDieCancelled(opts)
     div
       +i18n('new-action-score')
     div {{modifiers}}
-  div.sheet-result-body.sheet-result-row
-    div
-      +i18n('challenge-dice')
-    div {{challenge1}} {{challenge2}}
+  +challengeDice
   +standardAction('modifiers')
 
-mixin cancelRoll(opts, type)
+mixin cancelRollOld(opts, type)
   | {{#rollTotal() momentum #{opts.momentum}}}
   | {{#rollTotal() #{type} negate#{opts.die}}}
   +actionDieCancelled({momentum: true, type: type})
   | {{/rollTotal() #{type} negate#{opts.die}}}
   | {{#^rollTotal() #{type} negate#{opts.die}}}
-  +actionBody(type)
+  +actionRollBodyOld(type)
+  +challengeDiceOld
   +standardAction(type)
   | {{/^rollTotal() #{type} negate#{opts.die}}}
   | {{/rollTotal() momentum #{opts.momentum}}}

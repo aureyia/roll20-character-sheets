@@ -1,41 +1,18 @@
-include ../progress/mixins/progressBoxes
+include ../progress/mixins/progressTrack
 include ../progress/mixins/challengeRankRadio
 
 
-mixin input(id, nameValue)
+mixin input(id, classes=[], nameValue)
   input(
     type="text"
-    class=id
+    class=[id, ...classes]
     data-i18n-placeholder=id
     placeholder=translation[id]
     name=nameValue
   )
 
 mixin repeatingVow()
-  +input("vow-name", 'attr_vow_name')
-  +challengeRankRadio()
-  div.vow
-    .progress-row
-      div
-        label
-          input(hidden class=["mark-vow", "hide"] type="checkbox" name="attr_mark_progress")
-          +i18n('progress-mark')
-        label
-          input(hidden class=["clear-vow", "hide"] type="checkbox" name="attr_clear_progress")
-          +i18n('clear-btn')
-      each index in track
-        +progressBoxComplex(`attr_progress_${index}`)
-      button(
-        type="roll"
-        name="rollVow"
-        value="&{template:starforged_progress} {{progress_type=Vow}} {{progress_name=@{vow_name}}} {{progress=[[@{vow-filled}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}}"
-      )
-        +i18n('vow-fulfill')
-      input(
-        hidden
-        type="text"
-        class=["switch-display"]
-        name="attr_vow-filled"
-        value=`floor((@{progress_${track[0]}}+@{progress_${track[1]}}+@{progress_${track[2]}}+@{progress_${track[3]}}+@{progress_${track[4]}}+@{progress_${track[5]}}+@{progress_${track[6]}}+@{progress_${track[7]}}+@{progress_${track[8]}}+@{progress_${track[9]}})/4)`
-        disabled
-      )
+  +progressTrack(["vow"], "progress", "move-fulfill-your-vow", "move-title-reach-a-milestone")
+    +input("vow-name", ["progress-name"], 'attr_vow_name')
+    +challengeRankRadio()
+    +progressRecommitBtn()

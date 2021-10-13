@@ -48,11 +48,11 @@ return new C().x() === 42 && new C().x(null) === void 0;
 }
 
 on("sheet:open", () => {
-console.log("[Ironworker] EcmaScript 2016:", es2016());
-console.log("[Ironworker] EcmaScript 2017:", es2017());
-console.log("[Ironworker] EcmaScript 2018:", es2018());
-console.log("[Ironworker] EcmaScript 2019:", es2019());
-console.log("[Ironworker] EcmaScript 2020:", es2020());
-console.log("[Ironworker] EcmaScript 2021:", es2021());
-console.log("[Ironworker] EcmaScript 2022:", es2022());
+log("EcmaScript 2016:", es2016());
+log("EcmaScript 2017:", es2017());
+log("EcmaScript 2018:", es2018());
+log("EcmaScript 2019:", es2019());
+log("EcmaScript 2020:", es2020());
+log("EcmaScript 2021:", es2021());
+log("EcmaScript 2022:", es2022());
 });

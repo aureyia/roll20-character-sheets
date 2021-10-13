@@ -1,3 +1,19 @@
+
+// add to a parent selector to set the color on a specific type
+toggleBtn($color)
+  input[type=checkbox].toggle-control
+    display none
+    & + .toggle-btn
+      colorThemeLightColor($color_fg)
+      outline-width 2px
+      outline-style solid
+    &:checked + .toggle-btn, & + .toggle-btn:hover
+      colorThemeDarkColor($color_fg)
+      outline-color $color
+
+toggleBtn($color_fg)
+
+
 .static-btn
   btn()
 
@@ -8,6 +24,8 @@
 
   span
     padding 4px 2px
+  input[type=checkbox]
+    display none
 
 .btn-input
   &:checked
@@ -27,13 +45,13 @@ button
       border 0
       color $color_fg
 
-      &[name=act_progress-roll]
+      &[name=act_roll-progress]
         iconBtn($icon_progress_roll)
 
       &[name^=roll_oracle]
         iconBtn($icon_roll_oracle)
 
-      &[name=act_action-roll]
+      &[name=act_roll-action]
         iconBtn($icon_action_roll)
 
   &.placeholder-button
@@ -79,4 +97,4 @@ hexButtonFontIcon($bg_color, $fg_color, $content, $font = "Pictos")
     font-family $font
 
 button[type="action"].close-preview-display
-  hexButtonFontIcon($color_warning, white, "*")
+  hexButtonFontIcon($color_danger, white, "*")

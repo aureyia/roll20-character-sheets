@@ -1,30 +1,43 @@
 mixin challengeDice
   .sheet-result-body.sheet-result-row
-    div
+    .sheet-label
       +i18n('challenge-dice')
-    div.sheet-challenge-dice {{challenge1}} {{challenge2}}
+    //- .sheet-challenge-dice.sheet-match {{challengeDie1}} {{challengeDie2}}
+    .sheet-challenge-dice {{challengeDie1}} {{challengeDie2}}
 
-mixin actionBody(type=action)
+mixin challengeDiceOld
+  .sheet-result-body.sheet-result-row
+    .sheet-label
+      +i18n('challenge-dice')
+    .sheet-challenge-dice {{challenge1}} {{challenge2}}
+
+mixin actionRollBody
   .sheet-result-body.sheet-result-row.sheet-action-score
     .sheet-label
       +i18n('action-score')
-    //- .sheet-arithmetic
-    //-   .sheet-die $[[0]]
-    //-   !=` + `
-    //-   .sheet-stat {{stat}}
-    //-   !=` + `
-    //-   .sheet-add {{add}}
-    //-   !=` = `
-    .sheet-total {{#{type}}}
-  +challengeDice
+    .sheet-arithmetic
+      .sheet-action-die {{computed::actionDie}}
+      .sheet-arithmetic-symbol!=` + `
+      .sheet-stat {{stat}}
+      .sheet-arithmetic-symbol!=` + `
+      .sheet-adds {{adds}}
+      .sheet-arithmetic-symbol!=` = `
+    .sheet-total {{computed::actionScore}}
+
+mixin actionRollBodyOld(type="action")
+  .sheet-result-body.sheet-result-row
+    div.i18n-text(data-i18n='action-score')=translation['action-score']
+    div.sheet-action-score {{#{type}}}
+  +challengeDiceOld
+
 
 mixin progressBody
   .sheet-result-body.sheet-result-row
-    div {{progress_type}} Progress:
+    div {{progress_type}} Progress
     div {{progress}}
   +challengeDice
   //- TODO: figure out the most sensible way to handle translation strings here
 
 mixin limitAlert
-  div.sheet-result-body.sheet-result-row
-    div.i18n-text.sheet-subfooter.sheet-alert(data-i18n='action-score-limit-alert')=translation['action-score-limit-alert']
+  .sheet-result-body.sheet-result-row
+    .i18n-text.sheet-subfooter.sheet-alert(data-i18n='action-score-limit-alert')=translation['action-score-limit-alert']

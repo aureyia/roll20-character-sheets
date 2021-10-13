@@ -1,7 +1,20 @@
 mixin challengeRankRadio()
-  div.challenge-rank-radio
+  input(type="hidden" name="attr_rank"
+    aria-label=translation[i18n_key]
+    data-i18n-aria-label=i18n_key
+    title=translation[i18n_key]
+    data-i18n-title=i18n_key
+    value="0"
+  )
+  section.challenge-rank-radio
     each challengeRank, index in challengeranks
-      label.challenge-rank-option
-        - i18n_key = `difficulty-${challengeRank.text}`
-        input(hidden type="radio" aria-label=translation[i18n_key] data-i18n-aria-label=i18n_key class=["switch-display"] name="attr_rank" value=index checked=challengeRank.checked||false)
+      label(class=["challenge-rank-option","toggle-radio", `challenge-rank-${challengeRank.text}`])
+        - let i18n_key = `difficulty-${challengeRank.text}`
+        input(hidden type="radio"  name="attr_rank" value=index checked=challengeRank.checked||false)
         +i18n(i18n_key)
+  label(class=["challenge-rank-edit"] data-i18n-title="edit")
+    input(hidden type="radio" value=0 name="attr_rank")
+    each challengeRank, index in challengeranks
+      - let i18n_key = `difficulty-${challengeRank.text}`
+      +i18n(i18n_key)
+

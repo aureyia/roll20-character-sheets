@@ -1,4 +1,4 @@
-// function normalizeAttr(value) {
+// function parseInt(value) {
 //   if (typeof value == "string") {
 //     if (value.match(/[A-z]/)) {
 //       return value;
@@ -12,7 +12,7 @@
 //   }
 // };
 
-// logLoad("normalizeAttr");
+// logLoad("parseInt");
 
 // function clampValueToRange(value, minValue, maxValue) {
 //   let valueClampedToMin = Math.max(value, minValue);
@@ -48,11 +48,11 @@
 //     on(`change:${attr}`, (eventInfo) => {
 //       getAttrs([impactAttr], (values) => {
 //         if (values[impactAttr] == 'on') {
-//           if (normalizeAttr(eventInfo.newValue) > normalizeAttr(eventInfo.previousValue)) {
+//           if (parseInt(eventInfo.newValue) > parseInt(eventInfo.previousValue)) {
 //             setAttrs({ [attr]: eventInfo.previousValue });
 //           }
 //         };
-//         if (setImpactAtZero === true && normalizeAttr(eventInfo.newValue) === 0) {
+//         if (setImpactAtZero === true && parseInt(eventInfo.newValue) === 0) {
 //           setAttrs({ [impactAttr]: 'on' });
 //         };
 //       });
@@ -66,7 +66,7 @@
 //     let trigger = `click:set-${attr}`;
 //     super(trigger, "SetAttrListener");
 //     on(trigger, (eventInfo) => {
-//       let value = normalizeAttr(eventValue(eventInfo));
+//       let value = parseInt(eventValue(eventInfo));
 //       setAttr({
 //         [attr]: value
 //       });

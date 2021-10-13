@@ -6,7 +6,7 @@
 // on('change:health', (eventInfo) => {
 //   getAttrs(['impactWounded'], (values) => {
 //     if (values.impactWounded == 'on') {
-//       if (normalizeAttr(eventInfo.newValue) > normalizeAttr(eventInfo.previousValue)) {
+//       if (parseInt(eventInfo.newValue) > parseInt(eventInfo.previousValue)) {
 //         return setAttrs({ health: eventInfo.previousValue });
 //       }
 //     }
@@ -19,7 +19,7 @@
 // on('change:spirit', (eventInfo) => {
 //   getAttrs(['impactShaken'], (values) => {
 //     if (values.impactShaken == 'on') {
-//       if (normalizeAttr(eventInfo.newValue) > normalizeAttr(eventInfo.previousValue)) {
+//       if (parseInt(eventInfo.newValue) > parseInt(eventInfo.previousValue)) {
 //         return setAttrs({ spirit: eventInfo.previousValue });
 //       }
 //     }
@@ -32,12 +32,12 @@
 // on('change:supply', (eventInfo) => {
 //   getAttrs(['impactUnprepared'], (values) => {
 //     if (values.unprepared == 'on') {
-//       if (normalizeAttr(eventInfo.newValue) > normalizeAttr(eventInfo.previousValue)) {
+//       if (parseInt(eventInfo.newValue) > parseInt(eventInfo.previousValue)) {
 //         return setAttrs({ supply: eventInfo.previousValue });
 //       }
 //     }
 //   });
-//   if (normalizeAttr(eventInfo.newValue) === 0) {
+//   if (parseInt(eventInfo.newValue) === 0) {
 //     return setAttrs({ impactUnprepared: 'on' });
 //   }
 //   return;
@@ -45,7 +45,7 @@
 
 
 
-// function normalizeAttr(value) {
+// function parseInt(value) {
 //   if (typeof value == "string") {
 //     if (value.match(/[A-z]/)) {
 //       return value;
@@ -59,16 +59,16 @@
 //   }
 // };
 
-// logLoad("normalizeAttr");
+// logLoad("parseInt");
 
 // function clampValueToRange(value, minValue=value, maxValue=value) {
 //   let valueClampedToMin = Math.max(
-//     normalizeAttr(value),
-//     normalizeAttr(minValue)
+//     parseInt(value),
+//     parseInt(minValue)
 //   );
 //   let valueClampedToMax = Math.min(
 //     valueClampedToMin,
-//     normalizeAttr(maxValue)
+//     parseInt(maxValue)
 //   );
 //   return valueClampedToMax;
 // };
@@ -96,7 +96,7 @@
 // // utility functions used by various workers
 
 
-// function normalizeAttr(value) {
+// function parseInt(value) {
 //   if (typeof value == "string") {
 //     if (value.match(/[A-z]/)) {
 //       // if there's letter characters, return as a string
@@ -111,7 +111,7 @@
 // };
 
 // function eventValue(eventInfo) {
-//   return normalizeAttr(eventInfo.htmlAttributes.value);
+//   return parseInt(eventInfo.htmlAttributes.value);
 // };
 
 // async function getAttrsWithLimits(attrs) {
@@ -131,34 +131,34 @@
 // // use in html syntax - value="min:momentum,momentum_max"
 // // it's whitespace insensitive, currently; the Math method name is case insensitive, too
 // async function parseBtnValue(eventInfo) {
-//   console.log("parseBtnValue eventInfo", eventInfo);
+//   log("parseBtnValue eventInfo", eventInfo);
 //   const value = eventValue(eventInfo);
-//   console.log("parseBtnValue btnValue", value);
+//   log("parseBtnValue btnValue", value);
 //   if (value.match(/:/)) {
 //     let valueArr = value.replace(/\s/g, "").split(":");
-//     // console.log("valueArr", valueArr);
+//     // log("valueArr", valueArr);
 //     let operation = valueArr[0];
-//     console.log("parseBtnValue operation", operation);
+//     log("parseBtnValue operation", operation);
 //     let attrNames = valueArr[1].split(",");
-//     console.log("parseBtnValue attrNames", attrNames);
-//     getAttrsWithLimits(attrNames, (attributes) => console.log("parseBtnValue attributes", attributes));
+//     log("parseBtnValue attrNames", attrNames);
+//     getAttrsWithLimits(attrNames, (attributes) => log("parseBtnValue attributes", attributes));
 //     // getLimitedAttrs(attrNames, (attributes) => {
 //     //   return attributes;
-//       // return console.log("parseBtnValue attributes",attributes);
-//       // let attributeValues = Object.values(attributes).map(newValue => normalizeAttr(newValue));
-//       // console.log("parseBtnValue attributeValues", attributeValues);
-//       // console.log("parseBtnValue math result", Math[operation.toLowerCase()](...attributeValues));
+//       // return log("parseBtnValue attributes",attributes);
+//       // let attributeValues = Object.values(attributes).map(newValue => parseInt(newValue));
+//       // log("parseBtnValue attributeValues", attributeValues);
+//       // log("parseBtnValue math result", Math[operation.toLowerCase()](...attributeValues));
 //       // // if (operation.toLowerCase() == "attr") {
 //       // //   // FIXME
 //       // // }
 //       // let result = Math[operation.toLowerCase()](...attributeValues);
-//       // console.log(result);
+//       // log(result);
 //       // return result;
 //   // }
 //     // )
 //   }
 //   else {
-//     return normalizeAttr(value);
+//     return parseInt(value);
 //   }
 // };
 
@@ -170,18 +170,18 @@
 
 // function listenIncrementAttr(attr) {
 //   const trigger = `increment-${attr}`;
-//   console.log(`Registering listener: ${trigger}`);
+//   log(`Registering listener: ${trigger}`);
 //   on(`clicked:${trigger}`, (eventInfo) => {
-//     console.log(eventInfo);
+//     log(eventInfo);
 //     // getAttrs([attr, `${attr}_max`, `${attr}_min`], (data) => {
 //     getAttrsWithLimits([attr], (data) => {
-//       console.log("listenIncrementAttr receives data", data);
-//       let newValue = normalizeAttr(data[attr]) + normalizeAttr(eventValue(eventInfo));
+//       log("listenIncrementAttr receives data", data);
+//       let newValue = parseInt(data[attr]) + parseInt(eventValue(eventInfo));
 //       let maxValue;
 //       let minValue;
 //       ["max", "min"].forEach(value => {
-//         if (typeof normalizeAttr(data[`${attr}_${value}`]) == number) {
-//           [value + "Value"] = normalizeAttr(data[`${attr}_${value}`]);
+//         if (typeof parseInt(data[`${attr}_${value}`]) == number) {
+//           [value + "Value"] = parseInt(data[`${attr}_${value}`]);
 //         }
 //         else {
 //           [value + "Value"] = newValue;
@@ -196,7 +196,7 @@
 
 
 // function log(...message) {
-//   console.log("[Ironworker]:", ...message);
+//   log("[Ironworker]:", ...message);
 // };
 
 // function logLoad(item) {

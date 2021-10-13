@@ -1,34 +1,5 @@
-input
-  &.vow-name
-    background $color_input
-    borderCommon()
-    border-radius 0
-    margin-bottom 0.2em
-    margin-top 1em
-    background #e6e7e8
-    borderCommon()
-    border-radius 0
-    margin-bottom 0.2em
-    &:focus
-      outline 3px solid $color_highlight
-      outline-offset 0
-      box-shadow inset 0 0 0 2px
-
-.fulfill-vow:hover,
-.mark-vow:hover,
-.vow-clear-label:hover
-  background-color $color_input
-  color $color_fg
-  transition 0.5s ease
-
-.vows
-  margin-bottom 0px
-
-.vow
+.page-vows
   display flex
-  flex-direction column
-  justify-content center
-  align-items center
-
-.vow-name
-  width 100%
+  flex-flow column
+  .repcontrol
+    order 1

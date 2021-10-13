@@ -347,14 +347,14 @@ const assets = [
 // }
 
 // async function toggleAttr(eventInfo, attrPrefix) {
-//   console.log("eventInfo:", eventInfo);
+//   log("eventInfo:", eventInfo);
 //   let previousValue = await eventInfo.previousValue;
 //   let newValue = await eventInfo.newValue;
 //   let previousAttr = attrPrefix + previousValue;
 //   let newAttr = attrPrefix + newValue;
 //   previousAttr = attrFormat(previousAttr);
 //   newAttr = attrFormat(newAttr);
-//   console.log(`${previousAttr} set to OFF. ${newAttr} set to ON.`);
+//   log(`${previousAttr} set to OFF. ${newAttr} set to ON.`);
 //   setAttrs({
 //     [previousAttr]: "off",
 //     [newAttr]: "on"
@@ -391,7 +391,7 @@ const assets = [
 // );
 
 // on("change:repeating_assets:builder-titles", function(eventInfo) {
-//   console.log("eventInfo:", eventInfo);
+//   log("eventInfo:", eventInfo);
 //   setAttrs({
 //     ["repeating_assets_builder-titles-" + eventInfo.previousValue]: "off",
 //     ["repeating_assets_builder-titles-" + eventInfo.newValue]: "on"
@@ -399,7 +399,7 @@ const assets = [
 // });
 
 // on("change:repeating_assets:builder-ability-1", function(eventInfo) {
-//   console.log("eventInfo:", eventInfo);
+//   log("eventInfo:", eventInfo);
 //   setAttrs({
 //     ["repeating_assets_builder-ability-1-" + eventInfo.previousValue]: "off",
 //     ["repeating_assets_builder-ability-1-" + eventInfo.newValue]: "on"
@@ -407,7 +407,7 @@ const assets = [
 // });
 
 // on("change:repeating_assets:builder-ability-2", function(eventInfo) {
-//   console.log("eventInfo:", eventInfo);
+//   log("eventInfo:", eventInfo);
 //   setAttrs({
 //     ["repeating_assets_builder-ability-2-" + eventInfo.previousValue]: "off",
 //     ["repeating_assets_builder-ability-2-" + eventInfo.newValue]: "on"
@@ -415,7 +415,7 @@ const assets = [
 // });
 
 // on("change:repeating_assets:builder-ability-3", function(eventInfo) {
-//   console.log("eventInfo:", eventInfo);
+//   log("eventInfo:", eventInfo);
 //   setAttrs({
 //     ["repeating_assets_builder-ability-3-" + eventInfo.previousValue]: "off",
 //     ["repeating_assets_builder-ability-3-" + eventInfo.newValue]: "on"
@@ -423,7 +423,7 @@ const assets = [
 // });
 
 // on("change:repeating_assets:meter-dropdown", function(eventInfo) {
-//   console.log("eventInfo:", eventInfo);
+//   log("eventInfo:", eventInfo);
 //   setAttrs({
 //     ["meter-dropdown-" + eventInfo.previousValue]: "off",
 //     ["meter-dropdown-" + eventInfo.newValue]: "on"

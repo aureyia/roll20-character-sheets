@@ -1,6 +1,10 @@
-include ../../components/legacies/tracks
+include ../../components/legacies/legacy-tracks
 include ../page
+
+- legacies = [ 'quests', 'bonds', 'discoveries' ]
 
 mixin legaciesPage(sheetType)
   +page("legacies", sheetType)
-    +legacies()
+    .legacies
+      for legacy in legacies
+        +legacyTrack(legacy)

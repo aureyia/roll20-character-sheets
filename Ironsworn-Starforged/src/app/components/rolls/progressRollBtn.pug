@@ -1,11 +1,11 @@
-include ../../common/pug/translation
 include ../../common/pug/button
 
-mixin progressRollBtn(move, value=rolls[move.Name], classes=[], blockContent=false, iconOnly=false)
-  - let i18n_key = move.id.replace("move-", "move-title-")
-  +actionBtn("progress-roll", value, i18n_key, classes, blockContent, iconOnly)
+mixin progressRollBtn(progress_name, progress_amount, i18n_key="roll", classes=[], blockContent=false, iconOnly=false)
+  //- the worker supplies template, challenge1, challenge2; button value is appended to that string then passed to roll template
+  - let value = `{{header=@{character_name}}} {{progress_name=${progress_name}}} {{progress=[[${progress_amount}]]}}`
+  +actionBtn("roll-progress", value, i18n_key, classes, blockContent, iconOnly)
 
-//- remember, there's some weirdness to be accounted for with repeating sections
-//- progress_name
-//- [[@{progress-filled}]]
-
+mixin progressRepeatingRollBtn(moveId, blockContent=false, iconOnly=false)
+  - let i18n_key = moveId.replace("move-", "move-title-")
+  - let value = `{{header=@{character_name}}}`
+  +actionBtn("roll-progress", value, i18n_key, classes, blockContent, iconOnly)

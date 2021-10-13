@@ -1,13 +1,17 @@
-mixin modalBtn(popupId, i18n_key)
-  a.btn(href=popupId)
-    +i18n(i18n_key)
 
-mixin modalContent(popupId)
-  .overlay(class=popupId role="dialog")
-    .popup
-      a.close(href="#") &times;
+mixin modalButton(modalId, buttonText=false, classes=[])
+  - let class;
+  if buttonText
+    - class = ["modal-button", ...classes];
+  else
+    - class = ["modal-button", "icon-only", ...classes];
+  a(href=modalId, class=class)
+    !=(buttonText ? buttonText : "")
+
+mixin modalDialog(modalId, modalTitle, classes=[])
+  .modal-overlay(id=modalId)
+    aside(class=["modal-dialog", ...classes])
+      a(href="#close", title="Close").close-dialog!=X
+      if (modalTitle)
+        h2=modalTitle
       block
-
-//- FIXME the dialog element is supported by default in chrome but not by FF (without special settings)
-
-//- details: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

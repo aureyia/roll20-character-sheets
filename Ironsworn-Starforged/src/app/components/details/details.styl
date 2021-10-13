@@ -1,0 +1,16 @@
+
+
+input.details-control
+  ~ aside.details-content
+    transition 0.5s ease
+  &[value="on"]
+    ~ label.details-summary
+      colorThemeDark()
+  &:not([value="on"])
+    ~ aside.details-content
+      box-sizing border-box !important
+      visibility hidden !important
+      height 0 !important
+      opacity 0 !important
+      margin 0 !important
+      overflow hidden !important

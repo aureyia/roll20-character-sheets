@@ -1,0 +1,96 @@
+.legacies
+  display grid
+  grid-gap 0.5em
+
+  .progress-boxes
+    display grid
+    justify-content space-between
+    text-transform uppercase
+    grid-auto-flow column
+
+  .title
+    padding 0.3em 0em 0em 0em
+    font-weight bold
+
+  .ten-marker
+    margin 0
+    padding 0
+    height fit-content
+    justify-self right
+
+  .legacy-roll
+    margin 0
+
+.legacy-track
+  display grid
+  grid-gap 0.3em
+  grid-template-areas "header header header" "btn1 track btn2" "btn3 track btn4"
+  h2
+    grid-area header
+  .progress-track-bar
+    grid-area track
+
+
+$progress_box_size = 4em
+$xp_box_size = $progress_box_size/5
+$xp_box_border = 2px
+$container_height = $progress_box_size + ($xp_box_size/2)
+
+
+.legacies
+  .progress-box
+    height $container_height
+    display grid
+    grid-template-areas "select" "overlap" "checks"
+    // grid-template-rows 1fr ($xp_box_size/2) ($xp_box_size/2)
+    grid-template-columns max-content
+    .progress-box
+      width $progress_box_size
+      height $progress_box_size
+      grid-column 1
+      grid-row-start select-start
+      grid-row-end overlap-end
+      align-self self-start
+    .experience-boxes
+      grid-column 1
+      grid-row-start overlap-start
+      grid-row-end checks-end
+      align-self self-end
+      height max-content
+
+
+.experience-boxes
+  box-sizing border-box
+  visibility hidden
+  opacity 0
+  pointer-events none
+  flex-flow row
+  gap 2px
+  border 2px solid $color_fg
+  background $color_fg
+  border-radius 0.3em
+  overflow clip
+  justify-self center
+  transition 0.25s ease-in-out
+  .progress-box-control[value^="4"] ~ &
+    display flex
+    visibility visible
+    opacity 1
+    pointer-events auto
+    z-index 101
+
+.experience-box
+  interactive($color_bg, $color_cta)
+  appearance none
+  border 0
+  margin 0
+  padding 0
+  height $xp_box_size
+  width $xp_box_size
+  cursor pointer
+  background-color $color_bg
+  // .progress-box-control[value^="4"] ~ .experience-boxes &
+  //   &:checked
+  //     background-color $color_cta
+  &:checked
+    background-color $color_cta

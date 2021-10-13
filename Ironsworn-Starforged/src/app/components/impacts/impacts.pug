@@ -3,7 +3,6 @@ include ../../common/pug/button
 mixin otherImpact(index)
   .impact
     input(
-      hidden
       type='checkbox'
       name=`attr_impactOther${index}`
     )
@@ -14,6 +13,14 @@ mixin otherImpact(index)
       placeholder=translation['impact']
     )
 
+
+mixin impactToggle(impact)
+  - let toggleId = `toggle-${impact.translationId}`
+  //- input(hidden type="checkbox" name=`attr_${impact.attribute}` id=toggleId class=[`toggle-impact`, `toggle-control`])
+  //- label(for=toggleId).toggle-btn.toggle-impact
+  //-   +i18n(impact.translationId)
+  +attrToggle(impact.attribute, toggleId, impact.translationId, ["toggle-impact"], false)
+
 mixin impacts(impactArray, opts)
   .impact-component
     each group in impactArray
@@ -22,7 +29,7 @@ mixin impacts(impactArray, opts)
           .impact-group-title=group.title
         .impact-list
           each impact in group.list
-            +btn(impact)
+            +impactToggle(impact)
     input.switch-display(type='hidden' name='attr_impact_total' value=0)
     if opts.customImpacts
       .custom-impacts

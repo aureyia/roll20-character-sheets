@@ -3,21 +3,37 @@ include ../mixins/headers
 include ../mixins/body
 include ../mixins/actions
 
-//- this is a mixin so the variables are properly scoped
+
 mixin rollTemplateActionRoll
+  rolltemplate.sheet-rolltemplate-action_roll
+    .sheet-roll-container
+      +tplHeader("header")
+      +actionRollBody
+      | {{#rollLess() computed::actionDie 1}}
+      .sheet-result-body.sheet-result-row Action die cancelled by negative momentum.
+      | {{/rollLess() computed::actionDie 1}}
+      +challengeDice
+      +moveResult
+
+mixin moveResult
+  .sheet-result-body.sheet-result-row!=`result: {{computed::moveOutcome}} {{#rollTotal() challengeDie1 challengeDie2}} with a match!{{/rollTotal() challengeDie1 challengeDie2}}`
+
+//- this is a mixin so the variables are properly scoped
+mixin rollTemplateActionRollOld
   - let maxNegMomentum = 6
   rolltemplate.sheet-rolltemplate-starforged_moves
     .sheet-roll-container
       | {{#action}}
-      +actionHeader
+      +tplHeader("name")
       | {{#rollLess() momentum 0}}
       - let counter = 1;
       while counter <= maxNegMomentum
-        +cancelRoll(counter, 'action')
+        +cancelRollOld(counter, 'action')
         - counter++;
       | {{/rollLess() momentum 0}}
       | {{#^rollLess() momentum 0}}
-      +actionBody('action')
+      +actionRollBodyOld('action')
+      +challengeDiceOld
       +standardActionWithMomentum('action')
       | {{/^rollLess() momentum 0}}
       | {{/action}}
@@ -37,3 +53,4 @@ mixin rollTemplateActionRoll
       | {{/custom}}
 
 +rollTemplateActionRoll
++rollTemplateActionRollOld

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg9696"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="hexagon master.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9698"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.523296"
+     inkscape:cx="489.63737"
+     inkscape:cy="573.25816"
+     inkscape:window-width="1440"
+     inkscape:window-height="819"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs9693">
+    <symbol
+       id="symbol10387">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         d="m 110.63193,145.47515 1.32292,-0.7662 1.32843,0.7662 v 1.52686 l -1.32843,0.76619 -1.32292,-0.76619 z m 0,0"
+         id="path5152" />
+    </symbol>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g10647"
+       transform="matrix(2.4156319,0,0,2.4156319,-156.1147,-204.2778)">
+      <use
+         xlink:href="#symbol10387"
+         id="use10390"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+      <use
+         xlink:href="#symbol10387"
+         id="use10404"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%"
+         transform="translate(4.09002)" />
+      <use
+         xlink:href="#symbol10387"
+         id="use10513"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%"
+         transform="translate(8.17865)" />
+      <use
+         xlink:href="#symbol10387"
+         id="use10513-6"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%"
+         transform="translate(12.26867)" />
+      <use
+         xlink:href="#symbol10387"
+         id="use10513-7"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%"
+         transform="translate(16.35869)" />
+    </g>
+  </g>
+</svg>

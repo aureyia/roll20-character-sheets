@@ -1,0 +1,20 @@
+include ../../../common/pug/button
+include ../../rolls/progressRollBtn
+
+mixin progressClearBtn(trackName, i18n_key="clear-btn", classes=[], blockContent=false, iconOnly=false)
+  - let btnValue = `${trackName}-filled`
+  +actionBtn("progress-clear", btnValue, i18n_key, classes, blockContent, iconOnly)
+
+mixin progressMarkBtn(attrPrefix="progress", i18n_key="progress-mark", classes=[], blockContent=false, iconOnly=false)
+  +actionBtn("progress-mark", null, i18n_key, classes, blockContent, iconOnly)
+
+mixin progressRecommitBtn(i18n_key="recommit", classes=[], blockContent=false, iconOnly=false)
+  +actionBtn("progress-recommit", btnValue, i18n_key, classes, blockContent, iconOnly)
+
+mixin progressAbandonBtn(trackName, i18n_key="forsake", classes=[], blockContent=false, iconOnly=false)
+  +actionBtn("progress-abandon", btnValue, i18n_key, classes, blockContent, iconOnly)
+
+//- remember, there's some weirdness to be accounted for with repeating sections
+//- progress_name
+//- [[@{progress-filled}]]
+

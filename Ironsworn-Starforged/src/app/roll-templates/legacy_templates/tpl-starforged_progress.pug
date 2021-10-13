@@ -6,7 +6,7 @@ include ../mixins/outcomes
 rolltemplate.sheet-rolltemplate-starforged_progress
   .sheet-roll-container
     | {{#progress}}
-    +progressHeader
+    +tplHeader("progress_name")
     +progressBody
     | {{#rollGreater() progress challenge1}}
     | {{#rollTotal() challenge1 challenge2}}

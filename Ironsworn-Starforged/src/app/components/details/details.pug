@@ -1,0 +1,26 @@
+//- emulates the html <details> element
+
+
+mixin detailsSummary(controlAttr, showContent=false, controlInput=false)
+  if (controlInput)
+    +detailsControl(controlAttr)
+  label.details-summary
+    input(hidden type="checkbox" name=controlAttr checked=showContent)
+    block
+
+mixin detailsContent(controlAttr, controlInput=false)
+  if (controlInput)
+    +detailsControl(controlAttr)
+  aside(class=["details-content"])
+    block
+
+mixin detailsControl(controlAttr)
+  input(type="hidden" name=controlAttr class=["details-control"])
+
+//- shorthand for when the label doesn't need anything fancy happening. places the hidden control input immediately before the label
+mixin details(controlAttr, i18n_key_label, showContent=false)
+  +detailsSummary(controlAttr, showContent, true)
+    .details-label-content
+      +i18n(i18n_key_label)
+  +detailsContent(controlAttr)
+    block

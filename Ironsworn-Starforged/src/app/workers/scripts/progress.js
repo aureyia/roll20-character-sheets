@@ -1,116 +1,192 @@
-const maxProgressBoxes = 10;
-const maxProgressTicksPerBox = 4;
 
-const maxProgressTrackTicks = maxProgressBoxes * maxProgressTicksPerBox;
-const progressIntegers = Array.from(
+const maxProgressBoxes = 10;
+const ticksPerBox = 4;
+const maxProgressTicks = maxProgressBoxes * ticksPerBox;
+
+const progressRanks = [
+  {
+    name: "none",
+    legacy: 0
+  },
+  {
+    name: "troublesome",
+    mark: 12,
+    legacy: 1,
+  },
+  {
+    name: "dangerous",
+    mark: 8,
+    legacy: 2,
+  },
+  {
+    name: "formidable",
+    mark: 4,
+    legacy: 4
+  },
+  {
+    name: "extreme",
+    mark: 2,
+    legacy: 8
+  },
+  {
+    name: "epic",
+    mark: 1,
+    legacy: 12
+  },
+  {
+    name: "epic+",
+    legacy: 16
+  }
+];
+
+const progressBoxIndexes = Array.from(
   { length: maxProgressBoxes },
   (element, index) => index + 1
-);
+); // 1-10
 
-// TODO instead of having individual dropdowns that are recalculated - consider the following:
-// * default action (add button or just clicking the track): mark the amount of progress appropriate to the rank. e.g. troublesome => 3 boxes
-// * a button to subtract
-// * a modal to set/add the progress numerically. e.g. "7, plus 3 ticks", "add 3 ticks", "subtract 3 ticks", etc
-// this could be accompanied by migration to decimal-based (or integer tick-based) progress tracking. then it's a single number rather than
-// should prob wait until jquery is available though for html element manipulation...
-// the most elegant way i can think of to handle the calculation is determining the quotient (=full boxes) and remainder (=additional ticks). boxes up to the quotient are full. if there's a remainder, the box immediately following will have ticks equal to the remainder, any remaining boxes will be empty.
-
-on(
-  'change:repeating_progress:mark_progress change:repeating_vow:mark_progress change:repeating_connection:mark_progress',
-  function (values) {
-    const type = values.sourceAttribute.match(/repeating_(.*?)_/)[1];
-    const rankValue = `repeating_${type}_rank`;
-    const progressBoxAttrs = progressIntegers.map(
-      (progressInt) => `repeating_${type}_progress_${progressInt}`
-    );
-    updateProgressBoxes({
-      attributes: progressBoxAttrs,
-      rank: { kind: 'attribute', value: rankValue },
-    });
+function incrementProgress(progressRowId, amount=1, amountInTicks=false) {
+  log("incrementProgress", ...arguments);
+  // if amountInTicks = false, "amount" is a specific number of ticks
+  // otherwise, it's a number of progress marks done
+  const boxAttrs = progressBoxIndexes.map(boxIndex => `${progressRowId}_progress_${boxIndex}`);
+  log("boxAttrs",boxAttrs);
+  const progressAttrs = [...boxAttrs];
+  log("progressAttrs",progressAttrs);
+  const rankAttr = progressRowId+"_rank";
+  log("rankAttr", rankAttr);
+  if (amountInTicks == false) {
+    progressAttrs.push(rankAttr);
   }
-);
-
-function updateProgressBoxes(opts) {
-  getAttrs(opts.attributes, (attrValues) => {
-    const progress = opts.attributes.map((box) => normalizeAttr(attrValues[box]));
-
-    opts.rank.kind === 'static'
-      ? generateMarkAndUpdateProgress(
-          opts.rank.value,
-          progress,
-          opts.attributes
-        )
-      : getAttrs([opts.rank.value], (value) => {
-          generateMarkAndUpdateProgress(
-            normalizeAttr(value[opts.rank.value]),
-            progress,
-            opts.attributes
-          );
-        });
-  });
-}
-
-function generateMarkAndUpdateProgress(rank, progress, attributes) {
-  const ticksMarked = chosenChallengeRank(rank);
-  updateProgress(ticksMarked, progress, attributes);
-}
-
-function updateProgress(ticksMarked, progressValues, attributes) {
-  const progressTotalTicks = progressValues.reduce(
-    (a, b) => a + b,
-    ticksMarked
-  );
-  const quotient = Math.trunc(progressTotalTicks / maxProgressTicksPerBox);
-  const remainder = progressTotalTicks % maxProgressTicksPerBox;
-  const newProgressBoxValues = Array.from(
-    { length: maxProgressBoxes },
-    (element, index) => {
-      let ticks;
-      if (index < quotient) {
-        ticks = maxProgressTicksPerBox;
-      } else if (index == quotient) {
-        ticks = remainder;
-      } else {
-        ticks = 0;
-      }
-      return [attributes[index], ticks];
+  log("progressAttrs", progressAttrs);
+  getAttrs(progressAttrs, (attrData) => {
+    log("progress data", attrData);
+    const boxValues = boxAttrs.map(boxAttr => Number(attrData[boxAttr]));
+    log(boxValues);
+    const oldProgressTicks = boxValues.reduce((a,b) => a+b);
+    log("oldProgressTicks", oldProgressTicks)
+    let ticksDelta;
+    if (amountInTicks==false) {
+      const rankIndex = Number(attrData[rankAttr]);
+      ticksDelta = amount * progressRanks[rankIndex].mark;
+      log("rankIndex, ticksDelta", rankIndex, ticksDelta);
     }
-  );
-  setAttrs(Object.fromEntries(newProgressBoxValues));
+    else {
+      ticksDelta = amount;
+    };
+    setProgressTicks(progressRowId, oldProgressTicks + ticksDelta);
+  });
+};
+
+
+// shorthand version for standard mark progress operations like "Reach a Milestone"
+function markProgress(progressRowId, times=1) {
+  log("markProgress", ...arguments);
+  incrementProgress(progressRowId, times, false);
 }
 
-// TODO: reimplement as a map generated from entries()-style json - or entries from a regular ol' object
-function chosenChallengeRank(rank) {
-  switch (rank) {
-    case 1:
-      return 12;
-    case 2:
-      return 8;
-    case 3:
-      return 4;
-    case 4:
-      return 2;
-    case 5:
-      return 1;
-    default:
-      return null;
+function setProgressTicks(progressRowId, toTicksValue) {
+  log("setProgressTicks", ...arguments);
+  if (toTicksValue > maxProgressTicks) {
+    toTicksValue = maxProgressTicks;
+  } else if (toTicksValue < 0) {
+    toTicksValue = 0;
   }
-}
+  const boxes = progressBoxIndexes.map(boxIndex => `${progressRowId}_progress_${boxIndex}`);
+  const filledBoxes = Math.trunc(toTicksValue/ticksPerBox);
+  log("filledBoxes", filledBoxes);
+  const ticksRemainder = toTicksValue % ticksPerBox;
+  log("ticksRemainder", ticksRemainder);
+  let setAttrsOpts = {};
+  setAttrsOpts[`${progressRowId}_progress-filled`] = filledBoxes;
+  boxes.forEach((box, index) => {
+    if (index < filledBoxes) {
+      setAttrsOpts[box] = ticksPerBox;
+    } else if (index == filledBoxes) {
+      setAttrsOpts[box] = ticksRemainder;
+    } else {
+      setAttrsOpts[box] = 0;
+    }
+  });
+  log("outgoing progress data:", setAttrsOpts);
+  setAttrs(setAttrsOpts);
+};
 
-on(
-  'change:repeating_progress:clear_progress change:repeating_vow:clear_progress change:repeating_connection:clear_progress',
-  function (values) {
-    const type = values.sourceAttribute.match(/repeating_(.*?)_/)[1];
-    const progressEntries = progressIntegers.map((progressString) => [
-      `repeating_${type}_progress_${progressString}`,
-      0,
-    ]);
-    setAttrs(Object.fromEntries(progressEntries));
-  }
-);
+// function updateProgressFromBoxes(progressRowId) {
+//   // updates progress
 
-on('change:repeating_progress:challenge-show-button', function (eventInfo) {
-  setAttrs({
-    'repeating_progress_challenge-show': btnValue(eventInfo),
+//   // todo: change this so it can be fed a getAttrs result instead?
+//   getAttrs(progressBoxes, (attrData) => {
+//     log("incoming progress data", attrData);
+//     const progressTicks = Object.values(attrData).map(box => Number(box)).reduce((a,b) => a+b);
+//     setProgressTicks(progressRowId, progressTicks)
+//   });
+// };
+
+// REPEATING SECTIONS
+const repeating_progress = ["connection", "progress", "vow", "combat", "expedition", "challenge"];
+
+repeating_progress.forEach(item => {
+
+  const repType = `repeating_${item}`;
+  const changeEvent = `change:${repType}`;
+
+
+  // updates filled progress when any repeating progress changes
+
+  const progressBoxEvents = [
+    `${changeEvent}:progress-filled`,
+    ...progressBoxIndexes.map(boxIndex => `${changeEvent}:progress_${boxIndex}`)
+  ].join(" ");
+
+
+  // on(progressBoxEvents, eventInfo => {
+  //   // log("repeating progress changed", eventInfo);
+  //   // TODO: bind this to increment
+  //   const boxPrefix = eventInfo.sourceAttribute.replace(/_progress.*$/, "_progress");
+  //   updateProgressFromBoxes(boxPrefix);
+  // });
+
+  const clickEvent = `clicked:${repType}`;
+  // on("change:repeating")
+
+  on(`${clickEvent}:progress-mark`, eventInfo => {
+    log(rowId(eventInfo), eventInfo);
+    markProgress(rowId(eventInfo), 1);
+  });
+  on(`${clickEvent}:progress-clear`, eventInfo => {
+    log(rowId(eventInfo), eventInfo);
+    markProgress(rowId(eventInfo), -1);
+  });
+
+  on(`${clickEvent}:progress-recommit`, eventInfo => {
+    log(rowId(eventInfo), eventInfo);
+    const rankAttr = rowId(eventInfo)+"_rank";
+    const nameAttr = rowId(eventInfo)+"_"+progressType(eventInfo)+"_name";
+    getAttrs([rankAttr, nameAttr], attrData => {
+      const rankInt = Math.min(Number(attrData[rankAttr])+1, 5);
+      const newRank = progressRanks[rankInt];
+      const newRankName = newRank.name;
+      //
+      startRoll(`&{template:alert} {{surtitle=Recommit}} {{header=${attrData[nameAttr]}}} {{challengeDie1=[[1d10]]}} {{challengeDie2=[[1d10]]}} {{customLabel1=New Rank}} {{customRow1=${capitalize(newRankName)}}} {{customLabel2=Progress removed}} {{customRow2=""}}`, (rollData) => {
+        log(rollData);
+        const progressRemoved = Math.min(rollData.results.challengeDie1.result, rollData.results.challengeDie2.result);
+        incrementProgress(rowId(eventInfo), (-1*progressRemoved*ticksPerBox), true);
+        const computed = {
+          progressRemoved,
+        };
+        setAttrs({
+          [rankAttr]: rankInt
+        });
+        finishRoll(rollData.rollId, computed);
+      // remove pro
+      // const rankAttr = progressRowId+"_rank";
+      });});
+  });
+  on(`${clickEvent}:progress-abandon`, eventInfo => {
+    log(rowId(eventInfo), eventInfo);
+  });
+  on(`${clickEvent}:roll-progress`, eventInfo => {
+    log(rowId(eventInfo), eventInfo);
   });
 });
+

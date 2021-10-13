@@ -1,9 +1,9 @@
 @import "../common/stylus/shared"
 
 // variables: rolltemplates
-$subheader_bg = $sf_black // formerly #23222b
+$subheader_bg = $sf_rich_black // formerly #23222b
 $template_bg = lighten($subheader_bg, 10%) // formerly #33323c
-$result_bg = lighten($subheader_bg, 15%) // formerly #403f4b
+$result_bg = $sf_rich_black // formerly #403f4b
 $template_border = 1px solid $sf_rich_black
 $strong_hit_color = $sf_ui_blue
 $weak_hit_color = $sf_ui_purple
@@ -32,7 +32,6 @@ subBase(padding)
   padding padding
   text-align left
   font-weight 700
-  line-height 1.5em
 
 nameBase(align)
   padding 0.2em 1em 0.4em 0.7em
@@ -70,20 +69,22 @@ outcomeBase($bgcolor)
     background-color $bgcolor
     content " "
 
-.sheet-rolltemplate-oracle, .sheet-rolltemplate-action_roll, .sheet-rolltemplate-progress_roll, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-starforged_progress, .sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-starforged_oracles
+.sheet-rolltemplate-oracle, .sheet-rolltemplate-action_roll, .sheet-rolltemplate-progress_roll, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-alert,  .sheet-rolltemplate-starforged_progress, .sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-starforged_oracles
   > .sheet-roll-container
+    colorThemeDark()
+    background-color $sf_black
     rollContainer()
-
-    div.sheet-subheader
+    div.sheet-header
       headerText()
-      colorThemeDarker()
-      subBase($content_padding)
+      subBase(0.35em 0.5em)
+      font-size 1.5em
+      line-height 1
+      .sheet-surtitle, .sheet-subtitle
+        font-size 1em
+        footerText()
+        color $color_bg_fade
+        width max-content
 
-      display flex
-      justify-content space-between
-      align-items center
-      color white
-      font-size 1.5rem
 
     a[href^="!"]
       display inline-block
@@ -101,7 +102,24 @@ outcomeBase($bgcolor)
       justify-content space-between
       align-items center
       padding 0.5em
-
+    .sheet-die-cancel
+      &:before
+        content ""
+        height inherit
+        width inherit
+        background:
+          linear-gradient(to top left,
+            transparent 0%,
+            transparent calc(50% - 0.8px),
+            $color_danger 50%,
+            transparent calc(50% + 0.8px),
+            transparent 100%),
+          linear-gradient(to top right,
+            transparent 0%,
+            transparent calc(50% - 0.8px),
+            $color_danger 50%,
+            transparent calc(50% + 0.8px),
+            transparent 100%)
     .inlinerollresult
       inlineRoll()
 
@@ -156,6 +174,7 @@ outcomeBase($bgcolor)
 
     .sheet-result-body
       padding $content_padding
+      background-color $sf_black
 
     .sheet-alert
       margin 0.2em 0.3em
@@ -167,7 +186,6 @@ outcomeBase($bgcolor)
       font-weight 700
 
     .sheet-momentum-title
-      line-height 22px
 
     .sheet-roll-button
       justify-content center

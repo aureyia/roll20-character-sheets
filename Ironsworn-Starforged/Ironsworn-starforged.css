@@ -65,16 +65,16 @@
 }
 .ui-dialog .charsheet.charactersheet button[type=roll],
 .ui-dialog .charsheet.charactersheet button[type=compendium],
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll],
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll] {
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action],
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress] {
   margin: unset;
   padding: unset;
   font-size: initial;
 }
 .ui-dialog .charsheet.charactersheet button[type=roll]:before,
 .ui-dialog .charsheet.charactersheet button[type=compendium]:before,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll]:before,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll]:before {
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action]:before,
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress]:before {
   content: initial;
   font-family: initial;
 }
@@ -98,8 +98,8 @@
   background-color: inherit;
 }
 .ui-dialog .charsheet.charactersheet button[type=roll].ui-draggable-dragging,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll].ui-draggable-dragging,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll].ui-draggable-dragging {
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action].ui-draggable-dragging,
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress].ui-draggable-dragging {
   z-index: initial;
   margin: initial;
   padding: initial;
@@ -108,8 +108,8 @@
   font-size: initial;
 }
 .ui-dialog .charsheet.charactersheet button[type=roll].ui-draggable-dragging:before,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll].ui-draggable-dragging:before,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll].ui-draggable-dragging:before {
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action].ui-draggable-dragging:before,
+.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress].ui-draggable-dragging:before {
   content: initial;
   font-family: initial;
 }
@@ -136,7 +136,6 @@
   border-bottom-color: inherit;
   border-radius: initial;
   filter: initial;
-  filter: initial;
   background-color: inherit;
   background-image: none;
   background-repeat: no-repeat;
@@ -147,6 +146,10 @@
   text-shadow: initial;
   font-size: initial;
   line-height: initial;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden],
+.ui-dialog .charsheet.charactersheet input[hidden=hidden] {
+  display: none !important;
 }
 .ui-dialog .charsheet.charactersheet input,
 .ui-dialog .charsheet.charactersheet textarea,
@@ -161,6 +164,7 @@
   box-sizing: border-box;
 }
 .ui-dialog .charsheet.charactersheet .ironsworn-sheet {
+  color: #040506;
   padding: 0;
   width: 842px !important;
   font-size: 16px;
@@ -227,12 +231,10 @@
   mask-size: contain;
   mask-repeat: no-repeat;
 }
-.ui-dialog .charsheet.charactersheet button,
 .ui-dialog .charsheet.charactersheet label,
 .ui-dialog .charsheet.charactersheet .btn,
 .ui-dialog .charsheet.charactersheet button[type=roll],
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll],
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll] {
+.ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll] {
   font-family: "Exo", sans-serif, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -242,13 +244,13 @@
   font-size: 1em;
   line-height: 1;
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,35 +263,29 @@
   text-align: center;
   font-size: 1em;
 }
-.ui-dialog .charsheet.charactersheet button:focus,
 .ui-dialog .charsheet.charactersheet label:focus,
 .ui-dialog .charsheet.charactersheet .btn:focus,
 .ui-dialog .charsheet.charactersheet button[type=roll]:focus,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll]:focus,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll]:focus {
+.ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll]:focus {
   z-index: 100;
   outline: 3px solid #fd0;
   outline-offset: 0;
   box-shadow: inset 0 0 0 3px;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet button:active,
 .ui-dialog .charsheet.charactersheet label:active,
 .ui-dialog .charsheet.charactersheet .btn:active,
 .ui-dialog .charsheet.charactersheet button[type=roll]:active,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll]:active,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll]:active {
-  background-color: #221e1f !important;
+.ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll]:active {
+  background-color: #040506 !important;
   color: #fff !important;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet button:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet label:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet .btn:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet button[type=roll]:hover:not(:disabled),
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_action-roll]:hover:not(:disabled),
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_progress-roll]:hover:not(:disabled) {
-  background-color: #221e1f !important;
+.ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll]:hover:not(:disabled) {
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[type=text],
@@ -309,7 +305,7 @@
   padding: 0.125em 0.5ch;
   border-radius: 0;
   background-color: #dde1e7;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet input[type=text]:focus,
 .ui-dialog .charsheet.charactersheet input[type=number]:focus,
@@ -351,10 +347,10 @@
 }
 .ui-dialog .charsheet.charactersheet .pc-name {
   width: 100%;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   border-radius: 0;
   background: #e6e7e8;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet .border {
   border: 1px solid #b8c2cd;
@@ -382,7 +378,7 @@
   height: auto;
 }
 .ui-dialog .charsheet.charactersheet input.border-bottom {
-  border-bottom: 1px solid #221e1f;
+  border-bottom: 1px solid #040506;
   border-radius: 0;
 }
 .ui-dialog .charsheet.charactersheet .full-width {
@@ -423,13 +419,13 @@
   font-size: 1em;
   line-height: 1;
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,13 +449,13 @@
 }
 .ui-dialog .charsheet.charactersheet .repcontrol .btn:active,
 .ui-dialog .charsheet.charactersheet .repcontainer.editmode .repitem .itemcontrol .btn:active {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
   text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .repcontrol .btn:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet .repcontainer.editmode .repitem .itemcontrol .btn:hover:not(:disabled) {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet .repcontrol .btn-danger,
@@ -476,18 +472,18 @@
   float: revert;
 }
 .ui-dialog .charsheet.charactersheet .list-group {
-  border: 2px solid #221e1f;
+  border: 2px solid #040506;
   overflow: hidden;
   margin: 0;
   margin-bottom: 1em;
   height: fit-content;
   border-width: 4px;
   border-radius: 1em;
-  background-color: #221e1f;
+  background-color: #040506;
   break-inside: avoid;
 }
 .ui-dialog .charsheet.charactersheet .list-group .list-group-title {
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
   display: inline-block;
   padding: 0 5px 3px;
@@ -538,13 +534,13 @@
   font-size: 1em;
   line-height: 1;
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -583,12 +579,12 @@
   text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn:active {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
   text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn:hover:not(:disabled) {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn span {
@@ -622,6 +618,28 @@
 .ui-dialog .charsheet.charactersheet input.preview-control:not([value=false]) ~ .preview-main {
   display: flex;
 }
+.ui-dialog .charsheet.charactersheet input[type=checkbox].toggle-control {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=checkbox].toggle-control + .toggle-btn {
+  background-color: #fff;
+  color: #040506;
+  border-color: #040506;
+  outline-color: transparent;
+  outline-width: 2px;
+  outline-style: solid;
+}
+.ui-dialog .charsheet.charactersheet input[type=checkbox].toggle-control:checked + .toggle-btn,
+.ui-dialog .charsheet.charactersheet input[type=checkbox].toggle-control + .toggle-btn:hover {
+  background-color: #040506;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #040506;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  outline-color: #040506;
+}
 .ui-dialog .charsheet.charactersheet .static-btn {
   font-family: "Exo", sans-serif, Arial, sans-serif;
   text-align: center;
@@ -632,13 +650,13 @@
   font-size: 1em;
   line-height: 1;
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -659,12 +677,12 @@
   text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .static-btn:active {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
   text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .static-btn:hover:not(:disabled) {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet .static-btn .btn-content,
@@ -676,8 +694,11 @@
 .ui-dialog .charsheet.charactersheet .static-btn span {
   padding: 4px 2px;
 }
+.ui-dialog .charsheet.charactersheet .static-btn input[type=checkbox] {
+  display: none;
+}
 .ui-dialog .charsheet.charactersheet .btn-input:checked ~ .btn-content {
-  background: #221e1f;
+  background: #040506;
   color: #fff;
 }
 .ui-dialog .charsheet.charactersheet button[type=roll]:before,
@@ -690,10 +711,10 @@
   margin: 0;
   padding: 0;
   border: 0;
-  color: #221e1f;
+  color: #040506;
 }
-.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name=act_progress-roll]:before,
-.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name=act_progress-roll]:before {
+.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name=act_roll-progress]:before,
+.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name=act_roll-progress]:before {
   position: relative;
   top: 0;
   left: 0;
@@ -736,8 +757,8 @@
   mask-position: center;
   mask-origin: content-box;
 }
-.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name=act_action-roll]:before,
-.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name=act_action-roll]:before {
+.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name=act_roll-action]:before,
+.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name=act_roll-action]:before {
   position: relative;
   top: 0;
   left: 0;
@@ -795,7 +816,7 @@
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 0 solid currentColor;
+  border: 0 solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -840,12 +861,12 @@
 .ui-dialog .charsheet.charactersheet .repcontrol button.btn {
   width: auto;
   height: auto;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   margin: 0.3em;
   padding: 0.2em;
   border-radius: 0;
   background: #dfe0e2;
-  color: #221e1f;
+  color: #040506;
   text-transform: uppercase;
   text-shadow: none;
   outline: 0 solid transparent;
@@ -882,7 +903,7 @@
 }
 .ui-dialog .charsheet.charactersheet article.gamerules {
   font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
   display: grid;
   align-items: center;
@@ -901,7 +922,7 @@
 }
 .ui-dialog .charsheet.charactersheet article.gamerules h3 {
   line-height: 1;
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
   display: flex;
   margin: 0.5em;
@@ -912,17 +933,6 @@
   grid-column-start: 1;
   grid-row-start: 1;
 }
-.ui-dialog .charsheet.charactersheet article.gamerules button.roll-show.icon-only {
-  background-color: #28aae1;
-  color: #fff;
-  width: 1.5em;
-  height: 1.732050807568877em;
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-}
-.ui-dialog .charsheet.charactersheet article.gamerules button.roll-show.icon-only:hover:not(:disabled) {
-  background-color: #28aae1 !important;
-  color: #fff !important;
-}
 .ui-dialog .charsheet.charactersheet .gamerules-body {
   display: flex;
   flex-flow: column;
@@ -931,7 +941,7 @@
   width: stretch;
   width: -moz-available;
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   grid-area: body;
   gap: 1em;
 }
@@ -954,10 +964,70 @@
   flex-flow: row;
   align-items: stretch;
   margin: 0;
-  border: 1px solid #221e1f;
+  border: 1px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet .page-tablist > .page-tab {
   width: max-content;
+}
+.ui-dialog .charsheet.charactersheet .page-tab {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  background-color: #fff;
+  color: #040506;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
+  outline: 0 solid transparent;
+  box-shadow: inset 0 0 0 0 transparent;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em 0.5em;
+  width: stretch;
+  width: -moz-available;
+  height: auto;
+  border-radius: 0;
+  text-align: center;
+  font-size: 1em;
+}
+.ui-dialog .charsheet.charactersheet .page-tab:focus {
+  z-index: 100;
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 3px;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .page-tab:active {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .page-tab:hover:not(:disabled) {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet input.details-control ~ aside.details-content {
+  transition: 0.5s ease;
+}
+.ui-dialog .charsheet.charactersheet input.details-control[value="on"] ~ label.details-summary {
+  background-color: #040506;
+  color: #fff;
+}
+.ui-dialog .charsheet.charactersheet input.details-control:not([value="on"]) ~ aside.details-content {
+  box-sizing: border-box !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
 }
 .ui-dialog .charsheet.charactersheet .resource-meter {
   display: flex;
@@ -977,7 +1047,7 @@
   justify-content: stretch;
   width: inherit;
   height: max-content;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet .resources .resource {
   display: flex;
@@ -985,7 +1055,7 @@
   padding: 0;
   background-color: currentColor;
   gap: 1px;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   flex-grow: 1;
   margin: 0;
   min-width: max-content;
@@ -1112,70 +1182,6 @@
   background-color: #fff !important;
   color: #ce242b !important;
 }
-.ui-dialog .charsheet.charactersheet .impact-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-}
-.ui-dialog .charsheet.charactersheet .impact-component {
-  margin-top: 1em;
-  display: flex;
-  flex-flow: wrap;
-}
-.ui-dialog .charsheet.charactersheet .debil-desc {
-  width: 100%;
-}
-.ui-dialog .charsheet.charactersheet .impact-btn {
-  width: 90%;
-  border-radius: 1em;
-}
-.ui-dialog .charsheet.charactersheet .impact-btn input:checked~ div {
-  border-radius: 0.7em;
-}
-.ui-dialog .charsheet.charactersheet .severity-track {
-  display: flex;
-  margin-top: 1em;
-}
-.ui-dialog .charsheet.charactersheet .meter-child {
-  width: 100%;
-}
-.ui-dialog .charsheet.charactersheet ul.impact-body-list {
-  margin: 0em 0.2em 0.3em 1.3em;
-}
-.ui-dialog .charsheet.charactersheet p.severity-reduce,
-.ui-dialog .charsheet.charactersheet p.impact-clear {
-  margin-bottom: 0.3em;
-}
-.ui-dialog .charsheet.charactersheet .impact-group {
-  width: 25%;
-}
-.ui-dialog .charsheet.charactersheet .impact-group-title {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 0.3em;
-}
-.ui-dialog .charsheet.charactersheet .custom-impacts {
-  margin-left: 0.6em;
-  margin-bottom: 2em;
-  margin-top: 0.5em;
-  display: flex;
-}
-.ui-dialog .charsheet.charactersheet .custom-impacts .impact {
-  margin: 0 0.5em;
-}
-.ui-dialog .charsheet.charactersheet .custom-impacts .other-impacts-title {
-  width: auto;
-  margin-right: 0.6em;
-  align-self: center;
-  text-align: center;
-}
-.ui-dialog .charsheet.charactersheet .custom-impacts input[type=text] {
-  border: 0;
-  border-bottom: 2px solid #221e1f;
-  border-radius: 0;
-  padding: 0;
-}
 .ui-dialog .charsheet.charactersheet .bonds-track {
   width: 437px;
   margin-left: 203px;
@@ -1197,7 +1203,7 @@
   align-items: center;
 }
 .ui-dialog .charsheet.charactersheet .connection-container {
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   border-radius: 1em;
   margin-bottom: 1em;
   padding: 0.5em 1em;
@@ -1228,7 +1234,7 @@
   text-transform: uppercase;
   font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
   display: inline;
-  color: #221e1f;
+  color: #040506;
   border-radius: 0;
 }
 .ui-dialog .charsheet.charactersheet .details-btn {
@@ -1260,14 +1266,14 @@
   border-radius: 0;
   padding: 2px 4px;
   border: 1px solid;
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
 }
 .ui-dialog .charsheet.charactersheet input[type="checkbox"].show-connection-info:hover ~ span.show-connection-info {
   border-radius: 0;
   padding: 2px 4px;
   background-color: #b8c2cd;
-  color: #221e1f;
+  color: #040506;
   transition: 0.5s ease;
 }
 .ui-dialog .charsheet.charactersheet span.show-connection-info {
@@ -1276,271 +1282,392 @@
   padding: 2px 4px;
   border: 1px solid;
 }
-.ui-dialog .charsheet.charactersheet input.vow-name {
+.ui-dialog .charsheet.charactersheet .page-vows {
+  display: flex;
+  flex-flow: column;
+}
+.ui-dialog .charsheet.charactersheet .page-vows .repcontrol {
+  order: 1;
+}
+.ui-dialog .charsheet.charactersheet button[name=act_progress-clear],
+.ui-dialog .charsheet.charactersheet button[name=act_progress-recommit] {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  background-color: #fff;
+  color: #040506;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
+  outline: 0 solid transparent;
+  box-shadow: inset 0 0 0 0 transparent;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em 0.5em;
+  width: stretch;
+  width: -moz-available;
+  height: auto;
+  border-radius: 0;
+  text-align: center;
+  font-size: 1em;
+}
+.ui-dialog .charsheet.charactersheet button[name=act_progress-clear]:focus,
+.ui-dialog .charsheet.charactersheet button[name=act_progress-recommit]:focus {
+  z-index: 100;
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 3px;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet button[name=act_progress-clear]:active,
+.ui-dialog .charsheet.charactersheet button[name=act_progress-recommit]:active {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet button[name=act_progress-clear]:hover:not(:disabled),
+.ui-dialog .charsheet.charactersheet button[name=act_progress-recommit]:hover:not(:disabled) {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet .repcontainer {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+.ui-dialog .charsheet.charactersheet .repcontainer .repitem {
+  border-bottom: 4px solid #040506;
+  padding-bottom: 0.5em;
+}
+.ui-dialog .charsheet.charactersheet input.progress-name {
   background: #b8c2cd;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   border-radius: 0;
   margin-bottom: 0.2em;
   margin-top: 1em;
   background: #e6e7e8;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   border-radius: 0;
   margin-bottom: 0.2em;
+  width: 100%;
 }
-.ui-dialog .charsheet.charactersheet input.vow-name:focus {
+.ui-dialog .charsheet.charactersheet input.progress-name:focus {
   outline: 3px solid #fd0;
   outline-offset: 0;
   box-shadow: inset 0 0 0 2px;
 }
-.ui-dialog .charsheet.charactersheet .fulfill-vow:hover,
-.ui-dialog .charsheet.charactersheet .mark-vow:hover,
-.ui-dialog .charsheet.charactersheet .vow-clear-label:hover {
-  background-color: #b8c2cd;
-  color: #221e1f;
-  transition: 0.5s ease;
+.ui-dialog .charsheet.charactersheet .progress-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-columns: max-content;
+  gap: 0.5em;
 }
-.ui-dialog .charsheet.charactersheet .vows {
-  margin-bottom: 0px;
+.ui-dialog .charsheet.charactersheet .progress-track .progress-name {
+  grid-row: 1;
+  grid-column: 1;
+  margin: 0;
 }
-.ui-dialog .charsheet.charactersheet .vow {
+.ui-dialog .charsheet.charactersheet .progress-track .challenge-rank-radio {
+  grid-row: 2;
+  grid-column: 1;
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .progress-track .challenge-rank-edit {
+  grid-row: 1;
+  grid-column: 2/span 2;
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .progress-track .progress-track-bar {
+  grid-row: 2/span 2;
+  grid-column: 1;
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .progress-track button.progress-track-bar {
+  border: 0;
+  color: #040506;
+}
+.ui-dialog .charsheet.charactersheet .progress-track button.progress-track-bar:hover {
+  color: #28aae1;
+}
+.ui-dialog .charsheet.charactersheet .progress-track button[name=act_roll-progress] {
+  grid-row: 2;
+  grid-column: 2/span 2;
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .progress-track button[name=act_roll-progress]:before {
+  display: inline-block;
+  width: 1.35em;
+  height: 1.35em;
+  background-color: currentColor;
+  content: "";
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  margin: -0.25em 0.5ch -0.25em -0.25em;
+}
+.ui-dialog .charsheet.charactersheet .progress-track button[name=act_progress-clear] {
+  grid-row: 3;
+  grid-column: 2;
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .progress-track button[name=act_progress-recommit] {
+  grid-row: 3;
+  grid-column: 3;
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .progress-track-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row;
+  gap: 0.25rem;
   align-items: center;
 }
-.ui-dialog .charsheet.charactersheet .vow-name {
+.ui-dialog .charsheet.charactersheet .progress-box {
+  height: max-content;
+  margin: 0;
+  flex-basis: 10%;
+  transition: 0.5s ease;
+  display: flex;
+  flex-flow: column;
+  margin: none;
+  padding: none;
+  outline: none;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  margin: 0;
+  cursor: pointer;
+  border: 3px solid currentColor;
+  border-radius: 15%;
+}
+.ui-dialog .charsheet.charactersheet .progress-box:after {
+  height: 0;
   width: 100%;
+  padding-bottom: 100%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-origin: border-box;
+  content: "";
 }
-.ui-dialog .charsheet.charactersheet .track-box-input {
-  width: 80px;
-  height: 45px !important;
-  opacity: 0;
-  vertical-align: top;
+.ui-dialog .charsheet.charactersheet .progress-box-control[value^="0"] + .progress-box:after {
+  background-color: currentColor;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-0.svg");
 }
-.ui-dialog .charsheet.charactersheet .track-box-back {
-  width: 80px;
-  height: 45px;
-  margin-top: -45px;
+.ui-dialog .charsheet.charactersheet .progress-box-control[value^="1"] + .progress-box:after {
+  background-color: currentColor;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-1.svg");
 }
-.ui-dialog .charsheet.charactersheet .track-box-input:hover ~ .track-box-back,
-.ui-dialog .charsheet.charactersheet .resources-box-input:hover ~ .resources-box-back {
-  background: #b8c2cd;
-  transition: 0.5s ease;
+.ui-dialog .charsheet.charactersheet .progress-box-control[value^="2"] + .progress-box:after {
+  background-color: currentColor;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-2.svg");
 }
-.ui-dialog .charsheet.charactersheet .track-box-input:checked ~ .track-box-back,
-.ui-dialog .charsheet.charactersheet .resources-box-input:checked ~ .resources-box-back {
-  background: #221e1f;
-  color: #fff;
-  transition: 0.5s ease;
+.ui-dialog .charsheet.charactersheet .progress-box-control[value^="3"] + .progress-box:after {
+  background-color: currentColor;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-3.svg");
 }
-.ui-dialog .charsheet.charactersheet .track-box-value {
-  padding: 0px;
-  height: 35px;
-  padding-top: 10px;
-  color: inherit;
+.ui-dialog .charsheet.charactersheet .progress-box-control[value^="4"] + .progress-box:after {
+  background-color: currentColor;
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg");
 }
 .ui-dialog .charsheet.charactersheet .challenge-rank-radio {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 0.3em;
-  margin-bottom: 10px;
+  gap: 0.5em;
+  margin: 0;
 }
-.ui-dialog .charsheet.charactersheet .challenge-rank-radio .challenge-rank-option {
-  border: 2px solid currentColor;
-  margin: 0.2em 0.5em 0.2em 0.5em;
-  padding: 0;
-  cursor: pointer;
-  text-align: center;
+.ui-dialog .charsheet.charactersheet .challenge-rank-option {
+  margin: 0;
 }
-.ui-dialog .charsheet.charactersheet .challenge-rank-radio .challenge-rank-option input:checked ~ h5 {
-  background: #221e1f;
+.ui-dialog .charsheet.charactersheet .challenge-rank-edit > span {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .challenge-rank-troublesome {
+  background-color: #28aae1;
   color: #fff;
+  border-color: #fff;
+  outline-color: #28aae1;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #28aae1;
 }
-.ui-dialog .charsheet.charactersheet .progress-container {
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-edit {
+  background-color: #28aae1;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #28aae1;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #28aae1;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-edit > span[data-i18n=difficulty-troublesome] {
+  display: contents;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-radio .challenge-rank-troublesome {
+  background-color: #28aae1;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #28aae1;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #28aae1;
+}
+.ui-dialog .charsheet.charactersheet .challenge-rank-dangerous {
+  background-color: #5175cf;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #5175cf;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #5175cf;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-edit {
+  background-color: #5175cf;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #5175cf;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #5175cf;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-edit > span[data-i18n=difficulty-dangerous] {
+  display: contents;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-radio .challenge-rank-dangerous {
+  background-color: #5175cf;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #5175cf;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #5175cf;
+}
+.ui-dialog .charsheet.charactersheet .challenge-rank-formidable {
+  background-color: #892890;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #892890;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #892890;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-edit {
+  background-color: #892890;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #892890;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #892890;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-edit > span[data-i18n=difficulty-formidable] {
+  display: contents;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-radio .challenge-rank-formidable {
+  background-color: #892890;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #892890;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #892890;
+}
+.ui-dialog .charsheet.charactersheet .challenge-rank-extreme {
+  background-color: #be0064;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #be0064;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #be0064;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-edit {
+  background-color: #be0064;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #be0064;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #be0064;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-edit > span[data-i18n=difficulty-extreme] {
+  display: contents;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-radio .challenge-rank-extreme {
+  background-color: #be0064;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #be0064;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #be0064;
+}
+.ui-dialog .charsheet.charactersheet .challenge-rank-epic {
+  background-color: #ce242b;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #ce242b;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #ce242b;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-edit {
+  background-color: #ce242b;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #ce242b;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #ce242b;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-edit > span[data-i18n=difficulty-epic] {
+  display: contents;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-radio .challenge-rank-epic {
+  background-color: #ce242b;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #ce242b;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  border-color: #ce242b;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"]:not([value^="0"]) ~ .challenge-rank-radio {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="0"] ~ button,
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="0"] ~ .progress-track-bar,
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="0"] ~ .challenge-rank-edit {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="0"] ~ .challenge-rank-radio {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.ui-dialog .charsheet.charactersheet .progress-name {
-  width: 100%;
-}
-.ui-dialog .charsheet.charactersheet input.progress-name {
-  background: #e6e7e8;
-  border: 2px solid currentColor;
-  border-radius: 0;
-  margin-bottom: 0.2em;
-}
-.ui-dialog .charsheet.charactersheet .progress-input {
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 0px 0px 12px;
-  margin: 0px;
-  cursor: pointer;
-  border: 2px solid currentColor;
-  border-radius: 0;
-}
-.ui-dialog .charsheet.charactersheet .progress-input:hover:not(:disabled) {
-  background-color: #221e1f !important;
-  color: #b8c2cd !important;
-}
-.ui-dialog .charsheet.charactersheet .progress-input:focus {
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 2px;
-}
-.ui-dialog .charsheet.charactersheet input.progress-name {
-  margin-bottom: 0px;
-}
-.ui-dialog .charsheet.charactersheet .challenge-show {
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-  border: 2px solid currentColor;
-  width: auto;
-  height: auto;
-  cursor: pointer;
-  border-left: 0;
-}
-.ui-dialog .charsheet.charactersheet .challenge-show:hover:not(:disabled) {
-  background-color: #221e1f !important;
-  color: #b8c2cd !important;
-}
-.ui-dialog .charsheet.charactersheet .challenge-show-back {
-  height: 100%;
-  padding: 0em 1em 0em 1em;
-  line-height: 25px;
-}
-.ui-dialog .charsheet.charactersheet input[type='checkbox'].challenge-show-button:checked ~ div.challenge-show-back {
-  background: #221e1f;
-  color: #fff;
-}
-.ui-dialog .charsheet.charactersheet .countdown-row,
-.ui-dialog .charsheet.charactersheet .progress-row {
-  display: grid;
-  grid-template-columns: 151px repeat(10, 43.5px) 110px;
-  align-items: center;
-  text-transform: uppercase;
-}
-.ui-dialog .charsheet.charactersheet label.challenge-label {
-  padding-left: 0.5em;
-  display: block;
-  height: 18px;
-  margin: 0px;
-}
-.ui-dialog .charsheet.charactersheet .challenge-box {
-  border: 2px solid currentColor;
-  padding: 0;
-  display: inline-flex;
-  height: 36px;
-  width: 36px;
-  margin: 0.2em 0em;
-  cursor: pointer;
-}
-.ui-dialog .charsheet.charactersheet .challenge-fill {
-  height: 100%;
-  width: 100%;
-  background: #fff;
-}
-.ui-dialog .charsheet.charactersheet input[type="checkbox"].challenge:checked ~ .challenge-fill {
-  background: #221e1f;
-}
-.ui-dialog .charsheet.charactersheet input[type="checkbox"].challenge:hover ~ .challenge-fill {
-  background: #e6e7e8;
-}
-.ui-dialog .charsheet.charactersheet .blank-index {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-}
-.ui-dialog .charsheet.charactersheet .progress-input-holder {
-  position: relative;
-  margin: 0.3em 0em;
-}
-.ui-dialog .charsheet.charactersheet .progress-input-holder input[min],
-.ui-dialog .charsheet.charactersheet input[min] + span {
-  display: none;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 36px;
-  height: 36px;
-  pointer-events: none;
-  background: #fff;
-}
-.ui-dialog .charsheet.charactersheet .progress-input-holder input[min="1"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px));
-}
-.ui-dialog .charsheet.charactersheet .progress-input-holder input[min="2"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
-}
-.ui-dialog .charsheet.charactersheet .progress-input-holder input[min="3"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
-}
-.ui-dialog .charsheet.charactersheet .progress-input-holder input[min="4"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input {
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 0px 0px 12px;
-  margin: 0px;
-  cursor: pointer;
-  border: 2px solid currentColor;
-  border-radius: 0.3em;
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input:hover:not(:disabled) {
-  background-color: #221e1f !important;
-  color: #b8c2cd !important;
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input:focus {
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 2px;
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input-holder {
-  position: relative;
-  margin: 0;
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input-holder input[min],
-.ui-dialog .charsheet.charactersheet input[min].large-input + span {
-  display: none;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 56px;
-  height: 56px;
-  pointer-events: none;
-  background: #fff;
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input-holder input[min="1"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px));
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input-holder input[min="2"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input-holder input[min="3"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
-}
-.ui-dialog .charsheet.charactersheet .large-progress-input-holder input[min="4"]:valid + span {
-  display: block;
-  background-image: linear-gradient(45deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(135deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(90deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%), linear-gradient(0deg, transparent 0px, transparent calc(50% - 1px), #221e1f calc(50% - 1px), #221e1f calc(50% + 1px), transparent calc(50% + 1px), transparent 100%);
 }
 .ui-dialog .charsheet.charactersheet .legacies {
   display: grid;
@@ -1552,18 +1679,9 @@
   text-transform: uppercase;
   grid-auto-flow: column;
 }
-.ui-dialog .charsheet.charactersheet .legacies .progress-boxes .progress-input {
-  width: 60px;
-  height: 60px;
-}
-.ui-dialog .charsheet.charactersheet .legacies .experience-boxes {
-  display: flex;
-  justify-content: space-between;
-}
 .ui-dialog .charsheet.charactersheet .legacies .title {
   padding: 0.3em 0em 0em 0em;
   font-weight: bold;
-  grid-column: 1;
 }
 .ui-dialog .charsheet.charactersheet .legacies .ten-marker {
   margin: 0;
@@ -1574,54 +1692,94 @@
 .ui-dialog .charsheet.charactersheet .legacies .legacy-roll {
   margin: 0;
 }
-.ui-dialog .charsheet.charactersheet .legacies .legacy-row-1 {
-  display: grid;
-}
-.ui-dialog .charsheet.charactersheet .quests,
-.ui-dialog .charsheet.charactersheet .bonds,
-.ui-dialog .charsheet.charactersheet .discoveries {
+.ui-dialog .charsheet.charactersheet .legacy-track {
   display: grid;
   grid-gap: 0.3em;
+  grid-template-areas: "header header header" "btn1 track btn2" "btn3 track btn4";
 }
-.ui-dialog .charsheet.charactersheet label.experience-box {
-  display: inline-flex;
-  margin: 0.2em 0em;
-  padding: 0;
-  height: 1em;
-  border: 2px solid #000;
-  cursor: pointer;
+.ui-dialog .charsheet.charactersheet .legacy-track h2 {
+  grid-area: header;
 }
-.ui-dialog .charsheet.charactersheet label.experience-box:nth-child(1) {
-  border-top-left-radius: 0.3em;
-  border-bottom-left-radius: 0.3em;
+.ui-dialog .charsheet.charactersheet .legacy-track .progress-track-bar {
+  grid-area: track;
 }
-.ui-dialog .charsheet.charactersheet label.experience-box:nth-child(1) div {
-  border-top-left-radius: 0.16em;
-  border-bottom-left-radius: 0.16em;
+.ui-dialog .charsheet.charactersheet .legacies .progress-box {
+  height: 4.4em;
+  display: grid;
+  grid-template-areas: "select" "overlap" "checks";
+  grid-template-columns: max-content;
 }
-.ui-dialog .charsheet.charactersheet label.experience-box:nth-last-child(1) {
-  border-top-right-radius: 0.3em;
-  border-bottom-right-radius: 0.3em;
+.ui-dialog .charsheet.charactersheet .legacies .progress-box .progress-box {
+  width: 4em;
+  height: 4em;
+  grid-column: 1;
+  grid-row-start: select-start;
+  grid-row-end: overlap-end;
+  align-self: self-start;
 }
-.ui-dialog .charsheet.charactersheet label.experience-box:nth-last-child(1) div {
-  border-top-right-radius: 0.16em;
-  border-bottom-right-radius: 0.16em;
+.ui-dialog .charsheet.charactersheet .legacies .progress-box .experience-boxes {
+  grid-column: 1;
+  grid-row-start: overlap-start;
+  grid-row-end: checks-end;
+  align-self: self-end;
+  height: max-content;
 }
-.ui-dialog .charsheet.charactersheet input.experience-box {
-  vertical-align: top;
+.ui-dialog .charsheet.charactersheet .experience-boxes {
+  box-sizing: border-box;
+  visibility: hidden;
   opacity: 0;
+  pointer-events: none;
+  flex-flow: row;
+  gap: 2px;
+  border: 2px solid #040506;
+  background: #040506;
+  border-radius: 0.3em;
+  overflow: clip;
+  justify-self: center;
+  transition: 0.25s ease-in-out;
+}
+.ui-dialog .charsheet.charactersheet .progress-box-control[value^="4"] ~ .experience-boxes {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 101;
+}
+.ui-dialog .charsheet.charactersheet .experience-box {
+  background-color: #fff;
+  color: #28aae1;
   cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
+  outline: 0 solid transparent;
+  box-shadow: inset 0 0 0 0 transparent;
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 0.8em;
+  width: 0.8em;
+  cursor: pointer;
+  background-color: #fff;
 }
-.ui-dialog .charsheet.charactersheet .experience-fill {
-  width: 100%;
-  height: 100%;
-  background: #fff;
+.ui-dialog .charsheet.charactersheet .experience-box:focus {
+  z-index: 100;
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 3px;
+  text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet input[type="checkbox"].experience-box:checked ~ .experience-fill {
-  background: #221e1f;
+.ui-dialog .charsheet.charactersheet .experience-box:active {
+  background-color: #28aae1 !important;
+  color: #fff !important;
+  text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet input[type="checkbox"].experience-box:hover ~ .experience-fill {
-  background: #e6e7e8;
+.ui-dialog .charsheet.charactersheet .experience-box:hover:not(:disabled) {
+  background-color: #28aae1 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet .experience-box:checked {
+  background-color: #28aae1;
 }
 .ui-dialog .charsheet.charactersheet .stats {
   justify-content: space-evenly;
@@ -1667,7 +1825,7 @@
 }
 .ui-dialog .charsheet.charactersheet .stats > section.editor-on .stat,
 .ui-dialog .charsheet.charactersheet .stats > section.editor-off .stat {
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1689,7 +1847,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-begin-a-session] ~ .preview-list [value=move-begin-a-session] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-begin-a-session]) ~ .preview-main .move-begin-a-session {
@@ -1699,7 +1857,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-set-a-flag] ~ .preview-list [value=move-set-a-flag] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-set-a-flag]) ~ .preview-main .move-set-a-flag {
@@ -1709,7 +1867,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-change-your-fate] ~ .preview-list [value=move-change-your-fate] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-change-your-fate]) ~ .preview-main .move-change-your-fate {
@@ -1719,7 +1877,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-take-a-break] ~ .preview-list [value=move-take-a-break] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-take-a-break]) ~ .preview-main .move-take-a-break {
@@ -1729,7 +1887,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-end-a-session] ~ .preview-list [value=move-end-a-session] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-end-a-session]) ~ .preview-main .move-end-a-session {
@@ -1739,7 +1897,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-face-danger] ~ .preview-list [value=move-face-danger] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-face-danger]) ~ .preview-main .move-face-danger {
@@ -1749,7 +1907,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-secure-an-advantage] ~ .preview-list [value=move-secure-an-advantage] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-secure-an-advantage]) ~ .preview-main .move-secure-an-advantage {
@@ -1759,7 +1917,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-gather-information] ~ .preview-list [value=move-gather-information] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-gather-information]) ~ .preview-main .move-gather-information {
@@ -1769,7 +1927,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-compel] ~ .preview-list [value=move-compel] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-compel]) ~ .preview-main .move-compel {
@@ -1779,7 +1937,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-aid-your-ally] ~ .preview-list [value=move-aid-your-ally] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-aid-your-ally]) ~ .preview-main .move-aid-your-ally {
@@ -1789,7 +1947,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-check-your-gear] ~ .preview-list [value=move-check-your-gear] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-check-your-gear]) ~ .preview-main .move-check-your-gear {
@@ -1799,7 +1957,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-swear-an-iron-vow] ~ .preview-list [value=move-swear-an-iron-vow] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-swear-an-iron-vow]) ~ .preview-main .move-swear-an-iron-vow {
@@ -1809,37 +1967,37 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-reach-a-milestone] ~ .preview-list [value=move-reach-a-milestone] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-reach-a-milestone]) ~ .preview-main .move-reach-a-milestone {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forsake-your-vow] ~ .preview-main .move-forsake-your-vow {
-  display: grid;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forsake-your-vow] ~ .preview-list [value=move-forsake-your-vow] {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-forsake-your-vow]) ~ .preview-main .move-forsake-your-vow {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-fulfill-your-vow] ~ .preview-main .move-fulfill-your-vow {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-fulfill-your-vow] ~ .preview-list [value=move-fulfill-your-vow] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-fulfill-your-vow]) ~ .preview-main .move-fulfill-your-vow {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forsake-your-vow] ~ .preview-main .move-forsake-your-vow {
+  display: grid;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forsake-your-vow] ~ .preview-list [value=move-forsake-your-vow] {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-forsake-your-vow]) ~ .preview-main .move-forsake-your-vow {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-make-a-connection] ~ .preview-main .move-make-a-connection {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-make-a-connection] ~ .preview-list [value=move-make-a-connection] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-make-a-connection]) ~ .preview-main .move-make-a-connection {
@@ -1849,37 +2007,37 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-develop-your-relationship] ~ .preview-list [value=move-develop-your-relationship] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-develop-your-relationship]) ~ .preview-main .move-develop-your-relationship {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forge-a-bond] ~ .preview-main .move-forge-a-bond {
-  display: grid;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forge-a-bond] ~ .preview-list [value=move-forge-a-bond] {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-forge-a-bond]) ~ .preview-main .move-forge-a-bond {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-test-your-relationship] ~ .preview-main .move-test-your-relationship {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-test-your-relationship] ~ .preview-list [value=move-test-your-relationship] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-test-your-relationship]) ~ .preview-main .move-test-your-relationship {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forge-a-bond] ~ .preview-main .move-forge-a-bond {
+  display: grid;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-forge-a-bond] ~ .preview-list [value=move-forge-a-bond] {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-forge-a-bond]) ~ .preview-main .move-forge-a-bond {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-undertake-an-expedition] ~ .preview-main .move-undertake-an-expedition {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-undertake-an-expedition] ~ .preview-list [value=move-undertake-an-expedition] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-undertake-an-expedition]) ~ .preview-main .move-undertake-an-expedition {
@@ -1889,37 +2047,17 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-explore-a-waypoint] ~ .preview-list [value=move-explore-a-waypoint] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-explore-a-waypoint]) ~ .preview-main .move-explore-a-waypoint {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-finish-an-expedition] ~ .preview-main .move-finish-an-expedition {
-  display: grid;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-finish-an-expedition] ~ .preview-list [value=move-finish-an-expedition] {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-finish-an-expedition]) ~ .preview-main .move-finish-an-expedition {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-set-a-course] ~ .preview-main .move-set-a-course {
-  display: grid;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-set-a-course] ~ .preview-list [value=move-set-a-course] {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-set-a-course]) ~ .preview-main .move-set-a-course {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-make-a-discovery] ~ .preview-main .move-make-a-discovery {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-make-a-discovery] ~ .preview-list [value=move-make-a-discovery] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-make-a-discovery]) ~ .preview-main .move-make-a-discovery {
@@ -1929,17 +2067,37 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-confront-chaos] ~ .preview-list [value=move-confront-chaos] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-confront-chaos]) ~ .preview-main .move-confront-chaos {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-finish-an-expedition] ~ .preview-main .move-finish-an-expedition {
+  display: grid;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-finish-an-expedition] ~ .preview-list [value=move-finish-an-expedition] {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-finish-an-expedition]) ~ .preview-main .move-finish-an-expedition {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-set-a-course] ~ .preview-main .move-set-a-course {
+  display: grid;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-set-a-course] ~ .preview-list [value=move-set-a-course] {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-set-a-course]) ~ .preview-main .move-set-a-course {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-enter-the-fray] ~ .preview-main .move-enter-the-fray {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-enter-the-fray] ~ .preview-list [value=move-enter-the-fray] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-enter-the-fray]) ~ .preview-main .move-enter-the-fray {
@@ -1949,7 +2107,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-gain-ground] ~ .preview-list [value=move-gain-ground] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-gain-ground]) ~ .preview-main .move-gain-ground {
@@ -1959,7 +2117,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-react-under-fire] ~ .preview-list [value=move-react-under-fire] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-react-under-fire]) ~ .preview-main .move-react-under-fire {
@@ -1969,7 +2127,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-strike] ~ .preview-list [value=move-strike] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-strike]) ~ .preview-main .move-strike {
@@ -1979,7 +2137,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-clash] ~ .preview-list [value=move-clash] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-clash]) ~ .preview-main .move-clash {
@@ -1989,7 +2147,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-face-defeat] ~ .preview-list [value=move-face-defeat] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-face-defeat]) ~ .preview-main .move-face-defeat {
@@ -1999,7 +2157,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-take-decisive-action] ~ .preview-list [value=move-take-decisive-action] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-take-decisive-action]) ~ .preview-main .move-take-decisive-action {
@@ -2009,7 +2167,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-battle] ~ .preview-list [value=move-battle] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-battle]) ~ .preview-main .move-battle {
@@ -2019,7 +2177,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-lose-momentum] ~ .preview-list [value=move-lose-momentum] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-lose-momentum]) ~ .preview-main .move-lose-momentum {
@@ -2029,7 +2187,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-endure-harm] ~ .preview-list [value=move-endure-harm] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-endure-harm]) ~ .preview-main .move-endure-harm {
@@ -2039,7 +2197,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-endure-stress] ~ .preview-list [value=move-endure-stress] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-endure-stress]) ~ .preview-main .move-endure-stress {
@@ -2049,7 +2207,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-withstand-damage] ~ .preview-list [value=move-withstand-damage] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-withstand-damage]) ~ .preview-main .move-withstand-damage {
@@ -2059,7 +2217,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-companion-takes-a-hit] ~ .preview-list [value=move-companion-takes-a-hit] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-companion-takes-a-hit]) ~ .preview-main .move-companion-takes-a-hit {
@@ -2069,7 +2227,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-sacrifice-resources] ~ .preview-list [value=move-sacrifice-resources] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-sacrifice-resources]) ~ .preview-main .move-sacrifice-resources {
@@ -2079,7 +2237,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-face-death] ~ .preview-list [value=move-face-death] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-face-death]) ~ .preview-main .move-face-death {
@@ -2089,7 +2247,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-face-desolation] ~ .preview-list [value=move-face-desolation] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-face-desolation]) ~ .preview-main .move-face-desolation {
@@ -2099,7 +2257,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-overcome-destruction] ~ .preview-list [value=move-overcome-destruction] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-overcome-destruction]) ~ .preview-main .move-overcome-destruction {
@@ -2109,7 +2267,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-sojourn] ~ .preview-list [value=move-sojourn] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-sojourn]) ~ .preview-main .move-sojourn {
@@ -2119,7 +2277,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-heal] ~ .preview-list [value=move-heal] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-heal]) ~ .preview-main .move-heal {
@@ -2129,7 +2287,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-hearten] ~ .preview-list [value=move-hearten] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-hearten]) ~ .preview-main .move-hearten {
@@ -2139,7 +2297,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-repair] ~ .preview-list [value=move-repair] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-repair]) ~ .preview-main .move-repair {
@@ -2149,7 +2307,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-resupply] ~ .preview-list [value=move-resupply] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-resupply]) ~ .preview-main .move-resupply {
@@ -2159,7 +2317,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-earn-experience] ~ .preview-list [value=move-earn-experience] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-earn-experience]) ~ .preview-main .move-earn-experience {
@@ -2169,7 +2327,7 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-advance] ~ .preview-list [value=move-advance] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-advance]) ~ .preview-main .move-advance {
@@ -2179,30 +2337,30 @@
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-continue-a-legacy] ~ .preview-list [value=move-continue-a-legacy] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-continue-a-legacy]) ~ .preview-main .move-continue-a-legacy {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-pay-the-price] ~ .preview-main .move-pay-the-price {
-  display: grid;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-pay-the-price] ~ .preview-list [value=move-pay-the-price] {
-  background-color: #221e1f !important;
-  color: #fff !important;
-}
-.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-pay-the-price]) ~ .preview-main .move-pay-the-price {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-ask-the-oracle] ~ .preview-main .move-ask-the-oracle {
   display: grid;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-ask-the-oracle] ~ .preview-list [value=move-ask-the-oracle] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-ask-the-oracle]) ~ .preview-main .move-ask-the-oracle {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-pay-the-price] ~ .preview-main .move-pay-the-price {
+  display: grid;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display][value=move-pay-the-price] ~ .preview-list [value=move-pay-the-price] {
+  background-color: #040506 !important;
+  color: #fff !important;
+}
+.ui-dialog .charsheet.charactersheet input[name=attr_move-preview-display]:not([value=move-pay-the-price]) ~ .preview-main .move-pay-the-price {
   display: none;
 }
 .ui-dialog .charsheet.charactersheet .page-moves {
@@ -2232,7 +2390,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.search-preview-bar {
   width: 17.6em;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   border-radius: 0;
 }
 .ui-dialog .charsheet.charactersheet input.search-preview-bar:focus {
@@ -2242,7 +2400,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.search-bar {
   width: 50%;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet input.search-bar:focus {
   outline: 3px solid #fd0;
@@ -2250,7 +2408,7 @@
   box-shadow: inset 0 0 0 2px;
 }
 .ui-dialog .charsheet.charactersheet input.table-btn:checked ~ div.move-nav-content {
-  background: #221e1f;
+  background: #040506;
   color: #fff;
   transition: 0.5s ease;
 }
@@ -2258,7 +2416,7 @@
   display: flex;
   margin: 0;
   padding: 0;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet .move-name {
   width: 100%;
@@ -2315,7 +2473,7 @@
   display: block;
   align-self: end;
   margin-left: 1em;
-  color: #646262;
+  color: #4f5051;
   font-style: italic;
 }
 .ui-dialog .charsheet.charactersheet article.gamerules .move-table {
@@ -2334,13 +2492,13 @@
 }
 .ui-dialog .charsheet.charactersheet .clear-search:hover:not(:disabled) {
   background-color: #fff !important;
-  color: #221e1f !important;
+  color: #040506 !important;
 }
 .ui-dialog .charsheet.charactersheet .selected-move {
   z-index: 3;
 }
 .ui-dialog .charsheet.charactersheet .selected-move:checked ~ .move-name {
-  background: #221e1f !important;
+  background: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet .move-nav-child {
@@ -2384,7 +2542,7 @@
   display: flex;
   padding: 0 5px;
   height: auto;
-  border-bottom: 2px solid #221e1f;
+  border-bottom: 2px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet .embedded-btn {
   padding-top: 0.2em !important;
@@ -2461,7 +2619,7 @@
 }
 .ui-dialog .charsheet.charactersheet .asset-container input.border-bottom {
   padding: 0;
-  border-bottom-color: #221e1f;
+  border-bottom-color: #040506;
 }
 .ui-dialog .charsheet.charactersheet article.asset-card {
   display: grid;
@@ -2621,14 +2779,14 @@
 }
 .ui-dialog .charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:first-child input[type="radio"]:checked + .resource-meter-box-display {
   background-color: #ce242b;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:last-child:hover {
   color: #28aae1;
 }
 .ui-dialog .charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box:last-child input[type="radio"]:checked + .resource-meter-box-display {
   background-color: #28aae1;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box .resource-meter-box-display {
   background-color: #fff;
@@ -2644,10 +2802,10 @@
   mask-size: contain;
 }
 .ui-dialog .charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box .resource-meter-box-display:hover {
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet article.asset-card section.resource-meter label.resource-meter-box input[type="radio"]:checked + .resource-meter-box-display {
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
 }
 .ui-dialog .charsheet.charactersheet .resource-meter-wordy {
@@ -2658,13 +2816,13 @@
 }
 .ui-dialog .charsheet.charactersheet .asset-type-selection {
   border: 0;
-  background: #221e1f;
+  background: #040506;
   color: #fff;
 }
 .ui-dialog .charsheet.charactersheet .asset-type-dropdown {
   margin: 6px 4px;
   width: auto;
-  background: #221e1f;
+  background: #040506;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -2700,7 +2858,7 @@
   width: 100%;
   border: 0;
   border-radius: 0.4em 0.4em 0 0;
-  background: #221e1f;
+  background: #040506;
   color: #fff;
   text-transform: uppercase;
   font-family: "Exo", Arial, sans-serif;
@@ -2754,7 +2912,7 @@
 .ui-dialog .charsheet.charactersheet section.oracle-table h4 {
   font-family: "Exo", Arial, sans-serif;
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   margin-bottom: 0.25em;
   padding: 0;
   background: none;
@@ -2767,7 +2925,7 @@
 }
 .ui-dialog .charsheet.charactersheet table.oracle-table thead {
   padding: 0.3em;
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
 }
 .ui-dialog .charsheet.charactersheet table.oracle-table thead th {
@@ -2779,7 +2937,7 @@
 .ui-dialog .charsheet.charactersheet .oracle {
   display: flex;
   margin: 0;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet .oracle-subtitle,
 .ui-dialog .charsheet.charactersheet .oracle-column-head {
@@ -2788,10 +2946,10 @@
 }
 .ui-dialog .charsheet.charactersheet .oracle-column-head {
   background-color: #b8c2cd;
-  color: #221e1f;
+  color: #040506;
 }
 .ui-dialog .charsheet.charactersheet .oracle-subtitle {
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
   text-transform: uppercase;
 }
@@ -2812,19 +2970,19 @@
   width: 50%;
 }
 .ui-dialog .charsheet.charactersheet .theme-outline {
-  border: 1px solid #221e1f;
+  border: 1px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet span.oracle-result {
   width: 80%;
 }
 .ui-dialog .charsheet.charactersheet .oracle-box {
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   height: max-content;
 }
 .ui-dialog .charsheet.charactersheet .oracle-title {
   padding-right: 5px;
   padding-left: 5px;
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -2904,10 +3062,55 @@
   padding: 0;
   width: 33%;
   height: 44em;
-  border: 3px solid #221e1f;
+  border: 3px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet .column-wrap {
   width: 50%;
+}
+.ui-dialog .charsheet.charactersheet .momentum-burn {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  background-color: #fff;
+  color: #040506;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
+  outline: 0 solid transparent;
+  box-shadow: inset 0 0 0 0 transparent;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em 0.5em;
+  width: stretch;
+  width: -moz-available;
+  height: auto;
+  border-radius: 0;
+  text-align: center;
+  font-size: 1em;
+}
+.ui-dialog .charsheet.charactersheet .momentum-burn:focus {
+  z-index: 100;
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 3px;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .momentum-burn:active {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .momentum-burn:hover:not(:disabled) {
+  background-color: #040506 !important;
+  color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet #momentum {
   display: flex;
@@ -2917,8 +3120,8 @@
   text-align: center;
   justify-items: center;
   background-color: #fff;
-  color: #221e1f;
-  border: 4px solid currentColor;
+  color: #040506;
+  border: 4px solid #040506;
   flex-flow: row;
   align-items: stretch;
 }
@@ -2942,7 +3145,7 @@
 }
 .ui-dialog .charsheet.charactersheet #momentum button.momentum-burn {
   background-color: #fff;
-  color: #221e1f;
+  color: #040506;
   border-width: 0;
 }
 .ui-dialog .charsheet.charactersheet #momentum button.momentum-burn:before {
@@ -2974,7 +3177,7 @@
   font-weight: 600;
   font-size: 1em;
   line-height: 1;
-  color: #646262;
+  color: #4f5051;
 }
 .ui-dialog .charsheet.charactersheet #momentum .momentum-status-box {
   text-transform: none;
@@ -2990,7 +3193,7 @@
   display: flex;
   flex-grow: 10;
   margin: 0;
-  border: solid #221e1f;
+  border: solid #040506;
   border-width: 0 1px;
   background-image: linear-gradient(-90deg, #ce242b, #c80052, #b10074, #892890, #7b47aa, #685fbf, #5175cf, #3988d9, #259adf, #28aae1);
   gap: 2px;
@@ -3087,11 +3290,94 @@
   text-stroke: 2px #000;
   -webkit-text-stroke: 2px #000;
 }
+.ui-dialog .charsheet.charactersheet .impact-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.ui-dialog .charsheet.charactersheet .impact-component {
+  margin-top: 1em;
+  display: flex;
+  flex-flow: wrap;
+}
+.ui-dialog .charsheet.charactersheet .debil-desc {
+  width: 100%;
+}
+.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control + .toggle-btn {
+  background-color: #fff;
+  color: #040506;
+  border-color: #040506;
+  outline-color: transparent;
+  outline-width: 2px;
+  outline-style: solid;
+}
+.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control:checked + .toggle-btn,
+.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control + .toggle-btn:hover {
+  background-color: #040506;
+  color: #fff;
+  border-color: #fff;
+  outline-color: #040506;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  outline-color: #ce242b;
+}
+.ui-dialog .charsheet.charactersheet .impacts .toggle-btn {
+  width: 90%;
+  border-radius: 1em;
+}
+.ui-dialog .charsheet.charactersheet .severity-track {
+  display: flex;
+  margin-top: 1em;
+}
+.ui-dialog .charsheet.charactersheet .meter-child {
+  width: 100%;
+}
+.ui-dialog .charsheet.charactersheet ul.impact-body-list {
+  margin: 0em 0.2em 0.3em 1.3em;
+}
+.ui-dialog .charsheet.charactersheet p.severity-reduce,
+.ui-dialog .charsheet.charactersheet p.impact-clear {
+  margin-bottom: 0.3em;
+}
+.ui-dialog .charsheet.charactersheet .impact-group {
+  width: 25%;
+}
+.ui-dialog .charsheet.charactersheet .impact-group-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+.ui-dialog .charsheet.charactersheet .custom-impacts {
+  margin-left: 0.6em;
+  margin-bottom: 2em;
+  margin-top: 0.5em;
+  display: flex;
+}
+.ui-dialog .charsheet.charactersheet .custom-impacts .impact {
+  margin: 0 0.5em;
+}
+.ui-dialog .charsheet.charactersheet .custom-impacts .other-impacts-title {
+  width: auto;
+  margin-right: 0.6em;
+  align-self: center;
+  text-align: center;
+}
+.ui-dialog .charsheet.charactersheet .custom-impacts input[type=text] {
+  border: 0;
+  border-bottom: 2px solid #040506;
+  border-radius: 0;
+  padding: 0;
+}
 .ui-dialog .charsheet.charactersheet .page-tablist {
   display: flex;
   flex-flow: row wrap;
   margin: 0;
-  border: 1px solid #221e1f;
+  border: 1px solid #040506;
 }
 .ui-dialog .charsheet.charactersheet .page-tablist > .page-tab {
   flex: 1;
@@ -3101,7 +3387,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=summary] ~ .page-tab[name=act_set-sheet-character-display][value=summary],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=summary] ~ .page-tab[name=act_set-sheet-character-display][value=summary] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=summary] ~ article#sheet-character-page-summary,
@@ -3124,7 +3410,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=assets] ~ .page-tab[name=act_set-sheet-character-display][value=assets],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=assets] ~ .page-tab[name=act_set-sheet-character-display][value=assets] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=assets] ~ article#sheet-character-page-assets,
@@ -3147,7 +3433,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=vows] ~ .page-tab[name=act_set-sheet-character-display][value=vows],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=vows] ~ .page-tab[name=act_set-sheet-character-display][value=vows] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=vows] ~ article#sheet-character-page-vows,
@@ -3170,7 +3456,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=progress] ~ .page-tab[name=act_set-sheet-character-display][value=progress],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=progress] ~ .page-tab[name=act_set-sheet-character-display][value=progress] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=progress] ~ article#sheet-character-page-progress,
@@ -3193,7 +3479,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=connections] ~ .page-tab[name=act_set-sheet-character-display][value=connections],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=connections] ~ .page-tab[name=act_set-sheet-character-display][value=connections] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=connections] ~ article#sheet-character-page-connections,
@@ -3216,7 +3502,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=legacies] ~ .page-tab[name=act_set-sheet-character-display][value=legacies],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=legacies] ~ .page-tab[name=act_set-sheet-character-display][value=legacies] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=legacies] ~ article#sheet-character-page-legacies,
@@ -3239,7 +3525,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=ship] ~ .page-tab[name=act_set-sheet-character-display][value=ship],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=ship] ~ .page-tab[name=act_set-sheet-character-display][value=ship] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=ship] ~ article#sheet-character-page-ship,
@@ -3262,7 +3548,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=moves] ~ .page-tab[name=act_set-sheet-character-display][value=moves],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=moves] ~ .page-tab[name=act_set-sheet-character-display][value=moves] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=moves] ~ article#sheet-character-page-moves,
@@ -3285,7 +3571,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=oracles] ~ .page-tab[name=act_set-sheet-character-display][value=oracles],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=oracles] ~ .page-tab[name=act_set-sheet-character-display][value=oracles] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=oracles] ~ article#sheet-character-page-oracles,
@@ -3308,7 +3594,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=vows] ~ .page-tab[name=act_set-sheet-shared-display][value=vows],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=vows] ~ .page-tab[name=act_set-sheet-shared-display][value=vows] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=vows] ~ article#sheet-shared-page-vows,
@@ -3331,7 +3617,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=progress] ~ .page-tab[name=act_set-sheet-shared-display][value=progress],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=progress] ~ .page-tab[name=act_set-sheet-shared-display][value=progress] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=progress] ~ article#sheet-shared-page-progress,
@@ -3354,7 +3640,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=connections] ~ .page-tab[name=act_set-sheet-shared-display][value=connections],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=connections] ~ .page-tab[name=act_set-sheet-shared-display][value=connections] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=connections] ~ article#sheet-shared-page-connections,
@@ -3377,7 +3663,7 @@
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=ship] ~ .page-tab[name=act_set-sheet-shared-display][value=ship],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=ship] ~ .page-tab[name=act_set-sheet-shared-display][value=ship] {
-  background-color: #221e1f !important;
+  background-color: #040506 !important;
   color: #fff !important;
 }
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=ship] ~ article#sheet-shared-page-ship,
@@ -3399,7 +3685,7 @@
   transition: opacity 0.5s;
 }
 .ui-dialog .charsheet.charactersheet .changelog {
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   margin-bottom: 1em;
   padding: 1em;
 }
@@ -3417,7 +3703,7 @@
   text-align: center;
 }
 .ui-dialog .charsheet.charactersheet .close-changelog {
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   cursor: pointer;
   padding: 0;
   margin: 0.5em 0 0 0;
@@ -3523,9 +3809,13 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container,
+.sheet-rolltemplate-alert > .sheet-roll-container,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container {
+  background-color: #040506;
+  color: #fff;
+  background-color: #221e1f;
   text-transform: none;
   word-spacing: 0.1ch;
   letter-spacing: 0.025ch;
@@ -3533,7 +3823,7 @@
   font-size: 1em;
   line-height: 1.4;
   font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
-  background-color: #221e1f;
+  background-color: #040506;
   color: #fff;
   margin-top: 11px;
   margin-right: -5px;
@@ -3541,35 +3831,59 @@
   margin-left: -40px;
   border: 1px solid #040506;
 }
-.sheet-rolltemplate-oracle > .sheet-roll-container div.sheet-subheader,
-.sheet-rolltemplate-action_roll > .sheet-roll-container div.sheet-subheader,
-.sheet-rolltemplate-progress_roll > .sheet-roll-container div.sheet-subheader,
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container div.sheet-subheader,
-.sheet-rolltemplate-starforged_progress > .sheet-roll-container div.sheet-subheader,
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container div.sheet-subheader,
-.sheet-rolltemplate-starforged_oracles > .sheet-roll-container div.sheet-subheader {
+.sheet-rolltemplate-oracle > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-action_roll > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-progress_roll > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-alert > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container div.sheet-header,
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container div.sheet-header {
   font-family: "Exo", sans-serif, Arial, sans-serif;
   text-transform: uppercase;
   word-spacing: 0.25ch;
   letter-spacing: 0.05ch;
   font-weight: 800;
   line-height: 1;
-  background-color: #040506;
-  color: #fff;
-  padding: 0.4em 1em;
+  padding: 0.35em 0.5em;
   text-align: left;
   font-weight: 700;
-  line-height: 1.5em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.5em;
+  line-height: 1;
+}
+.sheet-rolltemplate-oracle > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-action_roll > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-progress_roll > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-alert > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container div.sheet-header .sheet-surtitle,
+.sheet-rolltemplate-oracle > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-action_roll > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-progress_roll > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-alert > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container div.sheet-header .sheet-subtitle,
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container div.sheet-header .sheet-subtitle {
+  font-size: 1em;
+  text-transform: none;
+  word-spacing: 0.1ch;
+  letter-spacing: 0.025ch;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  font-size: 75%;
+  color: #b4b4b4;
+  width: max-content;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container a[href^="!"],
 .sheet-rolltemplate-action_roll > .sheet-roll-container a[href^="!"],
 .sheet-rolltemplate-progress_roll > .sheet-roll-container a[href^="!"],
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container a[href^="!"],
+.sheet-rolltemplate-alert > .sheet-roll-container a[href^="!"],
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container a[href^="!"],
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container a[href^="!"],
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container a[href^="!"] {
@@ -3587,6 +3901,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row {
@@ -3595,16 +3910,30 @@
   align-items: center;
   padding: 0.5em;
 }
+.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-die-cancel:before,
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-die-cancel:before {
+  content: "";
+  height: inherit;
+  width: inherit;
+  background: linear-gradient(to top left, transparent 0%, transparent calc(50% - 0.8px), #ce242b 50%, transparent calc(50% + 0.8px), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - 0.8px), #ce242b 50%, transparent calc(50% + 0.8px), transparent 100%);
+}
 .sheet-rolltemplate-oracle > .sheet-roll-container .inlinerollresult,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .inlinerollresult,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .inlinerollresult,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .inlinerollresult,
+.sheet-rolltemplate-alert > .sheet-roll-container .inlinerollresult,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .inlinerollresult,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .inlinerollresult,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .inlinerollresult {
   display: inline-block;
   min-width: 1.5em;
-  border: 2px solid #3a3335;
+  border: 2px solid #181e24;
   border-radius: 1em;
   background: transparent;
   text-align: center;
@@ -3613,6 +3942,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-challenge-dice .fullfail,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-challenge-dice .fullfail,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-challenge-dice .fullfail {
@@ -3622,6 +3952,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-challenge-dice .fullcrit,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-challenge-dice .fullcrit,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-challenge-dice .fullcrit {
@@ -3631,26 +3962,29 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-roll-outcome,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-roll-outcome,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-roll-outcome,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-roll-outcome,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-roll-outcome,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-roll-outcome,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-roll-outcome {
   border: 1px solid #040506;
-  background: #463d3f;
+  background: #040506;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-subfooter,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter {
   width: 100%;
-  background-color: #463d3f;
+  background-color: #040506;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
@@ -3658,6 +3992,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
@@ -3665,6 +4000,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
@@ -3672,6 +4008,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-miss,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-miss,
@@ -3679,6 +4016,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-miss-match {
@@ -3686,12 +4024,12 @@
   padding: 0;
   text-align: left;
   font-weight: 700;
-  line-height: 1.5em;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match {
@@ -3704,6 +4042,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-strong-hit-match:before {
@@ -3718,6 +4057,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-strong-hit,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-strong-hit {
@@ -3730,6 +4070,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-strong-hit:before {
@@ -3744,6 +4085,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-weak-hit,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-weak-hit {
@@ -3756,6 +4098,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-weak-hit:before {
@@ -3770,6 +4113,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-miss,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-miss,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-miss {
@@ -3782,6 +4126,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-miss:before,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-miss:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-miss:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-miss:before,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-miss:before,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-miss:before,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-miss:before {
@@ -3796,6 +4141,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-miss-match,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-miss-match {
@@ -3808,6 +4154,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-subfooter.sheet-miss-match:before {
@@ -3822,6 +4169,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn {
@@ -3831,6 +4179,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn:before,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn:before,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn:before,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn:before,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn:before {
@@ -3840,6 +4189,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"],
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"],
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"],
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"],
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"],
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"],
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"] {
@@ -3858,7 +4208,7 @@
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3875,6 +4225,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:focus {
@@ -3888,6 +4239,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:active {
@@ -3899,6 +4251,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled),
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-strong-hit > a[href^="~"]:hover:not(:disabled) {
@@ -3909,6 +4262,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"],
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"],
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"],
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"],
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"],
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"],
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"] {
@@ -3927,7 +4281,7 @@
   transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
   outline: 0 solid transparent;
   box-shadow: inset 0 0 0 0 transparent;
-  border: 2px solid currentColor;
+  border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3944,6 +4298,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:focus {
@@ -3957,6 +4312,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:active {
@@ -3968,6 +4324,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled),
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled),
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-row.sheet-btn.sheet-weak-hit > a[href^="~"]:hover:not(:disabled) {
@@ -3978,15 +4335,18 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-result-body,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-result-body,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-result-body,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-result-body,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-result-body,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-result-body,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-result-body {
   padding: 0.4em 1em;
+  background-color: #221e1f;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-alert,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-alert,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-alert,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-alert,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-alert,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-alert,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-alert,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-alert {
@@ -3999,6 +4359,7 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .userscript-tcat,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .userscript-tcat,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .userscript-tcat,
+.sheet-rolltemplate-alert > .sheet-roll-container .userscript-tcat,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .userscript-tcat,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .userscript-tcat,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .userscript-tcat {
@@ -4008,15 +4369,15 @@
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-momentum-title,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-momentum-title,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-momentum-title,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-momentum-title,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-momentum-title,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-momentum-title,
-.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-momentum-title {
-  line-height: 22px;
-}
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-momentum-title,
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-roll-button,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-roll-button,
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-roll-button,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-roll-button,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-roll-button,
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-roll-button,
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-roll-button,
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-roll-button {
@@ -4025,10 +4386,19 @@
   border-radius: 0.4em;
   background: #5e5d6f;
 }
+.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-momentum-title:hover:not(:disabled),
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
 .sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
 .sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-roll-button:hover:not(:disabled),
 .sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-roll-button:hover:not(:disabled) {
@@ -4055,11 +4425,13 @@
   border: 0 !important;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a {
   padding: 0.25em;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before {
   display: inline-block;
@@ -4074,11 +4446,13 @@
   margin: 0 0.25ch 0 0;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-action-score,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-action-score,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-action-score,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-action-score {
   gap: 0.5em;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-action-score .sheet-arithmetic,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-action-score .sheet-arithmetic,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-action-score .sheet-arithmetic,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-action-score .sheet-arithmetic {
   text-transform: none;
@@ -4096,6 +4470,7 @@
   font-size: 1em;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-action-score .sheet-arithmetic > * > .inlinerollresult,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-action-score .sheet-arithmetic > * > .inlinerollresult,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-action-score .sheet-arithmetic > * > .inlinerollresult,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-action-score .sheet-arithmetic > * > .inlinerollresult {
   padding: 0;
@@ -4107,22 +4482,25 @@
   font-size: inherit;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-action-score .sheet-total .fullfail,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-action-score .sheet-total .fullfail,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-action-score .sheet-total .fullfail,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-action-score .sheet-total .fullfail {
   border: 2px solid #ce242b;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-action-score .sheet-total .fullcrit,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-action-score .sheet-total .fullcrit,
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-action-score .sheet-total .fullcrit,
 .sheet-rolltemplate-action_roll > .sheet-roll-container .sheet-action-score .sheet-total .fullcrit {
   border: 2px solid #28aae1;
 }
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subheader:after {
-  color: #b8c2cd;
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-header {
+  display: grid;
+  grid-template-columns: max-content 1fr;
 }
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-subheader:after {
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-header:after {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: auto;
+  height: auto;
   background-color: currentColor;
   content: "";
   mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
@@ -4131,13 +4509,26 @@
   mask-position: center;
   margin: 0 -5px 0 0;
 }
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subheader:after {
-  color: #b8c2cd;
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-header:after {
+  color: #4f5051;
+  grid-row: 1/span 2;
+  grid-column: 2;
+  mask-position: right;
 }
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-subheader:after {
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-header span {
+  grid-row: 1;
+  grid-column: 1;
+}
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-header,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-header {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-header:after,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-header:after {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: auto;
+  height: auto;
   background-color: currentColor;
   content: "";
   mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg");
@@ -4145,4 +4536,16 @@
   mask-repeat: no-repeat;
   mask-position: center;
   margin: 0 -5px 0 0;
+}
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-header:after,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-header:after {
+  color: #4f5051;
+  grid-row: 1/span 2;
+  grid-column: 2;
+  mask-position: right;
+}
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-header span,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-header span {
+  grid-row: 1;
+  grid-column: 1;
 }

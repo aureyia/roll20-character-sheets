@@ -1,11 +1,7 @@
-.box
-  margin 0 auto
-  padding 35px
-  width 40%
-  background-clip padding-box
-  text-align center
+.modal-button
+  btn()
 
-.overlay
+.modal-overlay
   position fixed
   top 0
   right 0
@@ -15,12 +11,11 @@
   background rgba(0, 0, 0, 0.7)
   opacity 0
   transition opacity 500ms
+  &:target
+    visibility visible
+    opacity 1
 
-.overlay:target
-  visibility visible
-  opacity 1
-
-.popup
+.modal-dialog
   position relative
   margin 70px auto
   padding 20px
@@ -29,7 +24,7 @@
   background #fff
   transition all 5s ease-in-out
 
-  .close
+  .close-dialog
     position absolute
     top 20px
     right 30px
@@ -38,15 +33,3 @@
     font-weight bold
     font-size 30px
     transition all 200ms
-    // &:hover
-
-.popup .content
-  overflow auto
-  max-height 30%
-
-@media screen and (max-width 700px)
-  .box
-    width 70%
-
-  .popup
-    width 70%

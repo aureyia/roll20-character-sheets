@@ -167,3 +167,33 @@ momentum bar takes up a lot of space maybe it'd be better with a prominently-mar
   - maybe with a modal/wizard to be like "i'm at this location, filter it for me!"
 
 ##
+
+
+forsake your vow button? - or embed in roll output? or gate behind modal - to avoid accidentally hitting it? (or just an "are you sure"?)
+clock?
+
+thing to swear an iron vow w/ attribute like "needs-swear". things that are false don't get it (so any existing one doesn't need it?).
+  roll button?
+  mark as shared vow?
+
+thing to tick as being marked by specific asset?
+
+might have to be an attribute that's set to the row id. e.g. currentVow. if it's empty, the modal doesn't show.
+
+Bar
+  * (mark progress)
+
+Icon? buttons
+* fulfill your vow (icon: progress roll)
+* unmark progress (icon: anticlockwise rotation )
+* recommit
+
+
+Advanced
+* clear all progress
+* add clock? collapse somehow?
+
+
+archive thing: when check is set, workers moves to the archived vow repeating section. the only interaction available in the archived vows is toggling them out of archved.
+  * archive date?
+  * archive checkbox

@@ -1,5 +1,9 @@
-mixin actionHeader
-  div.sheet-subheader {{name}}
-
-mixin progressHeader
-  div.sheet-subheader {{progress_name}}
+mixin tplHeader(templateVar="title")
+  div(class=["sheet-header", "sheet-starforged-icon-{{icon}}"])
+    | {{#surtitle}}
+    span.sheet-surtitle!=`{{surtitle}}`
+    | {{/surtitle}}
+    !=`{{${templateVar}}}`
+    | {{#subtitle}}
+    span.sheet-subtitle!=`{{subtitle}}`
+    | {{/subtitle}}

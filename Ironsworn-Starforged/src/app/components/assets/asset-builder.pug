@@ -21,7 +21,8 @@ mixin assetAbility(ability)
     +i18n(ability.id)
     if ability.Input
       each input in ability.Input
-        - inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
+        //- - inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
+        - inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
         label.asset-ability-inputBox
           +i18n(inputId)
           input(type='text' name=`attr_${inputId}` value='')
@@ -32,7 +33,8 @@ mixin assetDescription(asset)
     +i18n(translationDesc)
 
 mixin assetinputBox(inputBox, assetId)
-  - id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
+  //- - id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
+  - id = `${assetId}-textinput-${_.kebabCase(inputBox)}`
   label.asset-inputBox
     +i18n(id)
     input(type='text' name=`attr_${id}` value='')
@@ -75,7 +77,7 @@ mixin assetCard(asset, options)
 
 mixin genericAssetBuilder(assetsArray, listId)
   //- Asset Datalist
-  input.asset-options-header(hidden type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
+  input.asset-options-tplHeader(hidden type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
   datalist(id=listId)
     each asset in assetsArray
       //- TODO: migrate to more sensible name scheme

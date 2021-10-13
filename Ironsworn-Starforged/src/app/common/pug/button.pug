@@ -11,8 +11,19 @@
     action: 'static' or 'toggle' (default)
   }
 
-mixin actionBtn(action, value=null, i18n_key=action, classes=[], blockContent=false, iconOnly=false)
-  if iconOnly == true
+mixin actionBtn(action, value=null, i18n_key, classes=[], blockContent=false, iconOnly=false)
+  if (!translation[i18n_key])
+    button(
+    name=`act_${action}`
+    type="action"
+    value=value
+    class=classes
+    title=i18n_key
+    )
+      !=i18n_key
+      if blockContent==true
+        block
+  else if iconOnly == true
     button(
       name=`act_${action}`
       type="action"
@@ -42,6 +53,15 @@ mixin actionBtn(action, value=null, i18n_key=action, classes=[], blockContent=fa
 
 mixin setAttrBtn(attribute, value, i18n_key, classes=[], iconOnly, blockContent=false)
   +actionBtn(`set-${attribute}`, value, i18n_key, classes, blockContent, iconOnly)
+
+mixin attrToggle(attribute, checkboxId, label, classes=[], checked=false)
+  input(hidden type="checkbox" name=`attr_${attribute}` id=checkboxId checked=checked class=["toggle-control", ...classes])
+  label(for=checkboxId class=["toggle-btn", ...classes])
+    if translation[label]
+      +i18n(label)
+    else
+      !=label
+
 
 mixin btn(opts)
   - action = opts.action ? opts.action : 'toggle'
