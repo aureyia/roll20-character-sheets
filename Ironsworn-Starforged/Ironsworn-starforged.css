@@ -4704,7 +4704,7 @@
 .ui-dialog .charsheet.charactersheet .page-summary .modal-button {
   width: max-content;
 }
-.ui-dialog .charsheet.charactersheet .page-summary section:not(.notes) {
+.ui-dialog .charsheet.charactersheet .page-summary > section:not(.notes) {
   display: flex;
   flex-flow: row;
 }
@@ -5089,6 +5089,11 @@
   flex-basis: 20%;
   min-width: max-content;
   width: 100%;
+}
+.ui-dialog .charsheet.charactersheet .page {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
 }
 .ui-dialog .charsheet.charactersheet .scene-challenges,
 .ui-dialog .charsheet.charactersheet .campaign-clocks,
