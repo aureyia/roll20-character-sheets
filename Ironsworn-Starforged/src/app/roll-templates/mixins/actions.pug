@@ -2,6 +2,57 @@ include ./outcomes
 include ./body
 //- include ../../components/moves/mixins/container
 
+mixin moveOutcome
+  | {{#rollGreater() computed::actionScore challengeDie1}}
+  | {{#rollTotal() challengeDie1 challengeDie2}}
+  +strongHitMatch
+  | {{/rollTotal() challengeDie1 challengeDie2}}
+  | {{#^rollTotal() challengeDie1 challengeDie2}}
+  | {{#rollGreater() computed::actionScore challengeDie2}}
+  +strongHit
+  | {{/rollGreater() computed::actionScore challengeDie2}}
+  | {{#^rollGreater() computed::actionScore challengeDie2}}
+  +weakHit
+  | {{#rollGreater() momentum challengeDie2}}
+  +momentumStrongHit
+  | {{/rollGreater() momentum challengeDie2}}
+  | {{/^rollGreater() computed::actionScore challengeDie2}}
+  | {{/^rollTotal() challengeDie1 challengeDie2}}
+  | {{/rollGreater() computed::actionScore challengeDie1}}
+  | {{#^rollGreater() computed::actionScore challengeDie1}}
+  | {{#rollTotal() challengeDie1 challengeDie2}}
+  +missMatch
+  | {{#rollGreater() momentum challengeDie1}}
+  +momentumStrongHitMatch
+  | {{/rollGreater() momentum challengeDie1}}
+  | {{/rollTotal() challengeDie1 challengeDie2}}
+  | {{#^rollTotal() challengeDie1 challengeDie2}}
+  | {{#rollGreater() computed::actionScore challengeDie2}}
+  +weakHit
+  | {{#rollGreater() momentum challengeDie1}}
+  +momentumStrongHit
+  | {{/rollGreater() momentum challengeDie1}}
+  | {{/rollGreater() computed::actionScore challengeDie2}}
+  | {{#^rollGreater() computed::actionScore challengeDie2}}
+  +miss
+  | {{#rollGreater() momentum challengeDie1}}
+  | {{#rollGreater() momentum challengeDie2}}
+  +momentumStrongHit
+  | {{/rollGreater() momentum challengeDie2}}
+  | {{#^rollGreater() momentum challengeDie2}}
+  +momentumWeakHit
+  | {{/^rollGreater() momentum challengeDie2}}
+  | {{/rollGreater() momentum challengeDie1}}
+  | {{#^rollGreater() momentum challengeDie1}}
+  | {{#rollGreater() momentum challengeDie2}}
+  +momentumWeakHit
+  | {{/rollGreater() momentum challengeDie2}}
+  | {{/^rollGreater() momentum challengeDie1}}
+  | {{/^rollGreater() computed::actionScore challengeDie2}}
+  | {{/^rollTotal() challengeDie1 challengeDie2}}
+  | {{/^rollGreater() computed::actionScore challengeDie1}}
+
+
 mixin standardAction(type)
   | {{#rollGreater() #{type} challenge1}}
   | {{#rollTotal() challenge1 challenge2}}

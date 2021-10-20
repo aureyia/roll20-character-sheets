@@ -129,16 +129,13 @@ input.border-bottom
   margin-top 0.3em
   width 100%
 
-.note-area
-  border-radius 1em
-
 u
   text-decoration underline 1pt solid currentColor
 
 .hex-icon
   object-fit contain
 
-  $iconWidth = 4rem
+  $iconWidth = 4em
 
   &.vector
     width $iconWidth
@@ -150,12 +147,12 @@ u
 
 
 // generic widgets and other components, should be overwritten by more specific styling below
-@import "./components/r20-native/repcontrol"
+@import "./components/r20-native/repeating-section"
 @import "./components/generic/preview"
 @import "./components/generic/listgroup"
 @import "./components/generic/buttons"
-@import "./components/generic/repeating"
 @import "./components/generic/rulesarticle"
+@import "./components/modal/modal"
 @import "./components/tabs/tabs"
 @import "./components/details/details"
 @import "./components/resources/resources"
@@ -170,6 +167,7 @@ u
 @import "./components/oracles/oracles"
 @import "./components/momentum/momentum"
 @import "./components/impacts/impacts"
+@import "./components/clock/clock"
 // Pages
 @import "./pages/page"
 @import "./pages/index"

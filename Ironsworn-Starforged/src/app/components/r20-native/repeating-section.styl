@@ -1,0 +1,65 @@
+
+$containerPadding = 0.5em
+
+.repcontrol
+  button.btn
+    width auto
+    height auto
+    borderCommon()
+    margin 0
+    padding 0.25em
+    border-radius 0
+    background #dfe0e2
+    color $color_fg
+    text-transform uppercase
+    text-shadow none
+
+    interactiveHover($color_input)
+    interactiveFocus(1px)
+
+.repcontainer:not([data-groupname=repeating_assets]) > .repitem
+  calloutBox()
+//   border-bottom 4px solid $color_fg
+//   padding-bottom 0.5em
+
+.repcontainer
+  display flex
+  flex-flow column
+  gap $containerPadding
+  // .repcontrol_edit
+  // .repcontrol_add
+  .repcontrol_del
+    margin 0
+    /* float right */
+    width auto
+    height auto
+  .repcontrol_move
+    margin 0
+    width auto
+    height auto
+    cursor move
+
+.itemcontrol
+  z-index 10
+  font-size 150%
+  gap $containerPadding
+  // offsets parent container padding so it can overlay the whole element
+  margin -1 * $containerPadding
+
+
+.repcontrol, .repcontainer.editmode .repitem .itemcontrol
+  display flex
+  justify-content space-between
+
+  .btn
+    btn()
+
+    width max-content
+    height max-content
+
+  .btn-danger
+    background-color $color_danger
+    color white
+
+  .repcontrol_move, .repcontrol_del, .repcontrol_edit
+    float revert

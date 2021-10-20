@@ -21,15 +21,55 @@
   .legacy-roll
     margin 0
 
+$legacies = { $name: quests, $color: $sf_ui_red, $icon: $icon_legacy_quests } { $name: bonds, $color: $sf_ui_purple, $icon: $icon_legacy_bonds } { $name: discoveries, $color: $sf_ui_blue, $icon: $icon_legacy_discoveries }
+
 .legacy-track
+  colorThemeDark()
   display grid
   grid-gap 0.3em
-  grid-template-areas "header header header" "btn1 track btn2" "btn3 track btn4"
-  h2
-    grid-area header
+  grid-template-columns auto
+  grid-auto-columns auto
+  border-radius 1em
+  padding 1.5em
+  margin 0
+  position relative
+  &:after
+    content ''
+    position absolute
+    height stretch
+    width stretch
+    height -moz-available
+    width -moz-available
+    background none
+    border-radius 0.5em
+    border 4px solid
+    top 0.5em
+    bottom 0.5em
+    left 0.5em
+    right 0.5em
+    pointer-events none
+  for $legacy in $legacies
+    &.{$legacy[$name]}
+      .title
+        iconBefore(1em, $legacy[$icon], 0)
+      .progress-track-bar
+        &:hover
+          color $legacy[$color]
+      &:after
+        border-color $legacy[$color]
+  .title
+    grid-column 1
+    display flex
+    gap 0.25 em
   .progress-track-bar
-    grid-area track
-
+    grid-column 1
+  button[name=act_roll-progress]
+    btn($color_fg, $color_bg)
+    grid-column 2
+    height max-content
+    width max-content
+    &:after
+      height 100%
 
 $progress_box_size = 4em
 $xp_box_size = $progress_box_size/5

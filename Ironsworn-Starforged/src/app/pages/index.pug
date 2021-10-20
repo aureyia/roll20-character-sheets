@@ -1,26 +1,28 @@
 include ./page
-include ./contents/connections
-include ./contents/vows
+include ./contents/bonds
+include ./contents/quests
+include ./contents/discoveries
 include ./contents/progress
 include ./contents/ship
 include ./contents/moves
 include ./contents/assets
 include ./contents/summary
 include ./contents/oracles
-include ./contents/legacies
+//- include ./contents/legacies
+include ./contents/clocks
 include ../components/resources/resources
 
 //- Commented out for first release
 //- input.changelog(
-//-   type='hidden',
-//-   name='attr_changelog'
+//-   type="hidden",
+//-   name="attr_changelog"
 //-   )
 //- .changelog
 //-   button(
 //-     name="act_close_changelog"
-//-     value='1.0.0'
+//-     value="1.0.0"
 //-   )
-//-     +i18n('page-info-close')
+//-     +i18n("page-info-close")
 //- see the FIXME w/ compareSemVer in pages.js
 
 
@@ -30,7 +32,7 @@ include ../components/resources/resources
 input(type="hidden" name="attr_mode" value="sheet-select")
 .ironsworn-sheet#sheet-select(role="dialog")
   h1.mode-title
-    +i18n('page-select')
+    +i18n("page-select")
   nav.modes
     each page, index in sheets
       label.mode
@@ -44,20 +46,24 @@ input(type="hidden" name="attr_mode" value="sheet-select")
     +pageTabList("character")
   +pageMain("character")
     +summaryPage("character")
-    +connectionsPage("character")
-    +vowsPage("character")
+    +bondsPage("character")
+    +questsPage("character")
+    +discoveriesPage("character")
+    +clocksPage("character")
     +assetsPage("character")
     +movesPage("character")
     +progressPage("character")
     +oraclesPage("character")
-    +legaciesPage("character")
+    //- +legaciesPage("character")
     +shipPage("character")
 .ironsworn-sheet#sheet-shared
   header
-    +resources('shared')
-    +pageTabList('shared')
-  +pageMain('shared')
-    +vowsPage('shared')
-    +connectionsPage('shared')
-    +progressPage('shared')
-    +shipPage('shared')
+    +resources("shared")
+    +pageTabList("shared")
+  +pageMain("shared")
+    +clocksPage("shared")
+    +questsPage("shared")
+    +discoveriesPage("shared")
+    +bondsPage("shared")
+    +progressPage("shared")
+    +shipPage("shared")

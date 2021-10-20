@@ -1,4 +1,5 @@
 include ../../common/pug/button
+include ../modal/modal
 
 mixin otherImpact(index)
   .impact
@@ -13,26 +14,47 @@ mixin otherImpact(index)
       placeholder=translation['impact']
     )
 
+mixin otherImpactSummaryItem(index)
+  input(type='hidden' name=`attr_impactOther${index}` class="impact-control")
+  li(class=[`impactOther${index}`])
+    span(name=`attr_impactOther${index}_name`)
 
 mixin impactToggle(impact)
   - let toggleId = `toggle-${impact.translationId}`
-  //- input(hidden type="checkbox" name=`attr_${impact.attribute}` id=toggleId class=[`toggle-impact`, `toggle-control`])
-  //- label(for=toggleId).toggle-btn.toggle-impact
-  //-   +i18n(impact.translationId)
   +attrToggle(impact.attribute, toggleId, impact.translationId, ["toggle-impact"], false)
 
-mixin impacts(impactArray, opts)
-  .impact-component
+mixin impacts(impactArray, opts, modalId)
+  +impactSummary(impactArray, opts)
+  +modal(modalId, "Impacts")
+    article.impact-config
+      each group in impactArray
+        section.impact-group
+          if opts.title
+            h3.impact-group-title!=group.title
+          ul.impact-list
+            each impact in group.list
+              +impactToggle(impact)
+      if opts.customImpacts
+        section.custom-impacts
+          h3.other-impacts-title
+            +i18n("impact-others")
+          ul
+            each value in [ 1, 2 ]
+              li
+                +otherImpact(value)
+
+
+mixin impactSummaryItem(impact)
+  input(type='hidden' name="attr_"+impact.attribute class="impact-control")
+  li(class=[impact.attribute])
+    +i18n(impact.translationId)
+
+mixin impactSummary(impactArray, opts)
+  ul.impacts-active
     each group in impactArray
-      .impact-group
-        if opts.title
-          .impact-group-title=group.title
-        .impact-list
-          each impact in group.list
-            +impactToggle(impact)
-    input.switch-display(type='hidden' name='attr_impact_total' value=0)
+      each impact in group.list
+        +impactSummaryItem(impact)
     if opts.customImpacts
-      .custom-impacts
-        h4.i18n-text.other-impacts-title(data-i18n='impact-others')
-        each value in [ 1, 2 ]
-          +otherImpact(value)
+      each value in [ 1, 2 ]
+        +otherImpactSummaryItem(value)
+

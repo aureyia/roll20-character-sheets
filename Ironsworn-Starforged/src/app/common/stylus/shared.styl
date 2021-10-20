@@ -21,7 +21,7 @@ $sf_oracle = #7f5a90 // module
 $sf_iron = #9aa3ad // command vehicle
 // basic ux colors
 $color_fg = $sf_rich_black // old: #4c4d4f
-$color_fg_alt = $sf_ui_gray_dark // 'faded' foreground colour
+$color_fg_alt = $sf_black // 'faded' foreground colour
 $color_bg = #fff
 $color_bg_alt = $sf_ui_gray_light // old: #e4e4e4. for alternating table rows, etc
 $color_bg_alt_2 = $sf_ui_gray_dark
@@ -196,11 +196,11 @@ footerText()
 interactiveHover($bg = $color_fg, $fg = $color_bg)
   &:hover:not(:disabled)
     interactiveAltColor($bg, $fg)
+    text-decoration none
 
 interactiveActive($bg = $color_fg, $fg = $color_bg)
   &:active
     interactiveAltColor($bg, $fg)
-
     text-decoration none
 
 interactiveAltColor($fg = $color_bg, $bg = $color_fg)
@@ -240,7 +240,7 @@ interactiveInactive(bg = $color_bg_alt, fg = $color_fg_alt)
 
 
 
-btn($bgColor = $color_bg, $fgColor = $color_fg, $fontSize = 1em, $padding = 0.25em 0.5em, $borderWidth = 2px)
+btn($bgColor = $color_bg, $fgColor = $color_fg, $fontSize = 1em, $padding = 0.25em, $borderWidth = 2px)
   labelText()
   interactive($bgColor, $fgColor)
   borderCommon($borderWidth)
@@ -256,6 +256,7 @@ btn($bgColor = $color_bg, $fgColor = $color_fg, $fontSize = 1em, $padding = 0.25
   border-radius 0
   text-align center
   font-size $fontSize
+  text-decoration none
 
 inputBox()
   inputText()
@@ -320,10 +321,10 @@ bulletBefore(forTextSize, $iconUrl)
     mask-size contain
     mask-repeat no-repeat
 
-iconStandard(size, $iconUrl)
+iconStandard($size, $iconUrl)
   display inline-block
-  width size
-  height size
+  width $size
+  height $size
   background-color currentColor
   content ""
   mask-image url($iconUrl)
@@ -334,21 +335,25 @@ iconStandard(size, $iconUrl)
 iconBefore($size, $iconUrl, $margins = 0 0.25ch 0 0)
   &:before
     iconStandard($size, $iconUrl)
-
     margin $margins
 
 iconAfter($size, $iconUrl, $margins = 0 0 0 0.25ch)
   &:after
     iconStandard($size, $iconUrl)
-
     margin $margins
 
-iconBehind($size, $iconUrl, $margins = 0 0 0 0)
+iconBehind($iconUrl, $padding=2px)
+  z-index 1
+  position relative
   &:before
+    iconStandard(5px, $iconUrl)
+    height 100%
+    width 100%
     position absolute
     z-index -1
-    width inherit
-    height inherit
+    padding $padding
+    box-sizing border-box
+    mask-origin content-box
 
 // places a double width stroke behind to fake an outside stroke
 textOutline(strokeColor = black, strokeWidth = 2px)
@@ -422,7 +427,15 @@ flexCenter()
   justify-items center
 
 shrinkWrap()
-  margin none
-  padding none
-  outline none
-  border none
+  margin 0
+  padding 0
+  outline 0
+  border 0
+
+calloutBox()
+  border 0
+  background-color $sf_ui_gray_light
+  padding 0.75em
+  border-radius 1em
+  input[type=text]
+    background-color $color_bg

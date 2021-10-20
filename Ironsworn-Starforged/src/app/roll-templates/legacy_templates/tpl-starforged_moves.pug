@@ -2,21 +2,24 @@ include ../mixins/negations
 include ../mixins/headers
 include ../mixins/body
 include ../mixins/actions
-
+include ../mixins/customRows
 
 mixin rollTemplateActionRoll
-  rolltemplate.sheet-rolltemplate-action_roll
+  rolltemplate.sheet-rolltemplate-ironsworn_move
     .sheet-roll-container
       +tplHeader("header")
-      +actionRollBody
-      | {{#rollLess() computed::actionDie 1}}
-      .sheet-result-body.sheet-result-row Action die cancelled by negative momentum.
-      | {{/rollLess() computed::actionDie 1}}
-      +challengeDice
-      +moveResult
+      .sheet-result-body
+        +actionScore
+        +momentumCancel
+        +challengeDice
+        +customRows
+      .sheet-footer
+        +moveOutcome
 
-mixin moveResult
-  .sheet-result-body.sheet-result-row!=`result: {{computed::moveOutcome}} {{#rollTotal() challengeDie1 challengeDie2}} with a match!{{/rollTotal() challengeDie1 challengeDie2}}`
+mixin momentumCancel
+  | {{#rollLess() computed::actionDie 1}}
+  .sheet-result-body.sheet-result-row Action die cancelled by negative momentum.
+  | {{/rollLess() computed::actionDie 1}}
 
 //- this is a mixin so the variables are properly scoped
 mixin rollTemplateActionRollOld
@@ -25,18 +28,19 @@ mixin rollTemplateActionRollOld
     .sheet-roll-container
       | {{#action}}
       +tplHeader("name")
-      | {{#rollLess() momentum 0}}
-      - let counter = 1;
-      while counter <= maxNegMomentum
-        +cancelRollOld(counter, 'action')
-        - counter++;
-      | {{/rollLess() momentum 0}}
-      | {{#^rollLess() momentum 0}}
-      +actionRollBodyOld('action')
-      +challengeDiceOld
-      +standardActionWithMomentum('action')
-      | {{/^rollLess() momentum 0}}
-      | {{/action}}
+      .sheet-result-body
+        | {{#rollLess() momentum 0}}
+        - let counter = 1;
+        while counter <= maxNegMomentum
+          +cancelRollOld(counter, 'action')
+          - counter++;
+        | {{/rollLess() momentum 0}}
+        | {{#^rollLess() momentum 0}}
+        +actionRollBodyOld('action')
+        +challengeDiceOld
+        +standardActionWithMomentum('action')
+        | {{/^rollLess() momentum 0}}
+        | {{/action}}
 
       | {{#custom}}
       | {{#header}}

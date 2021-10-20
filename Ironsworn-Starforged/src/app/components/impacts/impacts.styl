@@ -3,57 +3,80 @@
   flex-flow row wrap
   justify-content space-evenly
 
-.impact-component
-  margin-top 1em
+flexList($gap = 0.25em)
   display flex
-  flex-flow wrap
-  // background #e8e9ec
-  // clip-path polygon(-20% 100%, 6% 0%, 100% 0%, 100% 100%)
+  margin 0
+  gap $gap
+  li
+    display flex
+    margin 0
+    &:before
+      content none
 
-.debil-desc
-  width: 100%
+commaSeparated()
+  &:not(:last-child)
+    &:after
+      content ", "
+      display inline
 
-.impacts
-  toggleBtn($color_danger)
-  .toggle-btn
-    width 90%
-    border-radius 1em
-
-.severity-track
-  display flex
-  margin-top 1em
-
-.meter-child
-  width 100%
-
-ul.impact-body-list
-  margin 0em 0.2em 0.3em 1.3em
-
-p.severity-reduce,
-p.impact-clear
-  margin-bottom 0.3em
-
-.impact-group
-  width 25%
+.impact-config
+  display grid
+  grid-auto-columns 1fr
+  gap 1em
+  .modal-button
+    max-width max-content
+  .impact-group
+    grid-row 1
+    display flex
+    flex-flow column
+    gap 0.5em
+  .custom-impacts
+    grid-row 2
+    grid-column span 4
+  ul
+    flexList(0.5em)
 
 .impact-group-title
   text-align center
-  text-transform: uppercase
-  font-weight bold
-  margin-bottom 0.3em
+
+.page-summary
+  .modal-button
+    width max-content
+  section
+    &:not(.notes)
+      display flex
+      flex-flow row
+
+.impacts
+  display flex
+  flex-flow row
+  toggleBtn($color_danger)
+  gap 0.5em
+  .toggle-impact
+    border-radius 1em
+    subLabelText()
+
+tag()
+  borderCommon()
+  border-radius 0.5em
+
+ul.impacts-active
+  flexList()
+  flex-flow row
+  .impact-control + li
+    display none
+  .impact-control[value="on"] + li
+    display initial
+    tag()
+    colorThemeDarkColor($color_danger)
+
 
 
 
 .custom-impacts
-  margin-left 0.6em
-  margin-bottom 2em
-  margin-top 0.5em
   display flex
-  .impact
-    margin 0 0.5em
   .other-impacts-title
     width auto
-    margin-right 0.6em
     align-self center
     text-align: center;
   input[type=text]

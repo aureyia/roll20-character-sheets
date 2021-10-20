@@ -10,6 +10,83 @@
     min-width max-content
     width 100%
 
+.page
+  display flex
+  flex-flow column
+  gap 1em
+
+.scene-challenges, .campaign-clocks, .vows, .connections, .expeditions
+  display grid
+  align-items center
+  gap 0.5em 0em
+  .title, .repcontrol
+    grid-row 1
+    colorThemeDark()
+    align-self stretch
+    align-items center
+    display flex
+    overflow clip
+    border 2px solid $color_fg
+  .title
+    border-bottom-left-radius 0.5em
+    border-top-left-radius 0.5em
+    padding 0.5em
+  .repcontrol
+    justify-content flex-end
+    border-bottom-right-radius 0.5em
+    border-top-right-radius 0.5em
+    align-items stretch
+    gap 1px
+    // padding 0.5em
+    padding 0
+    button.btn
+      border 0
+
+  .repcontainer
+    grid-column span 2
+
+$campaignClockSize = 150px
+
+.campaign-clocks
+  .repcontainer
+    flex-flow row wrap
+  .clock
+    grid-template-columns auto
+    grid-auto-columns auto
+    grid-auto-rows max-content 1fr max-content
+    gap 0.5em
+    justify-items center
+    .clock-name
+      grid-row 1
+      grid-column auto
+      text-align center
+    > label
+      grid-row 3
+      grid-column auto
+      background none
+      border 0
+      padding 0
+      gap 0.25em
+      align-items center
+      justify-items center
+      &:hover
+        background inherit
+        color inherit
+      select
+        margin-bottom 0
+        background-color $color_bg
+        appearance auto
+        width -moz-available
+        width stretch
+    .clock-widget
+      grid-row 2
+      grid-column auto
+      font-size 150%
+    // .clock-numeric-display
+    //   font-size 120%
+    // .clock-segment
+
+
 input.tabber, input.pager
   for sheetName, sheetData in $sheets
     &[name=attr_sheet-{sheetName}-display]

@@ -1,0 +1,9 @@
+include ../../components/connections/connections
+include ../page
+include ../../components/legacies/legacy-tracks
+
+mixin bondsPage(sheetType)
+  +page("bonds", sheetType)
+    if sheetType == "character"
+      +legacyTrack("bonds")
+    +connections

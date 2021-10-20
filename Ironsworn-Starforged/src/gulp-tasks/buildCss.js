@@ -19,6 +19,7 @@ module.exports = async function buildCss(stylusSrc, rootSelector=false, cssDest=
   const stylusDataOut = _.mapValues(stylusDataObj, (value) =>
     toStylusObject(value)
   );
+  stylusDataOut.$oracles = gameData.oracles_worker_data;
   if (rootSelector == false) {
     return new Promise((resolve, reject) => {
       gulp

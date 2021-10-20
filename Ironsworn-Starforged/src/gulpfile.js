@@ -15,7 +15,8 @@ const dataFiles = {
     "oracles.json",
     "assets.json",
     "moves.json",
-    "movegroups.json"
+    "movegroups.json",
+    "oracles_worker_data.json"
   ],
   translations: ["translation-assets.json"]
 };

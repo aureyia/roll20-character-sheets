@@ -1,0 +1,13 @@
+- legacyVows = [ 1, 2, 3, 4, 5 ]
+include ../../components/vows/vow-container
+include ../page
+include ../../components/legacies/legacy-tracks
+
+mixin questsPage(sheetType)
+  +page("quests", sheetType)
+    if sheetType == "character"
+      +legacyTrack("quests")
+    article.vows
+      h3.title Vows
+      fieldset.repeating_vow
+        +repeatingVow()

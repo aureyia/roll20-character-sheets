@@ -93,7 +93,7 @@ mixin oracleTableRow(table, row, index)
           detailsStrings.push(row[key])
         };
       });
-      detailString;
+      let detailString;
       if (detailsStrings.length > 0) {
         detailsStrings = detailsStrings.flat(2);
         detailString = `(${detailsStrings.join(", ")})`;

@@ -1,0 +1,10 @@
+mixin customRows
+  each index in [1,2,3,4,5]
+    !=`{{#customRow${index}}}`
+    .sheet-result-row
+      !=`{{#customLabel${index}}}`
+      .roll-label
+        !=`{{customLabel${index}}}`
+      !=`{{/customLabel${index}}}`
+      !=`{{customRow${index}}}`
+    !=`{{/customRow${index}}}`

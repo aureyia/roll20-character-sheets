@@ -1,27 +1,84 @@
-include "../../common/pug/attrSpan"
+include ../../common/pug/attrSpan
 
-mixin clock(wedges=6, clockId)
-  section(class=["clock"])
+- var maxClockSegments = 10
+- var clockSizes = [4,6,8,10]
+- var askChances = ["Small Chance","Unlikely", "50/50", "Likely", "Almost Certain", "Always"]
+
+mixin clockSizeRadio(attrPrefix)
+  - let prefix;
+  if (attrPrefix)
+    - prefix = _.kebabCase(attrPrefix)+"-"
+  else
+    - prefix = ""
+  .clock-size-radio
+    span Select a size for this clock.
+    each clockSize in clockSizes
+      label
+        !=clockSize
+        input(
+          type="radio"
+          name=`attr_${prefix}size`
+          value=clockSize
+          hidden=true
+        )
+
+mixin clock(attrPrefix = false, withNameInput=true, withChanceSelect=true)
+  - let prefix;
+  if (attrPrefix)
+    - prefix = _.kebabCase(attrPrefix)+"-"
+  else
+    - prefix = ""
+  section.clock
+    if withNameInput == true
+      input(
+        type="text"
+        name=`attr_${prefix}name`
+        placeholder="Clock name"
+        class=["clock-name"]
+      )
     input(
       type="hidden"
-      name=`attr_${clockId}`
-      class=["clock-control"]
+      name=`attr_${prefix}size`
+      value=0
+      class=["clock-max"]
     )
-    section(class=[`clock-${wedges}`, `clock-widget`] id=clockId)
-      each wedgeIndex in _.range(wedges+1)
-        //- the "0" wedge is left hidden. TODO:
-        - let isHiddenWedge = (wedgeIndex == 0);
-        +clockWedge(wedgeIndex, wedges, clockId, isHiddenWedge, isHiddenWedge)
-      button(type="action" name=`act_reset-clock` class=["clock-numeric-display"] value="" title="Reset clock to 0")
-        +attrSpan(`attr_${clockId}`)
+    +clockSizeRadio(attrPrefix)
+    //-
+    input(
+      type="hidden"
+      name=`attr_${prefix}filled`
+      class=["clock-control"]
+      value=0
+    )
+    section(class=["clock-widget"])
+      each segmentIndex in _.range(maxClockSegments+1)
+        if (segmentIndex == 0)
+          label(class=["clock-numeric-display"] title="Reset clock to 0")
+            span(name=`attr_${prefix}filled`).attr-span
+            +clockSegment(segmentIndex, attrPrefix)
+        else
+          +clockSegment(segmentIndex, attrPrefix)
+    if withChanceSelect == true
+      label(title="Chance to advance clock")
+        span Chance
+        select(
+          class=["clock-ask-chance-select"]
+          name=`attr_${prefix}ask-chance`
+        )
+          option(selected=true) Never
+          each askChance in askChances
+            option(value=_.kebabCase(askChance))=askChance
 
-mixin clockWedge(wedgeIndex, wedges, clockId=clock, checked=false, hidden=false)
+mixin clockSegment(segmentIndex, attrPrefix)
+  - let prefix;
+  if (attrPrefix)
+    - prefix = _.kebabCase(attrPrefix)+"-"
+  else
+    - prefix = ""
   input(
     type="radio"
-    name=`attr_${clockId}`
-    value=`wedge-${wedgeIndex}`
-    class=["clock-wedge"]
-    checked=isHiddenWedge
-    hidden=isHiddenWedge
-    title=`Set clock to ${wedgeIndex}⁄${wedges}`
+    name=`attr_${prefix}filled`
+    value=segmentIndex
+    class=["clock-segment"]
+    title=`Set clock to ${segmentIndex}`
   )

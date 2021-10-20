@@ -4,13 +4,6 @@ button
     btn()
 
 
-.repcontainer
-  display flex
-  flex-flow column
-  gap 1em
-  .repitem
-    border-bottom 4px solid $color_fg
-    padding-bottom 0.5em
 
 input
   &.progress-name
@@ -51,7 +44,7 @@ input
     grid-row 2 / span 2
     grid-column 1
     margin 0
-  button.progress-track-bar
+  .progress-track-bar
     border 0
     color $color_fg
     &:hover
@@ -73,7 +66,7 @@ input
 .progress-track-bar
   display flex
   flex-flow row
-  gap 0.25rem
+  gap 0.25em
   align-items center
 
 .progress-box
@@ -92,6 +85,7 @@ input
   cursor pointer
   borderCommon(3px, currentColor)
   border-radius 15%
+  background-color $color_bg
   &:after
     height 0
     width 100%
@@ -119,12 +113,14 @@ $challenge_ranks = {
 }
 
 .challenge-rank-radio
-  display flex
-  justify-content space-between
+  display grid
+  text-align center
   align-items center
   gap 0.5em
   margin 0
-
+  > span
+    grid-column 1 / span 5
+    grid-row 1
 .challenge-rank-option
   margin 0
 
@@ -161,6 +157,19 @@ input[name="attr_rank"][value^="0"] ~
     display flex
 
 
-
-
-    // color $color_fg
+.progress-track.scene-challenge
+  grid-template-columns initial
+  grid-auto-columns max-content auto max-content
+  .clock
+    grid-column 1
+    grid-row 1 / span 3
+    width max-content
+  input[type=text], .progress-track-bar
+    grid-column 2
+  input[type=text]
+    grid-row auto
+  .progress-track-bar
+    grid-row span 2
+  [name=act_roll-progress], [name=act_progress-clear]
+    grid-column 3
+    grid-row auto

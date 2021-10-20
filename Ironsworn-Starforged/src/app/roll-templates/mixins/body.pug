@@ -1,43 +1,89 @@
 mixin challengeDice
-  .sheet-result-body.sheet-result-row
+  | {{#challengeDie1}}
+  | {{#challengeDie2}}
+  .sheet-result-row
     .sheet-label
       +i18n('challenge-dice')
-    //- .sheet-challenge-dice.sheet-match {{challengeDie1}} {{challengeDie2}}
     .sheet-challenge-dice {{challengeDie1}} {{challengeDie2}}
+  | {{/challengeDie2}}
+  | {{/challengeDie1}}
 
 mixin challengeDiceOld
-  .sheet-result-body.sheet-result-row
+  .sheet-result-row
     .sheet-label
       +i18n('challenge-dice')
     .sheet-challenge-dice {{challenge1}} {{challenge2}}
 
-mixin actionRollBody
-  .sheet-result-body.sheet-result-row.sheet-action-score
+
+//- now universal to progress moves and action rolls
+//- defaults to a progress move if no actionDie is computed
+mixin actionScore
+  | {{#computed::actionScore}}
+  .sheet-result-row.sheet-action-score
+    //- if there's a challenge dice and no
+    | {{#computed::actionDie}}
     .sheet-label
       +i18n('action-score')
+    | {{/computed::actionDie}}
+
+    | {{^computed::actionDie}}
+    | {{#challengeDie1}}
+    .sheet-label
+      +i18n('nav-progress')
+    | {{/challengeDie1}}
+    | {{^challengeDie1}}
+    .sheet-label
+      +i18n('action-score')
+    | {{/challengeDie1}}
+    | {{/computed::actionDie}}
+
     .sheet-arithmetic
+      | {{#computed::actionDie}}
       .sheet-action-die {{computed::actionDie}}
+      | {{#stat}}
       .sheet-arithmetic-symbol!=` + `
       .sheet-stat {{stat}}
+      | {{/stat}}
+      | {{#adds}}
       .sheet-arithmetic-symbol!=` + `
       .sheet-adds {{adds}}
+      | {{/adds}}
       .sheet-arithmetic-symbol!=` = `
-    .sheet-total {{computed::actionScore}}
+      | {{/computed::actionDie}}
+      .sheet-total {{computed::actionScore}}
+  | {{/computed::actionScore}}
+
 
 mixin actionRollBodyOld(type="action")
-  .sheet-result-body.sheet-result-row
+  .sheet-result-row
     div.i18n-text(data-i18n='action-score')=translation['action-score']
     div.sheet-action-score {{#{type}}}
   +challengeDiceOld
 
 
 mixin progressBody
-  .sheet-result-body.sheet-result-row
+  .sheet-result-row.sheet-action-score
+    .sheet-label
+      +i18n('nav-progress')
+    .sheet-total {{computed::actionScore}}
+  +challengeDice
+  //- TODO: figure out the most sensible way to handle translation strings here
+
+mixin progressBodyOld
+  .sheet-result-row
     div {{progress_type}} Progress
     div {{progress}}
   +challengeDice
   //- TODO: figure out the most sensible way to handle translation strings here
 
 mixin limitAlert
-  .sheet-result-body.sheet-result-row
-    .i18n-text.sheet-subfooter.sheet-alert(data-i18n='action-score-limit-alert')=translation['action-score-limit-alert']
+  | {{#rollGreater() actionScore 10}}
+  | {{#rollGreater() computed::actionDie 0}}
+  .sheet-result-row
+    .i18n-text.sheet-footer.sheet-alert(data-i18n='action-score-limit-alert')=translation['action-score-limit-alert']
+  | {{/rollGreater() computed::actionDie 0}}
+  | {{/rollGreater() actionScore 10}}
+
+mixin limitAlertOld
+  .sheet-result-row
+    .i18n-text.sheet-footer.sheet-alert(data-i18n='action-score-limit-alert')=translation['action-score-limit-alert']

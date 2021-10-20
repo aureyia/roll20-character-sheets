@@ -1,2 +1,0 @@
-const sheets = [{"name":"character","start":"summary","pages":["summary","assets","vows","progress","connections","legacies","ship","moves","oracles"]},{"name":"shared","start":"vows","pages":["vows","progress","connections","ship"]}];
-

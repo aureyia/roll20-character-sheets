@@ -1,0 +1,7 @@
+mixin discoveriesPage(sheetType)
+  +page("discoveries", sheetType)
+    if sheetType == "character"
+      +legacyTrack("discoveries")
+    article.expeditions
+      h3.title Expeditions
+  //- TODO: repeating section to handle Expedition tracks

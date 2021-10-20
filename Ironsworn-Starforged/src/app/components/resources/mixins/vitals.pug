@@ -1,0 +1,8 @@
+
+- textResources = ["character-name", "character-callsign", "character-pronouns"];
+
+mixin characterResourceText(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId), value="")
+  section(id=resourceId).resource.resource-string
+    label(for=`${resourceId}-input`)
+      +i18n(i18n_key).resource-title
+    input(type='text' id=`${resourceId}-input` name=`attr_${attribute}` placeholder=translation[i18n_key] value=value)

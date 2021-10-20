@@ -3,7 +3,7 @@ const maxProgressBoxes = 10;
 const ticksPerBox = 4;
 const maxProgressTicks = maxProgressBoxes * ticksPerBox;
 
-const progressRanks = [
+const challengeRanks = [
   {
     name: "none",
     legacy: 0
@@ -67,7 +67,7 @@ function incrementProgress(progressRowId, amount=1, amountInTicks=false) {
     let ticksDelta;
     if (amountInTicks==false) {
       const rankIndex = Number(attrData[rankAttr]);
-      ticksDelta = amount * progressRanks[rankIndex].mark;
+      ticksDelta = amount * challengeRanks[rankIndex].mark;
       log("rankIndex, ticksDelta", rankIndex, ticksDelta);
     }
     else {
@@ -82,13 +82,16 @@ function incrementProgress(progressRowId, amount=1, amountInTicks=false) {
 function markProgress(progressRowId, times=1) {
   log("markProgress", ...arguments);
   incrementProgress(progressRowId, times, false);
-}
+};
 
 function setProgressTicks(progressRowId, toTicksValue) {
   log("setProgressTicks", ...arguments);
   if (toTicksValue > maxProgressTicks) {
     toTicksValue = maxProgressTicks;
   } else if (toTicksValue < 0) {
+    toTicksValue = 0;
+  }
+  else {
     toTicksValue = 0;
   }
   const boxes = progressBoxIndexes.map(boxIndex => `${progressRowId}_progress_${boxIndex}`);
@@ -123,7 +126,7 @@ function setProgressTicks(progressRowId, toTicksValue) {
 // };
 
 // REPEATING SECTIONS
-const repeating_progress = ["connection", "progress", "vow", "combat", "expedition", "challenge"];
+const repeating_progress = ["connection", "progress", "vow", "combat", "expedition", "scene-challenge"];
 
 repeating_progress.forEach(item => {
 
@@ -164,7 +167,7 @@ repeating_progress.forEach(item => {
     const nameAttr = rowId(eventInfo)+"_"+progressType(eventInfo)+"_name";
     getAttrs([rankAttr, nameAttr], attrData => {
       const rankInt = Math.min(Number(attrData[rankAttr])+1, 5);
-      const newRank = progressRanks[rankInt];
+      const newRank = challengeRanks[rankInt];
       const newRankName = newRank.name;
       //
       startRoll(`&{template:alert} {{surtitle=Recommit}} {{header=${attrData[nameAttr]}}} {{challengeDie1=[[1d10]]}} {{challengeDie2=[[1d10]]}} {{customLabel1=New Rank}} {{customRow1=${capitalize(newRankName)}}} {{customLabel2=Progress removed}} {{customRow2=""}}`, (rollData) => {

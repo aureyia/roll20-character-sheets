@@ -1,0 +1,18 @@
+include ../page
+include ../../components/progress/mixins/progressTrack
+
+
+mixin clocksPage(sheetType)
+  +page("clocks", sheetType)
+    //- h3 Tension Clocks
+    //- fieldset.repeating_clock
+    //-   +clock("tension", true, false)
+    article.scene-challenges
+      h3.title Scene Challenges
+      fieldset.repeating_scene-challenge
+        +sceneChallenge()
+    article.campaign-clocks
+      h3.title Campaign Clocks
+      fieldset.repeating_clock
+        +clock(false, true, true)
+

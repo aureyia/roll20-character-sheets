@@ -3,5 +3,5 @@ include ../../common/pug/translation
 mixin actionRollBtn(move, classes=[], blockContent=false, iconOnly=false)
   - let i18n_key = move.id.replace("move-", "move-title-")
   - let moveData = rolls[move.Name]
-  - let value = `&{template:action_roll} {{actionScore=[[[[1d6]]+[[${moveData.repeat_stat}]]+[[(?{Adds|0})]]]]}} {{actionDie=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challengeDie1=[[d10]]}} {{challengeDie2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{momentumBurn=[[0]]}} {{moveOutcome=[[0]]}} {{header=^{${i18n_key}}}} {{icon=action-roll}} {{surtitle=@{character_name}}}`
+  - let value = `&{template:ironsworn_move} {{rollId=0}} {{actionScore=[[[[1d6]]+[[${moveData.stat}]]+[[(?{Adds|0})]]]]}} {{actionDie=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challengeDie1=[[d10]]}} {{challengeDie2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{character_name=@{character_name}}} {{header=^{${i18n_key}}}} {{icon=action-roll}}`
   +actionBtn("roll-action", value, i18n_key, classes, blockContent, iconOnly)

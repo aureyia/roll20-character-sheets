@@ -7,6 +7,7 @@ mixin challengeRankRadio()
     value="0"
   )
   section.challenge-rank-radio
+    span Select a challenge rank:
     each challengeRank, index in challengeranks
       label(class=["challenge-rank-option","toggle-radio", `challenge-rank-${challengeRank.text}`])
         - let i18n_key = `difficulty-${challengeRank.text}`

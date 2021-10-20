@@ -1,41 +1,43 @@
 include ./body
 
 //- TODO: something to handle stuff that upgrades/downgrades roll results, such as Take Decisive Action
--
-  function inlineMomentumBurn(hitType) {
-    return `[{{burn_${hitType}}}](~{{header}}|momentum-burn)`
-  }
+
+mixin chatActionBtn(action, i18n_key, rollContent="rollId")
+  !=`[`
+  +i18n(i18n_key)
+  !=`](~{{character_name}}|${action}||${rollContent})`
+
+mixin inlineMomentumBurn(hitType)
+  +chatActionBtn(`momentum-burn`, `momentum-burn-${hitType}`)
 
 mixin strongHitMatch
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-subfooter.sheet-strong-hit-match
-      +i18n('roll-strong-hit-match')
+  .sheet-roll-outcome.sheet-strong-hit-match
+    +i18n('roll-strong-hit-match')
 
 mixin strongHit
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-subfooter.sheet-strong-hit
-      +i18n('roll-strong-hit')
+  .sheet-roll-outcome.sheet-strong-hit
+    +i18n('roll-strong-hit')
 
 mixin momentumStrongHit
-  .sheet-result-row.sheet-strong-hit.momentum-burn.btn
-    !=inlineMomentumBurn("strong")
+  .sheet-strong-hit.momentum-burn.btn
+    +inlineMomentumBurn("strong-hit")
 
-//- TODO: additional mixin for burning momentum for a strong hit with a match?
+mixin momentumStrongHitMatch
+  .sheet-strong-hit-match.momentum-burn.btn
+    +inlineMomentumBurn("strong-hit-match")
+
 mixin weakHit
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-subfooter.sheet-weak-hit
-      +i18n('roll-weak-hit')
+  .sheet-roll-outcome.sheet-weak-hit
+    +i18n('roll-weak-hit')
 
 mixin momentumWeakHit
-  .sheet-result-row.sheet-weak-hit.momentum-burn.btn
-    !=inlineMomentumBurn("weak")
+  .sheet-weak-hit.momentum-burn.btn
+    +inlineMomentumBurn("weak-hit")
 
 mixin miss
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-subfooter.sheet-miss
-      +i18n('roll-miss')
+  .sheet-roll-outcome.sheet-miss
+    +i18n('roll-miss')
 
 mixin missMatch
-  .sheet-result-row.sheet-roll-outcome
-    .sheet-subfooter.sheet-miss-match
-      +i18n('roll-miss-match')
+  .sheet-roll-outcome.sheet-miss-match
+    +i18n('roll-miss-match')

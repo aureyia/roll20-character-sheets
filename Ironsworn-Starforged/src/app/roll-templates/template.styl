@@ -8,14 +8,22 @@ $template_border = 1px solid $sf_rich_black
 $strong_hit_color = $sf_ui_blue
 $weak_hit_color = $sf_ui_purple
 $miss_color = $sf_ui_red
-$content_padding = 0.4em 1em
-$subfooter_padding = 0.4em 0
+$template_padding = 0.7em 1em
+
+$color_fg_roll_body = $color_fg
+$color_fg_roll_body_alt = $color_fg_fade
+$color_bg_roll_body = $color_bg
+
+// $color_fg_roll_body = $color_bg
+// $color_fg_roll_body_alt = $color_bg_fade
+// $color_bg_roll_body = $sf_black
+
 // r20's padding on parent of roll container; can be negated by setting negative margins
 $r20_padding_right = 10px
 $r20_padding_bottom = 7px
 $r20_padding_left = 45px
 
-tplMargin($margin = 5px)
+tplMargin($margin = 0px)
   margin-top 6px + $margin
   margin-right -1 * ($r20_padding_right - $margin)
   margin-bottom -1 * ($r20_padding_bottom - $margin)
@@ -28,13 +36,11 @@ resultRow(border = $template_border)
   border border
   background $result_bg
 
-subBase(padding)
-  padding padding
+subBase()
   text-align left
   font-weight 700
 
 nameBase(align)
-  padding 0.2em 1em 0.4em 0.7em
   text-align align
   // font-variant-caps all-small-caps
   text-transform uppercase
@@ -42,50 +48,100 @@ nameBase(align)
 
 rollContainer()
   bodyTextLg()
-  colorThemeDark()
   tplMargin()
-
-  border $template_border
+  line-height 1
+  border 0
+  // &:last-child
+  //   border solid $sf_rich_black
+  //   border-bottom-width 5px
 
 inlineRoll()
   display inline-block
-  min-width 1.5em
-  border 2px solid $template_bg
-  border-radius 1em
+  width 2ch
+  height 2ch
+  padding 0
+  border 0
+  display flex
+  align-items center
+  align-content center
+  justify-items center
+  justify-content center
   background transparent
   text-align center
+  font-family "Exo"
 
 outcomeBase($bgcolor)
   display flex
   flex-flow row
   justify-content left
-  font-weight 700
-
+  headerTextSm()
+  gap 0.5ch
   &:before
     align-self stretch
-    margin-right 0.5em
     width 1em
     border-radius 1em
     background-color $bgcolor
     content " "
+    margin -0.2em 0
 
-.sheet-rolltemplate-oracle, .sheet-rolltemplate-action_roll, .sheet-rolltemplate-progress_roll, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-alert,  .sheet-rolltemplate-starforged_progress, .sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-starforged_oracles
+html
+  font-size 16px
+body
+  background-color green !important
+.characterviewer > .nav.nav-tabs > li > a
+  size 1em
+
+
+
+.sheet-rolltemplate-oracle, .sheet-rolltemplate-ironsworn_move, .sheet-rolltemplate-progress_roll, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-alert,  .sheet-rolltemplate-starforged_progress, .sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-starforged_oracles
   > .sheet-roll-container
-    colorThemeDark()
-    background-color $sf_black
+    colorThemeLight()
     rollContainer()
-    div.sheet-header
+    .sheet-header, .sheet-result-row, *
+      line-height 1
+    .sheet-i18n-text
+      display contents
+    .sheet-header
+      colorThemeDark()
+      background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/raster/header-background-left.jpg")
+      background-size cover
+      background-position left
       headerText()
       subBase(0.35em 0.5em)
-      font-size 1.5em
+      font-size 1.25em
       line-height 1
+      position relative
+      display grid
+      gap 0.25em
+      border-bottom-right-radius 0.5em
+      margin-right 10px
+      padding $template_padding
+      padding-bottom 0
+      min-height @font-size*@line-height*2
       .sheet-surtitle, .sheet-subtitle
+        line-height 1
         font-size 1em
         footerText()
         color $color_bg_fade
         width max-content
-
-
+        grid-column 1
+      &:before
+        grid-column 2
+        grid-row 1 / -1
+    .sheet-title
+      align-self end
+      line-height 0.7
+    .sheet-starforged-icon-action-roll
+      iconBehind($icon_1d6, 4px)
+      &:before
+        color $color_fg_roll_body_alt
+        right 0
+        top 0
+        mask-position right
+    .sheet-result-body, .sheet-alert
+      padding $template_padding
+    .sheet-roll-outcome
+      padding 0.5em
     a[href^="!"]
       display inline-block
       padding 5px
@@ -96,12 +152,18 @@ outcomeBase($bgcolor)
       text-align center
       text-transform uppercase
       font-weight bold
-
+    .sheet-total
+      color $color_fg_roll_body
+      border-radius 50%
+      padding 0
+      // .fullfail
+      //   border 2px solid $miss_color
+      // .fullcrit
+      //   border 2px solid $strong_hit_color
     .sheet-result-row
       display flex
       justify-content space-between
       align-items center
-      padding 0.5em
     .sheet-die-cancel
       &:before
         content ""
@@ -121,64 +183,102 @@ outcomeBase($bgcolor)
             transparent calc(50% + 0.8px),
             transparent 100%)
     .inlinerollresult
+      border 0
       inlineRoll()
-
+    .sheet-action-die, .sheet-challenge-dice
+      position relative
+      display flex
+      align-items center
+      align-content center
+      justify-items center
+      justify-content center
+      textOutline($color_bg_roll_body, 2px)
+      // text-shadow 0px 0px 5px $color_bg_roll_body, 0px 0px 5px $color_bg_roll_body, 0px 0px 5px $color_bg_roll_body
+      font-color $color_fg
+      font-weight 700
+      & > .inlinerollresult
+        display flex
+        align-items center
+        align-content center
+        justify-items center
+        justify-content center
+        border 0
+        &:before
+          color $color_fg_roll_body_alt
+    .sheet-action-die
+      > .inlinerollresult
+        iconBehind($icon_1d6,0.8em)
+        &:before
+          mask-origin border-box
     .sheet-challenge-dice
-      .fullfail
-        border 2px solid $strong_hit_color
+      display flex
+      gap 1ch
+      > .inlinerollresult
+        iconBehind($icon_1d10,0.8em)
+        &:before
+          mask-origin border-box
+      .fullfail:before
+        // border 2px solid $strong_hit_color
+        color $strong_hit_color
 
-      .fullcrit
-        border 2px solid $miss_color
+      .fullcrit:before
+        // border 2px solid $miss_color
+        color $miss_color
 
     .sheet-roll-outcome
       resultRow()
 
-    .sheet-subfooter
-      width 100%
-      background-color $result_bg
+    .sheet-footer //- consider as 'floating' thing w/ margin like callout boxes?
+      colorThemeDark()
+      .sheet-roll-outcome
+        &.sheet-strong-hit-match
+          subBase(0)
+          outcomeBase($strong_hit_color)
 
-      &.sheet-strong-hit-match, &.sheet-strong-hit, &.sheet-weak-hit, &.sheet-miss, &.sheet-miss-match
-        font-style italic
+        &.sheet-strong-hit
+          subBase(0)
+          outcomeBase($strong_hit_color)
 
-        subBase(0)
+        &.sheet-weak-hit
+          subBase(0)
+          outcomeBase($weak_hit_color)
 
-      &.sheet-strong-hit-match
-        outcomeBase($strong_hit_color)
+        &.sheet-miss
+          subBase(0)
+          outcomeBase($miss_color)
 
-      &.sheet-strong-hit
-        outcomeBase($strong_hit_color) // fade?
+        &.sheet-miss-match
+          subBase(0)
+          outcomeBase($miss_color)
 
-      &.sheet-weak-hit
-        outcomeBase($weak_hit_color)
-
-      &.sheet-miss
-        outcomeBase($miss_color) // fade?
-
-      &.sheet-miss-match
-        outcomeBase($miss_color)
-
-    .sheet-result-row.sheet-btn
+    .sheet-btn
       padding 0
-
       $btnPadding = 0.75ch
       $btnTextSize = 1em
 
       &:before
         all initial
 
-      &.sheet-strong-hit > a[href^="~"]
-        btn($color_cta, $color_bg, $btnTextSize, $btnPadding)
+      &.sheet-strong-hit, &.sheet-strong-hit-match
+        > a[href^="~"]
+          btn($color_bg, $color_cta, $btnTextSize, $btnPadding)
+          border-color currentColor
 
-      &.sheet-weak-hit > a[href^="~"]
-        btn($sf_ui_purple, $color_bg, $btnTextSize, $btnPadding)
+      &.sheet-weak-hit
+        > a[href^="~"]
+          btn($color_bg, $sf_ui_purple, $btnTextSize, $btnPadding)
+          border-color currentColor
+
 
     .sheet-result-body
-      padding $content_padding
-      background-color $sf_black
+      color $color_fg_roll_body
+      background-color $color_bg_roll_body
+      display flex
+      flex-direction column
+      gap 0.75em
 
     .sheet-alert
       margin 0.2em 0.3em
-      padding 0.5em
       width auto
       border-radius 1em
 

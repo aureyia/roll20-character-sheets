@@ -12,7 +12,7 @@ mixin input(id, classes=[], nameValue)
   )
 
 mixin repeatingVow()
-  +progressTrack(["vow"], "progress", "move-fulfill-your-vow", "move-title-reach-a-milestone")
+  +progressTrack(["vow"], "progress", "move-fulfill-your-vow")
     +input("vow-name", ["progress-name"], 'attr_vow_name')
     +challengeRankRadio()
     +progressRecommitBtn()

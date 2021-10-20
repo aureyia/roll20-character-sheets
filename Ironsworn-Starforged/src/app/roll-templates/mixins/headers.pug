@@ -3,7 +3,7 @@ mixin tplHeader(templateVar="title")
     | {{#surtitle}}
     span.sheet-surtitle!=`{{surtitle}}`
     | {{/surtitle}}
-    !=`{{${templateVar}}}`
+    span.sheet-title!=`{{${templateVar}}}`
     | {{#subtitle}}
     span.sheet-subtitle!=`{{subtitle}}`
     | {{/subtitle}}

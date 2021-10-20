@@ -4,11 +4,11 @@
     "start": "summary",
     "pages": [
       "summary",
+      "quests",
+      "bonds",
+      "discoveries",
+      "clocks",
       "assets",
-      "vows",
-      "progress",
-      "connections",
-      "legacies",
       "ship",
       "moves",
       "oracles"
@@ -16,7 +16,7 @@
   },
   {
     "name": "shared",
-    "start": "vows",
-    "pages": ["vows", "progress", "connections", "ship"]
+    "start": "quests",
+    "pages": ["quests","bonds", "discoveries","clocks", "ship"]
   }
 ]

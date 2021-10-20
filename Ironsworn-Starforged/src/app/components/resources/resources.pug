@@ -1,5 +1,7 @@
 //- include ../../components/stats/stats
-include ./resourcemeter
+include ./mixins/resourcemeter
+include ./mixins/vitals
+include ./mixins/xp
 include ../../components/rolls/rolls
 
 -
@@ -9,18 +11,13 @@ include ../../components/rolls/rolls
   minStandardResource = 0;
   standardValues = _.range(maxStandardResource, minStandardResource);
   inverse = _.range(minStandardResource, maxStandardResource);
-  textResources = ["character-name", "character-callsign", "character-pronouns"];
-  xpResources = [
-    { id: "character-experience", attribute: "xp" },
-    { id: "character-experience-spent", attribute: "total_xp" }
-  ];
 
 mixin characterResourceDropdownOptions(trackValues)
   each val in trackValues
     option(value=val)!=`+${val}`
 
 mixin resourceRollableDropdown(resourceId, sheetType)
-  section(id=`${sheetType}-${resourceId}`).resource.resource-numeric
+  section(class=[`${sheetType}-${resourceId}`,"resource","resource-numeric"])
     -
       trackValues;
       if (resource == 'wealth')
@@ -31,11 +28,6 @@ mixin resourceRollableDropdown(resourceId, sheetType)
     select(name=`attr_${resourceId}` title=`Set ${resourceId}`)
       +characterResourceDropdownOptions(trackValues)
 
-mixin characterResourceText(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId), value="")
-  section(id=resourceId).resource.resource-string
-    label(for=`${resourceId}-input`)
-      +i18n(i18n_key).resource-title
-    input(type='text' id=`${resourceId}-input` name=`attr_${attribute}` placeholder=translation[i18n_key] value=value)
 
 mixin characterResourceRollable(resourceId, attribute, i18n_key, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
   section(id=`${sheetType}-${resourceId}`).resource.resource-numeric.resource-rollable
@@ -43,15 +35,10 @@ mixin characterResourceRollable(resourceId, attribute, i18n_key, sheetType, min=
     +resourceMeterSpinner(attribute, value, max, min)
 
 mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId))
-  section(id=resourceId).resource.resource-numeric
+  section(class=[resourceId, "resource","resource-numeric"])
     label(for=`${resourceId}-input`)
       +i18n(i18n_key).resource-title
     +resourceMeterSpinner(attribute)
-
-mixin experience
-  each xpResource in xpResources
-    +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)
-
 
 mixin characterResources(resources)
   section.resources#character-vitals
@@ -60,7 +47,7 @@ mixin characterResources(resources)
   section.resources#character-resource-meters
     each resource in resources
       +characterResourceRollable(resource, resource, "resource-"+resource, "character")
-    +experience
+    //- +characterXp
 
 mixin sharedResources(resources)
   div.resources

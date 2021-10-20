@@ -1,38 +1,5 @@
 const actionScoreMax = 10;
 
-function resolveMoveOutcome(actionScore, challengeDie1, challengeDie2) {
-  let moveOutcome, match;
-  if ((actionScore > challengeDie1) && (actionScore > challengeDie2)) {
-    moveOutcome = "strong hit";
-  }
-  else if ((actionScore > challengeDie1) || (actionScore > challengeDie2)) {
-    moveOutcome = "weak hit";
-  }
-  else {
-    moveOutcome = "miss";
-  }
-  if (challengeDie1 == challengeDie2) {
-    match = true;
-  }
-  const data = {
-    moveOutcome,
-    match
-  };
-  return data;
-};
-
-function canBurnMomentum(actionScore, challengeDie1, challengeDie2, momentum) {
-  if ([challengeDie1, challengeDie2].some(die => die < momentum)) {
-    let currentOutcome = resolveMoveOutcome(actionScore, challengeDie1, challengeDie2).moveOutcome;
-    if (currentOutcome != "strong hit") {
-      let momentumOutcome = resolveMoveOutcome(momentum, challengeDie1, challengeDie2).moveOutcome;
-      if (momentumOutcome != currentOutcome) {
-        return momentumOutcome;
-      }
-    }
-  }
-}
-
 on("clicked:roll-action", function(eventInfo) {
   // let baseTemplate =
   let templateData = eventValue(eventInfo);
@@ -45,12 +12,6 @@ on("clicked:roll-action", function(eventInfo) {
     let adds = data.results.adds.result;
     let stat = data.results.stat.result;
     let actionDie = data.results.actionDie.result;
-    let challengeDie1 = data.results.challengeDie1.result;
-    let challengeDie2 = data.results.challengeDie2.result;
-    let cancelActionDie;
-    let momentumBurn;
-    let moveOutcome;
-    let match;
 
     // negative momentum cancel
     if (momentum + actionDie == 0) {
@@ -62,19 +23,19 @@ on("clicked:roll-action", function(eventInfo) {
     const computed = {
       actionScore,
       actionDie,
-      challengeDie1,
-      challengeDie2,
+      rollId: data.rollId,
     };
-    Object.assign(computed, resolveMoveOutcome(actionScore, challengeDie1, challengeDie2));
     log("computed", computed);
     finishRoll(data.rollId, computed);
   });
 });
 
 on("clicked:roll-progress", function(eventInfo) {
-  let templateData = `&{template:starforged_progress} {{challengeDie1=[[d10]]}} {{challengeDie2=[[d10]]}} ${eventValue(eventInfo)}`;
+  let templateData = `&{template:ironsworn_move} {{challengeDie1=[[d10]]}} {{challengeDie2=[[d10]]}} {{rollId=0}} ${eventValue(eventInfo)}`;
   startRoll(templateData, data => {
     log(data);
-    finishRoll(data.rollId);
+    finishRoll(data.rollId, {
+      rollId: data.rollId
+    });
   });
 });

@@ -2,13 +2,16 @@ include ../../components/impacts/impacts
 include ../../components/vows/vow-container
 include ../../components/stats/stats
 include ../page
+include ../../components/resources/mixins/xp
 
 mixin summaryPage(sheetType)
   +page("summary", sheetType)
     +stats()
+    section.xp
+      +characterXp
     - impactArray = impacts.filter(obj => { return obj.title !== 'ship' })
     section.impacts
-      h3.divide
+      h3.title
         +i18n('impacts')
-      +impacts(impactArray, { title: true, customImpacts: true})
+      +impacts(impactArray, { title: true, customImpacts: true}, "character-impacts")
     include ../../components/notes/notes

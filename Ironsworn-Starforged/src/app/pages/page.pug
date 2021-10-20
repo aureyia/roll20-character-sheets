@@ -21,7 +21,7 @@ mixin pageTabList(sheetType, ariaLabel, classes=[])
         pageName,
         parentName,
         `nav-${_.kebabCase(page)}`,
-        false,
+        page,
         ["page-tab"]
       )
 

@@ -52,7 +52,7 @@ mixin shipPage(sheetType)
           +i18n('impacts')
         .info
           - shipImpacts = [impacts.find(obj => { return obj.title === 'ship' })]
-          +impacts(shipImpacts, {character: true})
+          +impacts(shipImpacts, {character: true}, "ship-impacts")
         h3
           +i18n('passengers')
         .info

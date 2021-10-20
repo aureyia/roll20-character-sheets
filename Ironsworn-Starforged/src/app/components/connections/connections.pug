@@ -2,9 +2,9 @@ include ../progress/mixins/progressTrack
 include ../progress/mixins/challengeRankRadio
 include ../details/details
 
-
-mixin connections()
-  .connection-component
+mixin connections(title=true)
+  article.connections
+    h3.title Connections
     fieldset.repeating_connection
       .connection-container
         p.connection-title.i18n-text(data-i18n='character-name')

@@ -1,0 +1,10 @@
+-
+  xpResources = [
+    { id: "character-experience", attribute: "xp" },
+    { id: "character-experience-spent", attribute: "total_xp" }
+  ]
+
+mixin characterXp
+  each xpResource in xpResources
+    +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)
+

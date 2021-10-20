@@ -1,13 +1,29 @@
 include ./progressButtons
+include ../../clock/clock
 
-mixin progressTrack(classes=[], attrPrefix="progress", rollMoveId, markMoveId, recommitMoveId)
+
+mixin sceneChallenge()
+  +progressTrack(["scene-challenge"])
+    input(
+      type="text"
+      name="attr_name"
+      placeholder="Scene challenge objective"
+    )
+    input(
+      type="hidden"
+      name="attr_rank"
+      value="3"
+    )
+    //- scene challenges are always formidable
+    +clock("scenechallenge", false, false)
+
+mixin progressTrack(classes=[], attrPrefix="progress", progressMoveId)
   article(class=["progress-track", ...classes])
     +progressTotal(attrPrefix)
     block
-    //- +progressMarkBtn(attrPrefix, markMoveId)
     +progressClearBtn(attrPrefix)
     +progressTrackBar(attrPrefix)
-    +progressRepeatingRollBtn(rollMoveId)
+    +progressRepeatingRollBtn(progressMoveId)
 
 mixin progressTotal(attrPrefix="progress")
   //- hidden counter for total progress
@@ -18,40 +34,41 @@ mixin progressTotal(attrPrefix="progress")
     value=`0`
     )
 
-
-mixin progressTrackBar(attrPrefix="progress", xpBoxAttr)
-  button(type="action" name="act_progress-mark" class=["progress-track-bar"] data-i18n-title="progress-mark")
+mixin progressTrackBar(attrPrefix="progress")
+  button(
+    type="action"
+    name="act_progress-mark"
+    class=["progress-track-bar"]
+    data-i18n-title="progress-mark"
+    )
     each value in track
-      +progressBox(value, attrPrefix, xpBoxAttr)
+      +progressBox(value, attrPrefix)
 
-mixin progressBox(index, attrPrefix="progress", xpBoxAttr=false)
+mixin progressBox(index, attrPrefix="progress", block=false)
   - let attribute_name = `attr_${attrPrefix}_${index}`
   input(type="hidden" name=attribute_name class=["progress-box-control"] value=0)
   div(class=["progress-box"])
-    if (xpBoxAttr)
-      +legacyXpBoxes(xpBoxAttr, index)
+    if block == true
+      block
 
+//- mixin progressTrackBar_old(attrPrefix="progress")
+//-   section.progress-track-bar
+//-     each value in track
+//-       +progressBox_old(value, attrPrefix)
 
-mixin progressTrackBar_old(attrPrefix="progress", xpBoxAttr)
-  section.progress-track-bar
-    each value in track
-      +progressBox_old(value, attrPrefix, xpBoxAttr)
+//- mixin progressBox_old(index, attrPrefix="progress"=false)
+//-   - let attribute_name = `attr_${attrPrefix}_${index}`
+//-   section.progress-box
+//-     input(type="hidden" name=attribute_name class=["progress-box-control"] value=0)
+//-     +progressBoxSelect(index, attrPrefix)
+//-     if (xpBoxAttr)
+//-       +legacyXpBoxes(xpBoxAttr, index)
 
-
-
-mixin progressBox_old(index, attrPrefix="progress", xpBoxAttr=false)
-  - let attribute_name = `attr_${attrPrefix}_${index}`
-  section.progress-box
-    input(type="hidden" name=attribute_name class=["progress-box-control"] value=0)
-    +progressBoxSelect(index, attrPrefix)
-    if (xpBoxAttr)
-      +legacyXpBoxes(xpBoxAttr, index)
-
-mixin progressBoxSelect(index, attrPrefix="progress")
-  - let attribute_name = `attr_${attrPrefix}_${index}`
-  select(name=attribute_name class=["progress-box"])
-    option(value="0")
-    option(value="1") -
-    option(value="2") +
-    option(value="3") *
-    option(value="4") #
+//- mixin progressBoxSelect(index, attrPrefix="progress")
+//-   - let attribute_name = `attr_${attrPrefix}_${index}`
+//-   select(name=attribute_name class=["progress-box"])
+//-     option(value="0")
+//-     option(value="1") -
+//-     option(value="2") +
+//-     option(value="3") *
+//-     option(value="4") #

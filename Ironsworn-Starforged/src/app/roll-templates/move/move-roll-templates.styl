@@ -1,25 +1,23 @@
 
-.sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-alert, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-action_roll
+.sheet-rolltemplate-starforged_moves, .sheet-rolltemplate-alert, .sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-ironsworn_move
   > .sheet-roll-container
     .sheet-momentum-burn.sheet-btn
       > a
         iconBefore(1em, $icon_momentum_burn)
-
         padding 0.25em
     .sheet-action-score
       gap 0.5em
-
-      .sheet-arithmetic
-        bodyTextLg()
-
-        display flex
-        flex-flow row
-        margin-left auto
-        color $color_fg_alt
-        font-weight 500
-        font-size 1em
-
-        & > * > .inlinerollresult
+    .sheet-arithmetic
+      align-items center
+      bodyTextLg()
+      display flex
+      flex-flow row
+      color $color_fg_roll_body
+      font-weight 500
+      font-size 1em
+      gap 0.25ch
+      .sheet-action-die, .sheet-stat, .sheet-adds
+        .inlinerollresult
           padding 0
           min-width unset
           border 0
@@ -27,36 +25,8 @@
           color inherit
           font-weight inherit
           font-size inherit
-
       .sheet-total
-        .fullfail
-          border 2px solid $miss_color
-
-        .fullcrit
-          border 2px solid $strong_hit_color
-
-tplIcon($icon, $color=$color_fg_fade)
-  iconAfter(auto, $icon, 0 -5px 0 0)
-  &:after
-    color $color
-    grid-row 1 / span 2
-    grid-column 2
-    mask-position right
-  display grid
-  grid-template-columns max-content 1fr
-  span
-    grid-row 1
-    grid-column 1
-
-
-.sheet-rolltemplate-starforged_moves
-  > .sheet-roll-container
-    .sheet-header
-      tplIcon($icon_action_roll)
-
-
-
-.sheet-rolltemplate-momentum_burn, .sheet-rolltemplate-alert
-  > .sheet-roll-container
-    .sheet-header
-      tplIcon($icon_momentum_burn)
+      // action score gets a circle (paralleling the book)
+        margin-left 0.25ch
+        border 1.5px solid $color_fg_roll_body
+        border-radius 1em

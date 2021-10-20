@@ -1,39 +1,26 @@
 include ./mixins/actions
+include ./mixins/customRows
 
 rolltemplate.sheet-rolltemplate-alert
   .sheet-roll-container
     +tplHeader("header")
-    | {{#message}}
-    .sheet-result-row
-      !=`{{message}}`
-    | {{/message}}
-    | {{#rulestext}}
-    .sheet-rules-text
-      | {{rulestext}}
-    | {{/rulestext}}
-    | {{#actionScore}}
-    +actionRollBody
-    //- note that this template doesn't calculate hits/miss. this is intentional, so it can display e.g. the static momentum action score for momentum burn, or the challenge dice rolls for recommiting to a vow
-    | {{/actionScore}}
-    | {{#challengeDie1}}
-    | {{#challengeDie2}}
-    +challengeDice
-    | {{/challengeDie2}}
-    | {{/challengeDie1}}
-    each index in [1,2,3,4,5]
-      !=`{{#customRow${index}}}`
-      .sheet-result-row.sheet-result-body
-        !=`{{#customLabel${index}}}`
-        .roll-label
-          !=`{{customLabel${index}}}`
-        !=`{{/customLabel${index}}}`
-        !=`{{customRow${index}}}`
-      !=`{{/customRow${index}}}`
-    | {{#footer}}
-    .sheet-result-row
-      .sheet-subfooter!=`{{footer}}`
-    | {{/footer}}
-    | {{#buttons}}
-    .sheet-result-row
-      .sheet-subfooter.sheet-btn!=`{{buttons}}`
-    | {{/buttons}}
+    .sheet-result-body
+      | {{#message}}
+      .sheet-result-row
+        !=`{{message}}`
+      | {{/message}}
+      | {{#rulestext}}
+      .sheet-rules-text
+        | {{rulestext}}
+      | {{/rulestext}}
+      +actionScore
+      //- note that this template doesn't calculate hits/miss. this is intentional, so it can display e.g. the static momentum action score for momentum burn, or the challenge dice rolls for recommiting to a vow
+      +challengeDice
+      +customRows
+      .sheet-footer
+        | {{#footer}}
+        .sheet-footer-content!=` {{footer}} `
+        | {{/footer}}
+        | {{#buttons}}
+        .sheet-btn!=` {{buttons}} `
+        | {{/buttons}}

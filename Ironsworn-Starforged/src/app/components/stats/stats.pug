@@ -1,29 +1,29 @@
 include ../rolls/rolls
+include ../modal/modal
 
 mixin stats
-  +editToggle("stats")
-    +editToggleItem("stats", true)
+  section.stats
+    h3.title="Stats"
+    +statsStatic()
+    +modal("stats-editor", "Stats")
       +statsEditor()
-    +editToggleItem("stats", false)
-      +statsStatic()
 
 mixin statsEditor()
   each stat in stats
-    section().stat
-      h3.stats-title
+    .stat
+      label.stats-title
         +i18n(`stat-${stat}`)
-      input(
-        type='text'
-        class=['stats-input']
-        name=`attr_${stat}`
-        value='0'
-      )
+        input(
+          type='text'
+          class=['stats-input']
+          name=`attr_${stat}`
+          value='0'
+        )
 
 mixin statsStatic()
   each stat in stats
     +statRollBtn(stat, `stat-${stat}`, ["stat"], true)
-      h3.stats-title
-        +i18n(`stat-${stat}`)
+      +i18n(`stat-${stat}`)
       span(class=['stats-input'] name=`attr_${stat}`)
 
 mixin editToggle(parentName, defaultMode="off", ariaLabel)

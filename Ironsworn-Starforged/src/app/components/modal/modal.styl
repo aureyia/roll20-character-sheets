@@ -11,25 +11,28 @@
   background rgba(0, 0, 0, 0.7)
   opacity 0
   transition opacity 500ms
+  display flex
   &:target
     visibility visible
     opacity 1
 
 .modal-dialog
+  colorThemeLight()
   position relative
   margin 70px auto
-  padding 20px
-  width 30%
-  border-radius 5px
-  background #fff
-  transition all 5s ease-in-out
-
+  padding 1em
+  width max-content
+  height max-content
+  border-radius 1em
+  transition all 500ms ease-in-out
+  display grid
+  gap 0.5em
+  .modal-title
+    text-align center
+    grid-row 1
   .close-dialog
-    position absolute
-    top 20px
-    right 30px
-    color #333
-    text-decoration none
-    font-weight bold
-    font-size 30px
+    btn()
     transition all 200ms
+  .modal-back
+    btn()
+    grid-row 1

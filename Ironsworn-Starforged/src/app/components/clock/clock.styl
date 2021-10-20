@@ -1,12 +1,46 @@
 
-$clock_size = 200px
-$clock_indicator_size = ($clock_size / 5)
-$clock_font_size = ($clock_indicator_size * 0.9)
-$clock_outer_border_width = ($clock_size / 25)
-$clock_wedge_gap = ($clock_outer_border_width / 2)
-$clock_shadow = $clock_outer_border_width / 2 $clock_outer_border_width / 2 $clock_outer_border_width rgba(0, 0, 0, 0.5)
 
-.clock > .clock-widget
+// setting the font-size of .clock-widget can be used to scale the entire clock.
+$clock_size = 7em
+$clock_indicator_size = 25%
+$clock_display_font_size = 1em
+$clock_outer_border_width = 0.25em
+$clock_segment_gap = 0.15em
+$segment_color_full = $color_danger
+$clock_color_frame = $color_fg
+$segment_color_empty = $color_bg
+
+.page-clocks
+  display flex
+  flex-flow column
+  gap 1em
+
+.clock
+  display grid
+  .clock-widget
+    grid-column 1
+    grid-row 1 / span 2
+  .clock-name
+    height max-content
+    grid-column 2
+  .clock-size-radio
+    grid-column 1
+    width max-content
+    height $clock_size
+    width $clock_size
+    gap 1em
+    align-content center
+    span
+      grid-row 1
+      grid-column 1 / span 2
+      text-align center
+    label
+      width auto
+      padding 1em
+  .clock-ask-chance-select
+    grid-column 2
+
+.clock-widget
   position relative
   display grid
   overflow clip
@@ -15,81 +49,113 @@ $clock_shadow = $clock_outer_border_width / 2 $clock_outer_border_width / 2 $clo
   height $clock_size
   border $clock_outer_border_width solid transparent
   border-radius 50%
-  background-color $color_fg
+  background-color $clock_color_frame
   background-position center
-  box-shadow $clock_shadow
-  color $color_danger
-  // TODO make sure setting currentColor sets the wedge color etc too
+  // box-shadow $clock_shadow
   transition background 2s
-
+  // ripple animation on click
   &:hover
-    background $color_fg radial-gradient(circle, transparent 1%, $color_fg 1%) center / 15000%
-
+    background $clock_color_frame radial-gradient(circle, transparent 1%, $clock_color_frame 1%) center / 15000%
   &:active
-    background-color currentColor
+    background-color $segment_color_full
     background-size 100%
     transition background 0s
 
-.clock-wedge
+.clock-segment
+  display block
   position absolute
   bottom 50%
   left 50%
-  z-index 99
+  z-index 1
   box-sizing content-box
   margin 0
   width 55%
   height 55%
   outline 0
+  padding 0
   // border 1px solid black
-  border ($clock_wedge_gap / 2) solid transparent
-  background-color currentColor
+  border ($clock_segment_gap / 2) solid transparent
   background-clip content-box
-  color inherit
   cursor pointer
   transition 0.3s ease
   transform-origin bottom left
   appearance none
-
-  &[value=wedge-0]
+  &:hover
+    background-color blend(rgba($segment_color_full, 0.5), $segment_color_empty)
+  // radio value for 0 is hidden; label.clock-numeric-display uses it to reset the clock to 0
+  &[value^="0"]
     display none !important
 
-  &:checked
-    & ~ .clock-wedge
-      background-color $color_bg
-
-      &:hover
-        background-color inherit
-
-.clock-numeric-display
+label.clock-numeric-display
   labelText()
-  colorThemeDark()
   shrinkWrap()
-
-  z-index 100
-  align-self center
+  color $segment_color_empty
+  background-color $clock_color_frame
+  z-index 2
   width $clock_indicator_size
   height $clock_indicator_size
   border-radius 50%
   text-align center
-  font-size $clock_font_size
+  font-size $clock_display_font_size
   justify-self center
+  align-self center
 
-for $maxWedges in 4 6 8 10
-  $wedgeRadius = (360deg / $maxWedges)
-  $skew = $wedgeRadius - 90deg
+.clock-max
+  &[value^="0"]
+    & ~ .clock-widget
+      display none !important
+    & ~ .clock-size-radio
+      display grid
+  &:not([value^="0"])
+    & ~ .clock-size-radio
+      display none
 
-  .clock-control[value=wedge-{$maxWedges}]
-    // special effect when clock is full
-    &+ .clock.clock-{$maxWedges}
-      background-color inherit
 
-      > .clock-wedge
-        background-color $color_fg
+for $maxSegments in 4 6 8 10
+  $segmentRadius = (360deg / $maxSegments)
+  $skew = $segmentRadius - 90deg
+  // segment transformations (specific to clock magnitude)
+  .clock-max[value^={'"'+$maxSegments+'"'}]
+    & ~ .clock-widget
+      for $segmentIndex in 1 .. 10
+        .clock-segment[value^={'"'+$segmentIndex+'"'}]
+          if $segmentIndex > $maxSegments
+            display none !important
+          else
+            transform rotate(($segmentIndex - 1) * $segmentRadius) skewY($skew)
+    // ominous colour change when clock is filled
+    & ~ .clock-control[value^={'"'+$maxSegments+'"'}]
+      & ~ .clock-widget
+        background-color $segment_color_full
+        > .clock-numeric-display
+          background-color $segment_color_full
+        > .clock-segment
+          background-color $clock_color_frame
 
-      > .clock-numeric-display
-        background-color inherit
 
-  .clock-{$maxWedges}
-    for $wedgeIndex in 1 .. $maxWedges
-      .wedge-{$wedgeIndex}
-        transform rotate(($wedgeIndex - 1) * $wedgeRadius) skewY($skew)
+
+// fills entire "pie" up to the checked value
+.clock-segment
+  background-color $segment_color_full
+
+.clock-widget:not(:hover)
+  .clock-segment:checked ~ .clock-segment
+    background-color $segment_color_empty
+
+.clock-control[value^="0"] ~ .clock-widget:not(:hover)
+  .clock-segment
+    background-color $segment_color_empty
+
+// the hidden "0" isn't a sibling of the othe radio selects, so it needs its own selector
+// fixme: figure out a way to generate unique IDs so the
+// that or implement a clock reset button
+
+
+
+// hover shows preview of the clock value
+.clock-widget:hover
+  .clock-segment
+    background-color blend(rgba($segment_color_full, 0.5), $segment_color_empty)
+    &:hover ~ .clock-segment
+      background-color $segment_color_empty
+

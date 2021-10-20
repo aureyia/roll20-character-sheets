@@ -9,27 +9,46 @@ include ../progress/mixins/progressTrack
 
 mixin legacyTrack(legacy)
   section(class=[legacy, "legacy-track", "progress-track"])
-    - let trackName = `legacy_progress_${legacy}`
+    - let trackName = `legacy_${legacy}_progress`
     +progressTotal(trackName)
-    h2.title=translation[`legacy-${legacy}-title`]
-    +progressClearBtn(legacy)
-    +legacyMarkBtn(legacy)
-    +progressTrackBar(trackName, legacy)
-    +legacyPlusTen(legacy)
-    +legacyRollButton(legacy)
+    h2.title
+      span Legacy:
+      +i18n(`legacy-${legacy}-title`)
+    +legacyTrackBar(legacy)
+    +legacyRollBtn(legacy)
 
-mixin legacyRollButton(legacy)
-  +progressRollBtn(`Legacy ${legacy} Progress`, `@{legacy_progress_${legacy}-filled}`)
+
+mixin legacyTrackBar(legacy)
+  button(
+    type="action"
+    name=`act_legacy-${legacy}-mark`
+    class=["progress-track-bar"]
+    data-i18n-title="progress-mark"
+    value="1"
+    )
+    each value in track
+      +legacyProgressBox(legacy, value)
+
+
+//- TODO: worker to switch ppl from
+//- {legacy_progress_${legacy}-filled}
+//- to
+//- {legacy_${legacy}_progress-filled}
+mixin legacyRollBtn(legacy, iconOnly=true)
+  +progressRollBtn(`Legacy ${legacy} Progress`, `@{legacy_${legacy}_progress-filled}`, "roll", [], false, iconOnly)
+
+mixin legacyProgressBox(legacy, index)
+  +progressBox(index, `legacy_${legacy}_progress`, true)
+    +legacyXpBoxes(legacy, index)
 
 mixin legacyXpBoxes(legacy, index)
   .experience-boxes
-    input(type='hidden' name=`attr_legacy_progress_${legacy}_${index}`)
+    input(type='hidden' name=`attr_legacy_${legacy}_progress_${index}`)
     each box in [ 1, 2 ]
       input(type='checkbox' name=`attr_${legacy}_experience_${index}_${box}` class=["experience-box"])
 
 mixin legacyMarkBtn(legacy)
   +actionBtn("legacy-mark", null, i18n_key)
-  +btn({type: 'checkbox', text: 'mark', translationId: 'progress-mark', attribute: `mark_legacy_${legacy}`, action: 'static'})
 
 mixin legacyPlusTen(legacy)
   +btn({
