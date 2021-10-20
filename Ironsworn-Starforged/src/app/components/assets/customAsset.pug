@@ -1,0 +1,69 @@
+
+mixin customAssetView
+  .asset-view
+    .flex-wrapper
+      .flex-container
+        span.asset-view-name(name='attr_name')
+      .flex-container
+        +customAssetTitles
+      each count in [1,2,3]
+        .flex-container.ability-view
+          +assetAbilityView(count)
+    .flex-wrapper
+      .flex-container
+        +customAssetDropdowns
+
+mixin customAssetTitles
+  - counter = 0
+  while counter < customAssetTotalTitlesMax
+    if counter == 0
+      input(
+        class=[`builder-titles-${counter}`,`switch-display`]
+        type='checkbox'
+        name=`attr_builder-titles-${counter}`
+      )
+    else
+      input(
+        class=[`builder-titles-${totalTitles}`,`switch-display`]
+        type='checkbox'
+        name=`attr_builder-titles-${totalTitles}`
+      )
+      div(class=[`builder-titles-${totalTitles}`, `switchable-display`])
+        - currentTitle = 1
+        while currentTitle <= totalTitles
+          +assetBuilderTitles(totalTitles, currentTitle++)
+    - counter ++
+
+
+mixin customAssetDropdowns
+  - counter = 0;
+  while counter < customAssetDropdownsMax
+    if counter == 0
+      input(
+        class=[`meter-dropdown-${counter}`,`switch-display`]
+        type='checkbox'
+        name=`attr_meter-dropdown-${counter}`
+      )
+    else
+      input(
+        class=[`meter-dropdown-${counter}`,`switch-display`]
+        type='checkbox'
+        name=`attr_meter-dropdown-${counter}`
+      )
+      div(class=[`meter-dropdown-${counter}`,`switchable-display`])
+        .asset-meter.custom-track
+          - currentBox = 0
+          while currentBox <= counter
+            +assetMeterBox(counter, currentBox++)
+    - counter ++
+
+
+mixin customAssets
+  input.custom.switch-display(type='checkbox' name='attr_custom')
+  .custom
+    input.asset-builder(type='radio' name='attr_custom-asset-page' value='1' checked='')
+    +i18n('asset-custom-builder-title').custom-asset-page
+    input.asset-view(type='radio' name='attr_custom-asset-page' value='2')
+    +i18n('asset-custom-view-title').custom-asset-page
+    +customAssetBuilder
+    +customAssetView

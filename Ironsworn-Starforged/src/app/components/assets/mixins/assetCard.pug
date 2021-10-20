@@ -1,0 +1,16 @@
+include ./assetHeader
+include ./assetAbility
+include ./assetMeterBar
+
+mixin assetCard(asset)
+  - iconWidth = 64
+  - category = _.kebabCase(asset.Category)
+  article(class=[`asset-card`,`${asset.id}`,`category-${category}`])
+    section.asset-header
+      +assetHeader(asset)
+    section.asset-abilities
+      each ability in asset.Abilities
+        +assetAbility(ability)
+    if asset['Condition Meter']
+      +assetMeterBar(asset['Condition Meter'])
+

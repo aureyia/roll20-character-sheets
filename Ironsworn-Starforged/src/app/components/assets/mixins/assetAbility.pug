@@ -1,0 +1,11 @@
+mixin assetAbility(ability)
+  section.asset-ability
+    - attribute=ability.id
+    +attrToggleCheck(attribute, null, ability.Enabled)
+    +i18n(ability.id)
+    if ability.Input
+      each input in ability.Input
+        - inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
+        label.asset-ability-inputBox
+          +i18n(inputId)
+          input(type='text' name=`attr_${inputId}` value='')

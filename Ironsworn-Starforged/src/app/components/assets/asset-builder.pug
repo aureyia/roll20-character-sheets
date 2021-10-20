@@ -1,79 +1,10 @@
-include ./../resources/resourcemeter
 include ./../../common/pug/pager
+include ./mixins/assetCard
 
-mixin assetAbility(ability)
-  //- consider having the attr name converted to snake case?
-  section.asset-ability
-    //- - console.log(ability.id)
-    - attribute=_.snakeCase(ability.id.replace(/asset-(.*)-ability-([0-9])/gi, "ability_checkbox_$1_$2"))
-    //- - console.log(attribute)
-    //- TODO: migrate to using ability id
-    //- - attribute=ability.id
-    +attrToggleCheck(attribute, null, ability.Enabled)
-    //- input(
-    //-   type='checkbox'
-    //-   name=`attr_${attribute}`
-    //-   checked=ability.Enabled||false
-    //- )
-      //- old name=`attr_ability_checkbox_${abilityId}`
-      //- old: name=`attr_assetcheckbox_${abilityId}${number}`
-      //- TODO: see previous
-    +i18n(ability.id)
-    if ability.Input
-      each input in ability.Input
-        //- - inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
-        - inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
-        label.asset-ability-inputBox
-          +i18n(inputId)
-          input(type='text' name=`attr_${inputId}` value='')
-
-mixin assetDescription(asset)
-  - translationDesc = `${asset.id}-description`
-  section.asset-description
-    +i18n(translationDesc)
-
-mixin assetinputBox(inputBox, assetId)
-  //- - id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
-  - id = `${assetId}-textinput-${_.kebabCase(inputBox)}`
-  label.asset-inputBox
-    +i18n(id)
-    input(type='text' name=`attr_${id}` value='')
-    //- old `attr_field-${field}`
-
-mixin assetMeterBar(meter, assetName)
-  +resourceMeterBar(meter.Name, meter.Max, `assettrack_${assetName}`, meter.Min||null)
-  //- section.asset-meter(title=`Asset resource meter: ${_.capitalize(meter.Name)}`)
-  //-   - currentMeter = 0
-  //-   while currentMeter <= meter.Max
-  //-     label.asset-meter-box(title=`Set ${_.capitalize(meter.Name)} to ${currentMeter}`)
-  //-       //- input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
-  //-       +attrToggleRadio(`assettrack_${assetName}`, currentMeter, null, ability.Enabled)
-  //-       //- TODO: migrate?
-  //-       span.asset-meter-box-display!=currentMeter
-  //-       - currentMeter++
-
-
-mixin assetCard(asset, options)
-  //- TODO: migrate to asset attr matching id of asset for clarity/long-term maintainability
-  - name = asset.id.replace(/asset-/i, "")
-  - iconWidth = 64
-  - category = _.kebabCase(asset.Category)
-  if options.visibilityToggle === true
-    input(hidden class=["switch-display", options.classes ? options.classes : "", asset.id] type='checkbox' name=`attr_${name}`)
-  article(class=[`asset-card`,`${options.classes ? options.classes : ""}`,`${asset.id}`,`category-${category}`,`${options.visibilityToggle ? "switchable-display" : ""}`])
-    span.asset-category=asset.Category
-    h3.asset-name=asset.Name
-    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/${asset.id}.svg` alt="").asset-icon
-    if asset.Description
-      +assetDescription(asset)
-    if asset.Input
-      each inputBox in asset.Input
-        +assetinputBox(inputBox, asset.id)
-    section.asset-abilities
-      each ability in asset.Abilities
-        +assetAbility(ability)
-    if asset['Condition Meter'] && options.standalone === false
-      +assetMeterBar(asset['Condition Meter'])
+mixin assetBuilder(assetsArray, listId)
+  each asset in assetsArray
+    input(type='checkbox' name=`attr_${asset.id}` class=["asset-control"])
+    +assetCard(asset, { visibilityToggle: true, standalone: false })
 
 mixin genericAssetBuilder(assetsArray, listId)
   //- Asset Datalist
@@ -83,13 +14,9 @@ mixin genericAssetBuilder(assetsArray, listId)
       //- TODO: migrate to more sensible name scheme
       //- ideally it'd use translation strings as the list 'value', or have some other means of diplaying that more nicely
       - assetIdShort = asset.id.replace("asset-", "")
-      //- generates classes and outputs to stdout
-      //- - console.log(`input[type=checkbox][name=attr_asset][value=${assetIdShort}]:checked + div.asset-card.${asset.id},`)
       option(value=assetIdShort)
         +i18n(`${asset.id}-name`)
     option(value='custom')
       +i18n(`asset-custom-name`)
-
-  //- Asset Content
   each asset in assetsArray
     +assetCard(asset, { visibilityToggle: true, standalone: false })

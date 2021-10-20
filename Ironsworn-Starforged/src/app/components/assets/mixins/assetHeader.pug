@@ -1,0 +1,15 @@
+include ./assetDescription
+include ./assetInputBox
+
+mixin assetHeader(asset, description=true, input=true, category=true)
+  if category
+    span.asset-category=asset.Category
+  h3.asset-name=asset.Name
+  img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/${asset.id}.svg` alt="").asset-icon
+  if description
+    if asset.Description
+      +assetDescription(asset)
+  if input
+    if asset.Input
+      each inputBox in asset.Input
+        +assetInputBox(inputBox, asset.id)

@@ -1,0 +1,4 @@
+include ../../resources/mixins/resourcemeter
+
+mixin assetMeterBar(meter, assetName)
+  +resourceMeterBar(meter.Name, meter.Max, `assettrack_${assetName}`, meter.Min||null)

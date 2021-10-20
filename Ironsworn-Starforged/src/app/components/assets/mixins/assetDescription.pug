@@ -1,0 +1,5 @@
+
+mixin assetDescription(asset)
+  - translationDesc = `${asset.id}-description`
+  section.asset-description
+    +i18n(translationDesc)

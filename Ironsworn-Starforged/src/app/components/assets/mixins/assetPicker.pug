@@ -1,0 +1,21 @@
+include ./assetCard
+include ../../modal/modal
+
+mixin assetPicker(assetList)
+  - let assetCategories = Array.from(new Set(assetList.map(item => item.Category)))
+  +modal("asset-picker-category", "select asset category", "add asset")
+    each category in assetCategories
+      +modalButton(`asset-picker-${_.kebabCase(category)}`, category)
+  each category in assetCategories
+    - let assets = assetList.filter(item => item.Category == category)
+    +modalDialog(`asset-picker-${_.kebabCase(category)}`, "select asset")
+      a(href=`#${asset-picker-category}` class="modal-back") back
+      article.asset-picker-category
+        .asset-list
+          each asset in assets
+            input(type="hidden" name="attr_"+asset.id class=["asset-display"])
+            label(class=["asset-option", asset.id] for=`add-${asset.id}`)
+              +i18n(asset.id+"-name")
+        each asset in assets
+          input(type="radio" id=`add-${asset.id}` value=asset.id name="attr_add-asset" hidden="true")
+          +assetCard(asset)
