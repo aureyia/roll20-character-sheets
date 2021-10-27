@@ -6,7 +6,7 @@
 //-     input(type='checkbox' name=`attr_close_changelog` class='hide-element')
 //-     div.i18n-text(data-i18n='page-info-close')=translation['page-info-close']
 
-- var sheets = [ 'character', 'shared' ]
+- var sheets = [ 'character', 'shared', 'location' ]
 input(type='checkbox' name='attr_modes_choice' class='modes-show hide-element' checked)
 div.modes-show.hide-element
   div.mode-title
@@ -21,10 +21,12 @@ div.modes-show.hide-element
           div.mode-image
             img(src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page}-sheet.png`)
 
-input(type='radio' name='attr_mode' class='character-mode hide-element' value='0')
-div.character-mode.hide-element
-  include ./character/index
-
-input(type='radio' name='attr_mode' class='shared-mode hide-element' value='1')
-div.shared-mode.hide-element
-  include ./shared/index
+each sheet, index in sheets
+  input(type='radio' name='attr_mode' class='shared-mode hide-element' value=`${index}`)
+  div(class=`${sheet}-mode hide-element`)
+    if sheet == 'character'
+      include ./character/index
+    else if sheet == 'shared'
+      include ./shared/index
+    else if sheet == 'location'
+      include ./location/index
