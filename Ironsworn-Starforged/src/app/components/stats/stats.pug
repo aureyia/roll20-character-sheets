@@ -3,10 +3,12 @@ include ../modal/modal
 
 mixin stats
   section.stats
-    h3.title="Stats"
-    +statsStatic()
-    +modal("stats-editor", "Stats")
-      +statsEditor()
+    //- h3.title="Stats"
+    each stat in stats
+      +attrRollable(stat, `stat-${stat}-description`, `stat-${stat}`, `roll-plus-${stat}`)
+    //- +modal("stats-editor", "Stats")
+    //-   +statsEditor()
+    //- +statsStatic()
 
 mixin statsEditor()
   each stat in stats
@@ -15,16 +17,14 @@ mixin statsEditor()
         +i18n(`stat-${stat}`)
         input(
           type='text'
-          class=['stats-input']
           name=`attr_${stat}`
           value='0'
         )
 
 mixin statsStatic()
   each stat in stats
-    +statRollBtn(stat, `stat-${stat}`, ["stat"], true)
-      +i18n(`stat-${stat}`)
-      span(class=['stats-input'] name=`attr_${stat}`)
+    +statRollBtn(stat, {i18n: `stat-${stat}`}, [],)
+      span(class=['attr-display'] name=`attr_${stat}`)
 
 mixin editToggle(parentName, defaultMode="off", ariaLabel)
   section(class=parentName, aria-label=ariaLabel)

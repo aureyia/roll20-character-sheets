@@ -6,7 +6,7 @@
       "summary",
       "quests",
       "bonds",
-      "discoveries",
+      "progress",
       "clocks",
       "assets",
       "ship",
@@ -17,6 +17,6 @@
   {
     "name": "shared",
     "start": "quests",
-    "pages": ["quests","bonds", "discoveries","clocks", "ship"]
+    "pages": ["quests", "bonds", "clocks", "ship"]
   }
 ]

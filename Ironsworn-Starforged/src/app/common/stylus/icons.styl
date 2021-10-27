@@ -1,15 +1,54 @@
-$icon_1d6 = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg"
-$icon_1d6_alt = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6-square.svg"
-$icon_2d10 = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg"
-$icon_1d10 = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d10.svg"
-$icon_action_roll = $icon_1d6
-$icon_progress_roll = $icon_2d10
-$icon_roll_oracle = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/roll-oracle.svg"
-$icon_momentum_burn = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg"
+$icon = {
+  '1d6': "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg",
+  '1d6-alt': "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6-square.svg",
+  '2d10': "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg",
+  '1d10': "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d10.svg",
+  roll-oracle: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/roll-oracle.svg",
+  mark-progress: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg",
+  momentum-burn: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg",
+  legacy-quests: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-quests.svg",
+  legacy-bonds: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-bonds.svg",
+  legacy-discoveries: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-discoveries.svg",
+  progress-ticks: ("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-0.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-1.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-2.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-3.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg"),
+  stat-edge: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/edge.svg",
+  stat-heart: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/heart.svg",
+  stat-iron: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/iron.svg",
+  stat-shadow: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/shadow.svg",
+  stat-wits: "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/wits.svg"
+}
 
-$icon_legacy_quests = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-quests.svg"
-$icon_legacy_bonds = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-bonds.svg"
-$icon_legacy_discoveries = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-discoveries.svg"
 
-$icon_progress_ticks = ("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-0.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-1.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-2.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-3.svg" "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg")
+// generic icon features for use w/ both Starforged icons + r20's icon fonts
+[class*=" note-icon-"], [class^="note-icon-"],
+[class^="sf-icon-"], [class*=" sf-icon-"]
+  &:before
+    display inline-block
+    font-size 1em
+    margin 0 0.25ch 0 0
+  &.icon-btn:before
+    margin 0
+    padding-left 100%
+    height 100%
 
+[class^="sf-icon-"], [class*=" sf-icon-"]
+  &:before
+    background-color currentColor
+    content ""
+    height 1em
+    width 1em
+    mask-size contain
+    mask-repeat no-repeat
+    mask-position center
+for $iconKey, $iconUrl in $icon
+  if $iconKey != "progress-ticks"
+    .sf-icon-{$iconKey}:before
+      mask-image url($iconUrl)
+      // display inline-block
+      // background-color currentColor
+      // content ""
+      // height 1em
+      // width 1em
+      // mask-size contain
+      // mask-repeat no-repeat
+      // mask-position center
+      // margin 0 0.25ch 0 0

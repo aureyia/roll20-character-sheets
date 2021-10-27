@@ -1,0 +1,6 @@
+{
+  "progress-clear-description": "Clear one unit of progress",
+  "progress-mark-description": "Mark one unit of progress",
+  "progress-recommit-description": "Recommit after a progress roll miss, clearing progress and increasing the track's challenge rank",
+  "progress-abandon-description": ""
+}

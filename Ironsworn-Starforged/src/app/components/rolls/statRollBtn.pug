@@ -1,14 +1,8 @@
-include ../../common/pug/translation
-
-mixin statRollBtn(attribute, i18n_key=attribute, classes=[], blockContent=false, iconOnly=false)
+mixin statRollBtn(attr, content, label, description, classes=[])
   button(
-    type="roll"
-    class=classes
-    name=`roll_${attribute}`
-    title=`Roll +${attribute}`
-    value=attribute
-  ).action-roll
-      if blockContent==true
-        block
-      else if iconOnly==false
-        +i18n(i18n_key)
+    type="action"
+    name="act_roll-action"
+    data-stat=`[[@{${attr}}]]`
+    class=[...classes, "sf-icon-1d6"]
+    )&attributes(translateElement(content, label, description))
+    !=translation[content]

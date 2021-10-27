@@ -1,5 +1,5 @@
 // TODO custom roll parsing for oracles should go here
-// on("click:ironsworn-oracle", function(eventInfo) => {
+// on("clicked:ironsworn-oracle", function(eventInfo) => {
 
 // });
 

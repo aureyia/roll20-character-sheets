@@ -132,7 +132,7 @@ body
       align-self end
       line-height 0.7
     .sheet-starforged-icon-action-roll
-      iconBehind($icon_1d6, 4px)
+      iconBehind($icon.1d6, 4px)
       &:before
         color $color_fg_roll_body_alt
         right 0
@@ -207,14 +207,14 @@ body
           color $color_fg_roll_body_alt
     .sheet-action-die
       > .inlinerollresult
-        iconBehind($icon_1d6,0.8em)
+        iconBehind($icon.1d6,0.8em)
         &:before
           mask-origin border-box
     .sheet-challenge-dice
       display flex
       gap 1ch
       > .inlinerollresult
-        iconBehind($icon_1d10,0.8em)
+        iconBehind($icon.1d10,0.8em)
         &:before
           mask-origin border-box
       .fullfail:before
@@ -254,19 +254,18 @@ body
     .sheet-btn
       padding 0
       $btnPadding = 0.75ch
-      $btnTextSize = 1em
 
       &:before
         all initial
 
       &.sheet-strong-hit, &.sheet-strong-hit-match
         > a[href^="~"]
-          btn($color_bg, $color_cta, $btnTextSize, $btnPadding)
+          btn($color_bg, $color_cta, $btnPadding)
           border-color currentColor
 
       &.sheet-weak-hit
         > a[href^="~"]
-          btn($color_bg, $sf_ui_purple, $btnTextSize, $btnPadding)
+          btn($color_bg, $sf_ui_purple, $btnPadding)
           border-color currentColor
 
 

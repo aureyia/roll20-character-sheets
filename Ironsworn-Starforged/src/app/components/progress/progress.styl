@@ -53,7 +53,6 @@ input
     grid-row 2
     grid-column 2 / span 2
     margin 0
-    iconBefore(1.35em, $icon_progress_roll, -0.25em 0.5ch -0.25em -0.25em)
   button[name=act_progress-clear]
     grid-row 3
     grid-column 2
@@ -98,7 +97,7 @@ input
 
 .progress-box-control
   for num in 0..4
-    $bg_image = $icon_progress_ticks[num]
+    $bg_image = $icon.progress-ticks[num]
     &[value^={'"'+num+'"'}] + .progress-box
       &:after
         background-color currentColor
@@ -138,7 +137,8 @@ for $rankStr, $rankInt in $challenge_ranks
   input[name="attr_rank"]
     &[value^={\"}{$rankInt}{\"}]
       ~ .challenge-rank-edit
-        colorThemeDarkColor($rankColor)
+        btn($rankColor, $color_bg)
+        // colorThemeDarkColor($rankColor)
         border-color $rankColor
         & > span[data-i18n=difficulty-{$rankStr}]
           display contents

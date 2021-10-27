@@ -44,6 +44,7 @@ const progressBoxIndexes = Array.from(
   (element, index) => index + 1
 ); // 1-10
 
+
 function incrementProgress(progressRowId, amount=1, amountInTicks=false) {
   log("incrementProgress", ...arguments);
   // if amountInTicks = false, "amount" is a specific number of ticks
@@ -51,10 +52,10 @@ function incrementProgress(progressRowId, amount=1, amountInTicks=false) {
   const boxAttrs = progressBoxIndexes.map(boxIndex => `${progressRowId}_progress_${boxIndex}`);
   log("boxAttrs",boxAttrs);
   const progressAttrs = [...boxAttrs];
-  log("progressAttrs",progressAttrs);
+  log("progressAttrs", progressAttrs);
   const rankAttr = progressRowId+"_rank";
-  log("rankAttr", rankAttr);
   if (amountInTicks == false) {
+    log("rankAttr", rankAttr);
     progressAttrs.push(rankAttr);
   }
   log("progressAttrs", progressAttrs);
@@ -65,9 +66,9 @@ function incrementProgress(progressRowId, amount=1, amountInTicks=false) {
     const oldProgressTicks = boxValues.reduce((a,b) => a+b);
     log("oldProgressTicks", oldProgressTicks)
     let ticksDelta;
-    if (amountInTicks==false) {
+    if (amountInTicks == false) {
       const rankIndex = Number(attrData[rankAttr]);
-      ticksDelta = amount * challengeRanks[rankIndex].mark;
+      ticksDelta = (amount * challengeRanks[rankIndex].mark);
       log("rankIndex, ticksDelta", rankIndex, ticksDelta);
     }
     else {
@@ -89,9 +90,6 @@ function setProgressTicks(progressRowId, toTicksValue) {
   if (toTicksValue > maxProgressTicks) {
     toTicksValue = maxProgressTicks;
   } else if (toTicksValue < 0) {
-    toTicksValue = 0;
-  }
-  else {
     toTicksValue = 0;
   }
   const boxes = progressBoxIndexes.map(boxIndex => `${progressRowId}_progress_${boxIndex}`);
@@ -141,16 +139,7 @@ repeating_progress.forEach(item => {
     ...progressBoxIndexes.map(boxIndex => `${changeEvent}:progress_${boxIndex}`)
   ].join(" ");
 
-
-  // on(progressBoxEvents, eventInfo => {
-  //   // log("repeating progress changed", eventInfo);
-  //   // TODO: bind this to increment
-  //   const boxPrefix = eventInfo.sourceAttribute.replace(/_progress.*$/, "_progress");
-  //   updateProgressFromBoxes(boxPrefix);
-  // });
-
   const clickEvent = `clicked:${repType}`;
-  // on("change:repeating")
 
   on(`${clickEvent}:progress-mark`, eventInfo => {
     log(rowId(eventInfo), eventInfo);

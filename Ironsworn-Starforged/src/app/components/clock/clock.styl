@@ -28,15 +28,17 @@ $segment_color_empty = $color_bg
     width max-content
     height $clock_size
     width $clock_size
-    gap 1em
+    gap 0.5em
     align-content center
+    grid-template-rows max-content
+    grid-auto-rows 1fr
+    grid-auto-columns 1fr
     span
       grid-row 1
       grid-column 1 / span 2
       text-align center
     label
       width auto
-      padding 1em
   .clock-ask-chance-select
     grid-column 2
 
@@ -87,7 +89,7 @@ $segment_color_empty = $color_bg
     display none !important
 
 label.clock-numeric-display
-  labelText()
+  labelTextLg()
   shrinkWrap()
   color $segment_color_empty
   background-color $clock_color_frame

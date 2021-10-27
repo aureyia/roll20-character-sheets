@@ -8,3 +8,6 @@ mixin characterXp
   each xpResource in xpResources
     +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)
 
+mixin characterLegacyXp
+  each xpResource in xpResources
+    +characterResourceCounter(xpResource.id, xpResource.id, xpResource.attribute)

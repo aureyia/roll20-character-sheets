@@ -1,4 +1,5 @@
 include ../progress/mixins/progressTrack
+include ../modal/modal
 
 //-
   @mixin
@@ -6,26 +7,34 @@ include ../progress/mixins/progressTrack
 
   @memberof components/legacies
 
+- legacies = [ 'quests', 'bonds', 'discoveries' ]
 
 mixin legacyTrack(legacy)
   section(class=[legacy, "legacy-track", "progress-track"])
     - let trackName = `legacy_${legacy}_progress`
     +progressTotal(trackName)
-    h2.title
-      span Legacy:
+    h4(class=["title", `sf-icon-legacy-${legacy}`])
       +i18n(`legacy-${legacy}-title`)
     +legacyTrackBar(legacy)
+    +legacyPlusTen(legacy)
+    +legacyMarkBtn(legacy)
     +legacyRollBtn(legacy)
 
 
 mixin legacyTrackBar(legacy)
+  -
+    let translate = {
+      "data-i18n-title": `legacy-${legacy}-tick`,
+      "title": translation[`legacy-${legacy}-tick`],
+      "data-i18n-aria-label": `legacy-${legacy}-tick`,
+      "aria-label": translation[`legacy-${legacy}-tick`]
+    }
   button(
     type="action"
-    name=`act_legacy-${legacy}-mark`
+    name=`act_legacy-mark-${legacy}`
     class=["progress-track-bar"]
-    data-i18n-title="progress-mark"
     value="1"
-    )
+    )&attributes(translate)
     each value in track
       +legacyProgressBox(legacy, value)
 
@@ -34,8 +43,8 @@ mixin legacyTrackBar(legacy)
 //- {legacy_progress_${legacy}-filled}
 //- to
 //- {legacy_${legacy}_progress-filled}
-mixin legacyRollBtn(legacy, iconOnly=true)
-  +progressRollBtn(`Legacy ${legacy} Progress`, `@{legacy_${legacy}_progress-filled}`, "roll", [], false, iconOnly)
+mixin legacyRollBtn(legacy)
+  +progressRollBtn(`Legacy ${legacy} Progress`, `@{legacy_${legacy}_progress-filled}`, "roll", [], false)
 
 mixin legacyProgressBox(legacy, index)
   +progressBox(index, `legacy_${legacy}_progress`, true)
@@ -48,7 +57,13 @@ mixin legacyXpBoxes(legacy, index)
       input(type='checkbox' name=`attr_${legacy}_experience_${index}_${box}` class=["experience-box"])
 
 mixin legacyMarkBtn(legacy)
-  +actionBtn("legacy-mark", null, i18n_key)
+  - let modalId = `legacy-mark-${legacy}-dialog`
+  +modal(modalId, `Mark Legacy: ${legacy}`, "Mark...", ["icon-mark-progress"])
+    span Current progress:
+    span(name=`attr_legacy_${legacy}_progress-filled`)
+    each challengeRank, index in challengeranks
+      - let i18n_key = `difficulty-${challengeRank.text}`
+      +actionBtn(`legacy-mark-${legacy}`, {i18n: i18n_key})
 
 mixin legacyPlusTen(legacy)
   +btn({

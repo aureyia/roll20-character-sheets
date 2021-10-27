@@ -10,10 +10,10 @@ mixin clockSizeRadio(attrPrefix)
     - prefix = _.kebabCase(attrPrefix)+"-"
   else
     - prefix = ""
-  .clock-size-radio
+  section.clock-size-radio
     span Select a size for this clock.
     each clockSize in clockSizes
-      label
+      label.clock-size-option
         !=clockSize
         input(
           type="radio"

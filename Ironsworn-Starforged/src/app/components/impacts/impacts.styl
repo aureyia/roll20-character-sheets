@@ -39,39 +39,47 @@ commaSeparated()
 .impact-group-title
   text-align center
 
-.page-summary
-  .modal-button
-    width max-content
-  > section
-    &:not(.notes)
-      display flex
-      flex-flow row
+$impactPadding = 0.25em
+
+
+boxTopLeftTitle($padding = 0.25em)
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  gap $padding
+  padding $padding
+  borderCommon()
+  border-radius 1em
+  overflow clip
+  .title
+    btn($color_fg, $color_bg)
+    align-self flex-start
+    padding $padding
+    margin-top ($padding*-1)
+    margin-left ($padding*-1)
+    border-bottom-right-radius 1em
+    border-width 0 1px 1px 0
 
 .impacts
-  display flex
-  flex-flow row
-  toggleBtn($color_danger)
-  gap 0.5em
+  boxTopLeftTitle(0.25em)
+  grid-row 1
+  grid-column 2
   .toggle-impact
     border-radius 1em
-    subLabelText()
+    labelTextMed()
 
-tag()
-  borderCommon()
-  border-radius 0.5em
 
 ul.impacts-active
   flexList()
   flex-flow row
+  display: contents;
   .impact-control + li
     display none
   .impact-control[value="on"] + li
     display initial
-    tag()
-    colorThemeDarkColor($color_danger)
-
-
-
+    tag($color_danger)
+    height stretch
+    height -moz-available
 
 .custom-impacts
   display flex

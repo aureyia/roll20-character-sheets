@@ -1,6 +1,6 @@
 {
   "Name": "Assets",
-  "Source": { "Name": "Starforged Backer Preview", "Date": "092921" },
+  "Source": { "Name": "Starforged Backer Preview", "Date": "101221" },
   "Assets": [
     {
       "Name": "Ace",
@@ -32,7 +32,8 @@
           "id": "asset-ace-ability-3"
         }
       ],
-      "id": "asset-ace"
+      "id": "asset-ace",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Agent",
@@ -64,7 +65,8 @@
           "id": "asset-agent-ability-3"
         }
       ],
-      "id": "asset-agent"
+      "id": "asset-agent",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Archer",
@@ -113,7 +115,8 @@
         "Max": 6,
         "id": "asset-archer-meter-ammo"
       },
-      "id": "asset-archer"
+      "id": "asset-archer",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Armored",
@@ -134,7 +137,8 @@
           "id": "asset-armored-ability-3"
         }
       ],
-      "id": "asset-armored"
+      "id": "asset-armored",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Augmented",
@@ -155,7 +159,8 @@
           "id": "asset-augmented-ability-3"
         }
       ],
-      "id": "asset-augmented"
+      "id": "asset-augmented",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Bannersworn",
@@ -176,7 +181,8 @@
           "id": "asset-bannersworn-ability-3"
         }
       ],
-      "id": "asset-bannersworn"
+      "id": "asset-bannersworn",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Banshee",
@@ -224,7 +230,8 @@
         "Max": 4,
         "id": "asset-banshee-meter-health"
       },
-      "id": "asset-banshee"
+      "id": "asset-banshee",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Blademaster",
@@ -245,7 +252,8 @@
           "id": "asset-blademaster-ability-3"
         }
       ],
-      "id": "asset-blademaster"
+      "id": "asset-blademaster",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Bonded",
@@ -267,7 +275,8 @@
           "id": "asset-bonded-ability-3"
         }
       ],
-      "id": "asset-bonded"
+      "id": "asset-bonded",
+      "asset-type": "asset-type-deed"
     },
     {
       "Name": "Bounty Hunter",
@@ -287,7 +296,8 @@
           "id": "asset-bounty-hunter-ability-3"
         }
       ],
-      "id": "asset-bounty-hunter"
+      "id": "asset-bounty-hunter",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Brawler",
@@ -308,7 +318,8 @@
           "id": "asset-brawler-ability-3"
         }
       ],
-      "id": "asset-brawler"
+      "id": "asset-brawler",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Combat Bot",
@@ -368,7 +379,8 @@
         "Max": 5,
         "id": "asset-combat-bot-meter-health"
       },
-      "id": "asset-combat-bot"
+      "id": "asset-combat-bot",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Commander",
@@ -388,7 +400,8 @@
           "id": "asset-commander-ability-3"
         }
       ],
-      "id": "asset-commander"
+      "id": "asset-commander",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Courier",
@@ -425,12 +438,18 @@
         "Max": 5,
         "id": "asset-courier-meter-safety"
       },
-      "id": "asset-courier"
+      "id": "asset-courier",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Devotant",
       "Category": "Path",
-      "Input": ["Name", "Linked Stat"],
+      "Input": ["Name"],
+      "Select": {
+        "Name": "Linked Stat",
+        "Type": "Stat",
+        "Options": ["Edge", "Heart", "Iron", "Shadow", "Wits"]
+      },
       "Abilities": [
         {
           "Text": "<p>You worship a god, power, or entity. Give it a name and choose one of your stats to represent its nature. When you <u>Secure an Advantage</u> or <u>Gain Ground</u> by calling on it for guidance or blessings, roll +linked stat. On a hit, take +1 momentum or +1 spirit. On a strong hit with a match, a miracle or sign manifests; take another +1 momentum or +1 spirit.</p>",
@@ -492,7 +511,8 @@
           "id": "asset-devotant-ability-3"
         }
       ],
-      "id": "asset-devotant"
+      "id": "asset-devotant",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Diplomat",
@@ -512,7 +532,8 @@
           "id": "asset-diplomat-ability-3"
         }
       ],
-      "id": "asset-diplomat"
+      "id": "asset-diplomat",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Empath",
@@ -556,7 +577,8 @@
           "id": "asset-empath-ability-3"
         }
       ],
-      "id": "asset-empath"
+      "id": "asset-empath",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Engine Upgrade",
@@ -576,7 +598,8 @@
           "id": "asset-engine-upgrade-ability-3"
         }
       ],
-      "id": "asset-engine-upgrade"
+      "id": "asset-engine-upgrade",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Exosuit",
@@ -602,7 +625,8 @@
         "Max": 6,
         "id": "asset-exosuit-meter-integrity"
       },
-      "id": "asset-exosuit"
+      "id": "asset-exosuit",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Expanded Hold",
@@ -628,7 +652,8 @@
         "Starts At": 0,
         "id": "asset-expanded-hold-meter-cargo"
       },
-      "id": "asset-expanded-hold"
+      "id": "asset-expanded-hold",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Explorer",
@@ -648,7 +673,8 @@
           "id": "asset-explorer-ability-3"
         }
       ],
-      "id": "asset-explorer"
+      "id": "asset-explorer",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Fated",
@@ -668,7 +694,8 @@
           "id": "asset-fated-ability-3"
         }
       ],
-      "id": "asset-fated"
+      "id": "asset-fated",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Firebrand",
@@ -706,7 +733,8 @@
         "Starts At": 0,
         "id": "asset-firebrand-meter-fire"
       },
-      "id": "asset-firebrand"
+      "id": "asset-firebrand",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Fugitive",
@@ -714,6 +742,11 @@
       "Abilities": [
         {
           "Text": "<p>You are hunted by a power or authority. When you make a move, you may rely on your resourcefulness to improve the result to a strong hit. If you do, mark a box above to represent hunters closing in on you. On the third mark, a notable foe or force has tracked you down. If you overcome them or escape, clear the boxes and mark 1 tick on your quests legacy track.</p>",
+          "Counter": {
+            "Name": "Hunted",
+            "Max": 3,
+            "id": "asset-fugitive-counter-hunted"
+          },
           "Enabled": true,
           "id": "asset-fugitive-ability-1"
         },
@@ -726,13 +759,8 @@
           "id": "asset-fugitive-ability-3"
         }
       ],
-      "Condition Meter": {
-        "Name": "Fugitive",
-        "Max": 3,
-        "Starts At": 0,
-        "id": "asset-fugitive-meter-fugitive"
-      },
-      "id": "asset-fugitive"
+      "id": "asset-fugitive",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Gearhead",
@@ -752,7 +780,8 @@
           "id": "asset-gearhead-ability-3"
         }
       ],
-      "id": "asset-gearhead"
+      "id": "asset-gearhead",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Glowcat",
@@ -778,7 +807,8 @@
         "Max": 3,
         "id": "asset-glowcat-meter-health"
       },
-      "id": "asset-glowcat"
+      "id": "asset-glowcat",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Grappler",
@@ -812,7 +842,8 @@
           "id": "asset-grappler-ability-3"
         }
       ],
-      "id": "asset-grappler"
+      "id": "asset-grappler",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Gunner",
@@ -834,7 +865,8 @@
           "id": "asset-gunner-ability-3"
         }
       ],
-      "id": "asset-gunner"
+      "id": "asset-gunner",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Gunslinger",
@@ -855,7 +887,8 @@
           "id": "asset-gunslinger-ability-3"
         }
       ],
-      "id": "asset-gunslinger"
+      "id": "asset-gunslinger",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Haunted",
@@ -871,11 +904,12 @@
           "id": "asset-haunted-ability-2"
         },
         {
-          "Text": "<p>One time only, when you <u>Fulfill Your Vow</u>(extreme or greater) in service to the spirit, take this ability at no cost and choose one.</p><ul><li>Let them go: Mark 2 ticks on your bonds legacy track for each marked ability, and discard this asset.</li><li>Bolster your link: When you use a HAUNTED asset ability, take +1 momentum on a hit.</li></ul>",
+          "Text": "<p>One time only, when you <u>Fulfill Your Vow</u> (extreme or greater) in service to the spirit, take this ability at no cost and choose one.</p><ul><li>Let them go: Mark 2 ticks on your bonds legacy track for each marked ability, and discard this asset.</li><li>Bolster your link: When you use a HAUNTED asset ability, take +1 momentum on a hit.</li></ul>",
           "id": "asset-haunted-ability-3"
         }
       ],
-      "id": "asset-haunted"
+      "id": "asset-haunted",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Healer",
@@ -895,7 +929,8 @@
           "id": "asset-healer-ability-3"
         }
       ],
-      "id": "asset-healer"
+      "id": "asset-healer",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Heavy Cannons",
@@ -915,7 +950,8 @@
           "id": "asset-heavy-cannons-ability-3"
         }
       ],
-      "id": "asset-heavy-cannons"
+      "id": "asset-heavy-cannons",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Homesteader",
@@ -937,7 +973,8 @@
           "id": "asset-homesteader-ability-3"
         }
       ],
-      "id": "asset-homesteader"
+      "id": "asset-homesteader",
+      "asset-type": "asset-type-deed"
     },
     {
       "Name": "Hoverbike",
@@ -945,7 +982,7 @@
       "Input": ["Name"],
       "Abilities": [
         {
-          "Text": "<p>Your unarmed hoverbike provides speedy planetside ground transport, and is equipped to carry up to two people and their gear. When you <u>Underake an Expedition</u> (+edge), take +1 momentum on a hit. On a strong hit with a match, you also surge ahead or find a new path; mark progress.</p>",
+          "Text": "<p>Your unarmed hoverbike provides speedy planetside ground transport, and is equipped to carry up to two people and their gear. When you <u>Undertake an Expedition</u> (+edge), take +1 momentum on a hit. On a strong hit with a match, you also surge ahead or find a new path; mark progress.</p>",
           "Enabled": true,
           "id": "asset-hoverbike-ability-1"
         },
@@ -963,7 +1000,8 @@
         "Max": 3,
         "id": "asset-hoverbike-meter-integrity"
       },
-      "id": "asset-hoverbike"
+      "id": "asset-hoverbike",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Internal Refit",
@@ -995,7 +1033,8 @@
           "id": "asset-internal-refit-ability-3"
         }
       ],
-      "id": "asset-internal-refit"
+      "id": "asset-internal-refit",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Kinetic",
@@ -1015,7 +1054,8 @@
           "id": "asset-kinetic-ability-3"
         }
       ],
-      "id": "asset-kinetic"
+      "id": "asset-kinetic",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Lore Hunter",
@@ -1036,7 +1076,8 @@
           "id": "asset-lore-hunter-ability-3"
         }
       ],
-      "id": "asset-lore-hunter"
+      "id": "asset-lore-hunter",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Loyalist",
@@ -1056,7 +1097,8 @@
           "id": "asset-loyalist-ability-3"
         }
       ],
-      "id": "asset-loyalist"
+      "id": "asset-loyalist",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Marked",
@@ -1071,7 +1113,11 @@
         },
         {
           "Text": "<p>When you risk your reputation to overcome failure, reroll any dice. If you score a miss, make a mark on this asset. When you have 5 such marks, discard this asset.</p>",
-          "Counter": { "Name": "Marks", "Max": 5 },
+          "Counter": {
+            "Name": "Marks",
+            "Max": 5,
+            "id": "asset-marked-counter-marks"
+          },
           "id": "asset-marked-ability-2"
         },
         {
@@ -1079,7 +1125,8 @@
           "id": "asset-marked-ability-3"
         }
       ],
-      "id": "asset-marked"
+      "id": "asset-marked",
+      "asset-type": "asset-type-deed"
     },
     {
       "Name": "Medbay",
@@ -1099,7 +1146,8 @@
           "id": "asset-medbay-ability-3"
         }
       ],
-      "id": "asset-medbay"
+      "id": "asset-medbay",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Mercenary",
@@ -1119,7 +1167,8 @@
           "id": "asset-mercenary-ability-3"
         }
       ],
-      "id": "asset-mercenary"
+      "id": "asset-mercenary",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Missile Array",
@@ -1144,7 +1193,8 @@
         "Max": 5,
         "id": "asset-missile-array-meter-ammo"
       },
-      "id": "asset-missile-array"
+      "id": "asset-missile-array",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Naturalist",
@@ -1164,7 +1214,8 @@
           "id": "asset-naturalist-ability-3"
         }
       ],
-      "id": "asset-naturalist"
+      "id": "asset-naturalist",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Navigator",
@@ -1184,7 +1235,8 @@
           "id": "asset-navigator-ability-3"
         }
       ],
-      "id": "asset-navigator"
+      "id": "asset-navigator",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Oathbreaker",
@@ -1205,7 +1257,8 @@
           "id": "asset-oathbreaker-ability-3"
         }
       ],
-      "id": "asset-oathbreaker"
+      "id": "asset-oathbreaker",
+      "asset-type": "asset-type-deed"
     },
     {
       "Name": "Outcast",
@@ -1237,7 +1290,8 @@
           "id": "asset-outcast-ability-3"
         }
       ],
-      "id": "asset-outcast"
+      "id": "asset-outcast",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Overseer",
@@ -1298,7 +1352,8 @@
           "id": "asset-overseer-ability-3"
         }
       ],
-      "id": "asset-overseer"
+      "id": "asset-overseer",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Protocol Bot",
@@ -1324,7 +1379,8 @@
         "Max": 3,
         "id": "asset-protocol-bot-meter-health"
       },
-      "id": "asset-protocol-bot"
+      "id": "asset-protocol-bot",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Reinforced Hull",
@@ -1344,7 +1400,8 @@
           "id": "asset-reinforced-hull-ability-3"
         }
       ],
-      "id": "asset-reinforced-hull"
+      "id": "asset-reinforced-hull",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Research Lab",
@@ -1364,7 +1421,8 @@
           "id": "asset-research-lab-ability-3"
         }
       ],
-      "id": "asset-research-lab"
+      "id": "asset-research-lab",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Revenant",
@@ -1397,7 +1455,8 @@
           "id": "asset-revenant-ability-3"
         }
       ],
-      "id": "asset-revenant"
+      "id": "asset-revenant",
+      "asset-type": "asset-type-deed"
     },
     {
       "Name": "Rockhorn",
@@ -1435,7 +1494,8 @@
         "Max": 5,
         "id": "asset-rockhorn-meter-health"
       },
-      "id": "asset-rockhorn"
+      "id": "asset-rockhorn",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Rover",
@@ -1483,7 +1543,8 @@
         "Max": 5,
         "id": "asset-rover-meter-integrity"
       },
-      "id": "asset-rover"
+      "id": "asset-rover",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Scavenger",
@@ -1514,7 +1575,8 @@
           "id": "asset-scavenger-ability-3"
         }
       ],
-      "id": "asset-scavenger"
+      "id": "asset-scavenger",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Scoundrel",
@@ -1546,7 +1608,8 @@
           "id": "asset-scoundrel-ability-3"
         }
       ],
-      "id": "asset-scoundrel"
+      "id": "asset-scoundrel",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Seer",
@@ -1578,7 +1641,8 @@
           "id": "asset-seer-ability-3"
         }
       ],
-      "id": "asset-seer"
+      "id": "asset-seer",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Sensor Array",
@@ -1624,7 +1688,8 @@
           "id": "asset-sensor-array-ability-3"
         }
       ],
-      "id": "asset-sensor-array"
+      "id": "asset-sensor-array",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Service Pod",
@@ -1682,7 +1747,8 @@
         "Max": 4,
         "id": "asset-service-pod-meter-integrity"
       },
-      "id": "asset-service-pod"
+      "id": "asset-service-pod",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Shade",
@@ -1714,7 +1780,8 @@
           "id": "asset-shade-ability-3"
         }
       ],
-      "id": "asset-shade"
+      "id": "asset-shade",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Shields",
@@ -1766,7 +1833,8 @@
         "Starts At": 0,
         "id": "asset-shields-meter-shields"
       },
-      "id": "asset-shields"
+      "id": "asset-shields",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Shuttle",
@@ -1792,7 +1860,8 @@
         "Max": 4,
         "id": "asset-shuttle-meter-integrity"
       },
-      "id": "asset-shuttle"
+      "id": "asset-shuttle",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Skiff",
@@ -1862,7 +1931,8 @@
         "Max": 4,
         "id": "asset-skiff-meter-integrity"
       },
-      "id": "asset-skiff"
+      "id": "asset-skiff",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Sidekick",
@@ -1910,7 +1980,8 @@
         "Max": 4,
         "id": "asset-sidekick-meter-health"
       },
-      "id": "asset-sidekick"
+      "id": "asset-sidekick",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Slayer",
@@ -1930,7 +2001,8 @@
           "id": "asset-slayer-ability-3"
         }
       ],
-      "id": "asset-slayer"
+      "id": "asset-slayer",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Sniper",
@@ -1963,7 +2035,8 @@
           "id": "asset-sniper-ability-3"
         }
       ],
-      "id": "asset-sniper"
+      "id": "asset-sniper",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Snub Fighter",
@@ -1993,7 +2066,10 @@
         },
         {
           "Text": "<p>When you personally defeat a notable foe in your snub fighter, envision the victory mark you make on the fuselage. Tally your victories in this box. For every five, mark 2 ticks on your quests legacy track.</p>",
-          "Counter": { "Name": "Victory Marks" },
+          "Counter": {
+            "Name": "Victory Marks",
+            "id": "asset-snub-fighter-counter-victory-marks"
+          },
           "id": "asset-snub-fighter-ability-3"
         }
       ],
@@ -2002,7 +2078,8 @@
         "Max": 4,
         "id": "asset-snub-fighter-meter-integrity"
       },
-      "id": "asset-snub-fighter"
+      "id": "asset-snub-fighter",
+      "asset-type": "asset-type-support-vehicle"
     },
     {
       "Name": "Sprite",
@@ -2028,7 +2105,8 @@
         "Max": 2,
         "id": "asset-sprite-meter-health"
       },
-      "id": "asset-sprite"
+      "id": "asset-sprite",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Starship",
@@ -2066,7 +2144,8 @@
         "Max": 5,
         "id": "asset-starship-meter-integrity"
       },
-      "id": "asset-starship"
+      "id": "asset-starship",
+      "asset-type": "asset-type-command-vehicle"
     },
     {
       "Name": "Stealth Tech",
@@ -2098,7 +2177,8 @@
           "id": "asset-stealth-tech-ability-3"
         }
       ],
-      "id": "asset-stealth-tech"
+      "id": "asset-stealth-tech",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Survey Bot",
@@ -2158,7 +2238,8 @@
         "Max": 3,
         "id": "asset-survey-bot-meter-health"
       },
-      "id": "asset-survey-bot"
+      "id": "asset-survey-bot",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Symbiote",
@@ -2187,7 +2268,8 @@
         "Max": 2,
         "id": "asset-symbiote-meter-health"
       },
-      "id": "asset-symbiote"
+      "id": "asset-symbiote",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Tech",
@@ -2207,7 +2289,8 @@
           "id": "asset-tech-ability-3"
         }
       ],
-      "id": "asset-tech"
+      "id": "asset-tech",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Trader",
@@ -2249,7 +2332,8 @@
           "id": "asset-trader-ability-3"
         }
       ],
-      "id": "asset-trader"
+      "id": "asset-trader",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Utility Bot",
@@ -2299,7 +2383,8 @@
         "Max": 4,
         "id": "asset-utility-bot-meter-health"
       },
-      "id": "asset-utility-bot"
+      "id": "asset-utility-bot",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Vanguard",
@@ -2345,7 +2430,8 @@
           "id": "asset-vanguard-ability-3"
         }
       ],
-      "id": "asset-vanguard"
+      "id": "asset-vanguard",
+      "asset-type": "asset-type-deed"
     },
     {
       "Name": "Vehicle Bay",
@@ -2365,7 +2451,8 @@
           "id": "asset-vehicle-bay-ability-3"
         }
       ],
-      "id": "asset-vehicle-bay"
+      "id": "asset-vehicle-bay",
+      "asset-type": "asset-type-module"
     },
     {
       "Name": "Vestige",
@@ -2386,7 +2473,8 @@
           "id": "asset-vestige-ability-3"
         }
       ],
-      "id": "asset-vestige"
+      "id": "asset-vestige",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Veteran",
@@ -2406,7 +2494,8 @@
           "id": "asset-veteran-ability-3"
         }
       ],
-      "id": "asset-veteran"
+      "id": "asset-veteran",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Voidborn",
@@ -2426,7 +2515,8 @@
           "id": "asset-voidborn-ability-3"
         }
       ],
-      "id": "asset-voidborn"
+      "id": "asset-voidborn",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Voidglider",
@@ -2476,7 +2566,8 @@
         "Max": 4,
         "id": "asset-voidglider-meter-health"
       },
-      "id": "asset-voidglider"
+      "id": "asset-voidglider",
+      "asset-type": "asset-type-companion"
     },
     {
       "Name": "Weapon Master",
@@ -2508,7 +2599,8 @@
           "id": "asset-weapon-master-ability-3"
         }
       ],
-      "id": "asset-weapon-master"
+      "id": "asset-weapon-master",
+      "asset-type": "asset-type-path"
     },
     {
       "Name": "Workshop",
@@ -2528,7 +2620,8 @@
           "id": "asset-workshop-ability-3"
         }
       ],
-      "id": "asset-workshop"
+      "id": "asset-workshop",
+      "asset-type": "asset-type-module"
     }
   ]
 }

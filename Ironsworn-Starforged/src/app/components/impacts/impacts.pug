@@ -23,9 +23,18 @@ mixin impactToggle(impact)
   - let toggleId = `toggle-${impact.translationId}`
   +attrToggle(impact.attribute, toggleId, impact.translationId, ["toggle-impact"], false)
 
+
+
+
+//- TODO: restyle the impacts() mixin to have a dark button consistent with the stat widgets. the button icon should suggest "config" or "open a menu" to represent the selection modal.
+//- also, momentum probably needs a reset display again. and fix its button!
+//- hex input border should fade a bit, probs. this may mean generating another image for it, ugh
+//- and give it no-repeat
+
+
+
 mixin impacts(impactArray, opts, modalId)
-  +impactSummary(impactArray, opts)
-  +modal(modalId, "Impacts")
+  +modal(modalId, "Impacts", "Impacts", ["note-icon-pencil", "title"])
     article.impact-config
       each group in impactArray
         section.impact-group
@@ -42,6 +51,7 @@ mixin impacts(impactArray, opts, modalId)
             each value in [ 1, 2 ]
               li
                 +otherImpact(value)
+  +impactSummary(impactArray, opts)
 
 
 mixin impactSummaryItem(impact)

@@ -1,39 +1,24 @@
+
+
 .legacies
   display grid
   grid-gap 0.5em
+  grid-column: 1 / span 2;
 
-  .progress-boxes
-    display grid
-    justify-content space-between
-    text-transform uppercase
-    grid-auto-flow column
-
-  .title
-    padding 0.3em 0em 0em 0em
-    font-weight bold
-
-  .ten-marker
-    margin 0
-    padding 0
-    height fit-content
-    justify-self right
-
-  .legacy-roll
-    margin 0
-
-$legacies = { $name: quests, $color: $sf_ui_red, $icon: $icon_legacy_quests } { $name: bonds, $color: $sf_ui_purple, $icon: $icon_legacy_bonds } { $name: discoveries, $color: $sf_ui_blue, $icon: $icon_legacy_discoveries }
+$legacies = { $name: quests, $color: $sf_ui_red, $icon: $icon.legacy_quests } { $name: bonds, $color: $sf_ui_purple, $icon: $icon.legacy_bonds } { $name: discoveries, $color: $sf_ui_blue, $icon: $icon.legacy_discoveries }
 
 .legacy-track
+  grid-column 1 / span 3
   colorThemeDark()
   display grid
   grid-gap 0.3em
-  grid-template-columns auto
-  grid-auto-columns auto
+  grid-template-columns 1fr 2fr max-content
   border-radius 1em
-  padding 1.5em
+  padding 1.25em
   margin 0
   position relative
   &:after
+  // border overlay
     content ''
     position absolute
     height stretch
@@ -50,8 +35,6 @@ $legacies = { $name: quests, $color: $sf_ui_red, $icon: $icon_legacy_quests } { 
     pointer-events none
   for $legacy in $legacies
     &.{$legacy[$name]}
-      .title
-        iconBefore(1em, $legacy[$icon], 0)
       .progress-track-bar
         &:hover
           color $legacy[$color]
@@ -60,43 +43,52 @@ $legacies = { $name: quests, $color: $sf_ui_red, $icon: $icon_legacy_quests } { 
   .title
     grid-column 1
     display flex
-    gap 0.25 em
+    gap 0.25em
+    padding 0
+    font-size 1.25em
+    align-self center
+    align-items center
   .progress-track-bar
-    grid-column 1
-  button[name=act_roll-progress]
-    btn($color_fg, $color_bg)
+    grid-row 1
     grid-column 2
-    height max-content
+  .ten-marker
+    grid-column 3
+  button[name=act_roll-progress]
+    btn()
+    grid-row 1
+    grid-column 4
+    height 33px
     width max-content
-    &:after
-      height 100%
+    padding 0
+  .modal-button
+    grid-column 5
 
 $progress_box_size = 4em
 $xp_box_size = $progress_box_size/5
-$xp_box_border = 2px
-$container_height = $progress_box_size + ($xp_box_size/2)
+// $xp_box_border = 2px
+// $container_height = $progress_box_size + ($xp_box_size/2)
 
 
-.legacies
-  .progress-box
-    height $container_height
-    display grid
-    grid-template-areas "select" "overlap" "checks"
-    // grid-template-rows 1fr ($xp_box_size/2) ($xp_box_size/2)
-    grid-template-columns max-content
-    .progress-box
-      width $progress_box_size
-      height $progress_box_size
-      grid-column 1
-      grid-row-start select-start
-      grid-row-end overlap-end
-      align-self self-start
-    .experience-boxes
-      grid-column 1
-      grid-row-start overlap-start
-      grid-row-end checks-end
-      align-self self-end
-      height max-content
+// .legacies
+//   .progress-box
+//     height $container_height
+//     display grid
+//     grid-template-areas "select" "overlap" "checks"
+//     // grid-template-rows 1fr ($xp_box_size/2) ($xp_box_size/2)
+//     grid-template-columns max-content
+//     .progress-box
+//       width $progress_box_size
+//       height $progress_box_size
+//       grid-column 1
+//       grid-row-start select-start
+//       grid-row-end overlap-end
+//       align-self self-start
+//     .experience-boxes
+//       grid-column 1
+//       grid-row-start overlap-start
+//       grid-row-end checks-end
+//       align-self self-end
+//       height max-content
 
 
 .experience-boxes
@@ -134,3 +126,37 @@ $container_height = $progress_box_size + ($xp_box_size/2)
   //     background-color $color_cta
   &:checked
     background-color $color_cta
+
+
+
+.page-summary
+  display: grid;
+  grid-gap 0.25em
+  .modal-button
+    width max-content
+  .notes
+    grid-column: 1 / span 2;
+
+.legacies
+  align-items center
+  grid-template-columns 1fr
+  grid-template-rows max-content
+  grid-auto-rows 1fr
+  grid-auto-columns max-content
+  > .title
+    padding 0
+    grid-row 1
+  .character-experience, .character-experience-spent
+    grid-row 1
+    padding 0
+    display flex
+    gap 0.25em
+    labelTextMed()
+    align-items center
+    span
+      display block
+    input[type=number]
+      min-width auto
+      max-width auto
+      width 4ch
+      box-sizing border-box

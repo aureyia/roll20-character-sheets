@@ -2,57 +2,48 @@
 include ./mixins/resourcemeter
 include ./mixins/vitals
 include ./mixins/xp
-include ../../components/rolls/rolls
+include ../rolls/rolls
+include ../attrInput/attrInput
 
 -
-  charResources = ['health', 'spirit', 'supply'];
+  charResources = [
+    {attr: 'health', i18n: "resource-health", label: "roll-plus-health"},
+    {attr: 'spirit', i18n: "resource-spirit", label: "roll-plus-spirit"},
+    {attr: 'supply', i18n: "resource-supply", label: "roll-plus-supply"},
+    {attr: 'asset-starship-meter-integrity', i18n: "resource-vehicle-integrity", label: "roll-plus-integrity"}
+    ];
   sharedResources = ['supply'];
   maxStandardResource = 5;
   minStandardResource = 0;
   standardValues = _.range(maxStandardResource, minStandardResource);
   inverse = _.range(minStandardResource, maxStandardResource);
 
-mixin characterResourceDropdownOptions(trackValues)
-  each val in trackValues
-    option(value=val)!=`+${val}`
-
-mixin resourceRollableDropdown(resourceId, sheetType)
-  section(class=[`${sheetType}-${resourceId}`,"resource","resource-numeric"])
-    -
-      trackValues;
-      if (resource == 'wealth')
-        {trackValues = inverse}
-      else
-        {trackValues = standardValues};
-    +statRollBtn(resourceId, `resource-${resourceId}`)
-    select(name=`attr_${resourceId}` title=`Set ${resourceId}`)
-      +characterResourceDropdownOptions(trackValues)
-
-
-mixin characterResourceRollable(resourceId, attribute, i18n_key, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
-  section(id=`${sheetType}-${resourceId}`).resource.resource-numeric.resource-rollable
-    +statRollBtn(attribute, i18n_key)
-    +resourceMeterSpinner(attribute, value, max, min)
+mixin resourceRollable(attribute, i18n, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
+  section(id=`${sheetType}-${attribute}`).resource.resource-numeric.resource-rollable
+    +statRollBtn(attribute, {i18n}, ["title"])
+    +attrSpinner(attribute, value, min, max)
 
 mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId))
-  section(class=[resourceId, "resource","resource-numeric"])
-    label(for=`${resourceId}-input`)
-      +i18n(i18n_key).resource-title
-    +resourceMeterSpinner(attribute)
+  label(class=[resourceId])
+    +i18n(i18n_key).resource-title
+    +attrSpinner(attribute, 0, 0, undefined)
 
 mixin characterResources(resources)
-  section.resources#character-vitals
+  section.vitals
     each textResource in textResources
       +characterResourceText(textResource)
-  section.resources#character-resource-meters
+  section.resource-meters
     each resource in resources
-      +characterResourceRollable(resource, resource, "resource-"+resource, "character")
+      +attrRollable(resource.attr, false, resource.i18n, resource.label, true, maxStandardResource, minStandardResource, maxStandardResource)
+
+    //- +momentumSpinner
     //- +characterXp
 
 mixin sharedResources(resources)
-  div.resources
+  .resources
     each resource in resources
-      +resourceRollableDropdown(resource, shared)
+      +resourceRollable(resource.attr, resource.i18n, "shared")
+
 
 mixin resources(sheetType)
   - resources;

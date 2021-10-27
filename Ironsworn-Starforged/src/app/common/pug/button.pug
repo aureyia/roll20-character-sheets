@@ -11,48 +11,30 @@
     action: 'static' or 'toggle' (default)
   }
 
-mixin actionBtn(action, value=null, i18n_key, classes=[], blockContent=false, iconOnly=false)
-  if (!translation[i18n_key])
-    button(
-    name=`act_${action}`
-    type="action"
-    value=value
-    class=classes
-    title=i18n_key
-    )
-      !=i18n_key
-      if blockContent==true
-        block
-  else if iconOnly == true
-    button(
-      name=`act_${action}`
-      type="action"
-      value=value
-      class=[...classes, "icon-only"]
-      title=translation[i18n_key]
-      data-i18n-title=i18n_key
-      data-i18n-aria-label=i18n_key
-    )
-    if blockContent==true
-      block
-  else
-    button(
-      name=`act_${action}`
-      type="action"
-      value=value
-      class=classes
-      title=translation[i18n_key]
-      data-i18n=i18n_key
-      data-i18n-title=i18n_key
-      data-i18n-aria-label=i18n_key
-    )
-      +i18n(i18n_key)
-      if blockContent==true
-        block
+mixin actionBtn(action, dataObj={}, classes=[])
+  //- TODO: extract this as a function to generate appropriate data objects
+  -
+    if (dataObj["i18n-title"] && !dataObj["i18n-aria-label"]) {
+      dataObj["i18n-aria-label"] = dataObj["i18n-title"]
+    }
+    data = _.mapKeys(dataObj, (value, key) => {
+      return `data-${key}`
+    });
+    // automatically generates En placeholder text
+    for (const key in data) {
+      if (key.match(/^i18n-/)) {
+        data[key.replace(/^i18n-/, "")] = translation[data[key]];
+      }
+    }
+  button(
+  name=`act_${action}`
+  type="action"
+  class=classes
+  )&attributes(data)
 
-
-mixin setAttrBtn(attribute, value, i18n_key, classes=[], iconOnly, blockContent=false)
-  +actionBtn(`set-${attribute}`, value, i18n_key, classes, blockContent, iconOnly)
+mixin setAttrBtn(attribute, data, classes=[])
+  +actionBtn(`set-${attribute}`, data, classes)
+    block
 
 mixin attrToggle(attribute, checkboxId, label, classes=[], checked=false)
   input(hidden type="checkbox" name=`attr_${attribute}` id=checkboxId checked=checked class=["toggle-control", ...classes])

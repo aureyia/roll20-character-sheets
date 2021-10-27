@@ -1,10 +1,13 @@
 include ../../components/legacies/legacy-tracks
 include ../page
+include ../../components/resources/mixins/xp
 
-- legacies = [ 'quests', 'bonds', 'discoveries' ]
+
 
 mixin legaciesPage(sheetType)
   +page("legacies", sheetType)
-    .legacies
+    section.experience
+      +characterLegacyXp
+    section.legacies
       for legacy in legacies
         +legacyTrack(legacy)

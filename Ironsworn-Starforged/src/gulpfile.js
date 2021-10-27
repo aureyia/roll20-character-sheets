@@ -16,9 +16,11 @@ const dataFiles = {
     "assets.json",
     "moves.json",
     "movegroups.json",
-    "oracles_worker_data.json"
+    "index-oracles.json",
+    "index-assets.json",
   ],
-  translations: ["translation-assets.json"]
+  translations: ["translation-assets.json",
+    "translation-glossary.json"]
 };
 async function fetchGameData() {
   return fetchDataforged(dataFiles.data, "./app/data")

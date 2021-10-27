@@ -1,9 +1,149 @@
 
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:i,400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Encode+Sans+Semi+Expanded:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+.ui-dialog .charsheet.charactersheet [class*=" note-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class^="note-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class^="sf-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class*=" sf-icon-"]:before {
+  display: inline-block;
+  font-size: 1em;
+  margin: 0 0.25ch 0 0;
+}
+.ui-dialog .charsheet.charactersheet [class*=" note-icon-"].icon-btn:before,
+.ui-dialog .charsheet.charactersheet [class^="note-icon-"].icon-btn:before,
+.ui-dialog .charsheet.charactersheet [class^="sf-icon-"].icon-btn:before,
+.ui-dialog .charsheet.charactersheet [class*=" sf-icon-"].icon-btn:before {
+  margin: 0;
+  padding-left: 100%;
+  height: 100%;
+}
+.ui-dialog .charsheet.charactersheet [class^="sf-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class*=" sf-icon-"]:before {
+  background-color: currentColor;
+  content: "";
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-1d6:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-1d6-alt:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6-square.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-2d10:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-1d10:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d10.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-roll-oracle:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/roll-oracle.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-mark-progress:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-momentum-burn:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-legacy-quests:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-quests.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-legacy-bonds:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-bonds.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-legacy-discoveries:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-discoveries.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-edge:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/edge.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-heart:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/heart.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-iron:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/iron.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-shadow:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/shadow.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-wits:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/wits.svg");
+}
+.ui-dialog .charsheet.charactersheet [class*=" note-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class^="note-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class^="sf-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class*=" sf-icon-"]:before {
+  display: inline-block;
+  font-size: 1em;
+  margin: 0 0.25ch 0 0;
+}
+.ui-dialog .charsheet.charactersheet [class*=" note-icon-"].icon-btn:before,
+.ui-dialog .charsheet.charactersheet [class^="note-icon-"].icon-btn:before,
+.ui-dialog .charsheet.charactersheet [class^="sf-icon-"].icon-btn:before,
+.ui-dialog .charsheet.charactersheet [class*=" sf-icon-"].icon-btn:before {
+  margin: 0;
+  padding-left: 100%;
+  height: 100%;
+}
+.ui-dialog .charsheet.charactersheet [class^="sf-icon-"]:before,
+.ui-dialog .charsheet.charactersheet [class*=" sf-icon-"]:before {
+  background-color: currentColor;
+  content: "";
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-1d6:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-1d6-alt:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6-square.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-2d10:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-1d10:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d10.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-roll-oracle:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/roll-oracle.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-mark-progress:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-momentum-burn:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-legacy-quests:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-quests.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-legacy-bonds:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-bonds.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-legacy-discoveries:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-discoveries.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-edge:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/edge.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-heart:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/heart.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-iron:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/iron.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-shadow:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/shadow.svg");
+}
+.ui-dialog .charsheet.charactersheet .sf-icon-stat-wits:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/wits.svg");
+}
 .ui-dialog .charsheet.charactersheet, .ui-dialog .charsheet.charactersheet * {
   box-sizing: border-box;
-  padding: initial;
-  font-size: 16px;
 }
 .ui-dialog .charsheet.charactersheet .ironsworn-sheet {
   width: inherit;
@@ -24,15 +164,8 @@
 .ui-dialog .charsheet.charactersheet .pictos {
   font-family: "Pictos" !important;
 }
-.ui-dialog .charsheet.charactersheet input {
-  height: initial;
-  vertical-align: initial;
-}
 .ui-dialog .charsheet.charactersheet hr {
   clear: initial;
-}
-.ui-dialog .charsheet.charactersheet input[type=number] {
-  width: initial;
 }
 .ui-dialog .charsheet.charactersheet .sheet-row,
 .ui-dialog .charsheet.charactersheet .sheet-2colrow,
@@ -63,21 +196,6 @@
   box-shadow: none;
   text-shadow: initial;
 }
-.ui-dialog .charsheet.charactersheet button[type=roll],
-.ui-dialog .charsheet.charactersheet button[type=compendium],
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action],
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress] {
-  margin: unset;
-  padding: unset;
-  font-size: initial;
-}
-.ui-dialog .charsheet.charactersheet button[type=roll]:before,
-.ui-dialog .charsheet.charactersheet button[type=compendium]:before,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action]:before,
-.ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress]:before {
-  content: initial;
-  font-family: initial;
-}
 .ui-dialog .charsheet.charactersheet .repitem.repitembroken {
   border: initial;
 }
@@ -106,7 +224,6 @@
 .ui-dialog .charsheet.charactersheet button[type=roll].ui-draggable-dragging:before,
 .ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-action].ui-draggable-dragging:before,
 .ui-dialog .charsheet.charactersheet button[type=action][name=act_roll-progress].ui-draggable-dragging:before {
-  content: initial;
   font-family: initial;
 }
 .ui-dialog .charsheet.charactersheet button.disabled {
@@ -209,6 +326,7 @@
   font-size: 1em;
   line-height: 1.4;
   font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
+  font-size: inherit;
 }
 .ui-dialog .charsheet.charactersheet ol,
 .ui-dialog .charsheet.charactersheet ul {
@@ -230,7 +348,6 @@
   mask-size: contain;
   mask-repeat: no-repeat;
 }
-.ui-dialog .charsheet.charactersheet label,
 .ui-dialog .charsheet.charactersheet .btn,
 .ui-dialog .charsheet.charactersheet button[type=roll],
 .ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll] {
@@ -246,34 +363,17 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
 }
-.ui-dialog .charsheet.charactersheet label:focus,
-.ui-dialog .charsheet.charactersheet .btn:focus,
-.ui-dialog .charsheet.charactersheet button[type=roll]:focus,
-.ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll]:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet label:active,
 .ui-dialog .charsheet.charactersheet .btn:active,
 .ui-dialog .charsheet.charactersheet button[type=roll]:active,
 .ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll]:active {
@@ -281,7 +381,6 @@
   color: #fff !important;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet label:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet .btn:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet button[type=roll]:hover:not(:disabled),
 .ui-dialog .charsheet.charactersheet button[type=action][name^=act_roll]:hover:not(:disabled) {
@@ -319,9 +418,6 @@
   box-shadow: inset 0 0 0 3px;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet input[type=number] {
-  min-width: 5ch;
-}
 .ui-dialog .charsheet.charactersheet select {
   text-indent: 1px;
   text-overflow: "";
@@ -336,55 +432,23 @@
 .ui-dialog .charsheet.charactersheet textarea {
   max-width: 842px;
 }
-.ui-dialog .charsheet.charactersheet .flex-container {
-  display: flex;
-  align-items: flex-start;
-}
-.ui-dialog .charsheet.charactersheet .flex-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  padding: 0.5em;
-}
-.ui-dialog .charsheet.charactersheet .pc-name {
-  width: 100%;
-  border: 2px solid #040506;
-  border-radius: 0;
-  background: #e6e7e8;
-  color: #040506;
-}
-.ui-dialog .charsheet.charactersheet .border {
-  border: 1px solid #b8c2cd;
-  border-radius: 4px;
+.ui-dialog .charsheet.charactersheet label {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
 }
 .ui-dialog .charsheet.charactersheet textarea.full-width {
   width: 95%;
   resize: vertical;
 }
-.ui-dialog .charsheet.charactersheet div.preview-roll {
-  padding: 0;
-}
-.ui-dialog .charsheet.charactersheet span.preview-roll {
-  margin-left: 1em;
-  width: 30%;
-}
-.ui-dialog .charsheet.charactersheet .button-container-preview {
-  width: 2.4em;
-}
-.ui-dialog .charsheet.charactersheet .no-border {
-  border: 0;
-}
-.ui-dialog .charsheet.charactersheet .requirement-area {
-  margin-bottom: 5px;
-  height: auto;
-}
 .ui-dialog .charsheet.charactersheet input.border-bottom {
   border-bottom: 1px solid #040506;
   border-radius: 0;
-}
-.ui-dialog .charsheet.charactersheet .full-width {
-  margin-top: 0.3em;
-  width: 100%;
 }
 .ui-dialog .charsheet.charactersheet u {
   text-decoration: underline 1pt solid currentColor;
@@ -400,6 +464,9 @@
   width: 4em;
   height: 4.618802153517007em;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.ui-dialog .charsheet.charactersheet .repcontrol {
+  order: 0;
 }
 .ui-dialog .charsheet.charactersheet .repcontrol button.btn {
   width: auto;
@@ -437,6 +504,7 @@
   background-color: #fff;
 }
 .ui-dialog .charsheet.charactersheet .repcontainer {
+  order: 1;
   display: flex;
   flex-flow: column;
   gap: 0.5em;
@@ -478,32 +546,18 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
   width: max-content;
   height: max-content;
-}
-.ui-dialog .charsheet.charactersheet .repcontrol .btn:focus,
-.ui-dialog .charsheet.charactersheet .repcontainer.editmode .repitem .itemcontrol .btn:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .repcontrol .btn:active,
 .ui-dialog .charsheet.charactersheet .repcontainer.editmode .repitem .itemcontrol .btn:active {
@@ -602,22 +656,16 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
   font-family: "Exo", sans-serif, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -636,13 +684,6 @@
   width: -moz-available;
   outline: 0;
   border: 0;
-}
-.ui-dialog .charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .list-group ul li.list-group-item .toggle-btn:active {
   background-color: #040506 !important;
@@ -685,6 +726,40 @@
 .ui-dialog .charsheet.charactersheet input.preview-control:not([value=false]) ~ .preview-main {
   display: flex;
 }
+.ui-dialog .charsheet.charactersheet .toggle-btn {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  background-color: #fff;
+  color: #040506;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+}
+.ui-dialog .charsheet.charactersheet .toggle-btn:active {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .toggle-btn:hover:not(:disabled) {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
 .ui-dialog .charsheet.charactersheet input[type=checkbox].toggle-control {
   display: none;
 }
@@ -702,9 +777,6 @@
   color: #fff;
   border-color: #fff;
   outline-color: #040506;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
   outline-color: #040506;
 }
 .ui-dialog .charsheet.charactersheet .static-btn {
@@ -720,29 +792,16 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet .static-btn:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+  box-shadow: none;
 }
 .ui-dialog .charsheet.charactersheet .static-btn:active {
   background-color: #040506 !important;
@@ -769,84 +828,6 @@
 .ui-dialog .charsheet.charactersheet .btn-input:checked ~ .btn-content {
   background: #040506;
   color: #fff;
-}
-.ui-dialog .charsheet.charactersheet button[type=roll]:before,
-.ui-dialog .charsheet.charactersheet button[type=action]:before {
-  content: none;
-  font-family: inherit;
-}
-.ui-dialog .charsheet.charactersheet button[type=roll].icon-only,
-.ui-dialog .charsheet.charactersheet button[type=action].icon-only {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  color: #040506;
-}
-.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name=act_roll-progress]:before,
-.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name=act_roll-progress]:before {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-  margin: 0;
-  padding: 2px;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: currentColor;
-  background-origin: border-box;
-  content: "";
-  font-size: unset;
-  line-height: unset;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-origin: content-box;
-}
-.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name^=roll_oracle]:before,
-.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name^=roll_oracle]:before {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-  margin: 0;
-  padding: 2px;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: currentColor;
-  background-origin: border-box;
-  content: "";
-  font-size: unset;
-  line-height: unset;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/roll-oracle.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-origin: content-box;
-}
-.ui-dialog .charsheet.charactersheet button[type=roll].icon-only[name=act_roll-action]:before,
-.ui-dialog .charsheet.charactersheet button[type=action].icon-only[name=act_roll-action]:before {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-  margin: 0;
-  padding: 2px;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: currentColor;
-  background-origin: border-box;
-  content: "";
-  font-size: unset;
-  line-height: unset;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-origin: content-box;
 }
 .ui-dialog .charsheet.charactersheet button.placeholder-button {
   background-image: none !important;
@@ -882,32 +863,22 @@
   color: #fff;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 0 solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
   width: 1.5em;
   height: 1.732050807568877em;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-}
-.ui-dialog .charsheet.charactersheet button[type="action"].close-preview-display:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet button[type="action"].close-preview-display:active {
   background-color: #fff !important;
@@ -1000,29 +971,16 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet .modal-button:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+  box-shadow: none;
 }
 .ui-dialog .charsheet.charactersheet .modal-button:active {
   background-color: #040506 !important;
@@ -1045,6 +1003,9 @@
   opacity: 0;
   transition: opacity 500ms;
   display: flex;
+  align-items: center;
+  z-index: 100;
+  padding: 2em;
 }
 .ui-dialog .charsheet.charactersheet .modal-overlay:target {
   visibility: visible;
@@ -1080,30 +1041,17 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
   transition: all 200ms;
-}
-.ui-dialog .charsheet.charactersheet .modal-dialog .close-dialog:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .modal-dialog .close-dialog:active {
   background-color: #040506 !important;
@@ -1128,30 +1076,17 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
   grid-row: 1;
-}
-.ui-dialog .charsheet.charactersheet .modal-dialog .modal-back:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .modal-dialog .modal-back:active {
   background-color: #040506 !important;
@@ -1186,29 +1121,16 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet .page-tab:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+  box-shadow: none;
 }
 .ui-dialog .charsheet.charactersheet .page-tab:active {
   background-color: #040506 !important;
@@ -1235,160 +1157,223 @@
   margin: 0 !important;
   overflow: hidden !important;
 }
-.ui-dialog .charsheet.charactersheet .resource-meter {
-  display: flex;
-  flex-flow: row-reverse;
-  justify-content: center;
-  align-items: stretch;
-  text-align: center;
-  text-anchor: middle;
-}
-.ui-dialog .charsheet.charactersheet .resource-meter-box {
-  margin: 0;
-  padding: 0.25em;
-}
 .ui-dialog .charsheet.charactersheet .resources {
   display: flex;
-  flex-flow: row;
-  justify-content: stretch;
-  width: inherit;
-  height: max-content;
+}
+.ui-dialog .charsheet.charactersheet .resources input[type=text] {
+  width: 10ch;
+  flex: 1;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr {
+  border-radius: 1em;
+  overflow: clip;
   border: 2px solid #040506;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource {
+  padding-bottom: 0.25em;
+  gap: 0.25em;
   display: flex;
-  align-items: stretch;
-  padding: 0;
-  background-color: currentColor;
-  gap: 1px;
-  border: 2px solid #040506;
-  flex-grow: 1;
-  margin: 0;
-  min-width: max-content;
-  max-width: 768px;
-  height: max-content;
+  flex-direction: column;
 }
-.ui-dialog .charsheet.charactersheet .resources .resource > * {
-  margin: 0;
-  border: 0;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource > button,
-.ui-dialog .charsheet.charactersheet .resources .resource > label {
-  display: flex;
-  flex: 0;
-  width: max-content;
-  border: none;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource > button,
-.ui-dialog .charsheet.charactersheet .resources .resource label {
-  min-width: max-content;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-numeric button,
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-numeric label {
-  flex-grow: 3;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-numeric input[type=number] {
-  display: flex;
-  flex-grow: 1;
-  padding: 0;
-  min-width: 1ch;
-  max-width: 4ch;
-  font-weight: bold;
-  font-size: 125%;
-  padding-inline-start: 5px;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-rollable {
-  width: 3.5ch;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-string button,
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-string label {
-  flex-grow: 0;
-  max-width: max-content;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-string input[type=text] {
-  flex-grow: 1;
-  width: 15ch;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-string#character-name {
-  flex-grow: 2;
-}
-.ui-dialog .charsheet.charactersheet .resources .resource.resource-string#character-name input[type=text] {
-  width: 20ch;
-}
-.ui-dialog .charsheet.charactersheet .resource-spinner {
-  display: grid;
-  grid-template-areas: "input plus" "input minus";
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr min-content;
-  gap: 1px;
-}
-.ui-dialog .charsheet.charactersheet .resource-spinner input[type=number] {
-  grid-area: input;
-}
-.ui-dialog .charsheet.charactersheet .resource-spinner button {
-  padding: 0;
-  width: 1.6ch;
-  border: 0;
-  color: #fff;
-  font-size: 100%;
+.ui-dialog .charsheet.charactersheet .rollable-attr button[name='act_roll-action'] {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
   line-height: 1;
-  visibility: visible !important;
-  opacity: 1 !important;
-  transition: 0.3s;
+  background-color: #040506;
+  color: #fff;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+  border-width: 0 0 1px;
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-plus {
-  grid-area: plus;
+.ui-dialog .charsheet.charactersheet .rollable-attr button[name='act_roll-action']:active {
+  background-color: #fff !important;
+  color: #040506 !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr button[name='act_roll-action']:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #040506 !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display {
+  align-self: center;
+  display: flex;
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 800;
+  line-height: 1;
+  line-height: 1;
+  gap: 0.25em;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .increment-attr {
+  order: 1;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  color: #fff;
+  border-width: 0;
+  display: flex;
+  font-size: 1.25em;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 2ch;
+  height: 2.309401076758503ch;
+  background: #28aae1;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  align-self: center;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  overflow: visible;
+  border-radius: 0;
+  display: block;
+  outline: none;
+  box-shadow: none;
+  scale: none;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .increment-attr:before {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .increment-attr:before {
+  position: absolute;
+  content: '';
+  top: 2px;
+  left: 2px;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  background: #28aae1;
+  z-index: -2;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .increment-attr:hover {
   background-color: #28aae1;
-  color: #fff;
+  color: #28aae1;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .increment-attr:hover:before {
+  background-color: #fff;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display input[type=number] {
+  display: flex;
+  font-size: 1.25em;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box-unchecked.svg");
+  appearance: textfield;
+  padding: 0;
+  text-align: center;
+  box-shadow: none;
+  border: none;
+  width: 2.5ch;
+  height: 2.886751345948129ch;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background-position: center;
+  background-size: contain;
+  order: 2;
+}
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .decrement-attr {
+  order: 3;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
+  color: #fff;
+  border-width: 0;
+  display: flex;
+  font-size: 1.25em;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 2ch;
+  height: 2.309401076758503ch;
+  background: #ce242b;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  align-self: center;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  overflow: visible;
+  border-radius: 0;
+  display: block;
+  outline: none;
+  box-shadow: none;
+  scale: none;
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-plus:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .decrement-attr:before {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-plus:active {
-  background-color: #fff !important;
-  color: #28aae1 !important;
-  text-decoration: none;
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .decrement-attr:before {
+  position: absolute;
+  content: '';
+  top: 2px;
+  left: 2px;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  background: #ce242b;
+  z-index: -2;
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-plus:hover:not(:disabled) {
-  background-color: #fff !important;
-  color: #28aae1 !important;
-  text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-minus {
-  grid-area: minus;
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .decrement-attr:hover {
   background-color: #ce242b;
-  color: #fff;
-  cursor: pointer;
-  transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
+  color: #ce242b;
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-minus:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+.ui-dialog .charsheet.charactersheet .rollable-attr .number-display .decrement-attr:hover:before {
+  background-color: #fff;
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-minus:active {
-  background-color: #fff !important;
-  color: #ce242b !important;
-  text-decoration: none;
+.ui-dialog .charsheet.charactersheet input.minmax[value=max] + .spinner ~ button.increment-attr {
+  pointer-events: none !important;
+  opacity: 0.25 !important;
 }
-.ui-dialog .charsheet.charactersheet .resource-spinner button.spinner-minus:hover:not(:disabled) {
-  background-color: #fff !important;
-  color: #ce242b !important;
-  text-decoration: none;
+.ui-dialog .charsheet.charactersheet input.minmax[value=max] + .spinner ~ button.increment-attr:hover {
+  color: inherit;
+  background: inherit;
+}
+.ui-dialog .charsheet.charactersheet input.minmax[value=min] + .spinner ~ button.decrement-attr {
+  pointer-events: none !important;
+  opacity: 0.25 !important;
+}
+.ui-dialog .charsheet.charactersheet input.minmax[value=min] + .spinner ~ button.decrement-attr:hover {
+  color: inherit;
+  background: inherit;
+}
+.ui-dialog .charsheet.charactersheet .resource-meters {
+  display: grid;
+  gap: 0.25em;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+.ui-dialog .charsheet.charactersheet .resource-meters .resource-rollable {
+  grid-row: 1;
+}
+.ui-dialog .charsheet.charactersheet .resource-meters .momentum {
+  grid-row: 2;
+  grid-column: 1/span 4;
+  display: flex;
+  height: max-content;
+}
+.ui-dialog .charsheet.charactersheet .resource-string {
+  display: flex;
+  flex-flow: row;
+  padding: 0;
+  align-items: center;
+}
+.ui-dialog .charsheet.charactersheet .resource-string span {
+  display: block;
+  flex-grow: 0;
+  padding: 0.25em;
 }
 .ui-dialog .charsheet.charactersheet .connections {
   margin-bottom: 0px;
@@ -1491,30 +1476,16 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet button[name=act_progress-clear]:focus,
-.ui-dialog .charsheet.charactersheet button[name=act_progress-recommit]:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+  box-shadow: none;
 }
 .ui-dialog .charsheet.charactersheet button[name=act_progress-clear]:active,
 .ui-dialog .charsheet.charactersheet button[name=act_progress-recommit]:active {
@@ -1582,18 +1553,6 @@
   grid-row: 2;
   grid-column: 2/span 2;
   margin: 0;
-}
-.ui-dialog .charsheet.charactersheet .progress-track button[name=act_roll-progress]:before {
-  display: inline-block;
-  width: 1.35em;
-  height: 1.35em;
-  background-color: currentColor;
-  content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  margin: -0.25em 0.5ch -0.25em -0.25em;
 }
 .ui-dialog .charsheet.charactersheet .progress-track button[name=act_progress-clear] {
   grid-row: 3;
@@ -1690,14 +1649,42 @@
   border-color: #28aae1;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-edit {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #28aae1;
   color: #fff;
-  border-color: #fff;
-  outline-color: #28aae1;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
   text-stroke: 2px #000;
   -webkit-text-stroke: 2px #000;
   paint-order: stroke fill;
   border-color: #28aae1;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-edit:active {
+  background-color: #fff !important;
+  color: #28aae1 !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-edit:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #28aae1 !important;
+  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="1"] ~ .challenge-rank-edit > span[data-i18n=difficulty-troublesome] {
   display: contents;
@@ -1723,14 +1710,42 @@
   border-color: #5175cf;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-edit {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #5175cf;
   color: #fff;
-  border-color: #fff;
-  outline-color: #5175cf;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
   text-stroke: 2px #000;
   -webkit-text-stroke: 2px #000;
   paint-order: stroke fill;
   border-color: #5175cf;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-edit:active {
+  background-color: #fff !important;
+  color: #5175cf !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-edit:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #5175cf !important;
+  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="2"] ~ .challenge-rank-edit > span[data-i18n=difficulty-dangerous] {
   display: contents;
@@ -1750,20 +1765,42 @@
   color: #fff;
   border-color: #fff;
   outline-color: #892890;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
   border-color: #892890;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-edit {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #892890;
   color: #fff;
-  border-color: #fff;
-  outline-color: #892890;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
   border-color: #892890;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-edit:active {
+  background-color: #fff !important;
+  color: #892890 !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-edit:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #892890 !important;
+  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="3"] ~ .challenge-rank-edit > span[data-i18n=difficulty-formidable] {
   display: contents;
@@ -1773,9 +1810,6 @@
   color: #fff;
   border-color: #fff;
   outline-color: #892890;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
   border-color: #892890;
 }
 .ui-dialog .charsheet.charactersheet .challenge-rank-extreme {
@@ -1783,20 +1817,42 @@
   color: #fff;
   border-color: #fff;
   outline-color: #be0064;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
   border-color: #be0064;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-edit {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #be0064;
   color: #fff;
-  border-color: #fff;
-  outline-color: #be0064;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
   border-color: #be0064;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-edit:active {
+  background-color: #fff !important;
+  color: #be0064 !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-edit:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #be0064 !important;
+  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="4"] ~ .challenge-rank-edit > span[data-i18n=difficulty-extreme] {
   display: contents;
@@ -1806,9 +1862,6 @@
   color: #fff;
   border-color: #fff;
   outline-color: #be0064;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
   border-color: #be0064;
 }
 .ui-dialog .charsheet.charactersheet .challenge-rank-epic {
@@ -1822,14 +1875,42 @@
   border-color: #ce242b;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-edit {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #ce242b;
   color: #fff;
-  border-color: #fff;
-  outline-color: #ce242b;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
   text-stroke: 2px #000;
   -webkit-text-stroke: 2px #000;
   paint-order: stroke fill;
   border-color: #ce242b;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-edit:active {
+  background-color: #fff !important;
+  color: #ce242b !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-edit:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #ce242b !important;
+  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet input[name="attr_rank"][value^="5"] ~ .challenge-rank-edit > span[data-i18n=difficulty-epic] {
   display: contents;
@@ -1882,35 +1963,17 @@
 .ui-dialog .charsheet.charactersheet .legacies {
   display: grid;
   grid-gap: 0.5em;
-}
-.ui-dialog .charsheet.charactersheet .legacies .progress-boxes {
-  display: grid;
-  justify-content: space-between;
-  text-transform: uppercase;
-  grid-auto-flow: column;
-}
-.ui-dialog .charsheet.charactersheet .legacies .title {
-  padding: 0.3em 0em 0em 0em;
-  font-weight: bold;
-}
-.ui-dialog .charsheet.charactersheet .legacies .ten-marker {
-  margin: 0;
-  padding: 0;
-  height: fit-content;
-  justify-self: right;
-}
-.ui-dialog .charsheet.charactersheet .legacies .legacy-roll {
-  margin: 0;
+  grid-column: 1/span 2;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track {
+  grid-column: 1/span 3;
   background-color: #040506;
   color: #fff;
   display: grid;
   grid-gap: 0.3em;
-  grid-template-columns: auto;
-  grid-auto-columns: auto;
+  grid-template-columns: 1fr 2fr max-content;
   border-radius: 1em;
-  padding: 1.5em;
+  padding: 1.25em;
   margin: 0;
   position: relative;
 }
@@ -1930,53 +1993,17 @@
   right: 0.5em;
   pointer-events: none;
 }
-.ui-dialog .charsheet.charactersheet .legacy-track.quests .title:before {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-color: currentColor;
-  content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-quests.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  margin: 0;
-}
 .ui-dialog .charsheet.charactersheet .legacy-track.quests .progress-track-bar:hover {
   color: #ce242b;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track.quests:after {
   border-color: #ce242b;
 }
-.ui-dialog .charsheet.charactersheet .legacy-track.bonds .title:before {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-color: currentColor;
-  content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-bonds.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  margin: 0;
-}
 .ui-dialog .charsheet.charactersheet .legacy-track.bonds .progress-track-bar:hover {
   color: #892890;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track.bonds:after {
   border-color: #892890;
-}
-.ui-dialog .charsheet.charactersheet .legacy-track.discoveries .title:before {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-color: currentColor;
-  content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-discoveries.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  margin: 0;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track.discoveries .progress-track-bar:hover {
   color: #28aae1;
@@ -1988,9 +2015,17 @@
   grid-column: 1;
   display: flex;
   gap: 0.25em;
+  padding: 0;
+  font-size: 1.25em;
+  align-self: center;
+  align-items: center;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track .progress-track-bar {
-  grid-column: 1;
+  grid-row: 1;
+  grid-column: 2;
+}
+.ui-dialog .charsheet.charactersheet .legacy-track .ten-marker {
+  grid-column: 3;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track button[name=act_roll-progress] {
   font-family: "Exo", sans-serif, Arial, sans-serif;
@@ -2001,70 +2036,38 @@
   font-weight: 600;
   font-size: 1em;
   line-height: 1;
-  background-color: #040506;
-  color: #fff;
+  background-color: #fff;
+  color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
-  grid-column: 2;
-  height: max-content;
+  box-shadow: none;
+  grid-row: 1;
+  grid-column: 4;
+  height: 33px;
   width: max-content;
-}
-.ui-dialog .charsheet.charactersheet .legacy-track button[name=act_roll-progress]:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+  padding: 0;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track button[name=act_roll-progress]:active {
-  background-color: #fff !important;
-  color: #040506 !important;
+  background-color: #040506 !important;
+  color: #fff !important;
   text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .legacy-track button[name=act_roll-progress]:hover:not(:disabled) {
-  background-color: #fff !important;
-  color: #040506 !important;
+  background-color: #040506 !important;
+  color: #fff !important;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet .legacy-track button[name=act_roll-progress]:after {
-  height: 100%;
-}
-.ui-dialog .charsheet.charactersheet .legacies .progress-box {
-  height: 4.4em;
-  display: grid;
-  grid-template-areas: "select" "overlap" "checks";
-  grid-template-columns: max-content;
-}
-.ui-dialog .charsheet.charactersheet .legacies .progress-box .progress-box {
-  width: 4em;
-  height: 4em;
-  grid-column: 1;
-  grid-row-start: select-start;
-  grid-row-end: overlap-end;
-  align-self: self-start;
-}
-.ui-dialog .charsheet.charactersheet .legacies .progress-box .experience-boxes {
-  grid-column: 1;
-  grid-row-start: overlap-start;
-  grid-row-end: checks-end;
-  align-self: self-end;
-  height: max-content;
+.ui-dialog .charsheet.charactersheet .legacy-track .modal-button {
+  grid-column: 5;
 }
 .ui-dialog .charsheet.charactersheet .experience-boxes {
   box-sizing: border-box;
@@ -2092,9 +2095,6 @@
   color: #28aae1;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   appearance: none;
   border: 0;
   margin: 0;
@@ -2103,13 +2103,6 @@
   width: 0.8em;
   cursor: pointer;
   background-color: #fff;
-}
-.ui-dialog .charsheet.charactersheet .experience-box:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .experience-box:active {
   background-color: #28aae1 !important;
@@ -2124,16 +2117,67 @@
 .ui-dialog .charsheet.charactersheet .experience-box:checked {
   background-color: #28aae1;
 }
+.ui-dialog .charsheet.charactersheet .page-summary {
+  display: grid;
+  grid-gap: 0.25em;
+}
+.ui-dialog .charsheet.charactersheet .page-summary .modal-button {
+  width: max-content;
+}
+.ui-dialog .charsheet.charactersheet .page-summary .notes {
+  grid-column: 1/span 2;
+}
+.ui-dialog .charsheet.charactersheet .legacies {
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: max-content;
+}
+.ui-dialog .charsheet.charactersheet .legacies > .title {
+  padding: 0;
+  grid-row: 1;
+}
+.ui-dialog .charsheet.charactersheet .legacies .character-experience,
+.ui-dialog .charsheet.charactersheet .legacies .character-experience-spent {
+  grid-row: 1;
+  padding: 0;
+  display: flex;
+  gap: 0.25em;
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
+  text-transform: none;
+  word-spacing: 0.1ch;
+  letter-spacing: 0.025ch;
+  align-items: center;
+}
+.ui-dialog .charsheet.charactersheet .legacies .character-experience span,
+.ui-dialog .charsheet.charactersheet .legacies .character-experience-spent span {
+  display: block;
+}
+.ui-dialog .charsheet.charactersheet .legacies .character-experience input[type=number],
+.ui-dialog .charsheet.charactersheet .legacies .character-experience-spent input[type=number] {
+  min-width: auto;
+  max-width: auto;
+  width: 4ch;
+  box-sizing: border-box;
+}
 .ui-dialog .charsheet.charactersheet .stats {
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  display: flex;
-  flex-flow: row;
-}
-.ui-dialog .charsheet.charactersheet .stats .stat {
-  display: flex;
-  flex-flow: column;
+  gap: 0.25em;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  width: max-content;
 }
 .ui-dialog .charsheet.charactersheet .note-area {
   border-radius: 0.5em;
@@ -2673,12 +2717,21 @@
   font-size: 1em;
   line-height: 1.4;
   font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  word-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.25;
+  word-spacing: 0.05ch;
+  letter-spacing: 0;
   font-size: 75%;
   display: block;
   align-self: end;
   margin-left: 1em;
   color: #4f5051;
   font-style: italic;
+}
+.ui-dialog .charsheet.charactersheet article.gamerules .move-progress-label u {
+  text-decoration: underline 0.075em solid currentColor;
+  text-underline-offset: 0.15em;
 }
 .ui-dialog .charsheet.charactersheet article.gamerules .move-table {
   width: 30.5em;
@@ -2752,100 +2805,101 @@
 .ui-dialog .charsheet.charactersheet .embedded-btn {
   padding-top: 0.2em !important;
 }
-.ui-dialog .charsheet.charactersheet #asset-picker .asset-display[value=on] + .asset-option {
-  display: none;
+.ui-dialog .charsheet.charactersheet .page-assets {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
 }
-.ui-dialog .charsheet.charactersheet .asset-picker-category {
-  display: grid;
+.ui-dialog .charsheet.charactersheet .page-assets .repcontainer[data-groupname="repeating_assets"] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  gap: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  order: 1;
 }
-.ui-dialog .charsheet.charactersheet .asset-picker-category .asset-list {
-  grid-column: 1;
-}
-.ui-dialog .charsheet.charactersheet .asset-picker-category .asset-card {
-  grid-column: 2;
-  grid-row: 1;
-  transition: opacity 0.25s;
-}
-.ui-dialog .charsheet.charactersheet input[name="attr_add-asset"]:not(:checked) + .asset-card {
-  visibility: hidden !important;
-  z-index: -10;
-  opacity: 0 !important;
-  pointer-events: none;
-}
-.ui-dialog .charsheet.charactersheet .ability-checkbox,
-.ui-dialog .charsheet.charactersheet .build-text {
-  font-family: "Encode Sans Condensed", Arial, sans-serif;
-  margin: 0 0.5em 0 0.4em;
-  width: 22em;
-  height: 100px;
-  resize: none;
+.ui-dialog .charsheet.charactersheet .page-assets .repcontainer[data-groupname="repeating_assets"] .repitem {
+  width: max-content;
+  height: max-content;
 }
 .ui-dialog .charsheet.charactersheet .asset-container {
   display: inline-block;
   width: 20em;
-  font-size: 1em;
-}
-.ui-dialog .charsheet.charactersheet .asset-container input {
-  width: inherit;
-}
-.ui-dialog .charsheet.charactersheet .asset-container input.border-bottom {
-  padding: 0;
-  border-bottom-color: #040506;
 }
 .ui-dialog .charsheet.charactersheet .asset-card {
+  border-width: 0.111111111111111em;
+  border-style: solid;
+  border-color: #b8c2cd;
+  column-gap: 0.222222222222222em;
+  background-position: top right, top 1.02em right 1.09em;
+  position: relative;
   display: grid;
   box-sizing: border-box;
-  padding: 1em;
+  padding: 1em 0.9em 1em 1em;
   width: 20em;
   height: 28em;
-  border: 0.111111111111111em solid #b7c3ce;
-  background-position: top right;
   background-origin: border-box;
-  background-size: 7.6em auto;
+  background-size: 7.6em auto, 4em auto;
   background-repeat: no-repeat;
-  grid-template-areas: "assetcategory icon" "name icon" "input icon" "description icon" "body body" "footer footer";
+  grid-template-areas: "header ." "body body" "footer footer";
   grid-template-columns: 1fr 4em;
-  grid-template-rows: max-content max-content max-content max-content 1fr max-content;
-}
-.ui-dialog .charsheet.charactersheet input.asset-control:checked + .asset-card {
-  display: none;
+  grid-template-rows: minmax(4.618802153517007em, max-content) 1fr max-content;
 }
 .ui-dialog .charsheet.charactersheet .asset-card .asset-header {
-  display: contents;
+  grid-area: header;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: max-content max-content;
+  grid-auto-rows: max-content;
+  align-items: center;
 }
-.ui-dialog .charsheet.charactersheet .asset-category,
-.ui-dialog .charsheet.charactersheet .asset-name {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-name {
   font-family: "Exo", Arial, sans-serif;
   text-align: left;
   text-transform: uppercase;
 }
-.ui-dialog .charsheet.charactersheet .asset-name {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description {
+  text-transform: none;
+  word-spacing: 0.1ch;
+  letter-spacing: 0.025ch;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  word-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.25;
+  word-spacing: 0.05ch;
+  letter-spacing: 0;
+  font-size: 90%;
+}
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities u,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description u {
+  text-decoration: underline 0.075em solid currentColor;
+  text-underline-offset: 0.15em;
+}
+.ui-dialog .charsheet.charactersheet .asset-card .asset-name {
   height: 1.027777777777778em;
   font-weight: 800;
   font-size: 1.348958333333333em;
   line-height: 1.027777777777778em;
-  grid-area: name;
+  word-spacing: 0;
+  max-width: 12.5ch;
 }
-.ui-dialog .charsheet.charactersheet .asset-category {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-type {
   height: 0.638888888888889em;
   font-weight: 600;
   font-size: 0.838541666666667em;
   line-height: 0.638888888888889em;
-  grid-area: assetcategory;
 }
-.ui-dialog .charsheet.charactersheet img.asset-icon {
-  align-self: start;
-  box-sizing: border-box;
-  margin: 0;
-  margin-top: 0;
-  margin-top: 0;
-  padding: 0;
-  width: 4em;
-  height: 4.618802153517007em;
-  grid-area: icon;
-  justify-self: end;
-}
-.ui-dialog .charsheet.charactersheet .asset-inputBox {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-textinput,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-select {
   display: flex;
   margin: 0;
   padding: 0;
@@ -2854,63 +2908,108 @@
   border-bottom: 0.111111111111111em solid #000;
   font-size: 0.780208333333333em;
   cursor: pointer;
-  grid-area: input;
+  box-sizing: border-box;
+  align-items: end;
+  line-height: 1;
 }
-.ui-dialog .charsheet.charactersheet .asset-inputBox span {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-textinput span,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-select span {
   align-self: end;
   width: max-content;
   height: min-content;
-  color: #b7c3ce;
+  color: #b8c2cd;
   font-family: "Exo", Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 1;
+  white-space: nowrap;
 }
-.ui-dialog .charsheet.charactersheet .asset-inputBox input[type=text] {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-textinput input[type=text],
+.ui-dialog .charsheet.charactersheet .asset-card .asset-select input[type=text],
+.ui-dialog .charsheet.charactersheet .asset-card .asset-textinput select,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-select select {
   font-family: "Encode Sans Condensed", Arial, sans-serif;
-  margin-bottom: 0.111111111111111em;
+  margin: 0;
   width: stretch;
   width: -moz-available;
   border: none;
   background: transparent;
   font-weight: 500;
+  align-self: end;
+  padding: 0 0 0 0.25em;
+  height: stretch;
+  height: -moz-available;
 }
-.ui-dialog .charsheet.charactersheet section.asset-abilities,
-.ui-dialog .charsheet.charactersheet section.asset-description,
-.ui-dialog .charsheet.charactersheet section.asset-abilities *,
-.ui-dialog .charsheet.charactersheet section.asset-description * {
-  line-height: 1.143888888888889em;
-  font-family: "Encode Sans Condensed", Arial, sans-serif;
-  letter-spacing: 0.01ch;
+.ui-dialog .charsheet.charactersheet .asset-card .asset-textinput option,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-select option {
+  padding: 0;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities p,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description p,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities ul,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description ul,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities li,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description li {
+  text-transform: none;
+  word-spacing: 0.1ch;
+  letter-spacing: 0.025ch;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  word-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.25;
+  word-spacing: 0.05ch;
+  letter-spacing: 0;
+}
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities p u,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description p u,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities ul u,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description ul u,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities li u,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description li u {
+  text-decoration: underline 0.075em solid currentColor;
+  text-underline-offset: 0.15em;
+}
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities li,
+.ui-dialog .charsheet.charactersheet .asset-card .asset-description li {
+  margin: 0;
+}
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities {
   display: flex;
   flex-flow: column;
   grid-area: body;
-  gap: 0.090555555555556em;
+  gap: 0.25em;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability {
-  display: flex;
-  gap: 0.458333333333333em;
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability {
+  gap: 0.3em;
+  display: grid;
+  grid-auto-placement: row;
+  grid-template-columns: max-content 1fr;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability .i18n-text {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability .asset-textinput {
+  grid-column: 2;
+}
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability span.i18n-text {
   display: block;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability ul,
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability ul li {
-  margin: 0;
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability ul li {
+  margin: 0.222222222222222em 0;
   padding: 0;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability input[type="checkbox"] {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability input[type="checkbox"] {
+  grid-column: 1;
   flex-grow: 0;
   flex-shrink: 0;
   align-self: start;
+  justify-self: start;
   appearance: none;
-  width: 0.875em;
-  height: 1.010362971081845em;
+  width: 1em;
+  height: 1.154700538379252em;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-  width: 0.875em;
-  height: 1.010362971081845em;
+  width: 1em;
+  height: 1.154700538379252em;
   border: none;
   background-color: transparent;
   background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-checkbox-unchecked.svg");
@@ -2919,25 +3018,37 @@
   color: currentColor;
   cursor: pointer;
   transition: 0.3s;
-  margin-left: 0.111111111111111em;
+  margin-top: 0.075em;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability input[type="checkbox"]:hover {
-  background-color: #221e1f;
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability input[type="checkbox"]:hover {
+  background-color: #040506;
 }
-.ui-dialog .charsheet.charactersheet .asset-abilities .asset-ability input[type="checkbox"]:checked {
+.ui-dialog .charsheet.charactersheet .asset-card .asset-abilities .asset-ability input[type="checkbox"]:checked {
   background-color: currentColor;
 }
-.ui-dialog .charsheet.charactersheet section.resource-meter {
+.ui-dialog .charsheet.charactersheet .asset-counter {
+  grid-area: footer;
+  width: 5ch;
+  align-self: end;
+  justify-self: end;
+  text-align: center;
+}
+.ui-dialog .charsheet.charactersheet .resource-meter {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  color: #b8c2cd;
   font-weight: 700;
   font-family: "Exo", sans-serif;
   transition: 0.5s ease;
   grid-area: footer;
 }
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box {
+.ui-dialog .charsheet.charactersheet .resource-meter button {
+  order: -1;
+  width: max-content;
+  margin-left: auto;
+  width: 2em;
+}
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2945,141 +3056,1310 @@
   margin: 0;
   margin-right: -0.144444444444444em;
   padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  height: max-content;
+  width: max-content;
+  color: #040506;
+  background-color: #fff;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  z-index: 0;
+}
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box span {
+  font-size: 1.154700538379252em;
+}
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box input[type="radio"] {
+  border: 0;
+  z-index: -1;
+  appearance: none;
+  width: 2em;
+  height: 2.309401076758503em;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   width: 2em;
   height: 2.309401076758503em;
   border: none;
-  cursor: pointer;
-  transition: inherit;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box input[type="radio"] {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box:first-child:hover {
-  color: #ce242b;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box:first-child input[type="radio"]:checked + .resource-meter-box-display {
-  background-color: #ce242b;
-  color: #040506;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box:last-child:hover {
-  color: #28aae1;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box:last-child input[type="radio"]:checked + .resource-meter-box-display {
-  background-color: #28aae1;
-  color: #040506;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box .resource-meter-box-display {
-  background-color: #fff;
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box-unchecked.svg");
+  background-color: transparent;
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box.svg");
   background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: #221e1f;
-  font-size: 1.154700538379252em;
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box-checked.svg");
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
+  background-size: 100%;
+  color: currentColor;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box .resource-meter-box-display:hover {
-  color: #040506;
-}
-.ui-dialog .charsheet.charactersheet section.resource-meter label.resource-meter-box input[type="radio"]:checked + .resource-meter-box-display {
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box input[type="radio"]:hover {
   background-color: #040506;
+}
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box input[type="radio"]:checked {
+  background-color: currentColor;
+}
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box input[type="radio"]:hover + span,
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box input[type="radio"]:checked + span {
   color: #fff;
 }
-.ui-dialog .charsheet.charactersheet .resource-meter-wordy {
-  text-transform: uppercase;
-}
-.ui-dialog .charsheet.charactersheet .resource-meter-wordy .resource-meter-box {
-  flex-direction: row;
-}
-.ui-dialog .charsheet.charactersheet .asset-type-selection {
-  border: 0;
-  background: #040506;
-  color: #fff;
-}
-.ui-dialog .charsheet.charactersheet .asset-type-dropdown {
-  margin: 6px 4px;
-  width: auto;
-  background: #040506;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
-  appearance: menulist;
-}
-.ui-dialog .charsheet.charactersheet .sub-dropdown {
-  margin: 7px 4px;
-  width: auto;
-  text-transform: uppercase;
-  font-weight: bold;
-  appearance: menulist;
-}
-.ui-dialog .charsheet.charactersheet .custom .ability-view:first-child {
-  margin-top: 1em;
-}
-.ui-dialog .charsheet.charactersheet .builder-name {
-  margin-bottom: 0.5em;
-}
-.ui-dialog .charsheet.charactersheet .asset-content-header {
+.ui-dialog .charsheet.charactersheet .resource-meter .resource-meter-box span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
-.ui-dialog .charsheet.charactersheet .asset-details {
-  align-self: center;
-  padding-left: 1em;
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-command-vehicle .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-command-vehicle .resource-meter .resource-meter-box {
+  color: #9aa3ad;
 }
-.ui-dialog .charsheet.charactersheet .asset-options-header {
-  padding: 0.2em 0.4em;
-  width: 100%;
-  border: 0;
-  border-radius: 0.4em 0.4em 0 0;
-  background: #040506;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: "Exo", Arial, sans-serif;
-}
-.ui-dialog .charsheet.charactersheet .asset-options-header:placeholder {
-  color: #b9b9b9;
-}
-.ui-dialog .charsheet.charactersheet .custom {
-  padding: 0.5em;
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-path {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-path.svg");
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-path .asset-category {
-  color: #3f7faa;
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-companion {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-companion.svg");
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-companion .asset-category {
-  color: #3d8b8a;
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-module {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-module.svg");
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-module .asset-category {
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-module .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-module .resource-meter .resource-meter-box {
   color: #7f5a90;
 }
-.ui-dialog .charsheet.charactersheet .asset-card.category-support-vehicle {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-support-vehicle.svg");
-}
-.ui-dialog .charsheet.charactersheet .asset-card.category-support-vehicle .asset-category {
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-support-vehicle .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-support-vehicle .resource-meter .resource-meter-box {
   color: #495790;
 }
-.ui-dialog .charsheet.charactersheet .asset-card.category-deed {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-deed.svg");
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-path .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-path .resource-meter .resource-meter-box {
+  color: #3f7faa;
 }
-.ui-dialog .charsheet.charactersheet .asset-card.category-deed .asset-category {
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-companion .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-companion .resource-meter .resource-meter-box {
+  color: #3d8b8a;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-deed .asset-type,
+.ui-dialog .charsheet.charactersheet .asset-card.asset-type-deed .resource-meter .resource-meter-box {
   color: #40834f;
 }
-.ui-dialog .charsheet.charactersheet .asset-card.category-command-vehicle {
-  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-asset-bg-command-vehicle.svg");
+.ui-dialog .charsheet.charactersheet .asset-card.asset-ace {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-ace.svg");
 }
-.ui-dialog .charsheet.charactersheet .asset-card.category-command-vehicle .asset-category {
-  color: #9aa3ad;
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-ace]) ~ .asset-card.asset-ace {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-ace] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-agent {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-agent.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-agent]) ~ .asset-card.asset-agent {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-agent] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-archer {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-archer.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-archer]) ~ .asset-card.asset-archer {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-archer] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-armored {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-armored.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-armored]) ~ .asset-card.asset-armored {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-armored] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-augmented {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-augmented.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-augmented]) ~ .asset-card.asset-augmented {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-augmented] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-bannersworn {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-bannersworn.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-bannersworn]) ~ .asset-card.asset-bannersworn {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-bannersworn] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-banshee {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-banshee.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-banshee]) ~ .asset-card.asset-banshee {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-banshee] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-blademaster {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-blademaster.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-blademaster]) ~ .asset-card.asset-blademaster {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-blademaster] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-bonded {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-deed.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-bonded.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-bonded]) ~ .asset-card.asset-bonded {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-bonded] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-bounty-hunter {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-bounty-hunter.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-bounty-hunter]) ~ .asset-card.asset-bounty-hunter {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-bounty-hunter] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-brawler {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-brawler.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-brawler]) ~ .asset-card.asset-brawler {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-brawler] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-combat-bot {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-combat-bot.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-combat-bot]) ~ .asset-card.asset-combat-bot {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-combat-bot] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-commander {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-commander.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-commander]) ~ .asset-card.asset-commander {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-commander] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-courier {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-courier.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-courier]) ~ .asset-card.asset-courier {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-courier] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-devotant {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-devotant.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-devotant]) ~ .asset-card.asset-devotant {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-devotant] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-diplomat {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-diplomat.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-diplomat]) ~ .asset-card.asset-diplomat {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-diplomat] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-empath {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-empath.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-empath]) ~ .asset-card.asset-empath {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-empath] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-engine-upgrade {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-engine-upgrade.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-engine-upgrade]) ~ .asset-card.asset-engine-upgrade {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-engine-upgrade] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-exosuit {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-exosuit.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-exosuit]) ~ .asset-card.asset-exosuit {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-exosuit] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-expanded-hold {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-expanded-hold.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-expanded-hold]) ~ .asset-card.asset-expanded-hold {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-expanded-hold] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-explorer {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-explorer.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-explorer]) ~ .asset-card.asset-explorer {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-explorer] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-fated {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-fated.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-fated]) ~ .asset-card.asset-fated {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-fated] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-firebrand {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-firebrand.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-firebrand]) ~ .asset-card.asset-firebrand {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-firebrand] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-fugitive {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-fugitive.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-fugitive]) ~ .asset-card.asset-fugitive {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-fugitive] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-gearhead {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-gearhead.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-gearhead]) ~ .asset-card.asset-gearhead {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-gearhead] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-glowcat {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-glowcat.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-glowcat]) ~ .asset-card.asset-glowcat {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-glowcat] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-grappler {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-grappler.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-grappler]) ~ .asset-card.asset-grappler {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-grappler] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-gunner {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-gunner.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-gunner]) ~ .asset-card.asset-gunner {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-gunner] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-gunslinger {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-gunslinger.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-gunslinger]) ~ .asset-card.asset-gunslinger {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-gunslinger] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-haunted {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-haunted.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-haunted]) ~ .asset-card.asset-haunted {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-haunted] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-healer {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-healer.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-healer]) ~ .asset-card.asset-healer {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-healer] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-heavy-cannons {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-heavy-cannons.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-heavy-cannons]) ~ .asset-card.asset-heavy-cannons {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-heavy-cannons] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-homesteader {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-deed.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-homesteader.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-homesteader]) ~ .asset-card.asset-homesteader {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-homesteader] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-hoverbike {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-hoverbike.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-hoverbike]) ~ .asset-card.asset-hoverbike {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-hoverbike] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-internal-refit {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-internal-refit.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-internal-refit]) ~ .asset-card.asset-internal-refit {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-internal-refit] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-kinetic {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-kinetic.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-kinetic]) ~ .asset-card.asset-kinetic {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-kinetic] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-lore-hunter {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-lore-hunter.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-lore-hunter]) ~ .asset-card.asset-lore-hunter {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-lore-hunter] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-loyalist {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-loyalist.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-loyalist]) ~ .asset-card.asset-loyalist {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-loyalist] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-marked {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-deed.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-marked.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-marked]) ~ .asset-card.asset-marked {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-marked] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-medbay {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-medbay.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-medbay]) ~ .asset-card.asset-medbay {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-medbay] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-mercenary {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-mercenary.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-mercenary]) ~ .asset-card.asset-mercenary {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-mercenary] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-missile-array {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-missile-array.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-missile-array]) ~ .asset-card.asset-missile-array {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-missile-array] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-naturalist {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-naturalist.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-naturalist]) ~ .asset-card.asset-naturalist {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-naturalist] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-navigator {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-navigator.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-navigator]) ~ .asset-card.asset-navigator {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-navigator] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-oathbreaker {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-deed.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-oathbreaker.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-oathbreaker]) ~ .asset-card.asset-oathbreaker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-oathbreaker] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-outcast {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-outcast.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-outcast]) ~ .asset-card.asset-outcast {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-outcast] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-overseer {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-overseer.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-overseer]) ~ .asset-card.asset-overseer {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-overseer] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-protocol-bot {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-protocol-bot.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-protocol-bot]) ~ .asset-card.asset-protocol-bot {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-protocol-bot] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-reinforced-hull {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-reinforced-hull.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-reinforced-hull]) ~ .asset-card.asset-reinforced-hull {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-reinforced-hull] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-research-lab {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-research-lab.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-research-lab]) ~ .asset-card.asset-research-lab {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-research-lab] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-revenant {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-deed.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-revenant.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-revenant]) ~ .asset-card.asset-revenant {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-revenant] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-rockhorn {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-rockhorn.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-rockhorn]) ~ .asset-card.asset-rockhorn {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-rockhorn] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-rover {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-rover.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-rover]) ~ .asset-card.asset-rover {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-rover] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-scavenger {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-scavenger.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-scavenger]) ~ .asset-card.asset-scavenger {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-scavenger] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-scoundrel {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-scoundrel.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-scoundrel]) ~ .asset-card.asset-scoundrel {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-scoundrel] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-seer {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-seer.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-seer]) ~ .asset-card.asset-seer {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-seer] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-sensor-array {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-sensor-array.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-sensor-array]) ~ .asset-card.asset-sensor-array {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-sensor-array] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-service-pod {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-service-pod.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-service-pod]) ~ .asset-card.asset-service-pod {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-service-pod] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-shade {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-shade.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-shade]) ~ .asset-card.asset-shade {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-shade] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-shields {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-shields.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-shields]) ~ .asset-card.asset-shields {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-shields] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-shuttle {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-shuttle.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-shuttle]) ~ .asset-card.asset-shuttle {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-shuttle] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-skiff {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-skiff.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-skiff]) ~ .asset-card.asset-skiff {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-skiff] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-sidekick {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-sidekick.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-sidekick]) ~ .asset-card.asset-sidekick {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-sidekick] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-slayer {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-slayer.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-slayer]) ~ .asset-card.asset-slayer {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-slayer] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-sniper {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-sniper.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-sniper]) ~ .asset-card.asset-sniper {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-sniper] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-snub-fighter {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-support-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-snub-fighter.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-snub-fighter]) ~ .asset-card.asset-snub-fighter {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-snub-fighter] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-sprite {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-sprite.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-sprite]) ~ .asset-card.asset-sprite {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-sprite] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-starship {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-command-vehicle.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-starship.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-starship]) ~ .asset-card.asset-starship {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-starship] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-stealth-tech {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-stealth-tech.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-stealth-tech]) ~ .asset-card.asset-stealth-tech {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-stealth-tech] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-survey-bot {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-survey-bot.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-survey-bot]) ~ .asset-card.asset-survey-bot {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-survey-bot] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-symbiote {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-symbiote.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-symbiote]) ~ .asset-card.asset-symbiote {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-symbiote] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-tech {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-tech.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-tech]) ~ .asset-card.asset-tech {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-tech] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-trader {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-trader.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-trader]) ~ .asset-card.asset-trader {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-trader] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-utility-bot {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-utility-bot.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-utility-bot]) ~ .asset-card.asset-utility-bot {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-utility-bot] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-vanguard {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-deed.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-vanguard.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-vanguard]) ~ .asset-card.asset-vanguard {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-vanguard] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-vehicle-bay {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-vehicle-bay.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-vehicle-bay]) ~ .asset-card.asset-vehicle-bay {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-vehicle-bay] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-vestige {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-vestige.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-vestige]) ~ .asset-card.asset-vestige {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-vestige] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-veteran {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-veteran.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-veteran]) ~ .asset-card.asset-veteran {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-veteran] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-voidborn {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-voidborn.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-voidborn]) ~ .asset-card.asset-voidborn {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-voidborn] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-voidglider {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-companion.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-voidglider.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-voidglider]) ~ .asset-card.asset-voidglider {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-voidglider] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-weapon-master {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-path.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-weapon-master.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-weapon-master]) ~ .asset-card.asset-weapon-master {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-weapon-master] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet .asset-card.asset-workshop {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/asset-bg/asset-type-module.svg"), url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/asset-workshop.svg");
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=asset-workshop]) ~ .asset-card.asset-workshop {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=asset-workshop] + input.asset-picker {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker:not([value=custom]) ~ .custom {
+  display: none;
+}
+.ui-dialog .charsheet.charactersheet input[type=hidden].asset-picker[value=custom] + input.asset-picker {
+  display: none;
 }
 .ui-dialog .charsheet.charactersheet input[name=attr_oracle-preview-display][value=oracle-category-move] ~ .preview-main .oracle-category-move {
   display: grid;
@@ -4450,29 +5730,16 @@
   color: #040506;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.25em;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet .momentum-burn:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
+  box-shadow: none;
 }
 .ui-dialog .charsheet.charactersheet .momentum-burn:active {
   background-color: #040506 !important;
@@ -4484,20 +5751,14 @@
   color: #fff !important;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet #momentum {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  justify-items: center;
+.ui-dialog .charsheet.charactersheet .momentum {
   background-color: #fff;
   color: #040506;
-  border: 4px solid #040506;
-  flex-flow: row;
-  align-items: stretch;
+  display: grid;
+  border: 2px solid #040506;
+  border-radius: 1em;
 }
-.ui-dialog .charsheet.charactersheet #momentum .momentum-header {
+.ui-dialog .charsheet.charactersheet .momentum .momentum-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4515,32 +5776,52 @@
   padding: 0.25em;
   width: max-content;
 }
-.ui-dialog .charsheet.charactersheet #momentum button.momentum-burn {
+.ui-dialog .charsheet.charactersheet .momentum button.momentum-burn {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #fff;
   color: #040506;
-  border-width: 0;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+  background-color: #040506;
+  color: #fff;
 }
-.ui-dialog .charsheet.charactersheet #momentum button.momentum-burn:before {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-color: currentColor;
-  content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  margin: 0 0.25ch 0 0;
+.ui-dialog .charsheet.charactersheet .momentum button.momentum-burn:active {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet #momentum button.momentum-burn,
-.ui-dialog .charsheet.charactersheet #momentum .momentum-status-box {
-  flex-grow: 1;
+.ui-dialog .charsheet.charactersheet .momentum button.momentum-burn:hover:not(:disabled) {
+  background-color: #040506 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .momentum button.momentum-burn,
+.ui-dialog .charsheet.charactersheet .momentum .momentum-status-box {
   max-width: max-content;
   width: max-content;
   white-space: nowrap;
+  height: -moz-available;
+  height: stretch;
 }
-.ui-dialog .charsheet.charactersheet #momentum .momentum-status-box,
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box {
+.ui-dialog .charsheet.charactersheet .momentum .momentum-status-box,
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box {
   font-family: "Exo", sans-serif, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -4551,7 +5832,7 @@
   line-height: 1;
   color: #4f5051;
 }
-.ui-dialog .charsheet.charactersheet #momentum .momentum-status-box {
+.ui-dialog .charsheet.charactersheet .momentum .momentum-status-box {
   text-transform: none;
   word-spacing: 0.1ch;
   letter-spacing: 0.025ch;
@@ -4559,9 +5840,18 @@
   font-size: 1em;
   line-height: 1.4;
   font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  word-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.25;
+  word-spacing: 0.05ch;
+  letter-spacing: 0;
   font-size: 90%;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter {
+.ui-dialog .charsheet.charactersheet .momentum .momentum-status-box u {
+  text-decoration: underline 0.075em solid currentColor;
+  text-underline-offset: 0.15em;
+}
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter {
   display: flex;
   flex-grow: 10;
   margin: 0;
@@ -4570,93 +5860,83 @@
   background-image: linear-gradient(-90deg, #ce242b, #c80052, #b10074, #892890, #7b47aa, #685fbf, #5175cf, #3988d9, #259adf, #28aae1);
   gap: 2px;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box,
-.ui-dialog .charsheet.charactersheet #momentum .momentum-status-box,
-.ui-dialog .charsheet.charactersheet #momentum button[name=act_momentum-burn] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box,
+.ui-dialog .charsheet.charactersheet .momentum .momentum-status-box,
+.ui-dialog .charsheet.charactersheet .momentum button[name=act_momentum-burn] {
   padding: 0.25em;
   width: max-content;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box {
   background-color: #fff;
   color: transparent;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   width: 5.882352941176471%;
   border: none;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
-}
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box:active {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box:active {
   background-color: transparent !important;
   color: #fff !important;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box:hover:not(:disabled) {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box:hover:not(:disabled) {
   background-color: transparent !important;
   color: #fff !important;
   text-decoration: none;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_-6] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_-6] {
   color: #ce242b;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_-5] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_-5] {
   color: #cd073f;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_-4] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_-4] {
   color: #c80052;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_-3] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_-3] {
   color: #be0064;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_-2] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_-2] {
   color: #b10074;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_-1] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_-1] {
   color: #9f1883;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_0] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_0] {
   color: #892890;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_1] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_1] {
   color: #813ca0;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_2] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_2] {
   color: #784caf;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_3] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_3] {
   color: #6c5bbc;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_4] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_4] {
   color: #5f68c6;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_5] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_5] {
   color: #5175cf;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_6] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_6] {
   color: #4280d6;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_7] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_7] {
   color: #348cdb;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_8] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_8] {
   color: #2896de;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_9] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_9] {
   color: #23a0e0;
 }
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box[for=momentum_10] {
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box[for=momentum_10] {
   color: #28aae1;
 }
-.ui-dialog .charsheet.charactersheet #momentum input[type=radio][name=attr_momentum]:checked + .resource-meter-box,
-.ui-dialog .charsheet.charactersheet #momentum .resource-meter-box:hover {
+.ui-dialog .charsheet.charactersheet .momentum input[type=radio][name=attr_momentum]:checked + .resource-meter-box,
+.ui-dialog .charsheet.charactersheet .momentum .resource-meter-box:hover {
   background-color: transparent !important;
   color: #fff !important;
   paint-order: stroke fill;
@@ -4701,39 +5981,57 @@
 .ui-dialog .charsheet.charactersheet .impact-group-title {
   text-align: center;
 }
-.ui-dialog .charsheet.charactersheet .page-summary .modal-button {
-  width: max-content;
-}
-.ui-dialog .charsheet.charactersheet .page-summary > section:not(.notes) {
-  display: flex;
-  flex-flow: row;
-}
 .ui-dialog .charsheet.charactersheet .impacts {
   display: flex;
-  flex-flow: row;
-  gap: 0.5em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  padding: 0.25em;
+  border: 2px solid #040506;
+  border-radius: 1em;
+  overflow: clip;
+  grid-row: 1;
+  grid-column: 2;
 }
-.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control {
-  display: none;
-}
-.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control + .toggle-btn {
-  background-color: #fff;
-  color: #040506;
-  border-color: #040506;
-  outline-color: transparent;
-  outline-width: 2px;
-  outline-style: solid;
-}
-.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control:checked + .toggle-btn,
-.ui-dialog .charsheet.charactersheet .impacts input[type=checkbox].toggle-control + .toggle-btn:hover {
+.ui-dialog .charsheet.charactersheet .impacts .title {
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
   background-color: #040506;
   color: #fff;
-  border-color: #fff;
-  outline-color: #040506;
-  text-stroke: 2px #000;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
-  outline-color: #ce242b;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: 2px solid #040506;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0.25em;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+  align-self: flex-start;
+  padding: 0.25em;
+  margin-top: -0.25em;
+  margin-left: -0.25em;
+  border-bottom-right-radius: 1em;
+  border-width: 0 1px 1px 0;
+}
+.ui-dialog .charsheet.charactersheet .impacts .title:active {
+  background-color: #fff !important;
+  color: #040506 !important;
+  text-decoration: none;
+}
+.ui-dialog .charsheet.charactersheet .impacts .title:hover:not(:disabled) {
+  background-color: #fff !important;
+  color: #040506 !important;
+  text-decoration: none;
 }
 .ui-dialog .charsheet.charactersheet .impacts .toggle-impact {
   border-radius: 1em;
@@ -4743,7 +6041,7 @@
   word-spacing: 0.25ch;
   letter-spacing: 0.05ch;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1;
   font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
   text-transform: none;
@@ -4755,6 +6053,7 @@
   margin: 0;
   gap: 0.25em;
   flex-flow: row;
+  display: contents;
 }
 .ui-dialog .charsheet.charactersheet ul.impacts-active li {
   display: flex;
@@ -4768,8 +6067,8 @@
 }
 .ui-dialog .charsheet.charactersheet ul.impacts-active .impact-control[value="on"] + li {
   display: initial;
-  border: 2px solid #040506;
   border-radius: 0.5em;
+  padding: 0.25em 0.5em;
   background-color: #ce242b;
   color: #fff;
   border-color: #fff;
@@ -4777,6 +6076,22 @@
   text-stroke: 2px #000;
   -webkit-text-stroke: 2px #000;
   paint-order: stroke fill;
+  font-family: "Exo", sans-serif, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25ch;
+  letter-spacing: 0.05ch;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  font-family: "Encode Sans Semi Expanded", sans-serif, Arial, sans-serif;
+  text-transform: none;
+  word-spacing: 0.1ch;
+  letter-spacing: 0.025ch;
+  font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  font-weight: 400;
+  height: stretch;
+  height: -moz-available;
 }
 .ui-dialog .charsheet.charactersheet .custom-impacts {
   display: flex;
@@ -4813,8 +6128,11 @@
   width: max-content;
   height: 7em;
   width: 7em;
-  gap: 1em;
+  gap: 0.5em;
   align-content: center;
+  grid-template-rows: max-content;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
 }
 .ui-dialog .charsheet.charactersheet .clock .clock-size-radio span {
   grid-row: 1;
@@ -4823,7 +6141,6 @@
 }
 .ui-dialog .charsheet.charactersheet .clock .clock-size-radio label {
   width: auto;
-  padding: 1em;
 }
 .ui-dialog .charsheet.charactersheet .clock .clock-ask-chance-select {
   grid-column: 2;
@@ -5090,11 +6407,6 @@
   min-width: max-content;
   width: 100%;
 }
-.ui-dialog .charsheet.charactersheet .page {
-  display: flex;
-  flex-flow: column;
-  gap: 1em;
-}
 .ui-dialog .charsheet.charactersheet .scene-challenges,
 .ui-dialog .charsheet.charactersheet .campaign-clocks,
 .ui-dialog .charsheet.charactersheet .vows,
@@ -5268,19 +6580,19 @@
   opacity: 0 !important;
   transition: opacity 0.5s;
 }
-.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=discoveries] ~ .page-tab[name=act_set-sheet-character-display][value=discoveries],
-.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=discoveries] ~ .page-tab[name=act_set-sheet-character-display][value=discoveries] {
+.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=progress] ~ .page-tab[name=act_set-sheet-character-display][value=progress],
+.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=progress] ~ .page-tab[name=act_set-sheet-character-display][value=progress] {
   background-color: #040506 !important;
   color: #fff !important;
 }
-.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=discoveries] ~ article#sheet-character-page-discoveries,
-.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=discoveries] ~ article#sheet-character-page-discoveries {
+.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display][value=progress] ~ article#sheet-character-page-progress,
+.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display][value=progress] ~ article#sheet-character-page-progress {
   visibility: visible !important;
   opacity: 1 !important;
   transition: opacity 0.5s;
 }
-.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display]:not([value=discoveries]) ~ article#sheet-character-page-discoveries,
-.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display]:not([value=discoveries]) ~ article#sheet-character-page-discoveries {
+.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-character-display]:not([value=progress]) ~ article#sheet-character-page-progress,
+.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-character-display]:not([value=progress]) ~ article#sheet-character-page-progress {
   visibility: hidden !important;
   overflow: hidden !important;
   margin: 0 !important;
@@ -5452,29 +6764,6 @@
   opacity: 0 !important;
   transition: opacity 0.5s;
 }
-.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=discoveries] ~ .page-tab[name=act_set-sheet-shared-display][value=discoveries],
-.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=discoveries] ~ .page-tab[name=act_set-sheet-shared-display][value=discoveries] {
-  background-color: #040506 !important;
-  color: #fff !important;
-}
-.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=discoveries] ~ article#sheet-shared-page-discoveries,
-.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=discoveries] ~ article#sheet-shared-page-discoveries {
-  visibility: visible !important;
-  opacity: 1 !important;
-  transition: opacity 0.5s;
-}
-.ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display]:not([value=discoveries]) ~ article#sheet-shared-page-discoveries,
-.ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display]:not([value=discoveries]) ~ article#sheet-shared-page-discoveries {
-  visibility: hidden !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  border: 0 !important;
-  opacity: 0 !important;
-  transition: opacity 0.5s;
-}
 .ui-dialog .charsheet.charactersheet input.tabber[name=attr_sheet-shared-display][value=clocks] ~ .page-tab[name=act_set-sheet-shared-display][value=clocks],
 .ui-dialog .charsheet.charactersheet input.pager[name=attr_sheet-shared-display][value=clocks] ~ .page-tab[name=act_set-sheet-shared-display][value=clocks] {
   background-color: #040506 !important;
@@ -5532,9 +6821,20 @@
   flex-direction: column;
 }
 .ui-dialog .charsheet.charactersheet .ironsworn-sheet header {
-  display: flex;
+  display: grid;
   gap: 0.5em;
+  grid-template-columns: 1fr max-content;
+}
+.ui-dialog .charsheet.charactersheet .ironsworn-sheet header .vitals {
   flex-direction: column;
+  display: flex;
+  gap: 0.25em;
+}
+.ui-dialog .charsheet.charactersheet .ironsworn-sheet header .resource-meters {
+  grid-column: 2;
+}
+.ui-dialog .charsheet.charactersheet .ironsworn-sheet header nav.page-tablist {
+  grid-column: 1/span 5;
 }
 .ui-dialog .charsheet.charactersheet .center {
   text-align: center;
@@ -5642,6 +6942,77 @@
   transition: opacity 0.5s;
 }
 
+[class*=" note-icon-"]:before,
+[class^="note-icon-"]:before,
+[class^="sf-icon-"]:before,
+[class*=" sf-icon-"]:before {
+  display: inline-block;
+  font-size: 1em;
+  margin: 0 0.25ch 0 0;
+}
+[class*=" note-icon-"].icon-btn:before,
+[class^="note-icon-"].icon-btn:before,
+[class^="sf-icon-"].icon-btn:before,
+[class*=" sf-icon-"].icon-btn:before {
+  margin: 0;
+  padding-left: 100%;
+  height: 100%;
+}
+[class^="sf-icon-"]:before,
+[class*=" sf-icon-"]:before {
+  background-color: currentColor;
+  content: "";
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.sf-icon-1d6:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
+}
+.sf-icon-1d6-alt:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6-square.svg");
+}
+.sf-icon-2d10:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-2d10.svg");
+}
+.sf-icon-1d10:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d10.svg");
+}
+.sf-icon-roll-oracle:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/roll-oracle.svg");
+}
+.sf-icon-mark-progress:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/progress/progress-mark-4.svg");
+}
+.sf-icon-momentum-burn:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg");
+}
+.sf-icon-legacy-quests:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-quests.svg");
+}
+.sf-icon-legacy-bonds:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-bonds.svg");
+}
+.sf-icon-legacy-discoveries:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/legacy-discoveries.svg");
+}
+.sf-icon-stat-edge:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/edge.svg");
+}
+.sf-icon-stat-heart:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/heart.svg");
+}
+.sf-icon-stat-iron:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/iron.svg");
+}
+.sf-icon-stat-shadow:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/shadow.svg");
+}
+.sf-icon-stat-wits:before {
+  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/attributes/wits.svg");
+}
 html {
   font-size: 16px;
 }
@@ -5768,10 +7139,34 @@ body {
   font-size: 1em;
   line-height: 1.4;
   font-family: "Encode Sans Condensed", sans-serif, Arial, sans-serif;
+  word-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.25;
+  word-spacing: 0.05ch;
+  letter-spacing: 0;
   font-size: 75%;
   color: #b4b4b4;
   width: max-content;
   grid-column: 1;
+}
+.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-header .sheet-surtitle u,
+.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-alert > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-header .sheet-subtitle u,
+.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-header .sheet-subtitle u {
+  text-decoration: underline 0.075em solid currentColor;
+  text-underline-offset: 0.15em;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-header:before,
 .sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-header:before,
@@ -5819,7 +7214,6 @@ body {
   height: 5px;
   background-color: currentColor;
   content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -6042,7 +7436,6 @@ body {
   height: 5px;
   background-color: currentColor;
   content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d6.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -6099,7 +7492,6 @@ body {
   height: 5px;
   background-color: currentColor;
   content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/dice-1d10.svg");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -6401,45 +7793,20 @@ body {
   color: #28aae1;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.75ch;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
+  text-stroke: 2px #000;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
   border-color: currentColor;
-}
-.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-alert > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-alert > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-btn.sheet-strong-hit-match > a[href^="~"]:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:active,
 .sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-btn.sheet-strong-hit > a[href^="~"]:active,
@@ -6501,37 +7868,17 @@ body {
   color: #892890;
   cursor: pointer;
   transition-duration: 0.3s;
-  transition-property: color, background-color, box-shadow, outline, mix-blend-mode;
-  outline: 0 solid transparent;
-  box-shadow: inset 0 0 0 0 transparent;
   border: 2px solid #040506;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0.75ch;
-  width: stretch;
-  width: -moz-available;
   height: auto;
-  border-radius: 0;
   text-align: center;
-  font-size: 1em;
   text-decoration: none;
+  box-shadow: none;
   border-color: currentColor;
-}
-.sheet-rolltemplate-oracle > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-progress_roll > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-alert > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_progress > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus,
-.sheet-rolltemplate-starforged_oracles > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:focus {
-  z-index: 100;
-  outline: 3px solid #fd0;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 3px;
-  text-decoration: none;
 }
 .sheet-rolltemplate-oracle > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:active,
 .sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-btn.sheet-weak-hit > a[href^="~"]:active,
@@ -6658,21 +8005,6 @@ body {
 .sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a,
 .sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a {
   padding: 0.25em;
-}
-.sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before,
-.sheet-rolltemplate-alert > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before,
-.sheet-rolltemplate-momentum_burn > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before,
-.sheet-rolltemplate-ironsworn_move > .sheet-roll-container .sheet-momentum-burn.sheet-btn > a:before {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-color: currentColor;
-  content: "";
-  mask-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/actions/momentum-burn.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  margin: 0 0.25ch 0 0;
 }
 .sheet-rolltemplate-starforged_moves > .sheet-roll-container .sheet-action-score,
 .sheet-rolltemplate-alert > .sheet-roll-container .sheet-action-score,

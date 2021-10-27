@@ -1,0 +1,20 @@
+{
+  "roll": "Roll",
+  "rolls": "Rolls",
+  "challenge-dice": "Challenge Dice",
+  "action-die": "Action Die",
+  "action-score": "Action Score",
+  "action-roll": "Action Roll",
+  "progress-roll": "Progress Roll",
+  "stat-plus-add": "Stat + Adds",
+  "action-roll-adds": "Adds",
+  "momentum-cancel": "Action die cancelled for matching negative momentum (see p. 32).",
+  "action-score-limit-alert": "The action score is never greater than 10—anything over that is ignored (see p. 26).",
+  "roll-match": "Match",
+  "roll-strong-hit": "Strong Hit",
+  "roll-strong-hit-match": "Strong Hit with a Match",
+  "roll-weak-hit": "Weak Hit",
+  "roll-miss": "Miss",
+  "roll-miss-match": "Miss with a Match",
+  "roll-match-description": "An extreme result or twist has occurred."
+}

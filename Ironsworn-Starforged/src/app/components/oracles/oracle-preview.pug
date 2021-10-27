@@ -34,7 +34,7 @@ mixin oraclePreview(oracle, groupName)
       +oracleSubtablesRollBtn(oracle.id, oracle['Display name']||oracle.Name, oracle.Tables)
     else if oracle.Oracles
       +oracleSubtablesRollBtn(oracle.id, oracle['Display name']||oracle.Name, oracle.Oracles)
-    +closeButton("oracle", "preview-display")
+    +closeButton("oracle")
     section.gamerules-body
       if oracle.Table
         +oracleTable(oracle)

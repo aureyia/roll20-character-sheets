@@ -111,16 +111,20 @@ colorThemeDarkColor($color)
   color #fff
   border-color #fff
   outline-color $color
-  // if contrast(#fff, $color).ratio < 4.5
-  text-stroke 2px #000
-  -webkit-text-stroke 2px #000
-  paint-order stroke fill
+  if contrast(@background-color, @color).ratio < 6
+    text-stroke 2px #000
+    -webkit-text-stroke 2px #000
+    paint-order stroke fill
 
 colorThemeLightColor($color)
   background-color $color_bg
   color $color
   border-color $color
   outline-color transparent
+  if contrast(@background-color, @color).ratio < 6
+    text-stroke 2px #000
+    -webkit-text-stroke 2px #000
+    paint-order stroke fill
 
 colorThemeDark()
   background-color $color_fg
@@ -130,25 +134,25 @@ colorThemeLight()
   background-color $color_bg
   color $color_fg
 
-labelText(fontSize = 1em)
+labelTextLg($fontSize = 1em)
   stdFont($type_display)
-
   text-align center
   text-transform uppercase
-
   typeSpacingLoose()
-
   font-weight 600
-  font-size fontSize
+  font-size $fontSize
   line-height $string_line_height
 
-subLabelText(fontSize = 0.9em)
-  labelText(fontSize)
+labelTextMed($fontSize = 1em)
+  labelTextLg($fontSize)
   stdFont($type_header_sm)
-
   text-transform none
-
   typeSpacingTight()
+
+labelTextSm($fontSize = 1em)
+  labelTextMed($fontSize)
+  stdFont($type_compact)
+  font-weight 400
 
 headerText()
   stdFont($type_display)
@@ -182,10 +186,23 @@ bodyTextLg()
 bodyTextSm()
   bodyText()
   stdFont($type_compact)
+  word-spacing 0
+  letter-spacing 0
+  line-height 1.25
+  word-spacing 0.05ch
+  letter-spacing 0
+  // letter-spacing 0.01em;
+  u
+    text-decoration underline 0.075em solid currentColor
+    text-underline-offset 0.15em
+
 
 inputText()
   bodyText()
+  line-height $string_line_height
 
+inputTextLg()
+  headerText()
   line-height $string_line_height
 
 footerText()
@@ -218,14 +235,17 @@ interactiveFocus(shadow = 3px)
     box-shadow inset 0 0 0 shadow
     text-decoration none
 
+interactiveBasic()
+  cursor pointer
+  transition-duration $short_transition
+  // transition-property color, background-color, box-shadow, outline, mix-blend-mode
+
 interactive(bg = $color_bg, fg = $color_fg)
   background-color bg
   color fg
-  cursor pointer
-  transition-duration $short_transition
-  transition-property color, background-color, box-shadow, outline, mix-blend-mode
-
-  interactiveFocus()
+  interactiveBasic()
+  if focus == true
+    interactiveFocus()
   interactiveActive(bg, fg)
   interactiveHover(bg, fg)
 
@@ -240,23 +260,23 @@ interactiveInactive(bg = $color_bg_alt, fg = $color_fg_alt)
 
 
 
-btn($bgColor = $color_bg, $fgColor = $color_fg, $fontSize = 1em, $padding = 0.25em, $borderWidth = 2px)
-  labelText()
+btn($bgColor = $color_bg, $fgColor = $color_fg, $padding = 0.25em, $borderWidth = 2px)
+  labelTextLg()
   interactive($bgColor, $fgColor)
   borderCommon($borderWidth)
-
   display flex
   justify-content center
   align-items center
   align-content center
   padding $padding
-  width stretch
-  width -moz-available
   height auto
-  border-radius 0
   text-align center
-  font-size $fontSize
   text-decoration none
+  box-shadow none
+  if contrast($bgColor, $fgColor).ratio < 6
+    text-stroke 2px #000
+    -webkit-text-stroke 2px #000
+    paint-order stroke fill
 
 inputBox()
   inputText()
@@ -321,26 +341,15 @@ bulletBefore(forTextSize, $iconUrl)
     mask-size contain
     mask-repeat no-repeat
 
-iconStandard($size, $iconUrl)
+iconStandard($size=1em)
   display inline-block
   width $size
   height $size
   background-color currentColor
   content ""
-  mask-image url($iconUrl)
   mask-size contain
   mask-repeat no-repeat
   mask-position center
-
-iconBefore($size, $iconUrl, $margins = 0 0.25ch 0 0)
-  &:before
-    iconStandard($size, $iconUrl)
-    margin $margins
-
-iconAfter($size, $iconUrl, $margins = 0 0 0 0.25ch)
-  &:after
-    iconStandard($size, $iconUrl)
-    margin $margins
 
 iconBehind($iconUrl, $padding=2px)
   z-index 1
@@ -374,7 +383,7 @@ hexagonMask()
 hexWidthToHeightPointy(hexWidth)
   ((hexWidth * 2) / math(3, sqrt))
 
-hexagonClip(hexWidth) // sets width and height to ensure correct proportion
+hexClip(hexWidth) // sets width and height to ensure correct proportion
   width hexWidth
   height hexWidthToHeightPointy(hexWidth)
   clip-path $hexagon_pointy
@@ -383,7 +392,7 @@ hexagonClip(hexWidth) // sets width and height to ensure correct proportion
 hexCheckbox(hexWidth, emptyImage = "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-checkbox-unchecked.svg")
   appearance none
 
-  hexagonClip(hexWidth)
+  hexClip(hexWidth)
 
   width hexWidth
   height hexWidthToHeightPointy(hexWidth)
@@ -397,7 +406,7 @@ hexCheckbox(hexWidth, emptyImage = "https://raw.githubusercontent.com/aureyia/ro
   transition $short_transition
 
   &:hover
-    background-color $color_fg_alt
+    background-color $color_fg
 
   &:checked
     background-color currentColor
@@ -439,3 +448,123 @@ calloutBox()
   border-radius 1em
   input[type=text]
     background-color $color_bg
+
+
+tag($bgColor=$color_danger)
+  border-radius 0.5em
+  padding 0.25em 0.5em
+  colorThemeDarkColor($bgColor)
+  labelTextSm()
+disabled()
+  pointer-events none !important
+  opacity 0.25 !important
+  &:hover
+    color inherit
+    background inherit
+
+// hex with border for use with buttons
+// in an ideal world this would be an embedded svg element instead
+hexBorder($width, $background, $borderColor=currentColor)
+  position relative
+  width $width
+  height hexWidthToHeightPointy($width)
+  background $borderColor
+  clip-path $hexagon_pointy
+  &:before
+    clip-path $hexagon_pointy
+  &:before
+    position absolute
+    content ''
+    top 2px
+    left @top
+    height calc(100% - 4px) //hardcoded for the moment cuz stylus is being shitty about sprint operands
+    width @height
+    background $background
+    z-index: -2;
+
+hexDoubleBorder($width, $background, $borderColor=currentColor, $borderColor2=currentColor)
+  hexWidthBorder($width, $background, $borderColor)
+  &:after
+    clip-path inherit
+    position absolute
+    content ''
+    top 4px
+    left @top
+    height calc(100% - 8px)
+    width @height
+    background $borderColor2
+    z-index: -1;
+
+hexDisplayBasic()
+  display flex
+  font-size 1.25em
+  font-weight 800
+  align-items center
+  justify-content center
+
+hexDisplay($width, $background, $borderColor)
+  hexDisplayBasic()
+  hexBorder($width, $background, $borderColor)
+
+
+// hex border for items that can't have child elements, like input[type=text]
+// s
+hexNumberInput($width = 2.5ch)
+  hexDisplayBasic()
+  background-image url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/hex-meter-box-unchecked.svg")
+  appearance textfield
+  padding 0
+  text-align center
+  box-shadow none
+  border none
+  hexClip($width)
+  background-position center
+  background-size contain
+
+
+hexButton($bgColor, $fgColor=#fff, $width=2ch)
+  interactiveBasic()
+  color $fgColor
+  border-width 0
+  hexDisplay($width, $bgColor, $bgColor)
+  align-self center
+  padding 0
+  border 0
+  text-align center
+  overflow visible
+  border-radius 0
+  display block
+  outline none
+  box-shadow none
+  scale none
+  &:hover
+    background-color $bgColor
+    color $bgColor
+    &:before
+      background-color $fgColor
+
+rollableStatBox()
+  border-radius 1em
+  overflow clip
+  borderCommon()
+  padding-bottom 0.25em
+  gap 0.25em
+  display flex
+  flex-direction column
+  button[name='act_roll-action']
+    btn($color_fg, $color_bg)
+    border-width 0 0 1px
+  .number-display
+    align-self center
+    display flex
+    inputTextLg()
+    gap 0.25em
+    .increment-attr
+      order 1
+      hexButton($color_cta)
+    input[type=number]
+      hexNumberInput()
+      order 2
+    .decrement-attr
+      order 3
+      hexButton($color_danger)

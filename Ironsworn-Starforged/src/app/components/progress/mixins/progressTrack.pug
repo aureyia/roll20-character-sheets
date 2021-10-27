@@ -34,12 +34,12 @@ mixin progressTotal(attrPrefix="progress")
     value=`0`
     )
 
-mixin progressTrackBar(attrPrefix="progress")
+mixin progressTrackBar(attrPrefix="progress", title="Click to mark progress")
   button(
     type="action"
     name="act_progress-mark"
     class=["progress-track-bar"]
-    data-i18n-title="progress-mark"
+    title=title
     )
     each value in track
       +progressBox(value, attrPrefix)

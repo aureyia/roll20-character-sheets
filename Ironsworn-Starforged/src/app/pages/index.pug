@@ -8,6 +8,7 @@ include ./contents/moves
 include ./contents/assets
 include ./contents/summary
 include ./contents/oracles
+include ../components/momentum/momentum
 //- include ./contents/legacies
 include ./contents/clocks
 include ../components/resources/resources
@@ -42,13 +43,13 @@ input(type="hidden" name="attr_mode" value="sheet-select")
 .ironsworn-sheet#sheet-character
   header
     +resources("character")
-    include ../components/momentum/momentum
+    //- +momentumBar
     +pageTabList("character")
   +pageMain("character")
     +summaryPage("character")
     +bondsPage("character")
     +questsPage("character")
-    +discoveriesPage("character")
+    //- +discoveriesPage("character")
     +clocksPage("character")
     +assetsPage("character")
     +movesPage("character")
@@ -63,7 +64,7 @@ input(type="hidden" name="attr_mode" value="sheet-select")
   +pageMain("shared")
     +clocksPage("shared")
     +questsPage("shared")
-    +discoveriesPage("shared")
+    //- +discoveriesPage("shared")
     +bondsPage("shared")
     +progressPage("shared")
     +shipPage("shared")

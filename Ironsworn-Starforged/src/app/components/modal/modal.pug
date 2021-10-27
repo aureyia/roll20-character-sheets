@@ -1,16 +1,12 @@
 
-mixin modal(modalId, modalTitle, buttonText="Edit")
+mixin modal(modalId, modalTitle, buttonText="Edit...", btnClasses=[])
   //- shorthand modal for when the button lives right next to the href'd content
-  +modalButton(modalId, buttonText)
+  +modalButton(modalId, buttonText, btnClasses)
   +modalDialog(modalId, modalTitle)
     block
 
-mixin modalButton(modalId, buttonText, classes=[])
-  if buttonText
-    - classes = ["modal-button", ...classes];
-  else
-    - classes = ["modal-button", "icon-only", ...classes];
-  a(href="#"+modalId, class=classes)
+mixin modalButton(modalId, buttonText=false, classes=[])
+  a(href="#"+modalId class=["modal-button", ...classes])
     !=buttonText
 
 mixin modalDialog(modalId, modalTitle, classes=[])

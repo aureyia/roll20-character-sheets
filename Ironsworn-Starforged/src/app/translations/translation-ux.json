@@ -1,0 +1,18 @@
+{
+  "roll-plus-stat": "Roll +{{0}}",
+  "roll-plus-edge": "Roll +edge",
+  "roll-plus-heart": "Roll +heart",
+  "roll-plus-iron": "Roll +iron",
+  "roll-plus-shadow": "Roll +shadow",
+  "roll-plus-wits": "Roll +wits",
+  "roll-plus-health": "Roll +health",
+  "roll-plus-spirit": "Roll +spirit",
+  "roll-plus-supply": "Roll +supply",
+  "roll-plus-integrity": "Roll +integrity",
+  "roll-plus-command-vehicle-integrity": "Roll +command vehicle integrity",
+  "roll-plus-support-vehicle-integrity": "Roll +support vehicle integrity",
+  "roll-plus-incidental-vehicle-integrity": "Roll +incidental vehicle integrity",
+  "roll-plus-companion-health": "Roll +companion health",
+  "momentum-burn-description": "Burn momentum",
+  "select-challenge-rank": "Select a challenge rank"
+}

@@ -1,34 +1,18 @@
-mixin resourceMeterBar(attribute, radioIdPrefix, i18n_key=attribute, max=5, min=0, startsAt=max, plusSigns=false)
-  section(
-    data-i18n-title=i18n_key
-    data-i18n-aria-label=i18n_key
-  ).resource-meter
-    input(type="hidden" name=`attr_${attribute}_max` value=max)
-    input(type="hidden" name=`attr_${attribute}_min` value=min)
-    input(type="hidden" name=`attr_${attribute}_minmax` value=false)
-    - currentMeter = min
+mixin resourceMeterBar(attribute, labelKey, max=5, min=0, startsAt=max, plusSigns=false)
+  section.resource-meter&attributes(labelKey)
+    if (max)
+      input(type="hidden" name=`attr_${attribute}_max` value=max)
+    if (min)
+      input(type="hidden" name=`attr_${attribute}_min` value=min)
+    input(type="hidden" name=`attr_${attribute}` value=startsAt)
+    - let currentMeter = min
     while currentMeter <= max
-      - displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
-      - radioId = `${radioIdPrefix}_${currentMeter}`
-      +attrToggleRadio(attribute, currentMeter, null, currentMeter == startsAt, radioId)
-      label.resource-meter-box(for=radioId title=`Set ${translation[i18n_key]} to ${displayText}`)!=displayText
+      - let displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
+      - let checked = currentMeter == startsAt ? "checked" : false
+      label.resource-meter-box(title=`Set ${translation[i18n_key]||"resource meter"} to ${displayText}`)
+        //- +attrToggleRadio(attribute, currentMeter, [], checked, null, false)
+        input(type='radio' name='attr_'+attribute data-attr=attribute value=currentMeter checked=checked)
+        span!=displayText
       - currentMeter++
+    block
 
-//- numeric input via number spinner - might be more semantically apropos + mobile friendly?
-
-mixin resourceMeterSpinner(attribute, value=0, max=value, min=0)
-  section.resource-spinner
-    //- input(type="hidden" name=`attr_${attribute}_max` value=max)
-    //- input(type="hidden" name=`attr_${attribute}_min` value=min)
-    //- input(type="hidden" name=`attr_${attribute}_minmax` value=false)
-    input(type='number' id=`${attribute}-input` name=`attr_${attribute}` value=value min=min max=max step=1)
-    //- +resourceIncrementBtn(attribute, 1, "+", ["spinner-plus"], false)
-    //- +resourceIncrementBtn(attribute, 1, "+",["spinner-plus"],  true)
-    //- +resourceIncrementBtn(attribute, -1, "-",["spinner-minus"],  false)
-    //- +resourceIncrementBtn(attribute, -1, "-",["spinner-minus"],  true)
-
-mixin resourceIncrementBtn(attribute, value = 1, btnText = "+", classes=[], disabled=false, hidden=disabled)
-  //- set to a negative number if you want it to decrement
-  //- FIXME: i18n, aria label/role
-  //- button(type="action" name=`act_edit-${attribute}` value=value class=classes disabled=disabled)!=btnText
-  button(type="action" name=`act_activate` value=value class=classes disabled=disabled)!=btnText

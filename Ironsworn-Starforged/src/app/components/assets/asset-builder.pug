@@ -1,95 +1,121 @@
-include ./../resources/resourcemeter
+include ./../resources/mixins/resourcemeter
 include ./../../common/pug/pager
+include ./../rolls/statRollBtn
+
+-
+  function trimId(inputId) {
+    let output = inputId.replace(/^asset-/, "");
+    //- console.log(`"${output},"`);
+    return output;
+  }
+
+//- repeating assets use unprefixed attributes, e.g.: "archer-meter-ammo"
+//- a worker syncs this with the PC's prefixed attribute, "asset-archer-meter-ammo"
 
 mixin assetAbility(ability)
-  //- consider having the attr name converted to snake case?
   section.asset-ability
-    //- - console.log(ability.id)
-    - attribute=_.snakeCase(ability.id.replace(/asset-(.*)-ability-([0-9])/gi, "ability_checkbox_$1_$2"))
-    //- - console.log(attribute)
-    //- TODO: migrate to using ability id
-    //- - attribute=ability.id
-    +attrToggleCheck(attribute, null, ability.Enabled)
-    //- input(
-    //-   type='checkbox'
-    //-   name=`attr_${attribute}`
-    //-   checked=ability.Enabled||false
-    //- )
-      //- old name=`attr_ability_checkbox_${abilityId}`
-      //- old: name=`attr_assetcheckbox_${abilityId}${number}`
-      //- TODO: see previous
+    +attrToggleCheck(trimId(ability.id), null, ability.Enabled)
     +i18n(ability.id)
     if ability.Input
-      each input in ability.Input
-        //- - inputId = `${ability.id}-inputBox-${_.kebabCase(field)}`
-        - inputId = `${ability.id}-textinput-${_.kebabCase(field)}`
-        label.asset-ability-inputBox
+      each input, index in ability.Input
+        - inputId = `${ability.id}-textinput-${_.kebabCase(input)}`
+        label.asset-textinput
           +i18n(inputId)
-          input(type='text' name=`attr_${inputId}` value='')
+          input(type='text' name=`attr_${trimId(inputId)}` value='')
+    if ability['Counter'] && standalone === false
+      +assetCounter(ability.Counter)
 
 mixin assetDescription(asset)
   - translationDesc = `${asset.id}-description`
-  section.asset-description
+  section.asset-description.asset-header-field
     +i18n(translationDesc)
 
-mixin assetinputBox(inputBox, assetId)
+mixin assetInputBox(inputBox, assetId)
   //- - id = `${assetId}-inputBox-${_.kebabCase(inputBox)}`
   - id = `${assetId}-textinput-${_.kebabCase(inputBox)}`
-  label.asset-inputBox
+  label.asset-textinput.asset-header-field
     +i18n(id)
-    input(type='text' name=`attr_${id}` value='')
+    input(type='text' name=`attr_${trimId(id)}` value='')
     //- old `attr_field-${field}`
 
-mixin assetMeterBar(meter, assetName)
-  +resourceMeterBar(meter.Name, meter.Max, `assettrack_${assetName}`, meter.Min||null)
-  //- section.asset-meter(title=`Asset resource meter: ${_.capitalize(meter.Name)}`)
-  //-   - currentMeter = 0
-  //-   while currentMeter <= meter.Max
-  //-     label.asset-meter-box(title=`Set ${_.capitalize(meter.Name)} to ${currentMeter}`)
-  //-       //- input(type='radio' name=`attr_assettrack_${assetName}` value=`${currentMeter}`)
-  //-       +attrToggleRadio(`assettrack_${assetName}`, currentMeter, null, ability.Enabled)
-  //-       //- TODO: migrate?
-  //-       span.asset-meter-box-display!=currentMeter
-  //-       - currentMeter++
+mixin assetMeterBar(asset)
+  - let assetName = asset.Name
+  - let meter = asset["Condition Meter"]
+  - let meterLabel;
+  - let btnLabel;
+  if meter.Name == "Health"
+    - btnLabel = "roll-plus-companion-health"
+    - meterLabel = btnLabel.replace("roll-plus-", "resource")
+  else if meter.Name == "Integrity"
+    - btnLabel = `roll-plus-${asset["asset-type"].replace("asset-type", "")}-integrity`
+    - meterLabel = btnLabel.replace("roll-plus-", "resource")
+  else
+    - btnLabel = `roll-plus-${_.kebabCase(meter.Name)}`
+    - meterLabel = meter.id
+  +resourceMeterBar(trimId(meter.id), meterLabel, meter.Max, meter.Min||0, meter["Starts At"]||meter["Starts at"]||meter.Max)
+    +statRollBtn(meter.id, false, btnLabel, false, ["icon-btn"])
 
-
-mixin assetCard(asset, options)
+mixin assetCard(asset, standalone = false, classes=[])
   //- TODO: migrate to asset attr matching id of asset for clarity/long-term maintainability
-  - name = asset.id.replace(/asset-/i, "")
-  - iconWidth = 64
   - category = _.kebabCase(asset.Category)
-  if options.visibilityToggle === true
-    input(hidden class=["switch-display", options.classes ? options.classes : "", asset.id] type='checkbox' name=`attr_${name}`)
-  article(class=[`asset-card`,`${options.classes ? options.classes : ""}`,`${asset.id}`,`category-${category}`,`${options.visibilityToggle ? "switchable-display" : ""}`])
-    span.asset-category=asset.Category
-    h3.asset-name=asset.Name
-    img(height=`${iconWidth/(Math.sqrt(3)/2)}` width=`${iconWidth}` src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/icons/${asset.id}.svg` alt="").asset-icon
-    if asset.Description
-      +assetDescription(asset)
-    if asset.Input
-      each inputBox in asset.Input
-        +assetinputBox(inputBox, asset.id)
+  article(class=["asset-card", asset.id, asset["asset-type"], ...classes])
+    +assetHeader(asset)
+      if asset.Input
+        each inputBox in asset.Input
+          +assetInputBox(inputBox, asset.id)
+      if asset.Select
+        +assetSelect(asset)
+      if asset.Description
+        +assetDescription(asset)
     section.asset-abilities
       each ability in asset.Abilities
         +assetAbility(ability)
-    if asset['Condition Meter'] && options.standalone === false
-      +assetMeterBar(asset['Condition Meter'])
+    if asset['Condition Meter'] && standalone === false
+      +assetMeterBar(asset)
+    if asset['Counter'] && standalone === false
+      +assetCounter(asset)
+
+mixin assetCounter(asset)
+  - let id = _.kebabCase(`${asset.id}-counter-${asset.Counter.Name}`)  //- TODO: generate working translations via dataforged
+  input(
+    class=["asset-counter"]
+    type="number"
+    value=0
+    min=0
+    max=asset.Counter.Max
+    title=asset.Counter.Name
+    name=`attr_${trimId(id)}`
+    )
+    //- name="attr_"+id
+
+mixin assetSelect(asset)
+  - let id = _.kebabCase(`${asset.id}-select-${asset.Select.Name}`)
+  label(class=["asset-select", "asset-header-field"])
+    //- TODO proper translation from dataforged
+    span!=asset.Select.Name
+    select(
+      name=`attr_${trimId(id)}`
+      )
+      each item in asset.Select.Options
+        - let optionId = _.kebabCase(`${asset.Select.Type}-${item}`)
+        option(value=item.toLowerCase())!=translation[optionId]
+
+mixin assetHeader(asset)
+  section.asset-header
+    span.asset-type=asset.Category
+    h3.asset-name=asset.Name
+    block
+
 
 mixin genericAssetBuilder(assetsArray, listId)
+  input.asset-picker(type="hidden" name="attr_asset")
   //- Asset Datalist
-  input.asset-options-tplHeader(hidden type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
+  input.asset-picker(type='text' list=listId name='attr_asset' placeholder=translation["type-asset-name"])
   datalist(id=listId)
     each asset in assetsArray
-      //- TODO: migrate to more sensible name scheme
-      //- ideally it'd use translation strings as the list 'value', or have some other means of diplaying that more nicely
-      - assetIdShort = asset.id.replace("asset-", "")
-      //- generates classes and outputs to stdout
-      //- - console.log(`input[type=checkbox][name=attr_asset][value=${assetIdShort}]:checked + div.asset-card.${asset.id},`)
-      option(value=assetIdShort)
-        +i18n(`${asset.id}-name`)
-    option(value='custom')
-      +i18n(`asset-custom-name`)
+      option(class=asset.id value=asset.id data-i18n=`${asset.id}-name`)!=translation[`${asset.id}-name`]
+    option(class="asset-custom" value='custom' data-i18n="asset-custom-name")!=translation["asset-custom-name"]
 
   //- Asset Content
   each asset in assetsArray
-    +assetCard(asset, { visibilityToggle: true, standalone: false })
+    +assetCard(asset, false)

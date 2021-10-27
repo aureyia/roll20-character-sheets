@@ -1,0 +1,16 @@
+{
+  "meter": "Meter",
+  "meters": "Meters",
+  "momentum": "Momentum",
+  "momentum-burn": "Burn",
+  "momentum-reset": "Reset",
+  "momentum-maximum": "Max",
+  "momentum-meter": "Momentum Meter",
+  "condition-meter": "Condition Meter",
+  "condition-meters": "Condition Meters",
+  "resource-health": "Health",
+  "resource-spirit": "Spirit",
+  "resource-supply": "Supply",
+  "resource-vehicle-integrity": "Integrity",
+  "resource-integrity": "Integrity"
+}

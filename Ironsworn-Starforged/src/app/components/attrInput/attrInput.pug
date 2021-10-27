@@ -1,0 +1,58 @@
+include ../rolls/statRollBtn
+
+
+mixin attrInputNumber(attribute, value=0, min=0, max=5, classes=[])
+  if (typeof min == "number")
+    input(type="hidden", name=`attr_${attribute}_min`, value=min)
+  if (typeof max == "number")
+    input(type="hidden", name=`attr_${attribute}_max`, value=max)
+  - let minMaxValue = value == max ? "max" : value == min ? "min" : false
+  if (typeof min == "number")||(typeof max == "number")
+    input(type="hidden", name=`attr_${attribute}_minmax` value=minMaxValue class=["minmax"])
+  section(class=[...classes, `attr-${attribute}`, "number-display"])
+    input(type='number' name=`attr_${attribute}` value=value min=min max=max step=1)
+    block
+
+mixin attrInputText(attribute, labelContent, labelAriaLabel, inputPlaceholder)
+  +attrLabel(attribute, labelContent, labelAriaLabel, ["text-attr"])
+    input(type="text" name="attr_"+attribute)&attributes(translateElement(false, false, false, inputPlaceholder))
+
+mixin attrRollable(attribute, sectionLabel, btnContent, btnLabel, spinner=false, value, min, max)
+  section(class=["rollable-attr", `attr-${attribute}`])&attributes(translateElement(false, sectionLabel))
+    +statRollBtn(attribute, btnContent, btnLabel, false, ["title"])
+    if (spinner)
+      +attrSpinner(attribute, value, min, max)
+    else
+      +attrInputNumber(attribute, value, min, max)
+
+mixin attrCounter(attribute, labelContent, labelAriaLabel, spinner=true, value, min, max)
+  +attrLabel(attribute, labelContent, labelAriaLabel, false, ["counter-attr"])
+  if (spinner)
+    +attrSpinner(attribute, value, min, max)
+  else
+    +attrInputNumber(attribute, value, min, max)
+
+mixin attrLabel(attribute, labelContent, labelAriaLabel, classes=[])
+  label(class=[`attr-${attribute}`, ...classes])&attributes(translateElement(undefined, labelAriaLabel))
+    span&attributes(translateElement(labelContent)).title!=translation[labelContent]
+    block
+
+mixin attrSpinner(attribute, value=0, min=0, max=5, classes=[])
+  +attrInputNumber(attribute, value, min, max, ["spinner", ...classes])
+    +attrSpinnerBtn(attribute, 1, "+")
+    +attrSpinnerBtn(attribute, -1, "-")
+
+mixin attrSpinnerBtn(attribute, increment=1, text=false, classes=[])
+  - let incrementClass = increment < 0 ? "decrement-attr" : "increment-attr"
+  button(
+    type="action"
+    name="act_increment-attr"
+    class=[incrementClass, ...classes]
+    data-attr=attribute
+    data-increment=increment
+    tabindex="-1"
+    )
+    //- tabindex set to -1 so that the replacement button doesn't create extra clutter for keyboard nav
+    //- src: https://www.w3.org/TR/wai-aria-practices/examples/spinbutton/datepicker-spinbuttons.html
+    if (text)
+      !=text

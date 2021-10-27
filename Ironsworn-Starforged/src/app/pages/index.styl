@@ -10,9 +10,17 @@ $standard_gap = 0.5em
   gap $standard_gap
   flex-direction column
   header
-    display flex
+    display grid
     gap $standard_gap
-    flex-direction column
+    grid-template-columns 1fr max-content
+    .vitals
+      flex-direction column
+      display flex
+      gap 0.25em
+    .resource-meters
+      grid-column 2
+    nav.page-tablist
+      grid-column 1 / span 5
 
 .center
   text-align center

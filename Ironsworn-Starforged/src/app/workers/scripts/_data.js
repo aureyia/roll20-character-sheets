@@ -8,7 +8,7 @@ const sheets = [
       "summary",
       "quests",
       "bonds",
-      "discoveries",
+      "progress",
       "clocks",
       "assets",
       "ship",
@@ -22,14 +22,13 @@ const sheets = [
     "pages": [
       "quests",
       "bonds",
-      "discoveries",
       "clocks",
       "ship"
     ]
   }
 ];
 
-const oracles_worker_data = {
+const indexOracles = {
   "oracle-category-move": {
     "Name": "Move",
     "children": [
@@ -2271,6 +2270,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-desert-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2323,6 +2325,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-desert-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2462,6 +2467,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-furnace-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2514,6 +2522,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-furnace-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2653,6 +2664,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-grave-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2705,6 +2719,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-grave-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2837,6 +2854,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-ice-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -2889,6 +2909,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-ice-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3023,6 +3046,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-jovian-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3075,6 +3101,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-jovian-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3214,6 +3243,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-jungle-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3266,6 +3298,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-jungle-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3402,6 +3437,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-ocean-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3454,6 +3492,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-ocean-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3588,6 +3629,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-rocky-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3640,6 +3684,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-rocky-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3779,6 +3826,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-shattered-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3831,6 +3881,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-shattered-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -3957,6 +4010,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-tainted-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -4009,6 +4065,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-tainted-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -4130,6 +4189,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-vital-world-observed-from-space": {
     "Name": "Observed From Space",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -4182,6 +4244,9 @@ const oracles_worker_data = {
   },
   "oracle-table-planet-vital-world-planetside-feature": {
     "Name": "Planetside Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -4306,6 +4371,10 @@ const oracles_worker_data = {
     "Name": "Biomes",
     "Min rolls": 2,
     "Max rolls": 5,
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -5431,6 +5500,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-access-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 50,
@@ -5470,6 +5542,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-access-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -5561,7 +5636,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-access-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -5621,7 +5703,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-access-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -5649,6 +5736,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-community-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -5704,6 +5794,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-community-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -5763,7 +5856,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-community-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -5823,7 +5923,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-community-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -5851,6 +5956,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-engineering-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -5906,6 +6014,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-engineering-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -5965,7 +6076,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-engineering-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -6025,7 +6143,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-engineering-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -6053,6 +6176,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-living-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6108,6 +6234,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-living-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6167,7 +6296,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-living-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -6227,7 +6363,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-living-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -6255,6 +6396,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-medical-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6310,6 +6454,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-medical-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6369,7 +6516,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-medical-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -6429,7 +6583,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-medical-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -6457,6 +6616,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-operations-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6512,6 +6674,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-operations-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6571,7 +6736,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-operations-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -6631,7 +6803,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-operations-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -6659,6 +6836,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-production-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6714,6 +6894,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-production-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6773,7 +6956,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-production-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -6833,7 +7023,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-production-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -6861,6 +7056,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-research-area": {
     "Name": "Area",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6916,6 +7114,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-research-feature": {
     "Name": "Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -6975,7 +7176,14 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-research-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -7035,7 +7243,12 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-research-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -7064,6 +7277,9 @@ const oracles_worker_data = {
   "oracle-table-precursor-vault-interior-first-look": {
     "Name": "First Look",
     "Display name": "Inner First Look",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -7205,6 +7421,9 @@ const oracles_worker_data = {
   "oracle-table-precursor-vault-interior-feature": {
     "Name": "Feature",
     "Display name": "Interior Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 3,
@@ -7360,8 +7579,15 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-interior-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
     "Display name": "Interior Peril",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -7461,8 +7687,13 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-interior-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
     "Display name": "Interior Opportunity",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -7511,6 +7742,9 @@ const oracles_worker_data = {
   "oracle-table-precursor-vault-sanctum-purpose": {
     "Name": "Purpose",
     "Display name": "Vault Purpose",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 3,
@@ -7643,6 +7877,9 @@ const oracles_worker_data = {
   "oracle-table-precursor-vault-sanctum-feature": {
     "Name": "Feature",
     "Display name": "Sanctum Feature",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -7798,8 +8035,15 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-sanctum-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
     "Display name": "Sanctum Peril",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -7899,8 +8143,13 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-sanctum-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
     "Display name": "Sanctum Opportunity",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -7949,6 +8198,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-chaotic-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8013,7 +8265,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-chaotic-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -8078,7 +8337,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-chaotic-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -8107,6 +8371,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-fortified-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8171,7 +8438,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-fortified-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -8236,7 +8510,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-fortified-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -8265,6 +8544,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-haunted-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8329,7 +8611,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-haunted-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -8394,7 +8683,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-haunted-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -8423,6 +8717,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-infested-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8487,7 +8784,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-infested-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -8552,7 +8856,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-infested-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -8581,6 +8890,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-inhabited-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8645,7 +8957,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-inhabited-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -8710,7 +9029,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-inhabited-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -8739,6 +9063,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-ruined-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8803,7 +9130,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-ruined-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -8868,7 +9202,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-ruined-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -8897,6 +9236,9 @@ const oracles_worker_data = {
   "oracle-table-location-theme-sacred-feature": {
     "Name": "Feature",
     "Description": "<p>Use this table to reveal a new aspect of the location.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -8961,7 +9303,14 @@ const oracles_worker_data = {
   "oracle-table-location-theme-sacred-peril": {
     "Name": "Peril",
     "Description": "<p>Use this table to help envision a complication or hazard.</p>",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 9,
@@ -9026,7 +9375,12 @@ const oracles_worker_data = {
   "oracle-table-location-theme-sacred-opportunity": {
     "Name": "Opportunity",
     "Description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -9054,6 +9408,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-begin-a-session": {
     "Name": "Begin a Session",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -9100,6 +9457,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-make-a-discovery": {
     "Name": "Make a Discovery",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 4,
@@ -9202,6 +9562,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-confront-chaos": {
     "Name": "Confront Chaos",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 4,
@@ -9300,6 +9663,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-take-decisive-action": {
     "Name": "Take Decisive Action",
+    "Part of speech": [
+      "sentences"
+    ],
     "Table": [
       {
         "Chance": 40,
@@ -9330,6 +9696,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-endure-harm": {
     "Name": "Endure Harm",
+    "Part of speech": [
+      "sentences"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -9356,6 +9725,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-endure-stress": {
     "Name": "Endure Stress",
+    "Part of speech": [
+      "sentences"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -9378,6 +9750,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-withstand-damage": {
     "Name": "Withstand Damage",
+    "Part of speech": [
+      "sentences"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -9416,6 +9791,9 @@ const oracles_worker_data = {
   },
   "oracle-table-move-pay-the-price": {
     "Name": "Pay the Price",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -9507,6 +9885,13 @@ const oracles_worker_data = {
   "oracle-table-character-creation-background-assets": {
     "Name": "Background Assets",
     "Description": "<p>If you want some direction for your starting paths, roll or pick from the table below. Roles marked with an asterisk (*) are not intended for solo play.</p>",
+    "Content tags": [
+      "actor"
+    ],
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -9674,6 +10059,13 @@ const oracles_worker_data = {
   "oracle-table-character-creation-backstory-prompts": {
     "Name": "Backstory Prompts",
     "Description": "<p>For some backstory inspiration, roll or pick from the table below. Then, take a moment to elaborate on the suggestion. Or just leave it a bit vague and mysterious for now; you can flesh it out in play.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "event",
+      "past"
+    ],
     "Table": [
       {
         "Chance": 7,
@@ -9737,6 +10129,13 @@ const oracles_worker_data = {
   "oracle-table-character-creation-starship-history": {
     "Name": "Starship History",
     "Description": "<p>Envision how you obtained or earned this ship. You can come up with your own origin, or roll or pick from the table below. If you use a result from the table, take a moment to consider and elaborate on the suggestion.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "event",
+      "past"
+    ],
     "Table": [
       {
         "Chance": 8,
@@ -9792,6 +10191,12 @@ const oracles_worker_data = {
   "oracle-table-character-creation-starship-quirks": {
     "Name": "Starship Quirks",
     "Description": "<p>Your ship is an important aspect of your character—and a character in its own right. What does it look like? What makes it interesting or uniquely yours? Does it have any particular quirks? If nothing occurs to you now, you can flesh it out in play, or roll once or twice on the table below.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "description"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -9879,7 +10284,14 @@ const oracles_worker_data = {
   },
   "oracle-table-character-creation-sector-trouble": {
     "Name": "Sector Trouble",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -9966,6 +10378,12 @@ const oracles_worker_data = {
   },
   "oracle-table-character-creation-inciting-incident": {
     "Name": "Inciting Incident",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "objective"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -10058,6 +10476,9 @@ const oracles_worker_data = {
         "Name": "Theme",
         "Group": "Action + Theme"
       }
+    ],
+    "Part of speech": [
+      "verb"
     ],
     "Description": "<p>Use these oracle tables to reveal details about a goal, situation, or event. They provide a word or phrase that can be taken literally or interpreted as an abstraction.</p><p>Action and Theme can answer questions such as:</p><ul><li>“What does this character want?”</li><li>“What is this faction’s mission?”</li><li>“What caused the downfall of this settlement?”</li><li>“What is this device’s purpose?”</li></ul>",
     "Table": [
@@ -10473,6 +10894,13 @@ const oracles_worker_data = {
         "Group": "Action + Theme"
       }
     ],
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
+    "Content tags": [
+      "abstract noun"
+    ],
     "Description": "<p>Use these oracle tables to reveal details about a goal, situation, or event. They provide a word or phrase that can be taken literally or interpreted as an abstraction.</p><p>Action and Theme can answer questions such as:</p><ul><li>“What does this character want?”</li><li>“What is this faction’s mission?”</li><li>“What caused the downfall of this settlement?”</li><li>“What is this device’s purpose?”</li></ul>",
     "Table": [
       {
@@ -10886,6 +11314,9 @@ const oracles_worker_data = {
         "Name": "Focus",
         "Group": "Descriptor + Focus"
       }
+    ],
+    "Part of speech": [
+      "adjective"
     ],
     "Description": "<p>Use these oracles to generate the details of a location, discovery, or encounter. The Descriptor oracle is particularly handy for quick generation of a location. For example, use it to describe the basic nature of a planet instead of rolling on the detailed planet oracles.</p><p>Descriptor and Focus can answer questions such as:</p><ul><li>“What is this ship’s cargo?”</li><li>“What is the nature of this planet?”</li><li>“What is inside this station?”</li><li>“What hazard do I encounter?”</li></ul>",
     "Table": [
@@ -11301,6 +11732,13 @@ const oracles_worker_data = {
         "Group": "Descriptor + Focus"
       }
     ],
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
+    "Content tags": [
+      "concrete noun"
+    ],
     "Description": "<p>Use these oracles to generate the details of a location, discovery, or encounter. The Descriptor oracle is particularly handy for quick generation of a location. For example, use it to describe the basic nature of a planet instead of rolling on the detailed planet oracles.</p><p>Descriptor and Focus can answer questions such as:</p><ul><li>“What is this ship’s cargo?”</li><li>“What is the nature of this planet?”</li><li>“What is inside this station?”</li><li>“What hazard do I encounter?”</li></ul>",
     "Table": [
       {
@@ -11708,6 +12146,9 @@ const oracles_worker_data = {
   },
   "oracle-table-space-stellar-object": {
     "Name": "Stellar Object",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 15,
@@ -11786,6 +12227,13 @@ const oracles_worker_data = {
         "Name": "Sector Name - Suffix",
         "Group": "Sector Name"
       }
+    ],
+    "Part of speech": [
+      "adjective",
+      "proper noun"
+    ],
+    "Content tags": [
+      "name fragment"
     ],
     "Table": [
       {
@@ -12001,6 +12449,13 @@ const oracles_worker_data = {
         "Group": "Sector Name"
       }
     ],
+    "Part of speech": [
+      "noun",
+      "proper noun"
+    ],
+    "Content tags": [
+      "name fragment"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -12207,8 +12662,15 @@ const oracles_worker_data = {
   },
   "oracle-table-space-peril": {
     "Name": "Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
     "Display name": "Spaceborne Peril",
+    "Part of speech": [
+      "fragment"
+    ],
     "Description": "<p>Use this oracle as an alternative to the <u>Pay the Price</u> table and the creative prompt oracles when you want inspiration for a trouble on an interstellar journey, or to generate a perilous event at a spaceborne facility.</p>",
     "Table": [
       {
@@ -12360,8 +12822,13 @@ const oracles_worker_data = {
   },
   "oracle-table-space-opportunity": {
     "Name": "Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
     "Display name": "Spaceborne Opportunity",
+    "Part of speech": [
+      "fragment"
+    ],
     "Description": "<p>Roll on this table when you need inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you <u>Undertake an Expedition</u>, or if you <u>Explore a Waypoint</u> and find an opportunity.</p>",
     "Table": [
       {
@@ -12548,6 +13015,12 @@ const oracles_worker_data = {
   },
   "oracle-table-settlement-first-look": {
     "Name": "First Look",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "description"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -12644,6 +13117,12 @@ const oracles_worker_data = {
   },
   "oracle-table-settlement-initial-contact": {
     "Name": "Initial Contact",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "description"
+    ],
     "Table": [
       {
         "Chance": 20,
@@ -12700,6 +13179,9 @@ const oracles_worker_data = {
   },
   "oracle-table-settlement-authority": {
     "Name": "Authority",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 15,
@@ -12735,6 +13217,13 @@ const oracles_worker_data = {
   "oracle-table-settlement-projects": {
     "Name": "Projects",
     "Display name": "Settlement Projects",
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
+    "Content tags": [
+      "abstract noun"
+    ],
     "Max rolls": 2,
     "Description": "<p>Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.</p>",
     "Table": [
@@ -12880,8 +13369,15 @@ const oracles_worker_data = {
   "oracle-table-settlement-trouble": {
     "Name": "Trouble",
     "Display name": "Settlement Trouble",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
     "Description": "<p>Check the Settlement Trouble table when it’s appropriate for your character to know or uncover these details. The Settlement Trouble table provides a broad description of the site’s most dramatic current issue.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 3,
@@ -13018,6 +13514,12 @@ const oracles_worker_data = {
     "Name": "Name",
     "Display name": "Settlement Name",
     "Description": "<p>Choose a name appropriate to the nature of the settlement, or roll for a random result. You can let the name stand alone, or pair it with one of the following tags: Base, Citadel, Depot, Fortress, Hold, Landing, Outpost, Port, Station, Terminal.</p>",
+    "Part of speech": [
+      "proper noun"
+    ],
+    "Content tags": [
+      "name"
+    ],
     "Table": [
       {
         "Chance": 1,
@@ -13426,6 +13928,13 @@ const oracles_worker_data = {
     "Name": "Name",
     "Display name": "Starship Name",
     "Description": "<p>Give a starship a name when it has an important role in your story. Scan this table and select a name which fits what you know of the ship’s appearance and role. Or generate a random result and let any contradictions contribute to the ship’s history or nature.</p>",
+    "Part of speech": [
+      "noun",
+      "proper noun"
+    ],
+    "Content tags": [
+      "name"
+    ],
     "Table": [
       {
         "Chance": 1,
@@ -13834,6 +14343,10 @@ const oracles_worker_data = {
     "Name": "Starship Type",
     "Display name": "Type",
     "Allow duplicate rolls": true,
+    "Part of speech": [
+      "common noun",
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -13957,6 +14470,10 @@ const oracles_worker_data = {
   },
   "oracle-table-starship-fleet": {
     "Name": "Fleet",
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -13998,6 +14515,12 @@ const oracles_worker_data = {
   },
   "oracle-table-starship-initial-contact": {
     "Name": "Initial Contact",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "relationship"
+    ],
     "Table": [
       {
         "Chance": 3,
@@ -14058,6 +14581,12 @@ const oracles_worker_data = {
   },
   "oracle-table-starship-first-look": {
     "Name": "First Look",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "description"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -14170,6 +14699,9 @@ const oracles_worker_data = {
         "Name": "Family Name",
         "Group": "Character Name"
       }
+    ],
+    "Part of speech": [
+      "proper noun"
     ],
     "Table": [
       {
@@ -14591,6 +15123,9 @@ const oracles_worker_data = {
         "Group": "Character Name"
       }
     ],
+    "Part of speech": [
+      "proper noun"
+    ],
     "Table": [
       {
         "Chance": 1,
@@ -14999,6 +15534,9 @@ const oracles_worker_data = {
     "Name": "Family Name",
     "Display name": "Character Name - Family Name",
     "Description": "<p>Given and family names can be used independently as standalone names. In many cases you can reverse the order.</p>",
+    "Part of speech": [
+      "proper noun"
+    ],
     "Use with": [
       {
         "Category": "Character",
@@ -15417,6 +15955,9 @@ const oracles_worker_data = {
   },
   "oracle-table-character-first-look": {
     "Name": "First Look",
+    "Part of speech": [
+      "adjective"
+    ],
     "Min rolls": 2,
     "Max rolls": 2,
     "Table": [
@@ -15581,6 +16122,9 @@ const oracles_worker_data = {
   },
   "oracle-table-character-disposition": {
     "Name": "Disposition",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 6,
@@ -15636,6 +16180,13 @@ const oracles_worker_data = {
   "oracle-table-character-role": {
     "Name": "Role",
     "Display name": "Character Role",
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
+    "Content tags": [
+      "people"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -15843,6 +16394,9 @@ const oracles_worker_data = {
   "oracle-table-character-goal": {
     "Name": "Goal",
     "Display name": "Character Goal",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -16018,6 +16572,9 @@ const oracles_worker_data = {
   "oracle-table-character-revealed-aspect": {
     "Name": "Revealed Aspect",
     "Display name": "Revealed Character Aspect",
+    "Part of speech": [
+      "adjective"
+    ],
     "Max rolls": 3,
     "Table": [
       {
@@ -16453,6 +17010,9 @@ const oracles_worker_data = {
   "oracle-table-creature-scale": {
     "Name": "Scale",
     "Group": "Scale",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 3,
@@ -16497,6 +17057,9 @@ const oracles_worker_data = {
   "oracle-table-creature-ultra-scale": {
     "Name": "Ultra-scale",
     "Group": "Scale",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 89,
@@ -16520,6 +17083,12 @@ const oracles_worker_data = {
     "Name": "First Look",
     "Display name": "Creature First Look",
     "Description": "<p>Roll for a basic form, and flesh out the creature’s appearance using the First Look table.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "description"
+    ],
     "Min rolls": 2,
     "Max rolls": 2,
     "Table": [
@@ -16729,6 +17298,10 @@ const oracles_worker_data = {
   "oracle-table-creature-encountered-b_havior": {
     "Name": "Encountered Behavior",
     "Description": "<p>Roll once on the Encountered Behavior table to define this creature’s motivation and frame how the encounter begins.</p>",
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
     "Table": [
       {
         "Chance": 5,
@@ -16825,6 +17398,9 @@ const oracles_worker_data = {
     "Name": "Revealed Aspect",
     "Display name": "Revealed Creature Aspect",
     "Description": "<p>Roll on this table as you interact with the creature to introduce new features or behaviors. Some results may contradict the established nature of a creature. For example, an amorphous creature which you envisioned as a mass of pure energy would not have typical physical features. If a result doesn’t fit, feel free to ignore, reroll, or adjust. Or simply envision how this contradiction signals a new understanding or unexpected transformation.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -17371,6 +17947,12 @@ const oracles_worker_data = {
   "oracle-table-faction-projects": {
     "Name": "Projects",
     "Display name": "Faction Projects",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "objective"
+    ],
     "Max rolls": 2,
     "Description": "<p>Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events which motivate your character to aid or resist the project, or can simply serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 229.</p>",
     "Table": [
@@ -17639,6 +18221,9 @@ const oracles_worker_data = {
   },
   "oracle-table-faction-name-template": {
     "Name": "Name Template",
+    "Content tags": [
+      "Template"
+    ],
     "Display name": "Faction Name Template",
     "Description": "<p>To generate a faction name, first roll or choose the name template. Then, follow the structure of the template to build the name from individual tables. If you’ve already set the faction type, picking from the tables (instead of rolling) will likely provide a more appropriate result. For example, “Silver Jackals” is a fitting name for a criminal organization. The “Empire of the Undying Suns” is a less apt name for that gang—unless their leader is prone to delusions of grandeur. In short, choosing a name will give you more control. Rolling might give you a result that doesn’t square with known aspects, but those contradictions may prove inspiring.</p><p>An alternative approach to generate a faction from scratch is to start with a random name. Then, consider what the name evokes and choose an appropriate faction type instead of rolling on those tables. For example, “Bloody Ravens” might suggest a mercenary guild, while the “Republic of the Radiant Servants” brings to mind a dominion built upon a religion, or one which idolizes a prophesied leader. If a result doesn’t inspire anything interesting, roll again or simply pick.</p>",
     "Table": [
@@ -17681,6 +18266,9 @@ const oracles_worker_data = {
   },
   "oracle-table-faction-legacy": {
     "Name": "Legacy",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -17887,6 +18475,9 @@ const oracles_worker_data = {
   },
   "oracle-table-faction-affiliation": {
     "Name": "Affiliation",
+    "Part of speech": [
+      "noun"
+    ],
     "Table": [
       {
         "Chance": 4,
@@ -17993,6 +18584,10 @@ const oracles_worker_data = {
   },
   "oracle-table-faction-identity": {
     "Name": "Identity",
+    "Part of speech": [
+      "noun",
+      "plural"
+    ],
     "Table": [
       {
         "Chance": 2,
@@ -18200,6 +18795,12 @@ const oracles_worker_data = {
   "oracle-table-faction-quirks": {
     "Name": "Quirks",
     "Display name": "Faction Quirks",
+    "Content tags": [
+      "description"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Description": "<p>Roll or pick known characteristics of the faction and its members using this table. But keep in mind that even within a small or specialized faction, there are no absolutes. These quirks represent common attitudes, practices, or approaches, but are not universal to every member of that faction. Leave room in your portrayal for diversity and contradictions.</p>",
     "Table": [
@@ -18345,6 +18946,13 @@ const oracles_worker_data = {
   "oracle-table-faction-rumors": {
     "Name": "Rumors",
     "Display name": "Faction Rumors",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "event",
+      "present"
+    ],
     "Max rolls": 2,
     "Description": "<p>Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.</p>",
     "Table": [
@@ -18507,6 +19115,9 @@ const oracles_worker_data = {
   },
   "oracle-table-derelict-condition": {
     "Name": "Condition",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 10,
@@ -18538,6 +19149,9 @@ const oracles_worker_data = {
   "oracle-table-derelict-outer-first-look": {
     "Name": "Outer First Look",
     "Group": "First Look",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 15,
@@ -18585,6 +19199,9 @@ const oracles_worker_data = {
   "oracle-table-derelict-inner-first-look": {
     "Name": "Inner First Look",
     "Group": "First Look",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -18742,6 +19359,9 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-scale": {
     "Name": "Scale",
+    "Part of speech": [
+      "fragment"
+    ],
     "Table": [
       {
         "Chance": 30,
@@ -18768,6 +19388,10 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-form": {
     "Name": "Form",
+    "Part of speech": [
+      "noun",
+      "common noun"
+    ],
     "Table": [
       {
         "Chance": 35,
@@ -18794,6 +19418,9 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-shape": {
     "Name": "Shape",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 15,
@@ -18868,6 +19495,9 @@ const oracles_worker_data = {
   },
   "oracle-table-precursor-vault-material": {
     "Name": "Material",
+    "Part of speech": [
+      "adjective"
+    ],
     "Table": [
       {
         "Chance": 30,
@@ -18919,6 +19549,9 @@ const oracles_worker_data = {
   "oracle-table-precursor-vault-first-look": {
     "Name": "First Look",
     "Display name": "Outer First Look",
+    "Part of speech": [
+      "fragment"
+    ],
     "Max rolls": 2,
     "Table": [
       {
@@ -19092,7 +19725,14 @@ const oracles_worker_data = {
   },
   "oracle-table-miscellaneous-story-complication": {
     "Name": "Story Complication",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Description": "<p>This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the Pay the Price table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.</p>",
     "Table": [
       {
@@ -19220,7 +19860,14 @@ const oracles_worker_data = {
   },
   "oracle-table-miscellaneous-combat-action": {
     "Name": "Combat Action",
-    "Content type": "Peril",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
     "Description": "<p>Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and your objective.</p>",
     "Table": [
       {
@@ -19364,7 +20011,14 @@ const oracles_worker_data = {
   },
   "oracle-table-miscellaneous-anomaly-effect": {
     "Name": "Anomaly Effect",
-    "Content type": "Peril",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
     "Description": "<p>Meddling with alien artifacts or forbidden magic may put you at the mercy of chaos. Use this table to resolve the effects of ancient tech, rituals, or other strange forces. Results on this table may prompt devastating implications, so use it only in rare and dramatic moments.</p>",
     "Table": [
       {
@@ -19624,6 +20278,9 @@ const oracles_worker_data = {
   "oracle-table-space-sighting": {
     "Name": "Space Sighting",
     "Allow duplicate rolls": true,
+    "Part of speech": [
+      "fragment"
+    ],
     "Description": "<p>Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you Ask the Oracle to envision the primary feature of a waypoint as you Undertake an Expedition. Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.</p>",
     "Tables": [
       "oracle-subtable-space-sighting-terminus",
@@ -19635,7 +20292,14 @@ const oracles_worker_data = {
   "oracle-table-planet-peril": {
     "Name": "Peril",
     "Display name": "Planetside Peril",
-    "Content type": "Peril",
+    "Content tags": [
+      "peril",
+      "event",
+      "present"
+    ],
+    "Part of speech": [
+      "fragment"
+    ],
     "Description": "<p>Choose or roll on this table when you want inspiration for a trouble during planetside exploration or a planetside expedition.</p>",
     "Tables": [
       "oracle-subtable-planet-peril-lifebearing",
@@ -19646,8 +20310,13 @@ const oracles_worker_data = {
   "oracle-table-planet-opportunity": {
     "Name": "Opportunity",
     "Display name": "Planetside Opportunity",
-    "Content type": "Opportunity",
+    "Content tags": [
+      "opportunity"
+    ],
     "Description": "<p>Choose or roll on this table when you want inspiration for a beneficial encounter or event on a planetside journey, such as when you roll a strong hit with a match as you Undertake an Expedition, or if you Explore a Waypoint and find an opportunity.</p>",
+    "Part of speech": [
+      "fragment"
+    ],
     "Tables": [
       "oracle-subtable-planet-opportunity-lifebearing",
       "oracle-subtable-planet-opportunity-lifeless"
@@ -19666,6 +20335,12 @@ const oracles_worker_data = {
   "oracle-table-starship-mission": {
     "Name": "Mission",
     "Display name": "Starship Mission",
+    "Part of speech": [
+      "fragment"
+    ],
+    "Content tags": [
+      "objective"
+    ],
     "Description": "<p>Use the Starship Mission table when prompted by another oracle, or to flesh out the nature of a ship or fleet which has a flexible or uncertain role. You can also roll to generate the focus of a spaceborne quest.</p>",
     "Tables": [
       "oracle-subtable-starship-mission-terminus",
@@ -19676,6 +20351,9 @@ const oracles_worker_data = {
   },
   "oracle-table-creature-basic-form": {
     "Name": "Basic Form",
+    "Part of speech": [
+      "fragment"
+    ],
     "Description": "<p>Roll for a basic form, and flesh out the creature’s appearance using the First Look table.</p>",
     "Tables": [
       "oracle-subtable-creature-basic-form-space",
@@ -19705,4 +20383,6 @@ const oracles_worker_data = {
     "category": "oracle-category-derelict"
   }
 };
+
+const assetIndex = undefined;
 

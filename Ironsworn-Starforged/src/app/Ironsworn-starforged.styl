@@ -44,6 +44,7 @@ p, ul
   margin 0
 
   bodyTextLg()
+  font-size inherit
 
 ol, ul
   margin-left 1em
@@ -53,19 +54,18 @@ li
 
   bulletBefore(1em, "https://raw.githubusercontent.com/aureyia/roll20-character-sheets/starforged-ui-components/Ironsworn-Starforged/assets/ux/star-bullet.svg")
 
-label, .btn, button[type=roll], button[type=action][name^=act_roll]
+.btn, button[type=roll], button[type=action][name^=act_roll]
   btn()
 
 input[type=text], input[type=number], input[type=search], textarea, select
   inputBox()
 
-input[type=number]
-  min-width 5ch
-
 select
   text-indent 1px
   text-overflow ""
   appearance none
+
+
 
 hr
   height 1px
@@ -77,57 +77,17 @@ textarea
   max-width: ($sheet_width - $sheet_padding * 2)
   // TODO: the below oughta live in its own file w/ other resource meter styles
 
-.flex-container
-  display flex
-  align-items flex-start
-
-.flex-wrapper
-  display flex
-  flex-direction column
-  margin-bottom 10px
-  padding 0.5em
-
-.pc-name
-  width 100%
-
-  borderCommon()
-
-  border-radius 0
-  background #E6E7E8
-  color $color_fg
-
-.border
-  border 1px solid $color_input
-  border-radius 4px
+label
+  labelTextLg()
 
 textarea.full-width
   width 95%
   resize vertical
 
-div.preview-roll
-  padding 0
-
-span.preview-roll
-  margin-left 1em
-  width 30%
-
-.button-container-preview
-  width 2.4em
-
-.no-border
-  border 0
-
-.requirement-area
-  margin-bottom 5px
-  height auto
-
 input.border-bottom
   border-bottom 1px solid $color_fg
   border-radius 0
 
-.full-width
-  margin-top 0.3em
-  width 100%
 
 u
   text-decoration underline 1pt solid currentColor
@@ -142,7 +102,7 @@ u
     height hexWidthToHeightPointy($iconWidth)
 
   &.raster
-    hexagonClip($iconWidth)
+    hexClip($iconWidth)
 
 
 

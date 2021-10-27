@@ -1,21 +1,24 @@
 include ./../resources/mixins/resourcemeter.pug
 
-//- -
-//-   function autoCalcMin(attrX, attrY) {
-//-     return `@{${attrX}/2 + ${attrY} / 2} - abs(@{${attrX}} - @{${attrY}} / 2`;
-//-   }
+mixin momentumBar
+  section.momentum
+    h3.momentum-header
+      +i18n("momentum")
+    .momentum-status-box
+      +attrSpan('momentum-maximum', "momentum_max")
+    +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
+    +actionBtn("momentum-burn", null, null, ["momentum-burn"], true)
+      +i18n("momentum-burn")
+      span!=" &raquo; "
+      span(name="attr_momentum_reset").attr-span
 
-section#momentum
-  //- input(type="hidden" name="attr_momentum-burn-available" value="true")
-  h3.momentum-header
-    +i18n("momentum")
-  .momentum-status-box
-    +attrSpan('momentum-maximum', "momentum_max")
-  +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
-  +actionBtn("momentum-burn", null, null, ["momentum-burn"], true)
+mixin momentumSpinner
+  section.momentum
     input(type='hidden' name=`attr_momentum_reset` value=2)
-    +i18n("momentum-burn")
-    span!=" &rarr; "
-    span(name="attr_momentum_reset").attr-span
-  //- .momentum-status-box
-  //-   +attrSpan('momentum-reset', "momentum_reset")
+    +momentumBurnBtn({i18n: "momentum", "i18n-title": "momentum-burn-description"})
+    section.momentum-status-box
+      +attrSpan('momentum-maximum', "momentum_max")
+    +attrSpinner("momentum", 2, -6, 10)
+
+mixin momentumBurnBtn(data)
+  +actionBtn("momentum-burn", data, ["momentum-burn", "sf-icon-momentum-burn"])

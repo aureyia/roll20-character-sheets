@@ -1,6 +1,8 @@
 
 // add to a parent selector to set the color on a specific type
 toggleBtn($color)
+  .toggle-btn
+    btn()
   input[type=checkbox].toggle-control
     display none
     & + .toggle-btn
@@ -12,7 +14,6 @@ toggleBtn($color)
       outline-color $color
 
 toggleBtn($color_fg)
-
 
 .static-btn
   btn()
@@ -34,26 +35,6 @@ toggleBtn($color_fg)
       color $color_bg
 
 button
-  &[type=roll], &[type=action]
-    &:before // unsetting r20's styling
-      content none
-      font-family inherit
-
-    &.icon-only
-      margin 0
-      padding 0
-      border 0
-      color $color_fg
-
-      &[name=act_roll-progress]
-        iconBtn($icon_progress_roll)
-
-      &[name^=roll_oracle]
-        iconBtn($icon_roll_oracle)
-
-      &[name=act_roll-action]
-        iconBtn($icon_action_roll)
-
   &.placeholder-button
     background-image none !important
     opacity 100% !important
@@ -62,9 +43,9 @@ button
 
 // hex buttons
 hexButtonIcon($bg_color, $fg_color, $icon)
-  btn($bg_color, $fg_color, 1em, 0, 0)
+  btn($bg_color, $fg_color, 0, 0)
   iconBtn($icon)
-  hexagonClip($h2_size)
+  hexClip($h2_size)
 
 hexButtonFontIcon($bg_color, $fg_color, $content, $font = "Pictos")
   display flex
@@ -82,9 +63,8 @@ hexButtonFontIcon($bg_color, $fg_color, $content, $font = "Pictos")
   cursor pointer
   grid-area close
   text-anchor middle
-
-  btn($bg_color, $fg_color, 1em, 0, 0)
-  hexagonClip($h2_size)
+  btn($bg_color, $fg_color, 0, 0)
+  hexClip($h2_size)
 
   &:before
     display flex
