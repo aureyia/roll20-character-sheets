@@ -1,0 +1,24 @@
+include ./mixins/assetAbility
+include ./mixins/assetCounter
+include ./mixins/assetDescription
+include ./mixins/assetTextInput
+include ./mixins/assetMeter
+include ./mixins/assetSelect
+
+mixin assetCard(asset, standalone = false, classes=[])
+  article(class=["asset-card", asset.id, asset["asset-type"], ...classes])
+    +assetHeader(asset)
+      if asset.Input
+        each inputBox in asset.Input
+          +assetTextInput(inputBox, asset.id)
+      if asset.Select
+        +assetSelect(asset)
+      if asset.Description
+        +assetDescription(asset)
+    section.asset-abilities
+      each ability in asset.Abilities
+        +assetAbility(ability)
+    if asset['Condition Meter'] && standalone === false
+      +assetMeterBar(asset)
+    if asset['Counter'] && standalone === false
+      +assetCounter(asset)

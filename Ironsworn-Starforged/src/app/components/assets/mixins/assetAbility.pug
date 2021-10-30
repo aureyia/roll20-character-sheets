@@ -1,0 +1,14 @@
+include ../../../common/pug/pager
+
+mixin assetAbility(ability)
+  section.asset-ability
+    +attrToggleCheck(ability.id, null, ability.Enabled)
+    +i18n(ability.id)
+    if ability.Input
+      each input, index in ability.Input
+        - inputId = `${ability.id.replace(/-ability.*/, "")}-textinput-${_.kebabCase(input)}`
+        label.asset-textinput
+          +i18n(inputId)
+          input(type='text' name=`attr_${inputId}` value='')
+    if ability['Counter'] && standalone === false
+      +assetCounter(ability.Counter)

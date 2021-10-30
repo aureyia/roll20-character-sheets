@@ -1,4 +1,4 @@
-include ../../components/assets/asset-builder
+include ../../components/assets/assetCard
 include ../page
 
 -
@@ -78,7 +78,7 @@ mixin shipPage(sheetType)
         fieldset.repeating_module-assets
           - moduleAssets = assets.Assets.filter(obj => { return obj.Category === 'Module' })
           .asset
-            +genericAssetBuilder(moduleAssets, 'moduleList')
+            //- +genericAssetBuilder(moduleAssets, 'moduleList')
 
       .ship-category-support-vehicles
         h3
@@ -86,4 +86,4 @@ mixin shipPage(sheetType)
         fieldset.repeating_support-vehicle-assets
           - shipAssets = assets.Assets.filter(obj => { return obj.Category === 'Support Vehicle' })
           .asset
-            +genericAssetBuilder(shipAssets, 'supportVehiclesList')
+            //- +genericAssetBuilder(shipAssets, 'supportVehiclesList')

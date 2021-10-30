@@ -1,14 +1,37 @@
-//- common templates
-//- Sheet Workers
-include ./workers/ironworker
+//- //- common templates
+//- //- Sheet Workers
+//- include ./workers/ironworker
 
-include ./common/pug/translation
-include ./common/pug/attrSpan
-include ./components/tabs/tabs
+//- include ./common/pug/translation
+//- include ./common/pug/attrSpan
+//- include ./components/tabs/tabs
 
-//- Sheet Index
-include ./pages/index
+//- //- Sheet Index
+//- include ./pages/index
 
-//- Roll Templates
-include ./roll-templates/index
+//- //- Roll Templates
+//- include ./roll-templates/index
 
+each index in _.range(1,10000)
+  div
+    div
+      div
+        div
+          div
+            div
+              div
+                div
+                  div
+                    div
+  fieldset.repeating_test
+    button(type="action" name="act_bugtest").child Test Child
+    article
+      button(type="action" name="act_bugtest").grandchild Test Grandchild
+      section
+        button(type="action" name="act_bugtest").great-grandchild Test Great-Grandchild
+
+<script type="text/worker">
+  | on("clicked:repeating_test:bugtest clicked:bugtest", eventInfo => {
+  |  console.log(eventInfo);
+  | });
+</script>

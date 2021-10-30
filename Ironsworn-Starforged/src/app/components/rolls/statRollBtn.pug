@@ -6,3 +6,19 @@ mixin statRollBtn(attr, content, label, description, classes=[])
     class=[...classes, "sf-icon-1d6"]
     )&attributes(translateElement(content, label, description))
     !=translation[content]
+
+
+//- old-school kluge to ensure asset stat rolls work
+//- with custom roll parsing.
+//- assets use compact buttons, so we dont bother with a content string
+
+mixin fakeRepeatingStatRollBtn(attr, label, description, classes=[])
+  label(class=[...classes, "btn", "sf-icon-1d6", "roll-repeating-stat"])&attributes(translateElement(false, label, description))
+    input(type="checkbox" hidden=true name="attr_roll-repeating-stat" data-attr=attr)
+
+mixin repeatingStatRollBtn(attr, label, description, classes=[])
+  button(
+    type="action"
+    name="act_bugtest"
+    class=[...classes, "sf-icon-1d6"]
+    )&attributes(translateElement(false, label, description))

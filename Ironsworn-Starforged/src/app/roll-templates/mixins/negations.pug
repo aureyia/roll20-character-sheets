@@ -1,7 +1,7 @@
 include ./actions
 include ./body
 
-mixin actionDieCancelled(opts)
+mixin action-dieCancelled(opts)
   div.sheet-result-body.sheet-result-row
     div
       +i18n('previous-action-score')
@@ -22,7 +22,7 @@ mixin actionDieCancelled(opts)
 mixin cancelRollOld(opts, type)
   | {{#rollTotal() momentum #{opts.momentum}}}
   | {{#rollTotal() #{type} negate#{opts.die}}}
-  +actionDieCancelled({momentum: true, type: type})
+  +action-dieCancelled({momentum: true, type: type})
   | {{/rollTotal() #{type} negate#{opts.die}}}
   | {{#^rollTotal() #{type} negate#{opts.die}}}
   +actionRollBodyOld(type)

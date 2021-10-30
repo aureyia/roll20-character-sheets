@@ -1,0 +1,12 @@
+
+mixin assetSelect(asset)
+  - let id = _.kebabCase(`${asset.id}-select-${asset.Select.Name}`)
+  label(class=["asset-select", "asset-header-field"])
+    //- TODO proper translation from dataforged
+    span!=asset.Select.Name
+    select(
+      name=`attr_${id}`
+      )
+      each item in asset.Select.Options
+        - let optionId = _.kebabCase(`${asset.Select.Type}-${item}`)
+        option(value=item.toLowerCase())!=translation[optionId]

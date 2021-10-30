@@ -23,7 +23,7 @@ mixin statsEditor()
 
 mixin statsStatic()
   each stat in stats
-    +statRollBtn(stat, {i18n: `stat-${stat}`}, [],)
+    +statRollBtn(stat, `stat-${stat}`)
       span(class=['attr-display'] name=`attr_${stat}`)
 
 mixin editToggle(parentName, defaultMode="off", ariaLabel)

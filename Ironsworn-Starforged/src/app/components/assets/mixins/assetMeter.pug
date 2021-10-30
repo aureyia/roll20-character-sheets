@@ -1,0 +1,19 @@
+include ./../../resources/mixins/conditionMeter
+include ./../../rolls/statRollBtn
+
+mixin assetMeterBar(asset)
+  - let assetName = asset.Name
+  - let meter = asset["Condition Meter"]
+  - let meterLabel;
+  - let btnLabel;
+  if meter.Name == "Health"
+    - btnLabel = "roll-plus-companion-health"
+    - meterLabel = btnLabel.replace("roll-plus-", "resource")
+  else if meter.Name == "Integrity"
+    - btnLabel = `roll-plus-${asset["asset-type"].replace("asset-type", "")}-integrity`
+    - meterLabel = btnLabel.replace("roll-plus-", "resource")
+  else
+    - btnLabel = `roll-plus-${_.kebabCase(meter.Name)}`
+    - meterLabel = meter.id
+  +conditionMeterBar(meter.id, meterLabel, meter["Starts At"]||meter["Starts at"]||meter.Max, meter.Min||0, meter.Max)
+    +statRollBtn(meter.id, false, btnLabel, false, ["icon-btn"])

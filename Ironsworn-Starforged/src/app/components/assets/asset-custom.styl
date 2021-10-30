@@ -1,0 +1,181 @@
+
+
+
+input[type=hidden][name=attr_header-textinputs]
+  ~ .asset-textinput
+    display none
+  for $index in 1..3
+    &[value^={"'"+$index+"'"}]
+      for $upToCurrentIndex in 1..$index
+        ~ .asset-textinput:nth-of-type({$upToCurrentIndex})
+          display flex
+
+// input[type=hidden][name=attr_header-textinputs]
+//   &[value^="0"]
+//     ~ .asset-textinput
+//       display none
+//   &[value^="1"]
+//     ~ .asset-textinput
+//       &:nth-child(1)
+//         display flex
+//       &:nth-child(2), &:nth-child(3)
+//         display none
+//   &[value^="2"]
+//     ~ .asset-textinput
+//       &:nth-child(1), &:nth-child(2)
+//         display flex
+//       &:nth-child(3)
+//         display none
+//   &[value^="3"]
+//     ~ .asset-textinput
+//       &:nth-child(1), &:nth-child(2), &:nth-child(3)
+//         display flex
+
+input.hide-next[type=hidden]
+  &:not([value="on"]) + *
+    display none
+
+input[type=hidden][name=attr_meter-size]
+  for $index in 1..7
+    &:not([value^={"'"+$index+"'"}]) ~ .condition-meter:nth-child({$index})
+      display none
+
+input.asset-ability-input-control
+  ~ .asset-textinput, ~ .asset-counter
+    display none
+    grid-column 2
+  &[value="text"] ~ .asset-textinput
+    display flex
+  &[value="number"] ~ .asset-counter
+    display flex
+
+label.asset-counter
+  padding-right 0
+  align-self initial
+  justify-self end
+  text-align initial
+  width auto
+  span
+    display none
+  input[type=number]
+    width 5ch
+    padding 0
+    text-align center
+
+.asset-builder.asset-card
+  gap 0.25em
+  *
+    gap 0.25em
+    text-align start
+  // calloutBox()
+  label
+    labelTextSm()
+    > span
+      height max-content
+      align-self center
+  input[type=text]
+    width 10ch
+    height max-content
+    flex 1
+    // &[name=attr_meter-label]
+    //   labelTextSm()
+  select, textarea, input, label, option
+    padding 0
+    margin 0
+    border 0
+    labelTextSm()
+    text-align start
+    // .asset-abilities &, .asset-header-field &
+    //   labelTextSm()
+  select, textarea, input, option
+    padding 0 0.2em
+  select, label, textarea, input
+    width unset
+    max-width unset
+    min-width unset
+    height unset
+    max-height unset
+    min-height unset
+    width max-content
+  select, select > option
+    labelTextSm()
+    height auto
+    border 0
+    appearance auto
+    width max-content
+    padding 0
+  .asset-header
+    grid-column 1 / span 2
+    display grid
+    .asset-name, .asset-header-field
+      width 100%
+    .asset-input-config
+      display grid
+      > label
+        display flex
+        flex-flow row
+        grid-row 1
+        grid-column 1 / span 3
+    .asset-header-field
+      input[type=text][name=attr_requirement]
+        width 100%
+    .asset-header-field.asset-input-config
+      input[type=text]
+        width 100%
+    .asset-name
+      height 1em
+  .asset-abilities
+    .asset-ability
+      display flex
+      flex-flow column
+      flex 1
+      textarea
+        flex-grow 1
+        width 100%
+      .ability-input-config
+        flex-grow 0
+        display flex
+        .select-input-type
+          display flex
+          &[value="false"] + input.input-label
+            visibility hidden
+            pointer-events none
+  .condition-meter
+    flex-direction row
+    justify-content initial
+    label
+      flex 0
+      display flex
+      white-space nowrap
+  .asset-type
+    font-size 1em
+    display flex
+    flex-direction row
+    height max-content
+  input[name="attr_asset-type-custom-name"]
+    display none
+  input[value="asset-type-custom"]
+    + input[name="attr_asset-type-custom-name"]
+      display initial
+
+  .condition-meter, .asset-abilities, .asset-header-field
+    font-size 90%
+    *
+      inherit
+
+
+input[type=hidden][name="attr_edit-mode"]
+  &[value="on"]
+    ~ .asset-card.asset-custom
+      display none
+  &:not([value="on"])
+    ~ .asset-builder
+      display none
+
+input[type=hidden][name="attr_asset-type"]
+  &:not([value="custom"]) ~ [name="attr_asset-type-custom-name"]
+    display none
+  for $value in (path companion deed module support-vehicle command-vehicle)
+    $assetType = 'asset-type-' + $value
+    &:not([value={"'"+$assetType+"'"}]) ~ [data-i18n={"'"+$assetType+"'"}]
+      display none

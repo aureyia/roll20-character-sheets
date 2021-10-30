@@ -3,54 +3,54 @@ include ./body
 //- include ../../components/moves/mixins/container
 
 mixin moveOutcome
-  | {{#rollGreater() computed::actionScore challengeDie1}}
-  | {{#rollTotal() challengeDie1 challengeDie2}}
+  | {{#rollGreater() computed::action-score challenge-die-1}}
+  | {{#rollTotal() challenge-die-1 challenge-die-2}}
   +strongHitMatch
-  | {{/rollTotal() challengeDie1 challengeDie2}}
-  | {{#^rollTotal() challengeDie1 challengeDie2}}
-  | {{#rollGreater() computed::actionScore challengeDie2}}
+  | {{/rollTotal() challenge-die-1 challenge-die-2}}
+  | {{#^rollTotal() challenge-die-1 challenge-die-2}}
+  | {{#rollGreater() computed::action-score challenge-die-2}}
   +strongHit
-  | {{/rollGreater() computed::actionScore challengeDie2}}
-  | {{#^rollGreater() computed::actionScore challengeDie2}}
+  | {{/rollGreater() computed::action-score challenge-die-2}}
+  | {{#^rollGreater() computed::action-score challenge-die-2}}
   +weakHit
-  | {{#rollGreater() momentum challengeDie2}}
+  | {{#rollGreater() momentum challenge-die-2}}
   +momentumStrongHit
-  | {{/rollGreater() momentum challengeDie2}}
-  | {{/^rollGreater() computed::actionScore challengeDie2}}
-  | {{/^rollTotal() challengeDie1 challengeDie2}}
-  | {{/rollGreater() computed::actionScore challengeDie1}}
-  | {{#^rollGreater() computed::actionScore challengeDie1}}
-  | {{#rollTotal() challengeDie1 challengeDie2}}
+  | {{/rollGreater() momentum challenge-die-2}}
+  | {{/^rollGreater() computed::action-score challenge-die-2}}
+  | {{/^rollTotal() challenge-die-1 challenge-die-2}}
+  | {{/rollGreater() computed::action-score challenge-die-1}}
+  | {{#^rollGreater() computed::action-score challenge-die-1}}
+  | {{#rollTotal() challenge-die-1 challenge-die-2}}
   +missMatch
-  | {{#rollGreater() momentum challengeDie1}}
+  | {{#rollGreater() momentum challenge-die-1}}
   +momentumStrongHitMatch
-  | {{/rollGreater() momentum challengeDie1}}
-  | {{/rollTotal() challengeDie1 challengeDie2}}
-  | {{#^rollTotal() challengeDie1 challengeDie2}}
-  | {{#rollGreater() computed::actionScore challengeDie2}}
+  | {{/rollGreater() momentum challenge-die-1}}
+  | {{/rollTotal() challenge-die-1 challenge-die-2}}
+  | {{#^rollTotal() challenge-die-1 challenge-die-2}}
+  | {{#rollGreater() computed::action-score challenge-die-2}}
   +weakHit
-  | {{#rollGreater() momentum challengeDie1}}
+  | {{#rollGreater() momentum challenge-die-1}}
   +momentumStrongHit
-  | {{/rollGreater() momentum challengeDie1}}
-  | {{/rollGreater() computed::actionScore challengeDie2}}
-  | {{#^rollGreater() computed::actionScore challengeDie2}}
+  | {{/rollGreater() momentum challenge-die-1}}
+  | {{/rollGreater() computed::action-score challenge-die-2}}
+  | {{#^rollGreater() computed::action-score challenge-die-2}}
   +miss
-  | {{#rollGreater() momentum challengeDie1}}
-  | {{#rollGreater() momentum challengeDie2}}
+  | {{#rollGreater() momentum challenge-die-1}}
+  | {{#rollGreater() momentum challenge-die-2}}
   +momentumStrongHit
-  | {{/rollGreater() momentum challengeDie2}}
-  | {{#^rollGreater() momentum challengeDie2}}
+  | {{/rollGreater() momentum challenge-die-2}}
+  | {{#^rollGreater() momentum challenge-die-2}}
   +momentumWeakHit
-  | {{/^rollGreater() momentum challengeDie2}}
-  | {{/rollGreater() momentum challengeDie1}}
-  | {{#^rollGreater() momentum challengeDie1}}
-  | {{#rollGreater() momentum challengeDie2}}
+  | {{/^rollGreater() momentum challenge-die-2}}
+  | {{/rollGreater() momentum challenge-die-1}}
+  | {{#^rollGreater() momentum challenge-die-1}}
+  | {{#rollGreater() momentum challenge-die-2}}
   +momentumWeakHit
-  | {{/rollGreater() momentum challengeDie2}}
-  | {{/^rollGreater() momentum challengeDie1}}
-  | {{/^rollGreater() computed::actionScore challengeDie2}}
-  | {{/^rollTotal() challengeDie1 challengeDie2}}
-  | {{/^rollGreater() computed::actionScore challengeDie1}}
+  | {{/rollGreater() momentum challenge-die-2}}
+  | {{/^rollGreater() momentum challenge-die-1}}
+  | {{/^rollGreater() computed::action-score challenge-die-2}}
+  | {{/^rollTotal() challenge-die-1 challenge-die-2}}
+  | {{/^rollGreater() computed::action-score challenge-die-1}}
 
 
 mixin standardAction(type)

@@ -1,18 +1,27 @@
-{
-  "1": {
-    "text": "troublesome",
-    "checked": true
+[
+  {
+    "i18n": "challenge-rank-troublesome",
+    "mark": 12,
+    "legacy": 1
   },
-  "2": {
-    "text": "dangerous"
+  {
+    "i18n": "challenge-rank-dangerous",
+    "mark": 8,
+    "legacy": 2
   },
-  "3": {
-    "text": "formidable"
+  {
+    "i18n": "challenge-rank-formidable",
+    "mark": 4,
+    "legacy": 4
   },
-  "4": {
-    "text": "extreme"
+  {
+    "i18n": "challenge-rank-extreme",
+    "mark": 2,
+    "legacy": 8
   },
-  "5": {
-    "text": "epic"
+  {
+    "i18n": "challenge-rank-epic",
+    "mark": 1,
+    "legacy": 12
   }
-}
+]

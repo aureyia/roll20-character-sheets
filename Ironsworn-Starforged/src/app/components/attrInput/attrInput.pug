@@ -1,6 +1,5 @@
 include ../rolls/statRollBtn
 
-
 mixin attrInputNumber(attribute, value=0, min=0, max=5, classes=[])
   if (typeof min == "number")
     input(type="hidden", name=`attr_${attribute}_min`, value=min)

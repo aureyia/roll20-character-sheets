@@ -1,0 +1,48 @@
+
+mixin customAssetHeader
+  - let assetTypes = Array.from(new Set(assets.Assets.map(item => item["asset-type"])))
+  section.asset-header
+    input(type="hidden" name="attr_asset-type")
+    span(
+      name="attr_asset-type-custom-name"
+      ).asset-type
+    each assetType in assetTypes
+      span(data-i18n=assetType).asset-type!=translation[assetType]
+    h3.asset-name
+      span(name="attr_name")
+    block
+
+mixin customAssetCard
+  input(type="hidden" name="attr_asset-type")
+  article(class=["asset-card", "asset-custom"])
+    +customAssetHeader(asset)
+      section(class=["asset-description", "asset-header-field"])
+        p(name="attr_description")
+      input(type="hidden" name="attr_header-textinputs")
+      each index in [1,2,3]
+        label(class=["asset-textinput","asset-header-field"])
+          span(name=`attr_header-textinput-${index}-label`)
+          input(type='text' name=`attr_input-${index}` value='')
+    section(class=["asset-abilities"])
+      each index in [1,2,3]
+        section.asset-ability
+          +attrToggleCheck(`attr_ability-${index}`)
+          p
+            span(name=`attr_ability-${index}-text`)
+          input(type="hidden" name=`attr_ability-${index}-input-type` class=["asset-ability-input-control"])
+          label.asset-counter
+            span(name=`attr_ability-${index}-input-label`)
+            input(type="number" name=`attr_ability-${index}-counter`)
+          label.asset-textinput
+            span(name=`attr_ability-${index}-input-label`)
+            input(type="text" name=`attr_ability-${index}-textinput`)
+    input(type="hidden" name="attr_meter-size")
+    +customMeterDisplay
+
+
+mixin customMeterDisplay
+  each parentIndex in _.range(1, customAssetMeterMax+1)
+    - let attribute = `attr_meter-${parentIndex}`
+    - let max = parentIndex
+    +conditionMeterBar(attribute, false, max)
+      +repeatingStatRollBtn(attribute, btnLabel, false, ["icon-btn"])

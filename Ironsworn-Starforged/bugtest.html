@@ -1,0 +1,15 @@
+<fieldset class="repeating_test">
+  <button type="action" name="act_bugtest" class="child">Test Child</button>
+  <article>
+    <button type="action" name="act_bugtest" class="grandchild">Test Grandchild</button>
+    <section>
+      <button type="action" name="act_bugtest" class="great-grandchild">Test Great-Grandchild</button>
+    </section>
+  </article>
+</fieldset>
+
+<script type="text/worker">
+  on("clicked:repeating_test:bugtest clicked:bugtest", eventInfo => {
+    console.log(eventInfo);
+  });
+</script>

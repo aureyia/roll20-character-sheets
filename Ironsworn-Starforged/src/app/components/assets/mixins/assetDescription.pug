@@ -1,0 +1,12 @@
+
+
+mixin assetHeader(asset)
+  section.asset-header
+    span.asset-type=asset.Category
+    h3.asset-name=asset.Name
+    block
+
+mixin assetDescription(asset)
+  - translationDesc = `${asset.id}-description`
+  section.asset-description.asset-header-field
+    +i18n(translationDesc)

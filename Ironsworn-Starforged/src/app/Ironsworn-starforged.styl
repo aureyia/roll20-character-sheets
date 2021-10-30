@@ -8,9 +8,10 @@
 @import "./common/stylus/reset"
 
 // Sheet Core
-*, ::before, ::after
+html
   box-sizing border-box
-
+*, *::before, *::after
+  box-sizing inherit
 .ironsworn-sheet
   color $color_fg
   padding $sheet_padding

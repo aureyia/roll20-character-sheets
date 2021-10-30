@@ -17,9 +17,9 @@ mixin rollTemplateActionRoll
         +moveOutcome
 
 mixin momentumCancel
-  | {{#rollLess() computed::actionDie 1}}
+  | {{#rollLess() computed::action-die 1}}
   .sheet-result-body.sheet-result-row Action die cancelled by negative momentum.
-  | {{/rollLess() computed::actionDie 1}}
+  | {{/rollLess() computed::action-die 1}}
 
 //- this is a mixin so the variables are properly scoped
 mixin rollTemplateActionRollOld

@@ -1,0 +1,98 @@
+
+include ./customAssetCard
+
+-
+  customAssetAbilities = 3;
+  customMeterMax = 7;
+  customHeaderInputs = 3;
+
+mixin customTypeSelect
+  - let assetTypes = Array.from(new Set(assets.Assets.map(item => item["asset-type"])))
+  section.asset-type
+    select(name="attr_asset-type")
+      option(selected value="") Select asset type...
+      each assetType in assetTypes
+        option(value=assetType data-i18n=assetType)!=translation[assetType]
+      option(value="asset-type-custom") Custom...
+    input(type="hidden" name="attr_asset-type")
+    input(type="text" placeholder="Custom asset type" name="attr_asset-type-custom-name")
+      //- TODO: add a hidden field that appears
+      //- alternately: use a datalist?
+
+mixin customAssetBuilder
+  article.asset-builder.asset-card
+    section.asset-header
+      +customTypeSelect
+      //- asset type selector: the normal ones, + custom entry that displays a text input field?
+      input(type="text" name="attr_name" placeholder="Asset name" class=["asset-name"])
+      section(class=["asset-description", "asset-header-field"])
+        input(type="text" name="attr_requirement" placeholder="Requirement")
+      section(class=["asset-header-field", "asset-input-config"])
+        label
+          span Inputs
+          select(
+            name="attr_header-textinputs"
+            )
+            each index in _.range(0,customHeaderInputs+1)
+              option(value=index)!=index
+        each index in _.range(1,customHeaderInputs+1)
+          input(
+            type="text"
+            name=`attr_header-textinput-${index}-label`
+            placeholder=`Label ${index}`
+          )
+    section.asset-abilities
+      each index in _.range(1,customAssetAbilities+1)
+        section(class=["asset-ability"])
+          textarea(name=`attr_ability-${index}-text` placeholder=`Ability ${index} text`)
+          section.ability-input-config
+            label(
+              class=["select-input-type"]
+              )
+              span Input type
+              select(
+                name=`attr_ability-${index}-input-type`
+                )
+                option(value="false" selected) None
+                option(value="text") Text
+                option(value="number") Counter
+            input(
+              name=`attr_ability-${index}-input-type`
+              type="hidden"
+              class=["select-input-type"]
+              value="false"
+              )
+            input(
+              type="text"
+              name=`attr_ability-${index}-input-label` placeholder="Input label"
+              class=["input-label"]
+              )
+    section.condition-meter
+      label
+        span Meter size
+        +customAssetMeterSelect
+      input(
+        type="text"
+        name="attr_meter-label"
+        placeholder="Condition meter label"
+        )
+
+mixin customAssetMeterSelect
+  select(name="attr_meter-size")
+    option(value=0 selected) None
+    each meterIndex in _.range(1, customMeterMax+1)
+      option(value=meterIndex)!=meterIndex
+
+//- old controll stat: attr_meter-dropdown
+//- old stat: attr_meter-dropdown-${index}
+//- new version: custom-meter-size = number
+
+mixin customAssets
+  fieldset.repeating_assets
+    label
+      !="edit mode"
+      input(type="checkbox" checked name="attr_edit-mode")
+
+    input(type="hidden" name="attr_edit-mode" value="on")
+    +customAssetBuilder
+    +customAssetCard

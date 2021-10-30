@@ -30,7 +30,7 @@ $momentum_colors = #ce242b #cd073f #c80052 #be0064 #b10074 #9f1883 #892890 #813c
     height -moz-available
     height stretch
 
-  .momentum-status-box, .resource-meter-box
+  .momentum-status-box, .condition-meter-box
     labelTextLg()
 
     color $color_fg_fade
@@ -40,7 +40,7 @@ $momentum_colors = #ce242b #cd073f #c80052 #be0064 #b10074 #9f1883 #892890 #813c
 
     font-size 90%
 
-  .resource-meter
+  .condition-meter
     display flex
     flex-grow 10
     margin 0
@@ -49,11 +49,11 @@ $momentum_colors = #ce242b #cd073f #c80052 #be0064 #b10074 #9f1883 #892890 #813c
     background-image $momentum_gradient
     gap 2px
 
-  .resource-meter-box, .momentum-status-box, button[name=act_momentum-burn]
+  .condition-meter-box, .momentum-status-box, button[name=act_momentum-burn]
     padding 0.25em
     width max-content
 
-  .resource-meter-box
+  .condition-meter-box
     interactive(#fff, transparent)
 
     width: (100 / 17)%
@@ -65,7 +65,7 @@ $momentum_colors = #ce242b #cd073f #c80052 #be0064 #b10074 #9f1883 #892890 #813c
       &[for=momentum_{num}]
         color: $momentum_colors[$colorIndex]
 
-  input[type=radio][name=attr_momentum]:checked + .resource-meter-box, .resource-meter-box:hover
+  input[type=radio][name=attr_momentum]:checked + .condition-meter-box, .condition-meter-box:hover
     interactiveAltColor(#fff, transparent)
 
     paint-order stroke fill

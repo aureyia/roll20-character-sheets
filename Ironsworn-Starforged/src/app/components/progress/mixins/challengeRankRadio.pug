@@ -12,6 +12,7 @@ mixin challengeRankRadio()
       label(class=["challenge-rank-option","toggle-radio", `challenge-rank-${challengeRank.text}`])
         - let i18n_key = `difficulty-${challengeRank.text}`
         input(hidden type="radio"  name="attr_rank" value=index checked=challengeRank.checked||false)
+        //- TODO: rewrite to take advantage of the data-i18n-dynamic attribute (translates the text of an attribute-backed span dynamically)
         +i18n(i18n_key)
   label(class=["challenge-rank-edit"] data-i18n-title="edit")
     input(hidden type="radio" value=0 name="attr_rank")

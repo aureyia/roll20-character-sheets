@@ -1,4 +1,4 @@
-include ./../resources/mixins/resourcemeter.pug
+include ./../resources/mixins/conditionMeter.pug
 
 mixin momentumBar
   section.momentum
@@ -6,7 +6,7 @@ mixin momentumBar
       +i18n("momentum")
     .momentum-status-box
       +attrSpan('momentum-maximum', "momentum_max")
-    +resourceMeterBar("momentum", "momentum", "momentum", 10, -6, 2, true)
+    +conditionMeterBar("momentum", "momentum", "momentum", 2, -6, 10, true)
     +actionBtn("momentum-burn", null, null, ["momentum-burn"], true)
       +i18n("momentum-burn")
       span!=" &raquo; "

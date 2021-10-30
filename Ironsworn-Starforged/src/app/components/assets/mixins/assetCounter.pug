@@ -1,0 +1,13 @@
+
+mixin assetCounter(asset)
+  - let id = _.kebabCase(`${asset.id}-counter-${asset.Counter.Name}`)  //- TODO: generate working translations via dataforged
+  input(
+    class=["asset-counter"]
+    type="number"
+    value=0
+    min=0
+    max=asset.Counter.Max
+    title=asset.Counter.Name
+    name=`attr_${id}`
+    )
+    //- name="attr_"+id

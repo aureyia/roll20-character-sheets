@@ -3,7 +3,7 @@ include ../../common/pug/translation
 mixin actionRollBtn(move, classes=[])
   - let i18n = move.id.replace("move-", "move-title-")
   - let moveData = rolls[move.Name]
-  - let template = `&{template:ironsworn_move} {{rollId=0}} {{actionScore=[[[[1d6]]+[[${moveData.stat}]]+[[(?{Adds|0})]]]]}} {{actionDie=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challengeDie1=[[d10]]}} {{challengeDie2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{character_name=@{character_name}}} {{header=^{${i18n}}}} {{icon=action-roll}}`
+  - let template = `&{template:ironsworn_move} {{rollId=0}} {{actionScore=[[[[1d6]]+[[${moveData.stat}]]+[[(?{Adds|0})]]]]}} {{action-die=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challenge-die-1=[[d10]]}} {{challenge-die-2=[[d10]]}} {{momentum=[[@{momentum}]]}} {{character_name=@{character_name}}} {{header=^{${i18n}}}} {{icon=action-roll}}`
   - let data = { i18n, template }
   +actionBtn("roll-action", data, classes)
 

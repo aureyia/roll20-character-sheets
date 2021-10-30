@@ -15,12 +15,12 @@ mixin tab(tabName, parentName, i18n_key, fallbackLabel=false, classes=[], aria_c
 
 mixin tabList(parentName, defaultTab, ariaLabel, classes=[])
   nav(
-        aria-label=ariaLabel
-        role="tablist"
-        class=["page-tablist"]
-        id=parentName
-        class = classes
-      )
+      aria-label=ariaLabel
+      role="tablist"
+      class=["page-tablist"]
+      id=parentName
+      class = classes
+    )
     input(
       type="hidden"
       name=`attr_${parentName}-display`

@@ -1,0 +1,5 @@
+mixin assetTextInput(inputBox, assetId)
+  - id = `${assetId}-textinput-${_.kebabCase(inputBox)}`
+  label.asset-textinput.asset-header-field
+    +i18n(id)
+    input(type='text' name=`attr_${id}` value='')

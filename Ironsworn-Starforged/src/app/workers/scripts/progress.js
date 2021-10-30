@@ -159,9 +159,9 @@ repeating_progress.forEach(item => {
       const newRank = challengeRanks[rankInt];
       const newRankName = newRank.name;
       //
-      startRoll(`&{template:alert} {{surtitle=Recommit}} {{header=${attrData[nameAttr]}}} {{challengeDie1=[[1d10]]}} {{challengeDie2=[[1d10]]}} {{customLabel1=New Rank}} {{customRow1=${capitalize(newRankName)}}} {{customLabel2=Progress removed}} {{customRow2=""}}`, (rollData) => {
+      startRoll(`&{template:alert} {{surtitle=Recommit}} {{header=${attrData[nameAttr]}}} {{challenge-die-1=[[1d10]]}} {{challenge-die-2=[[1d10]]}} {{customLabel1=New Rank}} {{customRow1=${capitalize(newRankName)}}} {{customLabel2=Progress removed}} {{customRow2=""}}`, (rollData) => {
         log(rollData);
-        const progressRemoved = Math.min(rollData.results.challengeDie1.result, rollData.results.challengeDie2.result);
+        const progressRemoved = Math.min(rollData.results["challenge-die-1"].result, rollData.results["challenge-die-2"].result);
         incrementProgress(rowId(eventInfo), (-1*progressRemoved*ticksPerBox), true);
         const computed = {
           progressRemoved,
@@ -178,7 +178,11 @@ repeating_progress.forEach(item => {
     log(rowId(eventInfo), eventInfo);
   });
   on(`${clickEvent}:roll-progress`, eventInfo => {
-    log(rowId(eventInfo), eventInfo);
+    log(eventInfo);
+    let progressRowId = rowId(eventInfo);
+    getAttrs([`${progressRowId}_progress-filled`], function(attrData) {
+
+    });
   });
 });
 

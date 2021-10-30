@@ -1,0 +1,17 @@
+mixin conditionMeterBar(attribute, labelKey, value=5, min=0, max=value, plusSigns=false)
+  section.condition-meter&attributes(labelKey)
+    if (max)
+      input(type="hidden" name=`attr_${attribute}_max` value=max)
+    if (min)
+      input(type="hidden" name=`attr_${attribute}_min` value=min)
+    input(type="hidden" name=`attr_${attribute}` value=value)
+    - let currentMeter = min
+    while currentMeter <= max
+      - let displayText = plusSigns == true && currentMeter > 0 ? `+${currentMeter}` : currentMeter
+      - let checked = currentMeter == value ? "checked" : false
+      label.condition-meter-box(title=`Set ${translation[i18n_key]||"resource meter"} to ${displayText}`)
+        input(type='radio' name='attr_'+attribute data-attr=attribute value=currentMeter checked=checked)
+        span!=displayText
+      - currentMeter++
+    block
+

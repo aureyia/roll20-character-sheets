@@ -1,5 +1,28 @@
 const actionScoreMax = 10;
 
+let ignoredChars = new RegExp("[,']", "g");
+
+function toCamelCase(string) {
+  let words = string.split(/[-_ ]/i);
+  let newString = words.map((word, index) => {
+    if (index == 0) {
+      return word;
+    } else {
+      return word[0].toUpperCase() + word.slice(1);
+    }
+  }).join("");
+  return newString;
+}
+
+function toKebabCase(string) {
+  let words = string.split(/([A-Z])/);
+  return words.join("-").replace(/[-_ ]/i, "-").toLowerCase();
+}
+
+function actionRollTpl(actionDie='[[1d6]]', stat, adds) {
+
+};
+
 on("clicked:roll-action", function(eventInfo) {
   log("eventInfo", eventInfo);
   // default values,
@@ -13,40 +36,19 @@ on("clicked:roll-action", function(eventInfo) {
   };
   let overrides = elementData(eventInfo);
   Object.assign(args, overrides);
-  // let statAttr = args.stat.replace(/\[\[@{(.*)}\]\]/, "$1");
-  if (args.stat.match(/asset-.+?-meter/)) {
-    // derive asset id, find repeating stat?
-    let assetId = args.stat.replace(/.*?(asset-.+?)-meter.*/, "$1");
-    args.surtitle=args.surtitle + `: ^{${assetId}-name}`;
-    // getSectionIDs("assets", function(idArr) {
-    //   let repAttrs = idArr.map(id => `${id}_repeating_assets_${statAttr}`);
-    //   getAttrs(repAttrs, function (repAttrs))
-    // });
-
-
-
-  };
-  let template = `&{template:ironsworn_move} {{actionScore=[[${args["action-die"]}+${args.stat}+${args.adds}]]}} {{actionDie=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challengeDie1=${args["challenge-die-1"]}}} {{challengeDie2=${args["challenge-die-2"]}}} {{momentum=[[@{momentum}]]}} {{surtitle=${args.surtitle}}} {{header=^{${args["i18n-header"]||args["i18n-aria-label"]}}}} {{icon=action-roll}}`;
+  let template = `&{template:ironsworn_move} {{action-score=[[${args["action-die"]}+${args.stat}+${args.adds}]]}} {{action-die=$[[0]]}} {{stat=$[[1]]}} {{adds=$[[2]]}} {{challenge-die-1=${args["challenge-die-1"]}}} {{challenge-die-2=${args["challenge-die-2"]}}} {{momentum=[[@{momentum}]]}} {{surtitle=${args.surtitle}}} {{header=^{${args["i18n-header"]||args["i18n-aria-label"]}}}} {{icon=action-roll}}`;
   log("roll-action template", template);
   startRoll(template, function(rollData) {
-    log("rollData",rollData);
-    let momentum = rollData.results.momentum.result;
-    let adds = rollData.results.adds.result;
-    let stat = rollData.results.stat.result;
-    let actionDie = rollData.results.actionDie.result;
+    log("rollData", rollData);
+    const computed = {};
+    for (const key in rollData.results) {
+      computed[key] = rollData.results[key].result;
+    }
 
-    // negative momentum cancel
-    if (momentum + actionDie == 0) {
-      actionDie = 0;
+    if (computed["action-die"] && (computed.momentum + computed["action-die"] == 0)) {
+      computed["action-die"] = 0;
     };
-
-    let actionScore = Math.min((actionDie + adds + stat), actionScoreMax);
-
-    const computed = {
-      actionScore,
-      actionDie,
-      rollId: rollData.rollId,
-    };
+    computed["action-score"] = Math.min((computed["action-die"] + computed.adds + computed.stat), actionScoreMax);
     log("computed", computed);
     finishRoll(rollData.rollId, computed);
   });

@@ -1,11 +1,12 @@
 include ../../common/pug/button
 
-mixin progressRollBtn(progress_name, progress_amount, i18n="roll", classes=[])
-  - let newClasses = [...classes, "sf-icon-2d10"]
-  //- the worker supplies template, challenge1, challenge2; button value is appended to that string then passed to roll template
-  - let template = `{{header=${progress_name}}} {{actionScore=[[${progress_amount}]]}}`
-  - let data = { template, i18n }
-  +actionBtn("roll-progress", data, newClasses)
+mixin progressRollBtn(progressAttr, content, label, description, classes=[])
+  button(
+    type="action"
+    name="act_roll-progress"
+    data-action-score=progressAttr
+    class=[...classes, "sf-icon-2d10"]
+  )
 
 mixin progressRepeatingRollBtn(moveId)
   - let i18n = moveId ? moveId.replace("move-", "move-title-") : "roll"

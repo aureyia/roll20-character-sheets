@@ -1,5 +1,5 @@
 //- include ../../components/stats/stats
-include ./mixins/resourcemeter
+include ./mixins/conditionMeter
 include ./mixins/vitals
 include ./mixins/xp
 include ../rolls/rolls
@@ -20,7 +20,7 @@ include ../attrInput/attrInput
 
 mixin resourceRollable(attribute, i18n, sheetType, min=minStandardResource, max=maxStandardResource, value=maxStandardResource)
   section(id=`${sheetType}-${attribute}`).resource.resource-numeric.resource-rollable
-    +statRollBtn(attribute, {i18n}, ["title"])
+    +statRollBtn(attribute, i18n, false, false, ["title"])
     +attrSpinner(attribute, value, min, max)
 
 mixin characterResourceCounter(resourceId, i18n_key=resourceId, attribute=_.snakeCase(resourceId))
@@ -32,7 +32,7 @@ mixin characterResources(resources)
   section.vitals
     each textResource in textResources
       +characterResourceText(textResource)
-  section.resource-meters
+  section.condition-meters
     each resource in resources
       +attrRollable(resource.attr, false, resource.i18n, resource.label, true, maxStandardResource, minStandardResource, maxStandardResource)
 
