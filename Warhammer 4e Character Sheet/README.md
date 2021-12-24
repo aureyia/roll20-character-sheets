@@ -73,6 +73,11 @@ Note conditions are not intended for out of combat situations, GM simply makes t
  
 ///// ============ Change Log ============ /////  
 
+December 6th 2021 v1.53.1
+
+- Completed experimental talent list (all 166 talents) in the Dev mode, nearly all are implemented at this time. This causes talent bonuses to show when rolling skills and weapons, to allow superior flow of game and especially combat. Includes advanced combat actions, like Charge/Furious Assault/Feint/DW/Fast Shot etc rules which are implemented directly into the sheet so they show when rolling ( i.e. you don't have to remember at the +SL or complex rule). Also includes a new SL system which adds together the total SL bonus each roll. Enable Dev mode to test this feature.
+
+
 September 14th 2021 v1.53
 
 - Various bug fixes
