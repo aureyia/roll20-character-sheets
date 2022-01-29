@@ -1,4 +1,5 @@
 include ../../components/maps/sector-map
+include ../../components/maps/sector-content
 
 mixin overview 
   //- Map
@@ -7,10 +8,7 @@ mixin overview
   //- Summary of Locations
   .sector-summary
     .locations
+      +sectorContent()
       //- repeating section of all locations
       //- a new location is added when one is generated from the location builder
       //- +locations()
-    
-    //- Additonal Notes
-    .notes
-      textarea(class="note-area" name='attr_sector-notes')

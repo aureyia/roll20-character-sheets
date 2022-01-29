@@ -9,7 +9,7 @@
   .sector-map-container
     font-size: 0; /* disable white space between inline block element */
 
-    div
+    label
       width: var(--s);
       margin: var(--m);
       height: calc(var(--s)*1.1547); 
@@ -18,8 +18,15 @@
       clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
       background: white;
       margin-bottom: calc(var(--m) - var(--s)*0.2885);
+      padding: 0
+      cursor pointer
       &:hover
         background: #E6E7E8;
+      &::before
+        box-sizing: none
+      &::after
+        box-sizing: none
+        
 
   .sector-map-container::before {
     content: "";
@@ -28,3 +35,18 @@
     height: 120%; 
     shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
   }
+
+  .map-hex
+    &.highlighted
+      background: #faf27e;
+    &.travelled
+      background: #abb2c7;
+    &.current
+      background: #d4f3ab;
+  
+  
+.sector-hex-content
+  .single-hex
+    display: none
+    &.highlighted
+      display: block

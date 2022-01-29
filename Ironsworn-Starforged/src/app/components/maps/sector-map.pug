@@ -1,5 +1,8 @@
 mixin sectorMap
   .sector-map
     .sector-map-container
-      each num in new Array(140)
-        div
+      - var hexNumber = 0;
+      for num in new Array(140)
+        - ++hexNumber
+        label.map-hex(id=`hex-${hexNumber}`)
+    

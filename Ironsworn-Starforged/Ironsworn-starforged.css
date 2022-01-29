@@ -570,7 +570,8 @@
   margin-top: 0.5em;
 }
 .charsheet input[type=radio].character-mode:checked ~ div.character-mode,
-.charsheet input[type=radio].shared-mode:checked ~ div.shared-mode {
+.charsheet input[type=radio].shared-mode:checked ~ div.shared-mode,
+.charsheet input[type=radio].sector-mode:checked ~ div.sector-mode {
   display: block;
 }
 .charsheet input[type=checkbox].modes-show:checked ~ div.modes-show {
@@ -670,6 +671,9 @@
 }
 .charsheet .ship-btn {
   margin: 0;
+}
+.charsheet .map-container {
+  margin: 1em;
 }
 .charsheet .resources {
   display: grid;
@@ -2632,6 +2636,60 @@
 }
 .charsheet input[type="checkbox"].experience-box:hover ~ .experience-fill {
   background: #e6e7e8;
+}
+.charsheet .sector-map {
+  display: flex;
+  background: #000;
+  --s: 49px; /* size  */
+  --m: 1px; /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
+  height: 32em;
+}
+.charsheet .sector-map .sector-map-container {
+  font-size: 0; /* disable white space between inline block element */
+}
+.charsheet .sector-map .sector-map-container label {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s) * 1.1547);
+  display: inline-block;
+  font-size: initial;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  background: #fff;
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+  padding: 0;
+  cursor: pointer;
+}
+.charsheet .sector-map .sector-map-container label:hover {
+  background: #e6e7e8;
+}
+.charsheet .sector-map .sector-map-container label::before {
+  box-sizing: none;
+}
+.charsheet .sector-map .sector-map-container label::after {
+  box-sizing: none;
+}
+.charsheet .sector-map .sector-map-container::before {
+  content: "";
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(rgba(0,0,0,0) 0 calc(var(--f) - 3px), #000 0 var(--f));
+}
+.charsheet .sector-map .map-hex.highlighted {
+  background: #faf27e;
+}
+.charsheet .sector-map .map-hex.travelled {
+  background: #abb2c7;
+}
+.charsheet .sector-map .map-hex.current {
+  background: #d4f3ab;
+}
+.charsheet .sector-hex-content .single-hex {
+  display: none;
+}
+.charsheet .sector-hex-content .single-hex.highlighted {
+  display: block;
 }
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
   float: right;

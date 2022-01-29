@@ -1,0 +1,10 @@
+mixin sectorContent
+  .sector-hex-content
+    - var hexNumber = 0;
+    for num in new Array(140)
+      - ++hexNumber
+      div(class=`single-hex hex-${hexNumber}`)
+        p current ship hex
+        input(type='radio' name='attr_currentHex' class='current-ship-hex' value=`hex-${hexNumber}`)
+        p travelled hex
+        input(type='checkbox' class=`travelled-ship-hex-${hexNumber}` name=`attr_travelled_hex-${hexNumber}`)
