@@ -1,0 +1,30 @@
+.sector-map
+  display:flex;
+  background black
+  --s: 49px;  /* size  */
+  --m: 1px;    /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
+  height: 32em;
+
+  .sector-map-container
+    font-size: 0; /* disable white space between inline block element */
+
+    div
+      width: var(--s);
+      margin: var(--m);
+      height: calc(var(--s)*1.1547); 
+      display: inline-block;
+      font-size:initial;
+      clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+      background: white;
+      margin-bottom: calc(var(--m) - var(--s)*0.2885);
+      &:hover
+        background: #E6E7E8;
+
+  .sector-map-container::before {
+    content: "";
+    width: calc(var(--s) / 2 + var(--m));
+    float: left;
+    height: 120%; 
+    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
+  }

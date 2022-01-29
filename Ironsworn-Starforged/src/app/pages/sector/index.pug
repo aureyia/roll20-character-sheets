@@ -1,0 +1,19 @@
+//- include ../../components/nav/nav-bar
+//- include ../../components/resources/resources
+include ./overview
+//- include ./location-builder
+
+- var type = 'location'
+
+div.header
+  .name
+  .region
+  .faction
+
+//- Nav
+//- +navBar(type)
+
+//- Pages
++overview()
+//- +sectorBuilder()
+//- +planetBuilder()

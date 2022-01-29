@@ -6,7 +6,7 @@
 //-     input(type='checkbox' name=`attr_close_changelog` class='hide-element')
 //-     div.i18n-text(data-i18n='page-info-close')=translation['page-info-close']
 
-- var sheets = [ 'character', 'shared' ]
+- var sheets = [ 'character', 'shared', 'sector' ]
 input(type='checkbox' name='attr_modes_choice' class='modes-show hide-element' checked)
 div.modes-show.hide-element
   div.mode-title
@@ -28,3 +28,7 @@ div.character-mode.hide-element
 input(type='radio' name='attr_mode' class='shared-mode hide-element' value='1')
 div.shared-mode.hide-element
   include ./shared/index
+
+input(type='radio' name='attr_mode' class='sector-mode hide-element' value='2')
+div.sector-mode.hide-element
+  include ./sector/index

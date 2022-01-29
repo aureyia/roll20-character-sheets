@@ -52,7 +52,8 @@ label.mode
     margin-top 0.5em
 
 input[type=radio].character-mode:checked ~ div.character-mode,
-input[type=radio].shared-mode:checked ~ div.shared-mode
+input[type=radio].shared-mode:checked ~ div.shared-mode,
+input[type=radio].sector-mode:checked ~ div.sector-mode
   display block
 
 input[type=checkbox].modes-show:checked ~ div.modes-show
@@ -139,3 +140,12 @@ input[type=radio].ship:checked ~ div.ship
 
 .ship-btn
   margin 0
+
+.map-container
+  margin 1em
+
+.sector-summary
+  display grid
+  grid-template-columns 50% 50%
+  .locations
+    display flex

@@ -1,0 +1,16 @@
+include ../../components/maps/sector-map
+
+mixin overview 
+  //- Map
+  .map-container
+    +sectorMap()
+  //- Summary of Locations
+  .sector-summary
+    .locations
+      //- repeating section of all locations
+      //- a new location is added when one is generated from the location builder
+      //- +locations()
+    
+    //- Additonal Notes
+    .notes
+      textarea(class="note-area" name='attr_sector-notes')
