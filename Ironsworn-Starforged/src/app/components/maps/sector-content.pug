@@ -4,7 +4,23 @@ mixin sectorContent
     for num in new Array(140)
       - ++hexNumber
       div(class=`single-hex hex-${hexNumber}`)
-        p current ship hex
-        input(type='radio' name='attr_currentHex' class='current-ship-hex' value=`hex-${hexNumber}`)
-        p travelled hex
-        input(type='checkbox' class=`travelled-ship-hex-${hexNumber}` name=`attr_travelled_hex-${hexNumber}`)
+        - var currentButton = `currentHexButton${hexNumber}`
+        - var travelledButton = `travelledHexButton${hexNumber}`
+        +btn({
+          type: 'radio',
+          text: 'Current Ship Hex',
+          translationId: 'map-current-hex-btn',
+          attribute: `currentHex`,
+          classes: 'current'
+        })
+        +btn({
+          type: 'checkbox',
+          text: 'Travelled Hex',
+          translationId: 'map-travelled-hex-btn',
+          attribute: `travelled_hex-${hexNumber}`,
+          classes: 'travelled'
+        })
+        label(class='current-button' for=currentButton) Current ship hex
+        input(type='radio' class='current-ship-hex' id=currentButton name='attr_currentHex' value=`hex-${hexNumber}`)
+        label(class='travelled-button' for=travelledButton) Travelled
+        input(type='checkbox' class=`travelled-ship-hex-${hexNumber}` id=travelledButton name=`attr_travelled_hex-${hexNumber}`)

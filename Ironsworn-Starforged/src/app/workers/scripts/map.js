@@ -1,6 +1,3 @@
-let getElementByClassName = className => $20(`.${className}`);
-let getElementByIdName = idName => $20(`#${idName}`);
-
 $20('label.map-hex').on('click', async (event) => {
   const selector = event.htmlAttributes.id
   setAttrs({ highlightedHex: selector });
