@@ -46878,37 +46878,32 @@ on(`${buildImpactEvents(impactsAttrs)} ${buildImpactEvents(shipImpactAttrs)} cha
   setAttrs({
     [`${type}`]: eventinfo.newValue
   });
-});$20('label.map-hex').on('click', async (event) => {
+});let getElementByClassName = className => $20(`.${className}`);
+let getElementByIdName = idName => $20(`#${idName}`);
+
+$20('label.map-hex').on('click', async (event) => {
   const selector = event.htmlAttributes.id
-  setAttrs({
-    highlightedHex: selector
-  });
+  setAttrs({ highlightedHex: selector });
 });
 
-on('change:highlightedHex', (eventInfo) => {
-  $20(`.${eventInfo.previousValue}`).removeClass('highlighted');
-  $20(`#${eventInfo.previousValue}`).removeClass('highlighted');
-  $20(`.${eventInfo.newValue}`).addClass('highlighted');
-  $20(`#${eventInfo.newValue}`).addClass('highlighted');
+on('change:currentHex change:highlightedHex', (eventInfo) => {
+  const classToAdd = eventInfo.sourceAttribute.toLowerCase().replace('hex', '');
+  updateClasses(eventInfo.previousValue, eventInfo.newValue, classToAdd);
 })
 
-on('change:currentHex', (eventInfo) => {
-  $20(`.${eventInfo.previousValue}`).removeClass('current');
-  $20(`#${eventInfo.previousValue}`).removeClass('current');
-  $20(`.${eventInfo.newValue}`).addClass('current');
-  $20(`#${eventInfo.newValue}`).addClass('current');
-})
+function updateClasses (previousValue, newValue, cssClass) {
+  getElementByClassName(previousValue).removeClass(cssClass);
+  getElementByIdName(previousValue).removeClass(cssClass);
+  getElementByClassName(newValue).addClass(cssClass);
+  getElementByIdName(newValue).addClass(cssClass);
+}
 
-const allTravelHexes = new Array(140).fill(0).map((_, i) => `travelled_hex-${i + 1}`);
+const allTravelHexes = new Array(140).fill(0).map((_, index) => `travelled_hex-${index + 1}`);
 const eventFormatHexes = allTravelHexes.map((hex) => `change:${hex}`).join(' ');
 
 on(eventFormatHexes, (eventInfo) => {
-  const mapHex = eventInfo.sourceAttribute.replace('travelled_', '');
-  if(eventInfo.newValue === 'on') {
-    $20(`#${mapHex}`).addClass('travelled');
-  } else {
-    $20(`#${mapHex}`).removeClass('travelled');
-  }
+  const mapHex = $20(`#${eventInfo.sourceAttribute.replace('travelled_', '')}`);
+  eventInfo.newValue === 'on' ? mapHex.addClass('travelled') : mapHex.removeClass('travelled');
 })
 
 on('sheet:opened', () => {
