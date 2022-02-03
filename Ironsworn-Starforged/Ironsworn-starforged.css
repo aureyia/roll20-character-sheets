@@ -2683,13 +2683,18 @@
   background: #abb2c7;
 }
 .charsheet .sector-map .map-hex.current {
-  background: #d4f3ab;
+  background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/ship.svg?sanitize=true");
 }
 .charsheet .sector-hex-content .single-hex {
   display: none;
 }
 .charsheet .sector-hex-content .single-hex.highlighted {
   display: block;
+}
+.charsheet .sector-hex-content .single-hex .current-button.active,
+.charsheet .sector-hex-content .single-hex .travelled-button.active {
+  background: #4c4d4f;
+  color: #fff;
 }
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
   float: right;

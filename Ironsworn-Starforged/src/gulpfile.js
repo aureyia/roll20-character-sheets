@@ -7,8 +7,7 @@ const path = require('path');
 const axios = require('axios');
 const merge = require('gulp-merge-json');
 
-axios.defaults.baseURL =
-  'https://raw.githubusercontent.com/rsek/dataforged/main/roll20';
+axios.defaults.baseURL = 'https://raw.githubusercontent.com/rsek/dataforged/main/roll20';
 
 gulp.task('dataforge', async function() {
   const rawData = {
@@ -87,8 +86,7 @@ gulp.task('html', () => {
     .pipe(gulp.dest('../'));
 });
 
-gulp.task(
-  'watch',
+gulp.task('watch',
   gulp.series(['dataforge', 'css', 'data', 'html'], () => {
     gulp.watch('./app/**/*.styl', gulp.series(['css']));
     gulp.watch(['./app/**/*.pug', './app/**/*.js'], gulp.series(['html']));
