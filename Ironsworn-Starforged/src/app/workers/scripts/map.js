@@ -3,23 +3,37 @@ $20('label.map-hex').on('click', async (event) => {
   setAttrs({ highlightedHex: selector });
 });
 
-on('change:currentHex change:highlightedHex', (eventInfo) => {
+on('change:highlightedHex', (eventInfo) => {
   const classToAdd = eventInfo.sourceAttribute.toLowerCase().replace('hex', '');
-  updateClasses(eventInfo.previousValue, eventInfo.newValue, classToAdd);
+  updateMapHex(eventInfo.previousValue, eventInfo.newValue, classToAdd);
 })
 
-function updateClasses (previousValue, newValue, cssClass) {
-  getElementByClassName(previousValue).removeClass(cssClass);
-  getElementByIdName(previousValue).removeClass(cssClass);
-  getElementByClassName(newValue).addClass(cssClass);
-  getElementByIdName(newValue).addClass(cssClass);
+on('change:currentHex_button', (eventInfo) => {
+  updateMapHex(eventInfo.previousValue, eventInfo.newValue, 'current');
+  updateTravelledHex(eventInfo.newValue)
+})
+
+function updateMapHex (previousValue, newValue, cssClass) {
+  getElementByClass(previousValue).removeClass(cssClass);
+  getElementById(previousValue).removeClass(cssClass);
+  getElementByClass(newValue).addClass(cssClass);
+  getElementById(newValue).addClass(cssClass);
 }
 
-const allTravelHexes = new Array(140).fill(0).map((_, index) => `travelled_hex-${index + 1}`);
+function updateTravelledHex (hex) {
+  getElementById(hex).addClass('travelled');
+  setAttrs({ [`travelled_${hex}_button`]: 'on' });
+}
+
+function cleanUpHexAttr (hex) {
+  return hex.replace('travelled_', '').replace('_button', '');
+}
+
+const allTravelHexes = new Array(140).fill(0).map((_, index) => `travelled_hex-${index + 1}_button`);
 const eventFormatHexes = allTravelHexes.map((hex) => `change:${hex}`).join(' ');
 
 on(eventFormatHexes, (eventInfo) => {
-  const mapHex = $20(`#${eventInfo.sourceAttribute.replace('travelled_', '')}`);
+  const mapHex = getElementById(cleanUpHexAttr(eventInfo.sourceAttribute));
   eventInfo.newValue === 'on' ? mapHex.addClass('travelled') : mapHex.removeClass('travelled');
 })
 
@@ -27,14 +41,20 @@ on('sheet:opened', () => {
   getAttrs(allTravelHexes, (values) => {
     const travelledHexes = allTravelHexes.filter(hex => values[hex] === 'on');
     for(const hex of travelledHexes) {
-      const mapHex = hex.replace('travelled_', '');
-      $20(`#${mapHex}`).addClass('travelled');
+      const mapHex = cleanUpHexAttr(hex);
+      getElementById(mapHex).addClass('travelled');
     }
   })
-  getAttrs(['currentHex'], (values) => {
-    const currentHex = values.currentHex;
-    if(currentHex) {
-      $20(`#${currentHex}`).addClass('current');
+  getAttrs(['highlightedHex', 'currentHex_button'], (values) => {
+    for(const value in values) {
+      const summary = getElementByClass(values[value])
+      const hex = getElementById(values[value])
+      if (value === 'highlightedHex') {
+        hex.addClass('highlighted');
+        summary.addClass('highlighted');
+      } else if (value === 'currentHex_button') { 
+        hex.addClass('current');
+      }
     }
   })
 })

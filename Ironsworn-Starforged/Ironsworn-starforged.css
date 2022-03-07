@@ -2696,6 +2696,14 @@
   background: #4c4d4f;
   color: #fff;
 }
+.charsheet .sector-hex-content .single-hex .location-action-header {
+  display: grid;
+  grid-template-areas: "a b";
+  padding: 0em 1em;
+}
+.charsheet .sector-hex-content .single-hex .location-body {
+  padding: 0em 1em;
+}
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
   float: right;
   width: auto;

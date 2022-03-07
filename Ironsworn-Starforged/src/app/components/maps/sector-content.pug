@@ -4,23 +4,47 @@ mixin sectorContent
     for num in new Array(140)
       - ++hexNumber
       div(class=`single-hex hex-${hexNumber}`)
-        - var currentButton = `currentHexButton${hexNumber}`
-        - var travelledButton = `travelledHexButton${hexNumber}`
-        +btn({
-          type: 'radio',
-          text: 'Current Ship Hex',
-          translationId: 'map-current-hex-btn',
-          attribute: `currentHex`,
-          classes: 'current'
-        })
-        +btn({
-          type: 'checkbox',
-          text: 'Travelled Hex',
-          translationId: 'map-travelled-hex-btn',
-          attribute: `travelled_hex-${hexNumber}`,
-          classes: 'travelled'
-        })
-        label(class='current-button' for=currentButton) Current ship hex
-        input(type='radio' class='current-ship-hex' id=currentButton name='attr_currentHex' value=`hex-${hexNumber}`)
-        label(class='travelled-button' for=travelledButton) Travelled
-        input(type='checkbox' class=`travelled-ship-hex-${hexNumber}` id=travelledButton name=`attr_travelled_hex-${hexNumber}`)
+        .location-action-header
+          - var currentButton = `currentHexButton${hexNumber}`
+          - var travelledButton = `travelledHexButton${hexNumber}`
+          +btn({
+            type: 'radio',
+            text: 'Current Ship Hex',
+            translationId: 'map-current-hex-btn',
+            attribute: `currentHex`,
+            id: currentButton,
+            value: `hex-${hexNumber}`,
+            classes: 'current'
+          })
+          +btn({
+            type: 'checkbox',
+            text: 'Travelled Hex',
+            translationId: 'map-travelled-hex-btn',
+            attribute: `travelled_hex-${hexNumber}`,
+            id: travelledButton,
+            classes: 'travelled'
+          })
+        .location-body
+          .location-options
+            .location-generator 
+            .location-selector
+              label(for=`location-type-selector-${hexNumber}`)
+              input(type="text" list="location-types" id=`location-type-selector-${hexNumber}` name=`attr_location_type_${hexNumber}`)
+
+  datalist(id="location-types")
+    option(value="stellar-object") Stellar Object
+    option(value="planet") Planet
+    option(value="settlement") Settlement
+    option(value="starship") Starship
+    option(value="derelict") Derelict
+    option(value="precursor-vault") Precursor Vault
+    option(value="creature") Creature
+    option(value="descriptor-and-focus") Descriptor + Focus
+    option(value="debris") Debris
+    option(value="large-rogue-asteriod") Large rogue asteriod
+    option(value="comet") Comet
+    option(value="energy-storm") Energy Storm
+    option(value="chaotic-meteoroid-storm") Chaotic Meteoroid Storm
+    option(value="turbulent-gravitational-wave") Turbulent Gravitational Wave
+    option(value="dense-nebula-cloud") Dense Nebula Cloud
+    option(value="custom") Custom

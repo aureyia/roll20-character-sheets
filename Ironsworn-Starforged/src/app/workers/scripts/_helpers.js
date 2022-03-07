@@ -1,2 +1,2 @@
-let getElementByClassName = className => $20(`.${className}`);
-let getElementByIdName = idName => $20(`#${idName}`);
+let getElementByClass = className => $20(`.${className}`);
+let getElementById = idName => $20(`#${idName}`);

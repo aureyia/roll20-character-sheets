@@ -700,5 +700,7 @@
 	"stat-heart": "Heart",
 	"stat-iron": "Iron",
 	"stat-shadow": "Shadow",
-	"stat-wits": "Wits"
+	"stat-wits": "Wits",
+	"map-current-hex-btn": "Current Ship Location",
+	"map-travelled-hex-btn": "Travelled to Location"
 }
