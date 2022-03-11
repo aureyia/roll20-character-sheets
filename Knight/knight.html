@@ -6285,7 +6285,7 @@ function getStyleContactMod(value, cPrecis, diceDegats, diceViolence, hasArmure,
   return result;
 }
 
-function getStyleDistanceMod(value, diceDegats, diceViolence, pilonnage, hasArmure, oTir, isEAkimbo, isEAmbidextrie, isDeuxMains, isLourd) {
+function getStyleDistanceMod(value, diceDegats, diceViolence, pilonnage, pilonnageType, hasArmure, oTir, isEAkimbo, isEAmbidextrie, isDeuxMains, isLourd) {
   const result = {};
 
   const exec = [];
@@ -6393,12 +6393,21 @@ function getStyleDistanceMod(value, diceDegats, diceViolence, pilonnage, hasArmu
       cRoll.push(Number(modA));
 
       if (isDeuxMains) {
-        let bDegats = Number(pilonnage) - 1;
+        let bPilonnage = Number(pilonnage) - 1;
 
-        if (bDegats < 0) { bDegats = 0; }
+        if (pilonnageType === 'degats') {
+          if (bPilonnage < 0) { bPilonnage = 0; }
 
-        exec.push(`{{vMStyleD=+${bDegats}D6}}`);
-        dDegats += Number(bDegats);
+          exec.push(`{{vMStyleD=+${bPilonnage}D6}}`);
+          dDegats += Number(bPilonnage);
+        }
+
+        if (pilonnageType === 'violence') {
+          if (bPilonnage < 0) { bPilonnage = 0; }
+
+          exec.push(`{{vMStyleV=+${bPilonnage}D6}}`);
+          bViolence += Number(bPilonnage);
+        }
       }
       break;
 
@@ -10156,6 +10165,8 @@ on('clicked:importKNPCG', () => {
 
         let raw = result.raw - lAspects.bête.mineur - lAspects.bête.majeur;
 
+        if (lAspects.bête.majeur > 0) { raw -= bete.score; }
+
         if (raw < 0) { raw = 0; }
 
         newrowattrsW[`${path + newrowidW}_ArmeCaC`] = result.name;
@@ -10325,7 +10336,7 @@ on('clicked:importKNPCG', () => {
             newrowattrsW[`${path + newrowidW}_penetrantValue`] = Number(value2);
             break;
 
-          case 'perce Armure':
+          case 'perce armure':
             newrowattrsW[`${path + newrowidW}_perceArmure`] = '{{perceArmure=^{perce-armure} @{perceArmureValue}}}';
             newrowattrsW[`${path + newrowidW}_perceArmureValue`] = Number(value2);
             break;
@@ -11680,7 +11691,7 @@ berserkIlluminationRollSimple.forEach((button) => {
 /* eslint-disable camelcase */
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
-const rollCombatAutre = ['repeating_armeautre:armeautrepj'];
+const rollCombatAutre = ['repeating_armeautre:armeautrepj', 'repeating_armeautre:armeautrepjvehicule'];
 
 rollCombatAutre.forEach((button) => {
   on(`clicked:${button}`, async (info) => {
@@ -11710,6 +11721,8 @@ rollCombatAutre.forEach((button) => {
 
     listAttrs.push(`${prefix}armeAutreBDegat`);
     listAttrs.push(`${prefix}armeAutreBViolence`);
+
+    listAttrs.push('energieVehicule');
 
     listAttrs = listAttrs.concat(effet, effetValue, AA, AAValue, special, specialValue);
 
@@ -11781,6 +11794,8 @@ rollCombatAutre.forEach((button) => {
 
     let isELumiere = false;
     let lumiereValue = 0;
+
+    const energie = attrs.energieVehicule;
 
     let autresEffets = [];
     let autresAmeliorationsA = [];
@@ -11890,6 +11905,10 @@ rollCombatAutre.forEach((button) => {
     const sEnergie = isApplied(attrs[`${prefix}energie`]);
     const sEnergieValue = attrs[`${prefix}energieValue`];
 
+    let newEnergie = 0;
+    let pasEnergie = false;
+    let sEnergieText = '';
+
     if (sBonusDegats) {
       exec.push(`{{vMSpecialD=+${sBonusDegatsD6}D6+${sBonusDegatsFixe}}}`);
       diceDegats += Number(sBonusDegatsD6);
@@ -11903,7 +11922,19 @@ rollCombatAutre.forEach((button) => {
     }
 
     if (sEnergie) {
-      autresSpecial.push(`^{energie} (${sEnergieValue})`);
+      if (button === 'repeating_armeautre:armeautrepjvehicule') {
+        autresSpecial.push(`${i18n_energieRetiree} (${sEnergieValue})`);
+
+        newEnergie = Number(energie) - Number(sEnergieValue);
+
+        if (newEnergie === 0) {
+          sEnergieText = i18n_plusEnergie;
+        } else if (newEnergie < 0) {
+          newEnergie = 0;
+          sEnergieText = i18n_pasEnergie;
+          pasEnergie = true;
+        }
+      } else { autresSpecial.push(`^{energie} (${sEnergieValue})`); }
     }
 
     // FIN DE GESTION DES BONUS SPECIAUX
@@ -12041,45 +12072,61 @@ rollCombatAutre.forEach((button) => {
     exec = firstExec.concat(exec);
 
     // ROLL
-    const finalRoll = await startRoll(exec.join(' '));
-    const tJet = finalRoll.results.jet.result;
+    let finalRoll;
 
-    const tBonus = finalRoll.results.bonus.result;
-    const tExploit = finalRoll.results.Exploit.result;
+    if (pasEnergie === false) {
+      finalRoll = await startRoll(exec.join(' '));
+      const tJet = finalRoll.results.jet.result;
 
-    const rDegats = finalRoll.results.degats.dice;
-    const rViolence = finalRoll.results.violence.dice;
+      const tBonus = finalRoll.results.bonus.result;
+      const tExploit = finalRoll.results.Exploit.result;
 
-    const tDegats = finalRoll.results.degats.result;
-    const tViolence = finalRoll.results.violence.result;
+      const rDegats = finalRoll.results.degats.dice;
+      const rViolence = finalRoll.results.violence.dice;
 
-    const conditions = {
-      isTenebricide,
-      isDestructeur,
-      isFureur,
-      isSurprise,
-      isMeurtrier,
-      isUltraviolence,
-    };
+      const tDegats = finalRoll.results.degats.result;
+      const tViolence = finalRoll.results.violence.result;
 
-    const computed = updateRoll(finalRoll, tDegats, rDegats, bDegats, tViolence, rViolence, bViolence, conditions);
-
-    const finalComputed = {
-      jet: tJet + tBonus,
-    };
-
-    Object.assign(finalComputed, computed);
-
-    finishRoll(finalRoll.rollId, finalComputed);
-
-    if (tJet !== 0 && tJet === tExploit) {
-      const exploitRoll = await startRoll(`${roll}@{jetGM} &{template:simple} {{Nom=@{name}}} {{special1=${i18n_exploit}}}${jet}`);
-      const tRExploit = exploitRoll.results.jet.result;
-      const exploitComputed = {
-        jet: tRExploit,
+      const conditions = {
+        isTenebricide,
+        isDestructeur,
+        isFureur,
+        isSurprise,
+        isMeurtrier,
+        isUltraviolence,
       };
 
-      finishRoll(exploitRoll.rollId, exploitComputed);
+      const computed = updateRoll(finalRoll, tDegats, rDegats, bDegats, tViolence, rViolence, bViolence, conditions);
+
+      const finalComputed = {
+        jet: tJet + tBonus,
+      };
+
+      Object.assign(finalComputed, computed);
+
+      finishRoll(finalRoll.rollId, finalComputed);
+
+      if (tJet !== 0 && tJet === tExploit) {
+        const exploitRoll = await startRoll(`${roll}@{jetGM} &{template:simple} {{Nom=@{name}}} {{special1=${i18n_exploit}}}${jet}`);
+        const tRExploit = exploitRoll.results.jet.result;
+        const exploitComputed = {
+          jet: tRExploit,
+        };
+
+        finishRoll(exploitRoll.rollId, exploitComputed);
+      }
+
+      if (sEnergie !== false && button === 'repeating_armeautre:armeautrepjvehicule') {
+        setAttrs({ energieVehicule: newEnergie });
+
+        if (newEnergie === 0) {
+          const noEnergieRoll = await startRoll(`@{jetGM} &{template:simple} {{Nom=@{name}}} {{text=${sEnergieText}}}${name}`);
+          finishRoll(noEnergieRoll.rollId, {});
+        }
+      }
+    } else {
+      finalRoll = await startRoll(`@{jetGM} &{template:simple} {{Nom=@{name}}} {{text=${sEnergieText}}}${name}`);
+      finishRoll(finalRoll.rollId, {});
     }
   });
 });
@@ -13151,6 +13198,7 @@ rollCombatDistance.forEach((button) => {
         listAttrs.push('pScaracteristique3Equipement');
         listAttrs.push('pScaracteristique4Equipement');
         listAttrs.push('pSpilonnage');
+        listAttrs.push('pSpilonnageType');
 
         baseDegats = 2;
         baseViolence = 1;
@@ -13181,6 +13229,7 @@ rollCombatDistance.forEach((button) => {
         listAttrs.push('mEcaracteristique3Equipement');
         listAttrs.push('mEcaracteristique4Equipement');
         listAttrs.push('mEpilonnage');
+        listAttrs.push('mEpilonnageType');
 
         baseDegats = 3;
         baseViolence = 3;
@@ -13211,6 +13260,7 @@ rollCombatDistance.forEach((button) => {
         listAttrs.push(`${prefix}caracteristique3Equipement`);
         listAttrs.push(`${prefix}caracteristique4Equipement`);
         listAttrs.push(`${prefix}pilonnage`);
+        listAttrs.push(`${prefix}pilonnageType`);
 
         listAttrs.push(`${prefix}ArmeDist`);
         listAttrs.push(`${prefix}armeDistPortee`);
@@ -13241,6 +13291,7 @@ rollCombatDistance.forEach((button) => {
         listAttrs.push(`${prefix}caracteristique3Equipement`);
         listAttrs.push(`${prefix}caracteristique4Equipement`);
         listAttrs.push(`${prefix}pilonnage`);
+        listAttrs.push(`${prefix}pilonnageType`);
 
         listAttrs.push(`${prefix}ArmeDist`);
         listAttrs.push(`${prefix}armeDistPortee`);
@@ -13306,6 +13357,7 @@ rollCombatDistance.forEach((button) => {
     const C3 = attrs[`${prefix}caracteristique3Equipement`] || '0';
     const C4 = attrs[`${prefix}caracteristique4Equipement`] || '0';
     const vPilonnage = attrs[`${prefix}pilonnage`] || 0;
+    const vPilonnageType = attrs[`${prefix}pilonnageType`] || 0;
 
     if (armure === 'sans' || armure === 'guardian') { hasArmure = false; }
 
@@ -13566,7 +13618,7 @@ rollCombatDistance.forEach((button) => {
 
     // GESTION DU STYLE
 
-    const getStyle = getStyleDistanceMod(attrs, baseDegats, baseViolence, vPilonnage, hasArmure, oTir, isEAkimbo, isEAmbidextrie, isDeuxMains, isLourd);
+    const getStyle = getStyleDistanceMod(attrs, baseDegats, baseViolence, vPilonnage, vPilonnageType, hasArmure, oTir, isEAkimbo, isEAmbidextrie, isDeuxMains, isLourd);
 
     exec = exec.concat(getStyle.exec);
     cRoll = cRoll.concat(getStyle.cRoll);
@@ -14158,7 +14210,7 @@ rollCombatGrenade.forEach((button) => {
 
     // GESTION DU STYLE
 
-    const getStyle = getStyleDistanceMod(attrs, diceDegats, diceViolence, '', hasArmure, oTir, false, false, false, false);
+    const getStyle = getStyleDistanceMod(attrs, diceDegats, diceViolence, '', '', hasArmure, oTir, false, false, false, false);
 
     exec = exec.concat(getStyle.exec);
     cRoll = cRoll.concat(getStyle.cRoll);
@@ -14619,7 +14671,7 @@ for (let i = 0; i < rollCombatImprovise; i += 1) {
     if (type.includes('&{template:combat} {{portee=^{portee-contact}}}')) {
       getStyle = getStyleContactMod(attrs, [], baseDegats, baseViolence, hasArmure, oCombat, false, false, false, false, false, false, false, false, false);
     } else {
-      getStyle = getStyleDistanceMod(attrs, baseDegats, baseViolence, 0, hasArmure, oTir, false, false, false, false);
+      getStyle = getStyleDistanceMod(attrs, baseDegats, baseViolence, 0, 0, hasArmure, oTir, false, false, false, false);
     }
 
     exec = exec.concat(getStyle.exec);
@@ -17686,7 +17738,7 @@ for (let i = 0; i < rollMAImprovise; i += 1) {
     if (type === '&{template:combat} {{portee=^{portee-contact}}}') {
       getStyle = getStyleContactMod(attrs, '', baseDegats, baseViolence, true, 0, false, false, false, false, false, false, false, false, false);
     } else {
-      getStyle = getStyleDistanceMod(attrs, baseDegats, baseViolence, 0, true, 0, false, false, false, false);
+      getStyle = getStyleDistanceMod(attrs, baseDegats, baseViolence, 0, 0, true, 0, false, false, false, false);
     }
 
     exec = exec.concat(getStyle.exec);
@@ -18004,7 +18056,7 @@ rollCombatArchangel.forEach((button) => {
 
         if (cBonus.length > 0) { exec.push(cBonus.join(' - ')); }
 
-        getStyle = getStyleDistanceMod(attrs, degats, violence, '', true, 0, false, false, false, false);
+        getStyle = getStyleDistanceMod(attrs, degats, violence, '', '', true, 0, false, false, false, false);
 
         exec = exec.concat(getStyle.exec);
         cRoll = cRoll.concat(getStyle.cRoll);
@@ -18365,7 +18417,7 @@ rollCombatNephilim.forEach((button) => {
         violence = Number(attrs[roll[2]].split('D')[0]);
         bViolence = Number(attrs[roll[2]].split('D')[1].split('+')[1]) || 0;
 
-        getStyle = getStyleDistanceMod(attrs, degats, violence, '', true, 0, false, false, false, false);
+        getStyle = getStyleDistanceMod(attrs, degats, violence, '', '', true, 0, false, false, false, false);
 
         exec = exec.concat(getStyle.exec);
         cRoll = cRoll.concat(getStyle.cRoll);
@@ -18481,7 +18533,7 @@ rollCombatNephilim.forEach((button) => {
         violence = Number(attrs[roll[2]].split('D')[0]);
         bViolence = Number(attrs[roll[2]].split('D')[1].split('+')[1]) || 0;
 
-        getStyle = getStyleDistanceMod(attrs, degats, violence, '', true, 0, false, false, false, false);
+        getStyle = getStyleDistanceMod(attrs, degats, violence, '', '', true, 0, false, false, false, false);
 
         exec = exec.concat(getStyle.exec);
         cRoll = cRoll.concat(getStyle.cRoll);
@@ -18788,7 +18840,7 @@ rollCombatDemon.forEach((button) => {
         violence = Number(attrs[roll[2]]);
         bViolence = 0;
 
-        getStyle = getStyleDistanceMod(attrs, degats, violence, '', true, 0, false, false, false, false);
+        getStyle = getStyleDistanceMod(attrs, degats, violence, '', '', true, 0, false, false, false, false);
 
         exec = exec.concat(getStyle.exec);
         cRoll = cRoll.concat(getStyle.cRoll);
@@ -18988,7 +19040,7 @@ rollCombatDemon.forEach((button) => {
         violence = Number(attrs[roll[2]].split('D')[0]);
         bViolence = Number(attrs[roll[2]].split('D')[1].split('+')[1]) || 0;
 
-        getStyle = getStyleDistanceMod(attrs, degats, violence, '', true, 0, false, false, false, false);
+        getStyle = getStyleDistanceMod(attrs, degats, violence, '', '', true, 0, false, false, false, false);
 
         exec = exec.concat(getStyle.exec);
         cRoll = cRoll.concat(getStyle.cRoll);
@@ -19098,7 +19150,7 @@ rollCombatDemon.forEach((button) => {
         violence = Number(attrs[roll[2]].split('D')[0]);
         bViolence = Number(attrs[roll[2]].split('D')[1].split('+')[1]) || 0;
 
-        getStyle = getStyleDistanceMod(attrs, degats, violence, '', true, 0, false, false, false, false);
+        getStyle = getStyleDistanceMod(attrs, degats, violence, '', '', true, 0, false, false, false, false);
 
         exec = exec.concat(getStyle.exec);
         cRoll = cRoll.concat(getStyle.cRoll);
@@ -26114,7 +26166,7 @@ on('clicked:rollVehicule', async (info) => {
                         <span data-i18n="rendre-disponible-avantages-speciaux">Rendre disponible les avantages spéciaux de La Geste (M15).</span> 
                     </label>
                 </div>
-                <div class="half fichePJ">
+                <div class="half fichePJ fichePNJ ficheCreature">
                     <label>
                         <input type="checkbox" name="attr_tabEgide" value="1">
                         <span data-i18n="utiliser-regles-egide">Utiliser les règles de l'égide.</span> 
@@ -26524,23 +26576,6 @@ on('clicked:rollVehicule', async (info) => {
                 <div><input type="number" name="attr_heroismeModif" min="0" value="0" /></div>
             </div>
         </div>
-
-        <div class="fichePJ egide">
-            <div class="fichePJ titre">
-                <h1 class="fichePJ titre" data-i18n="egide">Égide</h1>
-                <button type="roll" class="rollDice" name="roll_egide" value="@{jetGM} &{template:base} {{Nom=@{name}}} {{type=^{egide}}} {{jet=[[{[[@{egideTotal}]]d6cs2cs4cs6cf1cf3cf5s%2}=0]]}}"></button>
-            </div>
-            <div class="ligneTitre">
-                <span data-i18n="base">Base</span>
-                <span data-i18n="bonus">Bonus</span>
-                <span data-i18n="total">Total</span>
-            </div>
-            <div class="ligne3">
-                <div><input type="number" name="attr_egide" value="0" /></div>
-                <div><input type="number" name="attr_egideBonus" value="0" readonly /></div>
-                <div><input type="number" name="attr_egideTotal" value="@{egide}+@{egideBonus}" disabled /></div>
-            </div>
-        </div>
         
         <div class="fichePNJ ficheCreature ficheBande PES">
             <h1 class="fichePNJ titre" data-i18n="protection-energie-sante">Protections, Énergie et Santé</h1>
@@ -26584,6 +26619,23 @@ on('clicked:rollVehicule', async (info) => {
                 </div>
                 <div><input type="number" name="attr_resilience" min="0" value="0" /></div>
                 <div><input type="number" name="attr_resilience_max" min="0" value="0" /></div>
+            </div>
+        </div>
+
+        <div class="fichePJ fichePNJ ficheCreature egide">
+            <div class="fichePJ fichePNJ ficheCreature titre">
+                <h1 class="fichePJ fichePNJ ficheCreature titre" data-i18n="egide">Égide</h1>
+                <button type="roll" class="rollDice" name="roll_egide" value="@{jetGM} &{template:base} {{Nom=@{name}}} {{type=^{egide}}} {{jet=[[{[[@{egideTotal}]]d6cs2cs4cs6cf1cf3cf5s%2}=0]]}}"></button>
+            </div>
+            <div class="ligneTitre">
+                <span data-i18n="base">Base</span>
+                <span data-i18n="bonus">Bonus</span>
+                <span data-i18n="total">Total</span>
+            </div>
+            <div class="ligne3">
+                <div><input type="number" name="attr_egide" value="0" /></div>
+                <div><input type="number" name="attr_egideBonus" value="0" readonly /></div>
+                <div><input type="number" name="attr_egideTotal" value="@{egide}+@{egideBonus}" disabled /></div>
             </div>
         </div>
                     
@@ -32808,6 +32860,13 @@ on('clicked:rollVehicule', async (info) => {
                 <span>Pilonnage, tir n°</span>
                 <input type="number" name="attr_pilonnageRanger" value="1" min="1" max="7" />
             </label>
+            <label class="pilonnage">
+                <span data-i18n="pilonnageDegatsOuViolence">Pilonnage, dégâts ou violence ?</span>
+                <select name="attr_pilonnageRangerType">
+                    <option value="degats" selected>Dégâts</option>
+                    <option value="violence">Violence</option>
+                </select>
+            </label>
             <div class="bonusCarac">
                 <select name="attr_caracteristique3">
                     <option value="0" selected></option>
@@ -34748,23 +34807,6 @@ on('clicked:rollVehicule', async (info) => {
             </div>
         </div>
 
-        <div class="fichePJ egide">
-            <div class="fichePJ titre">
-                <h1 class="fichePJ titre" data-i18n="egide">Égide</h1>
-                <button type="roll" class="rollDice" name="roll_egide" value="@{jetGM} &{template:base} {{Nom=@{name}}} {{type=^{egide}}} {{jet=[[{[[@{egideTotal}]]d6cs2cs4cs6cf1cf3cf5s%2}=0]]}}"></button>
-            </div>
-            <div class="ligneTitre">
-                <span data-i18n="base">Base</span>
-                <span data-i18n="bonus">Bonus</span>
-                <span data-i18n="total">Total</span>
-            </div>
-            <div class="ligne3">
-                <div><input type="number" name="attr_egide" value="0" /></div>
-                <div><input type="number" name="attr_egideBonus" value="0" readonly /></div>
-                <div><input type="number" name="attr_egideTotal" value="@{egide}+@{egideBonus}" disabled /></div>
-            </div>
-        </div>
-
         <div class="fichePNJ ficheCreature ficheBande PES">
             <h1 class="fichePNJ titre" data-i18n="protection-energie-sante">Protections, Énergie et Santé</h1>
             <h1 class="ficheCreature titre" data-i18n="protection-sante">Protections et Santé</h1>
@@ -34807,6 +34849,23 @@ on('clicked:rollVehicule', async (info) => {
                 </div>
                 <div><input type="number" name="attr_resilience" min="0" value="0" /></div>
                 <div><input type="number" name="attr_resilience_max" min="0" value="0" /></div>
+            </div>
+        </div>
+
+        <div class="fichePJ egide">
+            <div class="fichePJ titre">
+                <h1 class="fichePJ titre" data-i18n="egide">Égide</h1>
+                <button type="roll" class="rollDice" name="roll_egide" value="@{jetGM} &{template:base} {{Nom=@{name}}} {{type=^{egide}}} {{jet=[[{[[@{egideTotal}]]d6cs2cs4cs6cf1cf3cf5s%2}=0]]}}"></button>
+            </div>
+            <div class="ligneTitre">
+                <span data-i18n="base">Base</span>
+                <span data-i18n="bonus">Bonus</span>
+                <span data-i18n="total">Total</span>
+            </div>
+            <div class="ligne3">
+                <div><input type="number" name="attr_egide" value="0" /></div>
+                <div><input type="number" name="attr_egideBonus" value="0" readonly /></div>
+                <div><input type="number" name="attr_egideTotal" value="@{egide}+@{egideBonus}" disabled /></div>
             </div>
         </div>
                     
@@ -34919,6 +34978,23 @@ on('clicked:rollVehicule', async (info) => {
             <div class="col5BL">
                 <span data-i18n="portee-lointaine">Lointaine</span>
                 <span data-i18n="portee-+300">+ de 300m</span>
+            </div>
+        </div>
+
+        <div class="fichePNJ ficheCreature egide">
+            <div class="fichePNJ ficheCreature titre">
+                <h1 class="fichePNJ ficheCreature titre" data-i18n="egide">Égide</h1>
+                <button type="roll" class="rollDice" name="roll_egide" value="@{jetGM} &{template:base} {{Nom=@{name}}} {{type=^{egide}}} {{jet=[[{[[@{egideTotal}]]d6cs2cs4cs6cf1cf3cf5s%2}=0]]}}"></button>
+            </div>
+            <div class="ligneTitre">
+                <span data-i18n="base">Base</span>
+                <span data-i18n="bonus">Bonus</span>
+                <span data-i18n="total">Total</span>
+            </div>
+            <div class="ligne3">
+                <div><input type="number" name="attr_egide" value="0" /></div>
+                <div><input type="number" name="attr_egideBonus" value="0" readonly /></div>
+                <div><input type="number" name="attr_egideTotal" value="@{egide}+@{egideBonus}" disabled /></div>
             </div>
         </div>
 
@@ -43500,8 +43576,15 @@ on('clicked:rollVehicule', async (info) => {
                         <input class="deuxMains" type="hidden" name="attr_pSdeuxMains" value="0" />
                         
                         <label class="pilonnage">
-                            <span>Pilonnage, tir n°</span>
+                            <span data-i18n="pilonnageTirNumero">Pilonnage, tir n°</span>
                             <input type="number" name="attr_pSpilonnage" value="1" min="1" max="7" />
+                        </label>
+                        <label class="pilonnage">
+                            <span data-i18n="pilonnageDegatsOuViolence">Pilonnage, dégâts ou violence ?</span>
+                            <select name="attr_pSpilonnageType">
+                                <option value="degats" selected>Dégâts</option>
+                                <option value="violence">Violence</option>
+                            </select>
                         </label>
 
                         <div class="bonusCarac">
@@ -43951,8 +44034,15 @@ on('clicked:rollVehicule', async (info) => {
                     <div class="bonus">
                         <input class="deuxMains" type="hidden" name="attr_mEdeuxMains" value="0" />
                         <label class="pilonnage">
-                            <span>Pilonnage, tir n°</span>
+                            <span data-i18n="pilonnageTirNumero">Pilonnage, tir n°</span>
                             <input type="number" name="attr_mEpilonnage" value="1" min="1" max="7" />
+                        </label>
+                        <label class="pilonnage">
+                            <span data-i18n="pilonnageDegatsOuViolence">Pilonnage, dégâts ou violence ?</span>
+                            <select name="attr_mEpilonnageType">
+                                <option value="degats" selected>Dégâts</option>
+                                <option value="violence">Violence</option>
+                            </select>
                         </label>
 
                         <div class="bonusCarac">
@@ -44408,8 +44498,15 @@ on('clicked:rollVehicule', async (info) => {
                         <input class="deuxMains" type="hidden" name="attr_deuxMains" value="0" />
 
                         <label class="pilonnage">
-                            <span>Pilonnage, tir n°</span>
+                            <span data-i18n="pilonnageTirNumero">Pilonnage, tir n°</span>
                             <input type="number" name="attr_pilonnage" value="1" min="1" max="7" />
+                        </label>
+                        <label class="pilonnage">
+                            <span data-i18n="pilonnageDegatsOuViolence">Pilonnage, dégâts ou violence ?</span>
+                            <select name="attr_pilonnageType">
+                                <option value="degats" selected>Dégâts</option>
+                                <option value="violence">Violence</option>
+                            </select>
                         </label>
 
                         <div class="bonusCarac">
@@ -50811,6 +50908,14 @@ on('clicked:rollVehicule', async (info) => {
                         <input type="number" name="attr_pilonnage" value="1" min="1" max="7" />
                     </label>
 
+                    <label class="pilonnage">
+                        <span data-i18n="pilonnageDegatsOuViolence">Pilonnage, dégâts ou violence ?</span>
+                        <select name="attr_pilonnageType">
+                            <option value="degats" selected>Dégâts</option>
+                            <option value="violence">Violence</option>
+                        </select>
+                    </label>
+
                     <div class="bonusCarac">
                         <select name="attr_caracteristique3Equipement">
                             <option value="0" selected></option>
@@ -51221,7 +51326,7 @@ on('clicked:rollVehicule', async (info) => {
                     </div>
                     <div class="lastCol armeJet">
                         <input class="bonus" type="number" name="attr_armeODAutre" value="0" />
-                        <button class="rollDice" type="action" name="act_armeautrepj" value="@{jetGM} &{template:combat} {{Nom=@{name}}}"></button>
+                        <button class="rollDice" type="action" name="act_armeautrepjvehicule" value="@{jetGM} &{template:combat} {{Nom=@{name}}}"></button>
                     </div>
                 </div>
 
