@@ -2703,14 +2703,13 @@
 }
 .charsheet .sector-map {
   display: flex;
-  background: #000;
-  --s: 49px; /* size  */
-  --m: 1px; /* margin */
+  --s: 49px;
+  --m: 1px;
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
   height: 32em;
 }
 .charsheet .sector-map .sector-map-container {
-  font-size: 0; /* disable white space between inline block element */
+  font-size: 0;
 }
 .charsheet .sector-map .sector-map-container label {
   width: var(--s);
@@ -2765,8 +2764,32 @@
   grid-template-areas: "a b";
   padding: 0em 1em;
 }
-.charsheet .sector-hex-content .single-hex .location-body {
+.charsheet .sector-hex-content .single-hex .location-container {
   padding: 0em 1em;
+}
+.charsheet input[type=checkbox].location-toggle:checked + div.location-card {
+  display: block;
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  transition: 0.2s ease;
+}
+.charsheet .energy-storm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/energy-storm.svg?sanitize=true");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+.charsheet .energy-storm.active {
+  opacity: 1;
 }
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
   float: right;

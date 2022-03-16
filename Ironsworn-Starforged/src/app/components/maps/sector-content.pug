@@ -1,3 +1,5 @@
+include ./location-factory
+
 mixin sectorContent
   .sector-hex-content
     - var hexNumber = 0;
@@ -24,27 +26,11 @@ mixin sectorContent
             id: travelledButton,
             classes: 'travelled'
           })
-        .location-body
-          .location-options
-            .location-generator 
-            .location-selector
-              label(for=`location-type-selector-${hexNumber}`)
-              input(type="text" list="location-types" id=`location-type-selector-${hexNumber}` name=`attr_location_type_${hexNumber}`)
-
-  datalist(id="location-types")
-    option(value="stellar-object") Stellar Object
-    option(value="planet") Planet
-    option(value="settlement") Settlement
-    option(value="starship") Starship
-    option(value="derelict") Derelict
-    option(value="precursor-vault") Precursor Vault
-    option(value="creature") Creature
-    option(value="descriptor-and-focus") Descriptor + Focus
-    option(value="debris") Debris
-    option(value="large-rogue-asteriod") Large rogue asteriod
-    option(value="comet") Comet
-    option(value="energy-storm") Energy Storm
-    option(value="chaotic-meteoroid-storm") Chaotic Meteoroid Storm
-    option(value="turbulent-gravitational-wave") Turbulent Gravitational Wave
-    option(value="dense-nebula-cloud") Dense Nebula Cloud
-    option(value="custom") Custom
+        fieldset(class=`repeating_locations-hex${hexNumber}`)
+          +locationFactory(hexNumber)
+    
+    datalist(id="location-types")
+      each sighting, key in sightings
+        option(value=key)
+      option(value="custom")
+  

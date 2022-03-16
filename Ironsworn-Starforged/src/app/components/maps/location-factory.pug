@@ -1,0 +1,16 @@
+mixin locationFactory(hexNumber)
+  .location.surface
+    .location-options
+      .location-generator 
+      .location-selector
+        label(for=`location-type-selector-${hexNumber}`)
+        input(type="text" list="location-types" id=`location-type-selector-${hexNumber}` name=`attr_type`)
+
+        each sighting, key in sightings
+          input(
+            type="checkbox"
+            class='location-toggle hide-element'
+            name=`attr_type_input_${key}`
+          )
+          .location-card.hide-element(class=`${key}`)=key
+        .location.hide-element.custom Custom

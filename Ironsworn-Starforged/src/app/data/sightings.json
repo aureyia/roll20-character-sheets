@@ -1,0 +1,201 @@
+{
+  "stellar-object": {
+    "name": true,
+    "type": true,
+    "notes": true
+  },
+  "planet": {
+    "desert": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "furnace": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "grave": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "ice": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "jovian": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "jungle": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "ocean": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "rocky": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "shattered": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "tainted": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "planetside-feature": true,
+      "life": true
+    },
+    "vital": {
+      "name": true,
+      "class": true,
+      "atmoshpere": true,
+      "settelments": true,
+      "observed-from-space": true,
+      "diversity": true,
+      "biomes": true,
+      "planetside-feature": true,
+      "life": true
+    }
+  },
+  "settlement": {
+    "name": true,
+    "location": true,
+    "population": true,
+    "first-look": true,
+    "initial-contact": true,
+    "authority": true,
+    "projects": true,
+    "trouble": true
+  },
+  "starship": {
+    "name": true,
+    "class": true,
+    "role": true,
+    "initial-contact": true,
+    "first-look": true,
+    "mission": true
+  },
+  "derelict": {
+    "name": true,
+    "location": true,
+    "type": true,
+    "condition": true,
+    "outer-first-look": true,
+    "inner-first-look": true,
+    "optional-focus": {
+      "???": true
+    }
+
+  },
+  "precursor-vault": {
+    "name": true,
+    "location": true,
+    "scale": true,
+    "form": true,
+    "shape": true,
+    "material": true,
+    "outer-first-look": true,
+    "focus": {
+      "purpose": true,
+      "inner-first-look": true,
+      "interior": {
+        "feature": true,
+        "peril": true,
+        "opportunity": true
+      },
+      "sanctum": {
+        "feature": true,
+        "peril": true,
+        "opportunity": true
+      }
+    }
+  },
+  "creature": {
+    "scale": true,
+    "first-look": true,
+    "encountered-behavior": true,
+    "aspects": true
+  },
+  "descriptor-and-focus": {
+    "name": true,
+    "notes": true
+  },
+  "debris": {
+    "name": true,
+    "notes": true
+  },
+  "large-rogue-asteroid": {
+    "name": true,
+    "notes": true
+  },
+  "comet": {
+    "name": true,
+    "notes": true
+  },
+  "energy-storm": {
+    "name": true,
+    "notes": true
+  },
+  "chaotic-meteoroid-storm": {
+    "name": true,
+    "notes": true
+  },
+  "turbulent-gravitational-wave": {
+    "name": true,
+    "notes": true
+  },
+  "dense-nebula-cloud": {
+    "name": true,
+    "notes": true
+  }
+}

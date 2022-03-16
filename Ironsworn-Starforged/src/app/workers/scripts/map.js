@@ -58,3 +58,16 @@ on('sheet:opened', () => {
     }
   })
 })
+
+
+const allLocationTypeHexes = new Array(140).fill(0).map((_, index) => `change:repeating_locations-hex${index + 1}:type`);
+
+on(allLocationTypeHexes.join(' '), function(eventInfo) {
+  const hex = eventInfo.sourceAttribute.match(/hex([0-9].)_/)[1];
+  setAttrs({
+    ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.newValue]: 'on',
+    ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.previousValue]: 'off'
+  });
+  getElementById(`hex-${hex}`).addClass(eventInfo.newValue);
+});
+
