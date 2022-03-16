@@ -1,10 +1,18 @@
+mixin input(classes, attr)
+  input(
+    type="text"
+    class=classes
+    name=attr
+    data-i18n-placeholder=classes[0]
+    placeholder=translation[classes[0]]
+  )
+
 mixin locationFactory(hexNumber)
   .location.surface
     .location-options
       .location-generator 
       .location-selector
-        label(for=`location-type-selector-${hexNumber}`)
-        input(type="text" list="location-types" id=`location-type-selector-${hexNumber}` name=`attr_type`)
+        input.sighting-list.surface-2(type="text" list="location-types" name=`attr_type`)
 
         each sighting, key in sightings
           input(
@@ -12,5 +20,43 @@ mixin locationFactory(hexNumber)
             class='location-toggle hide-element'
             name=`attr_type_input_${key}`
           )
-          .location-card.hide-element(class=`${key}`)=key
-        .location.hide-element.custom Custom
+          .location-card.hide-element(class=`${key}`)
+            if sighting.name
+              +input(["location-name"], 'attr_name')
+            if sighting.class
+              +input(["location-class"], 'attr_class')
+            if sighting.notes
+              textarea(class="note-area surface-2" name='attr_notes')
+            if key === 'planet'
+              input.planet-list.surface-2(type="text" list="planet-types" name=`attr_planet-type`)
+              each planet, planetKey in sightings.planet
+                input(
+                  type="checkbox"
+                  class='planet-toggle hide-element'
+                  name=`attr_type_input_${planetKey}`
+                )
+                .planet-container.hide-element(class=`planet-${planetKey}`)
+                  if planet.name
+                    +input(["planet-name"], 'attr_planet-name')
+                  if planet.atmosphere
+                    +input(["planet-atmosphere"], 'attr_planet-atmosphere')
+                  if planet.settlements
+                    +input(["planet-settlements"], 'attr_planet-settlements')
+                  if planet['observed-from-space']
+                    +input(["planet-observed-from-space"], 'attr_planet-observed-from-space')
+                  if planet['planetside-feature']
+                    +input(["planet-planetside-feature"], 'attr_planet-planetside-feature')
+                  if planet.life
+                    +input(["planet-life"], 'attr_planet-life')
+                  if planet.diversity 
+                    +input(["planet-diversity"], 'attr_planet-diversity')
+                  if planet.biomes 
+                    +input(["planet-biomes"], 'attr_planet-biomes')
+                  textarea(class="note-area surface-2" name='attr_planet-notes')
+                
+        input(
+          type="checkbox"
+          class='location-toggle hide-element'
+          name=`attr_type_input_custom`
+        )
+        .location-card.hide-element.custom Custom

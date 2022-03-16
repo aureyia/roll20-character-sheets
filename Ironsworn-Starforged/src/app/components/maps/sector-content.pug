@@ -33,4 +33,9 @@ mixin sectorContent
       each sighting, key in sightings
         option(value=key)
       option(value="custom")
+
+    datalist(id="planet-types")
+      each planet, key in sightings.planet
+        option(value=key)
+      option(value="custom")
   

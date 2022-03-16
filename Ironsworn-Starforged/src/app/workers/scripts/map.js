@@ -38,50 +38,62 @@ on(eventFormatHexes, (eventInfo) => {
 })
 
 on('sheet:opened', () => {
-  getAttrs(allTravelHexes, (values) => {
-    const travelledHexes = allTravelHexes.filter(hex => values[hex] === 'on');
-    for(const hex of travelledHexes) {
-      const mapHex = cleanUpHexAttr(hex);
-      getElementById(mapHex).addClass('travelled');
-    }
-  })
+  getAttrs(['mode'], (value) => { 
+    if (value.mode === '2') {
+      getAttrs(allTravelHexes, (values) => {
+        const travelledHexes = allTravelHexes.filter(hex => values[hex] === 'on');
+        for(const hex of travelledHexes) {
+          const mapHex = cleanUpHexAttr(hex);
+          getElementById(mapHex).addClass('travelled');
+        }
+      })
 
-  getAttrs(['highlightedHex', 'currentHex_button'], (values) => {
-    for(const value in values) {
-      const summary = getElementByClass(values[value])
-      const hex = getElementById(values[value])
-      if (value === 'highlightedHex') {
-        hex.addClass('highlighted');
-        summary.addClass('highlighted');
-      } else if (value === 'currentHex_button') { 
-        hex.addClass('current');
-      }
-    }
-  })
+      getAttrs(['highlightedHex', 'currentHex_button'], (values) => {
+        for(const value in values) {
+          const summary = getElementByClass(values[value])
+          const hex = getElementById(values[value])
+          if (value === 'highlightedHex') {
+            hex.addClass('highlighted');
+            summary.addClass('highlighted');
+          } else if (value === 'currentHex_button') { 
+            hex.addClass('current');
+          }
+        }
+      })
 
-  allLocationHexes.forEach((hex) => { 
-    getSectionIDs(hex, (ids) => {
-      if (ids.length > 0) {
-        const attrs = ids.map((id) => `repeating_${hex}_${id}_type`)
-        getAttrs(attrs, (values) => {
-          const hexNumber = hex.match(/hex([0-9].)/)[1];
-          Object.values(values).forEach((value) => getElementById(`hex-${hexNumber}`).addClass(value))
+      allLocationHexes.forEach((hex) => { 
+        getSectionIDs(hex, (ids) => {
+          if (ids.length > 0) {
+            const attrs = ids.map((id) => `repeating_${hex}_${id}_type`)
+            getAttrs(attrs, (values) => {
+              const hexNumber = hex.match(/hex([0-9].)/)[1];
+              Object.values(values).forEach((value) => getElementById(`hex-${hexNumber}`).addClass(value))
+            })
+          }
         })
-      }
-    })
-  });
+      });
+    }
+  })  
 });
 
 const allLocationHexes = new Array(140).fill(0).map((_, index) => `locations-hex${index + 1}`);
 const allLocationTypeHexes = allLocationHexes.map((hex) => `change:repeating_${hex}:type`);
+const allPlanetTypeHexes = allLocationHexes.map((hex) => `change:repeating_${hex}:planet-type`);
 
 on(allLocationTypeHexes.join(' '), function(eventInfo) {
+  updateHexTypes(eventInfo);
+});
+
+on(allPlanetTypeHexes.join(' '), function(eventInfo) {
+  updateHexTypes(eventInfo);
+});
+
+function updateHexTypes (eventInfo) {
   const hex = eventInfo.sourceAttribute.match(/hex([0-9].)_/)[1];
   setAttrs({
-    ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.newValue]: 'on',
-    ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.previousValue]: 'off'
+    ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.previousValue]: 'off',
+    ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.newValue]: 'on'
   });
   getElementById(`hex-${hex}`).removeClass(eventInfo.previousValue);
   getElementById(`hex-${hex}`).addClass(eventInfo.newValue);
-});
-
+}

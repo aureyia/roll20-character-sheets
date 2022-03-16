@@ -1,14 +1,14 @@
 {
   "stellar-object": {
     "name": true,
-    "type": true,
+    "class": true,
     "notes": true
   },
   "planet": {
     "desert": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -17,7 +17,7 @@
     "furnace": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -26,7 +26,7 @@
     "grave": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -35,7 +35,7 @@
     "ice": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -44,7 +44,7 @@
     "jovian": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -53,7 +53,7 @@
     "jungle": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -62,7 +62,7 @@
     "ocean": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -71,7 +71,7 @@
     "rocky": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -80,7 +80,7 @@
     "shattered": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -89,7 +89,7 @@
     "tainted": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "planetside-feature": true,
@@ -98,7 +98,7 @@
     "vital": {
       "name": true,
       "class": true,
-      "atmoshpere": true,
+      "atmosphere": true,
       "settelments": true,
       "observed-from-space": true,
       "diversity": true,
@@ -128,7 +128,7 @@
   "derelict": {
     "name": true,
     "location": true,
-    "type": true,
+    "class": true,
     "condition": true,
     "outer-first-look": true,
     "inner-first-look": true,

@@ -1,5 +1,6 @@
 .sector-map
   display:flex;
+  background-color #b1b1b1
   --s: 49px;
   --m: 1px; 
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
@@ -15,12 +16,12 @@
       display: inline-block;
       font-size:initial;
       clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
-      background: white;
+      background-color: #1f1f1f;
       margin-bottom: calc(var(--m) - var(--s)*0.2885);
       padding: 0
       cursor pointer
       &:hover
-        background: #E6E7E8;
+        background-color: #555555;
       &::before
         box-sizing: none
       &::after
@@ -37,9 +38,9 @@
 
   .map-hex
     &.highlighted
-      background: #faf27e;
+      background-color: #faf27e;
     &.travelled
-      background: #abb2c7;
+      background-color: #656975;
     &.current
       background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/ship.svg?sanitize=true");
   
@@ -57,18 +58,73 @@
     .location-action-header
       display grid
       grid-template-areas "a b"
-      padding 0em 1em
     
     .location-container
       padding 0em 1em
 
-input[type=checkbox].location-toggle:checked + div.location-card
+input[type=checkbox].location-toggle:checked + div.location-card,
+input[type=checkbox].planet-toggle:checked + div.planet-container
   display block
   show-hide()
 
 label.map-hex.energy-storm
   background: url(https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/energy-storm.svg?sanitize=true);
   background-size: contain;
-  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
+
+label.map-hex.planet.grave
+  background: url(https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/grave.png?sanitize=true);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+.location
+  .note-area
+    width 99%
+    resize vertical
+
+.location-card
+  margin 1em
+
+input
+  &.location-name,
+  &.location-class,
+  &.planet-name,
+  &.planet-atmosphere,
+  &.planet-settlements,
+  &.planet-observed-from-space,
+  &.planet-planetside-feature,
+  &.planet-life,
+  &.planet-diversity,
+  &.planet-biomes
+    border 2px solid #4C4D4F
+    border-radius 0
+    margin 0
+    margin-bottom 0.5em
+    width 100%
+    background transparent
+    &:focus
+      outline 3px solid #fd0
+      outline-offset 0
+      box-shadow inset 0 0 0 2px
+
+input
+  &.sighting-list
+    border 2px solid #4C4D4F
+    border-radius 0
+    margin 1em 1em 0em 1em
+    width 97% 
+    &:focus
+      outline 3px solid #fd0
+      outline-offset 0
+      box-shadow inset 0 0 0 2px
+  &.planet-list
+    border 2px solid #4C4D4F
+    border-radius 0
+    margin 0 0 0.2em 0
+    width 100% 
+    &:focus
+      outline 3px solid #fd0
+      outline-offset 0
+      box-shadow inset 0 0 0 2px

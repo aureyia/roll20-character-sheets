@@ -2703,6 +2703,7 @@
 }
 .charsheet .sector-map {
   display: flex;
+  background-color: #b1b1b1;
   --s: 49px;
   --m: 1px;
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
@@ -2718,13 +2719,13 @@
   display: inline-block;
   font-size: initial;
   clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
-  background: #fff;
+  background-color: #1f1f1f;
   margin-bottom: calc(var(--m) - var(--s) * 0.2885);
   padding: 0;
   cursor: pointer;
 }
 .charsheet .sector-map .sector-map-container label:hover {
-  background: #e6e7e8;
+  background-color: #555;
 }
 .charsheet .sector-map .sector-map-container label::before {
   box-sizing: none;
@@ -2740,10 +2741,10 @@
   shape-outside: repeating-linear-gradient(rgba(0,0,0,0) 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
 .charsheet .sector-map .map-hex.highlighted {
-  background: #faf27e;
+  background-color: #faf27e;
 }
 .charsheet .sector-map .map-hex.travelled {
-  background: #abb2c7;
+  background-color: #656975;
 }
 .charsheet .sector-map .map-hex.current {
   background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/ship.svg?sanitize=true");
@@ -2762,12 +2763,12 @@
 .charsheet .sector-hex-content .single-hex .location-action-header {
   display: grid;
   grid-template-areas: "a b";
-  padding: 0em 1em;
 }
 .charsheet .sector-hex-content .single-hex .location-container {
   padding: 0em 1em;
 }
-.charsheet input[type=checkbox].location-toggle:checked + div.location-card {
+.charsheet input[type=checkbox].location-toggle:checked + div.location-card,
+.charsheet input[type=checkbox].planet-toggle:checked + div.planet-container {
   display: block;
   visibility: visible;
   height: auto;
@@ -2777,9 +2778,74 @@
 .charsheet label.map-hex.energy-storm {
   background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/energy-storm.svg?sanitize=true");
   background-size: contain;
-  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+}
+.charsheet label.map-hex.planet.grave {
+  background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/grave.png?sanitize=true");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.charsheet .location .note-area {
+  width: 99%;
+  resize: vertical;
+}
+.charsheet .location-card {
+  margin: 1em;
+}
+.charsheet input.location-name,
+.charsheet input.location-class,
+.charsheet input.planet-name,
+.charsheet input.planet-atmosphere,
+.charsheet input.planet-settlements,
+.charsheet input.planet-observed-from-space,
+.charsheet input.planet-planetside-feature,
+.charsheet input.planet-life,
+.charsheet input.planet-diversity,
+.charsheet input.planet-biomes {
+  border: 2px solid #4c4d4f;
+  border-radius: 0;
+  margin: 0;
+  margin-bottom: 0.5em;
+  width: 100%;
+  background: transparent;
+}
+.charsheet input.location-name:focus,
+.charsheet input.location-class:focus,
+.charsheet input.planet-name:focus,
+.charsheet input.planet-atmosphere:focus,
+.charsheet input.planet-settlements:focus,
+.charsheet input.planet-observed-from-space:focus,
+.charsheet input.planet-planetside-feature:focus,
+.charsheet input.planet-life:focus,
+.charsheet input.planet-diversity:focus,
+.charsheet input.planet-biomes:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+.charsheet input.sighting-list {
+  border: 2px solid #4c4d4f;
+  border-radius: 0;
+  margin: 1em 1em 0em 1em;
+  width: 97%;
+}
+.charsheet input.sighting-list:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+.charsheet input.planet-list {
+  border: 2px solid #4c4d4f;
+  border-radius: 0;
+  margin: 0 0 0.2em 0;
+  width: 100%;
+}
+.charsheet input.planet-list:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
 }
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
   float: right;
@@ -3099,7 +3165,9 @@
   box-shadow: inset 0 0 0 0px;
 }
 .sheet-darkmode input.vow-name,
-.sheet-darkmode input.progress-name {
+.sheet-darkmode input.progress-name,
+.sheet-darkmode input.location-name,
+.sheet-darkmode input.location-class {
   color: #c0c0c0;
 }
 .sheet-darkmode .difficulty input:checked ~ h5 {
