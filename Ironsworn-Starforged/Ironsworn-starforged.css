@@ -2774,22 +2774,12 @@
   opacity: 1;
   transition: 0.2s ease;
 }
-.charsheet .energy-storm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+.charsheet label.map-hex.energy-storm {
   background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/energy-storm.svg?sanitize=true");
   background-size: contain;
+  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
-  opacity: 0.5;
-  transition: opacity 0.5s ease-in-out;
-}
-.charsheet .energy-storm.active {
-  opacity: 1;
 }
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
   float: right;
