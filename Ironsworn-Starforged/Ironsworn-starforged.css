@@ -2747,7 +2747,7 @@
   background-color: #656975;
 }
 .charsheet .sector-map .map-hex.current {
-  background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/ship.svg?sanitize=true");
+  background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/assets/ship.svg?sanitize=true") !important;
 }
 .charsheet .sector-hex-content .single-hex {
   display: none;
@@ -2781,11 +2781,43 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.charsheet label.map-hex.planet.grave {
-  background: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/grave.png?sanitize=true");
+.charsheet label.map-hex.planet {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+.charsheet label.map-hex.planet.desert {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/desert-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.furnace {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/furnace-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.grave {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/grave-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.ice {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/ice-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.jovian {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/jovian-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.jungle {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/jungle-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.ocean {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/ocean-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.rocky {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/rocky-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.shattered {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/shattered-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.tainted {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/tainted-01.png?sanitize=true");
+}
+.charsheet label.map-hex.planet.vital {
+  background-image: url("https://raw.githubusercontent.com/aureyia/roll20-character-sheets/startforged-locations/Ironsworn-Starforged/src/app/img/planets/vital-01.png?sanitize=true");
 }
 .charsheet .location .note-area {
   width: 99%;

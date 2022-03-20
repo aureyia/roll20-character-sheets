@@ -66,8 +66,15 @@ on('sheet:opened', () => {
           if (ids.length > 0) {
             const attrs = ids.map((id) => `repeating_${hex}_${id}_type`)
             getAttrs(attrs, (values) => {
-              const hexNumber = hex.match(/hex([0-9].)/)[1];
-              Object.values(values).forEach((value) => getElementById(`hex-${hexNumber}`).addClass(value))
+              const hexNumber = hex.match(/hex([0-9]*)/)[1];
+              Object.entries(values).forEach(([key, value]) => {
+                if (value === 'planet') {
+                  getAttrs([key.replace('_type', '_planet-type')], (planetValues) => {
+                    getElementById(`hex-${hexNumber}`).addClass(Object.values(planetValues)[0]);
+                  })
+                }
+                getElementById(`hex-${hexNumber}`).addClass(value)
+              })
             })
           }
         })
@@ -89,7 +96,8 @@ on(allPlanetTypeHexes.join(' '), function(eventInfo) {
 });
 
 function updateHexTypes (eventInfo) {
-  const hex = eventInfo.sourceAttribute.match(/hex([0-9].)_/)[1];
+  console.log(eventInfo.sourceAttribute);
+  const hex = eventInfo.sourceAttribute.match(/hex([0-9]*)/)[1];
   setAttrs({
     ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.previousValue]: 'off',
     ['repeating_locations-hex' + hex + '_type_input_' + eventInfo.newValue]: 'on'
