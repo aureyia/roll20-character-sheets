@@ -6,15 +6,18 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const merge = require('gulp-merge-json');
+const { starforged } = require('dataforged');
+
+console.log(starforged.Json.Assets);
 
 axios.defaults.baseURL =
   'https://raw.githubusercontent.com/rsek/dataforged/main/roll20';
 
 gulp.task('dataforge', async function() {
   const rawData = {
-    oracles: await axios.get('/oracles.json'),
-    assets: await axios.get('/assets.json'),
-    moves: await axios.get('/moves.json'),
+    oracles: starforged.Json.Assets,
+    assets: starforged.Assets,
+    moves: starforged.Moves,
     movegroups: await axios.get('/movegroups.json'),
     rolls: await axios.get('/rolls.json'),
   };
