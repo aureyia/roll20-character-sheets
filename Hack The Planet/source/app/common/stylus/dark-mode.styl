@@ -1,0 +1,80 @@
+backgroundColor = #1f1f1f
+textColor = #c0c0c0
+boxShadow = #141414
+rootHover = #3d3d3d
+surfaceHover = #464646
+surface2Hover = #5f5f5f
+surfaceBackground = #323232
+surface2Background = #4c4c4c
+listPrimary = #323232
+listSecondary = #272727
+highlightText = #e8e8e8
+hoverDefault = 0.5s ease
+
+.sheet-darkmode
+  .sheetform
+    background-color backgroundColor
+
+  background backgroundColor
+  color textColor
+  h1, h2, h3, h4, h5, h6, p, li, td, span, textarea
+    color @color
+
+  label.surface,
+  .static-btn,
+  .toggle-btn,
+  .page-label
+    &:hover
+      background rootHover
+      transition hoverDefault
+  .surface
+    background surfaceBackground
+    border 0
+    &.roll-label
+      border @border
+    color @color
+    box-shadow 2px 2px 3px 1px boxShadow
+    span, h3, label
+      color @color
+    input[min] + span, 
+    input[min].large-input + span
+      background @background
+    label.surface,
+    .static-btn,
+    .toggle-btn,
+    .page-label
+      &:hover
+        background surfaceHover
+        transition hoverDefault
+  .btn-input
+    &:checked
+      & ~ .btn-content
+        background textColor
+        color backgroundColor
+  
+  label.surface-2
+    &:hover
+      background surface2Hover
+  .surface-2
+    background surface2Background
+    border 0
+    color @color
+    box-shadow 2px 2px 3px 1px backgroundColor
+    span
+      color highlightText
+    &.roll-label
+      background surface2Hover
+    .static-btn,
+    .toggle-btn,
+    .page-label
+      &:hover
+        background surface2Hover
+        transition hoverDefault
+
+  button[type="roll"].roll-show
+    color #acacad
+  
+  input[type=text]
+    font-weight: 600;
+    &:focus
+      input-highlight(0px)

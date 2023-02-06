@@ -1,0 +1,22 @@
+- var sheets = [ 'character', 'crew' ]
+input(type='checkbox' name='attr_modes_choice' class='modes-show hide-element' checked)
+div.modes-show.hide-element
+  div.mode-title
+    h2.mode-title.i18n-text(data-i18n='page-select')=translation['page-select']
+  div.modes
+
+    each page, index in sheets
+      label.mode
+        h4.i18n-text(data-i18n=`page-name-${page}`)=translation[`page-name-${page}`]
+        div.mode
+          input(type='radio' name='attr_mode_button' class='hide-element' value=index)
+          div.mode-image
+            //- img(src=`https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ironsworn-Starforged/assets/${page}-sheet.png`)
+
+input(type='radio' name='attr_mode' class='character-mode hide-element' value='0')
+div.character-mode.hide-element
+  include ./character/index
+
+input(type='radio' name='attr_mode' class='crew-mode hide-element' value='1')
+div.crew-mode.hide-element
+  include ./crew/index

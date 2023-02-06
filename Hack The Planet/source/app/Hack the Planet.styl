@@ -1,0 +1,304 @@
+// Fonts
+@css {
+  @import url('https://fonts.googleapis.com/css?family=Encode+Sans:400,500,600,700,800,900|Encode+Sans+Condensed:i,400,500,600,700,800,900|Exo:400,500,600,700,800,900|Montserrat:400,500,600,700,800,900&display=swap');
+}
+
+// Common
+@import './common/stylus/shared'
+@import './common/stylus/light-mode'
+
+.charsheet
+  width 842px !important
+  margin 0 auto !important
+  padding 15px
+  std-font('Montserrat')
+  font-weight normal
+  light-styles()
+  select
+    -webkit-appearance: none
+    -moz-appearance: none
+    text-indent: 1px
+    text-overflow: ''
+    &::-ms-expand
+      display: none
+  .btn-rounded
+    border-radius 0.5em
+  li
+    font-weight normal
+    font-size 14.3px
+    list-style-type none
+  p
+    std-font('Encode Sans Condensed')
+    font-size 14.3px
+    line-height 1.25
+    font-weight normal
+    margin 0
+  h1
+    font-weight: bold
+    width: 100%
+    font-size: 28px
+    text-align: center
+    margin: 0 0 0px
+    padding: 10
+    text-transform: uppercase
+  h2
+    font-weight: bold
+    width: 100%
+    font-size: 18px
+    text-align: left
+    margin: 0 0 0px
+    padding: 0
+    text-transform: uppercase
+  h3
+    font-weight: bold
+    width: 100%
+    line-height 1.4em
+    font-size 1.2em
+    text-align: center
+    margin: 0 0 0px
+    padding: 0
+    text-transform: uppercase
+    &.divide
+      &::after,
+      &::before
+        display: inline-block
+        content: ""
+        height: 5px
+        border-top: 2px solid #4C4D4F
+        top: 0
+        width: 220px
+    &.site-divide
+      &::after,
+      &::before
+        display: inline-block
+        content: ""
+        height: 5px
+        border-top: 2px solid #4C4D4F
+        top: 0
+        width: 331px
+    &.site-denizens-divide
+      &::after,
+      &::before
+        display: inline-block
+        content: ""
+        height: 5px
+        border-top: 2px solid #4C4D4F
+        top: 0
+        width: 336px
+    &.site-divide-notes
+      &::after,
+      &::before
+        display: inline-block
+        content: ""
+        height: 5px
+        border-top: 2px solid #4C4D4F
+        top: 0
+        width: 352px
+  
+  .divide
+    margin-top 1em
+  h4
+    font-weight: bold
+    width: 100%
+    font-size: 16px
+    text-align: center
+    margin: 0 0 0px
+    padding: 0
+    text-transform: uppercase
+    &.tab-title
+      display: inline-block
+  h5
+    font-weight: bold
+    font-size: 12px
+    text-align: left
+    margin: 0 0 0px
+    padding: 0
+    text-transform: uppercase
+  h6
+    font-size: 14px
+    font-weight: bold
+    text-align: left
+    margin-top: 2px
+  button[type="roll"]
+    align-items: left
+    color: #4C4D4F
+    font-weight: normal
+    font-size: 20px
+    text-decoration: none
+    background: none
+    background-image: none
+    border: none
+    box-shadow: none
+    text-shadow: none
+    padding: 0px 0px 0px 0px
+    margin: 0px 0px 0px 0px
+    text-align: center
+    &:hover
+      transition: .5s ease
+
+  .heading-left
+    text-align: left
+
+  hr
+    border: 0
+    height: 1px
+    background #ccc
+    background-image: linear-gradient(to right, #ccc, #333, #ccc)
+
+  textarea
+    std-font('Montserrat')
+    max-width 828px
+    border: 2px solid #4C4D4F
+    font-weight normal
+    background 0
+
+  .btn
+    display: inline
+    width: 100%
+    font-weight: bold
+    font-size: 14px
+    padding 0
+    margin 0.5em
+    height 40px
+    padding 0.2em 0.2em 0.2em 0.2em
+    border: 2px solid #4C4D4F
+    border-radius 0
+    cursor: pointer
+    background 0
+    text-shadow none
+
+  .toggle-btn
+    btn()
+    .btn-content
+      padding 0.2em 0.2em 0.2em 0.2em
+      width 100%
+      text-align center
+
+  .static-btn
+    btn()
+    border-radius 0.3em
+    .btn-content
+      padding 0.2em 0.2em 0.2em 0.2em
+      width 100%
+      text-align center
+
+  button.btn.repcontrol_edit,
+  button.btn.repcontrol_add
+    width auto
+    height auto
+    border 2px solid #4C4D4F
+    border-radius 0
+    font-weight bold
+    font-size 12px
+    text-shadow none
+    text-transform uppercase
+    padding 0.2em
+    margin 0.3em
+    color #4C4D4F
+    std-font('Montserrat')
+    background #dfe0e2
+    &:hover
+      background #bcbec2
+    &:focus
+      input-highlight(1px)
+
+  button.btn.repcontrol_edit
+    margin-right 3px
+
+  button.btn.repcontrol_add
+    margin-left 3px
+
+  // === Start: Descided what to keep === //
+  
+  input[type="checkbox"].checkbox
+    opacity: 0
+    width: 16px
+    height: 16px
+    position: relative
+    top: 5px
+    left: 6px
+    margin: -10px
+    cursor: pointer
+    z-index: 1
+
+  /* Fake radio/checkbox */
+  input[type="radio"] + span::before,
+  input[type="checkbox"].checkbox + span::before
+    margin-right: 4px
+    border: solid 1px #a8a8a8
+    line-height: 14px
+    text-align: center
+    display: inline-block
+    vertical-align: middle
+    -moz-box-shadow: 0 0 2px #ccc
+    -webkit-box-shadow: 0 0 2px #ccc
+    box-shadow: 0 0 2px #ccc
+    background: #f6f6f6
+    background: -moz-radial-gradient(#f6f6f6, #dfdfdf)
+    background: -webkit-radial-gradient(#f6f6f6, #dfdfdf)
+    background: -ms-radial-gradient(#f6f6f6, #dfdfdf)
+    background: -o-radial-gradient(#f6f6f6, #dfdfdf)
+    background: radial-gradient(#f6f6f6, #dfdfdf)
+
+  // === End: Descided what to keep === //
+
+  input.showhide:checked ~ div.showhide
+    show-hide()
+
+  span.showhide:checked
+    background-color: #4C4D4F
+    color: white
+    transition: .5s ease;
+
+  span.showhide
+    display: inline
+    border: 1px solid #4C4D4F
+    margin-right: 11px
+    border-radius: 4px
+    padding: 2px 4px
+    font-weight: bold
+    font-size: 14px
+
+  span.showhide:hover
+    cursor: pointer
+    border-radius: 4px
+    padding: 2px 4px
+    background-color: #ccc
+    color: #4C4D4F
+    transition: .5s ease;
+
+  div.showhide
+    hide()
+
+  .hide-element
+    display none
+
+  input[type='checkbox'].hide-element
+    display none
+
+  input[type='radio'].hide-element
+    display none
+
+  // Pages
+  @import './pages/index'
+
+  // Components
+  @import './components/component'
+
+.ui-dialog .charsheet .repcontainer .repitem .itemcontrol
+  .repcontrol_del
+    float right
+    width auto
+    margin 0
+    height auto
+  .repcontrol_move
+    cursor move
+    width auto
+    margin 0
+    height auto
+
+// Roll Remplates  
+@import './roll-templates/roll-template'
+
+// Dark Mode Support
+@import './common/stylus/dark-mode'
