@@ -1,0 +1,13 @@
+rolltemplate.sheet-rolltemplate-resistance
+  .rolltemplate-roll-holder.rolltemplate-col-12
+    .rolltemplate-quote Resistance Roll
+    br
+    div
+      | You take {{#rollBetween() die1 6 6}}6{{/rollBetween() die1 6 6}}
+      | {{#rollBetween() die1 5 5}}5{{/rollBetween() die1 5 5}}
+      | {{#rollBetween() die1 4 4}}4{{/rollBetween() die1 4 4}}
+      | {{#rollBetween() die1 3 3}}3{{/rollBetween() die1 3 3}}
+      | {{#rollBetween() die1 2 2}}2{{/rollBetween() die1 2 2}}
+      | {{#rollBetween() die1 1 1}}1{{/rollBetween() die1 1 1}}
+      | {{#rollBetween() die1 -12 0}}0{{/rollBetween() die1 -12 0}} stress and reduce the severity of the
+      | consequence by {{reduceconsequence}} levels.

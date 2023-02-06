@@ -1,0 +1,22 @@
+rolltemplate.sheet-rolltemplate-roll2
+  .rolltemplate-col-12(class='rolltemplate-{{type}}roll')
+    div
+      .rolltemplate-crew-sheet-title(class='rolltemplate-{{type}}-roll') {{type}} ROLL
+      | {{#rolltype}}
+      .rolltemplate-character-text
+        | {{character}} rolls 
+        span.rolltemplate-rolltype-name {{rolltype}}
+      | {{/rolltype}}
+    .rolltemplate-dice(class='{{#zerodice}}zerodice-rolled{{/zerodice}} {{#dice}}nonzerodice-rolled{{/dice}}')
+      | {{zerodice}}{{dice}}
+      | {{#zerodice}}
+      .rolltemplate-zerodice-msg Zero Dice &mdash; take the lowest result above
+      | {{/zerodice}}
+      .rolltemplate-outcome
+        .rolltemplate-outcome-critical-success Critical Success
+        .rolltemplate-outcome-success Full Success
+        .rolltemplate-outcome-mixed-success Partial Success
+        .rolltemplate-outcome-failure Failure
+    div
+      .rolltemplate-col-6.rolltemplate-crew-sheet-title {{position}}
+      .rolltemplate-col-6.rolltemplate-crew-sheet-title {{effect}}

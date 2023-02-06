@@ -1,0 +1,2512 @@
+.charsheet * {
+    color: #3B3B3B;
+    font-size:10px;
+    
+}
+/*Default Tag Styling*/
+.text-input {
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    padding: 0px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.textarea {
+    resize:none;
+}
+
+.select {
+    width: 100%;
+    padding: 0px;
+}
+
+input:focus {
+    outline: 0px;
+}
+
+/*Responsive Grid Setup*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.sheet-rolltemplate-col-1 {display:inline-block; padding: 15px; width: 8.33%;}
+.sheet-rolltemplate-col-2 {display:inline-block; padding: 15px; width: 16.66%;}
+.sheet-rolltemplate-col-3 {display:inline-block; padding: 15px; width: 25%;}
+.sheet-rolltemplate-col-4 {display:inline-block; padding: 15px; width: 33.33%;}
+.sheet-rolltemplate-col-5 {display:inline-block; padding: 15px; width: 41.66%;}
+.sheet-rolltemplate-col-6 {display:inline-block; width: 49%;}
+.sheet-rolltemplate-col-7 {display:inline-block; padding: 15px; width: 58.33%;}
+.sheet-rolltemplate-col-8 {display:inline-block; padding: 15px; width: 66.66%;}
+.sheet-rolltemplate-col-9 {display:inline-block; padding: 15px; width: 75%;}
+.sheet-rolltemplate-col-10 {display:inline-block; padding: 15px; width: 83.33%;}
+.sheet-rolltemplate-col-11 {display:inline-block; padding: 15px; width: 91.66%;}
+.sheet-rolltemplate-col-12 {display:inline-block; padding: 15px; width: 100%;}
+
+.sheet-rolltemplate-container {padding: 15px; width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  border: 0px solid red;
+}
+
+
+/*Underline*/
+.underline {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px !important;
+    border-bottom-color: #af1919;
+}
+
+.underline-label {
+    color: #af1919;
+}
+
+
+
+/*
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}*/
+
+/*CREW SHEET TITLE*/
+.crew-sheet-title {
+    font-family: "Franklin Gothic Medium", sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 900;
+    color: #af1919;
+}
+
+.sheet-rolltemplate-crew-sheet-title {
+    font-family: "Franklin Gothic Medium", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    /*line-height: 45px;*/
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    padding-top: .5em;
+}
+
+/*Stress Teeth*/
+
+/* Hide actual radio 
+.stress-tooth {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}*/
+
+/* Fake radio */
+.stress-tooth {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6px;
+    height: 17px !important;
+    border-radius: 0px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #af1919;
+    background-color: #fb8588;
+}
+
+.stress-tooth.stress-tooth-single:not(:checked),
+{
+    background-color: white;
+}
+
+/* Any checkbox after the checked one is white */
+.stress-tooth:checked ~ .stress-tooth {
+    background-color: white;
+}
+
+.first-cybernetic-box,
+.second-cybernetic-box,
+.third-cybernetic-box {
+    display: none;
+}
+
+
+.clock-tracking[value="2"] ~ .clock-track1,
+.clock-tracking[value="3"] ~ .clock-track2,
+.clock-tracking[value="3"] ~ .clock-track1,
+.clock-tracking[value="4"] ~ .clock-track3,
+.clock-tracking[value="4"] ~ .clock-track2,
+.clock-tracking[value="4"] ~ .clock-track1,
+.clock-tracking[value="5"] ~ .clock-track4,
+.clock-tracking[value="5"] ~ .clock-track3,
+.clock-tracking[value="5"] ~ .clock-track2,
+.clock-tracking[value="5"] ~ .clock-track1,
+.clock-tracking[value="6"] ~ .clock-track5,
+.clock-tracking[value="6"] ~ .clock-track4,
+.clock-tracking[value="6"] ~ .clock-track3,
+.clock-tracking[value="6"] ~ .clock-track2,
+.clock-tracking[value="6"] ~ .clock-track1,
+.clock-tracking[value="7"] ~ .clock-track6,
+.clock-tracking[value="7"] ~ .clock-track5,
+.clock-tracking[value="7"] ~ .clock-track4,
+.clock-tracking[value="7"] ~ .clock-track3,
+.clock-tracking[value="7"] ~ .clock-track2,
+.clock-tracking[value="7"] ~ .clock-track1,
+.clock-tracking[value="8"] ~ .clock-track7,
+.clock-tracking[value="8"] ~ .clock-track6,
+.clock-tracking[value="8"] ~ .clock-track5,
+.clock-tracking[value="8"] ~ .clock-track4,
+.clock-tracking[value="8"] ~ .clock-track3,
+.clock-tracking[value="8"] ~ .clock-track2,
+.clock-tracking[value="8"] ~ .clock-track1 {
+    background-color: #af1919;
+}
+
+.action-tracking[value="2"] ~ .action-track1,
+.action-tracking[value="3"] ~ .action-track2,
+.action-tracking[value="3"] ~ .action-track1,
+.action-tracking[value="4"] ~ .action-track3,
+.action-tracking[value="4"] ~ .action-track2,
+.action-tracking[value="4"] ~ .action-track1,
+.action-tracking[value="5"] ~ .action-track4,
+.action-tracking[value="5"] ~ .action-track3,
+.action-tracking[value="5"] ~ .action-track2,
+.action-tracking[value="5"] ~ .action-track1,
+.action-tracking[value="6"] ~ .action-track5,
+.action-tracking[value="6"] ~ .action-track4,
+.action-tracking[value="6"] ~ .action-track3,
+.action-tracking[value="6"] ~ .action-track2,
+.action-tracking[value="6"] ~ .action-track1,
+.action-tracking[value="7"] ~ .action-track6,
+.action-tracking[value="7"] ~ .action-track5,
+.action-tracking[value="7"] ~ .action-track4,
+.action-tracking[value="7"] ~ .action-track3,
+.action-tracking[value="7"] ~ .action-track2,
+.action-tracking[value="7"] ~ .action-track1,
+.action-tracking[value="8"] ~ .action-track7,
+.action-tracking[value="8"] ~ .action-track6,
+.action-tracking[value="8"] ~ .action-track5,
+.action-tracking[value="8"] ~ .action-track4,
+.action-tracking[value="8"] ~ .action-track3,
+.action-tracking[value="8"] ~ .action-track2,
+.action-tracking[value="8"] ~ .action-track1 {
+    background-color: black;
+}
+
+.stressadvanced-tracking[value="1"] ~ .stressadvanced-track1,
+.stressadvanced-tracking[value="2"] ~ .stressadvanced-track2,
+.stressadvanced-tracking[value="2"] ~ .stressadvanced-track1,
+.stressadvanced-tracking[value="3"] ~ .stressadvanced-track3,
+.stressadvanced-tracking[value="3"] ~ .stressadvanced-track2,
+.stressadvanced-tracking[value="3"] ~ .stressadvanced-track1,
+.stressadvanced-tracking[value="4"] ~ .stressadvanced-track4,
+.stressadvanced-tracking[value="4"] ~ .stressadvanced-track3,
+.stressadvanced-tracking[value="4"] ~ .stressadvanced-track2,
+.stressadvanced-tracking[value="4"] ~ .stressadvanced-track1 {
+    opacity: 1;
+}
+
+.turf-tracking[value="1"] ~ .turf-track1,
+.turf-tracking[value="2"] ~ .turf-track2,
+.turf-tracking[value="2"] ~ .turf-track1,
+.turf-tracking[value="3"] ~ .turf-track3,
+.turf-tracking[value="3"] ~ .turf-track2,
+.turf-tracking[value="3"] ~ .turf-track1,
+.turf-tracking[value="4"] ~ .turf-track4,
+.turf-tracking[value="4"] ~ .turf-track3,
+.turf-tracking[value="4"] ~ .turf-track2,
+.turf-tracking[value="4"] ~ .turf-track1 {
+    background-color: black;
+    pointer-events: none;
+}
+
+.cybernetics[value="1"] ~ .first-cybernetic,
+.cybernetics[value="2"] ~ .second-cybernetic,
+.cybernetics[value="3"] ~ .third-cybernetic,
+.cybernetics[value="2"] ~ .second-cybernetic,
+.cybernetics[value="3"] ~ .third-cybernetic,
+.cybernetics[value="3"] ~ .third-cybernetic {
+    background-color: black;
+    pointer-events: none;
+}
+/*Position the Stress Boxes on the Character Sheet*/
+.stress-boxes {
+    position: absolute;
+    top: 206px;
+    left: 4%;
+    width: 29%;
+}
+
+.trauma-boxes {
+    position: absolute;
+    top: 206px;
+    left: 21%;
+    width: 29%;
+}
+
+.trauma-descriptors {
+    margin-top: -16px;
+}
+
+.cybernetics-boxes {
+    margin-top: 17px;
+    margin-left: 8%;
+}
+
+.third-cybernetic-push {
+    margin-left: 9px;
+}
+
+.rep-boxes {
+    position: absolute;
+    top: 120px;
+    left: 3%;
+    width: 29%;
+}
+
+.heat-boxes {
+    position: absolute;
+    top: 583px;
+    left: 3%;
+    width: 15%;
+}
+
+.weak-box {
+    position: absolute;
+    top: 120px;
+    left: 32.5%;
+}
+.strong-box {
+    position: absolute;
+    top: 120px;
+    left: 38.5%;
+}
+
+/*Header Bar (For Attributes, Stress, Trauma, etc)*/
+
+.header-bar {
+    background-color: #af1919;
+}
+
+.header-bar > .header {
+    color: white;
+    font-weight: 800;
+}
+
+.pink-header-bar {
+    background-color: #eac5c6;
+}
+
+.pink-header {
+    color: #3b3b3b;
+    font-weight: 800;
+}
+
+.bottom-bar {
+    position: absolute;
+    top: 50px;
+    left: 2%;
+    z-index: 2;
+    margin:5px;
+    width: 97%;
+}
+
+.right-align {
+    text-align: right;
+}
+
+
+/* Remove dot from all radios _after_ selected one 
+.stress-tooth:checked ~ .stress-tooth + span::before {    
+    background-color: white;
+}*/
+
+/*Trauma*/
+input.pages {
+    opacity: 0;
+    width: 16%;
+    cursor: pointer;
+}
+
+span.pagelabel {
+    margin-left: -16%;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+input.pages + span.pagelabel {
+    border-radius: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+span.stresslabel {
+    margin-left: -16%;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+input.pages + span.stresslabel {
+    border-radius: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.pages:checked + span.pagelabel {
+    color: #af1919;
+    font-weight: bold;
+    -webkit-animation: advance 2s infinite ease;
+    animation: advance 2s infinite ease;
+}
+
+.pages:checked + span.stresslabel {
+    font-weight: bold;
+    -webkit-animation: advance 2s infinite ease;
+    animation: advance 2s infinite ease;
+}
+
+.weird {
+    width:15%;
+}
+
+/*Harm Box*/
+.harm-level {
+    background-color: #eac5c6;
+    color: #3b3b3b;
+}
+
+.level-3-harm,
+.level-2-harm,
+.level-1-harm {
+    border-radius: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+    border-bottom-color: #af1919;
+}
+
+.level-2-harm {
+    height: 30px;
+}
+
+.first-level-2-harm {
+    border-radius: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    border-bottom-color: #af1919;
+    width: 50% !important;
+}
+
+.second-level-2-harm {
+    border-radius: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 2px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-bottom-color: #af1919;
+    width: 50% !important;
+}
+
+.first-level-1-harm {
+    border-radius: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    border-bottom-color: #af1919;
+    width: 50% !important;
+}
+
+.second-level-1-harm {
+    border-radius: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 2px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-bottom-color: #af1919;
+    width: 50% !important;
+}
+
+/*Fix the Weird Red Background Problem*/
+.healing-clock {
+    background-color: white;
+}
+
+/*Joules*/
+
+.joules {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 8px !important;
+    border-radius: 0px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #af1919;
+    background-color: white;
+}
+
+.joules:checked {
+    background-color: #af1919;
+}
+
+.stash {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 8px !important;
+    border-radius: 0px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    background-color: #eac5c6;
+}
+
+.stash:checked {
+    background-color: #af1919;
+}
+
+/*Tier Dots*/
+
+.tier-dot {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px !important;
+    border-radius: 50%;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #af1919;
+    background-color: white;
+}
+
+.tier-dot:checked {
+    background-color: #af1919;
+}
+
+.tier-tracking[value="2"] ~ .tier-track1,
+.tier-tracking[value="3"] ~ .tier-track2,
+.tier-tracking[value="3"] ~ .tier-track1,
+.tier-tracking[value="4"] ~ .tier-track3,
+.tier-tracking[value="4"] ~ .tier-track2,
+.tier-tracking[value="4"] ~ .tier-track1 {
+    background-color: #af1919;
+}
+
+/*Sheet Styling*/
+
+.text-in-red-box {
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+.abilities {
+    background-color: #af1919;
+    
+}
+
+.abilities * {
+    color: white;
+}
+
+/*Options*/
+
+.option {
+    color: #3b3b3b;
+}
+
+/*Playbook Name*/
+.playbook-name {
+    line-height: 50px;
+    font-family: "Franklin Gothic Medium", sans-serif;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 900;
+}
+
+/*Add and Modify*/
+
+/*Abilities*/
+.ability-circle {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    background-color: white;
+    border-radius: 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.ability-circle:checked {
+    opacity: 1;
+    background-color: black;
+    border: 2px solid white;
+    content: "";
+}
+
+.abilityname {
+    background-color: rgba(0,0,0,0);
+    width: 70%;
+    color: white;
+}
+
+.abilitydesc {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    width: 95%;
+    height: 36px;
+    line-height: 12px;
+}
+
+/*Red Box Placeholder colors*/
+
+.white-placeholders::placeholder {
+    color: rgba(255,255,255,75%);
+} 
+
+/*Items*/
+.item-check {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.item-check:checked {
+    opacity: 1;
+    background-color: #000;
+    border: 1px solid white;
+    content: "";
+}
+
+.items {
+    width:70%;
+}
+
+/*Actions*/
+.action-dot {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    border-radius: 50%;
+    background-color: #c9c9c9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.action-dot:checked {
+    background-color: black;
+    content: "";
+}
+
+.cybernetic-dot {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    border-radius: 50%;
+    background-color: #eac5c6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.cybernetic-dot:checked {
+    opacity: 1;
+    background-color: black;
+    content: "";
+}
+
+
+/*Load Control*/
+
+.load-control,
+.first-box,
+.second-box,
+.third-box,
+.fourth-box {
+    display: none;
+}
+
+.load-control[value="1"] ~ .first-box,
+.load-control[value="2"] ~ .first-box,
+.load-control[value="3"] ~ .first-box,
+.load-control[value="4"] ~ .first-box,
+.load-control[value="2"] ~ .second-box,
+.load-control[value="3"] ~ .third-box,
+.load-control[value="3"] ~ .second-box,
+.load-control[value="4"] ~ .fourth-box,
+.load-control[value="4"] ~ .third-box,
+.load-control[value="4"] ~ .second-box {
+    display: inline-block;
+}
+
+/*Logo*/
+
+.hack-the-planet {
+    height: 42px;
+    background:url(https://i.imgur.com/JOQL14s.png) left no-repeat;
+}
+
+/*Hexagon*/
+
+.claims-map {
+    height: 450px;
+}
+
+.hexagon {
+    position: absolute;
+    width: calc(205px / 5 * 5);
+    height: calc(105px / 5 * 5);
+    /* right: 49px; */
+    /* top: 50%; */
+    /* left: 50%; */
+    background: red;
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -webkit-transform: translate(-50%,-50%);
+    /* margin: 200px auto; */
+    /* margin-left: -50%; */
+    /* margin-top: -50%; */
+    overflow: hidden;
+    visibility: hidden;
+    /*width: 400px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    background: red;
+    transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+    margin: 200px auto;
+    overflow: hidden;
+    visibility: hidden;*/
+}
+
+.hexagon:hover {
+    width: calc(215px / 5 * 5);
+    height: calc(115px / 5 * 5);
+}
+
+.hexagon-inside {
+    width: 100%;
+    height: 100%;
+    background: green;
+    transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    overflow: hidden;
+}
+
+.hexagon-image {
+    width: 100%;
+    height: 100%;
+    background: #eac5c6;
+    transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    visibility: visible;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.click-the-hexagon {
+    position: absolute;
+    visibility: visible;
+    width: 300px;
+    height: 300px !important;
+    opacity: 0;
+    z-index: 2;
+}
+
+.click-the-hexagon:checked ~ .hexagon-image {
+    background: #af1919;
+}
+
+.claim-container {
+    position: absolute;
+    left: 45%;
+    bottom: 58%;
+    width: 100px;
+    transform-origin: center center;
+    transform: rotate(-120deg);
+    -moz-transform: rotate(-120deg);
+    -ms-transform: rotate(-120deg);
+    -o-transform: rotate(-120deg);
+    -webkit-transform: rotate(-120deg);
+    z-index: 1;
+}
+
+.unflip1 {
+    position: relative;
+    max-width: 70px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    border: 0px;
+    z-index: 3;
+}    
+
+.unflip2 {
+    position: relative;
+    height: 50%;
+    top: calc(-50px / 5 * 5);
+    max-width: 60px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 0px;
+    font-size: 8px;
+    text-align: center;
+    z-index: 3;
+}
+
+.hexdial-1,
+.hexdial-2,
+.hexdial-3,
+.hexdial-4,
+.hexdial-5,
+.hexdial-6,
+.hexlink-1,
+.hexlink-2,
+.hexlink-3,
+.hexlink-4,
+.hexlink-5,
+.hexlink-6{
+    display: none;
+}
+
+.hexlink-1 {
+    z-index: -1;
+    position: absolute;
+    width: calc(100px / 5 * 5);
+    height: calc(10px / 5 * 5);
+    background-color: #eac5c6;
+    transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform-origin: center left;
+    display: none;
+    /*left:calc(50px / 5 * 5);
+    top: calc(-30px / 5 * 5);*/
+}
+
+
+
+.hexlink-2 {
+    z-index: -1;
+    position: absolute;
+    width: calc(100px / 5 * 5);
+    height: calc(10px / 5 * 5);
+    background-color: #eac5c6;
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform-origin: center left;
+    /*left:calc(0px / 5 * 5);
+    top: calc(-90px / 5 * 5);*/
+}
+
+.hexlink-3 {
+    z-index: -1;
+    position: absolute;
+    width: calc(100px / 5 * 5);
+    height: calc(10px / 5 * 5);
+    background-color: #eac5c6;
+    transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform-origin: center left;
+    /*left:calc(0px / 5 * 5);
+    top: calc(-90px / 5 * 5);*/
+}
+
+.hexlink-4 {
+    z-index: -1;
+    position: absolute;
+    width: calc(100px / 5 * 5);
+    height: calc(10px / 5 * 5);
+    background-color: #eac5c6;
+    transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    -o-transform: rotate(150deg);
+    -webkit-transform: rotate(150deg);
+    transform-origin: center left;
+    /*left:calc(0px / 5 * 5);
+    top: calc(-90px / 5 * 5);*/
+}
+
+.hexlink-5 {
+    z-index: -1;
+    position: absolute;
+    width: calc(100px / 5 * 5);
+    height: calc(10px / 5 * 5);
+    background-color: #eac5c6;
+    transform: rotate(210deg);
+    -moz-transform: rotate(210deg);
+    -ms-transform: rotate(210deg);
+    -o-transform: rotate(210deg);
+    -webkit-transform: rotate(210deg);
+    transform-origin: center left;
+    /*left:calc(0px / 5 * 5);
+    top: calc(-90px / 5 * 5);*/
+}
+
+.hexlink-6 {
+    z-index: -1;
+    position: absolute;
+    width: calc(100px / 5 * 5);
+    height: calc(10px / 5 * 5);
+    background-color: #eac5c6;
+    transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform-origin: center left;
+    /*left:calc(0px / 5 * 5);
+    top: calc(-90px / 5 * 5);*/
+}
+
+
+.hexdial-1:checked ~ .hexlink-1,
+.hexdial-2:checked ~ .hexlink-2,
+.hexdial-3:checked ~ .hexlink-3,
+.hexdial-4:checked ~ .hexlink-4,
+.hexdial-5:checked ~ .hexlink-5,
+.hexdial-6:checked ~ .hexlink-6 {
+    display: block;
+}
+
+[class*="hexmap"] {
+    position: relative;
+    left:calc(50px / 5 * 5);
+}
+
+[class*="hextext"] {
+    position: absolute;
+    left:calc(7.5px / 5 * 5);
+    max-width: 86.5px;
+    height: 62px;
+}
+
+.claimname {
+    position: relative;
+    height: 55%;
+    max-width: 87.5px;
+    background-color: rgba(0,0,0,0);
+    color: #3B3B3B;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: 800;
+    text-align: center;
+    border: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    z-index: 3;
+    resize: none;
+    overflow: hidden;
+}
+
+.claimdescription {
+    position: relative;
+    height: 70%;
+    max-width: 87.5px;
+    background-color: rgba(0,0,0,0);
+    color: #3B3B3B;
+    border: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    z-index: 3;
+    resize: none;
+    overflow: hidden;
+    
+}
+
+input.text-color-switcher[value="on"] ~ .claimname,
+input.text-color-switcher[value="on"] ~ .claimdescription {
+    color: white;
+}
+
+.hexmap1-1 {
+    top: calc(140px / 5 * 5);
+}
+
+.hextext1-1 {
+    top: calc(235px / 5 * 5);
+}
+
+.hexmap1-2 {
+    top: calc(260px / 5 * 5);
+}
+
+.hextext1-2 {
+    top: calc(355px / 5 * 5);
+}
+
+.hexmap1-3 {
+    top: calc(380px / 5 * 5);
+}
+
+.hextext1-3 {
+    top: calc(475px / 5 * 5);
+}
+
+.hexmap2-1 {
+    top: calc(80px / 5 * 5);
+    left: calc(150px / 5 * 5);
+}
+
+.hextext2-1 {
+    top: calc(175px / 5 * 5);
+    left: calc(107.5px / 5 * 5);
+}
+
+.hexmap2-2 {
+    top: calc(200px / 5 * 5);
+    left: calc(150px / 5 * 5);
+}
+
+.hextext2-2 {
+    top: calc(295px / 5 * 5);
+    left: calc(107.5px / 5 * 5);
+}
+
+.hexmap2-3 {
+    top: calc(320px / 5 * 5);
+    left: calc(150px / 5 * 5);
+}
+
+.hextext2-3 {
+    top: calc(415px / 5 * 5);
+    left: calc(107.5px / 5 * 5);
+}
+
+.hexmap3-1 {
+    top: calc(140px / 5 * 5);
+    left: calc(250px / 5 * 5);
+}
+
+.hextext3-1 {
+    top: calc(235px / 5 * 5);
+    left: calc(207.5px / 5 * 5);
+}
+.hextext3-2 {
+    top: calc(355px / 5 * 5);
+    left: calc(207.5px / 5 * 5);
+}
+.hextext3-3 {
+    top: calc(475px / 5 * 5);
+    left: calc(207.5px / 5 * 5);
+}
+
+.hexmap3-2 {
+    top: calc(260px / 5 * 5);
+    left: calc(250px / 5 * 5);
+}
+
+.hexmap3-3 {
+    top: calc(380px / 5 * 5);
+    left: calc(250px / 5 * 5);
+}
+
+.hexmap4-1 {
+    top: calc(80px / 5 * 5);
+    left: calc(350px / 5 * 5);
+}
+
+.hexmap4-2 {
+    top: calc(200px / 5 * 5);
+    left: calc(350px / 5 * 5);
+}
+
+.hexmap4-3 {
+    top: calc(320px / 5 * 5);
+    left: calc(350px / 5 * 5);
+}
+
+.hextext4-1 {
+    top: calc(175px / 5 * 5);
+    left: calc(307.5px / 5 * 5);
+}
+.hextext4-2 {
+    top: calc(295px / 5 * 5);
+    left: calc(307.5px / 5 * 5);
+}
+.hextext4-3 {
+    top: calc(415px / 5 * 5);
+    left: calc(307.5px / 5 * 5);
+}
+
+.hexmap5-1 {
+    top: calc(140px / 5 * 5);
+    left: calc(450px / 5 * 5);
+}
+
+.hexmap5-2 {
+    top: calc(260px / 5 * 5);
+    left: calc(450px / 5 * 5);
+}
+
+.hexmap5-3 {
+    top: calc(380px / 5 * 5);
+    left: calc(450px / 5 * 5);
+}
+
+.hextext5-1 {
+    top: calc(235px / 5 * 5);
+    left: calc(407.5px / 5 * 5);
+}
+.hextext5-2 {
+    top: calc(355px / 5 * 5);
+    left: calc(407.5px / 5 * 5);
+}
+.hextext5-3 {
+    top: calc(475px / 5 * 5);
+    left: calc(407.5px / 5 * 5);
+}
+
+/*Hexagons v2*/
+
+.hex {
+	width: 100px;
+	height: 57px;
+	background-color: #ccc;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;			
+	background-size: auto 173px;							
+	position: relative;
+	float:left;
+	margin:25px 5px;
+	text-align:center;
+	zoom:1;
+}
+		
+	.hex.hex-gap {
+		margin-left: 86px;
+	}
+	
+	.hex a {
+		display:block;
+		width: 100%;
+		height:100%;
+		text-indent:-9999em;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+
+	.hex .corner-1,
+	.hex .corner-2 {
+		position: absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background: inherit;								
+		z-index:-2;						
+		overflow:hidden;		
+		backface-visibility: hidden;			
+	}
+	
+	.hex .corner-1 {
+		z-index:-1;
+		-webkit-transform: rotate(60deg);
+	}
+	
+	.hex .corner-2 {
+		-webkit-transform: rotate(-60deg);
+	}
+	
+	.hex .corner-1:before,
+	.hex .corner-2:before {
+		width: 173px;
+		height:	173px;
+	  content: '';
+	  position: absolute;
+	  background: inherit;
+	  top:0;
+	  left: 0;
+	  z-index: 1;
+	  background: inherit;
+	  background-repeat:no-repeat;
+		backface-visibility: hidden;				  
+	}			
+	
+
+	.hex .corner-1:before {
+		transform: rotate(-60deg) translate(-87px, 0px);	
+	  transform-origin: 0 0;
+	}			
+	
+	.hex .corner-2:before {
+		transform: rotate(60deg) translate(-48px, -11px);	
+		bottom:0;
+	}		
+
+
+	
+	/* Custom styles*/
+	.hex .inner {		
+		color:#3b3b3b;
+	}
+	
+	.hex h4 {
+		font-family: 'Josefin Sans', sans-serif;		
+		margin:0;			
+	}
+	
+	.hex hr {
+		border:0;
+		border-top:1px solid #3b3b3b;
+		width:60%;
+		margin:15px auto;
+	}
+	
+	.hex p {
+		font-size:16px;
+		font-family: 'Kotta One', serif;
+		width:80%;
+		margin:0 auto;
+	}
+
+	.hex.hex-1 {
+		background: #74cddb;
+	}
+	
+	.hex.hex-2 {
+		background: #f5c53c;
+	}
+	
+	.hex.hex-3 {
+		background: #80b971;
+	}
+
+/*Triangles for Friends*/
+.upward-triangle {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    background-color: #ffffff;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.downward-triangle {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    background-color: #ffffff;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.rightward-triangle {
+    width: 10px;
+    height: 10px !important;
+    border: 0px;
+    background-color: #eac5c6;
+  -webkit-clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.upward-triangle:checked, 
+.downward-triangle:checked {
+    opacity: 1;
+    background-color: #fb8588;
+    content: "";
+}
+
+.rightward-triangle:checked {
+    background-color: #af1919;
+    content: "";
+}
+
+/*Tier Circles*/
+.tier-dot {
+    opacity: 1;
+    width: 10px;
+    height: 10px !important;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-radius: 50%;
+    border-color: #af1919;
+    background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/*Vault*/
+.vault {
+    opacity: 1;
+    width: 8px;
+    height: 8px !important;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #eac5c6;
+    background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.vault:checked {
+    background-color: #eac5c6;
+}
+
+.vault1-track,
+.vault2-track {
+    display:none;
+}
+
+.vault1-tracking[value="on"] ~ .vault1-track,
+.vault2-tracking[value="on"] ~ .vault2-track {
+    display:inline-block;
+}
+/*FUEL FOR COMETS*/
+
+
+
+.fuel-tracker {
+    display:none;
+}
+
+.fuel-button[value="comets"] ~ .fuel-tracker,
+.fuel-button[value="Comets"] ~ .fuel-tracker,
+.fuel-button[value="COMETS"] ~ .fuel-tracker {
+    display:block;
+}
+
+/*Page Switcher*/
+.switch-to-crew {
+    display:none;
+    color: white;
+    margin-left: 0% !important;
+}
+
+.switch-to-character {
+    display:block;
+    color: white;
+    margin-left: 0% !important;
+}
+
+.page-switcher:checked ~ .switch-to-crew {
+    display:block;
+}
+
+.page-switcher:checked ~ .switch-to-character {
+    display:none;
+}
+
+.switch-to-red-box-label {
+    color: white !important;
+    display: none;
+    margin-left: 0% !important;
+}
+
+.switch-to-action-tracker-label {
+    color: white;
+    display: block;
+    margin-left: 0% !important;
+}
+
+.red-switcher[value="on"] ~ .switch-to-red-box-label {
+    display:block;
+}
+
+.red-switcher[value="on"] ~ .switch-to-action-tracker-label {
+    display:none;
+}
+
+.red-box {
+    display:block;
+}
+
+.action-tracker {
+    display:none;
+}
+
+.red-switcher[value="on"] ~ .red-box {
+    display:none;
+    margin-left: 0% !important;
+}
+
+.red-switcher[value="on"] ~ .action-tracker {
+    display:block;
+    margin-left: 0% !important;
+}
+
+/*Clock*/
+
+.repitem {
+    max-width: 520px !important;
+    position:static !important;
+}
+
+.itemcontrol {
+    position:static !important;
+}
+
+.clock input.label {
+	font-size: 106%;
+	letter-spacing: 1px;
+	font-weight: 600;
+	line-height: 119%;
+}
+
+.4clock, .6clock, .8clock, .12clock {
+	display: none;
+}
+
+input[value="4"]:checked ~ .4clock,
+input[value="6"]:checked ~ .6clock,
+input[value="8"]:checked ~ .8clock,
+input[value="12"]:checked ~ .12clock {
+	display: block;
+}
+
+.harm-clock {
+    width: 50px;
+    height: 50px;
+    background: #eac5c6;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    border: 4px solid transparent;
+    
+    transform: rotate(45deg);
+    transition: .25s ease;
+    
+}
+
+.harm-clock-text {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px; 
+    transform: rotate(-0deg);
+    font-family: "Franklin Gothic Medium", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 45px;
+    font-weight: 300;
+    position:absolute;
+    left:6px;
+    top:1px;
+    padding: 2px;
+}
+
+.4clock-4:checked ~ .harm-circle {
+
+    
+    background-size:120%;
+    transition: .25s ease;
+}
+
+.6clock-6:checked ~ .harm-circle {
+
+    
+    background-size:120%;
+    transition: .25s ease;
+}
+
+.8clock-8:checked ~ .harm-circle {
+
+    
+    background-size:120%;
+    transition: .25s ease;
+}
+
+.4clock-0:checked ~ .harm-clock-text:after {
+    content: "0/4";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.4clock-1:checked ~ .harm-clock-text:after {
+    content: "1/4";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.4clock-2:checked ~ .harm-clock-text:after {
+    content: "2/4";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.4clock-3:checked ~ .harm-clock-text:after {
+    content: "3/4";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.4clock-4:checked ~ .harm-clock-text:after {
+    content: "4/4";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.6clock-0:checked ~ .harm-clock-text:after {
+    content: "0/6";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.6clock-1:checked ~ .harm-clock-text:after {
+    content: "1/6";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.6clock-2:checked ~ .harm-clock-text:after {
+    content: "2/6";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.6clock-3:checked ~ .harm-clock-text:after {
+    content: "3/6";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.6clock-4:checked ~ .harm-clock-text:after {
+    content: "4/6";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.6clock-5:checked ~ .harm-clock-text:after {
+    content: "5/6";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.6clock-6:checked ~ .harm-clock-text:after {
+    content: "6/6";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-0:checked ~ .harm-clock-text:after {
+    content: "0/8";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.8clock-1:checked ~ .harm-clock-text:after {
+    content: "1/8";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-2:checked ~ .harm-clock-text:after {
+    content: "2/8";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-3:checked ~ .harm-clock-text:after {
+    content: "3/8";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-4:checked ~ .harm-clock-text:after {
+    content: "4/8";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.8clock-5:checked ~ .harm-clock-text:after {
+    content: "5/8";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-6:checked ~ .harm-clock-text:after {
+    content: "6/8";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-7:checked ~ .harm-clock-text:after {
+    content: "7/8";
+    transform: rotate(0deg);
+    
+    color: #3b3b3b;
+}
+
+.8clock-8:checked ~ .harm-clock-text:after {
+    content: "8/8";
+    transform: rotate(0deg);
+    color: #3b3b3b;
+}
+
+.harm-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #eac5c6;
+    position: relative;
+    display: inline-block;
+    transition: .25s ease;
+    overflow:hidden;
+    -webkit-animation: advance 1s infinite ease;
+    animation: advance 1s infinite ease;
+}
+
+.harm-box1 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    bottom: 25px;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+    transition: .25s ease;
+    overflow:hidden;
+}
+
+.harm-inside1 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    bottom: 0px;
+    transform: rotate(-180deg);
+    transform-origin: bottom;
+    transition: .25s ease;
+    overflow:hidden;
+}
+
+.harm-4clock-0:checked ~ .harm-inside1 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-1:checked ~ .harm-inside1 {
+    transform: rotate(-90deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-2:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-3:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-4:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-0:checked ~ .harm-inside1 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-1:checked ~ .harm-inside1 {
+    transform: rotate(-120deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-2:checked ~ .harm-inside1 {
+    transform: rotate(-60deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-3:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-4:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-5:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-6:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-0:checked ~ .harm-inside1 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-1:checked ~ .harm-inside1 {
+    transform: rotate(-135deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-2:checked ~ .harm-inside1 {
+    transform: rotate(-90deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-3:checked ~ .harm-inside1 {
+    transform: rotate(-45deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-4:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-5:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-6:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-7:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-8:checked ~ .harm-inside1 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+
+.harm-ring1 {
+    width: 84%;
+    height: 84%;
+    border-radius: 50%;
+    bottom:-25px;
+    position: relative;
+    display: inline-block;
+    border: 4px solid #8A0C0D;
+    transition: .25s ease;
+    visibility:visible;
+}
+
+.harm-box2 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    bottom: 79px;
+    transform: rotate(270deg);
+    transform-origin: bottom;
+    transition: .25s ease;
+    overflow:hidden;
+}
+
+.harm-inside2 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    bottom: 0px;
+    transform: rotate(-180deg);
+    transform-origin: bottom;
+    transition: .25s ease;
+    overflow:hidden;
+}
+
+.harm-4clock-0:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-1:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-2:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-3:checked ~ .harm-inside2 {
+    transform: rotate(-90deg);
+    transition: .25s ease;
+    
+}
+
+.harm-4clock-4:checked ~ .harm-inside2 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-0:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-1:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-2:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-3:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-4:checked ~ .harm-inside2 {
+    transform: rotate(-120deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-5:checked ~ .harm-inside2 {
+    transform: rotate(-60deg);
+    transition: .25s ease;
+    
+}
+
+.harm-6clock-6:checked ~ .harm-inside2 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-0:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-1:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-2:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-3:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-4:checked ~ .harm-inside2 {
+    transform: rotate(-180deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-5:checked ~ .harm-inside2 {
+    transform: rotate(-135deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-6:checked ~ .harm-inside2 {
+    transform: rotate(-90deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-7:checked ~ .harm-inside2 {
+    transform: rotate(-45deg);
+    transition: .25s ease;
+    
+}
+
+.harm-8clock-8:checked ~ .harm-inside2 {
+    transform: rotate(-0deg);
+    transition: .25s ease;
+    
+}
+
+.harm-ring2 {
+    width: 84%;
+    height: 84%;
+    border-radius: 50%;
+    bottom:-25px;
+    position: relative;
+    display: inline-block;
+    border: 4px solid #8A0C0D;
+    transition: .25s ease;
+    visibility:visible;
+}
+
+.hidden-gaze {
+    display:none !important;
+}
+
+/*Roll Buttons*/
+.action-select,
+.downtime-select,
+.engagement-select,
+.fortune-select,
+.resistance-select,
+.crewaction-select,
+.crewdowntime-select,
+.crewengagement-select,
+.crewfortune-select,
+.crewresistance-select,
+.acquire-select,
+.long-select,
+.recover-select,
+.reduce-select,
+.vice-select,
+.action-selected,
+.downtime-selected,
+.engagement-selected,
+.fortune-selected,
+.resistance-selected,
+.acquire-selected,
+.long-selected,
+.recover-selected,
+.reduce-selected,
+.vice-selected,
+/*Action Button*/
+.action-ready,
+.engagement-ready,
+.engagement-button,
+.action-button,
+.action-buttons,
+.actionroll-selected,
+.downtimeroll-selected,
+.engagementroll-selected,
+.fortuneroll-selected,
+.resistanceroll-selected,
+.trace-ready,
+.study-ready,
+.survey-ready,
+.modify-ready,
+.finesse-ready,
+.ghost-ready,
+.combat-ready,
+.wreck-ready,
+.hack-ready,
+.control-ready,
+.network-ready,
+.sway-ready,
+.trace-button,
+.study-button,
+.survey-button,
+.modify-button,
+.finesse-button,
+.ghost-button,
+.combat-button,
+.wreck-button,
+.hack-button,
+.control-button,
+.network-button,
+.sway-button,
+.insight-ready,
+.prowess-ready,
+.resolve-ready,
+.resistance-roll-button,
+.long-select,
+.long-roll-button,
+.recover-select,
+.reduce-select,
+.vice-select,
+.long-button,
+.recover-button,
+.reduce-roll-button,
+.vice-button,
+.crewactionroll-selected,
+.crewdowntimeroll-selected,
+.crewengagementroll-selected,
+.crewfortuneroll-selected,
+.crewresistanceroll-selected,
+.crewtrace-ready,
+.crewstudy-ready,
+.crewsurvey-ready,
+.crewmodify-ready,
+.crewfinesse-ready,
+.crewghost-ready,
+.crewcombat-ready,
+.crewwreck-ready,
+.crewhack-ready,
+.crewcontrol-ready,
+.crewnetwork-ready,
+.crewsway-ready,
+.crewtrace-button,
+.crewstudy-button,
+.crewsurvey-button,
+.crewmodify-button,
+.crewfinesse-button,
+.crewghost-button,
+.crewcombat-button,
+.crewwreck-button,
+.crewhack-button,
+.crewcontrol-button,
+.crewnetwork-button,
+.crewsway-button,
+.crewinsight-ready,
+.crewprowess-ready,
+.crewresolve-ready,
+.crewinsight-button,
+.crewprowess-button,
+.crewresolve-button,
+.crewlong-select,
+.crewrecover-select,
+.crewreduce-select,
+.crewvice-select,
+.crewlong-button,
+.crewrecover-button,
+.crewreduce-button,
+.crewvice-button,
+.crewacquire-select,
+.crewacquire-button
+{
+    display:none;
+}
+
+.actionroll-selected:checked ~ .action-select,
+.downtimeroll-selected:checked ~ .downtime-select,
+.engagementroll-selected:checked ~ .engagement-select,
+.fortuneroll-selected:checked ~ .fortune-select,
+.resistanceroll-selected:checked ~ .resistance-select,
+.crewroll-selected[value="action"] ~ .crewaction-select,
+.crewroll-selected[value="downtime"] ~ .crewdowntime-select,
+.crewroll-selected[value="engagement"] ~ .crewengagement-select,
+.crewroll-selected[value="fortune"] ~ .crewfortune-select,
+.crewroll-selected[value="resistance"] ~ .crewresistance-select,
+.acquire-selected:checked ~ .acquire-select,
+.long-selected:checked ~ .long-select,
+.recover-selected:checked ~ .recover-select,
+.reduce-selected:checked ~ .reduce-select,
+.vice-selected:checked ~ .vice-select,
+.action-ready:checked ~ .action-button,
+.engagement-ready:checked ~ .engagement-button,
+.action-ready:checked ~ .action-buttons,
+.action-selected[value="trace"] ~ .trace-button,
+.action-selected[value="study"] ~ .study-button,
+.action-selected[value="survey"] ~ .survey-button,
+.action-selected[value="modify"] ~ .modify-button,
+.action-selected[value="finesse"] ~ .finesse-button,
+.action-selected[value="ghost"] ~ .ghost-button,
+.action-selected[value="combat"] ~ .combat-button,
+.action-selected[value="wreck"] ~ .wreck-button,
+.action-selected[value="hack"] ~ .hack-button,
+.action-selected[value="control"] ~ .control-button,
+.action-selected[value="network"] ~ .network-button,
+.action-selected[value="sway"] ~ .sway-button, 
+.downtime-action-selected[value="long"] ~ .long-select,
+.downtime-action-selected[value="recover"] ~ .recover-select,
+.downtime-action-selected[value="reduce"] ~ .reduce-select,
+.downtime-action-selected[value="vice"] ~ .vice-select,
+.downtime-selected[value="recover"] ~ .recover-button,
+.downtime-selected[value="vice"] ~ .vice-button,
+.resistance-select[value="insight"] ~ .resistance-roll-button,
+.resistance-select[value="prowess"] ~ .resistance-roll-button,
+.resistance-select[value="resolve"] ~ .resistance-roll-button,
+.action-selected[value="trace"] ~ .trace-button,
+.action-selected[value="study"] ~ .study-button,
+.action-selected[value="survey"] ~ .survey-button,
+.action-selected[value="modify"] ~ .modify-button,
+.action-selected[value="finesse"] ~ .finesse-button,
+.action-selected[value="ghost"] ~ .ghost-button,
+.action-selected[value="combat"] ~ .combat-button,
+.action-selected[value="wreck"] ~ .wreck-button,
+.action-selected[value="hack"] ~ .hack-button,
+.action-selected[value="control"] ~ .control-button,
+.action-selected[value="network"] ~ .network-button,
+.action-selected[value="sway"] ~ .sway-button, 
+.downtime-action-selected[value="long"] ~ .downtime-long-actionselected:not([value="nothing"]) ~ .long-roll-button,
+.downtime-action-selected[value="reduce"] ~ .downtime-reduce-action-selected:not([value="nothing"]) ~ .reduce-roll-button,
+.crewroll-selected[value="downtime"] ~ .crewdowntime-action-selected[value="acquire"] ~ .crewacquire-select,
+.crewdowntime-action-selected[value="long"] ~ .crewlong-select,
+.crewdowntime-action-selected[value="recover"] ~ .crewrecover-select,
+.crewdowntime-action-selected[value="reduce"] ~ .crewreduce-select,
+.crewdowntime-action-selected[value="vice"] ~ .crewvice-select,
+.crewdowntime-selected[value="long"] ~ .crewlong-button,
+.crewdowntime-selected[value="acquire"] ~ .crewacquire-button,
+.crewdowntime-selected[value="recover"] ~ .crewrecover-button,
+.crewdowntime-selected[value="reduce"] ~ .crewreduce-button,
+.crewdowntime-selected[value="vice"] ~ .crewvice-button,
+.crewresistance-select[value="insight"] ~ .resistance-roll-button,
+.crewresistance-select[value="prowess"] ~ .resistance-roll-button,
+.crewresistance-select[value="resolve"] ~ .resistance-roll-button{
+    display:block;
+}
+
+/*Roll Templates
+.sheet-rolltemplate-action .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-drama .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-flashback .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-downtime .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-fortune .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-resistance .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-tables-and-lists .sheet-rolltemplate-roll-holder,
+.sheet-rolltemplate-photo .sheet-rolltemplate-roll-holder{
+    width:255px;
+    height:auto;
+}*/
+
+.sheet-rolltemplate-actionroll {
+    margin-left:-50px;
+    width:255px;
+    height:215px;
+    background:url(https://i.imgur.com/pRPWiPo.png) center no-repeat;
+    background-size:100%;
+    opacity:1;
+    color:white;
+}
+
+.sheet-rolltemplate-downtimeroll {
+    margin-left:-50px;
+    width:255px;
+    height:215px;
+    background:url(https://i.imgur.com/K2Uyi4S.png) center no-repeat;
+    background-size:100%;
+    opacity:1;
+    color:white;
+}
+
+.sheet-rolltemplate-engagementroll {
+    margin-left:-50px;
+    width:255px;
+    height:215px;
+    background:url(https://i.imgur.com/W0FjDhT.png) center no-repeat;
+    background-size:100%;
+    opacity:1;
+    color:white;
+}
+
+.sheet-rolltemplate-fortuneroll {
+    margin-left:-50px;
+    width:255px;
+    height:215px;
+    background:url(https://i.imgur.com/AHqjTQE.png) center no-repeat;
+    background-size:100%;
+    opacity:1;
+    color:white;
+}
+
+
+.sheet-rolltemplate-resistanceroll {
+    margin-left:-50px;
+    width:255px;
+    height:215px;
+    background:url(https://i.imgur.com/rPDR2lU.png) center no-repeat;
+    background-size:100%;
+    opacity:1;
+    color:white;
+}
+
+.sheet-rolltemplate-dice {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 1.5em 0;
+}
+
+.sheet-rolltemplate-zerodice-msg {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 0.4em;
+}
+
+.sheet-rolltemplate-rolltype-name {
+    color: #66ffff;
+    text-transform: capitalize;
+}
+
+.sheet-rolltemplate-roll2 {
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.sheet-rolltemplate-actionroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sheet-rolltemplate-character-text {
+    margin-top: .5em;
+}
+
+.sheet-rolltemplate-action-name {
+    text-transform: capitalize;
+}
+
+.sheet-rolltemplate-outcome {
+    margin-top: 1em;
+}
+
+.sheet-rolltemplate-roll2 .sheet-rolltemplate-dice .inlinerollresult {
+    background-color:  rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+}
+
+.sheet-rolltemplate-outcome > * {
+    display: none;
+}
+
+/* non-zero rolls */
+/* non-zero roll with 2+ crits = critical success */
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-critical-success {
+    display: block;
+}
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure
+{
+    display: none;
+}
+
+/* non-zero roll with 1 crit = success */
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-success {
+    display: block;
+}
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit[title*="6"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit[title*="6"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit[original-title*="6"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled .fullcrit[original-title*="6"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure
+{
+    display: none;
+}
+
+/* non-zero roll with a 4 or 5 = mixed success */
+.sheet-rolltemplate-dice.nonzerodice-rolled [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.nonzerodice-rolled [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success {
+    display: block;
+}
+
+.sheet-rolltemplate-dice.nonzerodice-rolled [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.nonzerodice-rolled [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.nonzerodice-rolled [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.nonzerodice-rolled [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure {
+    display: none;
+}
+
+/* if all else fails, it's a failure */
+.sheet-rolltemplate-dice.nonzerodice-rolled .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure {
+    display: block;
+}
+
+/* zero rolls */
+/* two sixes on a zero roll = success */
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-success {
+    display: block;
+}
+
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure {
+    display: none;
+}
+
+/* at least 2 of 4, 5 and 6 = mixed success */
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="5"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="5"] ~ [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="5"] ~ [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="4"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="4"] ~ [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="4"] ~ [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="5"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="5"] ~ [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="5"] ~ [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="4"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="4"] ~ [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="4"] ~ [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-mixed-success {
+    display: block;
+}
+
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="5"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="5"] ~ [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="5"] ~ [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="4"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="4"] ~ [title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [title*="4"] ~ [title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled .fullcrit ~ [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="5"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="5"] ~ [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="5"] ~ [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="4"] ~ .fullcrit ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="4"] ~ [original-title*="5"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure,
+.sheet-rolltemplate-dice.zerodice-rolled [original-title*="4"] ~ [original-title*="4"] ~ .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure {
+    display: none;
+}
+
+/* otherwise, we've got a failure */
+.sheet-rolltemplate-dice.zerodice-rolled .sheet-rolltemplate-outcome .sheet-rolltemplate-outcome-failure {
+    display: block;
+}
+
+
+.sheet-rolltemplate-die1,
+.sheet-rolltemplate-die2,
+.sheet-rolltemplate-die3,
+.sheet-rolltemplate-die4,
+.sheet-rolltemplate-die5,
+.sheet-rolltemplate-die6 {
+    display:none;
+}
+
+.sheet-rolltemplate-0 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-0 > .sheet-rolltemplate-die2,
+.sheet-rolltemplate-1 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-2 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-2 > .sheet-rolltemplate-die2,
+.sheet-rolltemplate-3 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-3 > .sheet-rolltemplate-die2,
+.sheet-rolltemplate-3 > .sheet-rolltemplate-die3,
+.sheet-rolltemplate-4 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-4 > .sheet-rolltemplate-die2,
+.sheet-rolltemplate-4 > .sheet-rolltemplate-die3,
+.sheet-rolltemplate-4 > .sheet-rolltemplate-die4,
+.sheet-rolltemplate-5 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-5 > .sheet-rolltemplate-die2,
+.sheet-rolltemplate-5 > .sheet-rolltemplate-die3,
+.sheet-rolltemplate-5 > .sheet-rolltemplate-die4,
+.sheet-rolltemplate-5 > .sheet-rolltemplate-die5,
+.sheet-rolltemplate-6 > .sheet-rolltemplate-die1,
+.sheet-rolltemplate-6 > .sheet-rolltemplate-die2,
+.sheet-rolltemplate-6 > .sheet-rolltemplate-die3,
+.sheet-rolltemplate-6 > .sheet-rolltemplate-die4,
+.sheet-rolltemplate-6 > .sheet-rolltemplate-die5,
+.sheet-rolltemplate-6 > .sheet-rolltemplate-die6 {
+    display:block;
+}
+
+.sheet-rolltemplate-action-roll,
+.sheet-rolltemplate-downtime-roll,
+.sheet-rolltemplate-engagement-roll,
+.sheet-rolltemplate-fortune-roll,
+.sheet-rolltemplate-resistance-roll {
+    display: none;
+    font-size: 20px;
+}
+
+.sheet-rolltemplate-actionroll .sheet-rolltemplate-action-roll,
+.sheet-rolltemplate-downtimeroll .sheet-rolltemplate-downtime-roll,
+.sheet-rolltemplate-engagementroll .sheet-rolltemplate-engagement-roll,
+.sheet-rolltemplate-fortuneroll .sheet-rolltemplate-fortune-roll,
+.sheet-rolltemplate-resistanceroll .sheet-rolltemplate-resistance-roll {
+    display:block;
+}
+
+
+.tooltip ~ .tooltip-text {
+    visibility: hidden;
+    height: auto;
+    width: auto;
+    background: #af1919 center;
+    color: #fff;
+    padding: 5px;
+    opacity: 1;
+    position: absolute;
+    z-index: 2;
+    float:below;
+    font-size: 13px;
+    line-height: 16px;
+    color: #f3f3f3;
+    transition-delay: .50s;
+}
+
+.tooltip:checked ~ .tooltip-text {
+    visibility: visible;
+    transition: 1s ease;
+    transition-delay: .50s;
+    padding: 5px 75px;
+}
+
+/*Hidden Track Button*/
+
+.hidden-button {
+    opacity: 0;
+}
+
+.hidden-button:hover {
+    opacity: 1;
+}
+
+.bigger {
+    width: 100% !important;
+}
+
+button[type=roll]:before {
+	content: "" !important;
+	margin: default;
+}
+
+button {
+    background-color: #af1919;
+    background-image: none;
+    background-size:100%;
+    overflow: visible;
+    padding: 5px;
+    margin: 5px;
+    font-size: 10px !important; 
+    color:#f3f3f3;
+}
+
+button:hover {
+	background-color: #af1919;
+	background-image: none;
+	color:#f3f3f3;
+}
+
+button:active {
+	background-color: #af1919;
+	background-image: none;
+	color:#f3f3f3;
+}

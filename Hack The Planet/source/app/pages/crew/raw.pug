@@ -1,0 +1,893 @@
+mixin rawCrewPage
+	.col-12.crew
+		.col-6
+			.col-7.hack-the-planet
+			.col-5.crew-sheet-title CREW SHEET
+			// Name, Reputation, Base, Rep/Turf/Hold/Tier, Claims Map, Heat/Wanted, Joules/Vaults (Fuel/Reserve), Airship/Convoy/Vehicle Edges and Flaws
+			.col-7
+				input.text-input.underline(type='text' name='attr_crewname')
+				span.underline-label NAME
+			.col-5
+				input.text-input.underline(type='text' name='attr_reputation')
+				span.underline-label REPUTATION
+			.col-12
+				input.text-input.underline(type='text' name='attr_base')
+				span.underline-label BASE
+			.col-12
+			.col-6.header-bar
+				.col-8.header REP
+				.col-1.header TURF
+			.col-6.header-bar
+				.col-2.header HOLD
+				.col-2.pink-header-bar.pink-header WEAK
+				.col-3.pink-header-bar.pink-header STRONG
+				.col-2.header TIER
+				.col-1
+				.col-3.pink-header-bar
+					input.tier-tracking(type='hidden' name='attr_tier')
+					input.hidden-button.tier-dot(type='radio' name='attr_tier' value='0' checked='true')
+					input.tier-track1.tier-dot(type='radio' name='attr_tier' value='1')
+					input.tier-track2.tier-dot(type='radio' name='attr_tier' value='2')
+					input.tier-track3.tier-dot(type='radio' name='attr_tier' value='3')
+					input.tier-track4.tier-dot(type='radio' name='attr_tier' value='4')
+			.rep-boxes
+				input.stress-tracking(type='hidden' name='attr_rep')
+				input.turf-tracking(type='hidden' name='attr_turf' value='0')
+				input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_rep' value='0' checked='true')
+				input.stress-track1.stress-tooth(type='radio' name='attr_rep' value='1')
+				input.stress-track2.stress-tooth(type='radio' name='attr_rep' value='2')
+				input.stress-track3.stress-tooth(type='radio' name='attr_rep' value='3')
+				input.stress-track4.stress-tooth(type='radio' name='attr_rep' value='4')
+				input.stress-track5.stress-tooth(type='radio' name='attr_rep' value='5')
+				input.stress-track6.stress-tooth(type='radio' name='attr_rep' value='6')
+				input.stress-track7.stress-tooth(type='radio' name='attr_rep' value='7')
+				input.stress-track8.stress-tooth(type='radio' name='attr_rep' value='8')
+				input.stress-track9.stress-tooth.turf-track4(type='radio' name='attr_rep' value='9')
+				input.stress-track10.stress-tooth.turf-track3(type='radio' name='attr_rep' value='10')
+				input.stress-track11.stress-tooth.turf-track2(type='radio' name='attr_rep' value='11')
+				input.stress-track12.stress-tooth.turf-track1(type='radio' name='attr_rep' value='12')
+			input.stress-track.stress-tooth.stress-tooth-single.weak-box(type='radio' name='attr_hold' value='weak')
+			input.stress-track.stress-tooth.stress-tooth-single.strong-box(type='radio' name='attr_hold' value='strong')
+			.col-12.claims-map
+				//
+					<div class="hex hex-3" style='background-color: #444; width:100px; height:57px;'>
+					<div class="inner">
+					<h4>Stat</h4>
+					<input type='number' style='width:50%'>
+					</div>
+					<div class="corner-1"></div>
+					<div class="corner-2"></div>
+					</div>
+				.hexmap1-1
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_1-1claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_1-1hexdial1')
+					input.hexdial-2(type='radio' name='attr_1-1hexdial2')
+					input.hexdial-3(type='radio' name='attr_1-1hexdial3')
+					input.hexdial-4(type='radio' name='attr_1-1hexdial4')
+					input.hexdial-5(type='radio' name='attr_1-1hexdial5')
+					input.hexdial-6(type='radio' name='attr_1-1hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext1-1
+					input.text-color-switcher(type='hidden' name='attr_1-1claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_1-1claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_1-1claimdescription' placeholder='')
+				.hexmap1-2
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_1-2claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_1-2hexdial1')
+					input.hexdial-2(type='radio' name='attr_1-2hexdial2')
+					input.hexdial-3(type='radio' name='attr_1-2hexdial3')
+					input.hexdial-4(type='radio' name='attr_1-2hexdial4')
+					input.hexdial-5(type='radio' name='attr_1-2hexdial5')
+					input.hexdial-6(type='radio' name='attr_1-2hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext1-2
+					input.text-color-switcher(type='hidden' name='attr_1-2claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_1-2claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_1-2claimdescription' placeholder='')
+				.hexmap1-3
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_1-3claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_1-3hexdial1')
+					input.hexdial-2(type='radio' name='attr_1-3hexdial2')
+					input.hexdial-3(type='radio' name='attr_1-3hexdial3')
+					input.hexdial-4(type='radio' name='attr_1-3hexdial4')
+					input.hexdial-5(type='radio' name='attr_1-3hexdial5')
+					input.hexdial-6(type='radio' name='attr_1-3hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext1-3
+					input.text-color-switcher(type='hidden' name='attr_1-3claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_1-3claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_1-3claimdescription' placeholder='')
+				.hexmap2-1
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_2-1claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_2-1hexdial1')
+					input.hexdial-2(type='radio' name='attr_2-1hexdial2')
+					input.hexdial-3(type='radio' name='attr_2-1hexdial3')
+					input.hexdial-4(type='radio' name='attr_2-1hexdial4')
+					input.hexdial-5(type='radio' name='attr_2-1hexdial5')
+					input.hexdial-6(type='radio' name='attr_2-1hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext2-1
+					input.text-color-switcher(type='hidden' name='attr_2-1claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_2-1claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_2-1claimdescription' placeholder='')
+				.hexmap2-2
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_2-2claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_2-2hexdial1')
+					input.hexdial-2(type='radio' name='attr_2-2hexdial2')
+					input.hexdial-3(type='radio' name='attr_2-2hexdial3')
+					input.hexdial-4(type='radio' name='attr_2-2hexdial4')
+					input.hexdial-5(type='radio' name='attr_2-2hexdial5')
+					input.hexdial-6(type='radio' name='attr_2-2hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext2-2
+					input.text-color-switcher(type='hidden' name='attr_2-2claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_2-2claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_2-2claimdescription' placeholder='')
+				.hexmap2-3
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_2-3claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_2-3hexdial1')
+					input.hexdial-2(type='radio' name='attr_2-3hexdial2')
+					input.hexdial-3(type='radio' name='attr_2-3hexdial3')
+					input.hexdial-4(type='radio' name='attr_2-3hexdial4')
+					input.hexdial-5(type='radio' name='attr_2-3hexdial5')
+					input.hexdial-6(type='radio' name='attr_2-3hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext2-3
+					input.text-color-switcher(type='hidden' name='attr_2-3claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_2-3claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_2-3claimdescription' placeholder='')
+				.hexmap3-1
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_3-1claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_3-1hexdial1')
+					input.hexdial-2(type='radio' name='attr_3-1hexdial2')
+					input.hexdial-3(type='radio' name='attr_3-1hexdial3')
+					input.hexdial-4(type='radio' name='attr_3-1hexdial4')
+					input.hexdial-5(type='radio' name='attr_3-1hexdial5')
+					input.hexdial-6(type='radio' name='attr_3-1hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext3-1
+					input.text-color-switcher(type='hidden' name='attr_3-1claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_3-1claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_3-1claimdescription' placeholder='')
+				.hexmap3-2
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_3-2claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_3-2hexdial1')
+					input.hexdial-2(type='radio' name='attr_3-2hexdial2')
+					input.hexdial-3(type='radio' name='attr_3-2hexdial3')
+					input.hexdial-4(type='radio' name='attr_3-2hexdial4')
+					input.hexdial-5(type='radio' name='attr_3-2hexdial5')
+					input.hexdial-6(type='radio' name='attr_3-2hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext3-2
+					input.text-color-switcher(type='hidden' name='attr_3-2claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_3-2claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_3-2claimdescription' placeholder='')
+				.hexmap3-3
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_3-3claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_3-3hexdial1')
+					input.hexdial-2(type='radio' name='attr_3-3hexdial2')
+					input.hexdial-3(type='radio' name='attr_3-3hexdial3')
+					input.hexdial-4(type='radio' name='attr_3-3hexdial4')
+					input.hexdial-5(type='radio' name='attr_3-3hexdial5')
+					input.hexdial-6(type='radio' name='attr_3-3hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext3-3
+					input.text-color-switcher(type='hidden' name='attr_3-3claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_3-3claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_3-3claimdescription' placeholder='')
+				.hexmap4-1
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_4-1claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_4-1hexdial1')
+					input.hexdial-2(type='radio' name='attr_4-1hexdial2')
+					input.hexdial-3(type='radio' name='attr_4-1hexdial3')
+					input.hexdial-4(type='radio' name='attr_4-1hexdial4')
+					input.hexdial-5(type='radio' name='attr_4-1hexdial5')
+					input.hexdial-6(type='radio' name='attr_4-1hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext4-1
+					input.text-color-switcher(type='hidden' name='attr_4-1claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_4-1claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_4-1claimdescription' placeholder='')
+				.hexmap4-2
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_4-2claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_4-2hexdial1')
+					input.hexdial-2(type='radio' name='attr_4-2hexdial2')
+					input.hexdial-3(type='radio' name='attr_4-2hexdial3')
+					input.hexdial-4(type='radio' name='attr_4-2hexdial4')
+					input.hexdial-5(type='radio' name='attr_4-2hexdial5')
+					input.hexdial-6(type='radio' name='attr_4-2hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext4-2
+					input.text-color-switcher(type='hidden' name='attr_4-2claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_4-2claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_4-2claimdescription' placeholder='')
+				.hexmap4-3
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_4-3claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_4-3hexdial1')
+					input.hexdial-2(type='radio' name='attr_4-3hexdial2')
+					input.hexdial-3(type='radio' name='attr_4-3hexdial3')
+					input.hexdial-4(type='radio' name='attr_4-3hexdial4')
+					input.hexdial-5(type='radio' name='attr_4-3hexdial5')
+					input.hexdial-6(type='radio' name='attr_4-3hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext4-3
+					input.text-color-switcher(type='hidden' name='attr_4-3claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_4-3claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_4-3claimdescription' placeholder='')
+				.hexmap5-1
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_5-1claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_5-1hexdial1')
+					input.hexdial-2(type='radio' name='attr_5-1hexdial2')
+					input.hexdial-3(type='radio' name='attr_5-1hexdial3')
+					input.hexdial-4(type='radio' name='attr_5-1hexdial4')
+					input.hexdial-5(type='radio' name='attr_5-1hexdial5')
+					input.hexdial-6(type='radio' name='attr_5-1hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext5-1
+					input.text-color-switcher(type='hidden' name='attr_5-1claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_5-1claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_5-1claimdescription' placeholder='')
+				.hexmap5-2
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_5-2claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_5-2hexdial1')
+					input.hexdial-2(type='radio' name='attr_5-2hexdial2')
+					input.hexdial-3(type='radio' name='attr_5-2hexdial3')
+					input.hexdial-4(type='radio' name='attr_5-2hexdial4')
+					input.hexdial-5(type='radio' name='attr_5-2hexdial5')
+					input.hexdial-6(type='radio' name='attr_5-2hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext5-2
+					input.text-color-switcher(type='hidden' name='attr_5-2claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_5-2claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_5-2claimdescription' placeholder='')
+				.hexmap5-3
+					.hexagon
+						.hexagon-inside
+							input.click-the-hexagon(type='checkbox' name='attr_5-3claimed')
+							.hexagon-image
+					input.hexdial-1(type='radio' name='attr_5-3hexdial1')
+					input.hexdial-2(type='radio' name='attr_5-3hexdial2')
+					input.hexdial-3(type='radio' name='attr_5-3hexdial3')
+					input.hexdial-4(type='radio' name='attr_5-3hexdial4')
+					input.hexdial-5(type='radio' name='attr_5-3hexdial5')
+					input.hexdial-6(type='radio' name='attr_5-3hexdial6')
+					.hexlink-1
+					.hexlink-2
+					.hexlink-3
+					.hexlink-4
+					.hexlink-5
+					.hexlink-6
+				.hextext5-3
+					input.text-color-switcher(type='hidden' name='attr_5-3claimed')
+					textarea.textarea.claimname.white-placeholders(name='attr_5-3claimname' placeholder='Name')
+					textarea.textarea.claimdescription.white-placeholders(name='attr_5-3claimdescription' placeholder='')
+			.col-6.header-bar
+				.col-8.header HEAT
+				.col-1.header WANTED
+			.heat-boxes
+				span
+					input.stress-tracking(type='hidden' name='attr_heat')
+					input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_heat' value='0' checked='true')
+					input.stress-track1.stress-tooth(type='radio' name='attr_heat' value='1')
+					input.stress-track2.stress-tooth(type='radio' name='attr_heat' value='2')
+					input.stress-track3.stress-tooth(type='radio' name='attr_heat' value='3')
+					input.stress-track4.stress-tooth(type='radio' name='attr_heat' value='4')
+					input.stress-track5.stress-tooth(type='radio' name='attr_heat' value='5')
+					input.stress-track6.stress-tooth(type='radio' name='attr_heat' value='6')
+					input.stress-track7.stress-tooth(type='radio' name='attr_heat' value='7')
+					input.stress-track8.stress-tooth(type='radio' name='attr_heat' value='8' checked='true')
+				span
+					input.wanted-tracking(type='hidden' name='attr_wanted')
+					input.hidden-button.wanted-track.stress-tooth(type='radio' name='attr_wanted' value='0' checked='true')
+					input.wanted-track1.stress-tooth(type='radio' name='attr_wanted' value='1')
+					input.wanted-track2.stress-tooth(type='radio' name='attr_wanted' value='2')
+					input.wanted-track3.stress-tooth(type='radio' name='attr_wanted' value='3')
+					input.wanted-track4.stress-tooth(type='radio' name='attr_wanted' value='4')
+			.col-6
+				.header-bar.col-3
+					.header JOULES
+				.pink-header-bar.col-9
+					.pink-header VAULTS
+				.col-3
+					input.tier-tracking(type='hidden' name='attr_crewjoules')
+					input.hidden-button.stress-track.joules(type='radio' name='attr_crewjoules' value='0' checked='true')
+					input.tier-track1.joules(type='radio' name='attr_crewjoules' value='1')
+					input.tier-track2.joules(type='radio' name='attr_crewjoules' value='2')
+					input.tier-track3.joules(type='radio' name='attr_crewjoules' value='3')
+					input.tier-track4.joules(type='radio' name='attr_crewjoules' value='4')
+				.col-9
+					input.vault1-tracking(type='hidden' name='attr_vault1')
+					input.vault2-tracking(type='hidden' name='attr_vault2')
+					input.stress-tracking(type='hidden' name='attr_vault')
+					input.hidden-button.stress-track.vault(type='radio' name='attr_vault' value='0')
+					input.stress-track1.vault.vault1-track(type='radio' name='attr_vault' value='1')
+					input.stress-track2.vault.vault1-track(type='radio' name='attr_vault' value='2')
+					input.stress-track3.vault.vault1-track(type='radio' name='attr_vault' value='3')
+					input.stress-track4.vault.vault1-track(type='radio' name='attr_vault' value='4')
+					input.stress-track5.vault.vault2-track(type='radio' name='attr_vault' value='5')
+					input.stress-track6.vault.vault2-track(type='radio' name='attr_vault' value='6')
+					input.stress-track7.vault.vault2-track(type='radio' name='attr_vault' value='7')
+					input.stress-track8.vault.vault2-track(type='radio' name='attr_vault' value='8')
+					input.stress-track9.vault.vault2-track(type='radio' name='attr_vault' value='9')
+					input.stress-track10.vault.vault2-track(type='radio' name='attr_vault' value='10')
+					input.stress-track11.vault.vault2-track(type='radio' name='attr_vault' value='11')
+					input.stress-track12.vault.vault2-track(type='radio' name='attr_vault' value='12')
+			input.fuel-button(type='hidden' name='attr_crew')
+			.col-6.fuel-tracker
+				| After you complete a score, consume 1 fuel.
+			.col-6.fuel-tracker
+				.header-bar.col-3
+					.header FUEL
+				.pink-header-bar.col-9
+					.pink-header RESERVE
+				.col-3
+					input.tier-tracking(type='hidden' name='attr_fuel')
+					input.hidden-button.stress-track.joules(type='radio' name='attr_fuel' value='0')
+					input.tier-track1.joules(type='radio' name='attr_fuel' value='1')
+					input.tier-track2.joules(type='radio' name='attr_fuel' value='2' checked='')
+					input.tier-track3.joules(type='radio' name='attr_fuel' value='3')
+					input.tier-track4.joules(type='radio' name='attr_fuel' value='4')
+				.col-9
+					input.stress-tracking(type='hidden' name='attr_reserve')
+					input.hidden-button.stress-track.vault(type='radio' name='attr_reserve' value='0')
+					input.stress-track1.vault(type='radio' name='attr_reserve' value='1')
+					input.stress-track2.vault(type='radio' name='attr_reserve' value='2')
+					input.stress-track3.vault(type='radio' name='attr_reserve' value='3')
+					input.stress-track4.vault(type='radio' name='attr_reserve' value='4')
+					input.stress-track5.vault(type='radio' name='attr_reserve' value='5')
+					input.stress-track6.vault(type='radio' name='attr_reserve' value='6')
+					input.stress-track7.vault(type='radio' name='attr_reserve' value='7')
+					input.stress-track8.vault(type='radio' name='attr_reserve' value='8')
+					input.stress-track9.vault(type='radio' name='attr_reserve' value='9')
+					input.stress-track10.vault(type='radio' name='attr_reserve' value='10')
+					input.stress-track11.vault(type='radio' name='attr_reserve' value='11')
+					input.stress-track12.vault(type='radio' name='attr_reserve' value='12')
+			.col-12
+				.header NOTES
+				textarea.textarea.abilitydesc(placeholder='Notes')
+		.abilities.col-4
+			input.pages.red-switcher.check(type='hidden' name='attr_red-switcher')
+			.action-tracker
+				.col-6
+					.header Roll the Dice
+					// Playbook XP, Stress Training, Actions, Load, Items
+					select.select.text-in-red-box.roll-select(name='attr_crewrollselect')
+						option(selected='' disabled='' value='nothing') What Roll Is This?
+						option.option(disabled='' value='action') Action Roll (Character Sheet Only)
+						option.option(value='downtime') Downtime Roll
+						option.option(value='engagement') Engagement Roll
+						option.option(value='fortune') Fortune Roll
+						option.option(disabled='' value='resistance') Resistance Roll (Character Sheet Only)
+					input.crewroll-selected(type='hidden' name='attr_crewrollselect')
+					//
+						Action Roll
+						<span class="action-select">Which Action?</span>
+						<select class="select text-in-red-box action-select" name="attr_actionselect">
+						<option selected disabled value="nothing">Which Action?</option>
+						<option class="option" value="trace">Trace</option>
+						<option class="option" value="study">Study</option>
+						<option class="option" value="survey">Survey</option>
+						<option class="option" value="modify">Modify</option>
+						<option class="option" value="finesse">Finesse</option>
+						<option class="option" value="ghost">Ghost</option>
+						<option class="option" value="combat">Combat</option>
+						<option class="option" value="wreck">Wreck</option>
+						<option class="option" value="hack">Hack</option>
+						<option class="option" value="control">Control</option>
+						<option class="option" value="network">Network</option>
+						<option class="option" value="sway">Sway</option>
+						</select>
+						<span class="action-select">What Position?</span>
+						<select class="select text-in-red-box action-select" name="attr_actionPosition">
+						<option selected disabled value="nothing">What Position?</option>
+						<option class="option" value="controlled">Controlled</option>
+						<option class="option" value="risky">Risky</option>
+						<option class="option" value="desperate">Desperate</option>
+						</select>
+						<span class="action-select">What Effect?</span>
+						<select class="select text-in-red-box action-select" name="attr_actionEffect">
+						<option selected disabled value="nothing">What Effect?</option>
+						<option class="option" value="zero">Zero</option>
+						<option class="option" value="limited">Limited</option>
+						<option class="option" value="standard">Standard</option>
+						<option class="option" value="great">Great</option>
+						<option class="option" value="extreme">Extreme</option>
+						</select>
+						<span class="action-select">Any Bonus Dice?</span>
+						<select class="select text-in-red-box action-select" name="attr_actionBonusDice">
+						<option selected disabled value="0">Any Bonus Dice?</option>
+						<option class="option" value="3">+3</option>
+						<option class="option" value="2">+2</option>
+						<option class="option" value="1">+1</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="-1">-1</option>
+						<option class="option" value="-2">-2</option>
+						<option class="option" value="-3">-3</option>
+						</select>
+						<input type="radio" class="trace-ready" name="attr_actionselected" value="trace">
+						<input type="radio" class="study-ready" name="attr_actionselected" value="study">
+						<input type="radio" class="survey-ready" name="attr_actionselected" value="survey">
+						<input type="radio" class="modify-ready" name="attr_actionselected" value="modify">
+						<input type="radio" class="finesse-ready" name="attr_actionselected" value="finesse">
+						<input type="radio" class="ghost-ready" name="attr_actionselected" value="ghost">
+						<input type="radio" class="combat-ready" name="attr_actionselected" value="combat">
+						<input type="radio" class="wreck-ready" name="attr_actionselected" value="wreck">
+						<input type="radio" class="hack-ready" name="attr_actionselected" value="hack">
+						<input type="radio" class="control-ready" name="attr_actionselected" value="control">
+						<input type="radio" class="network-ready" name="attr_actionselected" value="network">
+						<input type="radio" class="sway-ready" name="attr_actionselected" value="sway">
+						<button type="roll" class="trace-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{trace}) + @{trace-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Trace</button>
+						<button type="roll" class="study-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{study}) + @{study-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Study</button>
+						<button type="roll" class="survey-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{survey}) + @{survey-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Survey</button>
+						<button type="roll" class="modify-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{modify}) + @{modify-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Modify</button>
+						<button type="roll" class="finesse-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{finesse}) + @{finesse-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Finesse</button>
+						<button type="roll" class="ghost-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{ghost}) + @{ghost-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Ghost</button>
+						<button type="roll" class="combat-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{combat}) + @{combat-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Combat</button>
+						<button type="roll" class="wreck-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{wreck}) + @{wreck-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Wreck</button>
+						<button type="roll" class="hack-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{hack}) + @{hack-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Hack</button>
+						<button type="roll" class="control-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{control}) + @{control-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Control</button>
+						<button type="roll" class="network-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{network}) + @{network-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Network</button>
+						<button type="roll" class="sway-button" value="&{template:roll} {{type=@{crewrollselect}}} {{totaldice=[[(@{sway}) + @{sway-cybernetic} + (@{actionBonusDice})]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} {{die7=[[1d6]]}} {{die8=[[1d6]]}}">Sway</button>
+					//
+						<button type="roll" class="action-button" name="roll_action" value="&{template:roll} {{type=@{rollselect}}} {{totaldice=[[@{trace} + @{actionBonusDice}]]}} {{die1=[[1d6]]}} {{die2=[[1d6]]}} {{die3=[[1d6]]}} {{die4=[[1d6]]}} {{die5=[[1d6]]}} {{die6=[[1d6]]}} ">Action Roll</button>
+						Downtime Rolls
+					span.crewdowntime-select Which Downtime Action?
+					select.select.text-in-red-box.crewdowntime-select(name='attr_crewdowntimeSelect')
+						option(selected='' disabled='' value='nothing') Which Downtime Action?
+						option.option(value='acquire') Acquire Asset
+						option.option(disabled='' value='long') Long-Term Project (Character Sheet Only)
+						option.option(disabled='' value='recover') Recover (Character Sheet Only)
+						option.option(disabled='' value='reduce') Reduce Heat (Character Sheet Only)
+						// <option class="option" value="train">Train</option>
+						option.option(disabled='' value='vice') Vice (Character Sheet Only)
+						// <option class="option" value="install">Install Cybernetics</option>
+					input.acquire-selected(type='radio' name='attr_crewdowntimeselected' value='acquire')
+					input.long-selected(type='radio' name='attr_crewdowntimeselected' value='long')
+					input.recover-selected(type='radio' name='attr_crewdowntimeselected' value='recover')
+					input.reduce-selected(type='radio' name='attr_crewdowntimeselected' value='reduce')
+					// <input type="radio" class="train-selected" name="attr_downtimeselected" value="train">
+					input.vice-selected(type='radio' name='attr_crewdowntimeselected' value='vice')
+					// <input type="radio" class="install-selected" name="attr_downtimeselected" value="install">
+					input.crewdowntime-action-selected(type='hidden' name='attr_crewdowntimeSelected')
+					//
+						Acquire Asset
+						<span class="acquire-select">Crew Tier?</span>
+						<select class="select text-in-red-box acquire-select" name="attr_downtime-acquire">
+						<option selected disabled value="nothing">What's Your Crew's Tier?</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="1">1</option>
+						<option class="option" value="2">2</option>
+						<option class="option" value="3">3</option>
+						<option class="option" value="4">4</option>
+						</select>
+					span.crewacquire-select Any Bonus Dice?
+					select.select.text-in-red-box.crewacquire-select(name='attr_crewdowntime-acquire-bonusdice')
+						option(selected='' disabled='' value='0') Any Bonus Dice?
+						option.option(value='3') +3
+						option.option(value='2') +2
+						option.option(value='1') +1
+						option.option(value='0') 0
+						option.option(value='-1') -1
+						option.option(value='-2') -2
+						option.option(value='-3') -3
+					input(type='hidden' name='attr_crewacquire_roll_dice' value='')
+					button.crewacquire-select(type='roll' value='&{template:roll2} {{type=@{crewrollselect}}} {{@{crewacquire_roll_dice}}} {{character=@{crewname}}} {{rolltype=Acquire Asset}}') Roll
+					//
+						Long Term Project
+						<span class="long-select">Which Action?</span>
+						<select class="select text-in-red-box long-select" name="attr_downtime-long-actionselect">
+						<option selected disabled value="nothing">Which Action?</option>
+						<option class="option" value="trace">Trace</option>
+						<option class="option" value="study">Study</option>
+						<option class="option" value="survey">Survey</option>
+						<option class="option" value="modify">Modify</option>
+						<option class="option" value="finesse">Finesse</option>
+						<option class="option" value="ghost">Ghost</option>
+						<option class="option" value="combat">Combat</option>
+						<option class="option" value="wreck">Wreck</option>
+						<option class="option" value="hack">Hack</option>
+						<option class="option" value="control">Control</option>
+						<option class="option" value="network">Network</option>
+						<option class="option" value="sway">Sway</option>
+						</select>
+						<span class="long-select">Any Bonus Dice?</span>
+						<select class="select text-in-red-box long-select" name="attr_downtime-long-bonusdice">
+						<option selected disabled value="0">Any Bonus Dice?</option>
+						<option class="option" value="3">+3</option>
+						<option class="option" value="2">+2</option>
+						<option class="option" value="1">+1</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="-1">-1</option>
+						<option class="option" value="-2">-2</option>
+						<option class="option" value="-3">-3</option>
+						</select>
+					//
+						Recover
+						<span class="recover-select">Dice from the Treatment?</span>
+						<select class="select text-in-red-box recover-select" name="attr_downtime-recover-dice">
+						<option selected disabled value="0">Dice from the Treatment?</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="1">1</option>
+						<option class="option" value="2">2</option>
+						<option class="option" value="3">3</option>
+						<option class="option" value="4">4</option>
+						<option class="option" value="5">5</option>
+						<option class="option" value="6">6</option>
+						</select>
+						<span class="recover-select">Any Bonus Dice?</span>
+						<select class="select text-in-red-box recover-select" name="attr_downtime-recover-bonusdice">
+						<option selected disabled value="0">Any Bonus Dice?</option>
+						<option class="option" value="3">+3</option>
+						<option class="option" value="2">+2</option>
+						<option class="option" value="1">+1</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="-1">-1</option>
+						<option class="option" value="-2">-2</option>
+						<option class="option" value="-3">-3</option>
+						</select>
+					//
+						Reduce Heat
+						<span class="reduce-select">Which Action?</span>
+						<select class="select text-in-red-box reduce-select" name="attr_downtime-reduce-actionselect">
+						<option selected disabled value="nothing">Which Action?</option>
+						<option class="option" value="trace">Trace</option>
+						<option class="option" value="study">Study</option>
+						<option class="option" value="survey">Survey</option>
+						<option class="option" value="modify">Modify</option>
+						<option class="option" value="finesse">Finesse</option>
+						<option class="option" value="ghost">Ghost</option>
+						<option class="option" value="combat">Combat</option>
+						<option class="option" value="wreck">Wreck</option>
+						<option class="option" value="hack">Hack</option>
+						<option class="option" value="control">Control</option>
+						<option class="option" value="network">Network</option>
+						<option class="option" value="sway">Sway</option>
+						</select>
+						<span class="reduce-select">Any Bonus Dice?</span>
+						<select class="select text-in-red-box reduce-select" name="attr_downtime-reduce-bonusdice">
+						<option selected disabled value="0">Any Bonus Dice?</option>
+						<option class="option" value="3">+3</option>
+						<option class="option" value="2">+2</option>
+						<option class="option" value="1">+1</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="-1">-1</option>
+						<option class="option" value="-2">-2</option>
+						<option class="option" value="-3">-3</option>
+						</select>
+					//
+						Vice
+						<span class="vice-select">Any Bonus Dice?</span>
+						<select class="select text-in-red-box vice-select" name="attr_downtime-vice-bonusdice">
+						<option selected disabled value="0">Any Bonus Dice?</option>
+						<option class="option" value="3">+3</option>
+						<option class="option" value="2">+2</option>
+						<option class="option" value="1">+1</option>
+						<option class="option" value="0">0</option>
+						<option class="option" value="-1">-1</option>
+						<option class="option" value="-2">-2</option>
+						<option class="option" value="-3">-3</option>
+						</select>
+					//
+						Engagement Roll
+						~Is this operation particularly bold or daring? Take +1d. Is this operation overly complex
+						or contingent on many factors? Take -1d
+						.
+						~Does the plan’s detail expose a vulnerability of the target or hit them where they’re
+						weakest? Take +1d. Is the target strongest against this approach, or do they have particular
+						defenses or special preparations? Take -1d
+						.
+						~Can any of your friends or contacts provide aid or insight for this operation? Take +1d.
+						Are any enemies or rivals interfering in the operation? Take -1d
+						.
+						~Are there any other elements that you want to consider? Maybe a lowerTier target will
+						give you +1d. Maybe a higherTier target will give you -1d. Maybe
+					span.crewengagement-select Is this operation particularly bold?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-question1')
+						option(selected='' disabled='' value='nothing') Is this operation particularly daring?
+						option.option(value='1') Yes
+						option.option(value='0') No
+					span.crewengagement-select Is this operation overly complex?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-question2')
+						option(selected='' disabled='' value='nothing') Is this operation contingent on many factors?
+						option.option(value='-1') Yes
+						option.option(value='0') No
+					span.crewengagement-select Does the plan&rsquo;s detail expose a vulnerability of the target?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-question3')
+						option(selected='' disabled='' value='nothing')
+							| Does the plan&rsquo;s detail hit them where they&rsquo;re weakest?
+						option.option(value='1') Yes
+						option.option(value='0') No
+					span.crewengagement-select Is the target strongest against this approach?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-question4')
+						option(selected='' disabled='' value='nothing')
+							| Do they have particular defenses or special preparations?
+						option.option(value='-1') Yes
+						option.option(value='0') No
+					span.crewengagement-select Can any of your friends or contacts provide aid or insight?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-question5')
+						option(selected='' disabled='' value='nothing')
+							| Can any of your friends or contacts provide aid or insight
+							| for this operation?
+						option.option(value='1') Yes
+						option.option(value='0') No
+					span.crewengagement-select Are any enemies or rivals interfering?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-question6')
+						option(selected='' disabled='' value='nothing')
+							| Are any enemies or rivals interfering in the operation?
+						option.option(value='-1') Yes
+						option.option(value='0') No
+					span.crewengagement-select Are there any other elements you want to consider?
+					select.select.text-in-red-box.crewengagement-select(name='attr_crewengagement-dice')
+						option(selected='' disabled='' value='nothing') Other Advantages and Disadvantages?
+						option.option(value='-3') -3
+						option.option(value='-2') -2
+						option.option(value='-1') -1
+						option.option(value='0') 0
+						option.option(value='1') 1
+						option.option(value='2') 2
+						option.option(value='3') 3
+					input.engagement-ready(type='checkbox' name='attr_engagement-ready')
+					input(type='hidden' name='attr_crewengagement_roll_dice' value='')
+					button.engagement-button(type='roll' value='&{template:roll2} {{type=@{crewrollselect}}} {{@{crewengagement_roll_dice}}} {{character=@{crewname}}} {{rolltype=Engagement}}') Roll
+					// Fortune Roll
+					span.crewfortune-select Fortune Dice?
+					select.select.text-in-red-box.crewfortune-select(name='attr_crewfortune-dice')
+						option(selected='' disabled='' value='0') Fortune Dice?
+						option.option(value='0') 0
+						option.option(value='1') 1
+						option.option(value='2') 2
+						option.option(value='3') 3
+						option.option(value='4') 4
+						option.option(value='5') 5
+						option.option(value='6') 6
+					input(type='hidden' name='attr_crewfortune_roll_dice' value='')
+					button.crewfortune-select(type='roll' value='&{template:roll2} {{type=@{crewrollselect}}} {{@{crewfortune_roll_dice}}} {{character=@{crewname}}} {{rolltype=Fortune}}') Roll
+					//
+						Resistance Roll
+						<span class="resistance-select">Which Attribute?</span>
+						<select class="select text-in-red-box resistance-select" name="attr_resistanceselect">
+						<option selected disabled value="nothing">Which Attribute?</option>
+						<option class="option" value="insight">Insight</option>
+						<option class="option" value="prowess">Prowess</option>
+						<option class="option" value="resolve">Resolve</option>
+						</select>
+				.col-6
+					.header COHORTS
+					div
+						fieldset.repeating_cohort
+							input.text-input.white-placeholders(type='text' name='attr_cohort-name' placeholder='Cohort Name')
+							div
+								span Gang
+								input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_gang-or-expert')
+								span Expert
+								input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_gang-or-expert')
+							div
+								span Weak
+								input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_cohortharm')
+								span Impaired
+								input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_cohortharm')
+								span Broken
+								input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_cohortharm')
+								span Armor
+							input.stress-track.stress-tooth.stress-tooth-single(type='checkbox' name='attr_cohortarmor')
+							input.text-input.white-placeholders(type='text' name='attr_cohort-types' placeholder='Cohort Types')
+							textarea.textarea.abilitydesc.text-in-red-box.white-placeholders(name='attr_cohort' placeholder='Upgrade costs: New cohort: 2, Add type: 2')
+					span.header Base
+					br
+					input.item-check(type='checkbox' name='attr_hidden')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Hidden')
+					br
+					input.item-check(type='checkbox' name='attr_quarters')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Quarters')
+					br
+					input.item-check(type='checkbox' name='attr_secure')
+					input.item-check(type='checkbox' name='attr_secure2')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Secure')
+					br
+					input.item-check(type='checkbox' name='attr_vault1')
+					input.item-check(type='checkbox' name='attr_vault2')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Vault')
+					br
+					input.item-check(type='checkbox' name='attr_workshop')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Workshop')
+					br
+					span.header Training
+					br
+					input.item-check(type='checkbox' name='attr_insighttraining')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Insight')
+					br
+					input.item-check(type='checkbox' name='attr_prowesstraining')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Prowess')
+					br
+					input.item-check(type='checkbox' name='attr_resolvetraining')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Resolve')
+					br
+					input.item-check(type='checkbox' name='attr_personal')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Personal')
+					br
+					input.item-check(type='checkbox' name='attr_mastery')
+					input.item-check(type='checkbox' name='attr_mastery2')
+					input.item-check(type='checkbox' name='attr_mastery3')
+					input.item-check(type='checkbox' name='attr_mastery4')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Mastery')
+					br
+					span.header Quality
+					br
+					input.item-check(type='checkbox' name='attr_gear')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Gear')
+					br
+					input.item-check(type='checkbox' name='attr_spectech')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Spec Tech')
+					br
+					input.item-check(type='checkbox' name='attr_supplies')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Supplies')
+					br
+					input.item-check(type='checkbox' name='attr_tools')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Tools')
+					br
+					input.item-check(type='checkbox' name='attr_weapons')
+					input.text-input.items.white-placeholders(type='text' name='attr_itemname' placeholder='Weapons')
+			.red-box
+				input.text-input.text-in-red-box.white-placeholders.playbook-name(type='text' name='attr_crew' placeholder='Crew Type')
+				// Crew Name, Crew Description, Spec Abilities, Crew XP, Contacts, Crew Upgrades, Resources
+				fieldset.repeating_crewability
+					input.ability-circle(type='checkbox' name='attr_check')
+					input.text-input.sheet-abilityname(type='text' name='attr_name' placeholder='Ability Name')
+					textarea.textarea.sheet-abilitydesc(name='attr_description' placeholder='Ability description')
+				.col-12
+					| Crew XP
+					input.stress-tracking(type='hidden' name='attr_crewxp')
+					input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_crewxp' value='0' checked='true')
+					input.stress-track1.stress-tooth(type='radio' name='attr_crewxp' value='1')
+					input.stress-track2.stress-tooth(type='radio' name='attr_crewxp' value='2')
+					input.stress-track3.stress-tooth(type='radio' name='attr_crewxp' value='3')
+					input.stress-track4.stress-tooth(type='radio' name='attr_crewxp' value='4')
+					input.stress-track5.stress-tooth(type='radio' name='attr_crewxp' value='5')
+					input.stress-track6.stress-tooth(type='radio' name='attr_crewxp' value='6')
+					input.stress-track7.stress-tooth(type='radio' name='attr_crewxp' value='7')
+					input.stress-track8.stress-tooth(type='radio' name='attr_crewxp' value='8')
+					input.stress-track9.stress-tooth(type='radio' name='attr_crewxp' value='9')
+					input.stress-track10.stress-tooth(type='radio' name='attr_crewxp' value='10')
+				div
+					| At the end of each session, for each item below, the Crew marks XP or marks 2 XP if it occurred
+					| multiple times.
+				input.text-input.text-in-red-box.xp-trigger.col-12.white-placeholders(type='text' name='attr_crew-trigger' placeholder='[Select Your Crew Type First]')
+				input.text-input.xp-trigger.col-12.white-placeholders(type='text' name='attr_contend-trigger' placeholder='Contend with challenges above your station')
+				input.text-input.xp-trigger.col-12.white-placeholders(type='text' name='attr_reputation-trigger' placeholder='Bolster your crew’s reputation or develop a new one')
+				input.text-input.xp-trigger.col-12.white-placeholders(type='text' name='attr_essential-trigger' placeholder='Express the goals, drives, inner conflict, or essential nature of the crew')
+				div
+					//
+						At the end of each session, for each item below, mark XP (in your playbook
+						or attribute) or mark 2 XP if it occurred multiple times.
+						» Execute a successful accident, disappearance, murder, or ransom operation
+						» Contend with challenges above your station
+						» Bolster your crew’s reputation or develop a new one
+						» Express the goals, drives, inner conflict, or essential nature of the crew
+					.col-6
+						| Contacts
+						fieldset.repeating_contacts
+							input.ability-circle(type='checkbox' name='attr_check')
+							input.text-input.sheet-abilityname.items(type='text' name='attr_friend-name' placeholder='Friend Name')
+					.col-6
+						| Upgrades
+						fieldset.repeating_crewupgrades
+							input.load-control(type='hidden' name='attr_load-control')
+							input.first-box.item-check(type='checkbox' name='attr_first-box')
+							input.second-box.item-check(type='checkbox' name='attr_second-box')
+							input.third-box.item-check(type='checkbox' name='attr_third-box')
+							input.fourth-box.item-check(type='checkbox' name='attr_fourth-box')
+							input.text-input.sheet-abilityname.items.white-placeholders(type='text' name='attr_item-name' placeholder='Item Name')
+					.col-12
+						input.text-input.white-placeholders(type='text' name='attr_resources' placeholder='Resources')

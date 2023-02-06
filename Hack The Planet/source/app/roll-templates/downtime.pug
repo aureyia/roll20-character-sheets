@@ -1,0 +1,13 @@
+rolltemplate.sheet-rolltemplate-downtime
+  .rolltemplate-roll-holder.rolltemplate-col-12
+    .rolltemplate-quote Downtime Roll
+    br
+    div
+      | You take {{#rollBetween() die6 6 6}}6{{/rollBetween() die6 6 6}}
+      | {{#rollBetween() die6 5 5}}5{{/rollBetween() die6 5 5}}
+      | {{#rollBetween() die6 4 4}}4{{/rollBetween() die6 4 4}}
+      | {{#rollBetween() die6 3 3}}3{{/rollBetween() die6 3 3}}
+      | {{#rollBetween() die6 2 2}}2{{/rollBetween() die6 2 2}}
+      | {{#rollBetween() die6 1 1}}1{{/rollBetween() die6 1 1}}
+      | {{#rollBetween() die6 -12 0}}0{{/rollBetween() die6 -12 0}} stress and reduce the severity of the
+      | consequence by {{reduceconsequence}} levels.

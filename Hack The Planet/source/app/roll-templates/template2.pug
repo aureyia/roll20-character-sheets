@@ -1,0 +1,97 @@
+rolltemplate.sheet-rolltemplate-roll
+  .rolltemplate-col-12(class='rolltemplate-{{type}}')
+    .rolltemplate-action-roll.rolltemplate-crew-sheet-title ACTION ROLL
+    .rolltemplate-downtime-roll.rolltemplate-crew-sheet-title DOWNTIME ROLL
+    .rolltemplate-engagement-roll.rolltemplate-crew-sheet-title ENGAGEMENT ROLL
+    .rolltemplate-fortune-roll.rolltemplate-crew-sheet-title FORTUNE ROLL
+    .rolltemplate-resistance-roll.rolltemplate-crew-sheet-title RESISTANCE ROLL
+    br
+    br
+    br
+    .rolltemplate-dice
+      | {{#rollBetween() totaldice -13 8}}
+      | {{#rollBetween() die1 6 6}}6{{/rollBetween() die1 6 6}}
+      | {{#rollBetween() die1 5 5}}5{{/rollBetween() die1 5 5}}
+      | {{#rollBetween() die1 4 4}}4{{/rollBetween() die1 4 4}}
+      | {{#rollBetween() die1 3 3}}3{{/rollBetween() die1 3 3}}
+      | {{#rollBetween() die1 2 2}}2{{/rollBetween() die1 2 2}}
+      | {{#rollBetween() die1 1 1}}1{{/rollBetween() die1 1 1}}
+      | {{#rollBetween() die1 -12 0}}0{{/rollBetween() die1 -12 0}}
+      | {{/rollBetween() totaldice -13 8}}
+      | {{#rollBetween() totaldice -13 0}} ,
+      | {{#rollBetween() die2 6 6}}6{{/rollBetween() die2 6 6}}
+      | {{#rollBetween() die2 5 5}}5{{/rollBetween() die2 5 5}}
+      | {{#rollBetween() die2 4 4}}4{{/rollBetween() die2 4 4}}
+      | {{#rollBetween() die2 3 3}}3{{/rollBetween() die2 3 3}}
+      | {{#rollBetween() die2 2 2}}2{{/rollBetween() die2 2 2}}
+      | {{#rollBetween() die2 1 1}}1{{/rollBetween() die2 1 1}}
+      | {{#rollBetween() die2 -12 0}}0{{/rollBetween() die2 -12 0}}
+      | {{/rollBetween() totaldice -13 0}}
+      | {{#rollBetween() totaldice 2 8}} ,
+      | {{#rollBetween() die2 6 6}}6{{/rollBetween() die2 6 6}}
+      | {{#rollBetween() die2 5 5}}5{{/rollBetween() die2 5 5}}
+      | {{#rollBetween() die2 4 4}}4{{/rollBetween() die2 4 4}}
+      | {{#rollBetween() die2 3 3}}3{{/rollBetween() die2 3 3}}
+      | {{#rollBetween() die2 2 2}}2{{/rollBetween() die2 2 2}}
+      | {{#rollBetween() die2 1 1}}1{{/rollBetween() die2 1 1}}
+      | {{#rollBetween() die2 -12 0}}0{{/rollBetween() die2 -12 0}}
+      | {{/rollBetween() totaldice 2 8}}
+      | {{#rollBetween() totaldice 3 8}} ,
+      | {{#rollBetween() die3 6 6}}6{{/rollBetween() die3 6 6}}
+      | {{#rollBetween() die3 5 5}}5{{/rollBetween() die3 5 5}}
+      | {{#rollBetween() die3 4 4}}4{{/rollBetween() die3 4 4}}
+      | {{#rollBetween() die3 3 3}}3{{/rollBetween() die3 3 3}}
+      | {{#rollBetween() die3 2 2}}2{{/rollBetween() die3 2 2}}
+      | {{#rollBetween() die3 1 1}}1{{/rollBetween() die3 1 1}}
+      | {{#rollBetween() die3 -12 0}}0{{/rollBetween() die3 -12 0}}
+      | {{/rollBetween() totaldice 3 8}}
+      | {{#rollBetween() totaldice 4 8}} ,
+      | {{#rollBetween() die4 6 6}}6{{/rollBetween() die4 6 6}}
+      | {{#rollBetween() die4 5 5}}5{{/rollBetween() die4 5 5}}
+      | {{#rollBetween() die4 4 4}}4{{/rollBetween() die4 4 4}}
+      | {{#rollBetween() die4 3 3}}3{{/rollBetween() die4 3 3}}
+      | {{#rollBetween() die4 2 2}}2{{/rollBetween() die4 2 2}}
+      | {{#rollBetween() die4 1 1}}1{{/rollBetween() die4 1 1}}
+      | {{#rollBetween() die4 -12 0}}0{{/rollBetween() die4 -12 0}}
+      | {{/rollBetween() totaldice 4 8}}
+      | {{#rollBetween() totaldice 5 8}} ,
+      | {{#rollBetween() die5 6 6}}6{{/rollBetween() die5 6 6}}
+      | {{#rollBetween() die5 5 5}}5{{/rollBetween() die5 5 5}}
+      | {{#rollBetween() die5 4 4}}4{{/rollBetween() die5 4 4}}
+      | {{#rollBetween() die5 3 3}}3{{/rollBetween() die5 3 3}}
+      | {{#rollBetween() die5 2 2}}2{{/rollBetween() die5 2 2}}
+      | {{#rollBetween() die5 1 1}}1{{/rollBetween() die5 1 1}}
+      | {{#rollBetween() die5 -12 0}}0{{/rollBetween() die5 -12 0}}
+      | {{/rollBetween() totaldice 5 8}}
+      | {{#rollBetween() totaldice 6 8}} ,
+      | {{#rollBetween() die6 6 6}}6{{/rollBetween() die6 6 6}}
+      | {{#rollBetween() die6 5 5}}5{{/rollBetween() die6 5 5}}
+      | {{#rollBetween() die6 4 4}}4{{/rollBetween() die6 4 4}}
+      | {{#rollBetween() die6 3 3}}3{{/rollBetween() die6 3 3}}
+      | {{#rollBetween() die6 2 2}}2{{/rollBetween() die6 2 2}}
+      | {{#rollBetween() die6 1 1}}1{{/rollBetween() die6 1 1}}
+      | {{#rollBetween() die6 -12 0}}0{{/rollBetween() die6 -12 0}}
+      | {{/rollBetween() totaldice 6 8}}
+      | {{#rollBetween() totaldice 7 8}} ,
+      | {{#rollBetween() die7 6 6}}6{{/rollBetween() die7 6 6}}
+      | {{#rollBetween() die7 5 5}}5{{/rollBetween() die7 5 5}}
+      | {{#rollBetween() die7 4 4}}4{{/rollBetween() die7 4 4}}
+      | {{#rollBetween() die7 3 3}}3{{/rollBetween() die7 3 3}}
+      | {{#rollBetween() die7 2 2}}2{{/rollBetween() die7 2 2}}
+      | {{#rollBetween() die7 1 1}}1{{/rollBetween() die7 1 1}}
+      | {{#rollBetween() die7 -12 0}}0{{/rollBetween() die7 -12 0}}
+      | {{/rollBetween() totaldice 7 8}}
+      | {{#rollBetween() totaldice 8 8}} ,
+      | {{#rollBetween() die8 6 6}}6{{/rollBetween() die8 6 6}}
+      | {{#rollBetween() die8 5 5}}5{{/rollBetween() die8 5 5}}
+      | {{#rollBetween() die8 4 4}}4{{/rollBetween() die8 4 4}}
+      | {{#rollBetween() die8 3 3}}3{{/rollBetween() die8 3 3}}
+      | {{#rollBetween() die8 2 2}}2{{/rollBetween() die8 2 2}}
+      | {{#rollBetween() die8 1 1}}1{{/rollBetween() die8 1 1}}
+      | {{#rollBetween() die8 -12 0}}0{{/rollBetween() die8 -12 0}}
+      | {{/rollBetween() totaldice 8 8}}
+    br
+    br
+    br
+    .rolltemplate-col-6.rolltemplate-crew-sheet-title {{position}}{{downtimeaction}}
+    .rolltemplate-col-6.rolltemplate-crew-sheet-title {{effect}}

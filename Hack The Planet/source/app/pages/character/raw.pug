@@ -1,0 +1,908 @@
+
+mixin rawCharPage
+  .col-12.character
+    .col-6
+      // Crew, Name/Pronouns, Alias, Look, Root, Background, Vice, Stress and Trauma, Cybernetics, Harm, Healing, Armor Uses, Money, Notes, Clocks
+      .col-8.hack-the-planet
+      .col-4
+        span.crew-sheet-title PLAYBOOK
+      .col-8
+        input.text-input.underline(type='text' name='attr_name')
+        span.underline-label NAME / PRONOUNS
+      .col-4
+        input.text-input.underline(type='text' name='attr_alias')
+        span.underline-label ALIAS
+      .col-12
+        input.text-input.underline(type='text' name='attr_look')
+        span.underline-label LOOK
+      .col-6
+        input.text-input.underline(type='text' name='attr_rootdetail')
+        span.underline-label ROOT:
+        input.clocks-button.pages(type='radio' name='attr_root' value='Tipper')
+        span.pagelabel TIPPER
+        span  - 
+        input.vacation-button.pages(type='radio' name='attr_root' value='Grasshopper')
+        span.pagelabel GRASSHOPPER
+        span  - 
+        input.together-button.pages(type='radio' name='attr_root' value='FOUNDATION')
+        span.pagelabel FOUNDATION
+        span  - 
+        input.clocks-button.pages(type='radio' name='attr_root' value='Dragonfly')
+        span.pagelabel DRAGONFLY
+        span  - 
+        input.vacation-button.pages(type='radio' name='attr_root' value='Forged')
+        span.pagelabel FORGED
+        span  - 
+        input.together-button.pages(type='radio' name='attr_root' value='Unknown')
+        span.pagelabel UNKNOWN
+      .col-6
+        input.text-input.underline(type='text' name='attr_backgrounddetail')
+        span.underline-label BACKGROUND:
+        input.clocks-button.pages(type='checkbox' name='attr_background' value='haunted')
+        span.pagelabel ACADEMIC
+        span  - 
+        input.vacation-button.pages(type='checkbox' name='attr_background' value='obsessed')
+        span.pagelabel LABOR
+        span  - 
+        input.together-button.pages(type='checkbox' name='attr_background' value='paranoid')
+        span.pagelabel LAW
+        span  - 
+        input.clocks-button.pages(type='checkbox' name='attr_background' value='reckless')
+        span.pagelabel TRADE
+        span  - 
+        input.vacation-button.pages(type='checkbox' name='attr_background' value='soft')
+        span.pagelabel MILITARY
+        span  - 
+        input.together-button.pages(type='checkbox' name='attr_background' value='unstable')
+        span.pagelabel EXEC
+        span  - 
+        input.reckless-button.pages(type='checkbox' name='attr_background' value='vicious')
+        span.pagelabel UNDERWORLD
+      .col-12
+        input.text-input.underline(type='text' name='attr_vice')
+        span.underline-label VICE / PURVEYOR:
+        input.clocks-button.pages(type='checkbox' name='attr_FAITH' value='FAITH')
+        span.pagelabel FAITH
+        span  - 
+        input.vacation-button.pages(type='checkbox' name='attr_GAMBLING' value='GAMBLING')
+        span.pagelabel GAMBLING
+        span  - 
+        input.together-button.pages(type='checkbox' name='attr_LUXURY' value='LUXURY')
+        span.pagelabel LUXURY
+        span  - 
+        input.clocks-button.pages(type='checkbox' name='attr_OBLIGATION' value='OBLIGATION')
+        span.pagelabel OBLIGATION
+        span  - 
+        input.vacation-button.pages(type='checkbox' name='attr_PLEASURE' value='PLEASURE')
+        span.pagelabel PLEASURE
+        span  - 
+        input.together-button.pages(type='checkbox' name='attr_STUPOR' value='STUPOR')
+        span.pagelabel STUPOR
+        span  - 
+        input.reckless-button.pages(type='checkbox' name='attr_WEIRD' value='WEIRD')
+        span.pagelabel WEIRD
+      .col-12.header-bar
+        .col-4.header STRESS
+        .col-8.header TRAUMA
+      .col-12
+        .col-6.stress-boxes
+          input.stressadvanced-tracking(type='hidden' name='attr_stressadvanced' value='0')
+          input.cybernetics(type='hidden' name='attr_cybernetics')
+          input.stress-tracking(type='hidden' name='attr_stress')
+          //
+            <input type="radio" class="first-cybernetic-box" name="attr_cybernetics" value="1">
+            <input type="radio" class="second-cybernetic-box" name="attr_cybernetics" value="2">
+            <input type="radio" class="third-cybernetic-box" name="attr_cybernetics" value="3">
+          input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_stress' value='0' checked='checked')
+          input.stress-track1.stress-track.stress-tooth.first-cybernetic.second-cybernetic.third-cybernetic(type='radio' name='attr_stress' value='1')
+          input.stress-track2.stress-track.stress-tooth.second-cybernetic.third-cybernetic(type='radio' name='attr_stress' value='2')
+          input.stress-track3.stress-track.stress-tooth.second-cybernetic.third-cybernetic(type='radio' name='attr_stress' value='3')
+          input.stress-track4.stress-track.stress-tooth.third-cybernetic(type='radio' name='attr_stress' value='4')
+          input.stress-track5.stress-track.stress-tooth.third-cybernetic(type='radio' name='attr_stress' value='5')
+          input.stress-track6.stress-track.stress-tooth.third-cybernetic(type='radio' name='attr_stress' value='6')
+          input.stress-track7.stress-track.stress-tooth(type='radio' name='attr_stress' value='7')
+          input.stress-track8.stress-track.stress-tooth(type='radio' name='attr_stress' value='8')
+          input.stress-track9.stress-track.stress-tooth.hidden-button.stressadvanced-track1(type='radio' name='attr_stress' value='9')
+          input.stress-track10.stress-track.stress-tooth.hidden-button.stressadvanced-track2(type='radio' name='attr_stress' value='10')
+          input.stress-track11.stress-track.stress-tooth.hidden-button.stressadvanced-track3(type='radio' name='attr_stress' value='11')
+          input.stress-track12.stress-track.stress-tooth.hidden-button.stressadvanced-track4(type='radio' name='attr_stress' value='12')
+        .col-6.trauma-boxes
+          input.stress-tracking(type='hidden' name='attr_trauma')
+          input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_trauma' value='0' checked='true')
+          input.stress-track1.stress-track.stress-tooth(type='radio' name='attr_trauma' value='1')
+          input.stress-track2.stress-track.stress-tooth(type='radio' name='attr_trauma' value='2')
+          input.stress-track3.stress-track.stress-tooth(type='radio' name='attr_trauma' value='3')
+          input.stress-track4.stress-track.stress-tooth(type='radio' name='attr_trauma' value='4')
+        .col-12.cybernetics-boxes
+          .col-5
+            input.stress-tracking(type='hidden' name='attr_cybernetics')
+            input.stress-track0.hidden-button.stress-track.stress-tooth(type='radio' name='attr_cybernetics' value='0' checked='true')
+            input.stress-track1.stress-track.stress-tooth(type='radio' name='attr_cybernetics' value='1')
+            input.stress-track2.stress-track.stress-tooth(type='radio' name='attr_cybernetics' value='2')
+            input.stress-track3.stress-track.stress-tooth.third-cybernetic-push(type='radio' name='attr_cybernetics' value='3')
+          .col-6.trauma-descriptors
+            input.clocks-button.pages(type='checkbox' name='attr_haunted' value='haunted')
+            span.pagelabel HAUNTED
+            span  - 
+            input.vacation-button.pages(type='checkbox' name='attr_obsessed' value='obsessed')
+            span.pagelabel OBSESSED
+            span  - 
+            input.together-button.pages(type='checkbox' name='attr_paranoid' value='paranoid')
+            span.pagelabel PARANOID
+            span  - 
+            input.clocks-button.pages(type='checkbox' name='attr_reckless' value='reckless')
+            span.pagelabel RECKLESS
+            span  - 
+            input.vacation-button.pages(type='checkbox' name='attr_soft' value='soft')
+            span.pagelabel SOFT
+            span  - 
+            input.together-button.pages(type='checkbox' name='attr_unstable' value='unstable')
+            span.pagelabel UNSTABLE
+            span  - 
+            input.reckless-button.pages(type='checkbox' name='attr_vicious' value='vicious')
+            span.pagelabel VICIOUS
+      .col-4.header-bar
+        .col-12.header CYBERNETICS
+      //
+        Trauma Descriptiors: HAUNTED - OBSESSED - PARANOID -
+        RECKLESS - SOFT - UNSTABLE - VICIOUS
+      .col-10
+        table.col-12
+          tr
+            th.header-bar(colspan='4')
+              .header HARM
+          tr.level-3-harm
+            td.harm-level 3
+            td(colspan='2')
+              input.text-input(type='text' name='attr_3harm')
+            td.harm-level NEED HELP
+          tr.level-2-harm
+            td.harm-level 2
+            td.first-level-2-harm
+              input.text-input(type='text' name='attr_2harm1')
+            td.second-level-2-harm
+              input.text-input(type='text' name='attr_2harm2')
+            td.harm-level -1D
+          tr.level-1-harm
+            td.harm-level 1
+            td.first-level-1-harm
+              input.text-input(type='text' name='attr_1harm1')
+            td.second-level-1-harm
+              input.text-input(type='text' name='attr_1harm2')
+            td.harm-level LESS EFFECT
+      .col-2
+        div
+          .header-bar
+            .header Healing
+          |                 Project Clock
+          .col-12.healing-clock
+            input.clock-tracking(type='hidden' name='attr_progress')
+            input.hidden-button.4clock-0.rightward-triangle(type='radio' name='attr_progress' value='0' checked='')
+            input.clock-track1.4clock-1.rightward-triangle(type='radio' name='attr_progress' value='1')
+            input.clock-track2.4clock-2.rightward-triangle(type='radio' name='attr_progress' value='2')
+            input.clock-track3.4clock-3.rightward-triangle(type='radio' name='attr_progress' value='3')
+            input.clock-track4.4clock-4.rightward-triangle(type='radio' name='attr_progress' value='4')
+            .harm-circle
+              input.hidden-gaze.hidden-button.4clock-0(type='radio' name='attr_progress2' value='0' checked='')
+              input.hidden-gaze.4clock-1(type='radio' name='attr_progress2' value='1')
+              input.hidden-gaze.4clock-2(type='radio' name='attr_progress2' value='2')
+              input.hidden-gaze.4clock-3(type='radio' name='attr_progress2' value='3')
+              input.hidden-gaze.4clock-4(type='radio' name='attr_progress2' value='4')
+              .harm-clock-text
+              .harm-box1
+                input.hidden-gaze.harm-4clock-0(type='radio' name='attr_progress1' value='0' checked='')
+                input.hidden-gaze.harm-4clock-1(type='radio' name='attr_progress1' value='1')
+                input.hidden-gaze.harm-4clock-2(type='radio' name='attr_progress1' value='2')
+                input.hidden-gaze.harm-4clock-3(type='radio' name='attr_progress1' value='3')
+                input.hidden-gaze.harm-4clock-4(type='radio' name='attr_progress1' value='4')
+                .harm-inside1
+                  .harm-ring1
+              .harm-box2
+                input.hidden-gaze.harm-4clock-0(type='radio' name='attr_progress3' value='0' checked='')
+                input.hidden-gaze.harm-4clock-1(type='radio' name='attr_progress3' value='1')
+                input.hidden-gaze.harm-4clock-2(type='radio' name='attr_progress3' value='2')
+                input.hidden-gaze.harm-4clock-3(type='radio' name='attr_progress3' value='3')
+                input.hidden-gaze.harm-4clock-4(type='radio' name='attr_progress3' value='4')
+                .harm-inside2
+                  .harm-ring2
+        div
+          .header-bar
+            .header
+              | Armor Uses
+          span Armor
+          input.joules(type='checkbox' name='attr_armorarmor')
+          br
+          span Heavy
+          input.joules(type='checkbox' name='attr_heavyarmor')
+          br
+          span Special
+          input.joules(type='checkbox' name='attr_specialarmor')
+      .col-3
+        input.tier-tracking(type='hidden' name='attr_joules')
+        input.hidden-button.stress-track.joules(type='radio' name='attr_joules' value='0' checked='true')
+        input.tier-track1.joules(type='radio' name='attr_joules' value='1')
+        input.tier-track2.joules(type='radio' name='attr_joules' value='2')
+        input.tier-track3.joules(type='radio' name='attr_joules' value='3')
+        input.tier-track4.joules(type='radio' name='attr_joules' value='4')
+        span JOULES
+        br
+        input.stash(type='checkbox' name='attr_stash1')
+        input.stash(type='checkbox' name='attr_stash2')
+        input.stash(type='checkbox' name='attr_stash3')
+        input.stash(type='checkbox' name='attr_stash4')
+        input.stash(type='checkbox' name='attr_stash5')
+        input.stash(type='checkbox' name='attr_stash6')
+        input.stash(type='checkbox' name='attr_stash7')
+        input.stash(type='checkbox' name='attr_stash8')
+        input.stash(type='checkbox' name='attr_stash9')
+        input.joules(type='checkbox' name='attr_stash10')
+        br
+        input.stash(type='checkbox' name='attr_stash11')
+        input.stash(type='checkbox' name='attr_stash12')
+        input.stash(type='checkbox' name='attr_stash13')
+        input.stash(type='checkbox' name='attr_stash14')
+        input.stash(type='checkbox' name='attr_stash15')
+        input.stash(type='checkbox' name='attr_stash16')
+        input.stash(type='checkbox' name='attr_stash17')
+        input.stash(type='checkbox' name='attr_stash18')
+        input.stash(type='checkbox' name='attr_stash19')
+        input.joules(type='checkbox' name='attr_stash20')
+        br
+        input.stash(type='checkbox' name='attr_stash21')
+        input.stash(type='checkbox' name='attr_stash22')
+        input.stash(type='checkbox' name='attr_stash23')
+        input.stash(type='checkbox' name='attr_stash24')
+        input.stash(type='checkbox' name='attr_stash25')
+        input.stash(type='checkbox' name='attr_stash26')
+        input.stash(type='checkbox' name='attr_stash27')
+        input.stash(type='checkbox' name='attr_stash28')
+        input.stash(type='checkbox' name='attr_stash29')
+        input.joules(type='checkbox' name='attr_stash30')
+        br
+        input.stash(type='checkbox' name='attr_stash31')
+        input.stash(type='checkbox' name='attr_stash32')
+        input.stash(type='checkbox' name='attr_stash33')
+        input.stash(type='checkbox' name='attr_stash34')
+        input.stash(type='checkbox' name='attr_stash35')
+        input.stash(type='checkbox' name='attr_stash36')
+        input.stash(type='checkbox' name='attr_stash37')
+        input.stash(type='checkbox' name='attr_stash38')
+        input.stash(type='checkbox' name='attr_stash39')
+        input.joules(type='checkbox' name='attr_stash40')
+      .col-12
+        .underline-label CLOCKS
+      .col-12
+        fieldset.repeating_clocks
+          .pink-header CLOCK
+          input.text-input.underline(type='text' placeholder='What is the Obstacle and how Complex is it?' name='attr_name')
+          .col-12
+            div Size
+            input.progress-.sheet-longoption.pages(type='radio' name='attr_size' value='4')
+            span.pagelabel Complex, 4 Segments
+            input.progress-.sheet-longoption.pages(type='radio' name='attr_size' value='6')
+            span.pagelabel Complicated, 6 Segments
+            input.progress-.sheet-longoption.pages(type='radio' name='attr_size' value='8')
+            span.pagelabel Daunting, 8 Segments
+            .8clock.col-12
+              input.clock-tracking(type='hidden' name='attr_8progress')
+              input.rightward-triangle.8clock-0.hidden-button(type='radio' name='attr_8progress' value='0' checked='')
+              input.clock-track1.rightward-triangle.8clock-1(type='radio' name='attr_8progress' value='1')
+              input.clock-track2.rightward-triangle.8clock-2(type='radio' name='attr_8progress' value='2')
+              input.clock-track3.rightward-triangle.8clock-3(type='radio' name='attr_8progress' value='3')
+              input.clock-track4.rightward-triangle.8clock-4(type='radio' name='attr_8progress' value='4')
+              input.clock-track5.rightward-triangle.8clock-5(type='radio' name='attr_8progress' value='5')
+              input.clock-track6.rightward-triangle.8clock-6(type='radio' name='attr_8progress' value='6')
+              input.clock-track7.rightward-triangle.8clock-7(type='radio' name='attr_8progress' value='7')
+              input.clock-track8.rightward-triangle.8clock-8(type='radio' name='attr_8progress' value='8')
+              .harm-circle
+                input.hidden-gaze.hidden-button.8clock-0(type='radio' name='attr_8progress2' value='0' checked='')
+                input.hidden-gaze.8clock-1(type='radio' name='attr_8progress2' value='1')
+                input.hidden-gaze.8clock-2(type='radio' name='attr_8progress2' value='2')
+                input.hidden-gaze.8clock-3(type='radio' name='attr_8progress2' value='3')
+                input.hidden-gaze.8clock-4(type='radio' name='attr_8progress2' value='4')
+                input.hidden-gaze.8clock-5(type='radio' name='attr_8progress2' value='5')
+                input.hidden-gaze.8clock-6(type='radio' name='attr_8progress2' value='6')
+                input.hidden-gaze.8clock-7(type='radio' name='attr_8progress2' value='7')
+                input.hidden-gaze.8clock-8(type='radio' name='attr_8progress2' value='8')
+                .harm-clock-text
+                .harm-box1
+                  input.hidden-gaze.harm-8clock-0(type='radio' name='attr_8progress1' value='0' checked='')
+                  input.hidden-gaze.harm-8clock-1(type='radio' name='attr_8progress1' value='1')
+                  input.hidden-gaze.harm-8clock-2(type='radio' name='attr_8progress1' value='2')
+                  input.hidden-gaze.harm-8clock-3(type='radio' name='attr_8progress1' value='3')
+                  input.hidden-gaze.harm-8clock-4(type='radio' name='attr_8progress1' value='4')
+                  input.hidden-gaze.harm-8clock-5(type='radio' name='attr_8progress1' value='5')
+                  input.hidden-gaze.harm-8clock-6(type='radio' name='attr_8progress1' value='6')
+                  input.hidden-gaze.harm-8clock-7(type='radio' name='attr_8progress1' value='7')
+                  input.hidden-gaze.harm-8clock-8(type='radio' name='attr_8progress1' value='8')
+                  .harm-inside1
+                    .harm-ring1
+                .harm-box2
+                  input.hidden-gaze.harm-8clock-0(type='radio' name='attr_8progress3' value='0' checked='')
+                  input.hidden-gaze.harm-8clock-1(type='radio' name='attr_8progress3' value='1')
+                  input.hidden-gaze.harm-8clock-2(type='radio' name='attr_8progress3' value='2')
+                  input.hidden-gaze.harm-8clock-3(type='radio' name='attr_8progress3' value='3')
+                  input.hidden-gaze.harm-8clock-4(type='radio' name='attr_8progress3' value='4')
+                  input.hidden-gaze.harm-8clock-5(type='radio' name='attr_8progress3' value='5')
+                  input.hidden-gaze.harm-8clock-6(type='radio' name='attr_8progress3' value='6')
+                  input.hidden-gaze.harm-8clock-7(type='radio' name='attr_8progress3' value='7')
+                  input.hidden-gaze.harm-8clock-8(type='radio' name='attr_8progress3' value='8')
+                  .harm-inside2
+                    .harm-ring2
+            .6clock.col-12
+              input.clock-tracking(type='hidden' name='attr_6progress')
+              input.rightward-triangle.6clock-0.hidden-button(type='radio' name='attr_6progress' value='0' checked='')
+              input.clock-track1.rightward-triangle.6clock-1(type='radio' name='attr_6progress' value='1')
+              input.clock-track2.rightward-triangle.6clock-2(type='radio' name='attr_6progress' value='2')
+              input.clock-track3.rightward-triangle.6clock-3(type='radio' name='attr_6progress' value='3')
+              input.clock-track4.rightward-triangle.6clock-4(type='radio' name='attr_6progress' value='4')
+              input.clock-track5.rightward-triangle.6clock-5(type='radio' name='attr_6progress' value='5')
+              input.clock-track6.rightward-triangle.6clock-6(type='radio' name='attr_6progress' value='6')
+              .harm-circle
+                input.hidden-gaze.hidden-button.6clock-0(type='radio' name='attr_6progress2' value='0' checked='')
+                input.hidden-gaze.6clock-1(type='radio' name='attr_6progress2' value='1')
+                input.hidden-gaze.6clock-2(type='radio' name='attr_6progress2' value='2')
+                input.hidden-gaze.6clock-3(type='radio' name='attr_6progress2' value='3')
+                input.hidden-gaze.6clock-4(type='radio' name='attr_6progress2' value='4')
+                input.hidden-gaze.6clock-5(type='radio' name='attr_6progress2' value='5')
+                input.hidden-gaze.6clock-6(type='radio' name='attr_6progress2' value='6')
+                .harm-clock-text
+                .harm-box1
+                  input.hidden-gaze.harm-6clock-0(type='radio' name='attr_6progress1' value='0' checked='')
+                  input.hidden-gaze.harm-6clock-1(type='radio' name='attr_6progress1' value='1')
+                  input.hidden-gaze.harm-6clock-2(type='radio' name='attr_6progress1' value='2')
+                  input.hidden-gaze.harm-6clock-3(type='radio' name='attr_6progress1' value='3')
+                  input.hidden-gaze.harm-6clock-4(type='radio' name='attr_6progress1' value='4')
+                  input.hidden-gaze.harm-6clock-5(type='radio' name='attr_6progress1' value='5')
+                  input.hidden-gaze.harm-6clock-6(type='radio' name='attr_6progress1' value='6')
+                  .harm-inside1
+                    .harm-ring1
+                .harm-box2
+                  input.hidden-gaze.harm-6clock-0(type='radio' name='attr_6progress3' value='0' checked='')
+                  input.hidden-gaze.harm-6clock-1(type='radio' name='attr_6progress3' value='1')
+                  input.hidden-gaze.harm-6clock-2(type='radio' name='attr_6progress3' value='2')
+                  input.hidden-gaze.harm-6clock-3(type='radio' name='attr_6progress3' value='3')
+                  input.hidden-gaze.harm-6clock-4(type='radio' name='attr_6progress3' value='4')
+                  input.hidden-gaze.harm-6clock-5(type='radio' name='attr_6progress3' value='5')
+                  input.hidden-gaze.harm-6clock-6(type='radio' name='attr_6progress3' value='6')
+                  .harm-inside2
+                    .harm-ring2
+            .4clock.col-12
+              input.clock-tracking(type='hidden' name='attr_4progress')
+              input.rightward-triangle.4clock-0.hidden-button(type='radio' name='attr_4progress' value='0' checked='')
+              input.clock-track1.rightward-triangle.4clock-1(type='radio' name='attr_4progress' value='1')
+              input.clock-track2.rightward-triangle.4clock-2(type='radio' name='attr_4progress' value='2')
+              input.clock-track3.rightward-triangle.4clock-3(type='radio' name='attr_4progress' value='3')
+              input.clock-track4.rightward-triangle.4clock-4(type='radio' name='attr_4progress' value='4')
+              .harm-circle
+                input.hidden-gaze.hidden-button.4clock-0(type='radio' name='attr_4progress2' value='0' checked='')
+                input.hidden-gaze.4clock-1(type='radio' name='attr_4progress2' value='1')
+                input.hidden-gaze.4clock-2(type='radio' name='attr_4progress2' value='2')
+                input.hidden-gaze.4clock-3(type='radio' name='attr_4progress2' value='3')
+                input.hidden-gaze.4clock-4(type='radio' name='attr_4progress2' value='4')
+                .harm-clock-text
+                .harm-box1
+                  input.hidden-gaze.harm-4clock-0(type='radio' name='attr_4progress1' value='0' checked='')
+                  input.hidden-gaze.harm-4clock-1(type='radio' name='attr_4progress1' value='1')
+                  input.hidden-gaze.harm-4clock-2(type='radio' name='attr_4progress1' value='2')
+                  input.hidden-gaze.harm-4clock-3(type='radio' name='attr_4progress1' value='3')
+                  input.hidden-gaze.harm-4clock-4(type='radio' name='attr_4progress1' value='4')
+                  .harm-inside1
+                    .harm-ring1
+                .harm-box2
+                  input.hidden-gaze.harm-4clock-0(type='radio' name='attr_4progress3' value='0' checked='')
+                  input.hidden-gaze.harm-4clock-1(type='radio' name='attr_4progress3' value='1')
+                  input.hidden-gaze.harm-4clock-2(type='radio' name='attr_4progress3' value='2')
+                  input.hidden-gaze.harm-4clock-3(type='radio' name='attr_4progress3' value='3')
+                  input.hidden-gaze.harm-4clock-4(type='radio' name='attr_4progress3' value='4')
+                  .harm-inside2
+                    .harm-ring2
+    .abilities.col-4
+      input.pages.red-switcher.check(type='hidden' name='attr_red-switcher')
+      .red-box
+        input.text-input.text-in-red-box.white-placeholders.playbook-name(type='text' name='attr_playbook' placeholder='PLAYBOOK NAME')
+        div
+          | Special Abilities!
+          .sheet-ability.col-12
+            fieldset.repeating_playbookability
+              input.ability-circle(type='checkbox' name='attr_check')
+              input.text-input.sheet-abilityname.white-placeholders(type='text' name='attr_name' placeholder='Ability Name')
+              textarea.textarea.sheet-abilitydesc.white-placeholders(name='attr_description' placeholder='Ability description')
+        .col-6.h3
+          | Friends
+          fieldset.repeating_friends
+            input.upward-triangle(type='checkbox' name='attr_closefriend' value='up')
+            input.downward-triangle(type='checkbox' name='attr_rival' value='down')
+            input.text-input.sheet-abilityname.white-placeholders.items(type='text' name='attr_friend-name' placeholder='Friend Name')
+        .col-6.h3
+          | Items
+          fieldset.repeating_playbookitems
+            input.load-control(type='hidden' name='attr_load-control')
+            input.first-box.item-check(type='checkbox' name='attr_first-box')
+            input.second-box.item-check(type='checkbox' name='attr_second-box')
+            input.third-box.item-check(type='checkbox' name='attr_third-box')
+            input.fourth-box.item-check(type='checkbox' name='attr_fourth-box')
+            input.text-input.sheet-abilityname.white-placeholders.items(type='text' name='attr_item-name' placeholder='Item Name')
+        .col-12
+          | XP
+          input.text-input.xp-trigger.col-12.white-placeholders(type='text' name='attr_desperate-trigger' placeholder='Every time you roll a desperate action, mark XP in that action’s attribute.')
+          div
+            | At the end of each session, for each item below, mark XP (in your stress, playbook, or attribute)
+            | or mark 2 XP if it occurred multiple times.
+          input.text-input.text-in-red-box.xp-trigger.col-12.white-placeholders(type='text' name='attr_playbook-trigger' placeholder='[Select Your Playbook First]')
+          input.text-input.xp-trigger.col-12.white-placeholders(type='text' name='attr_beliefs-trigger' placeholder='You expressed your beliefs, drives, culture, or background.')
+          input.text-input.xp-trigger.col-12.white-placeholders(type='text' name='attr_vice-trigger' placeholder='You struggled with issues from your vice, root or traumas during play.')
+      .action-tracker
+        .col-6
+          .header Roll the Dice
+          // Playbook XP, Stress Training, Actions, Load, Items
+          select.select.text-in-red-box.roll-select(name='attr_rollselect')
+            option(selected='' disabled='' value='nothing') What Roll Is This?
+            option.option(value='action') Action Roll
+            option.option(value='downtime') Downtime Roll
+            option.option(disabled='' value='engagement') Engagement Roll (Crew Sheet Only)
+            option.option(value='fortune') Fortune Roll
+            option.option(value='resistance') Resistance Roll
+          input.actionroll-selected(type='radio' name='attr_rollselected' value='action')
+          input.downtimeroll-selected(type='radio' name='attr_rollselected' value='downtime')
+          input.engagementroll-selected(type='radio' name='attr_rollselected' value='engagement')
+          input.fortuneroll-selected(type='radio' name='attr_rollselected' value='fortune')
+          input.resistanceroll-selected(type='radio' name='attr_rollselected' value='resistance')
+          // Action Roll
+          span.action-select Which Action?
+          select.select.text-in-red-box.action-select(name='attr_actionselect')
+            option(selected='' disabled='' value='nothing') Which Action?
+            option.option(value='trace') Trace
+            option.option(value='study') Study
+            option.option(value='survey') Survey
+            option.option(value='modify') Modify
+            option.option(value='finesse') Finesse
+            option.option(value='ghost') Ghost
+            option.option(value='combat') Combat
+            option.option(value='wreck') Wreck
+            option.option(value='hack') Hack
+            option.option(value='control') Control
+            option.option(value='network') Network
+            option.option(value='sway') Sway
+          span.action-select What Position?
+          select.select.text-in-red-box.action-select(name='attr_actionPosition')
+            option(selected='' disabled='' value='nothing') What Position?
+            option.option(value='Controlled') Controlled
+            option.option(value='Risky') Risky
+            option.option(value='Desperate') Desperate
+          span.action-select What Effect?
+          select.select.text-in-red-box.action-select(name='attr_actionEffect')
+            option(selected='' disabled='' value='nothing') What Effect?
+            option.option(value='Zero') Zero
+            option.option(value='Limited') Limited
+            option.option(value='Standard') Standard
+            option.option(value='Great') Great
+            option.option(value='Extreme') Extreme
+          span.action-select Any Bonus Dice?
+          select.select.text-in-red-box.action-select(name='attr_actionBonusDice')
+            option(selected='' disabled='' value='0') Any Bonus Dice?
+            option.option(value='3') +3
+            option.option(value='2') +2
+            option.option(value='1') +1
+            option.option(value='0') 0
+            option.option(value='-1') -1
+            option.option(value='-2') -2
+            option.option(value='-3') -3
+          input.action-ready(type='checkbox' name='attr_action-ready')
+          input.attr_action_roll_dice(type='hidden' value='')
+          .action-buttons
+            input.action-selected(type='hidden' name='attr_actionselect')
+            button.action-roll-button(type='roll' value='&{template:roll2} {{effect=@{actionEffect}}} {{position=@{actionPosition}}} {{type=@{rollselect}}} {{@{action_roll_dice}}} {{character=@{character_name}}} {{rolltype=@{actionselect}}}') Roll
+          // Downtime Rolls
+          span.downtime-select Which Downtime Action?
+          select.select.text-in-red-box.downtime-select(name='attr_downtimeSelect')
+            option(selected='' disabled='' value='nothing') Which Downtime Action?
+            option.option(disabled='' value='acquire') Acquire Asset (Crew Sheet Only)
+            option.option(value='long') Long-Term Project
+            option.option(value='recover') Recover
+            option.option(value='reduce') Reduce Heat
+            // <option class="option" value="train">Train</option>
+            option.option(value='vice') Vice
+            // <option class="option" value="install">Install Cybernetics</option>
+          input.downtime-action-selected(type='hidden' name='attr_downtimeSelect')
+          // <input type="radio" class="install-selected" name="attr_downtimeselected" value="install">
+          //
+            Acquire Asset
+            <span class="acquire-select">Crew Tier?</span>
+            <select class="select text-in-red-box acquire-select" name="attr_downtime-acquire">
+            <option selected disabled value="nothing">What's Your Crew's Tier?</option>
+            <option class="option" value="0">0</option>
+            <option class="option" value="1">1</option>
+            <option class="option" value="2">2</option>
+            <option class="option" value="3">3</option>
+            <option class="option" value="4">4</option>
+            </select>
+            <span class="acquire-select">Any Bonus Dice?</span>
+            <select class="select text-in-red-box acquire-select" name="attr_downtime-acquire-bonusdice">
+            <option selected disabled value="0">Any Bonus Dice?</option>
+            <option class="option" value="3">+3</option>
+            <option class="option" value="2">+2</option>
+            <option class="option" value="1">+1</option>
+            <option class="option" value="0">0</option>
+            <option class="option" value="-1">-1</option>
+            <option class="option" value="-2">-2</option>
+            <option class="option" value="-3">-3</option>
+            </select>
+          // Long Term Project
+          span.long-select Which Action?
+          select.select.text-in-red-box.long-select(name='attr_downtime-long-actionselect')
+            option(selected='' disabled='' value='nothing') Which Action?
+            option.option(value='trace') Trace
+            option.option(value='study') Study
+            option.option(value='survey') Survey
+            option.option(value='modify') Modify
+            option.option(value='finesse') Finesse
+            option.option(value='ghost') Ghost
+            option.option(value='combat') Combat
+            option.option(value='wreck') Wreck
+            option.option(value='hack') Hack
+            option.option(value='control') Control
+            option.option(value='network') Network
+            option.option(value='sway') Sway
+          span.long-select Any Bonus Dice?
+          select.select.text-in-red-box.long-select(name='attr_downtime-long-bonusdice')
+            option(selected='' disabled='' value='0') Any Bonus Dice?
+            option.option(value='3') +3
+            option.option(value='2') +2
+            option.option(value='1') +1
+            option.option(value='0') 0
+            option.option(value='-1') -1
+            option.option(value='-2') -2
+            option.option(value='-3') -3
+          input.downtime-long-actionselected(type='hidden' name='attr_downtime-long-actionselected')
+          input(type='hidden' name='attr_long_roll_dice' value='')
+          button.long-roll-button(type='roll' value='&{template:roll2} {{type=@{rollselect}}} {{@{long_roll_dice}}} {{character=@{character_name}}} {{rolltype=Long-Term Project (@{downtime-long-actionselected})}}') Roll
+          // Recover
+          span.recover-select Dice from the Treatment?
+          select.select.text-in-red-box.recover-select(name='attr_downtime-recover-dice')
+            option(selected='' disabled='' value='0') Dice from the Treatment?
+            option.option(value='0') 0
+            option.option(value='1') 1
+            option.option(value='2') 2
+            option.option(value='3') 3
+            option.option(value='4') 4
+            option.option(value='5') 5
+            option.option(value='6') 6
+          span.recover-select Any Bonus Dice?
+          select.select.text-in-red-box.recover-select(name='attr_downtime-recover-bonusdice')
+            option(selected='' disabled='' value='0') Any Bonus Dice?
+            option.option(value='3') +3
+            option.option(value='2') +2
+            option.option(value='1') +1
+            option.option(value='0') 0
+            option.option(value='-1') -1
+            option.option(value='-2') -2
+            option.option(value='-3') -3
+          // Reduce Heat
+          span.reduce-select Which Action?
+          select.select.text-in-red-box.reduce-select(name='attr_downtime-reduce-actionselect')
+            option(selected='' disabled='' value='nothing') Which Action?
+            option.option(value='trace') Trace
+            option.option(value='study') Study
+            option.option(value='survey') Survey
+            option.option(value='modify') Modify
+            option.option(value='finesse') Finesse
+            option.option(value='ghost') Ghost
+            option.option(value='combat') Combat
+            option.option(value='wreck') Wreck
+            option.option(value='hack') Hack
+            option.option(value='control') Control
+            option.option(value='network') Network
+            option.option(value='sway') Sway
+          span.reduce-select Any Bonus Dice?
+          select.select.text-in-red-box.reduce-select(name='attr_downtime-reduce-bonusdice')
+            option(selected='' disabled='' value='0') Any Bonus Dice?
+            option.option(value='3') +3
+            option.option(value='2') +2
+            option.option(value='1') +1
+            option.option(value='0') 0
+            option.option(value='-1') -1
+            option.option(value='-2') -2
+            option.option(value='-3') -3
+          input.downtime-reduce-action-selected(type='hidden' name='attr_downtime-reduce-actionselected')
+          input(type='hidden' name='attr_reduce_roll_dice' value='')
+          button.reduce-roll-button(type='roll' value='&{template:roll2} {{type=@{rollselect}}} {{@{reduce_roll_dice}}} {{character=@{character_name}}} {{rolltype=Reduce Heat (@{downtime-reduce-actionselect})}}') Roll
+          // Vice
+          span.vice-select Any Bonus Dice?
+          select.select.text-in-red-box.vice-select(name='attr_downtime-vice-bonusdice')
+            option(selected='' disabled='' value='0') Any Bonus Dice?
+            option.option(value='3') +3
+            option.option(value='2') +2
+            option.option(value='1') +1
+            option.option(value='0') 0
+            option.option(value='-1') -1
+            option.option(value='-2') -2
+            option.option(value='-3') -3
+          input(type='hidden' name='attr_viceroll' value='0')
+          input(type='hidden' name='attr_vice_roll_dice' value='')
+          div
+            input.downtime-selected(type='hidden' name='attr_downtimeSelect')
+            input(type='hidden' name='attr_recover_roll_dice' value='')
+            button.recover-button(type='roll' value='&{template:roll2} {{type=@{rollselect}}} {{@{recover_roll_dice}}} {{character=@{character_name}}} {{rolltype=Recovery}}') Roll
+            button.vice-button(type='roll' value='&{template:roll2} {{type=@{rollselect}}} {{@{vice_roll_dice}}} {{character=@{character_name}}} {{rolltype=Vice}}') Roll
+          //
+            Engagement Roll
+            <span class="engagement-select">Engagement Dice?</span>
+            <select class="select text-in-red-box engagement-select" name="attr_engagement-dice">
+            <option selected disabled value="0">Engagement Dice?</option>
+            <option class="option" value="0">0</option>
+            <option class="option" value="1">1</option>
+            <option class="option" value="2">2</option>
+            <option class="option" value="3">3</option>
+            <option class="option" value="4">4</option>
+            <option class="option" value="5">5</option>
+            <option class="option" value="6">6</option>
+            </select>
+          // Fortune Roll
+          span.fortune-select Fortune Dice?
+          select.select.text-in-red-box.fortune-select(name='attr_fortune-dice')
+            option(selected='' disabled='' value='0') Fortune Dice?
+            option.option(value='0') 0
+            option.option(value='1') 1
+            option.option(value='2') 2
+            option.option(value='3') 3
+            option.option(value='4') 4
+            option.option(value='5') 5
+            option.option(value='6') 6
+          input(type='hidden' name='attr_fortune_roll_dice' value='')
+          button.fortune-select(type='roll' value='&{template:roll2} {{type=@{rollselect}}} {{@{fortune_roll_dice}}} {{character=@{character_name}}} {{rolltype=Fortune}}') Roll
+          // Resistance Roll
+          span.resistance-select Which Attribute?
+          select.select.text-in-red-box.resistance-select(name='attr_resistanceselect')
+            option(selected='' disabled='' value='nothing') Which Attribute?
+            option.option(value='insight') Insight
+            option.option(value='prowess') Prowess
+            option.option(value='resolve') Resolve
+          input(type='hidden' name='attr_resistance_roll_dice' value='')
+          input.resistance-select(type='hidden' name='attr_resistanceselect')
+          button.resistance-roll-button(type='roll' value='&{template:roll2} {{type=@{rollselect}}} {{@{resistance_roll_dice}}} {{character=@{character_name}}} {{rolltype=@{resistanceselect}}}') Roll
+          .col-12
+            | Playbook XP
+            input.stress-tracking(type='hidden' name='attr_playbookxp')
+            input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_playbookxp' value='0' checked='true')
+            input.stress-track1.stress-tooth(type='radio' name='attr_playbookxp' value='1')
+            input.stress-track2.stress-tooth(type='radio' name='attr_playbookxp' value='2')
+            input.stress-track3.stress-tooth(type='radio' name='attr_playbookxp' value='3')
+            input.stress-track4.stress-tooth(type='radio' name='attr_playbookxp' value='4')
+            input.stress-track5.stress-tooth(type='radio' name='attr_playbookxp' value='5')
+            input.stress-track6.stress-tooth(type='radio' name='attr_playbookxp' value='6')
+            input.stress-track7.stress-tooth(type='radio' name='attr_playbookxp' value='7')
+            input.stress-track8.stress-tooth(type='radio' name='attr_playbookxp' value='8' checked='true')
+          .text(title='')
+            | Stress XP
+            input.stress-tracking(type='hidden' name='attr_stressxp')
+            input.stress-track.stress-tooth.hidden-button(type='radio' name='attr_stressxp' value='0' checked='true')
+            input.stress-track1.stress-tooth(type='radio' name='attr_stressxp' value='1')
+            input.stress-track2.stress-tooth(type='radio' name='attr_stressxp' value='2')
+            input.stress-track3.stress-tooth(type='radio' name='attr_stressxp' value='3')
+            input.stress-track4.stress-tooth(type='radio' name='attr_stressxp' value='4')
+            input.stress-track5.stress-tooth(type='radio' name='attr_stressxp' value='5')
+            input.stress-track6.stress-tooth(type='radio' name='attr_stressxp' value='6')
+            input.stress-track7.stress-tooth(type='radio' name='attr_stressxp' value='7')
+            input.stress-track8.stress-tooth.tooltip(type='radio' name='attr_stressxp' value='8')
+            .tooltip-text
+              input.pages(type='checkbox' name='attr_stressadvancer')
+              span.stresslabel Advance Your Stress
+              input.pages(type='checkbox' name='attr_stressdeadvancer')
+              span.stresslabel Remove a Stress Box
+          .text(title='')
+            | Insight XP
+            input.stress-tracking(type='hidden' name='attr_insightxp')
+            input.stress-track.stress-tooth.hidden-button(type='radio' name='attr_insightxp' value='0' checked='true')
+            input.stress-track1.stress-tooth(type='radio' name='attr_insightxp' value='1')
+            input.stress-track2.stress-tooth(type='radio' name='attr_insightxp' value='2')
+            input.stress-track3.stress-tooth(type='radio' name='attr_insightxp' value='3')
+            input.stress-track4.stress-tooth(type='radio' name='attr_insightxp' value='4')
+            input.stress-track5.stress-tooth(type='radio' name='attr_insightxp' value='5')
+            input.stress-track6.stress-tooth(type='radio' name='attr_insightxp' value='6')
+          input(type='hidden' name='attr_insight' value='0')
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Trace')
+            input.action-dot.hidden-button(type='radio' name='attr_Trace' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Trace' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Trace' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Trace' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Trace' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Trace-cybernetic' value='1')
+            span Trace
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Study')
+            input.action-dot.hidden-button(type='radio' name='attr_Study' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Study' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Study' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Study' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Study' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Study-cybernetic' value='1')
+            span Study
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Survey')
+            input.action-dot.hidden-button(type='radio' name='attr_Survey' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Survey' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Survey' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Survey' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Survey' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Survey-cybernetic' value='1')
+            span Survey
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Modify')
+            input.action-dot.hidden-button(type='radio' name='attr_Modify' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Modify' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Modify' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Modify' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Modify' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Modify-cybernetic' value='1')
+            span Modify
+          .text(title='')
+            | Prowess XP
+            input.stress-tracking(type='hidden' name='attr_prowessxp')
+            input.stress-track.stress-tooth.hidden-button(type='radio' name='attr_prowessxp' value='0' checked='true')
+            input.stress-track1.stress-tooth(type='radio' name='attr_prowessxp' value='1')
+            input.stress-track2.stress-tooth(type='radio' name='attr_prowessxp' value='2')
+            input.stress-track3.stress-tooth(type='radio' name='attr_prowessxp' value='3')
+            input.stress-track4.stress-tooth(type='radio' name='attr_prowessxp' value='4')
+            input.stress-track5.stress-tooth(type='radio' name='attr_prowessxp' value='5')
+            input.stress-track6.stress-tooth(type='radio' name='attr_prowessxp' value='6')
+          input(type='hidden' name='attr_prowess' value='0')
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Finesse')
+            input.action-dot.hidden-button(type='radio' name='attr_Finesse' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Finesse' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Finesse' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Finesse' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Finesse' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Finesse-cybernetic' value='1')
+            span Finesse
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Ghost')
+            input.action-dot.hidden-button(type='radio' name='attr_Ghost' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Ghost' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Ghost' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Ghost' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Ghost' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Ghost-cybernetic' value='1')
+            span Ghost
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Combat')
+            input.action-dot.hidden-button(type='radio' name='attr_Combat' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Combat' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Combat' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Combat' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Combat' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Combat-cybernetic' value='1')
+            span Combat
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Wreck')
+            input.action-dot.hidden-button(type='radio' name='attr_Wreck' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Wreck' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Wreck' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Wreck' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Wreck' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Wreck-cybernetic' value='1')
+            span Wreck
+          .text(title='')
+            | Resolve XP
+            input.stress-tracking(type='hidden' name='attr_resolvexp')
+            input.stress-track.stress-tooth.hidden-button(type='radio' name='attr_resolvexp' value='0' checked='true')
+            input.stress-track1.stress-tooth(type='radio' name='attr_resolvexp' value='1')
+            input.stress-track2.stress-tooth(type='radio' name='attr_resolvexp' value='2')
+            input.stress-track3.stress-tooth(type='radio' name='attr_resolvexp' value='3')
+            input.stress-track4.stress-tooth(type='radio' name='attr_resolvexp' value='4')
+            input.stress-track5.stress-tooth(type='radio' name='attr_resolvexp' value='5')
+            input.stress-track6.stress-tooth(type='radio' name='attr_resolvexp' value='6')
+          input(type='hidden' name='attr_resolve' value='0')
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Hack')
+            input.action-dot.hidden-button(type='radio' name='attr_Hack' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Hack' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Hack' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Hack' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Hack' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Hack-cybernetic' value='1')
+            span Hack
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Control')
+            input.action-dot.hidden-button(type='radio' name='attr_Control' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Control' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Control' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Control' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Control' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Control-cybernetic' value='1')
+            span Control
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Network')
+            input.action-dot.hidden-button(type='radio' name='attr_Network' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Network' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Network' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Network' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Network' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Network-cybernetic' value='1')
+            span Network
+          .paragraph.tooltip
+            input.action-tracking(type='hidden' name='attr_Sway')
+            input.action-dot.hidden-button(type='radio' name='attr_Sway' value='0' checked='true')
+            input.action-track1.action-dot(type='radio' name='attr_Sway' value='1')
+            input.action-track2.action-dot(type='radio' name='attr_Sway' value='2')
+            input.action-track3.action-dot(type='radio' name='attr_Sway' value='3')
+            input.action-track4.action-dot(type='radio' name='attr_Sway' value='4')
+            input.cybernetic-dot(type='checkbox' name='attr_Sway-cybernetic' value='1')
+            span Sway
+        .col-6
+          span Load
+          br
+          span light (3)
+          input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_load' value='light')
+          span normal (5)
+          input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_load' value='normal')
+          span heavy (6)
+          input.stress-track.stress-tooth.stress-tooth-single(type='radio' name='attr_load' value='heavy')
+          br
+          input.item-check(type='checkbox' name='attr_blade')
+          input.text-input.items.white-placeholders(type='text' name='attr_bladename' placeholder='A Blade or Two')
+          br
+          input.item-check(type='checkbox' name='attr_improvised')
+          input.text-input.items.white-placeholders(type='text' name='attr_improvisedname' placeholder='An Improvised Weapon')
+          br
+          input.item-check(type='checkbox' name='attr_large')
+          input.item-check(type='checkbox' name='attr_large2')
+          input.text-input.items.white-placeholders(type='text' name='attr_largename' placeholder='A Large Weapon')
+          br
+          input.item-check(type='checkbox' name='attr_disposable')
+          input.text-input.items.white-placeholders(type='text' name='attr_disposablename' placeholder='A Disposable Pistol')
+          br
+          input.item-check(type='checkbox' name='attr_second')
+          input.text-input.items.white-placeholders(type='text' name='attr_secondname' placeholder='A Second Disposable Pistol')
+          br
+          input.item-check(type='checkbox' name='attr_reload')
+          input.item-check(type='checkbox' name='attr_reload2')
+          input.text-input.items.white-placeholders(type='text' name='attr_reloadname' placeholder='Reload (+1 Joule)')
+          br
+          input.item-check(type='checkbox' name='attr_ewd')
+          input.text-input.items.white-placeholders(type='text' name='attr_ewdname' placeholder='EWD')
+          br
+          input.item-check(type='checkbox' name='attr_screen')
+          input.text-input.items.white-placeholders(type='text' name='attr_screenname' placeholder='Screen')
+          br
+          input.item-check(type='checkbox' name='attr_obscures')
+          input.text-input.items.white-placeholders(type='text' name='attr_obscuresname' placeholder='Obscures')
+          br
+          input.item-check(type='checkbox' name='attr_recharge')
+          input.item-check(type='checkbox' name='attr_recharge2')
+          input.text-input.items.white-placeholders(type='text' name='attr_rechargename' placeholder='A Recharge')
+          br
+          input.item-check(type='checkbox' name='attr_armoritem')
+          input.item-check(type='checkbox' name='attr_armoritem2')
+          input.text-input.items.white-placeholders(type='text' name='attr_armoritemname' placeholder='Armor')
+          br
+          input.item-check(type='checkbox' name='attr_heavyitem')
+          input.text-input.items.white-placeholders(type='text' name='attr_heavyitemname' placeholder='Heavy Armor')
+          br
+          input.item-check(type='checkbox' name='attr_infiltrationitem')
+          input.text-input.items.white-placeholders(type='text' name='attr_infiltrationitemname' placeholder='Infiltration Gear')
+          br
+          input.item-check(type='checkbox' name='attr_hackingitem')
+          input.text-input.items.white-placeholders(type='text' name='attr_hackingitemname' placeholder='Hacking Gear / Interface')
+          br
+          input.item-check(type='checkbox' name='attr_specitem')
+          input.text-input.items.white-placeholders(type='text' name='attr_specitemname' placeholder='Specialized Tech')
+          br
+          input.item-check(type='checkbox' name='attr_subterfugeitem')
+          input.text-input.items.white-placeholders(type='text' name='attr_subterfugeitemname' placeholder='Subterfuge Supplies')
+          br
+          input.item-check(type='checkbox' name='attr_portable')
+          input.text-input.items.white-placeholders(type='text' name='attr_portablename' placeholder='Portable Light Source')
+          br
+          input.item-check(type='checkbox' name='attr_demolition')
+          input.item-check(type='checkbox' name='attr_demolition2')
+          input.text-input.items.white-placeholders(type='text' name='attr_demolitionname' placeholder='Demolition Tools')
+          br
+          input.item-check(type='checkbox' name='attr_modification')
+          input.text-input.items.white-placeholders(type='text' name='attr_modificationname' placeholder='Modification Tools')
+          br
+          input.item-check(type='checkbox' name='attr_communications')
+          input.text-input.items.white-placeholders(type='text' name='attr_communicationsname' placeholder='Communications')
+      // Playbook Name, Playbook Description, Spec Abilities, Friends, Playbook Items, XP
