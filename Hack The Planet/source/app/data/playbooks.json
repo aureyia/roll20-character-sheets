@@ -1,0 +1,800 @@
+{
+  "Edge": {
+    "special-abilities": [
+      {
+        "name": "Battleborn",
+        "description": "You may expend your <strong>special armor</strong> to <strong>reduce harm</strong> from an attack in <strong>combat</strong> or to <strong>push yourself</strong> during a fight."
+      },
+      {
+        "name": "Imposing",
+        "description": "When you gather info to anticipate possible threats in the current situation, you get +1 effect. When you dissuade someone from escalating to physical violence by Controlling them, you have potency"
+      },
+      {
+        "name": "Primed",
+        "description": "Once per score, you may spend your available load, instead of stress, for a flashback or to push yourself."
+      },
+      {
+        "name": "Follow Through",
+        "description": "When you take harm from someone, you learn about them and they become more susceptible to you. Immediately ask 1 question from gather information and take +1d against them."
+      },
+      {
+        "name": "Mule",
+        "description": "Your load limits are higher. Light: 5. Normal: 7. Heavy: 8."
+      },
+      {
+        "name": "Not To Be Trifled With",
+        "description": "You can push yourself to do one of the following: perform a feat of physical force that verges on the superhuman - engage a small gang on equal footing in close combat."
+      },
+      {
+        "name": "Every Item A Weapon",
+        "description": "When you unleash physical violence with an improvised weapon, you have the same potency as the quality of your blade."
+      },
+      {
+        "name": "Overclocked",
+        "description": "You recover from harm faster. Permanently fill in one of your healing clock segments. Take +1d to healing treatment rolls."
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Fine Hand Weapon",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Heavy Weapon",
+        "description": "",
+        "load": 2
+      },
+      {
+        "name": "Air-Burst Ammo",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Sunjet",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine CQC Training",
+        "description": "",
+        "load": 0
+      },
+      {
+        "name": "Multi-Spectrum Shades",
+        "description": "",
+        "load": 0
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Hana",
+        "descriptor": "retired military",
+        "prompts": "Perhaps an instructor for your skills as a fighter? Or was military service in the family?"
+      },
+      {
+        "name": "Lily",
+        "descriptor": "a crafter of fine arms",
+        "prompts": "Perhaps someone who made your blade? Is this a high class establishment or a back alley operation?"
+      },
+      {
+        "name": "Aksel",
+        "descriptor": "a structure hitter",
+        "prompts": "Perhaps from a militia that took action before some climate effects hit hard, or someone from a crew that sabotages buildings in Shelter 1?"
+      },
+      {
+        "name": "Bronx",
+        "descriptor": "a cold killer",
+        "prompts": "Maybe a corporate operative gone rogue, a ghost from your past, or a friend trained alongside you?"
+      },
+      {
+        "name": "Kwame",
+        "descriptor": "a street doc",
+        "prompts": "Perhaps someone who patched you up in a previous line of work? How did Kwame learn the necessary skills?"
+      }
+    ],
+    "action-ratings": {
+      "control": 1,
+      "combat": 2,
+      "finesse": 0,
+      "ghost": 0,
+      "hack": 0,
+      "modify": 0,
+      "network": 0,
+      "study": 0,
+      "survey": 0,
+      "trace": 0,
+      "sway": 0,
+      "wreck": 0
+    },
+    "trigger": "You addressed a challenge with violence or intimidation."
+  },
+  "Faint": {
+    "special-abilities": [
+      {
+        "name": "Foresight",
+        "description": "Two times per score you can assist a teammate without paying stress. Tell us how you prepared for this."
+      },
+      {
+        "name": "Calculating",
+        "description": "Due to your careful planning, during downtime, you may give yourself or another crew member +1 downtime activity."
+      },
+      {
+        "name": "Connected",
+        "description": "During downtime, you get +1 result level when you acquire an asset or reduce heat."
+      },
+      {
+        "name": "Risk Averse",
+        "description": "When you gather information through a faction you have a positive relationship with, clear 1 stress."
+      },
+      {
+        "name": "Improvisation",
+        "description": "Take 2 stress to change any action roll to Finesse instead. Say how you adapt the previous action to this one."
+      },
+      {
+        "name": "Like Looking Into A Mirror",
+        "description": "You can always tell when someone is lying to you."
+      },
+      {
+        "name": "Working An Angle",
+        "description": "You may expend your special armor to resist a consequence from suspicion or persuasion, or to push yourself when you gather information or work on a long-term project."
+      },
+      {
+        "name": "The Myth, The Legend",
+        "description": "Use one downtime activity in order to change any aspect of your physical appearance. When you leverage your reputation against someone you may spend 1 rep to take +1d to your roll."
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Luxury Item (0-3 load)",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Concealed Palm Pistol",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Sleeper Round",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Blueprints/Documents",
+        "description": "",
+        "load": 0
+      },
+      {
+        "name": "Fine Cover Identity",
+        "description": "",
+        "load": 0
+      },
+      {
+        "name": "Fine Multi-Spectrum Contacts",
+        "description": "",
+        "load": 0
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Elsa",
+        "descriptor": "a data broker",
+        "prompts": ""
+      },
+      {
+        "name": "Luis",
+        "descriptor": "an aspiring flicker",
+        "prompts": ""
+      },
+      {
+        "name": "Noah",
+        "descriptor": "a gene-hacker",
+        "prompts": ""
+      },
+      {
+        "name": "Changying",
+        "descriptor": "runs a Glitch front",
+        "prompts": ""
+      },
+      {
+        "name": "Yelena",
+        "descriptor": "a lookout",
+        "prompts": ""
+      }
+    ],
+    "action-ratings": {
+      "control": 0,
+      "combat": 0,
+      "finesse": 1,
+      "ghost": 0,
+      "hack": 0,
+      "modify": 0,
+      "network": 2,
+      "study": 0,
+      "survey": 0,
+      "trace": 0,
+      "sway": 0,
+      "wreck": 0
+    },
+    "trigger": "You addressed a challenge with calculation or conspiracy"
+  },
+  "Fuse": {
+    "special-abilities": [
+      {
+        "name": "Infiltration",
+        "description": "You are not affected by quality or Tier when you bypass security measures"
+      },
+      {
+        "name": "Ambush",
+        "description": "When you attack from hiding or spring a trap, you get +1d"
+      },
+      {
+        "name": "Pattern Recognition",
+        "description": "When you gather information regarding entry points or exploitable habitual patterns, you have potency."
+      },
+      {
+        "name": "Cutting Edge",
+        "description": "When you push yourself, choose one of the following additional benefits when wielding your blades: activate their searing capabilities, giving them potency equal to a Sunjet—or trigger the reaper drug embedded in the blades."
+      },
+      {
+        "name": "Expertise",
+        "description": "Choose one of your action ratings. When you lead a group action you suffer only 1 stress at most—regardless of the results of the other participants of the group action."
+      },
+      {
+        "name": "Synthetic Shell",
+        "description": "You may shift your partial camouflage into active, becoming invisible for a few moments. Take 2 stress when you shift, plus 1 stress for each extra feature: It lasts for a few minutes rather than moments—you become undetectable by most technology—you may traverse any surface."
+      },
+      {
+        "name": "Wired Reflexes",
+        "description": "When there’s a question about who acts first, the answer is you (two characters with Wired Reflexes act simultaneously)."
+      },
+      {
+        "name": "Ghost",
+        "description": "You may expend your special armor to resist a consequence from detection or security measures, or to push yourself for a feat of evasion or stealth."
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Fine Camo Wear",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Disguise Kit",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Muting Tech",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Two Fine Blades",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Cryptolock-Picks",
+        "description": "",
+        "load": 0
+      },
+      {
+        "name": "Multi-Spectrum Contacts",
+        "description": "",
+        "load": 0
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Hansh",
+        "descriptor": "a scam artist",
+        "prompts": ""
+      },
+      {
+        "name": "Avni",
+        "descriptor": "an antiquarian",
+        "prompts": ""
+      },
+      {
+        "name": "Elif",
+        "descriptor": "a SneakerNet runner",
+        "prompts": ""
+      },
+      {
+        "name": "Fatma",
+        "descriptor": "a corp informant",
+        "prompts": ""
+      },
+      {
+        "name": "Catalina",
+        "descriptor": "a dipper",
+        "prompts": ""
+      }
+    ],
+    "action-ratings": {
+      "control": 0,
+      "combat": 0,
+      "finesse": 1,
+      "ghost": 2,
+      "hack": 0,
+      "modify": 0,
+      "network": 0,
+      "study": 0,
+      "survey": 0,
+      "trace": 0,
+      "sway": 0,
+      "wreck": 0
+    },
+    "trigger": "You addressed a challenge with stealth or finesse."
+  },
+  "Haunt": {
+    "special-abilities": [
+      {
+        "name": "Machined Plasma",
+        "description": "Take 1 Stress to activate a function of your customized nanites for a few minutes: mirror someone else’s nanites with a touch—establish a link to technology within a few feet from you— transfer and store data on your nanites—extend a function for hours instead of mere minutes"
+      },
+      {
+        "name": "The Hum",
+        "description": "You can hear whenever there electronics of any kind nearby. When you gather information using technology, take +1d."
+      },
+      {
+        "name": "Hacktivist",
+        "description": "You get an additional xp trigger: when you hinder those that perpetuate societal power structures mark xp. If your crew helped you, also mark crew xp."
+      },
+      {
+        "name": "Mess With The Best",
+        "description": "When you hack as a long-term project, you get an additional downtime activity toward it. Take +1d when you resist a consequence involving Hacking"
+      },
+      {
+        "name": "Between The Lines",
+        "description": "You may expend your special armor to resist a consequence from electronic intrusions and systems, or to push yourself when you Hack them."
+      },
+      {
+        "name": "Rootkit",
+        "description": "Take +1d and +1effect when Hacking above your Tier."
+      },
+      {
+        "name": "Haunting",
+        "description": "You have physical modifications to your appearance that identify you as part of a sub-culture of hackers, take +1d when dealing with other members of the community."
+      },
+      {
+        "name": "Trust In Me",
+        "description": "You get +1d vs. a target with whom you have an intimate relationship."
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Custom Flicker Wear",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "A Ceramic Blade or Two",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Hacking Gear",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Moistware",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Customized Nanites",
+        "description": "",
+        "load": 0
+      },
+      {
+        "name": "Augmented Reality Headset",
+        "description": "",
+        "load": 0
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Isidora",
+        "descriptor": "a white hat",
+        "prompts": ""
+      },
+      {
+        "name": "Florencia",
+        "descriptor": "The Black Top owner",
+        "prompts": ""
+      },
+      {
+        "name": "Jem",
+        "descriptor": "a porter",
+        "prompts": ""
+      },
+      {
+        "name": "Timeo",
+        "descriptor": "a corrupt Sentinel",
+        "prompts": ""
+      },
+      {
+        "name": "Ebba",
+        "descriptor": "a pardoned tipper",
+        "prompts": ""
+      }
+    ],
+    "action-ratings": {
+      "control": 0,
+      "combat": 0,
+      "finesse": 0,
+      "ghost": 1,
+      "hack": 2,
+      "modify": 0,
+      "network": 0,
+      "study": 0,
+      "survey": 0,
+      "trace": 0,
+      "sway": 0,
+      "wreck": 0
+    },
+    "trigger": "You addressed a challenge with technology or quick-thinking"
+  },
+  "Lens": {
+    "special-abilities": [
+      {
+        "name": "Deadeye",
+        "description": "You can push yourself to do one of the following: make a ranged attack at an extreme distance beyond what’s normal for the weapon—use the environment to attempt a trick shot without penalty."
+      },
+      {
+        "name": "Focused",
+        "description": "You may expend your special armor to resist a consequence of surprise or mental harm (fear, confusion, losing track of someone), or to push yourself for ranged combat or tracking."
+      },
+      {
+        "name": "Hunter Drone",
+        "description": "Your drone is specially engineered. It gains potency when tracking a target and gains a new module: camouflaged, contact lens-linked, or breakneck speed."
+      },
+      {
+        "name": "Additional Drone Module",
+        "description": "If you already have Hunter Drone, choose an additional drone module."
+      },
+      {
+        "name": "Scout",
+        "description": "When you gather info to locate a target, you get +1 effect. When you hide in a prepared position or use camouflage, take +1d to rolls avoiding detection."
+      },
+      {
+        "name": "Perseverence",
+        "description": "From hard won experience or custom tech, you can subsist in areas otherwise uninhabitable. You only take trauma when you take stress beyond your last stress box, not when you fill it."
+      },
+      {
+        "name": "Tough As Nails",
+        "description": "Penalties from harm are one level less severe (though level 4 harm is still fatal)"
+      },
+      {
+        "name": "Systematic Relocation",
+        "description": "When you use a long-range weapon from cover to Trace a target on the same scale as you, add your Wreck skill. If it is on a larger scale than you, also take +1effect."
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Finely Crafted Handgun",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Perish Ammo",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Long-Range Rifle",
+        "description": "",
+        "load": 2
+      },
+      {
+        "name": "Custom Drone",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Scope",
+        "description": "",
+        "load": 0
+      },
+      {
+        "name": "Fine Multi-spectrum Contacts",
+        "description": "",
+        "load": 0
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Raphelle",
+        "descriptor": "a veteran reclaimer",
+        "prompts": ""
+      },
+      {
+        "name": "Nor",
+        "descriptor": "a sourcer",
+        "prompts": ""
+      },
+      {
+        "name": "Emil",
+        "descriptor": "a gang leader",
+        "prompts": ""
+      },
+      {
+        "name": "Javier",
+        "descriptor": "ostensibly a Spook",
+        "prompts": ""
+      },
+      {
+        "name": "Aadya",
+        "descriptor": "a data runner",
+        "prompts": ""
+      }
+    ],
+    "action-ratings": {
+      "control": 0,
+      "combat": 0,
+      "finesse": 0,
+      "ghost": 0,
+      "hack": 0,
+      "modify": 0,
+      "network": 0,
+      "study": 0,
+      "survey": 1,
+      "trace": 2,
+      "sway": 0,
+      "wreck": 0
+    },
+    "trigger": "You addressed a challenge with tracking or force."
+  },
+  "Quirk": {
+    "special-abilities": [
+      {
+        "name": "Limit Break",
+        "description": "When an Act of God is your Tier+1—whether by reducing it as an obstacle until it becomes your so or otherwise—you may attempt to Control it"
+      },
+      {
+        "name": "Vocation",
+        "description": "You’ve experienced and studied Acts of God. When you gather info regarding them, you get +1 result level"
+      },
+      {
+        "name": "Steeled Heart",
+        "description": "You’re immune to the terror that some Acts of God inflict on sight, and take +1d to resistance rolls with Resolve."
+      },
+      {
+        "name": "Street-wise",
+        "description": "When you travel to someplace new, ask a question from gather information for free. When you Network in an area you hold turf, take +1d."
+      },
+      {
+        "name": "Daredevil",
+        "description": "When you accept a Ripple on a desperate roll, you gain +1d and +1 effect."
+      },
+      {
+        "name": "Altered Carbon",
+        "description": "You have +1 trauma box. When you interact with an Act of God while embodying a feature of it, take +1 effect. (ACT OF GOD FEATURES: ALLURING—CRUEL—FEROCIOUS—MONSTROUS—RADIANT—SINISTER—SERENE-TRANSCENDENT—UNKNOWABLE)"
+      },
+      {
+        "name": "Trade Craft",
+        "description": "You can push yourself to do one of the following: safely traverse through or around an Act of God equal to your Tier+1— summon an Act of God in the immediate vicinity equal to your Tier+1 (torrential rain, roaring winds, heavy fog, chilling frost/snow, etc.)."
+      },
+      {
+        "name": "Seasoned",
+        "description": "You may use your special armor to resist a consequence resulting directly from an Act of God or to push yourself when you deal with one"
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Fine Dryware Suit",
+        "description": "",
+        "load": 2
+      },
+      {
+        "name": "Fine Tear-Trail Helmet",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Diffusion Rounds",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Water Knife",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Moistware",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Gateway Map",
+        "description": "",
+        "load": 1
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Ishan",
+        "descriptor": "a data tattooist",
+        "prompts": ""
+      },
+      {
+        "name": "Ridhi",
+        "descriptor": "a cartographer",
+        "prompts": ""
+      },
+      {
+        "name": "Airi",
+        "descriptor": "a canary",
+        "prompts": ""
+      },
+      {
+        "name": "Ren",
+        "descriptor": "a storm chaser",
+        "prompts": ""
+      },
+      {
+        "name": "Hui",
+        "descriptor": "operates The Garden",
+        "prompts": ""
+      }
+    ],
+    "action-ratings": {
+      "control": 1,
+      "combat": 0,
+      "finesse": 0,
+      "ghost": 0,
+      "hack": 0,
+      "modify": 0,
+      "network": 0,
+      "study": 2,
+      "survey": 0,
+      "trace": 0,
+      "sway": 0,
+      "wreck": 0
+    },
+    "trigger": "You addressed a challenge with daring or investigation."
+  },
+  "Torque": {
+    "special-abilities": [
+      {
+        "name": "Inventor",
+        "description": "When you invent or craft something mechanical, take +1 result level to your roll. You begin with one schematic already known"
+      },
+      {
+        "name": "Schemer",
+        "description": "During downtime, you get two ticks to distribute among any long-term project clocks that involve crafting something or learning a new schematic."
+      },
+      {
+        "name": "Technician",
+        "description": "You are never affected by Tier or quality when you Modify electronic or mechanical systems"
+      },
+      {
+        "name": "Gearhead",
+        "description": "You may expend your special armor to resist a consequence from mechanical failure, or to push yourself when inventing, crafting, or destroying something mechanical."
+      },
+      {
+        "name": "Structure Hitter",
+        "description": "When you Wreck something larger in scale than you and your crew, take +1d and +1effect."
+      },
+      {
+        "name": "Physician",
+        "description": "You can Modify the human body to treat wounds or stabilize the dying. You may Study a disease or corpse. Everyone in your crew gets +1d to their healing treatment rolls"
+      },
+      {
+        "name": "Saboteur",
+        "description": "When you Wreck, the work is much quieter than it should be, and the damage is hidden from casual inspection."
+      },
+      {
+        "name": "Eidetic Memory",
+        "description": "When you’ve witnessed something destroyed or disassembled, take +1d to making a schematic for it and crafting it."
+      },
+      {
+        "name": "Veteran",
+        "description": "Choose a special ability from another source."
+      }
+    ],
+    "items": [
+      {
+        "name": "Mag Pistol",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Modification Tools",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Fine Demolition Tools",
+        "description": "",
+        "load": 2
+      },
+      {
+        "name": "Medical Supplies",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "Spare Parts",
+        "description": "",
+        "load": 1
+      },
+      {
+        "name": "EMP Grenade",
+        "description": "",
+        "load": 1
+      }
+    ],
+    "friends-and-rivals": [
+      {
+        "name": "Shira",
+        "descriptor": "runs a chop shop",
+        "prompts": ""
+      },
+      {
+        "name": "Chiara",
+        "descriptor": "a cryptographer",
+        "prompts": ""
+      },
+      {
+        "name": "Saanvi",
+        "descriptor": "a scavenger",
+        "prompts": ""
+      },
+      {
+        "name": "Ayse",
+        "descriptor": "a patcher",
+        "prompts": ""
+      },
+      {
+        "name": "Pihu",
+        "descriptor": "an architect",
+        "prompts": ""
+      }
+    ],
+    "action-ratings": {
+      "control": 0,
+      "combat": 0,
+      "finesse": 0,
+      "ghost": 0,
+      "hack": 0,
+      "modify": 2,
+      "network": 0,
+      "study": 0,
+      "survey": 0,
+      "trace": 0,
+      "sway": 0,
+      "wreck": 1
+    },
+    "trigger": "You addressed a challenge with technical skill or mayhem."
+  }
+}
