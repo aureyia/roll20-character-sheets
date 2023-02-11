@@ -1,0 +1,6 @@
+{
+  "Develop Your Relationship": {
+    "stat": "?{Stat|At range&amp;#65040; or using your speed and the environment to your advantage&amp;#65043; &amp;#65122;edge,@{edge}|Depending on your courage&amp;#65040; leadership&amp;#65040; or companions&amp;#65043; &amp;#65122;heart,@{heart}|In close to overpower your foe&amp;#65043; &amp;#65122;iron,@{iron}|Using trickery to befuddle your foe&amp;#65043; &amp;#65122;shadow,@{shadow}|Using careful tactics to outsmart your foe&amp;#65043; &amp;#65122;wits,@{wits}}",
+    "repeat_stat": "?{Stat}"
+  }
+}
