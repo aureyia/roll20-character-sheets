@@ -1,0 +1,90 @@
+mixin 
+  .col-12.header-bar
+    .col-4.header STRESS
+    .col-8.header TRAUMA
+  .col-12
+    .col-6.stress-boxes
+      input.stressadvanced-tracking(type='hidden' name='attr_stressadvanced' value='0')
+      input.cybernetics(type='hidden' name='attr_cybernetics')
+      input.stress-tracking(type='hidden' name='attr_stress')
+      //
+        <input type="radio" class="first-cybernetic-box" name="attr_cybernetics" value="1">
+        <input type="radio" class="second-cybernetic-box" name="attr_cybernetics" value="2">
+        <input type="radio" class="third-cybernetic-box" name="attr_cybernetics" value="3">
+      input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_stress' value='0' checked='checked')
+      input.stress-track1.stress-track.stress-tooth.first-cybernetic.second-cybernetic.third-cybernetic(type='radio' name='attr_stress' value='1')
+      input.stress-track2.stress-track.stress-tooth.second-cybernetic.third-cybernetic(type='radio' name='attr_stress' value='2')
+      input.stress-track3.stress-track.stress-tooth.second-cybernetic.third-cybernetic(type='radio' name='attr_stress' value='3')
+      input.stress-track4.stress-track.stress-tooth.third-cybernetic(type='radio' name='attr_stress' value='4')
+      input.stress-track5.stress-track.stress-tooth.third-cybernetic(type='radio' name='attr_stress' value='5')
+      input.stress-track6.stress-track.stress-tooth.third-cybernetic(type='radio' name='attr_stress' value='6')
+      input.stress-track7.stress-track.stress-tooth(type='radio' name='attr_stress' value='7')
+      input.stress-track8.stress-track.stress-tooth(type='radio' name='attr_stress' value='8')
+      input.stress-track9.stress-track.stress-tooth.hidden-button.stressadvanced-track1(type='radio' name='attr_stress' value='9')
+      input.stress-track10.stress-track.stress-tooth.hidden-button.stressadvanced-track2(type='radio' name='attr_stress' value='10')
+      input.stress-track11.stress-track.stress-tooth.hidden-button.stressadvanced-track3(type='radio' name='attr_stress' value='11')
+      input.stress-track12.stress-track.stress-tooth.hidden-button.stressadvanced-track4(type='radio' name='attr_stress' value='12')
+    .col-6.trauma-boxes
+      input.stress-tracking(type='hidden' name='attr_trauma')
+      input.hidden-button.stress-track.stress-tooth(type='radio' name='attr_trauma' value='0' checked='true')
+      input.stress-track1.stress-track.stress-tooth(type='radio' name='attr_trauma' value='1')
+      input.stress-track2.stress-track.stress-tooth(type='radio' name='attr_trauma' value='2')
+      input.stress-track3.stress-track.stress-tooth(type='radio' name='attr_trauma' value='3')
+      input.stress-track4.stress-track.stress-tooth(type='radio' name='attr_trauma' value='4')
+    .col-12.cybernetics-boxes
+      .col-5
+        input.stress-tracking(type='hidden' name='attr_cybernetics')
+        input.stress-track0.hidden-button.stress-track.stress-tooth(type='radio' name='attr_cybernetics' value='0' checked='true')
+        input.stress-track1.stress-track.stress-tooth(type='radio' name='attr_cybernetics' value='1')
+        input.stress-track2.stress-track.stress-tooth(type='radio' name='attr_cybernetics' value='2')
+        input.stress-track3.stress-track.stress-tooth.third-cybernetic-push(type='radio' name='attr_cybernetics' value='3')
+      .col-6.trauma-descriptors
+        input.clocks-button.pages(type='checkbox' name='attr_haunted' value='haunted')
+        span.pagelabel HAUNTED
+        span  - 
+        input.vacation-button.pages(type='checkbox' name='attr_obsessed' value='obsessed')
+        span.pagelabel OBSESSED
+        span  - 
+        input.together-button.pages(type='checkbox' name='attr_paranoid' value='paranoid')
+        span.pagelabel PARANOID
+        span  - 
+        input.clocks-button.pages(type='checkbox' name='attr_reckless' value='reckless')
+        span.pagelabel RECKLESS
+        span  - 
+        input.vacation-button.pages(type='checkbox' name='attr_soft' value='soft')
+        span.pagelabel SOFT
+        span  - 
+        input.together-button.pages(type='checkbox' name='attr_unstable' value='unstable')
+        span.pagelabel UNSTABLE
+        span  - 
+        input.reckless-button.pages(type='checkbox' name='attr_vicious' value='vicious')
+        span.pagelabel VICIOUS
+  .col-4.header-bar
+    .col-12.header CYBERNETICS
+  //
+    Trauma Descriptiors: HAUNTED - OBSESSED - PARANOID -
+    RECKLESS - SOFT - UNSTABLE - VICIOUS
+  .col-10
+    table.col-12
+      tr
+        th.header-bar(colspan='4')
+          .header HARM
+      tr.level-3-harm
+        td.harm-level 3
+        td(colspan='2')
+          input.text-input(type='text' name='attr_3harm')
+        td.harm-level NEED HELP
+      tr.level-2-harm
+        td.harm-level 2
+        td.first-level-2-harm
+          input.text-input(type='text' name='attr_2harm1')
+        td.second-level-2-harm
+          input.text-input(type='text' name='attr_2harm2')
+        td.harm-level -1D
+      tr.level-1-harm
+        td.harm-level 1
+        td.first-level-1-harm
+          input.text-input(type='text' name='attr_1harm1')
+        td.second-level-1-harm
+          input.text-input(type='text' name='attr_1harm2')
+        td.harm-level LESS EFFECT

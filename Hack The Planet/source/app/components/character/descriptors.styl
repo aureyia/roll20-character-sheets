@@ -1,0 +1,27 @@
+.descriptor-entries
+  display flex
+  flex-flow row wrap  
+
+.descriptor-group
+  margin 0.5em 0.5em
+  font-family 'Montserrat', Arial, sans-serif
+  label
+    font-weight normal
+
+.single-descriptor
+  cursor pointer
+  width fit-content
+  margin-left 0.2em
+  margin-right 0.2em
+
+.pagelabel
+  line-height 1.37em
+
+.descriptor-button
+  &:checked 
+    & ~ div
+      &.descriptor-button-back
+        font-weight bold
+
+// .spacer
+//   display flex

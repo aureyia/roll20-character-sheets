@@ -15,6 +15,8 @@
   width 842px !important
   margin 0 auto !important
   padding 15px
+  border solid #af1919 2px
+  border-radius 1em
   std-font('Montserrat')
   font-weight normal
   light-styles()
@@ -27,6 +29,9 @@
       display: none
   .btn-rounded
     border-radius 0.5em
+  label
+    margin 0
+    padding 0
   li
     font-weight normal
     font-size 14.3px
@@ -69,7 +74,7 @@
         content: ""
         height: 5px
         border-top: 2px solid #4C4D4F
-        top: 0
+        // top: 0
         width: 220px
     &.site-divide
       &::after,
@@ -78,7 +83,7 @@
         content: ""
         height: 5px
         border-top: 2px solid #4C4D4F
-        top: 0
+        // top: 0
         width: 331px
     &.site-denizens-divide
       &::after,
@@ -87,7 +92,7 @@
         content: ""
         height: 5px
         border-top: 2px solid #4C4D4F
-        top: 0
+        // top: 0
         width: 336px
     &.site-divide-notes
       &::after,
@@ -96,7 +101,7 @@
         content: ""
         height: 5px
         border-top: 2px solid #4C4D4F
-        top: 0
+        // top: 0
         width: 352px
   
   .divide
@@ -218,9 +223,9 @@
     opacity: 0
     width: 16px
     height: 16px
-    position: relative
-    top: 5px
-    left: 6px
+    // position: relative
+    // top: 5px
+    // left: 6px
     margin: -10px
     cursor: pointer
     z-index: 1
@@ -288,6 +293,8 @@
 
   // Components
   @import './components/component'
+  @import './components/character/header'
+  @import './components/character/descriptors'
 
 .ui-dialog .charsheet .repcontainer .repitem .itemcontrol
   .repcontrol_del

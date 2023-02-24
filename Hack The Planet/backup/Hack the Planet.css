@@ -113,8 +113,8 @@ input[type="radio"] {
 
 .sheet-character,
 .sheet-crew {
-    position: absolute;
-    top:66px;
+    // position: absolute;
+   // top:66px;
     margin:5px;
     background-color: white;
     z-index:1;
@@ -124,31 +124,31 @@ input[type="radio"] {
 }
 
 .sheet-character {
-    left:200%;
+   // left:200%;
     transition:.5s ease;
     transition-delay:.1s;
 }
 
 .sheet-crew {
-    left:2%;
+   // left:2%;
     transition:.5s ease;
     transition-delay:.1s;
 }
 
 .sheet-check[value="on"] ~ .sheet-character {
-    left:2%;
+   // left:2%;
     transition:.5s ease;
     transition-delay:.4s
 }
 
 .sheet-check[value="on"] ~ .sheet-crew {
-    left:-200%;
+   // left:-200%;
     transition:.5s ease;
     transition-delay:.4s
 }
 
 .sheet-check {
-    position: absolute;
+    // position: absolute;
     z-index: 1;
 }
 
@@ -159,9 +159,9 @@ input[type="radio"] {
     opacity: 0;
     width: 16px;
     height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
+    // position: relative;
+   // top: 5px;
+   // left: 6px;
     margin: -10px;
     cursor: pointer;
     z-index: 1;
@@ -300,16 +300,16 @@ input[type="radio"] {
 }
 /*Position the Stress Boxes on the Character Sheet*/
 .sheet-stress-boxes {
-    position: absolute;
-    top: 206px;
-    left: 4%;
+    // position: absolute;
+   // top: 206px;
+   // left: 4%;
     width: 29%;
 }
 
 .sheet-trauma-boxes {
-    position: absolute;
-    top: 206px;
-    left: 21%;
+    // position: absolute;
+   // top: 206px;
+   // left: 21%;
     width: 29%;
 }
 
@@ -327,28 +327,28 @@ input[type="radio"] {
 }
 
 .sheet-rep-boxes {
-    position: absolute;
-    top: 120px;
-    left: 3%;
+    // position: absolute;
+   // top: 120px;
+   // left: 3%;
     width: 29%;
 }
 
 .sheet-heat-boxes {
-    position: absolute;
-    top: 583px;
-    left: 3%;
+    // position: absolute;
+   // top: 583px;
+   // left: 3%;
     width: 15%;
 }
 
 .sheet-weak-box {
-    position: absolute;
-    top: 120px;
-    left: 32.5%;
+    // position: absolute;
+   // top: 120px;
+   // left: 32.5%;
 }
 .sheet-strong-box {
-    position: absolute;
-    top: 120px;
-    left: 38.5%;
+    // position: absolute;
+   // top: 120px;
+   // left: 38.5%;
 }
 
 /*Header Bar (For Attributes, Stress, Trauma, etc)*/
@@ -372,9 +372,9 @@ input[type="radio"] {
 }
 
 .sheet-bottom-bar {
-    position: absolute;
-    top: 50px;
-    left: 2%;
+    // position: absolute;
+   // top: 50px;
+   // left: 2%;
     z-index: 2;
     margin:5px;
     width: 97%;
@@ -753,12 +753,12 @@ input.sheet-pages + span.sheet-stresslabel {
 }
 
 .sheet-hexagon {
-    position: absolute;
+    // position: absolute;
     width: calc(205px / 5 * 5);
     height: calc(105px / 5 * 5);
-    /* right: 49px; */
-    /* top: 50%; */
-    /* left: 50%; */
+    /*// right: 49px; */
+    /*// top: 50%; */
+    /*// left: 50%; */
     background: red;
     transform: rotate(30deg);
     -moz-transform: rotate(30deg);
@@ -773,8 +773,8 @@ input.sheet-pages + span.sheet-stresslabel {
     visibility: hidden;
     /*width: 400px;
     height: 200px;
-    left: 50%;
-    top: 50%;
+   // left: 50%;
+   // top: 50%;
     background: red;
     transform: rotate(120deg);
     -moz-transform: rotate(120deg);
@@ -818,7 +818,7 @@ input.sheet-pages + span.sheet-stresslabel {
 }
 
 .sheet-click-the-hexagon {
-    position: absolute;
+    // position: absolute;
     visibility: visible;
     width: 300px;
     height: 300px !important;
@@ -831,8 +831,8 @@ input.sheet-pages + span.sheet-stresslabel {
 }
 
 .sheet-claim-container {
-    position: absolute;
-    left: 45%;
+    // position: absolute;
+   // left: 45%;
     bottom: 58%;
     width: 100px;
     transform-origin: center center;
@@ -845,7 +845,7 @@ input.sheet-pages + span.sheet-stresslabel {
 }
 
 .sheet-unflip1 {
-    position: relative;
+    // position: relative;
     max-width: 70px;
     background-color: rgba(0,0,0,0);
     color: white;
@@ -857,9 +857,9 @@ input.sheet-pages + span.sheet-stresslabel {
 }    
 
 .sheet-unflip2 {
-    position: relative;
+    // position: relative;
     height: 50%;
-    top: calc(-50px / 5 * 5);
+   // top: calc(-50px / 5 * 5);
     max-width: 60px;
     background-color: rgba(0,0,0,0);
     color: white;
@@ -886,7 +886,7 @@ input.sheet-pages + span.sheet-stresslabel {
 
 .sheet-hexlink-1 {
     z-index: -1;
-    position: absolute;
+    // position: absolute;
     width: calc(100px / 5 * 5);
     height: calc(10px / 5 * 5);
     background-color: #eac5c6;
@@ -898,14 +898,14 @@ input.sheet-pages + span.sheet-stresslabel {
     transform-origin: center left;
     display: none;
     /*left:calc(50px / 5 * 5);
-    top: calc(-30px / 5 * 5);*/
+   // top: calc(-30px / 5 * 5);*/
 }
 
 
 
 .sheet-hexlink-2 {
     z-index: -1;
-    position: absolute;
+    // position: absolute;
     width: calc(100px / 5 * 5);
     height: calc(10px / 5 * 5);
     background-color: #eac5c6;
@@ -916,12 +916,12 @@ input.sheet-pages + span.sheet-stresslabel {
     -webkit-transform: rotate(30deg);
     transform-origin: center left;
     /*left:calc(0px / 5 * 5);
-    top: calc(-90px / 5 * 5);*/
+   // top: calc(-90px / 5 * 5);*/
 }
 
 .sheet-hexlink-3 {
     z-index: -1;
-    position: absolute;
+    // position: absolute;
     width: calc(100px / 5 * 5);
     height: calc(10px / 5 * 5);
     background-color: #eac5c6;
@@ -932,12 +932,12 @@ input.sheet-pages + span.sheet-stresslabel {
     -webkit-transform: rotate(90deg);
     transform-origin: center left;
     /*left:calc(0px / 5 * 5);
-    top: calc(-90px / 5 * 5);*/
+   // top: calc(-90px / 5 * 5);*/
 }
 
 .sheet-hexlink-4 {
     z-index: -1;
-    position: absolute;
+    // position: absolute;
     width: calc(100px / 5 * 5);
     height: calc(10px / 5 * 5);
     background-color: #eac5c6;
@@ -948,12 +948,12 @@ input.sheet-pages + span.sheet-stresslabel {
     -webkit-transform: rotate(150deg);
     transform-origin: center left;
     /*left:calc(0px / 5 * 5);
-    top: calc(-90px / 5 * 5);*/
+   // top: calc(-90px / 5 * 5);*/
 }
 
 .sheet-hexlink-5 {
     z-index: -1;
-    position: absolute;
+    // position: absolute;
     width: calc(100px / 5 * 5);
     height: calc(10px / 5 * 5);
     background-color: #eac5c6;
@@ -964,12 +964,12 @@ input.sheet-pages + span.sheet-stresslabel {
     -webkit-transform: rotate(210deg);
     transform-origin: center left;
     /*left:calc(0px / 5 * 5);
-    top: calc(-90px / 5 * 5);*/
+   // top: calc(-90px / 5 * 5);*/
 }
 
 .sheet-hexlink-6 {
     z-index: -1;
-    position: absolute;
+    // position: absolute;
     width: calc(100px / 5 * 5);
     height: calc(10px / 5 * 5);
     background-color: #eac5c6;
@@ -980,7 +980,7 @@ input.sheet-pages + span.sheet-stresslabel {
     -webkit-transform: rotate(270deg);
     transform-origin: center left;
     /*left:calc(0px / 5 * 5);
-    top: calc(-90px / 5 * 5);*/
+   // top: calc(-90px / 5 * 5);*/
 }
 
 
@@ -994,19 +994,19 @@ input.sheet-pages + span.sheet-stresslabel {
 }
 
 [class*="hexmap"] {
-    position: relative;
-    left:calc(50px / 5 * 5);
+    // position: relative;
+   // left:calc(50px / 5 * 5);
 }
 
 [class*="hextext"] {
-    position: absolute;
-    left:calc(7.5px / 5 * 5);
+    // position: absolute;
+   // left:calc(7.5px / 5 * 5);
     max-width: 86.5px;
     height: 62px;
 }
 
 .sheet-claimname {
-    position: relative;
+    // position: relative;
     height: 55%;
     max-width: 87.5px;
     background-color: rgba(0,0,0,0);
@@ -1024,7 +1024,7 @@ input.sheet-pages + span.sheet-stresslabel {
 }
 
 .sheet-claimdescription {
-    position: relative;
+    // position: relative;
     height: 70%;
     max-width: 87.5px;
     background-color: rgba(0,0,0,0);
@@ -1047,141 +1047,141 @@ input.sheet-text-color-switcher[value="on"] ~ .sheet-claimdescription {
 }
 
 .sheet-hexmap1-1 {
-    top: calc(140px / 5 * 5);
+   // top: calc(140px / 5 * 5);
 }
 
 .sheet-hextext1-1 {
-    top: calc(235px / 5 * 5);
+   // top: calc(235px / 5 * 5);
 }
 
 .sheet-hexmap1-2 {
-    top: calc(260px / 5 * 5);
+   // top: calc(260px / 5 * 5);
 }
 
 .sheet-hextext1-2 {
-    top: calc(355px / 5 * 5);
+   // top: calc(355px / 5 * 5);
 }
 
 .sheet-hexmap1-3 {
-    top: calc(380px / 5 * 5);
+   // top: calc(380px / 5 * 5);
 }
 
 .sheet-hextext1-3 {
-    top: calc(475px / 5 * 5);
+   // top: calc(475px / 5 * 5);
 }
 
 .sheet-hexmap2-1 {
-    top: calc(80px / 5 * 5);
-    left: calc(150px / 5 * 5);
+   // top: calc(80px / 5 * 5);
+   // left: calc(150px / 5 * 5);
 }
 
 .sheet-hextext2-1 {
-    top: calc(175px / 5 * 5);
-    left: calc(107.5px / 5 * 5);
+   // top: calc(175px / 5 * 5);
+   // left: calc(107.5px / 5 * 5);
 }
 
 .sheet-hexmap2-2 {
-    top: calc(200px / 5 * 5);
-    left: calc(150px / 5 * 5);
+   // top: calc(200px / 5 * 5);
+   // left: calc(150px / 5 * 5);
 }
 
 .sheet-hextext2-2 {
-    top: calc(295px / 5 * 5);
-    left: calc(107.5px / 5 * 5);
+   // top: calc(295px / 5 * 5);
+   // left: calc(107.5px / 5 * 5);
 }
 
 .sheet-hexmap2-3 {
-    top: calc(320px / 5 * 5);
-    left: calc(150px / 5 * 5);
+   // top: calc(320px / 5 * 5);
+   // left: calc(150px / 5 * 5);
 }
 
 .sheet-hextext2-3 {
-    top: calc(415px / 5 * 5);
-    left: calc(107.5px / 5 * 5);
+   // top: calc(415px / 5 * 5);
+   // left: calc(107.5px / 5 * 5);
 }
 
 .sheet-hexmap3-1 {
-    top: calc(140px / 5 * 5);
-    left: calc(250px / 5 * 5);
+   // top: calc(140px / 5 * 5);
+   // left: calc(250px / 5 * 5);
 }
 
 .sheet-hextext3-1 {
-    top: calc(235px / 5 * 5);
-    left: calc(207.5px / 5 * 5);
+   // top: calc(235px / 5 * 5);
+   // left: calc(207.5px / 5 * 5);
 }
 .sheet-hextext3-2 {
-    top: calc(355px / 5 * 5);
-    left: calc(207.5px / 5 * 5);
+   // top: calc(355px / 5 * 5);
+   // left: calc(207.5px / 5 * 5);
 }
 .sheet-hextext3-3 {
-    top: calc(475px / 5 * 5);
-    left: calc(207.5px / 5 * 5);
+   // top: calc(475px / 5 * 5);
+   // left: calc(207.5px / 5 * 5);
 }
 
 .sheet-hexmap3-2 {
-    top: calc(260px / 5 * 5);
-    left: calc(250px / 5 * 5);
+   // top: calc(260px / 5 * 5);
+   // left: calc(250px / 5 * 5);
 }
 
 .sheet-hexmap3-3 {
-    top: calc(380px / 5 * 5);
-    left: calc(250px / 5 * 5);
+   // top: calc(380px / 5 * 5);
+   // left: calc(250px / 5 * 5);
 }
 
 .sheet-hexmap4-1 {
-    top: calc(80px / 5 * 5);
-    left: calc(350px / 5 * 5);
+   // top: calc(80px / 5 * 5);
+   // left: calc(350px / 5 * 5);
 }
 
 .sheet-hexmap4-2 {
-    top: calc(200px / 5 * 5);
-    left: calc(350px / 5 * 5);
+   // top: calc(200px / 5 * 5);
+   // left: calc(350px / 5 * 5);
 }
 
 .sheet-hexmap4-3 {
-    top: calc(320px / 5 * 5);
-    left: calc(350px / 5 * 5);
+   // top: calc(320px / 5 * 5);
+   // left: calc(350px / 5 * 5);
 }
 
 .sheet-hextext4-1 {
-    top: calc(175px / 5 * 5);
-    left: calc(307.5px / 5 * 5);
+   // top: calc(175px / 5 * 5);
+   // left: calc(307.5px / 5 * 5);
 }
 .sheet-hextext4-2 {
-    top: calc(295px / 5 * 5);
-    left: calc(307.5px / 5 * 5);
+   // top: calc(295px / 5 * 5);
+   // left: calc(307.5px / 5 * 5);
 }
 .sheet-hextext4-3 {
-    top: calc(415px / 5 * 5);
-    left: calc(307.5px / 5 * 5);
+   // top: calc(415px / 5 * 5);
+   // left: calc(307.5px / 5 * 5);
 }
 
 .sheet-hexmap5-1 {
-    top: calc(140px / 5 * 5);
-    left: calc(450px / 5 * 5);
+   // top: calc(140px / 5 * 5);
+   // left: calc(450px / 5 * 5);
 }
 
 .sheet-hexmap5-2 {
-    top: calc(260px / 5 * 5);
-    left: calc(450px / 5 * 5);
+   // top: calc(260px / 5 * 5);
+   // left: calc(450px / 5 * 5);
 }
 
 .sheet-hexmap5-3 {
-    top: calc(380px / 5 * 5);
-    left: calc(450px / 5 * 5);
+   // top: calc(380px / 5 * 5);
+   // left: calc(450px / 5 * 5);
 }
 
 .sheet-hextext5-1 {
-    top: calc(235px / 5 * 5);
-    left: calc(407.5px / 5 * 5);
+   // top: calc(235px / 5 * 5);
+   // left: calc(407.5px / 5 * 5);
 }
 .sheet-hextext5-2 {
-    top: calc(355px / 5 * 5);
-    left: calc(407.5px / 5 * 5);
+   // top: calc(355px / 5 * 5);
+   // left: calc(407.5px / 5 * 5);
 }
 .sheet-hextext5-3 {
-    top: calc(475px / 5 * 5);
-    left: calc(407.5px / 5 * 5);
+   // top: calc(475px / 5 * 5);
+   // left: calc(407.5px / 5 * 5);
 }
 
 /*Hexagons v2*/
@@ -1193,7 +1193,7 @@ input.sheet-text-color-switcher[value="on"] ~ .sheet-claimdescription {
 	background-repeat: no-repeat;
 	background-position: 50% 50%;			
 	background-size: auto 173px;							
-	position: relative;
+	// position: relative;
 	float:left;
 	margin:25px 5px;
 	text-align:center;
@@ -1216,7 +1216,7 @@ input.sheet-text-color-switcher[value="on"] ~ .sheet-claimdescription {
 
 	.sheet-hex .sheet-corner-1,
 	.sheet-hex .sheet-corner-2 {
-		position: absolute;
+		// position: absolute;
 		top:0;
 		left:0;
 		width:100%;
@@ -1241,10 +1241,10 @@ input.sheet-text-color-switcher[value="on"] ~ .sheet-claimdescription {
 		width: 173px;
 		height:	173px;
 	  content: '';
-	  position: absolute;
+	  // position: absolute;
 	  background: inherit;
-	  top:0;
-	  left: 0;
+	 // top:0;
+	 // left: 0;
 	  z-index: 1;
 	  background: inherit;
 	  background-repeat:no-repeat;
@@ -1474,11 +1474,11 @@ input.sheet-text-color-switcher[value="on"] ~ .sheet-claimdescription {
 
 .repitem {
     max-width: 520px !important;
-    position:static !important;
+  // position:static !important;
 }
 
 .itemcontrol {
-    position:static !important;
+  // position:static !important;
 }
 
 .sheet-clock input.sheet-label {
@@ -1504,7 +1504,7 @@ input[value="12"]:checked ~ .sheet-12clock {
     height: 50px;
     background: #eac5c6;
     border-radius: 50%;
-    position: relative;
+    // position: relative;
     display: inline-block;
     border: 4px solid transparent;
     
@@ -1523,9 +1523,9 @@ input[value="12"]:checked ~ .sheet-12clock {
     font-size: 20px;
     line-height: 45px;
     font-weight: 300;
-    position:absolute;
-    left:6px;
-    top:1px;
+  // position:absolute;
+   // left:6px;
+   // top:1px;
     padding: 2px;
 }
 
@@ -1695,7 +1695,7 @@ input[value="12"]:checked ~ .sheet-12clock {
     height: 50px;
     border-radius: 50%;
     background: #eac5c6;
-    position: relative;
+    // position: relative;
     display: inline-block;
     transition: .25s ease;
     overflow:hidden;
@@ -1706,7 +1706,7 @@ input[value="12"]:checked ~ .sheet-12clock {
 .sheet-harm-box1 {
     width: 50px;
     height: 50px;
-    position: relative;
+    // position: relative;
     display: inline-block;
     bottom: 25px;
     transform: rotate(90deg);
@@ -1718,7 +1718,7 @@ input[value="12"]:checked ~ .sheet-12clock {
 .sheet-harm-inside1 {
     width: 50px;
     height: 50px;
-    position: relative;
+    // position: relative;
     display: inline-block;
     bottom: 0px;
     transform: rotate(-180deg);
@@ -1859,7 +1859,7 @@ input[value="12"]:checked ~ .sheet-12clock {
     height: 84%;
     border-radius: 50%;
     bottom:-25px;
-    position: relative;
+    // position: relative;
     display: inline-block;
     border: 4px solid #8A0C0D;
     transition: .25s ease;
@@ -1869,7 +1869,7 @@ input[value="12"]:checked ~ .sheet-12clock {
 .sheet-harm-box2 {
     width: 50px;
     height: 50px;
-    position: relative;
+    // position: relative;
     display: inline-block;
     bottom: 79px;
     transform: rotate(270deg);
@@ -1881,7 +1881,7 @@ input[value="12"]:checked ~ .sheet-12clock {
 .sheet-harm-inside2 {
     width: 50px;
     height: 50px;
-    position: relative;
+    // position: relative;
     display: inline-block;
     bottom: 0px;
     transform: rotate(-180deg);
@@ -2021,7 +2021,7 @@ input[value="12"]:checked ~ .sheet-12clock {
     height: 84%;
     border-radius: 50%;
     bottom:-25px;
-    position: relative;
+    // position: relative;
     display: inline-block;
     border: 4px solid #8A0C0D;
     transition: .25s ease;
@@ -2496,7 +2496,7 @@ input[value="12"]:checked ~ .sheet-12clock {
     color: #fff;
     padding: 5px;
     opacity: 1;
-    position: absolute;
+    // position: absolute;
     z-index: 2;
     float:below;
     font-size: 13px;

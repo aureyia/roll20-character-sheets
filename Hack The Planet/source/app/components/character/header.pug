@@ -1,0 +1,9 @@
+- var categories = ['crew', 'name', 'alias', 'look']
+
+mixin header
+  .logo
+    img(src=`https://raw.githubusercontent.com/aureyia/roll20-character-sheets/HackThePlanet-rework/Hack%20The%20Planet/assets/logo.png`)
+  each category in categories
+    .header-category(class=`category-${category}`)
+      input.text-input.underline(type='text' name=`attr_${category}`)
+      span.underline-label=translation[`header-${category}`]

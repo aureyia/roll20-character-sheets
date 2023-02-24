@@ -1,0 +1,12 @@
+mixin descriptors 
+  each descriptor, type in descriptors
+    .descriptor-group(class=`category-${type}`)
+      input.text-input.underline(type='text' name=`attr_${type}detail`)
+      .descriptor-entries
+        .underline-label=translation[`title-${type}`]
+        each entry, key in descriptor
+          label.single-descriptor
+            input.descriptor-button.clocks-button.pages.hide-element(type='radio' name=`attr_${type}` value=entry)
+            .descriptor-button-back.pagelabel=translation[`button-${entry}`]
+          - if (key + 1 <  descriptor.length)
+            .spacer -

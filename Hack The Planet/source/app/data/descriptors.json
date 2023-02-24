@@ -1,0 +1,28 @@
+{
+  "root": [
+    "tipper",
+    "grasshopper",
+    "foundation",
+    "dragonfly",
+    "forged",
+    "unknown"
+  ],
+  "background": [
+    "academic",
+    "labor",
+    "law",
+    "trade",
+    "military",
+    "exec",
+    "underworld"
+  ],
+  "vice": [
+    "faith",
+    "gambling",
+    "luxury",
+    "obligation",
+    "pleasure",
+    "stupor",
+    "weird"
+  ]
+}
