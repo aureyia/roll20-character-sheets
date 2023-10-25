@@ -7,8 +7,9 @@ mixin movePreviewFactory(move, options)
     .rules-text !{move.Text}
     if move.Oracle
       .move-oracle-container
-        - let btnText = `Roll the ${move.Name} oracle`
-        - var moveOracle = oracles.find(group => { return group.Name === 'Moves' }).Oracles.find(oracle => { return oracle.Name === move.Name })
+        -
+          let btnText = `Roll the ${move.Name} oracle`
+          var moveOracle = oracles.find(group => { return group.Name === 'Moves' }).Oracles.find(oracle => { return oracle.Name === move.Name })
         if moveOracle.Table
           +oracleSingleButton(moveOracle, btnText)
           +oracleTable(moveOracle)
@@ -23,16 +24,31 @@ mixin movePreview(move, options)
     div.move-title.move-preview=move.Name
       if move['Progress Move']
         span.move-progress-label='Progress Move'
-  - const statCheck = move.Triggers.find(trigger => { return trigger["Stat Options"] })
-  if move['Progress Move']
-    +rollLabel
-      +progressRoll(move, 'hide-element')
-  else if statCheck
-    +rollLabel
-      +movesRoll(move, 'hide-element')
+  if move.Trigger.Options
+    -
+      let rollType = ''
+      const moveTriggerOptions = move.Trigger.Options.filter(option => { return option['Roll type'] === 'Action roll' || option['Roll type'] === 'Progress roll'})
+      const areOnlyActionRollOptions = moveTriggerOptions.every((option) => option['Roll type'] === 'Action roll')
+      const areOnlyProgressRollOptions = moveTriggerOptions.every((option) => option['Roll type'] === 'Progress roll')
+      if(areOnlyActionRollOptions === true) {
+        rollType = 'Action roll'
+      } else if (areOnlyProgressRollOptions === true) {
+        rollType = 'Progress roll'
+      } else {
+        rollType = 'Mixed roll'
+        console.log('I am nom')
+      }
+      //- - const mixedRollType = moveTriggerOptions.every((option) => option['Roll type'] === 'Action roll')
+    if rollType === 'Progress roll'
+      +rollLabel
+        +progressRoll(move, 'hide-element')
+    else if rollType === 'Action roll'
+      +rollLabel
+        +movesRoll(move, 'hide-element')
+
   .move-description
     block
-  .oracle-footer.move-page-footer=move.page
+  .oracle-footer.move-page-footer=move.Page
 
 mixin container(move, options = false)
   if options.visibility

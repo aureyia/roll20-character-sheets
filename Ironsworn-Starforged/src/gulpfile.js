@@ -23,8 +23,8 @@ gulp.task('dataforge', async function() {
   const rawData = {
     oracles: starforged['Oracle Categories'],
     assets: starforged['Asset Types'],
-    moves: apiData.moves.data,
-    // moves: starforged['Move Categories'],
+    // moves: apiData.moves.data,
+    moves: starforged['Move Categories'],
     truths: starforged['Setting Truths'],
     encounters: starforged['Encounters'],
     movegroups: apiData.movegroups.data,
