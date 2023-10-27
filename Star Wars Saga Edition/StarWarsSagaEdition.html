@@ -5,7 +5,7 @@
 
 <div class="sheet-tab-content tab4">
 	<div class="sheet-2colrow">
-		<div class="sheet-col" style="width:65%">
+		<div class="sheet-col" style="width:62%">
 			<div class="sheet-textHead" >Characters</div>
 			<div class="rule-sections">
 				<div class="sheet-table">
@@ -18,12 +18,15 @@
 				<input type="checkbox" value="1" name="attr_FocusHouseRule" title="Skill Focus will increase a skill's modifier at odd levels. (This may not work if you have modified the skill formulas.)"/>&nbsp;<span class="not-show">Skill Focus as 1/2 level house rule</span><br/>
 				</div>
 				<div class="sheet-table-data">
+				<!--In some cases, a sheetworker changes the formula to remove the "Other Modifiers" prompt. In other cases, there is a duplicate button which is hidden.-->
+				<input type="checkbox" value="1" name="attr_QuerySkillModifier" checked title="When rolling a check, ask if there are any other modifiers. (This may not work if you have modified the skill formulas.) If you add a custom skill, you must re-check this box."/>&nbsp;<span class="not-show">"Other Modifiers" prompt on skill checks</span><br/>
+				<input type="checkbox" value="1" name="attr_QueryAttackModifier" checked title="When rolling an attack, ask if there are any other modifiers. (This may not work if you have modified the attack formulas.) If you add an attack, you must re-check this box."/>&nbsp;<span class="not-show">"Other Modifiers" prompt on attack rolls</span><br/>
 				<input type="checkbox" value="1" name="attr_SpeedExtra-show" title="Speed Notes" />&nbsp;<span class="not-show">Speed notes</span><br/>
 				<input type="checkbox" value="1" name="attr_DR-Show" title="Show/Hide Damage Reduction" />&nbsp;<span class="not-show">Damage Reduction</span><br/>
 				<input type="checkbox" value="1" name="attr_SR-Show" title="Show/Hide Shield Rating" />&nbsp;<span class="not-show">Shield Rating</span><br/>
 				<input type="checkbox" value="1" name="attr_immune-Show" title="Show/Hide Immunities" />&nbsp;<span class="not-show">Immunities</span><br/>
-				<input type="checkbox" value="1" name="attr_QuerySkillModifier" checked title="When rolling a check, ask if there are any other modifiers. (This may not work if you have modified the skill formulas.)"/>&nbsp;<span class="not-show">Ask for Other Modifiers before rolling skill checks</span><br/>
-				<span>&nbsp;</span>
+				<!--The line below should be included if the number of settings in the left and right sheet-table-data are different.-->
+			<!--	<span>&nbsp;</span>	-->
 				</div>
 				</div>
 			</div>
@@ -31,6 +34,7 @@
 				<div class="sheet-col">
 					<div class="sheet-textHead" >PC Sheet</div>
 					<div class="rule-sections">
+						<input type="checkbox" value="1" name="attr_armor-show" title="Show/Hide Armor Section" />&nbsp;<span class="not-show">Armor</span><br/>
 						<input type="checkbox" value="[[@{CT}*-1]][CT Ignore]" name="attr_CTIgnoreDT"  title="Does Damage Threshold ignore penalty from the Condition Track? @{CTIgnoreDT}" />&nbsp;<span data-i18n="ignore_ct" class="not-show">Damage Threshold ignores CT</span><br/>
 						<input type="checkbox" value="1" name="attr_show-nonheroic-level" value="1" title="Show nonheroic levels? @{show-nonheroic-level}" />&nbsp;<span class="not-show">Show nonheroic levels</span><br/>
 						<input type="checkbox" value="1" name="attr_show-CustomPCSkills" title="Show the option to add new skills" />&nbsp;<span class="not-show">Custom skills</span><br/>
@@ -43,6 +47,11 @@
 					<div class="rule-sections">
 						<span>Choose individual skills</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="1" name="attr_reveal-skill-options" class="sect-show showhidetoggle" title="Show skill options" /><span /><br/>
 						<div class="sect rule-sections" style="margin-bottom:0px;">
+							<div>
+								<input type="checkbox" name="attr_NoneNPCSkills" class="sheet-hidden" id="NPCSkills1"/><label for="NPCSkills1" style="cursor:pointer"><span class="sheet-small">[none]</span></label>
+								<input type="checkbox" name="attr_CrucialNPCSkills" class="sheet-hidden" id="NPCSkills2"/><label for="NPCSkills2" style="cursor:pointer"><span class="sheet-small">[crucial]</span></label>
+								<input type="checkbox" name="attr_StandardNPCSkills" class="sheet-hidden" id="NPCSkills3"/><label for="NPCSkills3" style="cursor:pointer"><span class="sheet-small">[standard]</span></label>
+							</div>
 							<input type="checkbox" value="1" checked name="attr_show-Acrobatics" title="Show Acrobatics skill?" />&nbsp;<span class="not-show">Acrobatics</span><br/>
 							<input type="checkbox" value="1" name="attr_show-Athletics" title="Show Athletics skill?" />&nbsp;<span class="not-show">Athletics (house rule)</span><br/>
 							<input type="checkbox" value="1" name="attr_show-Climb" title="Show Climb skill?" />&nbsp;<span class="not-show">Climb</span><br/>
@@ -60,7 +69,7 @@
 							<input type="checkbox" value="1" name="attr_show-KnowledgeTechnology" title="Show Knowledge (Technology) skill?" />&nbsp;<span class="not-show">Knowledge (Technology)</span><br/>
 							<input type="checkbox" value="1" name="attr_show-Mechanics" title="Show Mechanics skill?" />&nbsp;<span class="not-show">Mechanics</span><br/>
 							<input type="checkbox" value="1" checked name="attr_show-Perception" title="Show Perception skill?" />&nbsp;<span class="not-show">Perception</span><br/>
-							<input type="checkbox" value="1" name="attr_show-Persuasion" title="Show Persuasion skill?" />&nbsp;<span class="not-show">Persuasion</span><br/>
+							<input type="checkbox" value="1" checked name="attr_show-Persuasion" title="Show Persuasion skill?" />&nbsp;<span class="not-show">Persuasion</span><br/>
 							<input type="checkbox" value="1" name="attr_show-Pilot" title="Show Pilot skill?" />&nbsp;<span class="not-show">Pilot</span><br/>
 							<input type="checkbox" value="1" name="attr_show-Ride" title="Show Ride skill?" />&nbsp;<span class="not-show">Ride</span><br/>
 							<input type="checkbox" value="1" checked name="attr_show-Stealth" title="Show Stealth skill?" />&nbsp;<span class="not-show">Stealth</span><br/>
@@ -69,20 +78,27 @@
 							<input type="checkbox" value="1" name="attr_show-TreatInjury" title="Show Treat Injury skill?" />&nbsp;<span class="not-show">Treat Injury</span><br/>
 							<input type="checkbox" value="1" name="attr_show-UseComputer" title="Show Use Computer skill?" />&nbsp;<span class="not-show">Use Computer</span><br/>
 							<input type="checkbox" value="1" name="attr_show-UsetheForce" title="Show Use the Force skill?" />&nbsp;<span class="not-show">Use the Force</span><br/>
-							<input type="checkbox" value="1" checked name="attr_show-CustomSkills" title="Show custom skills?" />&nbsp;<span class="not-show">Custom skills</span><br/>
 						</div>
+						<input type="checkbox" value="1" checked name="attr_show-CustomSkills" title="Show custom skills?" />&nbsp;<span class="not-show">Custom skills</span><br/>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="sheet-col" style="width:30%">
-			<div class="sheet-textHead" >Vehicle Sheet</div>
+		<div class="sheet-col" style="width:33%">
+			<div class="sheet-textHead" >Vehicles</div>
 			<div class="rule-sections">
+				<input type="checkbox" name="attr_vehicle-AttackModifierPrompt" checked value="1" />&nbsp;<span class="not-show">"Other Modifiers" prompt for attacks</span> <br/>
+				<input type="checkbox" name="attr_vehicle-SkillModifierPrompt" checked value="1" />&nbsp;<span class="not-show">"Other Modifiers" prompt for skills</span> <br/>
 				<input type="checkbox" name="attr_vehicle-CON-show" value="1" />&nbsp;<span class="not-show">Constitution score (for Yuuzhan Vong vehicles)</span> <br/>
 				<input type="checkbox" name="attr_vehicle-CapitalGrapple" value="1" />&nbsp;<span class="not-show">Grapple modifier increases beyond Colossal size</span> <br/>
 			</div>
 		</div>
 	</div>
+<!-- start help section --> 
+<div> 
+For help, please see the wiki page. <input type="text" disabled="true" name="wiki_URL" style="width:30em" title="Wiki URL" value="https://wiki.roll20.net/Star_Wars_Saga_Edition_Character_Sheet"/> <br/>
+<b><span data-i18n="last_updated">Last updated</span>:</b> 19 October 2023
+</div>
 </div>
 
 <div class="sheet-tab-content tab1">
@@ -230,21 +246,23 @@
 						<input type="number" value="0" name="attr_DamageThresholdSize" class="hidden" /></td>
 				</tr>
 			</table>
-			<input type="checkbox" class="DRShow sheet-hidden" value="1" name="attr_DR-Show" />	
-			<div class="DRBody" >
-				<label><span data-i18n="damage_reduction">Damage Reduction</span>&nbsp;</label>
-				<span><input type="number" name="attr_DR" placeholder="0" value="" title="Damage Reduction @{DR}" /></span><br />
+			<div class="grid-table">
+				<input type="checkbox" class="DRShow sheet-hidden" value="1" name="attr_DR-Show" />	
+				<div class="DRBody" >
+					<label><span data-i18n="damage_reduction">Damage Reduction</span>&nbsp;</label>
+					<span><input type="number" name="attr_DR" placeholder="0" value="" title="Damage Reduction @{DR}" /></span><br />
+				</div>
+				<input type="checkbox" class="SRShow sheet-hidden" value="1" name="attr_SR-Show"/>
+				<div class="SRBody">
+					<label><span data-i18n="shield_rating">Shield Rating</span>&nbsp;</label>		
+					<span><input type="number" name="attr_SR" placeholder="0" value="" title="Current Shield Rating @{SR}" /> / <input type="number" name="attr_SR_max" placeholder="0" value="" title="Max Shield Rating @{SR|max}" /></span><br />
+				</div>
+				<input type="checkbox" class="immuneShow sheet-hidden" value="1" name="attr_immune-Show" />
+				<div class="immuneBody">
+					<label><span data-i18n="immune">Immune</span>&nbsp;</label>
+					<span><input type="text" name="attr_Immune" value="" title="Immunities @{Immune}" style="width:75%" /> </span>	
+				</div>	
 			</div>
-			<input type="checkbox" class="SRShow sheet-hidden" value="1" name="attr_SR-Show"/>
-			<div class="SRBody">
-				<label><span data-i18n="shield_rating">Shield Rating</span>&nbsp;</label>		
-				<span><input type="number" name="attr_SR" placeholder="0" value="" title="Current Shield Rating @{SR}" /> / <input type="number" name="attr_SR_max" placeholder="0" value="" title="Max Shield Rating @{SR|max}" /></span><br />
-			</div>
-			<input type="checkbox" class="immuneShow sheet-hidden" value="1" name="attr_immune-Show" />
-			<div class="immuneBody">
-				<label><span data-i18n="immune">Immune</span>&nbsp;</label>
-				<span><input type="text" name="attr_Immune" value="" title="Immunities @{Immune}" style="width:75%" /> </span>	
-			</div>	
 		</div>
 		
 		<div class="sheet-col">				
@@ -280,7 +298,7 @@
 					</div>
 				</tr>			
 			</div>
-			<div class="sheet-table left">			
+			<div class="sheet-table left" style="border-spacing: 2px;">			
 				<div class="sheet-table-row">
 					<span class="sheet-table-data">	
 						<button type="roll" name="roll_PerceptionCheck" value="@{PerceptionFormula|max}" title="Roll Perception  %{PerceptionCheck} "></button>
@@ -292,7 +310,9 @@
 				</div>	
 				<div class="sheet-table-row">
 					<span class="sheet-table-data">	
-						<button type="roll" name="roll_InitiativeTurn" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+@{InitiativeDecimal}[Initiative Decimal]+?{Other Modifiers|0}[Other] &{tracker}]]}} {{notes=@{Initiative|max}}}" title="Roll Initiative to Turn Order window %{InitiativeTurn}" ></button>		
+						<input type="checkbox" value="1" name="attr_QuerySkillModifier" checked class="sheet-hidden other-mod-toggle"/>
+						<button type="roll" name="roll_InitiativeTurn" class="other-mod-on" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+@{InitiativeDecimal}[Initiative Decimal]+?{Other Modifiers|0}[Other] &{tracker}]]}} {{notes=@{Initiative|max}}}" title="Roll Initiative to Turn Order window %{InitiativeTurn}" ></button>		
+						<button type="roll" name="roll_InitiativeTurn" class="other-mod-off" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+@{InitiativeDecimal}[Initiative Decimal] &{tracker}]]}} {{notes=@{Initiative|max}}}" title="Roll Initiative to Turn Order window %{InitiativeTurn}" ></button>		
 						<label><span data-i18n="initiative">Initiative</span></label>	 <span class="sheet-small" style="margin-left:10px;"><input type="checkbox" value="[[0.01 * (@{Initiative})]]" name="attr_InitiativeDecimal" title="Add Initiative Modifier to roll as a decimal for easier sorting @{InitiativeDecimal}" checked />&nbsp;<span data-i18n="init_decimal" class="not-show">Initiative as Decimal</span></span>
 					</span>
 				</div>
@@ -346,7 +366,8 @@
 						<th></th>
 						<th><span data-i18n="total">Total</span></th>
 						<th></th>
-						<th style="min-width:50px">	<span><span data-i18n="level">Level</span> /<br /><span data-i18n="armor">Armor</span></span>	</th>
+						<th style="min-width:50px">	<span>Level / Armor</span>	</th>
+					<!--	<th style="min-width:50px">	<span><span data-i18n="level">Level</span> /<br /><span data-i18n="armor">Armor</span></span>	</th> -->
 						<th><span data-i18n="class">Class</span></th>					
 						<th><span data-i18n="mod">Mod</span></th>
 						<th><span data-i18n="misc">Misc</span></th>
@@ -423,24 +444,24 @@
 			<br />			
 			<input type="checkbox" class="sect-show sheet-hidden" value="1" name="attr_armor-show" /> 		
 			<table class="sheet-spacing sect sheet-table2col">
-				<tr colspan="7">	<div class="sheet-textHead2Col">Armor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sect-show showhidetoggle" title="Show/Hide Armor Section" name="attr_armor-show" value="1" /><span/></div></tr>
+				<tr colspan="7">	<div class="sheet-textHead2Col sect">Armor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sect-show showhidetoggle" title="Hide Armor Section. To show this section again, check the Armor box on the Settings tab." name="attr_armor-show" value="1" /><span/></div></tr>
 				<tr>	
-					<th width="50%" colspan="3">Armor Worn <input type="checkbox" value="1" name="attr_ArmorWornCheck" title="Armor equiped @{ArmorWornCheck}" /></th>		
-					<th class="sheet-small">Ref Def<br />Bonus</th>		
-					<th class="sheet-small">Fort Def<br />Bonus</th>		
-					<th class="sheet-small">Max Dex<br />Bonus</th>		
-					<th>Speed</th>		</tr>
+					<th width="50%" colspan="3" class="sheet-small">Armor Worn <input type="checkbox" value="1" name="attr_ArmorWornCheck" title="Armor equiped @{ArmorWornCheck}" /></th>		
+					<th class="sheet-small">Ref Def Bonus</th>		
+					<th class="sheet-small">Fort Def Bonus</th>		
+					<th class="sheet-small">Max Dex Bonus</th>		
+					<th class="sheet-small">Speed</th>		</tr>
 				<tr>
-					<td colspan="3"><input type="text" name="attr_ArmorWorn" style="width:100%" title="Armor Name @{ArmorWorn}" /></td>
+					<td colspan="3"><input type="text" name="attr_ArmorWorn" style="width:100%" title="Armor Name @{ArmorWorn}" placeholder="Armor name" /></td>
 					<td><input type="number" name="attr_ArmorRef" value="0" title="Armor Reflex Defense Bonus @{ArmorRef}" /></td>
 					<td><input type="number" name="attr_ArmorFort" value="0" title="Armor Fortitude Defense Bonus @{ArmorFort}" /></td>
 					<td><input type="number" name="attr_ArmorDex" value="0" title="Armor Max DEX @{ArmorDex}" /></td>
 					<td><input type="number" name="attr_Speed_max" value="0" title="Armor Max Speed @{Speed|max}" /></td>
 				</tr>
 				<tr>
-					<th class="sheet-small">Proficiency<br /><input type="checkbox" value="1" name="attr_ArmorProf" title="Proficient in armor worn @{ArmorProf}" /></th>
-					<th class="sheet-small">Armor Def.<br /><input type="checkbox" value="1" name="attr_ArmorDefense" title="Armor Specialist: Armor Defense @{ArmorDefense}" /></th>				
-					<th class="sheet-small">Improved<br />Armor Def.<br /><input type="checkbox" value="1" name="attr_ImpArmorDefense" title="Armor Specialist: Improved Armor Defense @{ImpArmorDefense}" /></th>
+					<th class="sheet-small"><br/>Proficiency<br /><input type="checkbox" value="1" name="attr_ArmorProf" title="Proficient in armor worn @{ArmorProf}" /></th>
+					<th class="sheet-small">Armored Defense<br /><input type="checkbox" value="1" name="attr_ArmorDefense" title="Armor Specialist: Armor Defense @{ArmorDefense}" /></th>				
+					<th class="sheet-small">Improved Armored Def.<br /><input type="checkbox" value="1" name="attr_ImpArmorDefense" title="Armor Specialist: Improved Armor Defense @{ImpArmorDefense}" /></th>
 					<th class="sheet-small" colspan="2">Armor Type<br/>
 						<select name="attr_ArmorType" style="width:90px" title="Armor Type @{ArmorType}">
 							  <option value="Light">Light</option>
@@ -462,7 +483,7 @@
 					<td colspan="7"><textarea type="text" name="attr_ArmorNotes" class="atkNotes" title="Armor Notes @{ArmorNotes}" placeholder="Armor Notes"></textarea></td>
 				</tr>
 			</table>
-			<br />			
+			<br class="sect" />			
 			<div class="sheet-textHead2Col" data-i18n="attacks">Attacks</div>
 				<fieldset class="repeating_attack">	
 				<div class="sheet-table">	
@@ -565,7 +586,7 @@
 								<span class="sheet-table-data" style="min-width:110px" data-i18n="critical_info">	<b>Critical Info</b>	</span>
 								<span class="sheet-table-data">	<span class="sheet-small" data-i18n="range"><b>Range</b></span> 	<input type="number" name="attr_WeaponCrit" placeholder="Crit" value="20" title="Weapon Critical Starting Range ie.20 @{repeating_attack_X_WeaponCrit}" />	</span>
 								<span class="sheet-table-data">		<span class="sheet-small" data-i18n="multiplier"><b>Multiplier</b></span>	 <input type="number" name="attr_WeaponCrit_max" value="2" title="Weapon Crit Damage Multiplier @{repeating_attack_X_WeaponCrit|max}" />		</span>
-								<span class="sheet-table-data">	<b>Template <br/>Formula</b>	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sect-show showhidetoggle" title="Show/Hide Attack Template Formula" name="attr_AttackFormula-show" value="1" /><span/>	</span>
+								<span class="sheet-table-data">	<b>Template Formula</b>	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sect-show showhidetoggle" title="Show/Hide Attack Template Formula" name="attr_AttackFormula-show" value="1" /><span/>	</span>
 							</div>
 						</div>	</span>
 					</div>
@@ -1759,7 +1780,7 @@
 					</div>	</div>
 				</div>	</div>
 				</div>
-				<input type="checkbox" value="1" checked name="attr_show-CustomPCSkills" class="sheet-hidden SkillShow" />
+				<input type="checkbox" value="1" name="attr_show-CustomPCSkills" class="sheet-hidden SkillShow" />
 				<div class="SkillBody"><fieldset class="repeating_npc-skill">	
 					<table class="sheet-spacing">
 						<tr>
@@ -1857,25 +1878,26 @@
 	<div class="EquipmentSection"> 	
 		<div class="sheet-textHead" data-i18n="equipment">Equipment</div>
 		<div class="sheet-table">
+			<input type="checkbox" class="sect-show sheet-hidden" value="1" name="attr_armor-show" />
 			<div class="sheet-table-row">
 				<span class="sheet-table-header" style="min-width:175px; width:50%" data-i18n="item_name">Item Name</span>
 				<span class="sheet-table-header" style="width:35px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				<span class="sheet-table-header" style="width:40px;" data-i18n="carried">Carry</span>			
-				<span class="sheet-table-header" style="width:45px;" data-i18n="quantity">QTY</span>			
-				<span class="sheet-table-header" style="width:55px;" data-i18n="weight">Weight</span>			
-				<span class="sheet-table-header" style="width:55px;">Total<br/> Weight</span>
-				<span class="sheet-table-header" style="width:55px;">Base<br/>Cost<br/>(Cr)</span>	
-				<span class="sheet-table-header" style="width:55px;">Total<br/>Cost<br/>(Cr)</span>					
+				<span class="sheet-table-header" style="width:40px; float:left"><br/><br/><span style="min-width:35px; display:inline-block;" data-i18n="carried">Carry</span></span>			
+				<span class="sheet-table-header" style="width:45px;"><span style="min-width:40px; display:inline-block;" data-i18n="quantity">QTY</span></span>			
+				<span class="sheet-table-header" style="width:55px;"><span style="min-width:50px; display:inline-block;" data-i18n="weight">Weight</span>	</span>		
+				<span class="sheet-table-header" style="width:55px;"><span style="min-width:50px; display:inline-block;">Total Weight</span></span>
+				<span class="sheet-table-header" style="width:55px;"><span style="min-width:50px; display:inline-block;">Base Cost (Cr)</span>	</span>
+				<span class="sheet-table-header" style="width:55px;"><span style="min-width:50px; display:inline-block;">Total Cost (Cr)</span></span>					
 			</div>			
-			<div class="sheet-table-row">
-				<span class="sheet-table-data">	<input type="text" name="attr_ArmorWorn" placeholder="Armor Name" style="width:100%" title="Armor Name @{ArmorWorn}" />	</span>
+			<div class="sheet-table-row sect">
+				<span class="sheet-table-data" style="width:50%;">	<input type="text" name="attr_ArmorWorn" placeholder="Armor Name" style="width:100%" title="Armor Name @{ArmorWorn}" />	</span>
 				<span class="sheet-table-data">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sect-show showhidetoggle" title="Show/Hide Armor Notes" name="attr_ArmorNotes-show" value="1" /><span/>	</span>			
 				<span class="sheet-table-data center" style="width:40px; float:left">	<input type="checkbox" value="1" name="attr_ArmorCarry" title="Armor Carried? @{ArmorCarry}" />	</span>	
-				<span class="sheet-table-data center">	<div style="width:40px"></div>	</span>
-				<span class="sheet-table-data center">	<input type="text" style="width:50px" name="attr_ArmorWt" value="0" title="Armor Weight @{ArmorWt}" />	</span>
-				<span class="sheet-table-data center">	<div style="width:50px"></div>	</span>	</span>
-				<span class="sheet-table-data center">	<input type="text" style="width:50px" name="attr_ArmorCost" value="0" title="Armor Base Cost @{ArmorCost}" />	</span>
-				<span class="sheet-table-data center">	<input type="text" style="width:50px" name="attr_ArmorTotalCost" value="0" title="Armor Total Cost after Upgrades @{ArmorTotalCost}" />	</span>
+				<span class="sheet-table-data center" style="width:45px">	<div style="width:40px"></div>	</span>
+				<span class="sheet-table-data center" style="width:55px">	<input type="text" style="width:50px" name="attr_ArmorWt" value="0" title="Armor Weight @{ArmorWt}" />	</span>
+				<span class="sheet-table-data center" style="width:55px">	<div style="width:50px"></div>	</span>	</span>
+				<span class="sheet-table-data center" style="width:55px">	<input type="text" style="width:50px" name="attr_ArmorCost" value="0" title="Armor Base Cost @{ArmorCost}" />	</span>
+				<span class="sheet-table-data center" style="width:55px">	<input type="text" style="width:50px" name="attr_ArmorTotalCost" value="0" title="Armor Total Cost after Upgrades @{ArmorTotalCost}" />	</span>
 			</div>
 		</div>		
 		<input type="checkbox" class="sect-show sheet-hidden" value="1" name="attr_ArmorNotes-show" />
@@ -2097,7 +2119,7 @@
 					<td class="sheet-col1"><span data-i18n="con">CON</span><br><div class="sheet-small"><span data-i18n="constitution">Constitution</span></div></td>
 					<td><input type="checkbox" value="1" name="attr_NoConstitution" class="sect-show sectAttack-show sheet-hidden" /><input type="number" name="attr_CON" value="8" class="sectAttack" title="Constitution Score @{CON}" /><input disabled="true" value="–" class="sect" title="No Constitution Score (Uncheck the option in the Settings tab.)" style="width: 3.5em;" /></td>
 					<td><input type="checkbox" value="1" name="attr_NoConstitution" class="sect-show sectAttack-show sheet-hidden" /><input type="number" name="attr_CON_max" value="[[floor(@{CON}/2-5)]]" class="sectAttack" disabled="true" title="Constitution Modifier @{CON|max}" /><input value="–" class="sect" disabled="true" title="No Constitution Modifier (Uncheck the option in the Settings tab.)" style="width: 3.5em;" /></td>
-					<td><input type="checkbox" value="1" name="attr_NoConstitution" class="sect-show sectAttack-show sheet-hidden" /><button type="roll" name="roll_CONCheck" value="&{template:skill} {{name=Constitution}} {{skill=[[ 1d20+@{Con|max}[CON]+@{CT}[CT]]]}}" class="sectAttack" title="Roll Constitution %{CONCheck}" style="margin:0px;"></button><button type="roll" value="&{template:skill} {{name=Constitution}} {{skill=[[ 1d20+0[No CON]+@{CT}[CT]]]}}" class="sect" style="margin:0px;"></button></td>
+					<td><input type="checkbox" value="1" name="attr_NoConstitution" class="sect-show sectAttack-show sheet-hidden" /><button type="roll" name="roll_NPC-CONCheck" value="&{template:skill} {{name=Constitution}} {{skill=[[ 1d20+@{Con|max}[CON]+@{CT}[CT]]]}}" class="sectAttack" title="Roll Constitution" style="margin:0px;"></button><button type="roll" value="&{template:skill} {{name=Constitution}} {{skill=[[ 1d20+0[No CON]+@{CT}[CT]]]}}" class="sect" style="margin:0px;"></button></td>
 				</tr>
 				<tr>
 					<td class="sheet-col1"><span data-i18n="int">INT</span><br><div class="sheet-small"><span data-i18n="intelligence">Intelligence</span></div></td>
@@ -2198,11 +2220,18 @@
 					</div>
 				</tr>			
 			</div>
-			<button type="roll" name="roll_PerceptionCheck" value="@{PerceptionFormula|max}" title="Roll Perception %{PerceptionCheck}"></button>
-				<label data-i18n="perception">Perception </label>		
-			<br />
-			<button type="roll" name="roll_InitiativeTurn" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+@{InitiativeDecimal}[Initiative Decimal]+?{Other Modifiers|0}[Other] &{tracker}]]}} {{notes=@{Initiative|max}}}" title="Roll Initiative to Turn Order window %{InitiativeTurn}" ></button>		
-				<label data-i18n="initiative">Initiative</label>	 <span class="sheet-small" style="margin-left:10px;"><input type="checkbox" value="[[0.01 * (@{Initiative})]]" name="attr_InitiativeDecimal" title="Add Initiative Modifier to roll as a decimal for easier sorting @{InitiativeDecimal}" checked />&nbsp;<span data-i18n="init_decimal" class="not-show">Initiative as Decimal</span></span>
+			<div class="sheet-table" style="border-spacing: 2px;">
+				<div class="sheet-table-row" >
+					<button type="roll" name="roll_PerceptionCheck" value="@{PerceptionFormula|max}" title="Roll Perception %{PerceptionCheck}"></button>
+					<label data-i18n="perception">Perception </label>		
+				</div>
+				<div class="sheet-table-row">
+					<input type="checkbox" value="1" name="attr_QuerySkillModifier" checked class="sheet-hidden other-mod-toggle"/>
+					<button type="roll" name="roll_InitiativeTurn" class="other-mod-on" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+@{InitiativeDecimal}[Initiative Decimal]+?{Other Modifiers|0}[Other] &{tracker}]]}} {{notes=@{Initiative|max}}}" title="Roll Initiative to Turn Order window %{InitiativeTurn}" ></button>		
+					<button type="roll" name="roll_InitiativeTurn" class="other-mod-off" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+@{InitiativeDecimal}[Initiative Decimal] &{tracker}]]}} {{notes=@{Initiative|max}}}" title="Roll Initiative to Turn Order window %{InitiativeTurn}" ></button>		
+					<label data-i18n="initiative">Initiative</label>	 <span class="sheet-small" style="margin-left:10px;"><input type="checkbox" value="[[0.01 * (@{Initiative})]]" name="attr_InitiativeDecimal" title="Add Initiative Modifier to roll as a decimal for easier sorting @{InitiativeDecimal}" checked />&nbsp;<span data-i18n="init_decimal" class="not-show">Initiative as Decimal</span></span>
+				</div>
+			</div>
 			<table>
 				<tr>
 					<td colspan="6"><div class="sheet-textHead"><span data-i18n="grapple">Grapple</span></div></td>
@@ -2269,6 +2298,7 @@
 				</tr>
 			  </tbody>
 			</table>
+			<br/>
 		<div class="sheet-textHead2Col">Attacks</div>
 			<fieldset class="repeating_NPC-attack">	
 				<div class="sheet-table">	
@@ -3809,12 +3839,6 @@
 				<div class="sheet-table-data"><button type="roll" name="roll_vehicle-INTCheck" value="&{template:skill} {{name=Intelligence}} {{skill=[[ 1d20+@{vehicle-int|max}+@{vehicle-CT}]]}}" title="Roll Intelligence %{vehicle-INTCheck}"></button></div>
 			</div>
 		</div>
-		<br /><br />
-		<table style="text-align:left">
-			<tr>	
-				<td><label data-i18n="damage_reduction">Damage Reduction</label><input type="number" name="attr_vehicle-DR" value="0" title="Damage Reduction @{vehicle-DR}" /></td>
-			</tr>
-		</table>
 	</div>
 	<div class="sheet-col">
 		<table>		
@@ -3846,10 +3870,13 @@
 			</tr>	
 		</table>
 		<br />		
-		<table style="text-align:left">
+		<table style="text-align:left">	
+			<tr>	
+				<td><label data-i18n="damage_reduction">Damage Reduction</label><input type="number" name="attr_vehicle-DR" value="0" title="Damage Reduction @{vehicle-DR}" /></td>
+			</tr>
 			<tr>
 				<td><label data-i18n="shield_rating">Shield Rating</label><input type="number" name="attr_vehicle-SR" value="0" style="width:55px; "title="Current Shield Rating @{vehicle-SR}" /> / <input type="number" name="attr_vehicle-SR_max" value="0" style="width:55px;" title="Max Shield Rating @{vehicle-SR|max}" /></td>
-			</tr>	
+			</tr>
 		</table>				
 	</div>
 	
@@ -3890,7 +3917,11 @@
 					<input type="number" name="attr_vehicle-GrpMod_max" value="0" title="Miscellaneous Grapple Modifier @{vehicle-GrpMod|max}" /></td>
 			</tr>
 			<tr class="left">
-				<td colspan="2"><button type="roll" name="roll_vehicle-GrappleCheck" value="&{template:skill} {{name=Grapple}} {{skill=[[1d20+@{vehicle-Grapple}+?{Other Modifiers|0}[Other]]]}}" title="Roll Grapple %{vehicle-GrappleCheck}"></button>	<label>Grapple</label></td>		
+				<td colspan="2">
+					<input type="checkbox" class="other-mod-toggle sheet-hidden" name="attr_vehicle-AttackModifierPrompt" value="1" />
+					<button type="roll" name="roll_vehicle-GrappleCheck" class="other-mod-on" value="&{template:skill} {{name=Grapple}} {{skill=[[1d20+@{vehicle-Grapple}+?{Other Modifiers|0}[Other]]]}}" title="Roll Grapple %{vehicle-GrappleCheck}"></button>	
+					<button type="roll" name="roll_vehicle-GrappleCheck" class="other-mod-off" value="&{template:skill} {{name=Grapple}} {{skill=[[1d20+@{vehicle-Grapple}+0[Other]]]}}" title="Roll Grapple %{vehicle-GrappleCheck}"></button>	
+					<label>Grapple</label></td>		
 				<td style="text-align:left;" colspan="3"><input type="number" name="attr_vehicle-Grapple" value="@{vehicle-BAB}[BAB] + @{vehicle-GrpMod}[Mod] +@{vehicle-GrpSize}[Size] + @{vehicle-GrpMod|max}[Misc] + @{vehicle-CT}[CT]" disabled="true" title="Grapple Total @{vehicle-Grapple}" /></td>
 			</tr>
 		</table>
@@ -3950,6 +3981,7 @@
 		</table>		
 		<br />
 		<div class="sheet-textHead" data-i18n="weapons">Weapons</div>
+			<input type="checkbox" class="other-mod-toggle sheet-hidden" name="attr_vehicle-AttackModifierPrompt" value="1" />
 			<fieldset class="repeating_attack">	
 				<table class="sheet-spacing">
 					<tr>
@@ -3971,9 +4003,11 @@
 						<td><input type="number" name="attr_vehicle-AttackMod" value="@{vehicle-int|max}" disabled="true" title="Vehicle's INT Modifier" /></td>
 						<td>	&nbsp;+&nbsp;</td>
 						<td><input type="number" name="attr_vehicle-attackModMisc" placeholder="Misc" value="0" title="Attack Miscellaneous Modifier" /></td>
-						
-						<td rowspan="2"> <button type="roll" name="roll_vehicle-WeaponCheck" value="&{template:attack} {{name=@{vehicle-WeaponName}}} {{type=@{vehicle-WeaponPosition} in @{character_name}}} {{atkeffect=@{vehicle-WeaponNotes|max}}} {{attack=[[1d20cs>@{WeaponCrit} + @{vehicle-AttackBAB}[BAB] +  [[{[[@{vehicle-WeaponPosition|max}*@{vehicle-AttackBAB|max}]]+0d1,0d1}kh1]][Pilot Weapon] + @{vehicle-int|max}[Vehicle Int] + @{vehicle-attackModMisc}[Misc] + @{vehicle-CT}[CT] + ?{Other Modifiers (Attack)|0}[Other]]]}} {{damage=[[(@{vehicle-damage} + @{vehicle-damageMisc}[Misc])*@{vehicle-damage|max}]]}} {{dmgcrit=[[((@{vehicle-damage} + @{vehicle-damageMisc}[Misc])*@{vehicle-damage|max})*@{WeaponCrit|max}]]}}" title="Attack Roll"> </button>
+						<td rowspan="2">
+						<button type="roll" name="roll_vehicle-WeaponCheck" class="other-mod-on" value="&{template:attack} {{name=@{vehicle-WeaponName}}} {{type=@{vehicle-WeaponPosition} in @{character_name}}} {{atkeffect=@{vehicle-WeaponNotes|max}}} {{attack=[[1d20cs>@{WeaponCrit} + @{vehicle-AttackBAB}[BAB] +  [[{[[@{vehicle-WeaponPosition|max}*@{vehicle-AttackBAB|max}]]+0d1,0d1}kh1]][Pilot Weapon] + @{vehicle-int|max}[Vehicle Int] + @{vehicle-attackModMisc}[Misc] + @{vehicle-CT}[CT] + ?{Other Modifiers (Attack)|0}[Other]]]}} {{damage=[[(@{vehicle-damage} + @{vehicle-damageMisc}[Misc])*@{vehicle-damage|max}]]}} {{dmgcrit=[[((@{vehicle-damage} + @{vehicle-damageMisc}[Misc])*@{vehicle-damage|max})*@{WeaponCrit|max}]]}}" title="Attack Roll"> </button>
+						<button type="roll" name="roll_vehicle-WeaponCheck" class="other-mod-off" value="&{template:attack} {{name=@{vehicle-WeaponName}}} {{type=@{vehicle-WeaponPosition} in @{character_name}}} {{atkeffect=@{vehicle-WeaponNotes|max}}} {{attack=[[1d20cs>@{WeaponCrit} + @{vehicle-AttackBAB}[BAB] +  [[{[[@{vehicle-WeaponPosition|max}*@{vehicle-AttackBAB|max}]]+0d1,0d1}kh1]][Pilot Weapon] + @{vehicle-int|max}[Vehicle Int] + @{vehicle-attackModMisc}[Misc] + @{vehicle-CT}[CT] + 0[Other]]]}} {{damage=[[(@{vehicle-damage} + @{vehicle-damageMisc}[Misc])*@{vehicle-damage|max}]]}} {{dmgcrit=[[((@{vehicle-damage} + @{vehicle-damageMisc}[Misc])*@{vehicle-damage|max})*@{WeaponCrit|max}]]}}" title="Attack Roll"> </button>
 						</td>
+						
 					</tr>
 					<tr>					
 						<!-- rowspan placholder -->
@@ -4005,6 +4039,7 @@
 	</div>	
 	<div class="sheet-col">
 		<div class="sheet-textHead" data-i18n="crew_assignment">Crew Assignment and Skills</div>
+		<input type="checkbox" class="other-mod-toggle sheet-hidden" name="attr_vehicle-SkillModifierPrompt" value="1" />
 		<fieldset class="repeating_CrewAssn">
 			<select name="attr_CrewQuality" style="width:26%; max-width:103px; margin-top:2px" title="Crew Quality">
 				<option class="CustomCrew" value="CustomCrew" selected>Custom Crew</option>
@@ -4031,7 +4066,10 @@
 				<div class="sheet-table-row">
 					<div class="sheet-table">
 						<div class="sheet-table-row">
-							<span class="sheet-table-header sheet-skillsCrewCol1"><button type="roll" name="roll_VehicleInitiativeTurn" style="line-height: 8px; font-size: 11px; margin-bottom: 6px;" value="&{template:skill} {{name=Rolling for Turn Order}} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{skill=[[ 1d20+@{vehicle-Initiative}[Initiative]+@{vehicle-CT}[CT]+[[@{vehicle-Initiative}*0.01]][Initiative Decimal]+?{Other Modifiers|0}[Other]&{tracker}]]}}" title="Roll Initiative/Pilot to Turn Order window %{VehicleInitiativeTurn}">Turn Order</button></span>
+							<span class="sheet-table-header sheet-skillsCrewCol1">
+								<button type="roll" name="roll_VehicleInitiativeTurn" class="other-mod-on" style="line-height: 8px; font-size: 11px; margin-bottom: 6px;" value="&{template:skill} {{name=Rolling for Turn Order}} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{skill=[[ 1d20+@{vehicle-Initiative}[Initiative]+@{vehicle-CT}[CT]+[[@{vehicle-Initiative}*0.01]][Initiative Decimal]+?{Other Modifiers|0}[Other]&{tracker}]]}}" title="Roll Initiative/Pilot to Turn Order window %{VehicleInitiativeTurn}">Turn Order</button>
+								<button type="roll" name="roll_VehicleInitiativeTurn" class="other-mod-off" style="line-height: 8px; font-size: 11px; margin-bottom: 6px;" value="&{template:skill} {{name=Rolling for Turn Order}} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{skill=[[ 1d20+@{vehicle-Initiative}[Initiative]+@{vehicle-CT}[CT]+[[@{vehicle-Initiative}*0.01]][Initiative Decimal]+0[Other]&{tracker}]]}}" title="Roll Initiative/Pilot to Turn Order window %{VehicleInitiativeTurn}">Turn Order</button>
+							</span>
 							<span class="sheet-table-header"></span>
 							<span class="sheet-table-header" data-i18n="total">Total</span>
 							<span class="sheet-table-header"></span>
@@ -4043,7 +4081,10 @@
 						<div class="sheet-table-row pilotBody">
 							<span class="sheet-table-data sheet-skillsCrewCol1">	<span>Deception</span>		
 							<div class="sheet-smallSkills"><span>Create Diversion</span></div></span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-DeceptionDiversionCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Deception}} {{skill=[[ 1d20+@{vehicle-DeceptionDiversion}[Deception]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Deception"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-DeceptionDiversionCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Deception}} {{skill=[[ 1d20+@{vehicle-DeceptionDiversion}[Deception]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Deception"></button>
+								<button type="roll" name="roll_vehicle-DeceptionDiversionCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Deception}} {{skill=[[ 1d20+@{vehicle-DeceptionDiversion}[Deception]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Deception"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-DeceptionDiversion" value="@{vehicle-sizeMod}[Size]+@{vehicle-dex|max}[Dex]+[[@{vehicle-PilotMod|max}-5]][Untrained Penalty]+@{vehicle-DeceptionDiversionMod}[Deception]+@{vehicle-DeceptionDiversionMisc}[Misc]+@{vehicle-CT}[CT]" disabled="true" title="Deception Total (includes Vehicle Size Mod and Dex Mod, and -5 if not trained in Pilot)" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-DeceptionDiversionMod" value="0" title="Crew Member's Deception Mod" class="defaultCrewLock"/></span>
@@ -4054,7 +4095,10 @@
 						<div class="sheet-table-row pilotBody">
 							<span class="sheet-table-data sheet-skillsCrewCol1">	<span>Deception</span>		
 							<div class="sheet-smallSkills"><span>Deceptive Appearance</span></div></span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-DeceptionAppearanceCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Deception}} {{skill=[[ 1d20+@{vehicle-DeceptionAppearance}[Deception]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Deception"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-DeceptionAppearanceCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Deception}} {{skill=[[ 1d20+@{vehicle-DeceptionAppearance}[Deception]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Deception"></button>
+								<button type="roll" name="roll_vehicle-DeceptionAppearanceCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Deception}} {{skill=[[ 1d20+@{vehicle-DeceptionAppearance}[Deception]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Deception"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-DeceptionAppearance" value="@{vehicle-sizeMod}[Size]+@{vehicle-dex|max}[Dex]+[[@{vehicle-PilotMod|max}-5]][Untrained Penalty]+@{vehicle-DeceptionMod}[Deception]+@{vehicle-DeceptionMisc}[Misc]" readonly title="Deceptive Appearance Total (or Pilot, if that is higher)" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-DeceptionAppearanceMod" value="@{vehicle-DeceptionDiversionMod}[Mod]" readonly title="Crew Member's Deception/Pilot Mod" /></span>
@@ -4063,7 +4107,10 @@
 						</div>
 						<div class="sheet-table-row">
 							<span class="sheet-table-data sheet-skillsCrewCol1" data-i18n="initiative">Initiative</span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-InitiativeCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Initiative}} {{skill=[[ 1d20+@{vehicle-Initiative}[Initiative]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Initiative"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-InitiativeCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Initiative}} {{skill=[[ 1d20+@{vehicle-Initiative}[Initiative]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Initiative"></button>
+								<button type="roll" name="roll_vehicle-InitiativeCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Initiative}} {{skill=[[ 1d20+@{vehicle-Initiative}[Initiative]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Initiative"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-Initiative" value="@{vehicle-sizeMod}[Size]+@{vehicle-dex|max}[Dex]+@{vehicle-InitiativeMod}[Pilot]+@{vehicle-InitiativeMisc}[Misc]" readonly title="Initiative/Pilot Total (includes Vehicle Size Mod and Dex Mod)" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-InitiativeMod" value="0" title="Crew Member's Initiative Mod" class="defaultCrewLock"/></span>
@@ -4072,7 +4119,10 @@
 						</div>
 						<div class="sheet-table-row">
 							<span class="sheet-table-data sheet-skillsCrewCol1" data-i18n="mechanics">Mechanics</span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-MechanicsCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Mechanics}} {{skill=[[ 1d20+@{vehicle-Mechanics}[Mechanics]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Mechanics"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-MechanicsCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Mechanics}} {{skill=[[ 1d20+@{vehicle-Mechanics}[Mechanics]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Mechanics"></button>
+								<button type="roll" name="roll_vehicle-MechanicsCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Mechanics}} {{skill=[[ 1d20+@{vehicle-Mechanics}[Mechanics]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Mechanics"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-Mechanics" value="@{vehicle-MechanicsMod}[Mechanics]+@{vehicle-MechanicsMisc}[Misc]" disabled="true" title="Mechanics Total" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-MechanicsMod" value="0" title="Crew Member's Mechanics Mod" class="defaultCrewLock"/></span>
@@ -4081,7 +4131,10 @@
 						</div>
 						<div class="sheet-table-row">
 							<span class="sheet-table-data sheet-skillsCrewCol1" data-i18n="perception">Perception</span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-PerceptionCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Perception}} {{skill=[[ 1d20+@{vehicle-Perception}[Perception]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Mechanics"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-PerceptionCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Perception}} {{skill=[[ 1d20+@{vehicle-Perception}[Perception]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Mechanics"></button>
+								<button type="roll" name="roll_vehicle-PerceptionCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Perception}} {{skill=[[ 1d20+@{vehicle-Perception}[Perception]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Mechanics"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-Perception" value="@{vehicle-PerceptionMod}[Perception]+@{vehicle-PerceptionMisc}[Misc]" disabled="true" title="Perception Total" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-PerceptionMod" value="0" title="Crew Member's Perception Mod" class="defaultCrewLock"/></span>
@@ -4090,7 +4143,10 @@
 						</div>
 						<div class="sheet-table-row">
 							<span class="sheet-table-data sheet-skillsCrewCol1" data-i18n="pilot">Pilot</span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-PilotCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Pilot}} {{skill=[[ 1d20+@{vehicle-Pilot}[Pilot]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Pilot"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-PilotCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Pilot}} {{skill=[[ 1d20+@{vehicle-Pilot}[Pilot]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Pilot"></button>
+								<button type="roll" name="roll_vehicle-PilotCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Pilot}} {{skill=[[ 1d20+@{vehicle-Pilot}[Pilot]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Pilot"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-Pilot" value="@{vehicle-sizeMod}[Size]+@{vehicle-dex|max}[Dex]+@{vehicle-PilotMod}[Pilot]+@{vehicle-PilotMisc}[Misc]" readonly title="Pilot Total (includes Vehicle Size Mod and Dex Mod)" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-PilotMod" value="0" title="Crew Member's Pilot Mod" class="defaultCrewLock"/></span>
@@ -4100,7 +4156,10 @@
 						<input type="checkbox" class="pilotSkillShow sheet-hidden" checked value="Pilot" name="attr_vehicle-CrewStation" />
 						<div class="sheet-table-row pilotBody">
 							<span class="sheet-table-data sheet-skillsCrewCol1" data-i18n="stealth">Stealth</span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-StealthCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Stealth}} {{skill=[[ 1d20+@{vehicle-Stealth}[Stealth]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Stealth"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-StealthCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Stealth}} {{skill=[[ 1d20+@{vehicle-Stealth}[Stealth]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Stealth"></button>
+								<button type="roll" name="roll_vehicle-StealthCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Stealth}} {{skill=[[ 1d20+@{vehicle-Stealth}[Stealth]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Stealth"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-Stealth" value="@{vehicle-sizeMod}[Size]+@{vehicle-dex|max}[Dex]+[[@{vehicle-PilotMod|max}-5]][Untrained Penalty]+@{vehicle-StealthMod}[Pilot]+@{vehicle-StealthMisc}[Misc]" disabled="true" title="Stealth Total (includes Vehicle Size Mod and Dex Mod, and -5 if not trained in Pilot)" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-StealthMod" value="0" title="Crew Member's Stealth Mod" class="defaultCrewLock"/></span>
@@ -4109,7 +4168,10 @@
 						</div>
 						<div class="sheet-table-row">
 							<span class="sheet-table-data sheet-skillsCrewCol1" data-i18n="use_computer">Use Computer</span>
-							<span class="sheet-table-data"><button type="roll" name="roll_vehicle-UseComputerCheck" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Use Computer}} {{skill=[[ 1d20+@{vehicle-UseComputer}[Use Computer]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Use Computer"></button></span>
+							<span class="sheet-table-data">
+								<button type="roll" name="roll_vehicle-UseComputerCheck" class="other-mod-on" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Use Computer}} {{skill=[[ 1d20+@{vehicle-UseComputer}[Use Computer]+@{vehicle-CT}[CT]+?{Other Modifiers|0}[Other]]]}}" title="Roll Use Computer"></button>
+								<button type="roll" name="roll_vehicle-UseComputerCheck" class="other-mod-off" value="&{template:skill} {{crewname=@{vehicle-CrewName} in @{character_name}}} {{name=Use Computer}} {{skill=[[ 1d20+@{vehicle-UseComputer}[Use Computer]+@{vehicle-CT}[CT]+0[Other]]]}}" title="Roll Use Computer"></button>
+							</span>
 							<span class="sheet-table-data"><input type="number" name="attr_vehicle-UseComputer" value="@{vehicle-UseComputerMod|max}[Int]+@{vehicle-UseComputerMod}[Use Computer]+@{vehicle-UseComputerMisc}[Misc]" disabled="true" title="Use Computer Total" />	</span>
 							<span class="sheet-table-data">&nbsp;=&nbsp;</span>	
 							<span class="sheet-table-data"><input type="checkbox" class="defaultCrew sheet-hidden" checked value="CustomCrew" name="attr_CrewQuality" /><input type="number" name="attr_vehicle-UseComputerMod" value="0" title="Crew Member's Use Computer Mod" class="defaultCrewLock"/></span>
@@ -4208,11 +4270,6 @@
 </div>
 <div class="clear"></div>
 </div> <!-- End Vehicle Sheet -->
-<!-- start help section --> 
-<div> 
-For help, please see the wiki page. <input type="text" disabled="true" name="wiki_URL" style="width:30em" title="Wiki URL" value="https://wiki.roll20.net/Star_Wars_Saga_Edition_Character_Sheet"/> <br/>
-<b><span data-i18n="last_updated">Last updated</span>:</b> 31 August 2023
-</div>
 <!-- start roll templates --> 
 <body>
 <rolltemplate class="sheet-rolltemplate-attack">
@@ -5161,6 +5218,94 @@ on("change:NoConstitution", function() {
 		});
 	});
 });
+on("change:NoneNPCSkills",function() {
+	setAttrs({
+		"show-Acrobatics":0,
+		"show-Athletics":0,
+		"show-Climb":0,
+		"show-Deception":0,
+		"show-Endurance":0,
+		"show-GatherInformation":0,
+		"show-Initiative":0,
+		"show-Jump":0,
+		"show-KnowledgeBureaucracy":0,
+		"show-KnowledgeGalacticLore":0,
+		"show-KnowledgeLifeSciences":0,
+		"show-KnowledgePhysicalSciences":0,
+		"show-KnowledgeSocialSciences":0,
+		"show-KnowledgeTactics":0,
+		"show-KnowledgeTechnology":0,
+		"show-Mechanics":0,
+		"show-Perception":0,
+		"show-Persuasion":0,
+		"show-Pilot":0,
+		"show-Ride":0,
+		"show-Stealth":0,
+		"show-Survival":0,
+		"show-Swim":0,
+		"show-TreatInjury":0,
+		"show-UseComputer":0,
+		"show-UsetheForce":0
+	});	
+});
+on("change:CrucialNPCSkills",function() {
+	setAttrs({
+		"show-Acrobatics":1,
+		"show-Athletics":0,
+		"show-Climb":0,
+		"show-Deception":1,
+		"show-Endurance":0,
+		"show-GatherInformation":0,
+		"show-Initiative":1,
+		"show-Jump":0,
+		"show-KnowledgeBureaucracy":0,
+		"show-KnowledgeGalacticLore":0,
+		"show-KnowledgeLifeSciences":0,
+		"show-KnowledgePhysicalSciences":0,
+		"show-KnowledgeSocialSciences":0,
+		"show-KnowledgeTactics":0,
+		"show-KnowledgeTechnology":0,
+		"show-Mechanics":0,
+		"show-Perception":1,
+		"show-Persuasion":1,
+		"show-Pilot":0,
+		"show-Ride":0,
+		"show-Stealth":1,
+		"show-Survival":0,
+		"show-Swim":0,
+		"show-TreatInjury":0,
+		"show-UseComputer":0
+	});	
+});
+on("change:StandardNPCSkills",function() {
+	setAttrs({
+		"show-Acrobatics":1,
+		"show-Athletics":0,
+		"show-Climb":1,
+		"show-Deception":1,
+		"show-Endurance":1,
+		"show-GatherInformation":1,
+		"show-Initiative":1,
+		"show-Jump":1,
+		"show-KnowledgeBureaucracy":1,
+		"show-KnowledgeGalacticLore":1,
+		"show-KnowledgeLifeSciences":1,
+		"show-KnowledgePhysicalSciences":1,
+		"show-KnowledgeSocialSciences":1,
+		"show-KnowledgeTactics":1,
+		"show-KnowledgeTechnology":1,
+		"show-Mechanics":1,
+		"show-Perception":1,
+		"show-Persuasion":1,
+		"show-Pilot":1,
+		"show-Ride":1,
+		"show-Stealth":1,
+		"show-Survival":1,
+		"show-Swim":1,
+		"show-TreatInjury":1,
+		"show-UseComputer":1
+	});	
+});
 on("clicked:SecondWind", function() {
       getAttrs(["hp_max","hp", "Second_Wind", "Second_Wind_Count", "hidden_second_wind"], function(values) {
         // get the hp, hp_max, second wind stat, and coerce into a numerical values.
@@ -5229,6 +5374,59 @@ on("change:IncludeSR", function() {
 		setAttrs({"Status": status});
 	});
 });
+on('change:QueryAttackModifier',()=>{
+  getSectionIDs('repeating_attack',(idArray)=>{
+    // create an array of all the repeating section attribute names we want to get the values of.
+    const getArr = idArray.map(id => `repeating_attack_${id}_WeaponAttack`);
+    getAttrs(['QueryAttackModifier',...getArr],(attributes) => {
+      // An object to store our changes in
+      const setObj = {};
+      //Assuming that QueryAttackModifier is 1 when it should be the query and 0 when it should be just the 0[Other]
+      let replaceRx;
+      let replaceContent;
+      if(+attributes.QueryAttackModifier){
+        replaceRx = /0\[other\]/gi;
+        replaceContent = '?{Other Modifiers (Attack)|0}[Other]'
+      }else{
+        replaceRx = /\?\{Other Modifiers \(Attack\)\|0\}\[Other\]/gi;
+        replaceContent = '0[Other]';
+      }
+      idArray.forEach(id => {
+        const attrName = `repeating_attack_${id}_WeaponAttack`;
+        setObj[attrName] = attributes[attrName].replace(replaceRx,replaceContent);
+      });
+      // Apply our changes
+      setAttrs(setObj,{silent:true});
+    });
+  });
+});
+on('change:QuerySkillModifier change:repeating_npc-skill',()=>{
+  getSectionIDs('repeating_npc-skill',(idArray)=>{
+    // create an array of all the repeating section attribute names we want to get the values of.
+    const getArr = idArray.map(id => `repeating_npc-skill_${id}_Formula`);
+    getAttrs(['QuerySkillModifier',...getArr],(attributes) => {
+      // An object to store our changes in
+      const setObj = {};
+      //Assuming that QuerySkillModifier is 1 when it should be the query and 0 when it should be just the 0[Other]
+      let replaceRx;
+      let replaceContent;
+      if(+attributes.QuerySkillModifier){
+        replaceRx = /0\[other\]/gi;
+        replaceContent = '?{Other Modifiers|0}[Other]'
+      }else{
+        replaceRx = /\?\{Other Modifiers\|0\}\[Other\]/gi;
+        replaceContent = '0[Other]';
+      }
+      idArray.forEach(id => {
+        const attrName = `repeating_npc-skill_${id}_Formula`;
+        setObj[attrName] = attributes[attrName].replace(replaceRx,replaceContent);
+      });
+      // Apply our changes
+      setAttrs(setObj,{silent:true});
+    });
+  });
+});
+
 on("change:FocusHouseRule", function() {
 	getAttrs(["FocusHouseRule","AcrobaticsFormula","AthleticsFormula","ClimbFormula","DeceptionFormula","EnduranceFormula","GatherInformationFormula","InitiativeFormula","JumpFormula","Knowledge-BureaucracyFormula","Knowledge-GalacticLoreFormula","Knowledge-LifeSciencesFormula","Knowledge-PhysicalScienceFormula","Knowledge-SocialScienceFormula","Knowledge-TacticsFormula","Knowledge-TechnologyFormula","MechanicsFormula","PerceptionFormula","PersuasionFormula","PilotFormula","RideFormula","StealthFormula","SurvivalFormula","SwimFormula","TreatInjuryFormula","UseComputerFormula","UsetheForceFormula"], function(values) {
 		let FHR = values.FocusHouseRule||0;
@@ -5538,7 +5736,6 @@ on("change:inventoryrunningsummary change:ArmorWorn",function(){
 		setAttrs({"inventory": summary});
 	});
 });
-
 on("change:repeating_organization remove:repeating_organization", function() {
 	console.log("Changing org score");
 	repeatingSum("OrganizationScore","organization","criteria_max");
