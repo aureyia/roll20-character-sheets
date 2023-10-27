@@ -2,80 +2,32 @@ include ./outcomes
 include ./body
 include ../../components/moves/mixins/container
 
-mixin standardAction(type)
-  | {{#rollGreater() #{type} challenge1}}
-  | {{#rollTotal() challenge1 challenge2}}
+mixin standardAction()
+  | {{#rollGreater() computed::outcomeOpportunity 0}}
   +opportunity
-  | {{/rollTotal() challenge1 challenge2}}
-  | {{#^rollTotal() challenge1 challenge2}}
-  | {{#rollGreater() #{type} challenge2}}
+  | {{/rollGreater() computed::outcomeOpportunity 0}}
+  | {{#rollGreater() computed::outcomeStrongHit 0}}
   +strongHit
-  | {{/rollGreater() #{type} challenge2}}
-  | {{#^rollGreater() #{type} challenge2}}
+  | {{/rollGreater() computed::outcomeStrongHit 0}}
+  | {{#rollGreater() computed::outcomeWeakHit 0}}
   +weakHit
-  | {{/^rollGreater() #{type} challenge2}}
-  | {{/^rollTotal() challenge1 challenge2}}
-  | {{/rollGreater() #{type} challenge1}}
-  | {{#^rollGreater() #{type} challenge1}}
-  | {{#rollTotal() challenge1 challenge2}}
-  +complication
-  | {{/rollTotal() challenge1 challenge2}}
-  | {{#^rollTotal() challenge1 challenge2}}
-  | {{#rollGreater() #{type} challenge2}}
-  +weakHit
-  | {{/rollGreater() #{type} challenge2}}
-  | {{#^rollGreater() #{type} challenge2}}
+  | {{/rollGreater() computed::outcomeWeakHit 0}}
+  | {{#rollGreater() computed::outcomeMiss 0}}
   +miss
-  | {{/^rollGreater() #{type} challenge2}}
-  | {{/^rollTotal() challenge1 challenge2}}
-  | {{/^rollGreater() #{type} challenge1}}
+  | {{/rollGreater() computed::outcomeMiss 0}}
+  | {{#rollGreater() computed::outcomeComplication 0}}
+  +complication
+  | {{/rollGreater() computed::outcomeComplication 0}}
 
-mixin standardActionWithMomentum(type)
-  | {{#rollGreater() #{type} challenge1}}
-  | {{#rollTotal() challenge1 challenge2}}
-  +opportunity
-  | {{/rollTotal() challenge1 challenge2}}
-  | {{#^rollTotal() challenge1 challenge2}}
-  | {{#rollGreater() #{type} challenge2}}
-  +strongHit
-  | {{/rollGreater() #{type} challenge2}}
-  | {{#^rollGreater() #{type} challenge2}}
-  +weakHit
-  | {{#rollGreater() momentum challenge2}}
+
+mixin standardActionWithMomentum()
+  +standardAction
+  | {{#rollGreater() computed::momentumBurnOpportunity 0}}
+  +momentumOpportunity
+  | {{/rollGreater() computed::momentumBurnOpportunity 0}}
+  | {{#rollGreater() computed::momentumBurnStrongHit 0}}
   +momentumStrongHit
-  | {{/rollGreater() momentum challenge2}}
-  | {{/^rollGreater() #{type} challenge2}}
-  | {{/^rollTotal() challenge1 challenge2}}
-  | {{/rollGreater() #{type} challenge1}}
-  | {{#^rollGreater() #{type} challenge1}}
-  | {{#rollTotal() challenge1 challenge2}}
-  +complication
-  | {{#rollGreater() momentum challenge1}}
-  +momentumStrongHit
-  | {{/rollGreater() momentum challenge1}}
-  | {{/rollTotal() challenge1 challenge2}}
-  | {{#^rollTotal() challenge1 challenge2}}
-  | {{#rollGreater() #{type} challenge2}}
-  +weakHit
-  | {{#rollGreater() momentum challenge1}}
-  +momentumStrongHit
-  | {{/rollGreater() momentum challenge1}}
-  | {{/rollGreater() #{type} challenge2}}
-  | {{#^rollGreater() #{type} challenge2}}
-  +miss
-  | {{#rollGreater() momentum challenge1}}
-  | {{#rollGreater() momentum challenge2}}
-  +momentumStrongHit
-  | {{/rollGreater() momentum challenge2}}
-  | {{#^rollGreater() momentum challenge2}}
+  | {{/rollGreater() computed::momentumBurnStrongHit 0}}
+  | {{#rollGreater() computed::momentumBurnWeakHit 0}}
   +momentumWeakHit
-  | {{/^rollGreater() momentum challenge2}}
-  | {{/rollGreater() momentum challenge1}}
-  | {{#^rollGreater() momentum challenge1}}
-  | {{#rollGreater() momentum challenge2}}
-  +momentumWeakHit
-  | {{/rollGreater() momentum challenge2}}
-  | {{/^rollGreater() momentum challenge1}}
-  | {{/^rollGreater() #{type} challenge2}}
-  | {{/^rollTotal() challenge1 challenge2}}
-  | {{/^rollGreater() #{type} challenge1}}
+  | {{/rollGreater() computed::momentumBurnWeakHit 0}}

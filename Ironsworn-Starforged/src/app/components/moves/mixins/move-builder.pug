@@ -39,24 +39,26 @@ mixin movePreview(move, options)
         console.log('I am nom')
       }
       //- - const mixedRollType = moveTriggerOptions.every((option) => option['Roll type'] === 'Action roll')
-    if rollType === 'Progress roll'
-      +rollLabel
-        +progressRoll(move, 'hide-element')
-    else if rollType === 'Action roll'
-      +rollLabel
-        +movesRoll(move, 'hide-element')
+    button(type="action" name="act_starforged_moves" value="Face Danger") Nom
+    //- if rollType === 'Progress roll'
+    //-   +rollLabel
+    //-     +progressRoll(move, 'hide-element')
+    //- else if rollType === 'Action roll'
+    //-   +rollLabel
+    //-     +movesRoll(move, 'hide-element')
 
   .move-description
     block
   .oracle-footer.move-page-footer=move.Page
 
 mixin container(move, options = false)
+  - const moveId = `move-${_.kebabCase(move.Name)}`
   if options.visibility
     div.move-visible.surface
       +movePreview(move, options)
         block
   else
-    input(type='radio' name='attr_move_preview' class=`${move.id} hide-element` value=move.Name)
-    div(class=`${move.id} surface showhide`)
+    input(type='radio' name='attr_move_preview' class=`${moveId} hide-element` value=move.Name)
+    div(class=`${moveId} surface showhide`)
       +movePreview(move, options)
         block

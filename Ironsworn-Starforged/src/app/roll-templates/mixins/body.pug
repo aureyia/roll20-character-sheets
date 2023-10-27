@@ -3,10 +3,10 @@ mixin challengeDice
     div.i18n-text(data-i18n='challenge-dice')=translation['challenge-dice']
     div.sheet-challenge-dice {{challenge1}} {{challenge2}}
 
-mixin actionBody(type)
+mixin actionBody()
   .sheet-result-body.sheet-result-row
     div.i18n-text(data-i18n='action-score')=translation['action-score']
-    div.sheet-action-score {{#{type}}}
+    div.sheet-action-score {{computed::action}}
   +challengeDice
 
 mixin progressBody
