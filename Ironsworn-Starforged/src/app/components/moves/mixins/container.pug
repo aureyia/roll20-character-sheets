@@ -15,16 +15,34 @@ mixin rollLabelTable
     span.i18n-text(data-i18n='roll-on-the-table')=translation['roll-on-the-table']
     block
 
+
+    if rollType === 'Progress roll'
+      +rollLabel
+        +progressRoll(move, 'hide-element')
+    else if rollType === 'Action roll'
+      +rollLabel
+        +movesRoll(move, 'hidden-button')
+
+
 mixin moveListButton(move)
   .button-container
-    //- - console.log('move', move)
     if move.Trigger.Options
-      - const moveTriggerOptions = move.Trigger.Options.filter(option => { return option['Roll type'] === 'Action roll' || option['Roll type'] === 'Progress roll'})
-      //- - console.log('moveTriggerOptions', moveTriggerOptions)
-      if move['Progress Move']
+      -
+        let rollType = ''
+        const moveTriggerOptions = move.Trigger.Options.filter(option => { return option['Roll type'] === 'Action roll' || option['Roll type'] === 'Progress roll'})
+        const areOnlyActionRollOptions = moveTriggerOptions.every((option) => option['Roll type'] === 'Action roll')
+        const areOnlyProgressRollOptions = moveTriggerOptions.every((option) => option['Roll type'] === 'Progress roll')
+        if(areOnlyActionRollOptions === true) {
+          rollType = 'Action roll'
+        } else if (areOnlyProgressRollOptions === true) {
+          rollType = 'Progress roll'
+        } else {
+          rollType = 'Mixed roll'
+        }
+      if rollType === 'Progress roll'
         +progressRoll(move, 'roll-show')
-      else if statCheck
-        +movesRoll(move, 'roll-show')
+      else if rollType === 'Action roll'
+        +movesRoll(move, 'roll-show btn')
       else
         |
     else 

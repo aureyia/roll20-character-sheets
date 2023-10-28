@@ -17,7 +17,7 @@ mixin oracleSubOraclesListGroupItem(id, buttonLabel, oracles)
       options.push(`${tableLabel},${counter}`);
       counter++;
     })
-    console.log('opt 1', options)
+
   - const rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}}`
   +oracleRollBtn(id, buttonLabel, rollQuery)
 

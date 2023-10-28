@@ -31,7 +31,7 @@ mixin oracleRollGroup(group)
 mixin oraclePreview(oracle, groupName)
   input(class=`${oracle.$id} hide-element` type='radio' name=`attr_oracle_preview` value=oracle.$id)
   div(class=`${oracle.$id} showhide oracle-table-preview surface` id=oracle.$id)
-    - let nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replace(/ - /i, ": ") : `${groupName}: ${oracle.Name}`
+    - let nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replaceAll(/ - /i, ": ") : `${groupName}: ${oracle.Name}`
     .oracle-title=nameString
     if oracle.Table
       +oracleTable(oracle)

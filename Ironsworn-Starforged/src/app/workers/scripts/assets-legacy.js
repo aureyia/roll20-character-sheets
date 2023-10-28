@@ -177,8 +177,8 @@ on('sheet:opened', function() {
 });
 
 function checkIfLegacyAssetsExistAndEnable(section) {
-  const formattedBoxAttr = `hide_legacy_${section.replace('-', '_')}_button_box`
-  const formattedShowHideAttr = `showhide_legacy_${section.replace('-', '_')}`
+  const formattedBoxAttr = `hide_legacy_${section.replaceAll('-', '_')}_button_box`
+  const formattedShowHideAttr = `showhide_legacy_${section.replaceAll('-', '_')}`
   getAttrs([formattedBoxAttr, `changelog_${versionNumber}`], function(values) {
     if(values[formattedBoxAttr] !== 'off') {
       getSectionIDs(section, function(idarray) {

@@ -113,13 +113,13 @@ mixin track(track, assetName)
 
 mixin assetTemplate(asset, options)
   - let name = _.kebabCase(asset.Name)
-  - let category = _.kebabCase(asset["Asset Type"].replace('Starforged/Assets/', '').replace('_', ' '))
+  - let category = _.kebabCase(asset["Asset Type"].replaceAll('Starforged/Assets/', '').replaceAll('_', ' '))
   if options.visiblityToggle === true
     input(class=`${options.classes} asset-${name} asset-toggle` type='checkbox' name=`attr_${name}`)
   div(class=`${options.classes} asset-card asset-${name} category-${category}`)
     .asset-content-header
       .asset-details
-        .category=asset["Asset Type"].replace('Starforged/Assets/', '')
+        .category=asset["Asset Type"].replaceAll('Starforged/Assets/', '')
         span.asset-name=asset.Name
       .background-svg
     if asset.Requirement
@@ -140,7 +140,7 @@ mixin genericAssetBuilder(assetsArray, listId)
   datalist(id=listId)
     - console.log("Generating", assetsArray.length, "assets")
     each asset in assetsArray
-      - let assetId = asset.Name.replace(" ", "-").toLowerCase()
+      - let assetId = asset.Name.replaceAll(" ", "-").toLowerCase()
       - console.log("Generating", assetId)
       //- generates classes and outputs to stdout
       //- - console.log(`input[type=checkbox].${assetId}:checked ~ div.${assetId},`)

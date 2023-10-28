@@ -1685,17 +1685,20 @@
   width: 100%;
   padding: 0;
 }
-.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='roll'] {
+.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='roll'],
+.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='action'] {
   display: inline-block;
   height: 100%;
   width: 100%;
 }
-.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='roll']:hover {
+.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='roll']:hover,
+.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='action']:hover {
   transition: 0.3s ease;
   background: #606060 !important;
   color: #fff;
 }
-.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='roll']:before {
+.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='roll']:before,
+.charsheet .list-group-container section.list-group ul li.list-group-item .button-container button.btn.roll-show[type='action']:before {
   vertical-align: middle;
 }
 .charsheet .list-group-container.scrollable-list-groups {
@@ -1932,45 +1935,47 @@
 .charsheet input[type=radio].move-check-your-gear:checked ~ div.move-check-your-gear,
 .charsheet input[type=radio].move-swear-an-iron-vow:checked ~ div.move-swear-an-iron-vow,
 .charsheet input[type=radio].move-reach-a-milestone:checked ~ div.move-reach-a-milestone,
-.charsheet input[type=radio].move-forsake-your-vow:checked ~ div.move-forsake-your-vow,
 .charsheet input[type=radio].move-fulfill-your-vow:checked ~ div.move-fulfill-your-vow,
+.charsheet input[type=radio].move-forsake-your-vow:checked ~ div.move-forsake-your-vow,
 .charsheet input[type=radio].move-make-a-connection:checked ~ div.move-make-a-connection,
 .charsheet input[type=radio].move-develop-your-relationship:checked ~ div.move-develop-your-relationship,
-.charsheet input[type=radio].move-forge-a-bond:checked ~ div.move-forge-a-bond,
 .charsheet input[type=radio].move-test-your-relationship:checked ~ div.move-test-your-relationship,
+.charsheet input[type=radio].move-forge-a-bond:checked ~ div.move-forge-a-bond,
 .charsheet input[type=radio].move-undertake-an-expedition:checked ~ div.move-undertake-an-expedition,
 .charsheet input[type=radio].move-explore-a-waypoint:checked ~ div.move-explore-a-waypoint,
-.charsheet input[type=radio].move-finish-an-expedition:checked ~ div.move-finish-an-expedition,
-.charsheet input[type=radio].move-set-a-course:checked ~ div.move-set-a-course,
 .charsheet input[type=radio].move-make-a-discovery:checked ~ div.move-make-a-discovery,
 .charsheet input[type=radio].move-confront-chaos:checked ~ div.move-confront-chaos,
+.charsheet input[type=radio].move-finish-an-expedition:checked ~ div.move-finish-an-expedition,
+.charsheet input[type=radio].move-set-a-course:checked ~ div.move-set-a-course,
 .charsheet input[type=radio].move-enter-the-fray:checked ~ div.move-enter-the-fray,
 .charsheet input[type=radio].move-gain-ground:checked ~ div.move-gain-ground,
 .charsheet input[type=radio].move-react-under-fire:checked ~ div.move-react-under-fire,
 .charsheet input[type=radio].move-strike:checked ~ div.move-strike,
 .charsheet input[type=radio].move-clash:checked ~ div.move-clash,
-.charsheet input[type=radio].move-face-defeat:checked ~ div.move-face-defeat,
 .charsheet input[type=radio].move-take-decisive-action:checked ~ div.move-take-decisive-action,
+.charsheet input[type=radio].move-face-defeat:checked ~ div.move-face-defeat,
 .charsheet input[type=radio].move-battle:checked ~ div.move-battle,
 .charsheet input[type=radio].move-lose-momentum:checked ~ div.move-lose-momentum,
 .charsheet input[type=radio].move-endure-harm:checked ~ div.move-endure-harm,
 .charsheet input[type=radio].move-endure-stress:checked ~ div.move-endure-stress,
-.charsheet input[type=radio].move-withstand-damage:checked ~ div.move-withstand-damage,
 .charsheet input[type=radio].move-companion-takes-a-hit:checked ~ div.move-companion-takes-a-hit,
 .charsheet input[type=radio].move-sacrifice-resources:checked ~ div.move-sacrifice-resources,
-.charsheet input[type=radio].move-face-death:checked ~ div.move-face-death,
-.charsheet input[type=radio].move-face-desolation:checked ~ div.move-face-desolation,
-.charsheet input[type=radio].move-overcome-destruction:checked ~ div.move-overcome-destruction,
+.charsheet input[type=radio].move-withstand-damage:checked ~ div.move-withstand-damage,
 .charsheet input[type=radio].move-sojourn:checked ~ div.move-sojourn,
 .charsheet input[type=radio].move-heal:checked ~ div.move-heal,
 .charsheet input[type=radio].move-hearten:checked ~ div.move-hearten,
-.charsheet input[type=radio].move-repair:checked ~ div.move-repair,
 .charsheet input[type=radio].move-resupply:checked ~ div.move-resupply,
+.charsheet input[type=radio].move-repair:checked ~ div.move-repair,
+.charsheet input[type=radio].move-face-death:checked ~ div.move-face-death,
+.charsheet input[type=radio].move-face-desolation:checked ~ div.move-face-desolation,
+.charsheet input[type=radio].move-overcome-destruction:checked ~ div.move-overcome-destruction,
 .charsheet input[type=radio].move-earn-experience:checked ~ div.move-earn-experience,
 .charsheet input[type=radio].move-advance:checked ~ div.move-advance,
 .charsheet input[type=radio].move-continue-a-legacy:checked ~ div.move-continue-a-legacy,
+.charsheet input[type=radio].move-ask-the-oracle:checked ~ div.move-ask-the-oracle,
 .charsheet input[type=radio].move-pay-the-price:checked ~ div.move-pay-the-price,
-.charsheet input[type=radio].move-ask-the-oracle:checked ~ div.move-ask-the-oracle {
+.charsheet input[type=radio].move-begin-the-scene:checked ~ div.move-begin-the-scene,
+.charsheet input[type=radio].move-finish-the-scene:checked ~ div.move-finish-the-scene {
   visibility: visible;
   height: auto;
   opacity: 1;
@@ -2035,6 +2040,18 @@
 .charsheet input.optional-move-threat:checked ~ div.optional-move-threat,
 .charsheet input.optional-move-rarity:checked ~ div.optional-move-rarity {
   display: block;
+}
+.charsheet .hidden-button {
+  display: block;
+  height: 0;
+  border: 0;
+  padding: 0;
+  width: 0;
+}
+.charsheet button[type=action].roll-show:before {
+  font-family: "dicefontd20";
+  font-weight: normal;
+  content: "t";
 }
 .charsheet input[type="checkbox"].showhide:checked ~ div.showhide {
   visibility: visible;
@@ -2592,19 +2609,25 @@
   width: max-content;
 }
 .charsheet .oracle .button-container button.btn.roll-show[type='roll'],
-.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='roll'] {
+.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='roll'],
+.charsheet .oracle .button-container button.btn.roll-show[type='action'],
+.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='action'] {
   display: inline-block;
   height: 100%;
   width: 1.25em;
 }
 .charsheet .oracle .button-container button.btn.roll-show[type='roll']:hover,
-.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='roll']:hover {
+.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='roll']:hover,
+.charsheet .oracle .button-container button.btn.roll-show[type='action']:hover,
+.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='action']:hover {
   transition: 0.3s ease;
   background: #606060 !important;
   color: #fff;
 }
 .charsheet .oracle .button-container button.btn.roll-show[type='roll']:before,
-.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='roll']:before {
+.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='roll']:before,
+.charsheet .oracle .button-container button.btn.roll-show[type='action']:before,
+.charsheet .oracle-overview-container .button-container button.btn.roll-show[type='action']:before {
   vertical-align: middle;
 }
 .charsheet .oracle-overview-container {
@@ -3170,7 +3193,8 @@
 .sheet-darkmode .oracle:nth-child(2n+1) {
   background-color: #323232;
 }
-.sheet-darkmode button[type="roll"].roll-show {
+.sheet-darkmode button[type="roll"].roll-show,
+.sheet-darkmode button[type="action"].roll-show {
   color: #acacad;
 }
 .sheet-darkmode input[type=text] {

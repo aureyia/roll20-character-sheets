@@ -1,5 +1,5 @@
 on('clicked:starforged_moves', (info) => {
-  startRoll(`&{template:starforged_moves} {{header=@{character_name}}} {{name=${info.htmlAttributes.value}}} {{momentum=[[@{momentum}]]}} {{action=[[{d6}]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{edge}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{preNegationActionScore=[[0]]}} {{rollNegated=[[0]]} {{momentumBurnOpportunity=[[0]]}} {{momentumBurnStrongHit=[[0]]}} {{momentumBurnWeakHit=[[0]]}} {{outcomeOpportunity=[[0]]}} {{outcomeStrongHit=[[0]]}} {{outcomeWeakHit=[[0]]}} {{outcomeMiss=[[0]]}} {{outcomeComplication=[[0]]}}`, (initialRollData) => {
+  startRoll(`&{template:starforged_moves} {{header=@{character_name}}} {{name=${info.htmlAttributes.value}}} {{momentum=[[@{momentum}]]}} {{action=[[{d6}]]}} {{add=[[(?{Modifier|0})]]}} {{stat=[[@{edge}]]}} {{challenge1=[[d10]]}} {{challenge2=[[d10]]}} {{preNegationActionScore=[[0]]}} {{rollNegated=[[0]]}} {{momentumBurnOpportunity=[[0]]}} {{momentumBurnStrongHit=[[0]]}} {{momentumBurnWeakHit=[[0]]}} {{outcomeOpportunity=[[0]]}} {{outcomeStrongHit=[[0]]}} {{outcomeWeakHit=[[0]]}} {{outcomeMiss=[[0]]}} {{outcomeComplication=[[0]]}}`, (initialRollData) => {
    
     const intitialActionDieResult = initialRollData.results.action.result
     const momentum = initialRollData.results.momentum.result
@@ -14,6 +14,8 @@ on('clicked:starforged_moves', (info) => {
     const finalActionResult = combinedActionResult > 10 ? 10 : combinedActionResult
     const rollOutcome = calculateRollOutcome(finalActionResult, challengeDie1Result, challengeDie2Result)
     const momentumBurnData = isMomentumBurnAvailable(rollOutcome, momentum, challengeDie1Result, challengeDie2Result)
+
+    console.log('rollNegated', finalisedActionDieResult === 0 ? 1 : 0)
 
     finishRoll(
       initialRollData.rollId,

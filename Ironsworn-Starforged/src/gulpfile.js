@@ -7,34 +7,34 @@ const path = require('path');
 const axios = require('axios');
 const merge = require('gulp-merge-json');
 const { starforged } = require('dataforged')
-const { buildAssetTranslations, buildOracleTranslations } = require('./buildTranslations')
+const { 
+  buildAssetTranslations,
+  buildOracleTranslations,
+  buildMoveTranslations 
+} = require('./buildTranslations')
 
 axios.defaults.baseURL = 'https://raw.githubusercontent.com/rsek/dataforged/main/roll20';
 
 gulp.task('dataforge', async function() {
   const apiData = {
-    movegroups: await axios.get('/movegroups.json'),
     rolls: await axios.get('/rolls.json'),
-    oracles: await axios.get('/oracles.json'),
-    moves: await axios.get('/moves.json'),
     legacyassets: await axios.get('/assets.json'),
   }
 
   const rawData = {
     oracles: starforged['Oracle Categories'],
     assets: starforged['Asset Types'],
-    // moves: apiData.moves.data,
     moves: starforged['Move Categories'],
     truths: starforged['Setting Truths'],
     encounters: starforged['Encounters'],
-    movegroups: apiData.movegroups.data,
     rolls: apiData.rolls.data,
     legacyassets: apiData.legacyassets.data
   };
 
   const translationData = {
     'translation-assets': buildAssetTranslations(),
-    'translation-oracles': buildOracleTranslations()
+    'translation-oracles': buildOracleTranslations(),
+    'translation-moves': buildMoveTranslations()
   };
 
   for (let key in rawData) {
@@ -67,7 +67,7 @@ gulp.task('data', function() {
         edit: (json, file) => {
           // Extract the filename and strip the extension
           var filename = path.basename(file.path),
-            primaryKey = filename.replace(path.extname(filename), '');
+            primaryKey = filename.replaceAll(path.extname(filename), '');
 
           // Set the filename as the primary key for our JSON data
           var data = {};

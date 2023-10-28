@@ -21,7 +21,7 @@ mixin assets()
         +customAssets
     .hidden-fields.hide-element
       each asset in finalisedAssetList
-        - let assetClassName = asset.Name.replace(" ", "-").toLowerCase()
+        - let assetClassName = asset.Name.replaceAll(" ", "-").toLowerCase()
         each ability, index in asset.Abilities
           - let assetAbility = `asset-'${assetClassName}-ability-${index + 1}',`
           //- For Testing Purposes

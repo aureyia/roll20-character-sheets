@@ -1,17 +1,12 @@
 const { starforged } = require('dataforged')
+const marked = require('marked')
 
 function keyFormat (inputString) {
-  return inputString.toLowerCase().replace(/\s+/g, "-");
+  return inputString.toLowerCase().replaceAll(/\s+/g, "-");
 }
 
 function convertToHtml(inputText, wrap = true) {
-  // Use regular expressions to find and replace the text
-  const replacedText = inputText.replace(/\[([^[\]]+)]\(([^)]+)\)/g, '<u>$1</u>');
-
-  // Wrap the replaced text in <p> tags
-  const finalText = wrap === true ? `<p>${replacedText}</p>` : replacedText
-
-  return finalText;
+  return marked.parse(inputText);
 }
 
 function buildAssetTranslations () {
@@ -52,6 +47,24 @@ function buildAssetTranslations () {
     })
   })
   return assetTranslations
+}
+
+function buildMoveTranslations () {
+  let moveTranslations = {}
+
+  starforged['Move Categories'].forEach((category) => {
+    const categoryId = keyFormat(category.Name)
+    moveTranslations[`move-group-title-${categoryId}`] = category.Name
+    
+    category.Moves.forEach((move) => {
+      const moveId = keyFormat(move.Name)
+
+      moveTranslations[`move-title-${moveId}`] = move.Name
+      moveTranslations[`move-text-${moveId}`] = convertToHtml(move.Text)
+    })
+  })
+
+  return moveTranslations
 }
 
 function buildOracleTranslations () {
@@ -104,4 +117,4 @@ function buildOracleTranslations () {
   return oracleTranslations
 }
 
-module.exports = { buildAssetTranslations, buildOracleTranslations }
+module.exports = { buildAssetTranslations, buildOracleTranslations, buildMoveTranslations }

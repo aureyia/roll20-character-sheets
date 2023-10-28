@@ -4,7 +4,8 @@ include ../../oracles/mixins/oracle-roll-btn
 
 mixin movePreviewFactory(move, options)
   +container(move, options)
-    .rules-text !{move.Text}
+    - const moveId = _.kebabCase(move.Name)
+    .rules-text !{translation[`move-text-${moveId}`]}
     if move.Oracle
       .move-oracle-container
         -
@@ -36,16 +37,13 @@ mixin movePreview(move, options)
         rollType = 'Progress roll'
       } else {
         rollType = 'Mixed roll'
-        console.log('I am nom')
       }
-      //- - const mixedRollType = moveTriggerOptions.every((option) => option['Roll type'] === 'Action roll')
-    button(type="action" name="act_starforged_moves" value="Face Danger") Nom
-    //- if rollType === 'Progress roll'
-    //-   +rollLabel
-    //-     +progressRoll(move, 'hide-element')
-    //- else if rollType === 'Action roll'
-    //-   +rollLabel
-    //-     +movesRoll(move, 'hide-element')
+    if rollType === 'Progress roll'
+      +rollLabel
+        +progressRoll(move, 'hide-element')
+    else if rollType === 'Action roll'
+      +rollLabel
+        +movesRoll(move, 'hidden-button')
 
   .move-description
     block
