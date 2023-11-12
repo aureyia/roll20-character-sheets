@@ -78,9 +78,12 @@ mixin oracleTableRow(table, row, index)
     const initChance = row.Floor;
     const finalChance = row.Ceiling;
     ranges.push(rangeString(initChance, finalChance));
-  tr.oracle-row
-    each range in ranges
-      td.oracle-roll!=range
-    //- td.oracle-result!=resultString(row)
-    td.oracle-result(data-i18n=row.$id)!=translation[row.$id]
+  if row.$id
+    tr.oracle-row
+      each range in ranges
+        td.oracle-roll!=range
+      //- td.oracle-result!=resultString(row)
+      td.oracle-result(data-i18n=row.$id)!=translation[row.$id]
+      
+
 

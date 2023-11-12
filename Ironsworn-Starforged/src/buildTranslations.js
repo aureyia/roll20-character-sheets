@@ -9,6 +9,10 @@ function convertToHtml(inputText, wrap = true) {
   return marked.parse(inputText);
 }
 
+function convertToHtmlStripped(inputText, wrap = true) {
+  return marked.parse(inputText).replaceAll("<p>", "").replaceAll("</p>", "");
+}
+
 function buildAssetTranslations() {
   let assetTranslations = {};
   const assetTypes = starforged["Asset Types"];
@@ -26,7 +30,7 @@ function buildAssetTranslations() {
       });
 
       if (asset.Requirement) {
-        assetTranslations[`${keyPrefix}-requirement`] = convertToHtml(
+        assetTranslations[`${keyPrefix}-requirement`] = convertToHtmlStripped(
           asset.Requirement,
           false
         );
@@ -38,7 +42,7 @@ function buildAssetTranslations() {
       }
 
       for (let i = 0; i < 3; i++) {
-        assetTranslations[`${keyPrefix}-ability-${i + 1}`] = convertToHtml(
+        assetTranslations[`${keyPrefix}-ability-${i + 1}`] = convertToHtmlStripped(
           asset.Abilities[i].Text
         );
         if (asset.Abilities[i].Inputs) {
@@ -83,7 +87,7 @@ function buildOracleTranslations () {
 
     oracleTranslations[`${categoryId}-name`] = oracleCategory.Name;
     if (oracleCategory.Description) {
-      oracleTranslations[`${categoryId}-description`] = convertToHtml(
+      oracleTranslations[`${categoryId}-description`] = convertToHtmlStripped(
         oracleCategory.Description,
         false
       );
@@ -94,7 +98,7 @@ function buildOracleTranslations () {
 
       oracleTranslations[`${oracleId}-name`] = oracle.Name;
       if (oracle.Description) {
-        oracleTranslations[`${oracleId}-description`] = convertToHtml(
+        oracleTranslations[`${oracleId}-description`] = convertToHtmlStripped(
           oracle.Description,
           false
         );
@@ -106,7 +110,7 @@ function buildOracleTranslations () {
             if (row.Result.includes("⏵") && row.Summary) {
               oracleTranslations[row.$id] = row.Summary;
             } else {
-              oracleTranslations[row.$id] = convertToHtml(row.Result, false);
+              oracleTranslations[row.$id] = convertToHtmlStripped(row.Result, false);
             }
           });
         });
@@ -115,7 +119,7 @@ function buildOracleTranslations () {
           if (row.Result.includes("⏵") && row.Summary) {
             oracleTranslations[row.$id] = row.Summary;
           } else {
-            oracleTranslations[row.$id] = convertToHtml(row.Result, false);
+            oracleTranslations[row.$id] = convertToHtmlStripped(row.Result, false);
           }
         });
       } else {
@@ -129,7 +133,7 @@ function buildOracleTranslations () {
 
         oracleTranslations[`${oracleId}-name`] = oracle.Name;
         if (oracle.Description) {
-          oracleTranslations[`${oracleId}-description`] = convertToHtml(
+          oracleTranslations[`${oracleId}-description`] = convertToHtmlStripped(
             oracle.Description,
             false
           );
@@ -141,7 +145,7 @@ function buildOracleTranslations () {
               if (row.Result.includes("⏵") && row.Summary) {
                 oracleTranslations[row.$id] = row.Summary;
               } else {
-                oracleTranslations[row.$id] = convertToHtml(row.Result, false);
+                oracleTranslations[row.$id] = convertToHtmlStripped(row.Result, false);
               }
             });
           });
@@ -150,7 +154,7 @@ function buildOracleTranslations () {
             if (row.Result.includes("⏵") && row.Summary) {
               oracleTranslations[row.$id] = row.Summary;
             } else {
-              oracleTranslations[row.$id] = convertToHtml(row.Result, false);
+              oracleTranslations[row.$id] = convertToHtmlStripped(row.Result, false);
             }
           });
         } else {
