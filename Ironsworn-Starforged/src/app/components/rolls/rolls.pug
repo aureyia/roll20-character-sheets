@@ -28,15 +28,14 @@ mixin movesRoll(move, classes)
       return {
         text: optionText,
         method: option.Method.toLowerCase(),
-        stats: option.Using
+        stats: option.Using.map(use => use.toLowerCase())
       }
     })
 
     const value = JSON.stringify({ name: move.Name, options: formattedOptions })
-    console.log('value', value)
   button(
     type="action"
-    name=`act_starforged_moves`
+    name="act_starforged_moves"
     class=classes
     value=value
   )
