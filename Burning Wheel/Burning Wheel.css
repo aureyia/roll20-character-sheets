@@ -1493,9 +1493,9 @@ textarea, select, .uneditable-input {
 }
 
 input[type=checkbox].sheet-emotion-bg-toggle:checked ~ .sheet-emotion-bg {
-    background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Burning%20Wheel/img/burning_wheel.png);
+    background-image: url(https://raw.githubusercontent.com/aureyia/roll20-character-sheets/bw-custom-sheet/Burning%20Wheel/img/synapse.png);
 }
 
 .sheet-emotion-hidden {
-    opacity: 0;
+    display: none;
 }
