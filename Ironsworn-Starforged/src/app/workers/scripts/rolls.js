@@ -39,7 +39,6 @@ on('clicked:starforged_moves', (info) => {
 });
 
 function buildStatQuery(rollName, statOptions, callback) {
-  const assetQueryArray = [];
 
   getSectionIDs('repeating_assets-final', (idarray) => {
     const namesOfEnabledAssetsIds = idarray.map((id) => {
@@ -48,6 +47,7 @@ function buildStatQuery(rollName, statOptions, callback) {
 
     getAttrs(namesOfEnabledAssetsIds, (assets) => {
       let assetCount = 0;
+      let assetQueryArray = [];
 
       for (const [key, value] of Object.entries(assets)) {
         let asset = { name: '', abilities: [] };
@@ -61,6 +61,26 @@ function buildStatQuery(rollName, statOptions, callback) {
           `repeating_assets-final_${id}_assetcheckbox_${value}_33`,
         ];
 
+        // Object example of assetTriggers 
+        // const assetTriggers = {
+        //   empath: {
+        //     ability_3: {
+        //       moves: [
+        //         'Face Danger'
+        //       ],
+        //       options: [
+        //         {
+        //           text: `To soothe a being&#39;s distress by creating an empathic bond`,
+        //           method: "Any",
+        //           stats: [
+        //             'spirit'
+        //           ]
+        //         }
+        //       ]
+        //     }
+        //   }
+        // }
+
         getAttrs(abilityArray, (abilities) => {
           let index = 1;
           for (const [key, value] of Object.entries(abilities)) {
@@ -70,20 +90,44 @@ function buildStatQuery(rollName, statOptions, callback) {
               if (alteredMoveData) {
                 alteredMoveData.moves.forEach((move) => {
                   if (move === rollName) {
-                    assetQueryArray.push(`${alteredMoveData.text},@{${alteredMoveData.stat}}`);
+                    alteredMoveData.options.forEach((option) => {
+                      if (option.method === 'any') {
+                        option.stats.forEach((stat) => {
+                          assetQueryArray.push(`${option.text} (${asset.name}),@{${stat}}`)
+                        })
+                      } 
+                      else if (option.method === 'highest' || option.method === 'lowest') {
+                        getAttrs(option.stats, (attrValues) => {
+                          const statOption = Object.entries(attrValues).reduce((acc, [key, attrValue]) => {
+                            if (option.method === 'highest' ? attrValue > acc.value : attrValue < acc.value) {
+                              return { stat: key, text: option.text };
+                            }
+                            return acc;
+                          }, { value: option.method === 'highest' ? -Infinity : Infinity });
+                          assetQueryArray.push(`${statOption.text} (${asset.name}),@{${statOption.stat}}`)
+                        })
+                      }
+                    })
                   }
-                });
+                })
               }
             }
           }
 
           assetCount++;
+          console.log('assetCount', assetCount)
           if (assetCount === Object.keys(assets).length) {
-            if (statOptions.length === 1) {
+            // TODO: Figure out why borked
+            console.log('assetQueryArray', assetQueryArray)
+            console.log('assetQueryArray.length', assetQueryArray.length)
+            console.log('statOptions.length', statOptions.length)
+            if (statOptions.length === 1 && assetQueryArray.length === 0) {
+              console.log('nom 1')
               const option = statOptions[0];
               const result = option.inputRequired ? `?{${option.stat.charAt(0).toUpperCase() + option.stat.slice(1)}|0}` : `@{${option.stat}}`;
               callback(result);
             } else {
+              console.log('nom 2')
               const queryArray = statOptions.map((option) => {
                 return `${option.text},@{${option.stat}}`;
               });
@@ -166,16 +210,4 @@ function isMomentumBurnAvailable(rollOutcome, momentum, challengeDie1Result, cha
   }
 
   return { weakHit, strongHit, opportunity }
-}
-
-const assetTriggers = {
-  empath: {
-    ability_3: {
-      moves: [
-        'Face Danger'
-      ],
-      text: `To soothe a being&#39;s distress by creating an empathic bond`,
-      stat: 'spirit'
-    }
-  }
 }

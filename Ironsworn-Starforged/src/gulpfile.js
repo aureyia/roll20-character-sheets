@@ -12,6 +12,8 @@ const {
   buildOracleTranslations,
   buildMoveTranslations 
 } = require('./buildTranslations')
+const { buildRollData } = require('./buildRollData')
+
 
 axios.defaults.baseURL = 'https://raw.githubusercontent.com/rsek/dataforged/main/roll20';
 
@@ -36,6 +38,11 @@ gulp.task('dataforge', async function() {
     'translation-oracles': buildOracleTranslations(),
     'translation-moves': buildMoveTranslations()
   };
+
+  const rollData = `const assetTriggers = ${JSON.stringify(buildRollData(), null, 2)}`
+  const rollDataFileName = path.join(__dirname, `./app/workers/scripts/roll-data.js`);
+  fs.writeFileSync(rollDataFileName, rollData);
+
 
   for (let key in rawData) {
     const data = rawData[key];
