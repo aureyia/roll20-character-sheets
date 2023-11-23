@@ -1491,3 +1491,11 @@ textarea, select, .uneditable-input {
 .sheet-rolltemplate-bw .sheet-openended {
     color: rgb(255, 213, 0) !important;
 }
+
+input[type=checkbox].sheet-emotion-bg-toggle:checked ~ .sheet-emotion-bg {
+    background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Burning%20Wheel/img/burning_wheel.png);
+}
+
+.sheet-emotion-hidden {
+    opacity: 0;
+}
