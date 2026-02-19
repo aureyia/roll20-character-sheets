@@ -1367,11 +1367,6 @@ section.npc-box.statblock3 .image-avatar {
   padding: 0 1em 0 1em;
 }
 
-.charsheet .npc-box.statblock4 textarea {
-  margin-block: auto;
-  margin-top: 0;
-}
-
 .charsheet .header .hide-as-pc {
   color: initial;
   display: inline-block;
@@ -4105,6 +4100,8 @@ section.npc-box.statblock3 .image-avatar {
 .charsheet input.height-fill,
 .charsheet textarea.height-fill {
   height: 100%;
+  margin-block: auto;
+  margin-top: 0;
 }
 
 /*hide and seek magic*/
