@@ -1032,7 +1032,6 @@ summary::-webkit-details-marker {
 /* label is under field */
 .charsheet .wrapper .label-under {
   flex-direction: column;
-  height: 100%;
 }
 
 .charsheet .background .wrapper .label-under-small,
@@ -1322,7 +1321,6 @@ summary::-webkit-details-marker {
 .charsheet .npc-box.statblock3 {
   grid-column: 2/3;
   grid-row-start: 2;
-  height: 100%;
   z-index: 0;
 }
 
@@ -1620,7 +1618,7 @@ section.npc-box.statblock3 .image-avatar {
 }
 
 /* NPC single column */
-@container (max-width: 518px) {
+@container (max-width: 620px) {
   .charsheet .background .wrapper {
     grid-template-columns: 100%;
   }
@@ -1674,9 +1672,17 @@ section.npc-box.statblock3 .image-avatar {
     display: none;
   }
 
-  .charsheet input[value='1'].toggle-npc:checked ~ .background .weapons-box .matrix-box,
-  .charsheet input[value='1'].toggle-npc:checked ~ .background .weapons-box .thac0-box {
+  .charsheet .input[value='1'].toggle-npc ~ .background .weapons-box .matrix-box,
+  .charsheet .input[value='1'].toggle-npc ~ .background .weapons-box .thac0-box {
     display: contents;
+  }
+
+  .charsheet .weapons-box label.matrix-hd select {
+    min-width: auto;
+  }
+
+    .charsheet input[value='1'].toggle-npc ~ .background .weapons-box label.repeating-name {
+    min-width: 11em;
   }
 
   .charsheet input[value='1'].toggle-npc ~ .background .weapons-box .to-hit-adj-box {
@@ -3769,10 +3775,9 @@ section.npc-box.statblock3 .image-avatar {
   font-weight: normal;
 }
 
-.charsheet .statblock2 .five-columns button {
+.charsheet .statblock2 .five-columns label {
   height: 100%;
-  min-width: min-content;
-  width: 90%;
+  justify-content: end;
 }
 
 .charsheet .saves-columns button[type='roll'].saves-button span,
