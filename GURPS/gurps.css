@@ -5062,6 +5062,12 @@ button[type=roll].sheet-no-decoration::before {
     content: none;
 }
 
+button[type=roll].sheet-inline-decoration {
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+}
+
 /** roll modifier dialog box                       **/
 /** see: https://webdevtrick.com/css-modal-box/    **/
 
