@@ -139,19 +139,19 @@
         </label>
         <label class="inline-label">
           <span>Class:</span>
-          <input type="text" name="attr_class" title="@{class}" placeholder="Class" />
+          <input type="text" name="attr_class" list="classes" title="@{class}" placeholder="Class" />
           <span class="toggle-multiclass">Lvl:</span>
           <input type="text" class="toggle-multiclass width-smaller" name="attr_level" title="@{level}" value="0" />
         </label>
         <label class="inline-label toggle-multiclass">
           <span>Class:</span>
-          <input type="text" name="attr_secondclass" title="@{secondclass}" placeholder="Class" />
+          <input type="text" name="attr_secondclass" list="classes" title="@{secondclass}" placeholder="Class" />
           <span>Lvl:</span>
           <input type="text" class="width-smaller" name="attr_level_2" title="@{level_2}" value="0" />
         </label>
         <label class="inline-label toggle-multiclass">
           <span>Class:</span>
-          <input type="text" name="attr_thirdclass" title="@{thirdclass}" placeholder="Class" />
+          <input type="text" name="attr_thirdclass" list="classes" title="@{thirdclass}" placeholder="Class" />
           <span>Lvl:</span>
           <input type="text" class="width-smaller" name="attr_level_3" title="@{level_3}" value="0" />
         </label>
@@ -249,7 +249,7 @@
           <span>+10%</span>
         </span>
         <span class="class-columns">
-          <input type="text" class="width-fill" name="attr_class" title="@{class}" placeholder="Class" />
+          <input type="text" class="width-fill" name="attr_class" list="classes" title="@{class}" placeholder="Class" />
           <input type="text" class="width-smaller" name="attr_level" title="@{level}" value="0" />
           <input type="text" class="width-medium" name="attr_hitdice" title="@{hitdice}" value="" placeholder="1d6" />
           <textarea class="width-medium-plus" name="attr_hitpoints_1_tracked" title="@{hitpoints_1_tracked} | Track rolled HP + CON adjustments per level." placeholder="Track HP 1 hp+con 2 hp+con 3 hp+con etc."></textarea>
@@ -262,7 +262,7 @@
           <input type="checkbox" name="attr_xp_bonus" title="@{xp_bonus} | XP bonus applies. Primary ability threshold met or exceeded for the class." value="1" />
         </span>
         <span class="class-columns toggle-multiclass">
-          <input type="text" class="width-fill" name="attr_secondclass" title="@{secondclass}" placeholder="2rd class" />
+          <input type="text" class="width-fill" name="attr_secondclass" list="classes" title="@{secondclass}" placeholder="2rd class" />
           <input type="text" class="width-smaller" name="attr_level_2" title="@{level_2}" value="0" />
           <input type="text" class="width-medium" name="attr_hitdice_2" title="@{hitdice_2}" value="" placeholder="1d6" />
           <textarea class="width-medium-plus" name="attr_hitpoints_2_tracked" title="@{hitpoints_2_tracked} | Track rolled HP + CON adjustments per level." placeholder="Track HP 1 hp+con 2 hp+con 3 hp+con etc."></textarea>
@@ -275,7 +275,7 @@
           <input type="checkbox" name="attr_xp_2_bonus" title="@{xp_2_bonus} | XP bonus applies." value="1">
         </span>
         <span class="class-columns toggle-multiclass">
-          <input type="text" class="width-fill" name="attr_thirdclass" title="@{thirdclass}" placeholder="3rd class" />
+          <input type="text" class="width-fill" name="attr_thirdclass" list="classes" title="@{thirdclass}" placeholder="3rd class" />
           <input type="text" class="width-smaller" name="attr_level_3" title="@{level_3}" value="0" />
           <input type="text" class="width-medium" name="attr_hitdice_3" title="@{hitdice_3}" value="" placeholder="1d6" />
           <textarea class="width-medium-plus" name="attr_hitpoints_3_tracked" title="@{hitpoints_3_tracked} | Track rolled HP + CON adjustments per level." placeholder="Track HP 1 hp+con 2 hp+con 3 hp+con etc."></textarea>
@@ -4922,7 +4922,6 @@
 </div>
 
 <!--Roll Templates -->
-
 <div class="sheet-roll_templates">
   <!-- Attack Roll Template -->
   <rolltemplate class="sheet-rolltemplate-attacks">
@@ -5562,68 +5561,71 @@
 
 <!--Datalists-->
 <datalist id="spell_school">
-  <option value="Abjur">Abjur</option>
-  <option value="Abjur, Evoc">Abjur, Evoc</option>
-  <option value="Abjur/Alter">Abjur/Alter</option>
-  <option value="Abjur/Conj/Summ">Abjur/Conj/Summ</option>
-  <option value="Abjur/Evoc">Abjur/Evoc</option>
-  <option value="Alter">Alter</option>
-  <option value="Alter, Ench">Alter, Ench</option>
-  <option value="Alter/Conj">Alter/Conj</option>
-  <option value="Alter/Conj/Summ">Alter/Conj/Summ</option>
-  <option value="Alter/Ench">Alter/Ench</option>
-  <option value="Alter/Evoc">Alter/Evoc</option>
-  <option value="Alter/Illus">Alter/Illus</option>
-  <option value="Alter/Illus/Phant">Alter/Illus/Phant</option>
-  <option value="Alter/Phant">Alter/Phant</option>
-  <option value="Charm">Charm</option>
-  <option value="Conj">Conj</option>
-  <option value="Conj, Alter">Conj, Alter</option>
-  <option value="Conj/Phant">Conj/Phant</option>
-  <option value="Conj/Summ">Conj/Summ</option>
-  <option value="Divin">Divin</option>
-  <option value="Ench">Ench</option>
-  <option value="Ench, Alter">Ench, Alter</option>
-  <option value="Ench/Alter">Ench/Alter</option>
-  <option value="Ench/Charm">Ench/Charm</option>
-  <option value="Ench/Charm/Illus/Phant">Ench/Charm/Illus/Phant</option>
-  <option value="Ench/Divin">Ench/Divin</option>
-  <option value="Ench/Evoc">Ench/Evoc</option>
-  <option value="Evoc">Evoc</option>
-  <option value="Evoc, Alter">Evoc, Alter</option>
-  <option value="Evoc/Abjur">Evoc/Abjur</option>
-  <option value="Evoc/Alter">Evoc/Alter</option>
-  <option value="Evoc/Alter/Ench/Charm">Evoc/Alter/Ench/Charm</option>
-  <option value="Evoc/Conj">Evoc/Conj</option>
-  <option value="Evoc/Divin">Evoc/Divin</option>
-  <option value="Evoc/Ench">Evoc/Ench</option>
-  <option value="Evoc/Ench/Charm">Evoc/Ench/Charm</option>
-  <option value="Evoc/Illus">Evoc/Illus</option>
-  <option value="Evoc/Illus/Phant">Evoc/Illus/Phant</option>
-  <option value="Illus">Illus</option>
-  <option value="Illus/Ench">Illus/Ench</option>
-  <option value="Illus/Phant">Illus/Phant</option>
-  <option value="Illus/Phant/Abjur">Illus/Phant/Abjur</option>
-  <option value="Illus/Phant/Alter">Illus/Phant/Alter</option>
-  <option value="Illus/Phant/Conj/Summ">Illus/Phant/Conj/Summ</option>
-  <option value="Invoc">Invoc</option>
-  <option value="Necro">Necro</option>
-  <option value="Necro, Conj">Necro, Conj</option>
-  <option value="Summ">Summ</option>
-  <option value="Varies">Varies</option>
+  <option value="Abjur"></option>
+  <option value="Abjur, Evoc"></option>
+  <option value="Abjur/Alter"></option>
+  <option value="Abjur/Conj/Summ"></option>
+  <option value="Abjur/Evoc"></option>
+  <option value="Alter"></option>
+  <option value="Alter, Ench"></option>
+  <option value="Alter/Conj"></option>
+  <option value="Alter/Conj/Summ"></option>
+  <option value="Alter/Ench"></option>
+  <option value="Alter/Evoc"></option>
+  <option value="Alter/Illus"></option>
+  <option value="Alter/Illus/Phant"></option>
+  <option value="Alter/Phant"></option>
+  <option value="Charm"></option>
+  <option value="Conj"></option>
+  <option value="Conj, Alter"></option>
+  <option value="Conj/Phant"></option>
+  <option value="Conj/Summ"></option>
+  <option value="Divin"></option>
+  <option value="Ench"></option>
+  <option value="Ench, Alter"></option>
+  <option value="Ench/Alter"></option>
+  <option value="Ench/Charm"></option>
+  <option value="Ench/Charm/Illus/Phant"></option>
+  <option value="Ench/Divin"></option>
+  <option value="Ench/Evoc"></option>
+  <option value="Evoc"></option>
+  <option value="Evoc, Alter"></option>
+  <option value="Evoc/Abjur"></option>
+  <option value="Evoc/Alter"></option>
+  <option value="Evoc/Alter/Ench/Charm"></option>
+  <option value="Evoc/Conj"></option>
+  <option value="Evoc/Divin"></option>
+  <option value="Evoc/Ench"></option>
+  <option value="Evoc/Ench/Charm"></option>
+  <option value="Evoc/Illus"></option>
+  <option value="Evoc/Illus/Phant"></option>
+  <option value="Illus"></option>
+  <option value="Illus/Ench"></option>
+  <option value="Illus/Phant"></option>
+  <option value="Illus/Phant/Abjur"></option>
+  <option value="Illus/Phant/Alter"></option>
+  <option value="Illus/Phant/Conj/Summ"></option>
+  <option value="Invoc"></option>
+  <option value="Necro"></option>
+  <option value="Necro, Conj"></option>
+  <option value="Summ"></option>
+  <option value="Varies"></option>
+  <option value="CUSTOM ENTRY"></option>
 </datalist>
 
-<datalist id="saveparalysispoisondeath_racial_mod_list">
-  <option value="0" selected>0</option>
-  <option value="-1">+1</option>
-  <option value="-2">+2</option>
-  <option value="-3">+3</option>
-  <option value="-4">+4</option>
-  <option value="-5">+5</option>
-  <option value="1">-1</option>
-  <option value="2">-2</option>
-  <option value="3">-3</option>
-  <option value="4">-4</option>
-  <option value="5">-5</option>
+<datalist id="classes">
+    <option value="Assassin"></option>
+    <option value="Bard"></option>
+    <option value="Cleric"></option>
+    <option value="Druid"></option>
+    <option value="Fighter"></option>
+    <option value="Illusionist"></option>
+    <option value="Mage"></option>
+    <option value="Monk"></option>
+    <option value="Paladin"></option>
+    <option value="Ranger"></option>
+    <option value="Thief"></option>
+    <option value="CUSTOM ENTRY"></option>
 </datalist>
+
 <script type="text/worker"></script>
