@@ -4360,7 +4360,9 @@
 				<!-- current version notes: 2.24.1 -->
 				<ul>
 					<li><b>COPYRIGHT:</b> Added Game Aid and trademark copyright text that matches Steve Games Online Policy.</li>
-					<li><b>BUGFIX:</b>Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
+					<li><b>FIXED:</b> Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
+					<li><b>NEW:</b> Under Combat\Your Hit Locations,  added a green CLEAR button, which when clicked, will clear any values in Layer 1 through 4, uncheck the Back checkbox (if checked), the Notes text box, the Summary, Wounds, and Notes fields. These buttons only affect the currently selected Template. </li>
+					<li><b>FIXED:</b> Humanoid Low-tech location labels. <b>User Action:</b> If your character is currently using the "Template Humanoid Low-Tech", then make sure to select "Humanoid Low-tech" and press the <b>[Apply]</b> button to load these fixes, but this will clear any values you may have entered.</li>
 				</ul>
 				
 				<label class="check"><input type="checkbox" name="attr_announcements_hide" value="1">&nbsp;<b><span data-i18n="hide-until-next-update">Hide until next update</span></b></label>
@@ -10744,7 +10746,7 @@ visualize what it will look like in chat.
 							</select>
 						</div>
 						<div class="item">
-							<button type="action" name="act_armor_apply" class="reset" title="Apply the selected hit location type"><span data-i18n="apply-label">Apply</span></button>
+							<button type="action" name="act_armor_apply" class="reset" title="Apply the selected hit location type. This will clear the current hit locations."><span data-i18n="apply-label">Apply</span></button>
 						</div>
 						<div class="item">&nbsp;</div>
 						<div class="item heading">
@@ -10793,49 +10795,57 @@ visualize what it will look like in chat.
 
 					</div>
 
-					<div>
-						<button type="action" name="act_hit_location_open" class="link" title="Expand all hit location notes">
-							<span data-i18n="open-all-label">Open All</span>
-						</button>
-						<span>|</span>
-						<button type="action" name="act_hit_location_close" class="link" title="Close all hit location notes">
-							<span data-i18n="close-all-label">Close All</span>
-						</button>
-						<span>|</span>
-						<div style="display: inline-block;">
-							<div class="popup">
-								<i><span data-i18n="large-area-injury-label">Large-Area Injury</span></i>
-							</div>
-							<span class="tooltip" style="margin-left: 0;">
-								<span data-i18n="large-area-injury-tooltip"><b>Large-Area Injury</b> Attacks that affect most of the body; dragon's breath, bomb blast, huge fire, acid pit, or attacher that has Size Modifier Difference of 7 or higher compared to defennder. If DR varies by hit location, determine <b>effective DR</b> using <i>average</i> of torsor DR and the DR of least protected hit location <b>exposed</b> to the attack. If DR varies by damage type, use the <i>least protected</i> value. A location protected by cover or masked by the body does not count as <b>exposed to the attack.</b> For example, if you're back is turned to a cone attack by a dragon, your face is not exposed to the attack. Ignore special hit-location efects. B400.</span>
-							</span>
-						</div>
-						<span>|</span>
-						<div style="display: inline-block;">							
-							<div class="popup">
-								<i><span data-i18n="flexible-armor-label">Flexible Armor</span></i>
-							</div>
-							<span class="tooltip" style="margin-left: 0;">
-								<span data-i18n="flexible-armor-tooltip"><b>Flexible Armor</b> If damage fails to penetrate DR, victim suffers <i>blunt trauma</i>.<br />Cutting, impaling, piercing does 1 HP per <i>full</i> 10 HP damage.<br />Crushing damage does 5 HP per <i>full</i> 5 HP damage.<br />If layered armor, only damage that penetrates outer layer inflicts blunt trauma. B379</span>
-							</span>
-						</div>
-						<span>|</span>
-						<div style="display: inline-block;">
-							<input type="checkbox" name="attr_damage_update_hit_points" value="1" />
-							<span class="popup">
-								<span data-i18n="update-hit-points-label">Update Hit Points</span>
-							</span>
-							<span class="tooltip">
-								<span data-i18n="update-hit-points-tooltip">
-									If checked, when applying damage to a location, current <b>Hit Points</b> is updated.
+					<div class="hit-location-action-bar">
+						<div class="links">
+							<button type="action" name="act_hit_location_open" class="link" title="Expand all hit location notes">
+								<span data-i18n="open-all-label">Open All</span>
+							</button>
+							<span>|</span>
+							<button type="action" name="act_hit_location_close" class="link" title="Close all hit location notes">
+								<span data-i18n="close-all-label">Close All</span>
+							</button>
+							<span>|</span>
+							<div style="display: inline-block;">
+								<div class="popup">
+									<i><span data-i18n="large-area-injury-label">Large-Area Injury</span></i>
+								</div>
+								<span class="tooltip" style="margin-left: 0;">
+									<span data-i18n="large-area-injury-tooltip"><b>Large-Area Injury</b> Attacks that affect most of the body; dragon's breath, bomb blast, huge fire, acid pit, or attacher that has Size Modifier Difference of 7 or higher compared to defennder. If DR varies by hit location, determine <b>effective DR</b> using <i>average</i> of torsor DR and the DR of least protected hit location <b>exposed</b> to the attack. If DR varies by damage type, use the <i>least protected</i> value. A location protected by cover or masked by the body does not count as <b>exposed to the attack.</b> For example, if you're back is turned to a cone attack by a dragon, your face is not exposed to the attack. Ignore special hit-location efects. B400.</span>
 								</span>
-							</span>
+							</div>
+							<span>|</span>
+							<div style="display: inline-block;">							
+								<div class="popup">
+									<i><span data-i18n="flexible-armor-label">Flexible Armor</span></i>
+								</div>
+								<span class="tooltip" style="margin-left: 0;">
+									<span data-i18n="flexible-armor-tooltip"><b>Flexible Armor</b> If damage fails to penetrate DR, victim suffers <i>blunt trauma</i>.<br />Cutting, impaling, piercing does 1 HP per <i>full</i> 10 HP damage.<br />Crushing damage does 5 HP per <i>full</i> 5 HP damage.<br />If layered armor, only damage that penetrates outer layer inflicts blunt trauma. B379</span>
+								</span>
+							</div>
+							<span>|</span>
+							<div style="display: inline-block;">
+								<input type="checkbox" name="attr_damage_update_hit_points" value="1" />
+								<span class="popup">
+									<span data-i18n="update-hit-points-label">Update Hit Points</span>
+								</span>
+								<span class="tooltip">
+									<span data-i18n="update-hit-points-tooltip">
+										If checked, when applying damage to a location, current <b>Hit Points</b> is updated.
+									</span>
+								</span>
+							</div>
+							<span>|</span>
+							<button type="action" name="act_damage_reset_hit_points" class="link" title="Reset all hit locations to 0 damage and Hit Points to Max">
+								<span data-i18n="reset-hit-points-label">Reset HP</span>
+							</button>
 						</div>
-						<span>|</span>
-						<button type="action" name="act_damage_reset_hit_points" class="link" title="Reset all hit locations to 0 damage and Hit Points to Max">
-							<span data-i18n="reset-hit-points-label">Reset HP</span>
-						</button>		
+						<div class="buttons">
+							<button type="action" name="act_armor_clear" class="green" title="Reset Hit Points, Armor Layers, Notes, and other related attributes. Set armor layers to 1.">
+								<span data-i18n="clear-label">Clear</span>
+							</button>	
+						</div>
 					</div>
+					
 					<div class="hit-location-container">
 
 						<input type="hidden" name="attr_armor_show_back" />
@@ -19213,7 +19223,7 @@ Select the indent level of the spell. This is handy to help show the spell belon
 							<option value="wagon" data-i18n="option-wagon">Wagon</option>
 							<option value="tank" data-i18n="option-tank">Tank</option>
 						</select>
-						<button type="action" name="act_vehicle_locations_apply" class="reset" title="Apply the selected hit location type"><span data-i18n="apply-label">Apply</span></button>
+						<button type="action" name="act_vehicle_locations_apply" class="reset" title="Apply the selected hit location type. This will clear the current hit locations."><span data-i18n="apply-label">Apply</span></button>
 					</div>
 
 					<div class="grid-item">
@@ -28053,7 +28063,9 @@ For more information, see B409.
 			<!-- current version notes: 2.24.1 -->
 			<ul>
 				<li><b>COPYRIGHT:</b> Added Game Aid and trademark copyright text that matches Steve Games Online Policy.</li>
-				<li><b>BUGFIX:</b>Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
+				<li><b>FIXED:</b> Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
+				<li><b>NEW:</b> Under Combat\Your Hit Locations,  added a green CLEAR button, which when clicked, will clear any values in Layer 1 through 4, uncheck the Back checkbox (if checked), the Notes text box, the Summary, Wounds, and Notes fields. These buttons only affect the currently selected Template. </li>
+				<li><b>FIXED:</b> Humanoid Low-tech location labels. <b>User Action:</b> If your character is currently using the "Template Humanoid Low-Tech", then make sure to select "Humanoid Low-tech" and press the <b>[Apply]</b> button to load these fixes, but this will clear any values you may have entered.</li>
 			</ul>
 
 			<h4>Version: 2.24.0</h4>
@@ -34556,26 +34568,26 @@ B378
 			{ key: "left-eye", display: "Left Eye", penalty: -9, DR: 0, hp_divisor: 10, notes: "" },
 			{ key: "right-eye", display: "Right Eye", penalty: -9, DR: 0, hp_divisor: 10, notes: "" },
 			{ key: "left-arm", display: "Left Arm", penalty: -2, DR: 0, hp_divisor: 2, notes: "Roll 1d6 to determine what armor piece is hit." },
-			{ key: "left-shoulder", display: "  Shoulder", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 6." },
-			{ key: "left-upper-arm", display: " Upper Arm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5." },
-			{ key: "left-elbow", display: "  Elbow", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
-			{ key: "left-forearm", display: "  Forearm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3." },
+			{ key: "left-shoulder", display: "  Left Shoulder", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 6." },
+			{ key: "left-upper-arm", display: "  Left Upper Arm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5." },
+			{ key: "left-elbow", display: "  Left Elbow", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
+			{ key: "left-forearm", display: "  Left Forearm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3." },
 			{ key: "left-hand", display: "Left Hand", penalty: -4, DR: 0, hp_divisor: 3, notes: "" },
 			{ key: "right-arm", display: "Right Arm", penalty: -2, DR: 0, hp_divisor: 2, notes: "Roll 1d6 to determine what armor piece is hit." },
-			{ key: "right-shoulder", display: "  Shoulder", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 6." },
-			{ key: "right-upper-arm", display: "  Upper Arm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5." },
-			{ key: "right-elbow", display: "  Elbow", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
-			{ key: "right-forearm", display: "  Forearm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3." },
+			{ key: "right-shoulder", display: "  Right Shoulder", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 6." },
+			{ key: "right-upper-arm", display: "  Right Upper Arm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5." },
+			{ key: "right-elbow", display: "  Right Elbow", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
+			{ key: "right-forearm", display: "  Right Forearm", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3." },
 			{ key: "right-hand", display: "Right Hand", penalty: -4, DR: 0, hp_divisor: 3, notes: "" },
 			{ key: "left-leg", display: "Left Leg", penalty: -2, DR: 0, hp_divisor: 2, notes: "Roll 1d6 to determine what armor piece is hit." },
-			{ key: "left-thigh", display: "  Thigh", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5-6." },
-			{ key: "left-knee", display: "  Knee", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
-			{ key: "left-shin", display: "  Shin", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3" },
+			{ key: "left-thigh", display: "  Left Thigh", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5-6." },
+			{ key: "left-knee", display: "  Left Knee", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
+			{ key: "left-shin", display: "  Left Shin", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3" },
 			{ key: "left-foot", display: "Left Foot", penalty: -4, DR: 0, hp_divisor: 3, notes: "" },
 			{ key: "right-leg", display: "Right Leg", penalty: -2, DR: 0, hp_divisor: 2, notes: "Roll 1d6 to determine what armor piece is hit." },
-			{ key: "left-thigh", display: "  Thigh", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5-6." },
-			{ key: "left-knee", display: "  Knee", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
-			{ key: "left-shin", display: "  Shin", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3" },
+			{ key: "right-thigh", display: "  Right Thigh", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 5-6." },
+			{ key: "right-knee", display: "  Right Knee", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 4." },
+			{ key: "right-shin", display: "  Right Shin", penalty: -2, DR: 0, hp_divisor: 1, notes: "Hit on 1-3" },
 			{ key: "right-foot", display: "Right Foot", penalty: -4, DR: 0, hp_divisor: 3, notes: "" },
 		]],
 		["humanoid_martial_arts", [
@@ -59446,6 +59458,60 @@ Characters with Skill: ${knowsSkill}`;
 		});
 
 	}	
+
+	on("clicked:armor_clear", event => {
+
+		resetHitLocationTableData();
+
+		// set hit_points to hit_points_max
+		let fields = ["hit_points_max"];
+
+		getAttrs(fields, values => {
+			let maxHitPoints = Number(values.hit_points_max) ?? 0;
+
+			let keyValues = {
+				hit_points: maxHitPoints,
+				hit_location_notes: "",
+				armor_layers: 1,
+				armor_show_back: 0,
+			};
+
+			setAttrs(keyValues, { silent: true });
+
+		});
+
+	});
+
+	const resetHitLocationTableData = () => {
+
+		getSectionIDs("repeating_hitlocation", ids => {
+
+			let keyValues = {};
+
+			ids.forEach(id => {
+
+				keyValues[`repeating_hitlocation_${id}_defense_bonus`] = 0;
+				keyValues[`repeating_hitlocation_${id}_damage`] = 0;
+				keyValues[`repeating_hitlocation_${id}_layer_1_front`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_1_back`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_2_front`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_2_back`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_3_front`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_3_back`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_4_front`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_4_back`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_summary_front`] = "";
+				keyValues[`repeating_hitlocation_${id}_layer_summary_back`] = "";
+				keyValues[`repeating_hitlocation_${id}_wounds`] = "";
+				keyValues[`repeating_hitlocation_${id}_notes`] = "";
+
+			});
+
+			setAttrs(keyValues, { silent: true });
+
+		});
+
+	}
 
 	const quickModAreas = ["melee", "range"];
 

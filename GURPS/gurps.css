@@ -3874,6 +3874,16 @@ button[type=action].sheet-sort {
     width: 50px;
 }
 
+button[type=action].sheet-green {
+    height: 19px;
+    line-height: 19px;
+    background: #347970;
+    color: #ffffff; 
+    border-radius: 3px;
+    font-weight: bold;
+    width: 50px;
+}
+
 button[type=action].sheet-wide-reset {
     width: 85px;
 }
@@ -5831,6 +5841,18 @@ input[name="attr_help_tabs"][value="other"] ~ .sheet-tabs.sheet-options > div:nt
     margin-right: 5px;
 }
 
+.sheet-hit-location-action-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    margin: 5px 0;
+}
+
+.sheet-hit-location-action-bar .sheet-buttons {
+    margin-left: auto;
+}
+
 /* grid for hit location header and repeating section */
 .sheet-hit-location-container {
     overflow-x: auto;
@@ -5900,7 +5922,7 @@ input[name="attr_armor_layers"][value="3"] ~ .repcontainer .repitem .sheet-hit-l
 /* show armor layer 2-4 & summary */
 input[name="attr_armor_layers"][value="4"] ~ .sheet-hit-location-grid, 
 input[name="attr_armor_layers"][value="4"] ~ .repcontainer .repitem .sheet-hit-location-grid {
-    grid-template-columns: 25px 90px 43px 43px 43px 50px 43px 43px max-content max-content max-content max-content max-content;
+    grid-template-columns: 25px 97px 42px 42px 43px 50px 40px 40px max-content max-content max-content max-content max-content;
 }
 
 input[name="attr_armor_layers"][value="4"] ~ .sheet-hit-location-grid .sheet-layer-2, 

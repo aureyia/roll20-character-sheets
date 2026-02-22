@@ -426,6 +426,7 @@
   "apply-label": "Apply",
   "reset-label": "Reset",
   "reset-hit-points-label": "Reset HP",
+  "clear-label": "Clear",
   "no-prompt-label": "No Prompt",
   "single-prompt-label": "Single Prompt",
   "extended-prompt-label": "Extended Prompts",
