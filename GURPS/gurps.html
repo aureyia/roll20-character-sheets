@@ -4363,6 +4363,7 @@
 					<li><b>FIXED:</b> Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
 					<li><b>NEW:</b> Under Combat\Your Hit Locations,  added a green CLEAR button, which when clicked, will clear any values in Layer 1 through 4, uncheck the Back checkbox (if checked), the Notes text box, the Summary, Wounds, and Notes fields. These buttons only affect the currently selected Template. </li>
 					<li><b>FIXED:</b> Humanoid Low-tech location labels. <b>User Action:</b> If your character is currently using the "Template Humanoid Low-Tech", then make sure to select "Humanoid Low-tech" and press the <b>[Apply]</b> button to load these fixes, but this will clear any values you may have entered.</li>
+					<li><b>FIXED:</b> Under Combat\Ranged\Close Range Shotgun Damage Tool, updated the default damage type notes to match the new format.</li>
 				</ul>
 				
 				<label class="check"><input type="checkbox" name="attr_announcements_hide" value="1">&nbsp;<b><span data-i18n="hide-until-next-update">Hide until next update</span></b></label>
@@ -15491,10 +15492,12 @@ visualize what it will look like in chat.
 									</div>
 									<div class="cell roll-damage">
 										<input type="hidden" name="attr_thrust_damage_dice_icon" class="thrust-damage-dice-icon" value="explode" />
-										<input type="hidden" name="attr_shotgun_damage_type_note" value="PIERCING
-			Damage x1
-			Vitals Damage x3
-			Skull Damage x4" />
+										<input type="hidden" name="attr_shotgun_damage_type_note" value="**PIERCING** *(Always round down)*
+**Damage:** x1 **Vitals:** x3 **Skull:** x4
+**Unliving:** x1/3 (other than the eye, skull, or vitals  - otherwise per location) (B400)
+**Homogenous:** x1/5
+**Diffuse:** Max 1HP (Exception: Area-effect, cone, and explosion attacks cause normal injury.)
+(Additional Ref: B380)" />
 										<input type="hidden" name="attr_shotgun_minimum_damage_note" value="Min 1" />
 										<input type="hidden" name="attr_shotgun_minimum_damage" value="1" />
 										<button type="roll" value="@{roll}&{template:skillRoll} {{sheetStyle=@{chatstyle}}} {{damageRoll=[[@{shotgun_close_damage}]]}} {{drMultiplier=@{shotgun_dr_multiplier}}} {{type=Damage Roll}} {{characterName=@{character_name}}} {{skillName=Close Shotgun Damage}} {{damageType=@{shotgun_damage_type}}} {{useDamageTypeNotes=[[@{use_damage_type_notes}]]}} {{damageTypeNote=@{shotgun_damage_type_note}}}" name="roll_dmgCloseShotgunDamage" class="roll_damage" />
@@ -28066,6 +28069,7 @@ For more information, see B409.
 				<li><b>FIXED:</b> Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
 				<li><b>NEW:</b> Under Combat\Your Hit Locations,  added a green CLEAR button, which when clicked, will clear any values in Layer 1 through 4, uncheck the Back checkbox (if checked), the Notes text box, the Summary, Wounds, and Notes fields. These buttons only affect the currently selected Template. </li>
 				<li><b>FIXED:</b> Humanoid Low-tech location labels. <b>User Action:</b> If your character is currently using the "Template Humanoid Low-Tech", then make sure to select "Humanoid Low-tech" and press the <b>[Apply]</b> button to load these fixes, but this will clear any values you may have entered.</li>
+				<li><b>FIXED:</b> Under Combat\Ranged\Close Range Shotgun Damage Tool, updated the default damage type notes to match the new format.</li>
 			</ul>
 
 			<h4>Version: 2.24.0</h4>
