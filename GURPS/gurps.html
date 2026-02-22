@@ -23724,10 +23724,12 @@ Select the indent level of the spell. This is handy to help show the spell belon
 						</div>
 						<div class="item">
 							<input type="hidden" name="attr_damage_dice_icon" class="range-damage-dice-icon" value="explode" />
-							<input type="hidden" name="attr_shotgun_damage_type_note" value="PIERCING
-Damage x1
-Vitals Damage x3
-Skull Damage x4" />
+							<input type="hidden" name="attr_shotgun_damage_type_note" value="**PIERCING** *(Always round down)*
+**Damage:** x1 **Vitals:** x3 **Skull:** x4
+**Unliving:** x1/3 (other than the eye, skull, or vitals  - otherwise per location) (B400)
+**Homogenous:** x1/5
+**Diffuse:** Max 1HP (Exception: Area-effect, cone, and explosion attacks cause normal injury.)
+(Additional Ref: B380)" />
 							<input type="hidden" name="attr_shotgun_minimum_damage_note" value="Min 1" />
 							<input type="hidden" name="attr_shotgun_minimum_damage" value="1" />
 							<button type="roll" value="@{roll}&{template:skillRoll} {{sheetStyle=@{chatstyle}}} {{damageRoll=[[@{shotgun_close_damage}]]}} {{drMultiplier=@{shotgun_dr_multiplier}}} {{type=Damage Roll}} {{characterName=@{character_name}}} {{skillName=Close Shotgun Damage}} {{damageType=@{shotgun_damage_type}}} {{useDamageTypeNotes=[[@{use_damage_type_notes}]]}} {{damageTypeNote=@{shotgun_damage_type_note}}}" name="roll_dmgCloseShotgunDamage" class="roll_damage" />
