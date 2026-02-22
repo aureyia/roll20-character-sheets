@@ -4360,6 +4360,7 @@
 				<!-- current version notes: 2.24.1 -->
 				<ul>
 					<li><b>COPYRIGHT:</b> Added Game Aid and trademark copyright text that matches Steve Games Online Policy.</li>
+					<li><b>BUGFIX:</b>Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
 				</ul>
 				
 				<label class="check"><input type="checkbox" name="attr_announcements_hide" value="1">&nbsp;<b><span data-i18n="hide-until-next-update">Hide until next update</span></b></label>
@@ -22997,6 +22998,7 @@ Select the indent level of the spell. This is handy to help show the spell belon
 						<div class="grid-cell">&nbsp;</div>
 					</div>
 
+					<input type="hidden" name="attr_use_malfunction" />
 					<fieldset class="repeating_ranged">
 						<div class="grid-vehicle-ranged-table grid__align_center grid__gap_medium">
 							<div class="grid-cell">
@@ -23197,7 +23199,7 @@ Select the indent level of the spell. This is handy to help show the spell belon
 									</div>
 									<input type="checkbox" name="attr_malfunction_very_reliable" value="1" class="inline" title="Macro: @{NAME|repeating_ranged_$[row #]_malfunction_very_reliable}" />
 								</div>
-								<div class="item">
+								<div class="item malfunction-status">
 									<span class="show-enabled-label">
 										[<span data-i18n="label-enabled">Enabled</span>]
 									</span>
@@ -28051,6 +28053,7 @@ For more information, see B409.
 			<!-- current version notes: 2.24.1 -->
 			<ul>
 				<li><b>COPYRIGHT:</b> Added Game Aid and trademark copyright text that matches Steve Games Online Policy.</li>
+				<li><b>BUGFIX:</b>Vehicle Sheet, ranged table. Fixed bug where the [Enabled] malfunction status was not displaying correctly.</li>
 			</ul>
 
 			<h4>Version: 2.24.0</h4>
