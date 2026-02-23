@@ -3450,10 +3450,10 @@
           <span></span>
           <span>Proficiency</span>
           <span>Short Description</span>
-          <span>Attribute/Base</span>
-          <span>Val.</span>
-          <span>Adj.</span>
           <span>Slots</span>
+          <span>Attribute/Base</span>
+          <!-- <span>Val.</span> -->
+          <span>Adj.</span>
         </span>
         <fieldset class="repeating_nonweaponproficiencies">
           <span class="top-row nonweapon-proficiencies-row1 border-top-half">
@@ -3462,20 +3462,22 @@
               <input type="text" name="attr_nwp_name" list="nwps" title="@{repeating_nonweaponproficiencies_$X_nwp_name}" placeholder="Proficiency Name" />
             </label>
             <textarea class="height-short" name="attr_nwp_short_description" title="@{repeating_nonweaponproficiencies_$X_nwp_short_description}" placeholder="Short Description"></textarea>
-            <select name="attr_nwp_attribute" title="Select an applicable NWP Attribute or 'vs Base' for a roll-time query.|%{repeating_nonweaponproficiencies_$X_nwp_attribute}">
-              <option value="0" selected>None</option>
-              <option value="@{strength}">STR</option>
-              <option value="@{dexterity}">DEX</option>
-              <option value="@{constitution}">CON</option>
-              <option value="@{intelligence}">INT</option>
-              <option value="@{wisdom}">WIS</option>
-              <option value="@{charisma}">CHA</option>
-              <option value="@{comeliness}" class="toggle-comeliness">COM</option>
-              <option value="?{vs Base Value|20}">vs Base</option>
-            </select>
-            <input class="width-small" type="number" name="attr_nwp_attribute_value" value="(@{nwp_attribute})" title="%{repeating_nonweaponproficiencies_$X_nwp_attribute_value}" disabled />
-            <input class="width-small" type="text" name="attr_nwp_modifier" title="@{repeating_nonweaponproficiencies_$X_nwp_modifier}" value="0" />
             <input class="width-small" type="text" name="attr_nwp_slots" title="@{repeating_nonweaponproficiencies_$X_nwp_slots}" value="0" />
+            <span>
+              <select name="attr_nwp_attribute" title="Select an applicable NWP Attribute or 'vs Base' for a roll-time query.|%{repeating_nonweaponproficiencies_$X_nwp_attribute}">
+                <option value="0" selected>None</option>
+                <option value="@{strength}">STR</option>
+                <option value="@{dexterity}">DEX</option>
+                <option value="@{constitution}">CON</option>
+                <option value="@{intelligence}">INT</option>
+                <option value="@{wisdom}">WIS</option>
+                <option value="@{charisma}">CHA</option>
+                <option value="@{comeliness}" class="toggle-comeliness">COM</option>
+                <option value="?{vs Base Value|20}">vs Base</option>
+              </select>
+              <input class="width-small" type="number" name="attr_nwp_attribute_value" value="(@{nwp_attribute})" title="%{repeating_nonweaponproficiencies_$X_nwp_attribute_value}" disabled />
+            </span>
+            <input class="width-small" type="text" name="attr_nwp_modifier" title="@{repeating_nonweaponproficiencies_$X_nwp_modifier}" value="0" />
           </span>
           <details class="border-bottom-half">
             <summary>
@@ -3854,6 +3856,7 @@
       <div class="header">SPELLS</div><span class="material-icons"></span>
       <div class="sect">
         <div class="center">
+          <!-- Caster 1 -->
           <span class="spell-class inline-label">
             <label>
               <h4>Caster Class 1:</h4>
@@ -3914,6 +3917,8 @@
             <span>8th</span>
             <span>9th</span>
           </span>
+
+          <!-- Caster 2 -->
           <span class="spells-middle toggle-caster2">
             <span class="spell-class inline-label span-all no-border">
               <label>

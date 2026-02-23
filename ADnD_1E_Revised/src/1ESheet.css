@@ -2763,7 +2763,7 @@ section.npc-box.statblock3 .image-avatar {
 .charsheet .nonweapon-proficiencies-row1 {
   align-items: center;
   display: grid;
-  grid-template-columns: 3.5em 2fr 2fr 1fr 4em 4em 4em;
+  grid-template-columns: 3.5em 2fr 2fr 4em minmax(9.85em, 1fr) 4em;
   justify-items: center;
   padding: 0 2px 2px 2px;
 }
