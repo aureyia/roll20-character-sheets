@@ -127,7 +127,7 @@
         <input type="text" class="width-fill border text-large" name="attr_character_name" title="@{character_name} | NOTE: Including non-alpha-numeric characters 'may' break sheet rolls/macros. Specifically ')', ']', '}', or '|'." placeholder="Character Name">
         <label class="inline-label">
           <span>Race:</span>
-          <input type="text" class="width-fill" name="attr_race" title="@{race}" placeholder="Description" />
+          <input type="text" class="width-fill" name="attr_race" list="races" title="@{race}" placeholder="Description" />
         </label>
         <label class="inline-label">
           <span>Alignment:</span>
@@ -1016,7 +1016,7 @@
           <label class="inline-label">
             <span>Secondary Skill:</span>
             <span class="autoexpand">
-              <input type="text" class="autoexpand" name="attr_secondary_skill" title="@{secondary_skill}" placeholder="Description">
+              <input type="text" class="autoexpand" name="attr_secondary_skill" list="skills" title="@{secondary_skill}" placeholder="Description">
               <span name="attr_secondary_skill"></span>
             </span>
           </label>
@@ -3459,7 +3459,7 @@
           <span class="top-row nonweapon-proficiencies-row1 border-top-half">
             <button class="dice-button" type="roll" name="attr_nwp_roll" title="%{repeating_nonweaponproficiencies_$X_nwp_roll} |&#10;* Very easy proficiency = -3 modifier &#10;* Easy proficiency = -1 modifier &#10;* Normal proficiency = no modifier &#10;* Hard proficiency = +1 modifier &#10;* Very hard proficiency = +2 modifier &#10;* Extremely hard proficiency = +3 modifier" value="@{nwp_macro_text}"></button>
             <label class="repeating-name">
-              <input type="text" name="attr_nwp_name" title="@{repeating_nonweaponproficiencies_$X_nwp_name}" placeholder="Proficiency Name" />
+              <input type="text" name="attr_nwp_name" list="nwps" title="@{repeating_nonweaponproficiencies_$X_nwp_name}" placeholder="Proficiency Name" />
             </label>
             <textarea class="height-short" name="attr_nwp_short_description" title="@{repeating_nonweaponproficiencies_$X_nwp_short_description}" placeholder="Short Description"></textarea>
             <select name="attr_nwp_attribute" title="Select an applicable NWP Attribute or 'vs Base' for a roll-time query.|%{repeating_nonweaponproficiencies_$X_nwp_attribute}">
@@ -5626,6 +5626,88 @@
     <option value="Ranger"></option>
     <option value="Thief"></option>
     <option value="CUSTOM ENTRY"></option>
+</datalist>
+
+<datalist id="races">
+  <option value="Dwarf"></option>
+  <option value="Elf"></option>
+  <option value="Gnome"></option>
+  <option value="Half-elf"></option>
+  <option value="Halfling"></option>
+  <option value="Half-orc"></option>
+  <option value="Human"></option>
+  <option value="CUSTOM ENTRY"></option>
+</datalist>
+
+<datalist id="skills">
+  <option value="Armorer"></option>
+  <option value="Bowyer/Fletcher"></option>
+  <option value="Farmer/Gardener"></option>
+  <option value="Fisher (Netting)"></option>
+  <option value="Forester"></option>
+  <option value="Gambler"></option>
+  <option value="Hunter/Fisher (Hook & Line)"></option>
+  <option value="Husbandman (Animal Husbandry)"></option>
+  <option value="Jeweler/Lapidary"></option>
+  <option value="Leather worker/Tanner"></option>
+  <option value="Limner/Painter"></option>
+  <option value="Mason/Carpenter"></option>
+  <option value="Miner"></option>
+  <option value="Navigator (Fresh/Salt)"></option>
+  <option value="Sailor (Fresh/Salt)"></option>
+  <option value="Shipwright (Boats/Ships)"></option>
+  <option value="Tailor/Weaver"></option>
+  <option value="Teamster/Freighter"></option>
+  <option value="Trader/Barterer"></option>
+  <option value="Trapper/Furrier"></option>
+  <option value="Woodworker/Cabinetmaker"></option>
+  <option value="No Skill of Worth"></option>
+  <option value="CUSTOM ENTRY"></option>
+</datalist>
+
+<datalist id="nwps">
+  <option value="Alertness"></option>
+  <option value="Animal Handling"></option>
+  <option value="Animal Lore"></option>
+  <option value="Animal Noise"></option>
+  <option value="Animal Trainer"></option>
+  <option value="Armorer"></option>
+  <option value="Blacksmith"></option>
+  <option value="Blind-fighting"></option>
+  <option value="Boating"></option>
+  <option value="Boatwright"></option>
+  <option value="Bowyer/Fletcher"></option>
+  <option value="Carpenter"></option>
+  <option value="Charioteering"></option>
+  <option value="Direction Sense"></option>
+  <option value="Endurance"></option>
+  <option value="Fire-building"></option>
+  <option value="Fishing"></option>
+  <option value="Foraging"></option>
+  <option value="Fungus Identification"></option>
+  <option value="Gem Cutter"></option>
+  <option value="Healing"></option>
+  <option value="Hunting"></option>
+  <option value="Leatherworker"></option>
+  <option value="Miner"></option>
+  <option value="Mountaineering"></option>
+  <option value="Plant Lore"></option>
+  <option value="Potter"></option>
+  <option value="Riding, Airborne"></option>
+  <option value="Riding, Land-based"></option>
+  <option value="Rope Use"></option>
+  <option value="Running"></option>
+  <option value="Slow Respiration"></option>
+  <option value="Smelter"></option>
+  <option value="Sound Analysis"></option>
+  <option value="Stone Mason"></option>
+  <option value="Survival"></option>
+  <option value="Swimming"></option>
+  <option value="Tracking"></option>
+  <option value="Weaponsmith"></option>
+  <option value="Weather Sense"></option>
+  <option value="Weaver"></option>
+  <option value="CUSTOM ENTRY">
 </datalist>
 
 <script type="text/worker"></script>

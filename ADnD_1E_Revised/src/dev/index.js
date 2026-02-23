@@ -6774,7 +6774,6 @@ class StrengthCheck {
     return this.encumbrancebonus;
   }
 }
-
 class StrengthAdjustmentTable {
   constructor() {
     // MeleeAttackBonus, MeleeDamageBonus, EncumbranceBonus, MinorStrengthCheck, MinorStrengthCheck(locked), MajorStrengthCheck
@@ -6870,7 +6869,6 @@ class IntelligenceEntry {
     return this.maxspells;
   }
 }
-
 class IntelligenceAdjustmentTable {
   constructor() {
     // bonuslanguages, knowspell, minspells, maxspells
@@ -6921,7 +6919,6 @@ class WisdomEntry {
     return this.spellfailure;
   }
 }
-
 class WisdomAdjustmentTable {
   constructor() {
     // mentalsavebonus, spellbonus, spellfailure
@@ -6977,7 +6974,6 @@ class DexterityEntry {
     return this.armorbonus;
   }
 }
-
 class DexterityAdjustmentTable {
   constructor() {
     // surprisebonus rangedbonus armorbonus
@@ -7032,7 +7028,6 @@ class ConstitutionEntry {
     return this.resurrectionsurvival;
   }
 }
-
 class ConstitutionAdjustmentTable {
   constructor() {
     // hitpointbonus systemshock resurrectionsurvival
@@ -7070,7 +7065,6 @@ class ConstitutionAdjustmentTable {
     return this.constitution_dict[getValidVariable(str_value, 'constitution', 3, 25)];
   }
 }
-
 class CharismaEntry {
   constructor(maximumhenchmen, loyaltybonus, reactionbonus, comeliness_cha_adj) {
     this.maximumhenchmen = maximumhenchmen;
@@ -7095,7 +7089,6 @@ class CharismaEntry {
     return this.comeliness;
   }
 }
-
 class CharismaAdjustmentTable {
   constructor() {
     // maximumhenchmen loyaltybonus reactionbonus comeliness_cha_adj
@@ -7156,7 +7149,6 @@ class ThiefSkillsDexEntry {
     return this.hideInShadows;
   }
 }
-
 class ThiefSkillsDexAdjustmentTable {
   constructor() {
     // pickPockets, openLocks, findRemoveTraps, moveSilently, hideInShadows
@@ -7222,7 +7214,6 @@ class ThiefSkillsRacialEntry {
     return this.readLanguages;
   }
 }
-
 class ThiefSkillsRacialAdjustmentTable {
   // thief_race_selected selector is 0=n/a, 1=Human, 2=Dwarf, 3=Elf, 4=Gnome, 5=Half-elf, 6=Halfling, 7=Half-orc
   constructor() {
