@@ -2344,7 +2344,8 @@ section.npc-box.statblock3 .image-avatar {
 }
 
 .charsheet .toggle-to-hit-table ~ .sect label,
-.charsheet .thief-class label {
+.charsheet .thief-class label,
+.charsheet .caster-class label {
   justify-content: center;
 }
 
@@ -2375,10 +2376,28 @@ section.npc-box.statblock3 .image-avatar {
   grid-template-columns: 1fr 1fr 1fr 6em 1fr 1fr;
 }
 
+.charsheet .caster-class {
+  display: grid;
+  grid-template-columns: .5fr 1fr 7em 1fr;
+  margin: -1.5em .5em .5em auto;
+  position: relative;
+  width: 85%;
+  z-index: 2;
+}
+
+.charsheet .spells-bottom ~ .caster-class {
+  margin-top: -.5em;
+}
+
+.charsheet .toggle-sync-class:checked + .caster-class {
+  grid-template-columns: .5fr 7em .75fr 6em 1fr;
+}
+
 .charsheet .settings label:has(> input[type='checkbox']),
 .charsheet .saves-class label:has(> input[type='checkbox']),
 .charsheet .matrix-class label:has(> span + input[type='checkbox']),
-.charsheet .thief-class label:has(> input[type='checkbox']) {
+.charsheet .thief-class label:has(> input[type='checkbox']),
+.charsheet .caster-class label:has(> input[type='checkbox']) {
   margin-right: 0;
 }
 
@@ -2394,14 +2413,18 @@ section.npc-box.statblock3 .image-avatar {
 .charsheet .toggle-sync-class:not(:checked) ~ .matrix-class .show-sync-class,
 .charsheet .toggle-sync-class:checked ~ .matrix-class .show-when-not-synced,
 .charsheet .toggle-sync-class:not(:checked) ~ .thief-class .show-sync-class,
-.charsheet .toggle-sync-class:checked ~ .thief-class .show-when-not-synced {
+.charsheet .toggle-sync-class:checked ~ .thief-class .show-when-not-synced,
+.charsheet .toggle-sync-class:not(:checked) + .caster-class .show-sync-class,
+.charsheet .toggle-sync-class:checked + .caster-class .show-when-not-synced {
   display: none;
 }
 
 .charsheet .toggle-sync-class:not(:checked) ~ .matrix-class .show-when-not-synced,
 .charsheet .toggle-sync-class:checked ~ .matrix-class .show-sync-class,
 .charsheet .toggle-sync-class:not(:checked) ~ .thief-class .show-when-not-synced,
-.charsheet .toggle-sync-class:checked ~ .thief-class .show-sync-class {
+.charsheet .toggle-sync-class:checked ~ .thief-class .show-sync-class,
+.charsheet .toggle-sync-class:not(:checked) + .caster-class .show-when-not-synced,
+.charsheet .toggle-sync-class:checked + .caster-class .show-sync-class {
   display: flex;
   min-width: 0;
 }
@@ -2788,11 +2811,6 @@ section.npc-box.statblock3 .image-avatar {
 .charsheet .spells-box {
   grid-column: 1/-1;
   grid-row-start: auto;
-}
-
-.charsheet .spell-class {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr auto;
 }
 
 .charsheet .spells-top {

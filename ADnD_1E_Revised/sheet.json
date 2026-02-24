@@ -278,6 +278,20 @@
       "type": "checkbox",
       "value": "1",
       "description": "Linking to a class will automatically adjust the thief base  values when the linked class level changes. This can still be enabled/edited per sheet."
+    },
+    {
+      "attribute": "sync_caster_class1",
+      "displayname": "Sync Caster Class 1:",
+      "type": "checkbox",
+      "value": "1",
+      "description": "Linking to a class will automatically adjust the caster name and level values whenever the linked class changes."
+    },
+    {
+      "attribute": "sync_caster_class2",
+      "displayname": "Sync Caster Class 2:",
+      "type": "checkbox",
+      "value": "1",
+      "description": "Linking to a class will automatically adjust the caster name and level values whenever the linked class changes."
     }
   ],
   "printable": true,

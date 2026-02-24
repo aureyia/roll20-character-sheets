@@ -3857,20 +3857,44 @@
       <div class="sect">
         <div class="center">
           <!-- Caster 1 -->
-          <span class="spell-class inline-label">
-            <label>
-              <h4>Caster Class 1:</h4>
-              <input type="text" class="width-medium" name="attr_caster_class1_name" title="@{caster_class1_name} | Name used for spells" value="" placeholder="enter caster class" />
+          <input type="checkbox" class="toggle-sync-class hidden" name="attr_sync_caster_class1" value="1" />
+          <span class="caster-class inline-label">
+            <label></label>
+            <label class="show-sync-class"></label>
+            <label><span>Class</span></label>
+            <label><span>Level</span></label>
+            <label></label>
+
+            <label class="inline-label" title="@{sync_caster_class1} | Linking to a class will automatically adjust the caster name and level values whenever the linked class changes.">
+              <span>Sync to Class:</span>
+              <input type="checkbox" name="attr_sync_caster_class1" value="1">
             </label>
-            <label>
-              <h4>Level:</h4>
+            <label class="show-sync-class">
+              <select class="class-selected border" name="attr_caster_class1_selected" title="@{caster_class1_selected} | Linking to a class will automatically adjust the caster1 name and level values whenever the linked class changes.">
+                <option value="1" selected>Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+              </select>
+            </label>
+            <label class="show-sync-class width-large">
+              <input type="hidden" class="class-selected" name="attr_caster_class1_selected" value="1">
+              <input class="show-class1-name" name="attr_class" title="@{class}" placeholder="n/a" readonly="">
+              <input class="show-class2-name" name="attr_secondclass" title="@{secondclass}" placeholder="n/a" readonly="">
+              <input class="show-class3-name" name="attr_thirdclass" title="@{thirdclass}" placeholder="n/a" readonly="">
+            </label>
+            <label class="caster-level show-sync-class">
+              <input type="text" class="width-small" name="attr_caster_class1_level" title="@{caster_class1_level}" value="0" readonly />
+            </label>
+            <label class="show-when-not-synced width-large">
+              <input type="text" name="attr_caster_class1_name" title="@{caster_class1_name} | Name used for spells" value="" placeholder="enter caster class" />
+            </label>
+            <label class="show-when-not-synced">
               <input type="text" class="width-small" name="attr_caster_class1_level" title="@{caster_class1_level}" value="0" />
             </label>
             <label class="inline-label" title="@{toggle_caster2} | Hides a second caster class in the Spells section.">
               <span>Hide Caster Class 2:</span>
               <input type="checkbox" name="attr_toggle_caster2" value="1" checked />
             </label>
-            <span></span>
           </span>
           <span class="spells-top column-header">
             <span>Cur&nbsp;/&nbsp;Max</span>
@@ -3920,19 +3944,43 @@
           </span>
 
           <!-- Caster 2 -->
+          <input type="checkbox" class="toggle-sync-class hidden" name="attr_sync_caster_class2" value="1" />
+          <span class="caster-class inline-label toggle-caster2">
+            <label></label>
+            <label class="show-sync-class"></label>
+            <label><span>Class</span></label>
+            <label><span>Level</span></label>
+            <label></label>
+
+            <label class="inline-label" title="@{sync_caster_class2} | Linking to a class will automatically adjust the caster name and level values whenever the linked class changes.">
+              <span>Sync to Class:</span>
+              <input type="checkbox" name="attr_sync_caster_class2" value="1">
+            </label>
+            <label class="show-sync-class">
+              <select class="class-selected border" name="attr_caster_class2_selected" title="@{caster_class2_selected} | Linking to a class will automatically adjust the caster1 name and level values whenever the linked class changes.">
+                <option value="1" selected>Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+              </select>
+            </label>
+            <label class="show-sync-class width-large">
+              <input type="hidden" class="class-selected" name="attr_caster_class2_selected" value="1">
+              <input class="show-class1-name" name="attr_class" title="@{class}" placeholder="n/a" readonly="">
+              <input class="show-class2-name" name="attr_secondclass" title="@{secondclass}" placeholder="n/a" readonly="">
+              <input class="show-class3-name" name="attr_thirdclass" title="@{thirdclass}" placeholder="n/a" readonly="">
+            </label>
+            <label class="caster-level show-sync-class">
+              <input type="text" class="width-small" name="attr_caster_class2_level" title="@{caster_class2_level}" value="0" readonly />
+            </label>
+            <label class="show-when-not-synced width-large">
+              <input type="text" name="attr_caster_class2_name" title="@{caster_class2_name} | Name used for spells" value="" placeholder="enter caster class" />
+            </label>
+            <label class="show-when-not-synced">
+              <input type="text" class="width-small" name="attr_caster_class2_level" title="@{caster_class2_level}" value="0" />
+            </label>
+
+          </span>
           <span class="spells-middle toggle-caster2">
-            <span class="spell-class inline-label span-all no-border">
-              <label>
-                <h4>Caster Class 2:</h4>
-                <input type="text" class="width-medium" name="attr_caster_class2_name" title="@{caster_class2_name} | Name used for spells" value="" placeholder="enter caster class" />
-              </label>
-              <label>
-                <h4>Level:</h4>
-                <input type="text" class="width-small" name="attr_caster_class2_level" title="@{caster_class2_level}" value="0" />
-              </label>
-              <span></span>
-              <span></span>
-            </span>
             <span><input type="text" class="width-fill" name="attr_spells2_lvl_0_current" title="@{spells2_lvl_0_current}" value="0" /></span>
             <span><input type="text" class="width-fill" name="attr_spells2_lvl_0_max" title="@{spells2_lvl_0|max}" value="0" /></span>
             <span><input type="text" class="width-fill" name="attr_spells2_lvl_1_current" title="@{spells2_lvl_1_current}" value="0" /></span>
@@ -4485,6 +4533,14 @@
             <label class="inline-label" title="@{sync_thief_class} | Linking to a class will automatically adjust the thief base values when the linked class level changes.">
               <span>Sync Thief Skills to Class:</span>
               <input type="checkbox" name="attr_sync_thief_class" value="1" />
+            </label>
+            <label class="inline-label" title="@{sync_caster_class1} | Linking to a class will automatically adjust the caster name and level values whenever the linked class changes.">
+              <span>Sync Caster Class 1:</span>
+              <input type="checkbox" name="attr_sync_caster_class1" value="1" />
+            </label>
+            <label class="inline-label" title="@{sync_caster_class2} | Linking to a class will automatically adjust the caster name and level values whenever the linked class changes.">
+              <span>Sync Caster Class 2:</span>
+              <input type="checkbox" name="attr_sync_caster_class2" value="1" />
             </label>
           </span>
           <span class="span-seven inline-label" title="WARNING: any customization/editing that has been done on existing macro-text fields will be lost! You will not break anything by reseting. Reseting a field simply erases the existing value and forces the sheet to re-populate the field with the latest default value.">
