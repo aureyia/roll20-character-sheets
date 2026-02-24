@@ -1,4 +1,49 @@
+# 2026-02-05
+
+Lots of tracker updates
+- Fix delete in the new tracker
+    - Set icon to safe default
+    - Put it at the bottom
+- Add a toggle to hide/show created characters
+- Fetch the inuse items when adding ones
+- Add item for hte inuse item
+- Hide unused tracker templates
+- Correct message when adding to tracker
+- Add tracker to PC sheet
+- Add toggle to hide PC trackers
+- Initiative button rolls initiative; and sends to pc sheet
+- Add 'next' button to advance initiative.
+
+# 2026-01-27
+
+- Refactor the status boxes for grapple, staggered, stun
+- Show grapple correctly
+- Have a delete grapple button
+
+# 2026-01-22
+
+- Add BMR Crawl to front page.
+- Tweak colors of the subbox on the tracker page
+
+# 2026-01-20
+
+- Show PP Mulitplier on front page
+  - Attribute is pp_multiplier
+- Show height in feet'inches, inches and cm.
+- Updates display of height on change
+- Sheet version -> 18; upgrade height on load
+- Fix initialisation setting vesion instead of version
+- Tracker:
+  - Better layout
+  - Read NPC attacks
+  - Read parry/db etc from PCs and from tracker
+  - Make attacks from tracker.
+- Inventory: Fix appearance of accordian
+
+
 # 2026-01-15
+
+(went live on the 16th)
 
 - Add tracker back
 - Add general "asCharacter" helpers
