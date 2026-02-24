@@ -5539,12 +5539,14 @@
 	function showVillainAction() {
 		console.log('~~~ showVillainAction ~~~');
 		getAttrs(["npc_role"], function(values) {
-			let role = (values["npc_role"] || "").toLowerCase();
-			let showVillain = (role === "leader" || role === "solo") ? "1" : "0";
+			if (values["npc_role"]) {
+				let role = (values["npc_role"] || "").toLowerCase();
+				let showVillain = (role === "leader" || role === "solo") ? "1" : "0";
 			
-			setAttrs({
-				"villain_action_show": showVillain
-			});
+				setAttrs({
+					"villain_action_show": showVillain
+				});
+			}
 		});
 	}
 
@@ -5599,7 +5601,11 @@
 	
 	function calculateGrowingResource() {
 		console.log('~~~ calculateGrowingResource ~~~');
-		getAttrs(["stats-minimize-checkbox","resource", "level"], function(values) {
+		getAttrs(["is_npc","stats-minimize-checkbox","resource", "level"], function(values) {
+			if (values["is_npc"]) {
+				console.log("monster");
+				return;
+			}
 			let isChecked = values["stats-minimize-checkbox"] === "on";
 			
 			if (isChecked) {
@@ -5832,7 +5838,7 @@
 		'Maneuver':         { section: 'maneuvers',    prefix: 'maneuver',  type: 'maneuver' },
 		'Move Action':      { section: 'moves',        prefix: 'moves',     type: 'move-action' },
 		'Villain Action':   { section: 'npcabilities', prefix: 'ability',   type: 'no-action' },
-		'default':          { section: 'noaction',     prefix: 'noaction',  type: 'no-action' },
+		'default':          { section: 'noaction',     prefix: 'noaction',  type: 'no-action' }
 	};
 
 	/**
@@ -5842,6 +5848,7 @@
 	 */
 	function processAbility(abilityData) {
 		// 1. Determine ability type and get configuration.
+
 		const usage = abilityData.type.usage;
 		const config = ABILITY_TYPE_MAP[usage] || ABILITY_TYPE_MAP.default;
 		const id = generateRowID();
@@ -6551,12 +6558,15 @@
 		const usage = ABILITY_TYPE_MAP[abilityData.type.usage].type;
 		const cost = abilityData.cost === 'signature' ? abilityData.cost : parseInt(abilityData.cost) || 0;
 		
+		let prefix = 'npcabilities';
 		let subtype = 'normal-ability';
 		if (abilityData.type.usage === 'Villain Action') {
+			prefix = 'villainaction';
 			subtype = 'villain-ability'; 
 		} else if (cost === 'signature') {
 			subtype = 'signature-ability';
 		} else if (cost > 0) {
+			prefix = 'malice';
 			subtype = 'malice-ability';
 		}
 		
@@ -6579,41 +6589,41 @@
 		const powerRollSection = abilityData.sections.find(s => s.type === 'roll');
 		// 4. Assemble the final attribute object.
 		const attributes = {
-			[`repeating_npcabilities_${id}_ability_name`]: abilityData.name,
-			[`repeating_npcabilities_${id}_ability_description`]: abilityData.description,
-			[`repeating_npcabilities_${id}_ability_type`]: usage,
-			[`repeating_npcabilities_${id}_ability_subtype`]: subtype,
-			[`repeating_npcabilities_${id}_ability_keywords`]: abilityData.keywords.join(', '),
-			[`repeating_npcabilities_${id}_ability_trigger`]: abilityData.type.trigger ?? '',
-			[`repeating_npcabilities_${id}_ability_distance`]: distance,
-			[`repeating_npcabilities_${id}_ability_target`]: abilityData.target,
-			[`repeating_npcabilities_${id}_ability_malice_cost`]: cost,
-			[`repeating_npcabilities_${id}_has_effect`]: effect ? 'on' : 0,
-			[`repeating_npcabilities_${id}_ability_effect`]: effect,
-			[`repeating_npcabilities_${id}_has_power_roll`]: powerRollSection ? 'on' : 0,
+			[`repeating_${prefix}_${id}_ability_name`]: abilityData.name,
+			[`repeating_${prefix}_${id}_ability_description`]: abilityData.description,
+			[`repeating_${prefix}_${id}_ability_type`]: usage,
+			[`repeating_${prefix}_${id}_ability_subtype`]: subtype,
+			[`repeating_${prefix}_${id}_ability_keywords`]: abilityData.keywords.join(', '),
+			[`repeating_${prefix}_${id}_ability_trigger`]: abilityData.type.trigger ?? '',
+			[`repeating_${prefix}_${id}_ability_distance`]: distance,
+			[`repeating_${prefix}_${id}_ability_target`]: abilityData.target,
+			[`repeating_${prefix}_${id}_ability_malice_cost`]: cost,
+			[`repeating_${prefix}_${id}_has_effect`]: effect ? 'on' : 0,
+			[`repeating_${prefix}_${id}_ability_effect`]: effect,
+			[`repeating_${prefix}_${id}_has_power_roll`]: powerRollSection ? 'on' : 0,
 		};
 		
 		if (powerRollSection) {
 			Object.assign(attributes, {
-				[`repeating_npcabilities_${id}_ability_characteristic`]: powerRollSection.roll.bonus,
-				[`repeating_npcabilities_${id}_ability_tier_1`]: powerRollSection.roll.tier1,
-				[`repeating_npcabilities_${id}_ability_tier_2`]: powerRollSection.roll.tier2,
-				[`repeating_npcabilities_${id}_ability_tier_3`]: powerRollSection.roll.tier3,
+				[`repeating_${prefix}_${id}_ability_characteristic`]: powerRollSection.roll.bonus,
+				[`repeating_${prefix}_${id}_ability_tier_1`]: powerRollSection.roll.tier1,
+				[`repeating_${prefix}_${id}_ability_tier_2`]: powerRollSection.roll.tier2,
+				[`repeating_${prefix}_${id}_ability_tier_3`]: powerRollSection.roll.tier3,
 			});
 		}
 		
 		if (special) {
 			Object.assign(attributes, {
-				[`repeating_npcabilities_${id}_has_special`]: 'on',
-				[`repeating_npcabilities_${id}_ability_special`]: special.text.replace('**Special:** ', ''),
+				[`repeating_${prefix}_${id}_has_special`]: 'on',
+				[`repeating_${prefix}_${id}_ability_special`]: special.text.replace('**Special:** ', ''),
 			});
 		}
 		
 		if (malice) {
 			Object.assign(attributes, {
-				[`repeating_npcabilities_${id}_has_malice`]: 'on',
-				[`repeating_npcabilities_${id}_ability_cost`]: malice.value,
-				[`repeating_npcabilities_${id}_ability_malice`]: malice.effect,
+				[`repeating_${prefix}_${id}_has_malice`]: 'on',
+				[`repeating_${prefix}_${id}_ability_cost`]: malice.value,
+				[`repeating_${prefix}_${id}_ability_malice`]: malice.effect,
 			});
 		}
 		
