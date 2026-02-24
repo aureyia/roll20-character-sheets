@@ -6536,6 +6536,8 @@
 
 			// Clear existing repeating sections before adding new data.
 			await clearRepeatingSection('npcabilities');
+			await clearRepeatingSection('malice');
+			await clearRepeatingSection('villainaction');
 			
 			// Set the new attributes on the character sheet.
 			await setAttrsAsync(newAttrs);
