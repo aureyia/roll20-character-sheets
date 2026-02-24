@@ -3779,7 +3779,7 @@ on('clicked:addturnundead2', (eventInfo) => {
 
 // Spell Tabs and Memorized toggle
 on('change:spell_tabs change:toggle_show_memorized change:spell_caster_tabs change:toggle_caster2', async (eventInfo) => {
-  clog(`Δ detected: ${eventInfo.sourceAttribute}`);
+  // clog(`Δ detected: ${eventInfo.sourceAttribute}`);
   const idArray = await getSectionIDsAsync('spells');
   const output = {};
   const fields = idArray.flatMap((id) => [
@@ -5230,22 +5230,22 @@ on(
     };
 
     const syncClass = +v.sync_thief_class || 0;
-    const classLinked = +v.thief_class_selected || 0;
+    const classLinked = +v.thief_class_selected || 0; // 1, 2, 3
     let levelSelected = +v.thief_level || 0;
 
     // Determine Level based on Sync logic
     if (syncClass && classLinked >= 1 && classLinked <= 3) {
       const classNames = [v.class, v.secondclass, v.thirdclass];
       const levels = [v.level, v.level_2, v.level_3];
-
-      const index = classLinked - 1;
+      clog(`classNames: ${classNames}
+        levels: ${levels}`);
+      const index = classLinked - 1; // match index position
       const currentClassName = (classNames[index] || '').trim();
       const currentLevel = +levels[index] || 0;
 
-      const classSelected = matchClassName(currentClassName);
+      const classSelected = await matchClassName(currentClassName);
       levelSelected = currentLevel;
-
-      output.thief_level = classSelected === 4 ? levelSelected : 0;
+      output.thief_level = classSelected === 4 ? levelSelected : 0; // 4 = thief matchClassName()
     }
 
     // Clamp level between 0 and 17 for the table lookup
