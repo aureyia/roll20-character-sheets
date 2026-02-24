@@ -3792,14 +3792,14 @@ on('change:spell_tabs change:toggle_show_memorized change:spell_caster_tabs chan
   const memorizedOnly = +v.toggle_show_memorized || 0;
   const casterTab = +v.spell_caster_tabs || 0; // -1, 0, 1
   const hideCaster2 = +v.toggle_caster2 || 0;
-  const levelTab = +v.spell_tabs || 0;
+  const levelTab = +v.spell_tabs || 0; // -1, 0, 1, 2, ..., 9
   _.each(idArray, (id) => {
     const thisMemorizedOnly = +v[`repeating_spells_${id}_spell_memorized`] || 0;
     const thisCaster = +v[`repeating_spells_${id}_spell_caster_class`] || 0; // 0, 1, 2
-    const thisLevel = v[`repeating_spells_${id}_spell_level`]; // can be '?'
+    const thisLevel = +v[`repeating_spells_${id}_spell_level`] || 0; // '?' will be coerced to 0
     output[`repeating_spells_${id}_spell_show_memorized`] = memorizedOnly === 1 && thisMemorizedOnly > 0 ? 1 : 0;
     output[`repeating_spells_${id}_spell_show_all`] = memorizedOnly === 1 ? 0 : 1;
-    // show THIS spell if spell level and spell tab match
+    // show THIS spell if spell level and spell tab match or if show ALL
     if (levelTab === -1 || levelTab === thisLevel) {
       // one caster: ignore caster tabs and show THIS spell
       if (hideCaster2 === 1) {
@@ -5230,22 +5230,20 @@ on(
     };
 
     const syncClass = +v.sync_thief_class || 0;
-    const classLinked = +v.thief_class_selected || 0;
+    const classLinked = +v.thief_class_selected || 0; // 1, 2, 3
     let levelSelected = +v.thief_level || 0;
 
     // Determine Level based on Sync logic
     if (syncClass && classLinked >= 1 && classLinked <= 3) {
       const classNames = [v.class, v.secondclass, v.thirdclass];
       const levels = [v.level, v.level_2, v.level_3];
-
-      const index = classLinked - 1;
+      // clog(`classNames: ${classNames} levels: ${levels}`);
+      const index = classLinked - 1; // match index position
       const currentClassName = (classNames[index] || '').trim();
       const currentLevel = +levels[index] || 0;
-
-      const classSelected = matchClassName(currentClassName);
+      const classSelected = await matchClassName(currentClassName);
       levelSelected = currentLevel;
-
-      output.thief_level = classSelected === 4 ? levelSelected : 0;
+      output.thief_level = classSelected === 4 ? levelSelected : 0; // 4 = thief matchClassName()
     }
 
     // Clamp level between 0 and 17 for the table lookup
@@ -5657,6 +5655,7 @@ const calcThac0 = async (classSelected) => {
 };
 
 // Attack Matrix Autofill To-Hit table
+// Sync to Class
 on(
   'change:matrix_class change:matrix_level change:matrix_hitdice change:autofill_matrix change:sync_matrix_class change:toggle_fighter5 change:class_selected change:class change:secondclass change:thirdclass change:level change:level_2 change:level_3',
   async (eventInfo) => {
@@ -6728,6 +6727,69 @@ on('change:thac00', (eventInfo) => {
   calcThac0();
 });
 
+// Sync Caster class
+on(
+  'change:sync_caster_class1 change:sync_caster_class2 change:caster_class1_selected change:caster_class2_selected change:class change:secondclass change:thirdclass change:level change:level_2 change:level_3',
+  async (eventInfo) => {
+    // clog(`Matrix Autofill Δ detected:${eventInfo.sourceAttribute}`);
+    const v = await getAttrsAsync([
+      'sync_caster_class1',
+      'sync_caster_class2',
+      'caster_class1_selected',
+      'caster_class2_selected',
+      'class',
+      'secondclass',
+      'thirdclass',
+      'level',
+      'level_2',
+      'level_3',
+    ]);
+
+    const output = {};
+    const syncClass1 = +v.sync_caster_class1 || 0;
+    const syncClass2 = +v.sync_caster_class2 || 0;
+    const class1Linked = +v.caster_class1_selected || 0;
+    const class2Linked = +v.caster_class2_selected || 0;
+    const class1Name = (v.class || '').trim();
+    const class2Name = (v.secondclass || '').trim();
+    const class3Name = (v.thirdclass || '').trim();
+    const class1Level = +v.level || 0;
+    const class2Level = +v.level_2 || 0;
+    const class3Level = +v.level_3 || 0;
+
+    if (syncClass1) {
+      if (class1Linked === 1) {
+        output.caster_class1_level = class1Level;
+        output.caster_class1_name = class1Name;
+      }
+      if (class1Linked === 2) {
+        output.caster_class1_level = class2Level;
+        output.caster_class1_name = class2Name;
+      }
+      if (class1Linked === 3) {
+        output.caster_class1_level = class3Level;
+        output.caster_class1_name = class3Name;
+      }
+    }
+    if (syncClass2) {
+      if (class2Linked === 1) {
+        output.caster_class2_level = class1Level;
+        output.caster_class2_name = class1Name;
+      }
+      if (class2Linked === 2) {
+        output.caster_class2_level = class2Level;
+        output.caster_class2_name = class2Name;
+      }
+      if (class2Linked === 3) {
+        output.caster_class2_level = class2Level;
+        output.caster_class2_name = class3Name;
+      }
+    }
+    await setAttrsAsync(output, {silent: true});
+    setSpellsCasterClass();
+  },
+);
+
 // Auto-fill Abilities
 const getValidVariable = (str_value, string_type, lower_bound, higher_bound) => {
   if (str_value < lower_bound) {
@@ -6774,7 +6836,6 @@ class StrengthCheck {
     return this.encumbrancebonus;
   }
 }
-
 class StrengthAdjustmentTable {
   constructor() {
     // MeleeAttackBonus, MeleeDamageBonus, EncumbranceBonus, MinorStrengthCheck, MinorStrengthCheck(locked), MajorStrengthCheck
@@ -6870,7 +6931,6 @@ class IntelligenceEntry {
     return this.maxspells;
   }
 }
-
 class IntelligenceAdjustmentTable {
   constructor() {
     // bonuslanguages, knowspell, minspells, maxspells
@@ -6921,7 +6981,6 @@ class WisdomEntry {
     return this.spellfailure;
   }
 }
-
 class WisdomAdjustmentTable {
   constructor() {
     // mentalsavebonus, spellbonus, spellfailure
@@ -6977,7 +7036,6 @@ class DexterityEntry {
     return this.armorbonus;
   }
 }
-
 class DexterityAdjustmentTable {
   constructor() {
     // surprisebonus rangedbonus armorbonus
@@ -7032,7 +7090,6 @@ class ConstitutionEntry {
     return this.resurrectionsurvival;
   }
 }
-
 class ConstitutionAdjustmentTable {
   constructor() {
     // hitpointbonus systemshock resurrectionsurvival
@@ -7070,7 +7127,6 @@ class ConstitutionAdjustmentTable {
     return this.constitution_dict[getValidVariable(str_value, 'constitution', 3, 25)];
   }
 }
-
 class CharismaEntry {
   constructor(maximumhenchmen, loyaltybonus, reactionbonus, comeliness_cha_adj) {
     this.maximumhenchmen = maximumhenchmen;
@@ -7095,7 +7151,6 @@ class CharismaEntry {
     return this.comeliness;
   }
 }
-
 class CharismaAdjustmentTable {
   constructor() {
     // maximumhenchmen loyaltybonus reactionbonus comeliness_cha_adj
@@ -7156,7 +7211,6 @@ class ThiefSkillsDexEntry {
     return this.hideInShadows;
   }
 }
-
 class ThiefSkillsDexAdjustmentTable {
   constructor() {
     // pickPockets, openLocks, findRemoveTraps, moveSilently, hideInShadows
@@ -7222,7 +7276,6 @@ class ThiefSkillsRacialEntry {
     return this.readLanguages;
   }
 }
-
 class ThiefSkillsRacialAdjustmentTable {
   // thief_race_selected selector is 0=n/a, 1=Human, 2=Dwarf, 3=Elf, 4=Gnome, 5=Half-elf, 6=Halfling, 7=Half-orc
   constructor() {
