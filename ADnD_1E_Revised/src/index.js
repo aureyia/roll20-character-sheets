@@ -5237,12 +5237,10 @@ on(
     if (syncClass && classLinked >= 1 && classLinked <= 3) {
       const classNames = [v.class, v.secondclass, v.thirdclass];
       const levels = [v.level, v.level_2, v.level_3];
-      clog(`classNames: ${classNames}
-        levels: ${levels}`);
+      // clog(`classNames: ${classNames} levels: ${levels}`);
       const index = classLinked - 1; // match index position
       const currentClassName = (classNames[index] || '').trim();
       const currentLevel = +levels[index] || 0;
-
       const classSelected = await matchClassName(currentClassName);
       levelSelected = currentLevel;
       output.thief_level = classSelected === 4 ? levelSelected : 0; // 4 = thief matchClassName()
@@ -5657,6 +5655,7 @@ const calcThac0 = async (classSelected) => {
 };
 
 // Attack Matrix Autofill To-Hit table
+// Sync to Class
 on(
   'change:matrix_class change:matrix_level change:matrix_hitdice change:autofill_matrix change:sync_matrix_class change:toggle_fighter5 change:class_selected change:class change:secondclass change:thirdclass change:level change:level_2 change:level_3',
   async (eventInfo) => {
@@ -6727,6 +6726,69 @@ on('sheet:opened change:thac0 change:thac00 change:autofill_matrix change:sync_m
 on('change:thac00', (eventInfo) => {
   calcThac0();
 });
+
+// Sync Caster class
+on(
+  'change:sync_caster_class1 change:sync_caster_class2 change:caster_class1_selected change:caster_class2_selected change:class change:secondclass change:thirdclass change:level change:level_2 change:level_3',
+  async (eventInfo) => {
+    // clog(`Matrix Autofill Δ detected:${eventInfo.sourceAttribute}`);
+    const v = await getAttrsAsync([
+      'sync_caster_class1',
+      'sync_caster_class2',
+      'caster_class1_selected',
+      'caster_class2_selected',
+      'class',
+      'secondclass',
+      'thirdclass',
+      'level',
+      'level_2',
+      'level_3',
+    ]);
+
+    const output = {};
+    const syncClass1 = +v.sync_caster_class1 || 0;
+    const syncClass2 = +v.sync_caster_class2 || 0;
+    const class1Linked = +v.caster_class1_selected || 0;
+    const class2Linked = +v.caster_class2_selected || 0;
+    const class1Name = (v.class || '').trim();
+    const class2Name = (v.secondclass || '').trim();
+    const class3Name = (v.thirdclass || '').trim();
+    const class1Level = +v.level || 0;
+    const class2Level = +v.level_2 || 0;
+    const class3Level = +v.level_3 || 0;
+
+    if (syncClass1) {
+      if (class1Linked === 1) {
+        output.caster_class1_level = class1Level;
+        output.caster_class1_name = class1Name;
+      }
+      if (class1Linked === 2) {
+        output.caster_class1_level = class2Level;
+        output.caster_class1_name = class2Name;
+      }
+      if (class1Linked === 3) {
+        output.caster_class1_level = class3Level;
+        output.caster_class1_name = class3Name;
+      }
+    }
+    if (syncClass2) {
+      if (class2Linked === 1) {
+        output.caster_class2_level = class1Level;
+        output.caster_class2_name = class1Name;
+      }
+      if (class2Linked === 2) {
+        output.caster_class2_level = class2Level;
+        output.caster_class2_name = class2Name;
+      }
+      if (class2Linked === 3) {
+        output.caster_class2_level = class2Level;
+        output.caster_class2_name = class3Name;
+      }
+    }
+    await setAttrsAsync(output, {silent: true});
+    setSpellsCasterClass();
+  },
+);
 
 // Auto-fill Abilities
 const getValidVariable = (str_value, string_type, lower_bound, higher_bound) => {

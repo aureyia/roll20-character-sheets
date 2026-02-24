@@ -63,10 +63,15 @@
             <span class="left">
               <span>v<span name="attr_sheet_version">
             </span>
-            <span class="right"> • 2/19/26'</span>
+            <span class="right"> • 2/24/26'</span>
           </h5>
           <ul>
             <h5>Latest</h5>
+            <li>Fixed Spell tab bug that only allowed spells to be seen using the "All" tab. Introduced with last weeks update.</li>
+            <li>Fixed a bug with the Thief "sync to class" option where the level was failing to 0. Introduced with last weeks update.</li>
+            <li>Added a "Sync Caster Class" option to the spells section. Linking to a class will automatically adjust the caster name and level values whenever the linked class changes from the top of the sheet.</li>
+            <li>Added datalist options for various fields. Datalist fields are similar to dropdown selectors, but also allow custom input as well. Added lists to; class, race, alignment, secondary skills, and non-weapon proficiencies(these also show the slot, ability, and modifier).</li>
+
             <li>Added a print option to the sheet. Adjusting sub-sections, resizing text boxes, etc. as needed will help produce a better end-result. I have hidden elements that would only apply to the VTT as well as other adjustments to help the sheet be "print-friendly". Click the printer icon at the top left corner of the character journal to preview. Ensure to toggle "background graphics" from the advanced print settings to see how it effects the preview.</li>
             <li>Updated how the to-Hit and weapon vs armor type table data is posted with attacks.</li>
             <li>Added an "Ask" option to the sheet whisper settings. Rolls will include a query to whisper the roll or not when choosing the "Ask" option. DM sees all...</li>
@@ -131,7 +136,7 @@
         </label>
         <label class="inline-label">
           <span>Alignment:</span>
-          <input type="text" class="width-fill" name="attr_alignment" title="@{alignment}" placeholder="Description" />
+          <input type="text" class="width-fill" name="attr_alignment" list="alignments" title="@{alignment}" placeholder="Description" />
         </label>
         <label class="inline-label left" title="Expand/Hide Class Details" style="max-width: calc(100% + 5px);">
           <input type="checkbox" class="sect-show" name="attr_class_details_show" value="1" checked />
@@ -5623,6 +5628,19 @@
 </div>
 
 <!--Datalists-->
+<datalist id="alignments">
+  <option value="Lawful Good"></option>
+  <option value="Neutral Good"></option>
+  <option value="Chaotic Good"></option>
+  <option value="Lawful Neutral"></option>
+  <option value="True Neutral"></option>
+  <option value="Chaotic Neutral"></option>
+  <option value="Lawful Evil"></option>
+  <option value="Neutral Evil"></option>
+  <option value="Chaotic Evil"></option>
+  <option value="CUSTOM ENTRY"></option>
+</datalist>
+
 <datalist id="spell_school">
   <option value="Abjur"></option>
   <option value="Abjur, Evoc"></option>
