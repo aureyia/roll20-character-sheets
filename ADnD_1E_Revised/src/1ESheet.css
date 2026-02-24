@@ -2790,6 +2790,11 @@ section.npc-box.statblock3 .image-avatar {
   grid-row-start: auto;
 }
 
+.charsheet .spell-class {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+}
+
 .charsheet .spells-top {
   align-items: center;
   display: grid;

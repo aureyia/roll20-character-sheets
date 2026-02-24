@@ -3779,7 +3779,7 @@ on('clicked:addturnundead2', (eventInfo) => {
 
 // Spell Tabs and Memorized toggle
 on('change:spell_tabs change:toggle_show_memorized change:spell_caster_tabs change:toggle_caster2', async (eventInfo) => {
-  // clog(`Δ detected: ${eventInfo.sourceAttribute}`);
+  clog(`Δ detected: ${eventInfo.sourceAttribute}`);
   const idArray = await getSectionIDsAsync('spells');
   const output = {};
   const fields = idArray.flatMap((id) => [
@@ -3792,14 +3792,14 @@ on('change:spell_tabs change:toggle_show_memorized change:spell_caster_tabs chan
   const memorizedOnly = +v.toggle_show_memorized || 0;
   const casterTab = +v.spell_caster_tabs || 0; // -1, 0, 1
   const hideCaster2 = +v.toggle_caster2 || 0;
-  const levelTab = +v.spell_tabs || 0;
+  const levelTab = +v.spell_tabs || 0; // -1, 0, 1, 2, ..., 9
   _.each(idArray, (id) => {
     const thisMemorizedOnly = +v[`repeating_spells_${id}_spell_memorized`] || 0;
     const thisCaster = +v[`repeating_spells_${id}_spell_caster_class`] || 0; // 0, 1, 2
-    const thisLevel = v[`repeating_spells_${id}_spell_level`]; // can be '?'
+    const thisLevel = +v[`repeating_spells_${id}_spell_level`] || 0; // '?' will be coerced to 0
     output[`repeating_spells_${id}_spell_show_memorized`] = memorizedOnly === 1 && thisMemorizedOnly > 0 ? 1 : 0;
     output[`repeating_spells_${id}_spell_show_all`] = memorizedOnly === 1 ? 0 : 1;
-    // show THIS spell if spell level and spell tab match
+    // show THIS spell if spell level and spell tab match or if show ALL
     if (levelTab === -1 || levelTab === thisLevel) {
       // one caster: ignore caster tabs and show THIS spell
       if (hideCaster2 === 1) {
