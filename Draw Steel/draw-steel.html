@@ -2347,7 +2347,7 @@
 					<div class="ability-card card-edit">
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="disengage" name="attr_disengage_name" data-i18n="disengage" spellcheck="false"></textarea>
 						<input type="hidden" class="ability-keywords" data-i18n-placeholder="disengage-keywords" name="attr_disengage_keywords" value="" />
-						<input type="hidden" name="attr_disengage_type" value="maneuver" />
+						<input type="hidden" name="attr_disengage_type" value="move-action" />
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="distance" name="attr_disengage_distance" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="target" name="attr_disengage_target" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n="disengage-effect" name="attr_disengage_effect" spellcheck="false"></textarea>
@@ -2902,6 +2902,10 @@
 			<label data-i18n="presence" for="attr_presence"></label>
 			<input type="number" id="attr_presence" name="attr_presence" />
 		</div>
+		<div class="npc-edit-group npc-edit-text">
+			<label data-i18n="villain-toggle" for="attr_villain_action_show"></label>
+			<input type="checkbox" id="attr_villain_action_show" name="attr_villain_action_show" value="1"	/>
+		</div>
 		
 	</div>
 	<!-- NPC Display -->
@@ -3001,7 +3005,7 @@
 	</div>
 	<!-- NPC Abilities -->
 	<div class="npc-abilities-panel">
-		<! -- NPC Ability Type Tabs -->
+		<!-- NPC Ability Type Tabs -->
 		<input type="hidden" class="sheet-tabstoggle" name="attr_npcabilitiesTab" value="npcabilities" />
 		<div class="abilities-buttons">
 		    <button type="action" name="act_npcabilities" class="sheet-button-npcabilities" data-i18n="npc-abilities"></button>
@@ -3320,7 +3324,7 @@
 				</div>
 			</fieldset>
 			<!-- Basic Malice -->
-                	<h5 class="panel-title" data-i18n="basic-malice"></h5>
+            <h5 class="panel-title" data-i18n="basic-malice"></h5>
 			<div class="standard-abilities">
 				<!-- Brutal Effectiveness -->
 				<div class="standard-abilities-item">
@@ -3330,12 +3334,12 @@
 						<select class="ability-subtype-selector" name="attr_brutaleffect_subtype">
 							<option value="malice-trait" data-i18n="malice-trait"></option>
 						</select>
-				
 						<div class="npc-ability-malice-cost grid-span-full">
 							<label><span data-i18n="malice-cost"></span>:</label>
 							<input type="number" name="attr_brutaleffect_malice_cost" value="3" />
 						</div>
 
+						<input type="hidden" name="attr_brutaleffect_type" value="no-action" />
 						<textarea class="npc-ability-trait grid-span-full" name="attr_brutaleffect_trait" data-i18n="brutal-effect-trait" />
 					</div>
 					<div class="ability-card card-display">
@@ -3365,7 +3369,7 @@
 							<label><span data-i18n="malice-cost"></span>:</label>
 							<input type="number" name="attr_maliciousstrike_malice_cost" value="5" />
 						</div>
-
+						<input type="hidden" name="attr_maliciousstrike_type" value="no-action" />
 						<textarea class="npc-ability-trait grid-span-full" name="attr_maliciousstrike_trait" data-i18n="malicious-strike-trait" />
 					</div>
 					<div class="ability-card card-display">
@@ -4233,7 +4237,7 @@
 					<div class="ability-card card-edit">
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="disengage" name="attr_disengage_name" data-i18n="disengage" spellcheck="false"></textarea>
 						<input type="hidden" class="ability-keywords" data-i18n-placeholder="disengage-keywords" name="attr_disengage_keywords" value="" />
-						<input type="hidden" name="attr_disengage_type" value="maneuver" />
+						<input type="hidden" name="attr_disengage_type" value="move-action" />
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="distance" name="attr_disengage_distance" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="target" name="attr_disengage_target" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n="disengage-effect" name="attr_disengage_effect" spellcheck="false"></textarea>
@@ -5105,7 +5109,7 @@
 		const roll = buildRoll(template, directMap, rollValueMap, isPowerRoll);
 
 	}
-
+	const NPC_ABILITIES = ["repeating_npcabilities", "repeating_malice", "repeating_villainaction"];
 	/**
 	 * Creates the attribute maps needed to build an ability sharing roll.
 	 * @param {Array<Object>} Character and ability attributes.
@@ -5129,7 +5133,7 @@
 		let powerroll = '';
 		let characteristicValue = '';
 		
-		if (prefix === 'repeating_npcabilities') {
+		if (NPC_ABILITIES.includes(prefix)) {
 			// NPC Ability Logic
 			switch(attrs[`${prefix}_${abilityPrefix}subtype`]) {
 				case 'signature-ability':
@@ -5153,6 +5157,7 @@
 			subtype = cost && cost !== '0' ? `(${cost} ${resourceName})` : '';
 			characteristic = attrs[`${prefix}_${abilityPrefix}characteristic`] ? getTranslationByKey(attrs[`${prefix}_${abilityPrefix}characteristic`]) || '' : '';
 			description = attrs[`${prefix}_${abilityPrefix}description`] || '';
+			trait = attrs[`${prefix}_${abilityPrefix}trait`] || '';
 			hasTrait = 1;
 			hasEffect = attrs[`${prefix}_${abilityPrefix}effect`] ? 1 : 0;
 			characteristicValue = attrs[attrs[`${prefix}_${abilityPrefix}characteristic`]];
@@ -5395,7 +5400,7 @@
 		'search': false,
 		'standup': false,
 		'consumable': false,
-                'opportunity_attack': false,
+        'opportunity_attack': false,
 		'freestrike': false,
 		'brutaleffect': false,
 		'maliciousstrike': false
