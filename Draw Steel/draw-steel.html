@@ -3396,9 +3396,7 @@
 				<div class="ability-card card-edit">
 					<input type="text" class="ability-name" data-i18n-placeholder="ability-name" name="attr_ability_name" />
 					<select class="ability-subtype-selector" name="attr_ability_subtype">
-						<option value="villain-ability1" data-i18n="villain-ability1"></option>
-						<option value="villain-ability2" data-i18n="villain-ability2"></option>
-						<option value="villain-ability3" data-i18n="villain-ability3"></option>
+						<option value="villain-ability" data-i18n="villain-ability"></option>
 					</select>
 				
 					<div class="npc-ability-malice-cost grid-span-full">
@@ -5128,14 +5126,18 @@
 		let subtype = '';
 		let trait = '';
 		let hasTrait = 0;
+		let hasEffect = 0;
 		let characteristic = '';
 		let description = '';
 		let powerroll = '';
 		let characteristicValue = '';
 		
-		if (NPC_ABILITIES.includes(prefix)) {
+		const subtypeValue = attrs[`${prefix}_${abilityPrefix}subtype`] || '';
+		const isNpcAbility = NPC_ABILITIES.some(p => prefix === p || prefix.startsWith(`${p}_`));
+		
+		if (isNpcAbility) {
 			// NPC Ability Logic
-			switch(attrs[`${prefix}_${abilityPrefix}subtype`]) {
+			switch(subtypeValue) {
 				case 'signature-ability':
 				case 'villain-ability':
 					subtype = getTranslationByKey(attrs[`${prefix}_${abilityPrefix}subtype`]) || '';
@@ -5147,7 +5149,7 @@
 			}
 			characteristic = 'modifiers';
 			trait = attrs[`${prefix}_${abilityPrefix}trait`] || '';
-			hasTrait = attrs[`${prefix}_${abilityPrefix}subtype`].includes('trait') && trait ? 1 : 0;
+			hasTrait = subtypeValue.includes('trait') && trait ? 1 : 0;
 			hasEffect = attrs[`${prefix}_has_effect`] === 'on' ? 1 : 0;
 			characteristicValue = parseInt(attrs[`${prefix}_${abilityPrefix}characteristic`]) || 0;
 		} else {
@@ -5158,7 +5160,7 @@
 			characteristic = attrs[`${prefix}_${abilityPrefix}characteristic`] ? getTranslationByKey(attrs[`${prefix}_${abilityPrefix}characteristic`]) || '' : '';
 			description = attrs[`${prefix}_${abilityPrefix}description`] || '';
 			trait = attrs[`${prefix}_${abilityPrefix}trait`] || '';
-			hasTrait = 1;
+			hasTrait = trait ? 1 : 0;
 			hasEffect = attrs[`${prefix}_${abilityPrefix}effect`] ? 1 : 0;
 			characteristicValue = attrs[attrs[`${prefix}_${abilityPrefix}characteristic`]];
 		}
@@ -5602,8 +5604,7 @@
 	function calculateGrowingResource() {
 		console.log('~~~ calculateGrowingResource ~~~');
 		getAttrs(["is_npc","stats-minimize-checkbox","resource", "level"], function(values) {
-			if (values["is_npc"]) {
-				console.log("monster");
+			if (values["is_npc"] === "on") {
 				return;
 			}
 			let isChecked = values["stats-minimize-checkbox"] === "on";
@@ -6557,7 +6558,7 @@
 
 	function processMonsterAbility(abilityData) {
 		// 1. Determine ability type and get configuration.
-		const usage = ABILITY_TYPE_MAP[abilityData.type.usage].type;
+		const usage = ABILITY_TYPE_MAP[abilityData.type.usage].type || ABILITY_TYPE_MAP.default.type;
 		const cost = abilityData.cost === 'signature' ? abilityData.cost : parseInt(abilityData.cost) || 0;
 		
 		let prefix = 'npcabilities';
