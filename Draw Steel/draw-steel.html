@@ -2347,7 +2347,7 @@
 					<div class="ability-card card-edit">
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="disengage" name="attr_disengage_name" data-i18n="disengage" spellcheck="false"></textarea>
 						<input type="hidden" class="ability-keywords" data-i18n-placeholder="disengage-keywords" name="attr_disengage_keywords" value="" />
-						<input type="hidden" name="attr_disengage_type" value="maneuver" />
+						<input type="hidden" name="attr_disengage_type" value="move-action" />
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="distance" name="attr_disengage_distance" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="target" name="attr_disengage_target" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n="disengage-effect" name="attr_disengage_effect" spellcheck="false"></textarea>
@@ -2902,6 +2902,10 @@
 			<label data-i18n="presence" for="attr_presence"></label>
 			<input type="number" id="attr_presence" name="attr_presence" />
 		</div>
+		<div class="npc-edit-group npc-edit-text">
+			<label data-i18n="villain-toggle" for="attr_villain_action_show"></label>
+			<input type="checkbox" id="attr_villain_action_show" name="attr_villain_action_show" value="1"	/>
+		</div>
 		
 	</div>
 	<!-- NPC Display -->
@@ -3001,7 +3005,7 @@
 	</div>
 	<!-- NPC Abilities -->
 	<div class="npc-abilities-panel">
-		<! -- NPC Ability Type Tabs -->
+		<!-- NPC Ability Type Tabs -->
 		<input type="hidden" class="sheet-tabstoggle" name="attr_npcabilitiesTab" value="npcabilities" />
 		<div class="abilities-buttons">
 		    <button type="action" name="act_npcabilities" class="sheet-button-npcabilities" data-i18n="npc-abilities"></button>
@@ -3320,7 +3324,7 @@
 				</div>
 			</fieldset>
 			<!-- Basic Malice -->
-                	<h5 class="panel-title" data-i18n="basic-malice"></h5>
+            <h5 class="panel-title" data-i18n="basic-malice"></h5>
 			<div class="standard-abilities">
 				<!-- Brutal Effectiveness -->
 				<div class="standard-abilities-item">
@@ -3330,12 +3334,12 @@
 						<select class="ability-subtype-selector" name="attr_brutaleffect_subtype">
 							<option value="malice-trait" data-i18n="malice-trait"></option>
 						</select>
-				
 						<div class="npc-ability-malice-cost grid-span-full">
 							<label><span data-i18n="malice-cost"></span>:</label>
 							<input type="number" name="attr_brutaleffect_malice_cost" value="3" />
 						</div>
 
+						<input type="hidden" name="attr_brutaleffect_type" value="no-action" />
 						<textarea class="npc-ability-trait grid-span-full" name="attr_brutaleffect_trait" data-i18n="brutal-effect-trait" />
 					</div>
 					<div class="ability-card card-display">
@@ -3365,7 +3369,7 @@
 							<label><span data-i18n="malice-cost"></span>:</label>
 							<input type="number" name="attr_maliciousstrike_malice_cost" value="5" />
 						</div>
-
+						<input type="hidden" name="attr_maliciousstrike_type" value="no-action" />
 						<textarea class="npc-ability-trait grid-span-full" name="attr_maliciousstrike_trait" data-i18n="malicious-strike-trait" />
 					</div>
 					<div class="ability-card card-display">
@@ -3392,9 +3396,7 @@
 				<div class="ability-card card-edit">
 					<input type="text" class="ability-name" data-i18n-placeholder="ability-name" name="attr_ability_name" />
 					<select class="ability-subtype-selector" name="attr_ability_subtype">
-						<option value="villain-ability1" data-i18n="villain-ability1"></option>
-						<option value="villain-ability2" data-i18n="villain-ability2"></option>
-						<option value="villain-ability3" data-i18n="villain-ability3"></option>
+						<option value="villain-ability" data-i18n="villain-ability"></option>
 					</select>
 				
 					<div class="npc-ability-malice-cost grid-span-full">
@@ -4233,7 +4235,7 @@
 					<div class="ability-card card-edit">
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="disengage" name="attr_disengage_name" data-i18n="disengage" spellcheck="false"></textarea>
 						<input type="hidden" class="ability-keywords" data-i18n-placeholder="disengage-keywords" name="attr_disengage_keywords" value="" />
-						<input type="hidden" name="attr_disengage_type" value="maneuver" />
+						<input type="hidden" name="attr_disengage_type" value="move-action" />
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="distance" name="attr_disengage_distance" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n-placeholder="target" name="attr_disengage_target" data-i18n="self" spellcheck="false"></textarea>
 						<textarea class="ability-effect grid-span-full" data-i18n="disengage-effect" name="attr_disengage_effect" spellcheck="false"></textarea>
@@ -5105,7 +5107,7 @@
 		const roll = buildRoll(template, directMap, rollValueMap, isPowerRoll);
 
 	}
-
+	const NPC_ABILITIES = ["repeating_npcabilities", "repeating_malice", "repeating_villainaction"];
 	/**
 	 * Creates the attribute maps needed to build an ability sharing roll.
 	 * @param {Array<Object>} Character and ability attributes.
@@ -5124,14 +5126,18 @@
 		let subtype = '';
 		let trait = '';
 		let hasTrait = 0;
+		let hasEffect = 0;
 		let characteristic = '';
 		let description = '';
 		let powerroll = '';
 		let characteristicValue = '';
 		
-		if (prefix === 'repeating_npcabilities') {
+		const subtypeValue = attrs[`${prefix}_${abilityPrefix}subtype`] || '';
+		const isNpcAbility = NPC_ABILITIES.some(p => prefix === p || prefix.startsWith(`${p}_`));
+		
+		if (isNpcAbility) {
 			// NPC Ability Logic
-			switch(attrs[`${prefix}_${abilityPrefix}subtype`]) {
+			switch(subtypeValue) {
 				case 'signature-ability':
 				case 'villain-ability':
 					subtype = getTranslationByKey(attrs[`${prefix}_${abilityPrefix}subtype`]) || '';
@@ -5143,7 +5149,7 @@
 			}
 			characteristic = 'modifiers';
 			trait = attrs[`${prefix}_${abilityPrefix}trait`] || '';
-			hasTrait = attrs[`${prefix}_${abilityPrefix}subtype`].includes('trait') && trait ? 1 : 0;
+			hasTrait = subtypeValue.includes('trait') && trait ? 1 : 0;
 			hasEffect = attrs[`${prefix}_has_effect`] === 'on' ? 1 : 0;
 			characteristicValue = parseInt(attrs[`${prefix}_${abilityPrefix}characteristic`]) || 0;
 		} else {
@@ -5153,7 +5159,8 @@
 			subtype = cost && cost !== '0' ? `(${cost} ${resourceName})` : '';
 			characteristic = attrs[`${prefix}_${abilityPrefix}characteristic`] ? getTranslationByKey(attrs[`${prefix}_${abilityPrefix}characteristic`]) || '' : '';
 			description = attrs[`${prefix}_${abilityPrefix}description`] || '';
-			hasTrait = 1;
+			trait = attrs[`${prefix}_${abilityPrefix}trait`] || '';
+			hasTrait = trait ? 1 : 0;
 			hasEffect = attrs[`${prefix}_${abilityPrefix}effect`] ? 1 : 0;
 			characteristicValue = attrs[attrs[`${prefix}_${abilityPrefix}characteristic`]];
 		}
@@ -5395,7 +5402,7 @@
 		'search': false,
 		'standup': false,
 		'consumable': false,
-                'opportunity_attack': false,
+        'opportunity_attack': false,
 		'freestrike': false,
 		'brutaleffect': false,
 		'maliciousstrike': false
@@ -5534,12 +5541,14 @@
 	function showVillainAction() {
 		console.log('~~~ showVillainAction ~~~');
 		getAttrs(["npc_role"], function(values) {
-			let role = (values["npc_role"] || "").toLowerCase();
-			let showVillain = (role === "leader" || role === "solo") ? "1" : "0";
+			if (values["npc_role"]) {
+				let role = (values["npc_role"] || "").toLowerCase();
+				let showVillain = (role === "leader" || role === "solo") ? "1" : "0";
 			
-			setAttrs({
-				"villain_action_show": showVillain
-			});
+				setAttrs({
+					"villain_action_show": showVillain
+				});
+			}
 		});
 	}
 
@@ -5594,7 +5603,10 @@
 	
 	function calculateGrowingResource() {
 		console.log('~~~ calculateGrowingResource ~~~');
-		getAttrs(["stats-minimize-checkbox","resource", "level"], function(values) {
+		getAttrs(["is_npc","stats-minimize-checkbox","resource", "level"], function(values) {
+			if (values["is_npc"] === "on") {
+				return;
+			}
 			let isChecked = values["stats-minimize-checkbox"] === "on";
 			
 			if (isChecked) {
@@ -5827,7 +5839,7 @@
 		'Maneuver':         { section: 'maneuvers',    prefix: 'maneuver',  type: 'maneuver' },
 		'Move Action':      { section: 'moves',        prefix: 'moves',     type: 'move-action' },
 		'Villain Action':   { section: 'npcabilities', prefix: 'ability',   type: 'no-action' },
-		'default':          { section: 'noaction',     prefix: 'noaction',  type: 'no-action' },
+		'default':          { section: 'noaction',     prefix: 'noaction',  type: 'no-action' }
 	};
 
 	/**
@@ -5837,6 +5849,7 @@
 	 */
 	function processAbility(abilityData) {
 		// 1. Determine ability type and get configuration.
+
 		const usage = abilityData.type.usage;
 		const config = ABILITY_TYPE_MAP[usage] || ABILITY_TYPE_MAP.default;
 		const id = generateRowID();
@@ -6524,6 +6537,8 @@
 
 			// Clear existing repeating sections before adding new data.
 			await clearRepeatingSection('npcabilities');
+			await clearRepeatingSection('malice');
+			await clearRepeatingSection('villainaction');
 			
 			// Set the new attributes on the character sheet.
 			await setAttrsAsync(newAttrs);
@@ -6543,15 +6558,18 @@
 
 	function processMonsterAbility(abilityData) {
 		// 1. Determine ability type and get configuration.
-		const usage = ABILITY_TYPE_MAP[abilityData.type.usage].type;
+		const usage = ABILITY_TYPE_MAP[abilityData.type.usage].type || ABILITY_TYPE_MAP.default.type;
 		const cost = abilityData.cost === 'signature' ? abilityData.cost : parseInt(abilityData.cost) || 0;
 		
+		let prefix = 'npcabilities';
 		let subtype = 'normal-ability';
 		if (abilityData.type.usage === 'Villain Action') {
+			prefix = 'villainaction';
 			subtype = 'villain-ability'; 
 		} else if (cost === 'signature') {
 			subtype = 'signature-ability';
 		} else if (cost > 0) {
+			prefix = 'malice';
 			subtype = 'malice-ability';
 		}
 		
@@ -6574,41 +6592,41 @@
 		const powerRollSection = abilityData.sections.find(s => s.type === 'roll');
 		// 4. Assemble the final attribute object.
 		const attributes = {
-			[`repeating_npcabilities_${id}_ability_name`]: abilityData.name,
-			[`repeating_npcabilities_${id}_ability_description`]: abilityData.description,
-			[`repeating_npcabilities_${id}_ability_type`]: usage,
-			[`repeating_npcabilities_${id}_ability_subtype`]: subtype,
-			[`repeating_npcabilities_${id}_ability_keywords`]: abilityData.keywords.join(', '),
-			[`repeating_npcabilities_${id}_ability_trigger`]: abilityData.type.trigger ?? '',
-			[`repeating_npcabilities_${id}_ability_distance`]: distance,
-			[`repeating_npcabilities_${id}_ability_target`]: abilityData.target,
-			[`repeating_npcabilities_${id}_ability_malice_cost`]: cost,
-			[`repeating_npcabilities_${id}_has_effect`]: effect ? 'on' : 0,
-			[`repeating_npcabilities_${id}_ability_effect`]: effect,
-			[`repeating_npcabilities_${id}_has_power_roll`]: powerRollSection ? 'on' : 0,
+			[`repeating_${prefix}_${id}_ability_name`]: abilityData.name,
+			[`repeating_${prefix}_${id}_ability_description`]: abilityData.description,
+			[`repeating_${prefix}_${id}_ability_type`]: usage,
+			[`repeating_${prefix}_${id}_ability_subtype`]: subtype,
+			[`repeating_${prefix}_${id}_ability_keywords`]: abilityData.keywords.join(', '),
+			[`repeating_${prefix}_${id}_ability_trigger`]: abilityData.type.trigger ?? '',
+			[`repeating_${prefix}_${id}_ability_distance`]: distance,
+			[`repeating_${prefix}_${id}_ability_target`]: abilityData.target,
+			[`repeating_${prefix}_${id}_ability_malice_cost`]: cost,
+			[`repeating_${prefix}_${id}_has_effect`]: effect ? 'on' : 0,
+			[`repeating_${prefix}_${id}_ability_effect`]: effect,
+			[`repeating_${prefix}_${id}_has_power_roll`]: powerRollSection ? 'on' : 0,
 		};
 		
 		if (powerRollSection) {
 			Object.assign(attributes, {
-				[`repeating_npcabilities_${id}_ability_characteristic`]: powerRollSection.roll.bonus,
-				[`repeating_npcabilities_${id}_ability_tier_1`]: powerRollSection.roll.tier1,
-				[`repeating_npcabilities_${id}_ability_tier_2`]: powerRollSection.roll.tier2,
-				[`repeating_npcabilities_${id}_ability_tier_3`]: powerRollSection.roll.tier3,
+				[`repeating_${prefix}_${id}_ability_characteristic`]: powerRollSection.roll.bonus,
+				[`repeating_${prefix}_${id}_ability_tier_1`]: powerRollSection.roll.tier1,
+				[`repeating_${prefix}_${id}_ability_tier_2`]: powerRollSection.roll.tier2,
+				[`repeating_${prefix}_${id}_ability_tier_3`]: powerRollSection.roll.tier3,
 			});
 		}
 		
 		if (special) {
 			Object.assign(attributes, {
-				[`repeating_npcabilities_${id}_has_special`]: 'on',
-				[`repeating_npcabilities_${id}_ability_special`]: special.text.replace('**Special:** ', ''),
+				[`repeating_${prefix}_${id}_has_special`]: 'on',
+				[`repeating_${prefix}_${id}_ability_special`]: special.text.replace('**Special:** ', ''),
 			});
 		}
 		
 		if (malice) {
 			Object.assign(attributes, {
-				[`repeating_npcabilities_${id}_has_malice`]: 'on',
-				[`repeating_npcabilities_${id}_ability_cost`]: malice.value,
-				[`repeating_npcabilities_${id}_ability_malice`]: malice.effect,
+				[`repeating_${prefix}_${id}_has_malice`]: 'on',
+				[`repeating_${prefix}_${id}_ability_cost`]: malice.value,
+				[`repeating_${prefix}_${id}_ability_malice`]: malice.effect,
 			});
 		}
 		
