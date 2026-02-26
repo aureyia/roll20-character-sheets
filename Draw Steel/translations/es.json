@@ -554,5 +554,6 @@
 	"statblock-abilities": "Habilidades del monstruo",
 	"faction-malice": "Malicia",
 	"malice-abilities": "Habilidades de Malicia",
-	"villain-action": "Acciones Villanas"
+	"villain-action": "Acciones Villanas",
+	"villain-toggle": "Has Villain Actions"
 }
