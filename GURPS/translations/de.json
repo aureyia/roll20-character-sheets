@@ -426,6 +426,7 @@
   "apply-label": "Anwenden",
   "reset-label": "Zurücksetzen",
   "reset-hit-points-label": "Reset HP",
+  "clear-label": "Clear",
   "no-prompt-label": "No Prompt",
   "single-prompt-label": "Single Prompt",
   "extended-prompt-label": "Extended Prompts",
@@ -2267,5 +2268,6 @@
   "vehicle-tools-notes-tooltip": "Enter additional notes about the vehicle's tools tab.",
   "total-weight-label": "Total Weight",
   "vehicle-crew-total-weight-tooltip": "TThe total weight of all crew members that are marked as 'On' the vehicle.",
-  "vehicle-active-defense-notes-tooltip": "Enter notes about the vehicle's active defense."
+  "vehicle-active-defense-notes-tooltip": "Enter notes about the vehicle's active defense.",
+  "gurps-sheet-game-aid-trademark": "GURPS is a trademark of Steve Jackson Games, and its rules and art are copyrighted by Steve Jackson Games. All rights are reserved by Steve Jackson Games. This game aid is the original creation of Mike Wilson, Ken Foubert, and Devindra Payment (original sheet author) and is released for free distribution, and not for resale, under the permissions granted in the <button type=\"roll\" class=\"sheet-no-decoration sheet-inline-decoration\" name=\"roll_blank\" value=\"http://www.sjgames.com/general/online_policy.html\" title=\"Show link in chat. NOTE: Right-click to open in new window\"><span data-i18n=\"gurps-sheet-thread-link-button\">Steve Jackson Games Online Policy</span></button>."
 }
