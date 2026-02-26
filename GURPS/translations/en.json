@@ -226,7 +226,7 @@
   "dual-training-label": "Dual training",
   "moving-mount-vehicle-label": "Moving Mount/Vehicle",
   "moving-mount-vehicle-tooltip": "Attacking from moving mount or vehicle.<br><b>NOTE:</b>If <i>not</i> stabilized, the total of Accuracy, Aim, Bracing, and Targeting systems can't exceed vehicle's stability rating (SR). See B469 and B548",
-  "abbreviation-stability-rating-label": "Strike Rank",
+  "abbreviation-stability-rating-label": "SR",
   "stability-rating-tooltip": "Vehicle's stability rating. Affects Targeting systems.",
   "unstabilized-label": "Unstabilized",
   "unstabilized-tooltip": "The vehicle's weapon is not stabilized. The max bonus from Targeting Systems can't exceed Stability Rating of the vehicle. See B469",
