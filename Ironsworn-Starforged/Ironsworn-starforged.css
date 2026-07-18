@@ -1975,6 +1975,8 @@
 .charsheet input[type=radio].move-ask-the-oracle:checked ~ div.move-ask-the-oracle,
 .charsheet input[type=radio].move-pay-the-price:checked ~ div.move-pay-the-price,
 .charsheet input[type=radio].move-begin-the-scene:checked ~ div.move-begin-the-scene,
+.charsheet input[type=radio].move-scene-challenge-face-danger:checked ~ div.move-scene-challenge-face-danger,
+.charsheet input[type=radio].move-scene-challenge-secure-an-advantage:checked ~ div.move-scene-challenge-secure-an-advantage,
 .charsheet input[type=radio].move-finish-the-scene:checked ~ div.move-finish-the-scene {
   visibility: visible;
   height: auto;

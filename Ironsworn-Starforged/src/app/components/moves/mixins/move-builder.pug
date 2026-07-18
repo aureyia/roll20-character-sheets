@@ -4,7 +4,7 @@ include ../../oracles/mixins/oracle-roll-btn
 
 mixin movePreviewFactory(move, options)
   +container(move, options)
-    - const moveId = _.kebabCase(move.Name)
+    - const moveId = move.id
     .rules-text !{translation[`move-text-${moveId}`]}
     if move.Oracle
       .move-oracle-container
@@ -50,7 +50,7 @@ mixin movePreview(move, options)
   .oracle-footer.move-page-footer=move.Page
 
 mixin container(move, options = false)
-  - const moveId = `move-${_.kebabCase(move.Name)}`
+  - const moveId = `move-${move.id}`
   if options.visibility
     div.move-visible.surface
       +movePreview(move, options)

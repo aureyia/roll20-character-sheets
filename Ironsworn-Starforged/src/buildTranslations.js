@@ -59,18 +59,43 @@ function buildAssetTranslations() {
   return assetTranslations
 }
 
+// Count how many categories each move name appears in. Face Danger and Secure
+// an Advantage exist in both Adventure and Scene Challenge, so their bare kebab
+// id collides. Only the non-canonical (Scene Challenge) variant is prefixed with
+// its category; canonical ids stay bare so the community translation files keyed
+// on e.g. `move-text-face-danger` are not orphaned.
+const moveNameCounts = {}
+starforged['Move Categories'].forEach((category) => {
+  category.Moves.forEach((move) => {
+    const base = keyFormat(move.Name)
+    moveNameCounts[base] = (moveNameCounts[base] || 0) + 1
+  })
+})
+
+// Single source of truth for a move's id / translation-key suffix. Injected onto
+// the move data (see gulpfile dataforge) so the pug templates and the translation
+// keys always agree.
+function moveId (move) {
+  const base = keyFormat(move.Name)
+  const inSceneChallenge = (move.Category || move['$id'] || '').includes('Scene_Challenge')
+  if (inSceneChallenge && moveNameCounts[base] > 1) {
+    return `scene-challenge-${base}`
+  }
+  return base
+}
+
 function buildMoveTranslations () {
   let moveTranslations = {}
 
   starforged['Move Categories'].forEach((category) => {
     const categoryId = keyFormat(category.Name)
     moveTranslations[`move-group-title-${categoryId}`] = category.Name
-    
-    category.Moves.forEach((move) => {
-      const moveId = keyFormat(move.Name)
 
-      moveTranslations[`move-title-${moveId}`] = move.Name
-      moveTranslations[`move-text-${moveId}`] = convertToHtml(move.Text)
+    category.Moves.forEach((move) => {
+      const id = moveId(move)
+
+      moveTranslations[`move-title-${id}`] = move.Name
+      moveTranslations[`move-text-${id}`] = convertToHtml(move.Text)
     })
   })
 
@@ -167,4 +192,4 @@ function buildOracleTranslations () {
   return oracleTranslations;
 }
 
-module.exports = { buildAssetTranslations, buildOracleTranslations, buildMoveTranslations }
+module.exports = { buildAssetTranslations, buildOracleTranslations, buildMoveTranslations, moveId }

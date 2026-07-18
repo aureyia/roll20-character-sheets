@@ -7,10 +7,11 @@ const path = require('path');
 const axios = require('axios');
 const merge = require('gulp-merge-json');
 const { starforged } = require('dataforged')
-const { 
+const {
   buildAssetTranslations,
   buildOracleTranslations,
-  buildMoveTranslations 
+  buildMoveTranslations,
+  moveId
 } = require('./buildTranslations')
 const { buildRollData } = require('./buildRollData')
 
@@ -32,6 +33,12 @@ gulp.task('dataforge', async function() {
     rolls: apiData.rolls.data,
     legacyassets: apiData.legacyassets.data
   };
+
+  // Inject a disambiguated id onto every move (the package has no `id` field).
+  // Uses the same helper the translation keys use, so pug + translations agree.
+  rawData.moves.forEach((category) => {
+    category.Moves.forEach((move) => { move.id = moveId(move) })
+  });
 
   const translationData = {
     'translation-assets': buildAssetTranslations(),
