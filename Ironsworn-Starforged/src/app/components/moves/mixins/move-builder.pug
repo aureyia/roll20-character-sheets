@@ -56,7 +56,7 @@ mixin container(move, options = false)
       +movePreview(move, options)
         block
   else
-    input(type='radio' name='attr_move_preview' class=`${moveId} hide-element` value=move.Name)
+    input(type='radio' name='attr_move_preview' class=`${moveId} hide-element` value=move.id)
     div(class=`${moveId} surface showhide`)
       +movePreview(move, options)
         block
