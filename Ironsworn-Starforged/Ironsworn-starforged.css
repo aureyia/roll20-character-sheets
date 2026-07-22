@@ -2498,8 +2498,30 @@
   text-transform: uppercase;
   text-align: center;
 }
+.charsheet .oracle-preview-roll {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.4em;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0 !important;
+  border: 4px solid #4c4d4f;
+}
+.charsheet .oracle-preview-roll:hover {
+  transition: 0.3s ease;
+  background-color: #b5b5b5;
+}
+.charsheet .oracle-preview-roll .i18n-text {
+  vertical-align: middle;
+}
 .charsheet .oracle-table-preview {
   width: auto;
+  border: radius 0em 0em 0.4em 0.4em;
+}
+.charsheet .oracle-table-preview .oracle-title {
+  border-radius: 1em 1em 0em 0em;
 }
 .charsheet table.oracle-table {
   width: -moz-available;

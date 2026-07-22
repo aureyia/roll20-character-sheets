@@ -77,3 +77,36 @@ mixin oracleSingleButton(oracle, btnText)
       name=`roll_${id}`
       value=`&{template:starforged_oracles} {{header=${labelText}}} {{${id}=[[d100]]}}`
     )
+
+//- A prominent "Roll" button placed at the top of an oracle's preview panel so
+//- the oracle can be rolled without returning to the browse list. Handles all
+//- three oracle shapes: a plain Table rolls a bare d100; Tables (regional) and
+//- Oracles (sub-oracles) prepend a Choose Table query that sets tableChoice.
+//- The tableChoice indexing mirrors oracleSubOraclesListGroupItem and the
+//- starforged_oracles roll template (builder.pug) — keep them in sync.
+mixin oraclePreviewRollBtn(oracle, label)
+  -
+    const id = oracle.$id
+    let rollQuery = ""
+    if (oracle.Oracles) {
+      let count = 0
+      const options = oracle.Oracles.map((table) => {
+        if (table.Oracles) {
+          const subOracleOptions = table.Oracles.map((o) => `${o['Name']}&#44;${count++}`)
+          return `${table['Name']},?{${table['Name']}&#124;${subOracleOptions.join('&#124;')}&#125;`
+        }
+        return `${table['Name']},${count++}`
+      })
+      rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}} `
+    } else if (oracle.Tables) {
+      const options = oracle.Tables.map((table, index) => `${table['Display name']||table['Name']},${index}`)
+      rollQuery = `{{tableChoice=[[(?{Choose Table|${options.join('|')}})]]}} `
+    }
+  label.roll-label.embedded-btn.oracle-preview-roll
+    span.i18n-text(data-i18n='roll')=translation['roll']
+    button.hide-element(
+      type='roll'
+      title=`@{roll_${id}}`
+      name=`roll_${id}`
+      value=`&{template:starforged_oracles} ${rollQuery}{{header=${label}}} {{${id}=[[d100]]}}`
+    )

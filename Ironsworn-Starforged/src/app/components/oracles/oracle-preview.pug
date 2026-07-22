@@ -43,6 +43,7 @@ mixin oraclePreview(oracle, groupName)
   div(class=`${oracle.$id} showhide oracle-table-preview surface` id=oracle.$id)
     - let nameString = oracle['Display name'] && oracle['Display name'].match(/ - /i) ? oracle['Display name'].replaceAll(/ - /i, ": ") : `${groupName}: ${oracle.Name}`
     .oracle-title=nameString
+    +oraclePreviewRollBtn(oracle, nameString)
     if oracle.Table
       +oracleTable(oracle)
     else if oracle.Tables
