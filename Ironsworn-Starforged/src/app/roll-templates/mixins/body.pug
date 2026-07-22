@@ -11,10 +11,9 @@ mixin actionBody()
 
 mixin progressBody
   .sheet-result-body.sheet-result-row
-    div {{progress_type}} Progress:
+    div {{progress_type}} #[span.i18n-text(data-i18n='progress-label')= translation['progress-label']]:
     div {{progress}}
   +challengeDice
-  // TODO: figure out the most sensible way to handle translation strings here
 
 mixin momentumBody
   .sheet-result-body.sheet-result-row

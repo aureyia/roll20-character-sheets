@@ -1,6 +1,18 @@
 const { starforged } = require('dataforged')
 const marked = require('marked')
 
+// Dataforged text contains cross-references as markdown links (e.g.
+// [Face Danger](Starforged/Moves/...)). Those hrefs point at internal
+// dataforged IDs and don't resolve to anything inside a Roll20 sheet, so
+// render them as plain underlined text instead of dead <a href> links.
+marked.use({
+  renderer: {
+    link (href, title, text) {
+      return `<u>${text}</u>`
+    }
+  }
+})
+
 function keyFormat (inputString) {
   return inputString.toLowerCase().replaceAll(/\s+/g, "-");
 }

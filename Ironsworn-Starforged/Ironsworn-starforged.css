@@ -2440,6 +2440,7 @@
   font-family: 'Montserrat', Arial, sans-serif;
   background-color: #4c4d4f;
   color: #fff;
+  padding: 8px;
 }
 .charsheet .oracle-table-preview caption.oracle-description p,
 .charsheet .oracle-table-preview div.oracle-description p,

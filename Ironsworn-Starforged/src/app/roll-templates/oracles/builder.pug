@@ -7,14 +7,14 @@ mixin oracleRoll(id, table, row, index)
   if chanceFloor === chanceCeiling
     | {{#rollTotal() #{id} #{chanceCeiling}}}
     |
-    span!=result
+    span.i18n-text(data-i18n=row.$id)!=result
     |
     | {{/rollTotal() #{id} #{chanceCeiling}}}
   else
     |
     | {{#rollBetween() #{id} #{chanceFloor} #{chanceCeiling}}}
     |
-    span!=result
+    span.i18n-text(data-i18n=row.$id)!=result
     |
     | {{/rollBetween() #{id} #{chanceFloor} #{chanceCeiling}}}
 
