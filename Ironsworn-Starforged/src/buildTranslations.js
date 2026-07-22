@@ -18,11 +18,14 @@ function keyFormat (inputString) {
 }
 
 function convertToHtml(inputText, wrap = true) {
-  return marked.parse(inputText);
+  // marked.parse() appends a trailing newline; trim it so generated translation
+  // values don't accumulate trailing whitespace. Internal newlines (between HTML
+  // block elements) are preserved.
+  return marked.parse(inputText).trim();
 }
 
 function convertToHtmlStripped(inputText, wrap = true) {
-  return marked.parse(inputText).replaceAll("<p>", "").replaceAll("</p>", "");
+  return marked.parse(inputText).replaceAll("<p>", "").replaceAll("</p>", "").trim();
 }
 
 function buildAssetTranslations() {
@@ -117,7 +120,7 @@ function buildMoveTranslations () {
       let text = convertToHtml(move.Text)
       const hasOracles = move.Oracles && move.Oracles.length
       if (hasOracles) text = text.replace(/<table[\s\S]*?<\/table>/gi, '')
-      moveTranslations[`move-text-${id}`] = text
+      moveTranslations[`move-text-${id}`] = text.trim()
     })
   })
 
