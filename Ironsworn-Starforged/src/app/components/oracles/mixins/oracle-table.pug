@@ -17,7 +17,10 @@ mixin oracleMultiSubTable(oracle, header=false, hideDescription=false)
       oracle.Oracles[0].Table.forEach((row, index) => {
         let newRow = _.clone(row);
         newRow.Chance = [];
-        oracle.Oracles.forEach(subOracle => newRow.Chance.push(subOracle.Table[index].Chance));
+        oracle.Oracles.forEach(subOracle => {
+          const subRow = subOracle.Table[index];
+          newRow.Chance.push(subRow.Floor === subRow.Ceiling ? `${subRow.Ceiling}` : `${subRow.Floor}-${subRow.Ceiling}`);
+        });
         mergedRows.push(newRow);
       })
     } else {
@@ -75,9 +78,14 @@ mixin oracleTableRow(table, row, index)
       return (initChance === finalChance) ? finalChance : `${initChance}-${finalChance}`;
     };
     let ranges = [];
-    const initChance = row.Floor;
-    const finalChance = row.Ceiling;
-    ranges.push(rangeString(initChance, finalChance));
+    //- Multi-column tables (oracleMultiSubTable) pass a pre-built Chance array of
+    //- range strings, one per likelihood/variant column. Single tables have no
+    //- Chance array and fall back to their own Floor/Ceiling.
+    if (_.isArray(row.Chance) && row.Chance.length && !_.isUndefined(row.Chance[0])) {
+      ranges = row.Chance;
+    } else {
+      ranges.push(rangeString(row.Floor, row.Ceiling));
+    }
   if row.$id
     tr.oracle-row
       each range in ranges
