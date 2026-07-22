@@ -107,7 +107,17 @@ function buildMoveTranslations () {
       const id = moveId(move)
 
       moveTranslations[`move-title-${id}`] = move.Name
-      moveTranslations[`move-text-${id}`] = convertToHtml(move.Text)
+
+      // dataforged bakes a move's oracle result table into its rules text as a
+      // Markdown table. When a move HAS an oracle, the sheet renders that oracle
+      // as its own styled, data-driven table (see move-builder.pug), so the
+      // baked-in duplicate is never shown — strip it here to keep the translation
+      // files lean. Moves without an oracle (e.g. Repair) keep their table, since
+      // it IS rendered as the move's content.
+      let text = convertToHtml(move.Text)
+      const hasOracles = move.Oracles && move.Oracles.length
+      if (hasOracles) text = text.replace(/<table[\s\S]*?<\/table>/gi, '')
+      moveTranslations[`move-text-${id}`] = text
     })
   })
 
