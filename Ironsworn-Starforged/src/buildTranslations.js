@@ -17,15 +17,25 @@ function keyFormat (inputString) {
   return inputString.toLowerCase().replaceAll(/\s+/g, "-");
 }
 
+// Tidies marked.parse() output for use as a translation value:
+// - unescapes the straight-apostrophe entity marked emits (&#39; -> ')
+// - collapses newlines that sit *between* HTML tags (e.g. <ul>\n<li>) so list
+//   markup isn't littered with them; newlines inside text content are left
+//   alone so adjacent paragraphs don't run together
+// - trims the trailing newline marked appends
+function cleanHtml(html) {
+  return html
+    .replaceAll("&#39;", "'")
+    .replace(/>\n+</g, "><")
+    .trim();
+}
+
 function convertToHtml(inputText, wrap = true) {
-  // marked.parse() appends a trailing newline; trim it so generated translation
-  // values don't accumulate trailing whitespace. Internal newlines (between HTML
-  // block elements) are preserved.
-  return marked.parse(inputText).trim();
+  return cleanHtml(marked.parse(inputText));
 }
 
 function convertToHtmlStripped(inputText, wrap = true) {
-  return marked.parse(inputText).replaceAll("<p>", "").replaceAll("</p>", "").trim();
+  return cleanHtml(marked.parse(inputText).replaceAll("<p>", "").replaceAll("</p>", ""));
 }
 
 function buildAssetTranslations() {
