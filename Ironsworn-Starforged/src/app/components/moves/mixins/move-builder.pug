@@ -4,19 +4,55 @@ include ../../oracles/mixins/oracle-roll-btn
 
 mixin movePreviewFactory(move, options)
   +container(move, options)
-    - const moveId = move.id
-    .rules-text !{translation[`move-text-${moveId}`]}
-    if move.Oracle
+    -
+      const moveId = move.id
+      const hasOracles = move.Oracles && move.Oracles.length
+      // dataforged bakes the oracle result table into the move's own rules-text
+      // as a Markdown table (rendered to an HTML <table>). Strip it so the styled,
+      // data-driven oracle table rendered below isn't a duplicate — the oracle
+      // table is the canonical, translatable version.
+      let rulesText = translation[`move-text-${moveId}`] || ''
+      if (hasOracles) rulesText = rulesText.replace(/<table[\s\S]*?<\/table>/gi, '')
+    .rules-text !{rulesText}
+    if hasOracles
       .move-oracle-container
         -
-          let btnText = `Roll the ${move.Name} oracle`
-          var moveOracle = oracles.find(group => { return group.Name === 'Moves' }).Oracles.find(oracle => { return oracle.Name === move.Name })
-        if moveOracle.Table
-          +oracleSingleButton(moveOracle, btnText)
-          +oracleTable(moveOracle)
-        else if moveOracle.Oracles
-          +oracleMultiBtn(moveOracle)
-          +oracleMultiSubTable(moveOracle, btnText)
+          // Resolve each oracle $id the move references to a renderable oracle.
+          // A move ref points at either a top-level oracle (e.g. Begin a Session,
+          // or Misc/Story Clue for Gather Information) or the leaf sub-oracles of
+          // an oracle-with-sub-oracles (Ask the Oracle's five likelihoods) — in
+          // the latter case render the PARENT once as a combined "choose" button.
+          // Dedupe by $id so repeated sub-oracle refs collapse to a single button.
+          function renderableFor(id) {
+            for (const group of oracles) {
+              const level1 = [].concat(
+                group.Oracles || [],
+                ...(group.Categories || []).map((c) => c.Oracles || [])
+              );
+              for (const oracle of level1) {
+                if (oracle['$id'] === id) return oracle;
+                if (oracle.Oracles && oracle.Oracles.some((s) => s['$id'] === id)) return oracle;
+              }
+            }
+            return null;
+          }
+          const seenOracleIds = new Set();
+          const moveOracles = [];
+          move.Oracles.forEach((oracleId) => {
+            const resolved = renderableFor(oracleId);
+            if (resolved && !seenOracleIds.has(resolved['$id'])) {
+              seenOracleIds.add(resolved['$id']);
+              moveOracles.push(resolved);
+            }
+          });
+        each moveOracle in moveOracles
+          - const btnText = `Roll: ${moveOracle.Name}`
+          if moveOracle.Table
+            +oracleSingleButton(moveOracle, btnText)
+            +oracleTable(moveOracle, false, true)
+          else if moveOracle.Oracles
+            +oracleMultiBtn(moveOracle, btnText)
+            +oracleMultiSubTable(moveOracle, false, true)
 
 mixin movePreview(move, options)
   if options.no_title

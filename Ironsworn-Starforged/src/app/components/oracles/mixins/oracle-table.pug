@@ -1,11 +1,11 @@
-mixin oracleTable(oracle, rollButton=false)
+mixin oracleTable(oracle, rollButton=false, hideDescription=false)
   table.oracle-table
-    if (oracle.Description)
+    if (oracle.Description && !hideDescription)
       caption.oracle-description!=oracle.Description
     each row, index in oracle.Table
       +oracleTableRow(oracle.Table, row, index)
 
-mixin oracleMultiSubTable(oracle, header=false)
+mixin oracleMultiSubTable(oracle, header=false, hideDescription=false)
   //-  builds tables with multiple Roll columns, e.g. regional tables
   -
     let mergedRows = [];
@@ -43,7 +43,7 @@ mixin oracleMultiSubTable(oracle, header=false)
         mergedRows.push(newRow);
       })
     }
-  if oracle.Description
+  if oracle.Description && !hideDescription
     .oracle-description!=oracle.Description
   table.oracle-table.oracle-subtable.oracle-subtable-multi
     thead
